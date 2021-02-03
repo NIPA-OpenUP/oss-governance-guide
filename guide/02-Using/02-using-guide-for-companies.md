@@ -135,7 +135,7 @@ Gartner의 [Technology Insight for Software Composition Analysis][2] 보고서�
 - 라이선스, 저작권, 버전관리 등 관련정보를 포함한 보고서 발급 기능이 있는가?
 
 ### 주요 SCA 도구 소개
-- Olive(카카오)  
+- Olive (Kakao)  
   Kakao는 자사의 수 많은 프로젝트의 오픈소스 관리를 위해 사용하던 시스템을 누구나 사용할 수 있도록 [Olive Platform][3] 으로 Beta 오픈했다. Olive는 GitHub 프로젝트를 분석하여 사용한 오픈소스 데이터를 관리하고, 라이선스 및 의무사항을 확인하여 Report를 제공한다. 쉽고, 빠르고 정확한 오픈소스 검증을 목표로 직관적인 기능과 UI로 구성되어 있으며, 간단히 Dependency와 라이선스 확인이 가능한 심플 체크 기능 등 사용자 편의에 초점을 맞추고 있다.
 
 
