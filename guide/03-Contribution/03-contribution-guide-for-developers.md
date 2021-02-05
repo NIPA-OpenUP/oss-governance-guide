@@ -53,7 +53,7 @@
     - [4. Pull Request를 생성하라](#4-pull-request를-생성하라)
       - [Pull Request 시기](#pull-request-시기)
       - [GitHub에서의 Pull Request 절차](#github에서의-pull-request-절차)
-    - [5. Feedback을 받으라](#5-feedback을-받으라)
+    - [5. Feedback을 받아라](#5-feedback을-받아라)
       - [응답이 없다?](#응답이-없다)
       - [수정을 요청한다?](#수정을-요청한다)
       - [거절됐다?](#거절됐다)
@@ -502,7 +502,7 @@ GitHub에서 자신의 Repository에 가면 Compare & pull request 버튼이 활
 > * Pull Request가 처음이라면 [Make a Pull Request](http://makeapullrequest.com/)(비디오 강의)를 참고한다. 
 > * 또한, [First Contributions](https://github.com/Roshanjossey/first-contributions)에서 Pull Request 만드는 것을 연습할 수 있다. 
  
-### 5. Feedback을 받으라
+### 5. Feedback을 받아라
 
 기여를 제출하면 프로젝트로부터 Feedback을 받게 된다. 
 
