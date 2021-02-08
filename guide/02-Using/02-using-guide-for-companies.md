@@ -169,6 +169,15 @@ Sonatype의 [2020년 소프트웨어 공급망 현황 보고서][4]에 따르면
 
 보고서를 보면 보통은 1일 ~ 1주 이내가 35%로 제일 많았으나 여기서 주목해야 할 점은 1주 이상 소요되거나 아예 고쳐지지 않는 케이스가 무려 51%나 된다는 것이다. 오픈소스 커뮤니티의 신속한 대응도 중요하지만, 해당 오픈소스 사용처에서도 바로 적용해야 하는 이슈도 존재한다. 또한, 공격자는 문제가 되는 오픈소스 버전이 배포된 후 3일 이내에 오픈소스 취약성을 이용한 것으로 제일 많이 나타나므로 더 빠른 조치가 필요한 상황이다.  
 
+### 취약성 데이터베이스
+보통 오픈소스의 취약성 내용과 이루어진 버전 정보들은 수집되어 [CVE][6]와 같은 오픈소스 취약성 데이터베이스에 저장이 된다. 다양한 유형의 취약성 정보가 포함되는데 주요 데이터베이스는 아래와 같다.  
+- [Mitre의 CVE(Common Vulnerabilities and Exposures)][6]  
+  상용 애플리케이션 및 비공개 소스 프로젝트를 비롯하여 다양한 유형의 취약성에 대한 정보를 제공한다. 취약성 정보는 개별 CVE 번호가 부여되어 관리된다.
+- [Sonatype OSS Index][7]
+  Maven, NPM, Go, Pypi 등 여러 유형의 Package Management 에서 보고된 오픈소스 취약성 정보 데이터베이스를 제공한다.
+- 예) CVE-2015-5211 에 대한 정보 
+![cve](assets/cve.png)
+![sonatype-oss-index](assets/sonatype-oss-index.png)
 
 ## DevSecOps
 2012년 가트너는 "DevOpsSec: Creating the Agile Triangle" 이란 보고서를 통해 DevOps 이니셔티브에 보안 기반을 구축할 필요가 있다는 사실을 강조하기 위해 DevSecOps라는 개념을 소개했다. DevSecOps는 소프트웨어 개발(Development)과 운영(Operation), 보안(Security)의 합성어로 애플리케이션 개발자와, 운영, 보안 실무자 간의 소통과 협업, 통합을 강조하는 개발문화를 의미한다.  
@@ -236,6 +245,8 @@ GiHub은 소스코드 저장소로 널리 사용되고 있는데, 2020년 [GitHu
 [3]: https://olive.kakao.com
 [4]: https://www.sonatype.com/2020ssc
 [5]: https://developer.ibm.com/recipes/tutorials/open-source-security-trends-for-2020
-[6]: https://www.redhat.com/ko/topics/devops/what-is-devsecops
-[7]: https://www.sonarqube.org/
-[8]: https://octoverse.github.com
+[6]: https://cve.mitre.org
+
+[7]: https://www.redhat.com/ko/topics/devops/what-is-devsecops
+[8]: https://www.sonarqube.org/
+[9]: https://octoverse.github.com
