@@ -4,7 +4,9 @@
 
 Microsoft, Google, Twitter, Netflix와 같은 테크 분야 리더 기업뿐만 아니라 삼성, Comcast, Intel과 같은 전통 기업들도 OSPO를 운영하고 있다. 이러한 거대 기업이 아니더라도 테크, 가전, 금융 및 통신 분야의 기업 중 50% 이상이 OSPO를 만들었거나 만들 예정이라는 [조사 결과](https://github.com/todogroup/survey/tree/master/2019) <sup>(1)</sup>도 있다.
 
-여기서는 OSPO의 역할, 책임, 구성과 설립 방법을 설명한다.
+여기서는 OSPO의 역할, 책임, 구성과 설립 방법을 설명한다. 
+
+> 이 장의 내용은 TODO Group의 "[How to create an open source program](https://todogroup.org/guides/create-program/) <sup>(00)</sup>"의 내용을 참조하였다. 
 
 ## 오픈소스 프로그램이란?
 
@@ -674,6 +676,10 @@ GiHub은 소스코드 저장소로 널리 사용되고 있는데, 최근 [GitHub
 우수한 ICT 기업은 오픈소스를 제품개발에 사용하기에 그치지 않고 오픈소스 프로젝트에 다시 기여하여 가치를 창출하는 전략도 중요하게 여긴다. 그러나 기업이 오픈소스 프로젝트 및 운영 방식을 제대로 이해하지 못하거나, 견고한 전략 없이 오픈소스 기여 활동에 참여하면 오픈소스 커뮤니티에서 기업의 명성이 훼손되거나 법적 위험을 초래할 수도 있다.
 
 이 가이드에서는 기업이 오픈소스 프로젝트에 기여함으로 얻을 수 있는 이익과 올바른 기여 정책의 필요성 및 정책 수립 방법을 다룬다. 이어서 기업의 구성원이 오픈소스 프로젝트에 기여하는 방법을 세부적으로 설명한다.
+
+> 이 장의 내용은 다음 문헌을 참고하였다. 
+> * TODO Group의 [Participating in open source communities](https://todogroup.org/guides/participating/) <sup>(00)</sup>
+> * GitHub Open Source Guide의 [How to Contribute to Open Source](https://opensource.guide/how-to-contribute/) <sup>(00)</sup>
 
 ## 기업은 왜 오픈소스에 기여해야 하나?
 
