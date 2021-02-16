@@ -1774,81 +1774,61 @@ Issue tracker를 이용해서 사용자들과 소통할 수 있겠지만 사람�
 
 
 # 참고링크
-(1) Todo Group, Open Source Program Survey Results (2019) https://github.com/todogroup/survey/tree/master/2019  
+(1) Todo Group, Open Source Program Survey Results (2019) https://github.com/todogroup/survey/tree/master/2019    
 (2) Open Up, 공개SW 활용 지원 https://www.oss.kr/plaza_intro  
-(3) RedHat, The State of Enterprise Open Source (2020) https://www.redhat.com/en/enterprise-open-source-report/2020
-(4) Gartner, Hype Cycle for Open-Source Software (2016) https://www.gartner.com/en/documents/3371817/hype-cycle-for-open-source-software-2016
-(5) IDG, 오픈소스 기업에 안착하다 (2020) https://www.itworld.co.kr/techlibrary/144662
-(6) IDG, IT 전망보고서 (2020) https://www.itworld.co.kr/techlibrary/139540
-(7) KDB 미래전략연구소, 4차 산업혁명의 숨은 원동력, 오픈소스 현황과 시사점 (2020) https://rd.kdb.co.kr/fileView?groupId=633D8216-6F28-AACB-0DCA-0C5F29BD9AA0&fileId=0B5A6FCE-9061-B544-64F2-25B54AEF2A84
-(8) Linux Foundation, Open Source Jobs Report (2020) https://training.linuxfoundation.org/resources/2020-open-source-jobs-report
-(9) Gartner, Technology Insight for Software Composition Analysis (2019) https://www.gartner.com/en/documents/3971011/technology-insight-for-software-composition-analysis
-(10) Linux.com, Artifex v. Hancom: Open Source is Now an Enforceable Contract https://www.linux.com/topic/open-source/artifex-v-hancom-open-source-now-enforceable-contract
-(11) Kakao, Olive Platform https://olive.kakao.com
-(12) Sonatype, State of the Software Supply Chain Report (2020) https://www.sonatype.com/2020ssc
-(13) CVE https://cve.mitre.org
-(14) IBM, Open Source Security Trends (2020) https://developer.ibm.com/recipes/tutorials/open-source-security-trends-for-2020
-(15) SonarQube https://www.sonarqube.org
-(16) Sonatype, State of the Software Supply Chain Report (2020) https://www.sonatype.com/2020ssc
-(17) CHAOSS https://chaoss.community/metrics
-(18) Linux Kernel, https://github.com/torvalds/linux
-(19) Technical Steering Committee https://github.com/nodejs/TSC
-(20) Kubernetes contributing.md https://github.com/kubernetes/community/blob/master/contributors/guide/contributing.md
-(21) GitHub Docs, fork https://help.github.com/en/github/getting-started-with-github/fork-a-repo
-(22) Git, branch https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EB%A6%AC%EB%AA%A8%ED%8A%B8-%EB%B8%8C%EB%9E%9C%EC%B9%98
-(23) Git, rebase https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-Rebase-%ED%95%98%EA%B8%B0
-(24) Git, branch https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EB%B8%8C%EB%9E%9C%EC%B9%98%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80
-(25) Git, commit https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-%EC%88%98%EC%A0%95%ED%95%98%EA%B3%A0-%EC%A0%80%EC%9E%A5%EC%86%8C%EC%97%90-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0
-(26) Make a Pull Request http://makeapullrequest.com
-(27) GitHub first-contributions https://github.com/Roshanjossey/first-contributions
-(28) KIPRIS, 상표 검색 서비스 http://kdtj.kipris.or.kr/kdtj/searchLogina.do?method=loginTM
-(29) Apache, Software Foundation Contributor License Agreement https://www.apache.org/licenses/contributor-agreements.html
-(30) Cloud Native Computing Foundation Contributor License Agreement https://github.com/kubernetes/community/blob/master/CLA.md
-(31) Python Software Foundation Contributor Agreement https://www.python.org/psf/contrib
-
-(32) CLA assistant https://github.com/cla-assistant/cla-assistant
-(33) cla-bot https://colineberhardt.github.io/cla-bot
-(34) Google Developers Contributor License Agreements https://cla.developers.google.com/clas
-(35) Microsoft Contributor License Agreement https://cla.opensource.microsoft.com
-
-(36) Repolinter, The Open Source Repository Linter https://github.com/todogroup/repolinter
-
-(37) GitHub Docs, Creating a new repository https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-new-repository
-
-(38) GitHub Docs, Managing teams and people with access to your repository https://docs.github.com/en/github/administering-a-repository/managing-teams-and-people-with-access-to-your-repository
-
-(39) GitHub Docs, Adding topics to your repository https://docs.github.com/en/github/administering-a-repository/classifying-your-repository-with-topics#adding-topics-to-your-repository
-
-(40) GitLab Docs, Create a project https://docs.gitlab.com/ee/user/project/working_with_projects.html#create-a-project
-
-(41) GitLab Docs, Sharing and permissions https://docs.gitlab.com/ee/user/project/settings/index.html#sharing-and-permissions
-
-(42) GitLab Docs, General project settings https://docs.gitlab.com/ee/user/project/settings/#general-project-settings
-
-(43) DZone, How to Publish Your Artifacts to Maven Central https://dzone.com/articles/publish-your-artifacts-to-maven-central
-
-(44) npm Docs, Creating and publishing scoped public packages https://docs.npmjs.com/creating-and-publishing-scoped-public-packages
-
-(45) Python Packaging User Guide, Packaging Python Projects https://packaging.python.org/tutorials/packaging-projects/#packaging-python-projects
-
-(46) GitHub Docs, Changing a repository's visibility https://docs.github.com/en/github/administering-a-repository/setting-repository-visibility#changing-a-repositorys-visibility
-
-(47) GitLab Docs, How to change project visibility https://docs.gitlab.com/ee/public_access/public_access.html#how-to-change-project-visibility
-
-(48) LINE Developers Twitter https://twitter.com/line_developers/status/1330773983873011712?s=20
-
-(49) Facebook Open Source Twitter https://twitter.com/fbOpenSource/status/1356301287026028552?s=20
-
-(50) Twitter Open Source Twitter https://twitter.com/TwitterOSS/status/1301557895541133313?s=20
-
-(51) LINE Engineering, Armeria의 서킷 브레이커 사용해 보기 https://engineering.linecorp.com/ko/blog/try-armeria-circuit-breaker/
-
-(52) TOAST UI, TOASI UI Chart 4.0가 출시되었습니다! https://ui.toast.com/weekly-pick/ko_20210126
-
-(53) Airbnb Engineering & Data Science, Introducing visx from Aribnb https://medium.com/airbnb-engineering/introducing-visx-from-airbnb-fd6155ac4658
-
-(54) Slack https://slack.com/intl/ko-kr
-(55) Gitter https://gitter.im
+(3) RedHat, The State of Enterprise Open Source (2020) https://www.redhat.com/en/enterprise-open-source-report/2020  
+(4) Gartner, Hype Cycle for Open-Source Software (2016) https://www.gartner.com/en/documents/3371817/hype-cycle-for-open-source-software-2016  
+(5) IDG, 오픈소스 기업에 안착하다 (2020) https://www.itworld.co.kr/techlibrary/144662  
+(6) IDG, IT 전망보고서 (2020) https://www.itworld.co.kr/techlibrary/139540  
+(7) KDB 미래전략연구소, 4차 산업혁명의 숨은 원동력, 오픈소스 현황과 시사점 (2020) https://rd.kdb.co.kr/fileView?groupId=633D8216-6F28-AACB-0DCA-0C5F29BD9AA0&fileId=0B5A6FCE-9061-B544-64F2-25B54AEF2A84  
+(8) Linux Foundation, Open Source Jobs Report (2020) https://training.linuxfoundation.org/resources/2020-open-source-jobs-report  
+(9) Gartner, Technology Insight for Software Composition Analysis (2019) https://www.gartner.com/en/documents/3971011/technology-insight-for-software-composition-analysis  
+(10) Linux.com, Artifex v. Hancom: Open Source is Now an Enforceable Contract https://www.linux.com/topic/open-source/artifex-v-hancom-open-source-now-enforceable-contract  
+(11) Kakao, Olive Platform https://olive.kakao.com  
+(12) Sonatype, State of the Software Supply Chain Report (2020) https://www.sonatype.com/2020ssc  
+(13) CVE https://cve.mitre.org  
+(14) IBM, Open Source Security Trends (2020) https://developer.ibm.com/recipes/tutorials/open-source-security-trends-for-2020  
+(15) SonarQube https://www.sonarqube.org  
+(16) Sonatype, State of the Software Supply Chain Report (2020) https://www.sonatype.com/2020ssc  
+(17) CHAOSS https://chaoss.community/metrics  
+(18) Linux Kernel, https://github.com/torvalds/linux  
+(19) Technical Steering Committee https://github.com/nodejs/TSC  
+(20) Kubernetes contributing.md https://github.com/kubernetes/community/blob/master/contributors/guide/contributing.md  
+(21) GitHub Docs, fork https://help.github.com/en/github/getting-started-with-github/fork-a-repo  
+(22) Git, branch https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EB%A6%AC%EB%AA%A8%ED%8A%B8-%EB%B8%8C%EB%9E%9C%EC%B9%98  
+(23) Git, rebase https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-Rebase-%ED%95%98%EA%B8%B0  
+(24) Git, branch https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EB%B8%8C%EB%9E%9C%EC%B9%98%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80  
+(25) Git, commit https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-%EC%88%98%EC%A0%95%ED%95%98%EA%B3%A0-%EC%A0%80%EC%9E%A5%EC%86%8C%EC%97%90-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0  
+(26) Make a Pull Request http://makeapullrequest.com  
+(27) GitHub first-contributions https://github.com/Roshanjossey/first-contributions  
+(28) KIPRIS, 상표 검색 서비스 http://kdtj.kipris.or.kr/kdtj/searchLogina.do?method=loginTM  
+(29) Apache, Software Foundation Contributor License Agreement https://www.apache.org/licenses/contributor-agreements.html  
+(30) Cloud Native Computing Foundation Contributor License Agreement https://github.com/kubernetes/community/blob/master/CLA.md  
+(31) Python Software Foundation Contributor Agreement https://www.python.org/psf/contrib  
+(32) CLA assistant https://github.com/cla-assistant/cla-assistant  
+(33) cla-bot https://colineberhardt.github.io/cla-bot  
+(34) Google Developers Contributor License Agreements https://cla.developers.google.com/clas    
+(35) Microsoft Contributor License Agreement https://cla.opensource.microsoft.com    
+(36) Repolinter, The Open Source Repository Linter https://github.com/todogroup/repolinter   
+(37) GitHub Docs, Creating a new repository https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-new-repository    
+(38) GitHub Docs, Managing teams and people with access to your repository https://docs.github.com/en/github/administering-a-repository/managing-teams-and-people-with-access-to-your-repository  
+(39) GitHub Docs, Adding topics to your repository https://docs.github.com/en/github/administering-a-repository/classifying-your-repository-with-topics#adding-topics-to-your-repository  
+(40) GitLab Docs, Create a project https://docs.gitlab.com/ee/user/project/working_with_projects.html#create-a-project  
+(41) GitLab Docs, Sharing and permissions https://docs.gitlab.com/ee/user/project/settings/index.html#sharing-and-permissions  
+(42) GitLab Docs, General project settings https://docs.gitlab.com/ee/user/project/settings/#general-project-settings  
+(43) DZone, How to Publish Your Artifacts to Maven Central https://dzone.com/articles/publish-your-artifacts-to-maven-central  
+(44) npm Docs, Creating and publishing scoped public packages https://docs.npmjs.com/creating-and-publishing-scoped-public-packages  
+(45) Python Packaging User Guide, Packaging Python Projects https://packaging.python.org/tutorials/packaging-projects/#packaging-python-projects  
+(46) GitHub Docs, Changing a repository's visibility https://docs.github.com/en/github/administering-a-repository/setting-repository-visibility#changing-a-repositorys-visibility  
+(47) GitLab Docs, How to change project visibility https://docs.gitlab.com/ee/public_access/public_access.html#how-to-change-project-visibility  
+(48) LINE Developers Twitter https://twitter.com/line_developers/status/1330773983873011712?s=20  
+(49) Facebook Open Source Twitter https://twitter.com/fbOpenSource/status/1356301287026028552?s=20  
+(50) Twitter Open Source Twitter https://twitter.com/TwitterOSS/status/1301557895541133313?s=20  
+(51) LINE Engineering, Armeria의 서킷 브레이커 사용해 보기 https://engineering.linecorp.com/ko/blog/try-armeria-circuit-breaker/  
+(52) TOAST UI, TOASI UI Chart 4.0가 출시되었습니다! https://ui.toast.com/weekly-pick/ko_20210126  
+(53) Airbnb Engineering & Data Science, Introducing visx from Aribnb https://medium.com/airbnb-engineering/introducing-visx-from-airbnb-fd6155ac4658  
+(54) Slack https://slack.com/intl/ko-kr  
+(55) Gitter https://gitter.im  
 
 # 참고문헌
 * TODO Guide, Participating in open source communities https://todogroup.org/guides/participating/
