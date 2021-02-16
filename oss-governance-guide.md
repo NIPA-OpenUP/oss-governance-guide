@@ -1470,7 +1470,7 @@ Pull Request를 생성한 상태로 응답하지 않고 남겨두는 건 실례�
 사실 위에서 언급한 장점을 모두 제치고 가장 강력한 설득 포인트가 될 부분이다. 이 장점을 제대로 이해하기 위해서 오픈소스가 잘 운영되는 방식을 보자.
 
 오픈소스가 공개되고 성공적으로 궤도에 오른다면 다음과 같은 순환을 기대해볼 수 있다. 사람들이 채택할 만큼 충분히 매력이 있다면 사용자들이 늘어날 것이고, 그 사용자들이 뭔가 문제에 맞닥트릴 때마다 버그를 제보하거나 새로운 기능에 대한 아이디어를 제공할지도 모른다. 더 나아가서는 사용자들이 기여자가 되어 직접 개발에 참여하게 된다면 프로젝트는 또다시 성장이 가속화될 것이다.  
-![image4-1](./assets/4-1.png)
+![community-resource](./assets/community-resource.png)
 
 오픈소스로 공개하지 않은 내부 프로그램의 경우와 비교해본다면 다음과 같이 요약할 수 있을 것이다.
 - 훨씬 더 많은 사람들로부터 제공되는 피드백, 아이디어
@@ -1531,7 +1531,7 @@ Pull Request를 생성한 상태로 응답하지 않고 남겨두는 건 실례�
 
 #### 5. 인사팀: 직원이 입사할때 작성한 근로계약서, 비밀유지서약서 등에서 오픈소스 공개는 예외로 간주됨을 인지한다.
 모든 직원들은 기업에 입사하게되면 근로계약서를 작성해야한다. 소프트웨어 개발 직군은 아마 '업무중에 작성한 소스코드는 기업의 자산임', '기업에서 작성한 소스코드는 정해진 곳에만 게시함'이라는 내용의 동의서도 작성했을 것이다. 오픈소스로 공개하는 경우를 생각해보면 자칫 업무중에 작성한 기업의 자산을 외부의 서버에 게시하는 행위로 오해할 수 있는다. 하지만 실제로는 기업의 이름으로, 기업에서 정한 장소에 소스코드를 올린다는 점을 잘 설명할 필요가 있다.
-오픈소스를 공개하고 운영하는 데에는 적지않은 시간과 노력이 필요하다. 이 과정이 다른 직원들에게 '업무가 아닌 일'을 하는 것 처럼 비추어지지 않도록 균형을 잘 맞추어줄 필요가 있다. 예를 들면, 기업에서 공개한 오픈소스를 외부의 사람이 사용하다가 어떤 문제를 마주해 질문을 남겼다고 해보자. 그 질문에 대해서 꼭 메인테이너가 답장을 해줄 의무는 없지만, 고객을 잘 유지하는 것 또한 오픈소스에서는 필수적인 작업이기 때문에 대부분의 경우에는 답장을 하기 위해 시간을 쓰게 된다. 이런 경우에도 사실은 기업의 자산을 더욱 높은 품질로 발전시키는 일을 하는 것이기 떄문에 이 또한 업무의 범위에 포함된다는 공감대를 형성해야 한다. 이 공감대가 잘 형성되지 않을 경우에는 그 누구도 개인시간을 들여 기업의 오픈소스를 개발하려고 하지 않을 것이기 때문에 세심한 주의가 필요하다.
+오픈소스를 공개하고 운영하는 데에는 적지않은 시간과 노력이 필요하다. 이 과정이 다른 직원들에게 '업무가 아닌 일'을 하는 것 처럼 비추어지지 않도록 균형을 잘 맞추어줄 필요가 있다. 예를 들면, 기업에서 공개한 오픈소스를 외부의 사람이 사용하다가 어떤 문제를 마주해 질문을 남겼다고 해보자. 그 질문에 대해서 꼭 메인테이너가 답장을 해줄 의무는 없지만, 고객을 잘 유지하는 것 또한 오픈소스에서는 필수적인 작업이기 때문에 대부분의 경우에는 답장을 하기 위해 시간을 쓰게 된다. 이런 경우에도 사실은 기업의 자산을 더욱 높은 품질로 발전시키는 일을 하는 것이기 때문에 이 또한 업무의 범위에 포함된다는 공감대를 형성해야 한다. 이 공감대가 잘 형성되지 않을 경우에는 그 누구도 개인시간을 들여 기업의 오픈소스를 개발하려고 하지 않을 것이기 때문에 세심한 주의가 필요하다.
 
 #### 6. 홍보팀&마케팅팀: 공개한 오픈소스가 세상에 널리 알려지도록 노력한다.
 이제 오픈소스를 공개했다고 해보자. 사람들이 저절로 모여서 이 오픈소스를 구경하고 사용해보고 발전시켜줄 것인가? 냉정하게도 절대 그렇지 않다. 세상에 이런 오픈소스가 새로 탄생했다는 것을 꾸준히 알릴 필요가 있다. 소셜 네트워킹 서비스, 동영상, 기사, 블로그 등 다양한 매체를 통해 오픈소스의 기능을 설명해야 사용자들에게 인식이 될 것인데 이런 작업이 앞으로 꾸준히 있을 것이라는 내용을 홍보팀에서 인지해야한다.
@@ -1572,13 +1572,22 @@ CLA와 DCO에 대한 더욱 자세한 내용은 **기업을 위한 오픈소스 
 기업에서 처음 오픈소스를 공개하는 경우라면 GitHub 혹은 GitLab 등 인기있는 오픈소스 저장소에 기업 이름으로된 조직(Organization)을 생성할 수 있는지 확인해야한다. 미리 선점하는 사람이 우선이기 때문에 모든 절차중에서 가장 먼저 선점해놓는 것도 좋은 방법이다.
 라이브러리를 오픈소스로 공개하는 경우 사람들이 손쉽게 라이브러리를 사용할 수 있도록 패키지 저장소에 배포할 필요가 있다. 잘 알려진 패키지 저장소로는 Maven Central, NPM, PyPI 등 프로젝트 성격에 따라 다른데, 소스코드 저장소와 마찬가지로 Organization 개념으로 동작하는 경우가 많으므로 미리 권한을 얻어두자.
 
-### (작성예정)어떻게?:어떤 조건으로 공개할 것인가? 공개에 적합한 라이선스 후보군 정하기
+### 어떻게?:어떤 조건으로 공개할 것인가? 공개에 적합한 라이선스 후보군 정하기
 
-...
+오픈소스에 적용할 라이선스를 고르기 위해서는 다양한 상황과 우선순위를 고려해야한다. 
 
-## (작성중)문서화하기
+- 공개할 오픈소스가 제품에 포함되고, 제3자에게 이 제품이 배포되는 경우
+  - 이 오픈소스에 만약 Copyleft licesne를 적용한다고 해도 저작권자와 사용자(라이선스 의무사항을 지켜야할 사람)이 동일하므로 법적인 이슈가 생길 가능성은 없을 것이다. 하지만 커뮤니티에서는 제품의 소스코드 또한 공개하는 것을 기대할 수도 있다.
+  - 이 오픈소스에 만약 Permissive license를 적용한다면 제품에 포함될 법적 고지문에 라이선스와 저작권 표기를 추가하면 된다. 그러나 만약에 대비하여 제품에 포함된 다른 오픈소스들과의 호환성을 고려해볼 것을 추천한다. 
+- 공개할 오픈소스가 널리 사용되는 것이 최우선의 목표일 경우
+  - 사용자들의 진입 장벽을 낮추기 위해서는 Permissive license를 적용하는 것이 유리할 것이다. 
+  - 공개한 이후에 유지보수 계획도 없는 경우에는 Public domain, CC0, Unlicense 등 저작권을 포기하는 쪽도 고려해볼만 하다. (발표/데모에서 사용하는 code snippet 등)
+- 공개할 오픈소스의 변경 사항을 추적하는 것이 중요할 경우
+  - 만약 오픈소스 버전과 상용 버전으로 나누어 사업을 하는 경우에는 오픈소스의 변경을 추적하는 것이 중요할 것이다. 어떠한 제한을 두지 않는 경우에는 수익에 지장을 줄 수 있기 때문이다. 이런 경우에는 Copyleft license를 적용하는 편이 유리할 것이다. 물론 변경 사항 이외에 특허권 등을 두루 보호할 수 있는 라이선스를 선택해야한다. 
 
-오픈소스 공개를 위한 기반의 마지막 관문에 도착했다. 바로 명확한 문서 작성이다. 그동안 고민했던 왜? 누가? 언제? 어디서? 무엇을? 어떻게? 에 해당하는 내용을 이해하기 쉬운 문서로 작성한다. 특히 문서를 읽는 대상은 주로 오픈소스 공개를 신청하는 개발자들이 될 것이므로 개발자의 시점에 맞추서 작성하도록 한다. 문서에는 다음과 같은 내용이 들어가도록 한다.
+## 문서화하기
+
+오픈소스 공개를 위한 기반의 마지막 관문에 도착했다. 바로 명확한 문서 작성이다. 그동안 고민했던 왜? 누가? 언제? 어디서? 무엇을? 어떻게? 에 해당하는 내용을 이해하기 쉬운 문서로 작성한다. 특히 문서를 읽는 대상은 주로 오픈소스 공개를 신청하는 개발자들이 될 것이므로 개발자의 시점에 맞추서 작성하도록 한다. 문서에는 다음과 같은 내용이 들어가면 좋다.
 
 - [ ] 기업에서 오픈소스 공개를 하는 취지와 포부
 - [ ] 신청서 작성부터 공개까지 걸리는 전체 예상 시간과 과정
@@ -1586,8 +1595,8 @@ CLA와 DCO에 대한 더욱 자세한 내용은 **기업을 위한 오픈소스 
 - [ ] 오픈소스를 공개하기 위해 필요한 검토의 종류와 순서
 - [ ] 검토의 목적
 - [ ] 각 검토에 걸리는 예상 시간
-- [ ] 도움을 줄 수 있는 연락처
-- [ ] 오픈소스를 공개하기 전에 개발자들이 알아두면 좋을 내용(오픈소스를 위한 문서 작성, 필요하게 될 인프라 등)
+- [ ] 도움을 받을 수 있는 연락처
+- [ ] 오픈소스를 공개하기 전에 개발자들이 알아두면 좋을 내용(미래의 사용자를 위한 문서 작성, 필요하게 될 인프라 등)
 
 ### 오픈소스 공개 신청서
 
@@ -1598,10 +1607,11 @@ CLA와 DCO에 대한 더욱 자세한 내용은 **기업을 위한 오픈소스 
 - 공개 목적: 공개 목적이라는 항목에는 대부분 교과서에서 나올 법한 내용을 적는 경우가 많다. 이 항목을 적으면서 오픈소스 생태계에 기여한다는 의지를 더욱 다지게 될지도 모른다. 하지만 특수한 목적을 위해 공개하는 경우도 있다. 예를 들면 어떤 발표의 데모 코드를 공개하거나, 더 이상 유지보수되지 않는 다른 오픈소스를 fork하는 등 여러가지 이유가 있을 수 있다. 이 경우에는 오픈소스 운영 방침이 조금 달라질 수 있으므로 목적을 확인한다.
 - 유사 오픈소스와의 비교: 보통 코드를 작성하는 이유는 어떤 문제를 해결하기 위함이다. 그렇다면 그 문제를 그 개발자만 겪었는가? 이 세상 누군가도 똑같은 문제를 겪고나서 오픈소스로 공개했을지도 모르는 일이다. 따라서 이미 공개되어있는 다른 오픈소스와의 차별점을 명확히 하는 것이 좋다.
 - 로드맵: [언제?:언제 공개할 것인가? 공개 시점 정하기](#언제?:언제-공개할-것인가?-공개-시점-정하기) 에서 언급한 것 처럼 공개 이후에도 꾸준히 기능을 개선하는 등의 관리가 필요하다. 침체된 오픈소스로 사람들의 기억속에서 잊혀지기 전에 아주 간단한 계획이라도 고민해볼 필요가 있다.
+- 기술 평가 의견: 오픈소스 담당자가 기술적인 측면까지 모두 확인하기는 어렵다. 특히 이 오픈소스가 공개되었을 때 해당 분야의 사람들에게 받게될 평가가 어떨지는 그 분야의 사람들에게 들어본다면 좋을 것이다. 공개를 신청하는 개발자의 상위 리더로부터 받은 평가 의견이 있다면 프로젝트를 이해하고 홍보하는데 큰 도움이 될 것이다.  
 - 리소스 운영 계획: 로드맵이 있다면 개발자들도 깨닫게 될 것이다. 소스코드 공개에서 끝나는 것이 아니라 앞으로도 계속 꾸준히 시간을 들여야한다는 것! 현실적으로 생각했을 때 리소스 운영 계획은 앞으로 다른 업무에 매우 의존적으로 결정될 것이다. 따라서 구체적인 계획을 세우기보다는 앞으로 이 오픈소스도 잊지 않고 계속해서 시간을 할애할 것을 인지할 수 있도록 한다.
 
 
-## (작성중)공개하기
+## 공개하기
 
 드디어! 누군가가 신청서를 제출했다고 가정해보자. 우선 신청서 양식이 빠짐없이, 항목의 목적에 따라 잘 작성이 되었는지 확인한다. 그리고 절차에 따라 검토를 진행한다. 오픈소스 담당자는 검토가 순서와 일정에 따라 잘 진행되고 있는지, 혹시 변수는 없는지 확인하고 챙긴다.
 
@@ -1609,42 +1619,127 @@ CLA와 DCO에 대한 더욱 자세한 내용은 **기업을 위한 오픈소스 
 
 신청서 양식의 항목에는 알고자 하는 내용이 있을 것이다. 혹시 신청서에서 의도와 다른 내용이 있거나 빠진 내용은 없는지 확인한다.
 
-### 검토 진행
+### 검토
 
-위에서 정한 검토 단계에 따라 진행한다. 신청자가 직접 검토를 요청하는 경우에는 그 방법을 안내한다. 혹은 신청서를 보고 오픈소스 공개 담당자가 각각 검토를 요청할 수도 있다. 누거 검토를 신청하든 오픈소스 담당자는 검토가 일정에 따라 잘 진행되고 있는지, 어떤 변수는 없는지 확인한다.
+문서에서 이미 서술한 검토 단계에 따라 진행한다. 오픈소스 담당자는 검토가 일정에 따라 잘 진행되고 있는지, 어떤 변수는 없는지 확인한다.
 
-- 기술/리소스 리뷰 - 개발팀 리더
-- 신청서 확인
-- 리뷰 받기
-- 웹사이트 제작 여부: 오픈소스의 사용법 등을 담은 문서를 단순하게 markdown으로 작성할 수도 있지만 조금더 시간을 들여 웹사이트를 제작할 수도 있다. 웹사이트가 있는 경우에는 방문자 추척을 할 수 있기 때문에 조금더 심화된 마케팅까지 진행이 가능하다. 프로젝트의 규모에 따라 웹사이트 제작을 고려한다.
-- 커뮤니케이션 방법: Issue tracker를 이용해서 사용자들과 소통할 수 있겠지만 사람들은 Issue tracker를 질의응답의 수단으로 잘 생각하지 않는다. 조금 더 가볍게 소통할 수 있도록 [Slack](https://slack.com/intl/ko-kr) <sup>(32)</sup> 이나 [Gitter](https://gitter.im) <sup>(33)</sup>등 커뮤니케이션 수단을 마련할 수도 있다. 역시 프로젝트의 규모에 따라 고려한다.
-- 오픈소스 기본 형식 문서 추가
-  - LICENSE
-  - 코드에 저작권 주석 추가
-  - CODE_OF_CONDUCT
-  - CONTRIBUTING
-  - CLA / DCO
-- CLA를 관리하는 도구와 관리 운영 사례는 다음을 참고한다.
-  - [CLA assistant](https://github.com/cla-assistant/cla-assistant) <sup>(34)</sup>
-  - [cla-bot](https://colineberhardt.github.io/cla-bot) <sup>(35)</sup>
-  - [Google Developers Contributor License Agreements](https://cla.developers.google.com/clas) <sup>(36)</sup>
-  - [Microsoft Contributor License Agreement](https://cla.opensource.microsoft.com) <sup>(37)</sup>
-- 코드 옮기기
-  - commit 이력 정리, private으로 옮기고, description 작성, tag 추가, 멤버 권한 설정, 배포 설정
-- 코드 공개
+### 공개 준비
 
-## (작성예정)공개만 하면 끝인가요? 그 이후에 해야할 일
+검토를 모두 마쳤다면 이론적으로는 공개의 준비를 마친 셈이다. 이제는 진짜로 소스코드를 밖으로 내놓기 위해 해야할 것들을 설명한다. GitHub과 GitLab을 기준으로 참고 링크를 덧붙였다. 
 
-'커뮤니티 활성화' 라고 쓰고 '홍보'라고 읽는다. 마케팅!
+1. 오픈소스 기본 형식 문서 추가
 
-- 소통하기
-- 사용자 늘리기
-- 기여자 늘리기
-- 개발자들과의 관계 유지하기
-- 성과 측정하기
-- 다음 프로젝트 물색하기 사내 교육, 홍보 등을 통해 또 새로운 오픈소스가 공개될 수 있도록 분위기 조성
+오픈소스를 구성하는 기본 형식 문서에 대한 자세한 설명은 _개발자를 위한 오픈소스 기여 가이드 - 오픈소스 프로젝트는 어떤 문서를 제공하는가?_ 를 참고한다.
 
-## (작성예정)요약
+- [ ] LICENSE
+- [ ] 코드 상단의 저작권 주석
+- [ ] CODE_OF_CONDUCT
+- [ ] CONTRIBUTING
+- [ ] CLA / DCO
+
+CLA를 관리하는 도구와 관리 운영 사례는 다음을 참고한다.
+
+- [CLA assistant](https://github.com/cla-assistant/cla-assistant) <sup>(32)</sup>
+- [cla-bot](https://colineberhardt.github.io/cla-bot) <sup>(33)</sup>
+- [Google Developers Contributor License Agreements](https://cla.developers.google.com/clas) <sup>(34)</sup>
+- [Microsoft Contributor License Agreement](https://cla.opensource.microsoft.com) <sup>(35)</sup>
+
+오픈소스의 기본 형식 문서들이 모두 마련되었는지 확인해주는 도구도 있으니 참고한다.
+
+- [Repolinter](https://github.com/todogroup/repolinter)<sup>(36)</sup>
+
+2. 저장소 생성, 멤버 권한 설정
+
+검토 과정에서 정해진 이름으로 비공개 저장소를 생성한다. 개발에 필요한 멤버들의 username을 취합하고 비공개 저장소에 접근 권한을 부여한다. Description과 Topics를 추가하면 오픈소스의 개요를 더 간략하게 표현할 수 있다.
+
+- [GitHub - 저장소 생성하기](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-new-repository)<sup>(37)</sup>
+- [GitHub - 접근 권한 설정하기](https://docs.github.com/en/github/administering-a-repository/managing-teams-and-people-with-access-to-your-repository)<sup>(38)</sup>
+- [GitHub - Topics 추가하기](https://docs.github.com/en/github/administering-a-repository/classifying-your-repository-with-topics#adding-topics-to-your-repository)<sup>(39)</sup>
+- [GitLab - 저장소 생성하기](https://docs.gitlab.com/ee/user/project/working_with_projects.html#create-a-project)<sup>(40)</sup>
+- [GitLab - 접근 권한 설정하기](https://docs.gitlab.com/ee/user/project/settings/index.html#sharing-and-permissions)<sup>(41)</sup>
+- [GitLab - 저장소의 Description과 Topics 추가하기](https://docs.gitlab.com/ee/user/project/settings/#general-project-settings)<sup>(42)</sup>
+
+3.  코드 이전
+
+코드를 옮기기 전에 commit 이력을 모두 공개할 것인지, 삭제할 것인지 정해야한다. 하지만 검토 과정에서 보안 권고에 따라, 혹은 명칭을 변경하는 등 코드가 수정되었다면 commit 이력을 공개하지 않는 것이 안전하다. 
+
+4. 배포 설정
+
+소스코드를 공개한 이후에 패키지 배포까지 생각하고 있는 경우에는 배포를 어떻게 할지 정해야한다. 패키지 저장소마다 사용 방법이 다르니 다음을 참고한다. 
+
+- [Maven Central - Artifacts 배포하기](https://dzone.com/articles/publish-your-artifacts-to-maven-central)<sup>(43)</sup>
+- [npm - scoped public packages 배포하기](https://docs.npmjs.com/creating-and-publishing-scoped-public-packages)<sup>(44)</sup>
+- [pypi - Python 프로젝트를 packaging하고 배포하기](https://packaging.python.org/tutorials/packaging-projects/#packaging-python-projects)<sup>(45)</sup>
+
+### 공개
+
+더이상 설정하고 확인할 것이 없다면 이제 비공개 저장소를 공개 저장소로 전환한다. 
+
+- [GitHub - 공개 저장소로 전환하기](https://docs.github.com/en/github/administering-a-repository/setting-repository-visibility#changing-a-repositorys-visibility)<sup>(46)</sup>
+
+- [GitLab - 공개 저장소로 전환하기](https://docs.gitlab.com/ee/public_access/public_access.html#how-to-change-project-visibility)<sup>(47)</sup> 
+
+## 공개만 하면 끝인가요? 그 이후에 해야할 일
+
+소스코드를 공개하기까지 참 여러 사람의 손길을 거쳐왔지만 아직은 오픈소스를 만들었다고 이야기하기는 이르다. 지금까지는 사람들이 저장소에 방문 했을 때 가장 먼저 보이는 부분을 잘 포장하여 첫인상을 만들었다고 볼 수 있다. 그렇다면 단순히 공개되어있는 소스코드에서 사랑받는 오픈소스로 거듭나기 위해서는 어떻게 해야할까? 앞으로의 과정이 정말 정말! 중요하다. 앞으로는 커뮤니티를 활성화하고 오픈소스를 성장시키는 과정에 대해 알아본다. 
+
+### 소통하기
+
+ 현 상태에서 가장 먼저 보이는 문제는 무엇일까? 일단 사람들이 이런 오픈소스가 세상에 있다는 것을 모른다는 것이다. 세상에 새로운 오픈소스가 탄생했다는 것을 적극적으로 알리자. 
+
+#### 소셜 미디어
+
+만약 회사를 대표하는 소셜 미디어 계정이 있다면 새로운 오픈소스의 공개 소식을 알리자. 개발자들을 타겟으로 한 개발자 전용 계정이 있다면 더욱 좋다. 
+
+![twitter-line](./assets/twitter-line.png)
+
+<sup>(48)</sup>
+
+ ![twitter-facebook](./assets/twitter-facebook.png)
+
+<sup>(49)</sup>
+
+![twitter-twitter](./assets/twitter-twitter.png)
+
+<sup>(50)</sup>
+
+#### 기술 블로그
+
+회사에 기술 블로그가 있는가? 기술 블로그에서는 이 오픈소스를 이용해서 어떤 문제를 해결했는지, 주요 기능은 무엇이 있는지 등을 더 자세히 이야기할 수 있다. 
+
+- 오픈소스의 기능을 소개하는 블로그 글: [LINE 기술 블로그 - Armeria의 서킷 브레이커 사용해 보기](https://engineering.linecorp.com/ko/blog/try-armeria-circuit-breaker/)<sup>(51)</sup>
+- 오픈소스의 신규 버전 릴리즈 소식을 전하는 블로그 글:[TOAST UI 기술블로그 - TOASI UI Chart 4.0가 출시되었습니다!](https://ui.toast.com/weekly-pick/ko_20210126)<sup>(52)</sup>
+- 신규 오픈소스 공개 소식을 전하는 블로그 글: [Airbnb Engineering blog - Introducing visx from Aribnb](https://medium.com/airbnb-engineering/introducing-visx-from-airbnb-fd6155ac4658)<sup>(53)</sup>
+
+#### 웹사이트 제작
+
+오픈소스의 사용법 등을 담은 문서를 단순하게 markdown으로 작성할 수도 있지만 조금더 시간을 들여 웹사이트를 제작할 수도 있다. 웹사이트가 있는 경우에는 방문자 추척을 할 수 있기 때문에 조금더 심화된 마케팅까지 진행이 가능하다. 프로젝트의 규모에 따라 웹사이트 제작을 고려한다.
+
+#### 다양한 커뮤니케이션 수단
+
+Issue tracker를 이용해서 사용자들과 소통할 수 있겠지만 사람들은 Issue tracker를 질의응답의 수단으로 잘 생각하지 않는다. 조금 더 가볍게 소통할 수 있도록 [Slack](https://slack.com/intl/ko-kr) <sup>(54)</sup> 이나 [Gitter](https://gitter.im) <sup>(55)</sup>등 가벼운 커뮤니케이션을 위한 도구를 사용할 수도 있다. 역시 프로젝트의 규모에 따라 고려한다.
+
+### 사용자 늘리기
+
+이 오픈소스가 존재한다는 것을 사람들에게 전하긴 했지만 실제로 사용자는 늘지 않을 수도 있다. 다시 사용자의 관점으로 돌아가서 어떤 오픈소스를 채택하기까지 고려해야할 사항들을 다시 한 번 확인해보자. (_오픈소스 사용 가이드 - 개발자편: 오픈소스 선택 기준_ 에서 자세히 다루고 있다.) 이를 역으로 이용해보면 다음과 같다. 
+
+- 많이 쓰이고 있는 오픈소스인가? ☞ 사내에서 이미 적용하고 있는 유즈 케이스를 보여준다. 이후 사용자가 생길 때마다 유즈 케이스를 공유할 수 있도록 독려한다. 
+-  팀에서 오픈소스를 배우는데 어렵진 않은가? ☞ 쉽게 읽고 따라할 수 있는 문서를 제공한다.
+-  유지보수가 잘 되고 있는가? ☞ 꾸준히 기능을 개선한다. 사용자들의 의견에 귀를 기울이고 반영하도록 노력한다. 
+-  유사 오픈소스와의 차이점은 무엇인가? (얼마나 효율적인가?) ☞ 이 오픈소스만의 특장점을 설명한다. 
+-  커뮤니티는 활성화되어 있는가? ☞ 사람들의 참여를 독려하고 커뮤니티를 형성할 수 있도록 분위기를 조성한다. 
+
+
+
+### (작성 예정)기여자 늘리기
+
+
+
+## 다음 프로젝트 준비하기
+
+
+
+## 요약
 
 ...
 
@@ -1711,14 +1806,50 @@ CLA와 DCO에 대한 더욱 자세한 내용은 **기업을 위한 오픈소스 
 (29) Apache, Software Foundation Contributor License Agreement https://www.apache.org/licenses/contributor-agreements.html
 (30) Cloud Native Computing Foundation Contributor License Agreement https://github.com/kubernetes/community/blob/master/CLA.md
 (31) Python Software Foundation Contributor Agreement https://www.python.org/psf/contrib
-(32) Slack https://slack.com/intl/ko-kr
-(33) Gitter https://gitter.im
-(34) CLA assistant https://github.com/cla-assistant/cla-assistant
-(35) cla-bot https://colineberhardt.github.io/cla-bot
-(36) Google Developers Contributor License Agreements https://cla.developers.google.com/clas
-(37) Microsoft Contributor License Agreement https://cla.opensource.microsoft.com
 
+(32) CLA assistant https://github.com/cla-assistant/cla-assistant
+(33) cla-bot https://colineberhardt.github.io/cla-bot
+(34) Google Developers Contributor License Agreements https://cla.developers.google.com/clas
+(35) Microsoft Contributor License Agreement https://cla.opensource.microsoft.com
 
+(36) Repolinter, The Open Source Repository Linter https://github.com/todogroup/repolinter
+
+(37) GitHub Docs, Creating a new repository https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-new-repository
+
+(38) GitHub Docs, Managing teams and people with access to your repository https://docs.github.com/en/github/administering-a-repository/managing-teams-and-people-with-access-to-your-repository
+
+(39) GitHub Docs, Adding topics to your repository https://docs.github.com/en/github/administering-a-repository/classifying-your-repository-with-topics#adding-topics-to-your-repository
+
+(40) GitLab Docs, Create a project https://docs.gitlab.com/ee/user/project/working_with_projects.html#create-a-project
+
+(41) GitLab Docs, Sharing and permissions https://docs.gitlab.com/ee/user/project/settings/index.html#sharing-and-permissions
+
+(42) GitLab Docs, General project settings https://docs.gitlab.com/ee/user/project/settings/#general-project-settings
+
+(43) DZone, How to Publish Your Artifacts to Maven Central https://dzone.com/articles/publish-your-artifacts-to-maven-central
+
+(44) npm Docs, Creating and publishing scoped public packages https://docs.npmjs.com/creating-and-publishing-scoped-public-packages
+
+(45) Python Packaging User Guide, Packaging Python Projects https://packaging.python.org/tutorials/packaging-projects/#packaging-python-projects
+
+(46) GitHub Docs, Changing a repository's visibility https://docs.github.com/en/github/administering-a-repository/setting-repository-visibility#changing-a-repositorys-visibility
+
+(47) GitLab Docs, How to change project visibility https://docs.gitlab.com/ee/public_access/public_access.html#how-to-change-project-visibility
+
+(48) LINE Developers Twitter https://twitter.com/line_developers/status/1330773983873011712?s=20
+
+(49) Facebook Open Source Twitter https://twitter.com/fbOpenSource/status/1356301287026028552?s=20
+
+(50) Twitter Open Source Twitter https://twitter.com/TwitterOSS/status/1301557895541133313?s=20
+
+(51) LINE Engineering, Armeria의 서킷 브레이커 사용해 보기 https://engineering.linecorp.com/ko/blog/try-armeria-circuit-breaker/
+
+(52) TOAST UI, TOASI UI Chart 4.0가 출시되었습니다! https://ui.toast.com/weekly-pick/ko_20210126
+
+(53) Airbnb Engineering & Data Science, Introducing visx from Aribnb https://medium.com/airbnb-engineering/introducing-visx-from-airbnb-fd6155ac4658
+
+(54) Slack https://slack.com/intl/ko-kr
+(55) Gitter https://gitter.im
 
 # 참고문헌
 * TODO Guide, Participating in open source communities https://todogroup.org/guides/participating/
