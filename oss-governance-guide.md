@@ -1789,9 +1789,9 @@ Issue tracker를 이용해서 사용자들과 소통할 수 있겠지만 사람�
 
 개발자 개인의 입장에서 오픈소스를 공개하면 왜 좋은지에 대해서 공감을 했다면 오픈소스 공개에 도전하는 마음가짐은 완성이다. 그러나 아무리 공개 과정을 설명하는 문서가 읽기 쉬운 글로 작성이 되어있다고 하더라도 어디서부터 무엇을 고민해야할지 잘 감이 안올 수도 있다. 이번 장에서는 기업의 일원이 오픈소스 공개를 결심하고 운영하는 과정의 전반에 걸쳐서 미리 알고 있으면 좋을 팁을 정리한다. 
 
-## 새로운 도전을 시작하기 전에 알면 좋을 팁
+## 오픈소스 공개를 준비하기
 
-### 기업에 도움이 되는 오픈소스라고 판단하는 기준을 살펴보기 
+### 기업의 입장에서 오픈소스를 판단하는 기준을 생각해보기 
 
 그동안 오픈소스를 공개하면 좋은 점에 대해서 장대하게 설명했지만 사실 어떤 오픈소스를 공개하느냐도 빠질 수 없는 성공의 요소이다. "우리 기업에서 왜 이 프로젝트를 오픈소스로 공개해야하나요?" 라는 질문에 대답하기 위해서는 다음을 미리 고민해보면 도움이 된다.
 
@@ -1803,11 +1803,7 @@ Issue tracker를 이용해서 사용자들과 소통할 수 있겠지만 사람�
 - 프로젝트가 지속 가능한가?
   - 공개 이후 중장기적으로 지속해서 발전할 수 있는 프로젝트인가? 단순 공개에서 그치진 않을 것인가?
 
-### 공개 이후 운영 계획에 대해 생각해보기
-
-
-
-## 공개를 준비할 때 알면 좋을 팁
+### (작성 예정) 공개 이후 운영 계획에 대해 생각해보기
 
 ### 오픈소스 운영에 필요한 도구 탐색하고 공부하기
 
@@ -1821,9 +1817,67 @@ Issue tracker를 이용해서 사용자들과 소통할 수 있겠지만 사람�
 
 ### `README.md` 작성 요령
 
-### `CONTRIBUTING.md` 작성 요령
+`README.md`는 오픈소스의 표지이다. 저장소에 방문한 모든 사람들에게 가장 먼저 보이는 문서이기 때문이다. 모든 방문자들에게 알리고 싶은 내용을 쓰거나 방문자들이 궁금해할 만한 내용을 적어야 한다. 하지만 분량이 너무 길 경우 사람들이 읽지 않고 지나쳐버리는 경우도 있으므로 적당한 분량을 유지한다. 잘 쓴 README의 형식은  [Make a README](https://www.makeareadme.com)<sup>(62)</sup>에 정리되어 있다. (본문 일부 발췌 및 번역)
 
-## 공개 이후에 알면 좋을 팁
+> #### Name
+>
+> 프로젝트를 잘 설명하는 이름을 선택하고 적는다.
+>
+> #### Description
+>
+> 프로젝트가 무엇을 하는지 설명한다. 방문자들에게 익숙하지 않을 것 같은 개념은 레퍼런스 링크를 추가해둔다. 특징이나 프로젝트의 탄생 배경을 나열해도 좋다. 만약 유사 프로젝트가 있다면 강조하고 싶은 차이점을 나열해도 좋다. 
+>
+> #### Badges
+>
+> 다른 README를 보면 특정 정보를 전달하는 작은 이미지들이 나열된 것을 본 적이 있을 것이다. 이 이미지들은 테스트가 통과되었는지 아닌지를 나타내기도 한다. [Shields](https://shields.io)<sup>(63)</sup> 를 이용하여 배지를 만들 수 있다. 
+>
+> #### Visuals
+>
+> 무엇을 만들든지 스크린숏이나 비디오를 첨부하는 것이 좋다. GIF 형식이 더 많이 이용된다. [ttygif](https://github.com/icholy/ttygif)<sup>(64)</sup>를 활용하거나 더 정교한 작업을 위해서는 [Asciinema](https://asciinema.org)<sup>(64)</sup>도 참고할만하다. 
+>
+> #### Installation
+>
+> [Yarn](https://yarnpkg.com)<sup>(65)</sup>, [NuGet](https://www.nuget.org)<sup>(66)</sup>, 혹은 [Homebrew](https://brew.sh)<sup>(67)</sup>와 같이 특정 생태계 안에서 설치하는 대중적인 방법이 있을 수도 있다. 그러나 이 README를 읽는 사람들이 아주 초심자일 경우를 위해 조금 더 상세한 가이드를 제공하기를 추천한다. 각 단계를 명확하게 나열하는 것은 모호함을 제거하고 사람들이 빠르게 프로젝트를 사용해 볼 수 있도록 한다. 만약 특정 버전의 프로그래밍 언어나 운영체제에서 실행할 수 있는 경우, 혹은 의존성들을 수작업으로 설치해야 하는 경우라면 **Requirements** 라는 소 목차를 추가하는 것이 좋다.
+>
+> #### Usage
+>
+> 예시를 충분히 보여주고 예상되는 결과를 보여준다. 정교한 예시들을 README에 모두 나열하지 못해서 링크로 제시하는 것보다 직접 실행해볼 수 있는 가장 작은 단위의 예시를 제공하는 것이 더 낫다. 
+>
+> #### Support
+>
+> 사람들이 도움을 구할 수 있는 방법을 제시한다. 이슈 트래커가 될 수도 있고 채팅이나 이메일 등이 될 수도 있다.
+>
+> #### Roadmap
+>
+> 앞으로의 배포에 대한 어떤 아이디어가 있다면 README에 나열하는 것이 좋다. 
+>
+> #### Contributing
+>
+> 만약 다른 사람의 기여를 받아들일 의향이 있다면 기여를 제출하기 전에 따라야 할 것을 설명한다. 
+>
+> 프로젝트를 직접 변경하고 싶어하는 사람들을 위해서는 어디서부터 시작해야 할지를 설명하는 문서를 제공하는 것이 도움이 된다. 혹은 실행해야 하는 스크립트나 환경 변수 설정에 대한 내용이 들어갈 수도 있다. 모든 단계를 명확히 나열한다. 이 설명들은 미래의 자신에게도 도움이 될 수도 있다. 
+>
+> [코드를 정렬(lint the code)](https://stackoverflow.com/questions/8503559/what-is-linting)<sup>(68)</sup>하거나 [테스트를 실행(run tests)](https://en.wikipedia.org/wiki/Test_automation)<sup>(69)</sup>하기 위한 명령에 대해서도 문서로 남기는 것도 좋다. 이 단계들은 높은 품질의 코드를 유지할 수 있도록 도와주고 변경한 내용이 의도치 않게 어떤 것을 망가트릴 가능성을 줄여준다. 예를 들면 브라우저에서 테스트를 하기 위해 [Selenium](https://selenium.dev)<sup>(70)</sup> 서버를 사용해야하는 상황처럼 테스트를 실행하기 위해서 외부 설정이 필요하다면, 이를 위한 설명이 특히나 도움이 될 것이다. 
+>
+> #### Authors and acknowledgment
+>
+> 이 프로젝트에 기여한 사람들에게 감사를 표시한다.
+>
+> #### License
+>
+> 오픈소스 프로젝트라면 [어떤 라이선스를 적용했는지](https://www.makeareadme.com/#license-1)<sup>(71)</sup> 표시한다.
+>
+> #### Project status
+>
+> 만약 이 프로젝트를 위해 쏟을 시간이나 여력이 더 이상 없다면 README에 개발이 느릴 수 있다거나 혹은 아예 더 이상 개발을 하지 않는다는 메모를 남긴다. 누군가가 이 프로젝트를 fork하거나, 메인테이너/오너로 자원해서 프로젝트를 유지할 수도 있다. 메인테이너를 위한 명시적인 요청을 남길 수도 있다.
+
+이 모든 내용을 다 적으면 좋겠지만 상황에 따라 적절히 생략하거나 추가한다. 
+
+잘 작성된 README의 예시들은 [Awesome README](https://github.com/matiassingers/awesome-readme)<sup>(72)</sup>에서 확인할 수 있다. 
+
+### (작성예정)`CONTRIBUTING.md` 작성 요령
+
+## (작성예정)오픈소스 운영하기
 
 ### Issue tracker 활용 best practice
 
@@ -1924,6 +1978,32 @@ Issue tracker를 이용해서 사용자들과 소통할 수 있겠지만 사람�
 (60) Pull Panda https://pullpanda.com
 
 (61) Dependabot https://dependabot.com
+
+(62) Make a README https://www.makeareadme.com
+
+(63) Shields https://shields.io
+
+(64) ttygif https://github.com/icholy/ttygif
+
+(65) Asciinema https://asciinema.org
+
+(65) Yarn https://yarnpkg.com
+
+(66) NuGet https://www.nuget.org
+
+(67) Homebrew https://brew.sh
+
+(68) Stack Overflow, What is "Linting"? https://stackoverflow.com/questions/8503559/what-is-linting
+
+(69) Wikipedia, Test automation https://en.wikipedia.org/wiki/Test_automation
+
+(70) Selenium https://selenium.dev
+
+(71) Make a README, License https://www.makeareadme.com/#license-1
+
+(72) Awesome README, https://github.com/matiassingers/awesome-readme
+
+
 
 # 참고문헌
 * TODO Guide, Participating in open source communities https://todogroup.org/guides/participating/
