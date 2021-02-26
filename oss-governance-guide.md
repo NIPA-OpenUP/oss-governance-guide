@@ -524,7 +524,9 @@ Apache 2.0 License의 예
 
 ![kakao-notice](assets/kakaoNotice.png)
 
-
+#### LG 예
+https://opensource.lge.com  
+![lg-notice](assets/lgNotice.png)
 
 
 ## 오픈소스의 보안 취약성
