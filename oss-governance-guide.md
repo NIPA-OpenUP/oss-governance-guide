@@ -447,6 +447,86 @@ Gartner의 [Technology Insight for Software Composition Analysis](https://www.ga
   ClearlyDefined는 오픈소스 데이터베이스를 제공하여 사용자가 오픈소스의 출처, 라이선스 등의 정보를 확인할 수 있게 한다. 또한 정보의 오류가 있다면 사용자가 자발적으로 데이터를 개선할 수 있게 하여 커뮤니티 기반의 신뢰성 있는 오픈소스 데이터베이스 구축을 가능하게 한다.
 
 
+## 오픈소스 고지사항
+오픈소스 라이선스는 공통적으로 저작권 고지와 라이선스 사본 첨부 의무를 갖는다. 따라서 오픈소스를 사용하였다면, 해당 오픈소스의 저작권과 라이선스 사본을 고지하여 의무사항을 준수해야 한다. 여기서는 고지문과 관련된 내용을 살펴보도록 한다.
+
+### 저작권 고지
+소스 코드의 저작권 고지는 일반적으로 "copyright" 라는 단어를 포함하여 연도와 저작권자 혹은 회사명을 포함하는 문장열로 이루어진다. 이러한 고지는 저작물에 대한 저작권이 있음을 잠재적인 사용자에게 알려 주게 하며, 저작권 소유자를 식별하는데 필요하다. 오픈소스에 따라 저작권자 뿐만 아니라 특허가 있을 경우, 특허 소유자, 오픈소스 기여자들을 표시하기도 한다. 연도는 일반적으로 최초 게시된 연도를 의미하며, 저작권 보호 기간을 결정하는데 사용될 수 있도록 저작권 기간을 의미하기도 한다.    
+
+> Copyright (C) year1, year2, year3 저작권 보유자
+
+### 라이선스 고지 (사본 첨부)
+많은 오픈소스 라이선스는 사용한 오픈소스의 라이선스를 명시하고 라이선스 사본을 첨부하여, 오픈소스 사용자들이 오픈소스에 관한 권리를 잘 이해할 수 있도록 제공하도록 요구하고 있다.
+
+Apache 2.0 License의 예
+> 1. You must give any other recipients of the Work or Derivative Works a copy of this License.  
+>    저작물이나 파생 저작물을 양도받는 모든 사람에게 본 라이선스의 사본을 제공해야 한다.
+
+### 수정내용 고지
+Apache 2.0, MPL, GPL 2.0, GPL 3.0 등의 라이선스는 소스코드 수정시 수정내용을 고지할 것을 요구한다. 수정한 사람, 수정 일자 등 수정에 관한 내용도 포함하도록 함으로써 원본과 구별이 되어야 한다.  
+
+Apache 2.0 License의 예
+> 2. You must cause any modified files to carry prominent notices stating that You changed the files.  
+>    수정된 파일에 대해서는 수정을 했다는 사실을 설명하는 명확한 안내문구를 첨부해야 한다.
+
+### 고지 방법
+오픈소스 사용시 고지의무는 라이선스에 따라 고지 방법이 세부적으로 나와 있기도 하다. 대표적인 라이선스인 Apache 2.0의 경우, LICENSE와 NOTICE 파일을 두고, 라이선스 및 저작권 고지 등의 고지사항을 포함할 것을 안내하고 있다. <sup>(56)</sup>  
+
+#### Apache Royale 프로젝트<sup>(57)</sup>의 예
+> Apache Royale  
+> Copyright 2020 The Apache Software Foundation  
+>
+> This product includes software developed at  
+> The Apache Software Foundation (http://www.apache.org/).  
+>
+> The Initial Developer of some parts of the framework, which are copied from, derived from, or  
+> inspired by Adobe Flex (via Apache Flex), is Adobe Systems Incorporated (http://www.adobe.com/).  
+> Copyright 2003 - 2012 Adobe Systems Incorporated. All Rights Reserved.  
+>
+> The Initial Developer of the examples/mxroyale/tourdeflexmodules,  
+> is Adobe Systems Incorporated (http://www.adobe.com/).  
+> Copyright 2009 - 2013 Adobe Systems Incorporated. All Rights Reserved.  
+>  
+> The ping sound effect (ping.mp3) in  
+> examples/mxroyale/tourdeflexmodules/src/mx/effects/assets  
+> was created by CameronMusic. (http://www.freesound.org/people/cameronmusic/sounds/138420/)  
+ 
+#### Apache Hive 프로젝트<sup>(58)</sup>의 예    
+
+1. /NOTICE
+> Apache Hive  
+> Copyright 2008-2018 The Apache Software Foundation  
+>  
+> This product includes software developed by The Apache Software  
+> Foundation (http://www.apache.org/).  
+>  
+> This project includes software licensed under the JSON license.  
+
+2. /LICENSE : Pointer 방식으로 고지  
+>   For the SQLLine package:  
+> 
+> Copyright (c) 2002, 2003, 2004, 2005 Marc Prud'hommeaux  
+> From: http://sqlline.sourceforge.net/#license  
+> "SQLLine is distributed under the BSD License, meaning that you are free to redistribute, modify, or sell the software with almost no restrictions."  
+>
+> Statement from Marc Prud'hommeaux regarding inconsistent licenses in some SQLLine source files:  
+>
+> SQLLine was once GPL, but it was changed to be BSD a few years back.  
+> Any references to the GPL are vestigial. Hopefully the license  
+> declaration at http://sqlline.sourceforge.net/#license is sufficiently  
+> authoritative in this regard.  
+   
+   
+3. /binary-package-licenses/** : 바이너리 파일에 포함된 오픈소스 라이선스와 저작권 고지
+
+
+#### 카카오톡의 예
+
+![kakao-notice](assets/kakaoNotice.png)
+
+
+
+
 ## 오픈소스의 보안 취약성
 ### 오픈소스의 보안 취약성 현황
 Sonatype의 [소프트웨어 공급망 현황 보고서(2020)](https://www.sonatype.com/2020ssc) <sup>(12)</sup> 에 따르면 오픈소스를 겨냥한 차세대 사이버 공격도 작년보다 430%나 증가하였으며, 응용프로그램에서 사용되는 오픈소스 구성요소의 11%가 알려진 취약점을 가지고 있다고 한다. 가장 일반적인 공격 유형은 Typosquatting 이며, 이는 오픈소스를 검색할 때 단순한 오타를 유도하는 공격 방식으로 개발자가 "lodash"의 이름을 가진 오픈소스를 사용하려고 할 때 "lodahs"와 같은 유사한 이름의 악성 컴포넌트를 미리 등록해두어 설치하게 만드는 방식이다. 또 다른 방식으로는 프로젝트 관리자로부터 자격 증명을 가로채 악성 코드를 심는 방식 등 다양한 수단을 통해 이뤄지고 있다.
@@ -1829,6 +1909,9 @@ Issue tracker를 이용해서 사용자들과 소통할 수 있겠지만 사람�
 (53) Airbnb Engineering & Data Science, Introducing visx from Aribnb https://medium.com/airbnb-engineering/introducing-visx-from-airbnb-fd6155ac4658  
 (54) Slack https://slack.com/intl/ko-kr  
 (55) Gitter https://gitter.im  
+(56) Apache, Assembling LICENSE and NOTICE files https://infra.apache.org/licensing-howto.html
+(57) Apache, Hive Project GitHub https://github.com/apache/hive
+
 
 # 참고문헌
 * TODO Guide, Participating in open source communities https://todogroup.org/guides/participating/
