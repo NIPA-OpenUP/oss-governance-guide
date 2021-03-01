@@ -516,6 +516,88 @@ SPDX(Software Package Data  소프트웨어 정보 교환 방식을 표준화하
 ClearlyDefined는 오픈소스 데이터베이스를 제공하여 사용자가 오픈소스의 출처, 라이선스 등의 정보를 확인할 수 있게 한다. 또한 정보의 오류가 있다면 사용자가 자발적으로 데이터를 개선할 수 있게 하여 커뮤니티 기반의 신뢰성 있는 오픈소스 데이터베이스 구축을 가능하게 한다.
 
 
+## 오픈소스 고지사항
+오픈소스 라이선스는 공통적으로 저작권 고지와 라이선스 사본 첨부 의무를 갖는다. 따라서 오픈소스를 사용하였다면, 해당 오픈소스의 저작권과 라이선스 사본을 고지하여 의무사항을 준수해야 한다. 여기서는 고지문과 관련된 내용을 살펴보도록 한다.
+
+### 저작권 고지
+소스 코드의 저작권 고지는 일반적으로 "copyright" 라는 단어를 포함하여 연도와 저작권자 혹은 회사명을 포함하는 문장열로 이루어진다. 이러한 고지는 저작물에 대한 저작권이 있음을 잠재적인 사용자에게 알려 주게 하며, 저작권 소유자를 식별하는데 필요하다. 오픈소스에 따라 저작권자 뿐만 아니라 특허가 있을 경우, 특허 소유자, 오픈소스 기여자들을 표시하기도 한다. 연도는 일반적으로 최초 게시된 연도를 의미하며, 저작권 보호 기간을 결정하는데 사용될 수 있도록 저작권 기간을 의미하기도 한다.    
+
+> Copyright (C) year1, year2, year3 저작권 보유자
+
+### 라이선스 고지 (사본 첨부)
+많은 오픈소스 라이선스는 사용한 오픈소스의 라이선스를 명시하고 라이선스 사본을 첨부하여, 오픈소스 사용자들이 오픈소스에 관한 권리를 잘 이해할 수 있도록 제공하도록 요구하고 있다.
+
+Apache 2.0 License의 예
+> 1. You must give any other recipients of the Work or Derivative Works a copy of this License.  
+>    저작물이나 파생 저작물을 양도받는 모든 사람에게 본 라이선스의 사본을 제공해야 한다.
+
+### 수정내용 고지
+Apache 2.0, MPL, GPL 2.0, GPL 3.0 등의 라이선스는 소스코드 수정시 수정내용을 고지할 것을 요구한다. 수정한 사람, 수정 일자 등 수정에 관한 내용도 포함하도록 함으로써 원본과 구별이 되어야 한다.  
+
+Apache 2.0 License의 예
+> 2. You must cause any modified files to carry prominent notices stating that You changed the files.  
+>    수정된 파일에 대해서는 수정을 했다는 사실을 설명하는 명확한 안내문구를 첨부해야 한다.
+
+### 고지 방법
+오픈소스 사용시 고지의무는 라이선스에 따라 고지 방법이 세부적으로 나와 있기도 하다. 대표적인 라이선스인 Apache 2.0의 경우, LICENSE와 NOTICE 파일을 두고, 라이선스 및 저작권 고지 등의 고지사항을 포함할 것을 안내하고 있다. <sup>(56)</sup>  
+
+#### Apache Royale 프로젝트<sup>(73)</sup>의 예
+> Apache Royale  
+> Copyright 2020 The Apache Software Foundation  
+>
+> This product includes software developed at  
+> The Apache Software Foundation (http://www.apache.org/).  
+>
+> The Initial Developer of some parts of the framework, which are copied from, derived from, or  
+> inspired by Adobe Flex (via Apache Flex), is Adobe Systems Incorporated (http://www.adobe.com/).  
+> Copyright 2003 - 2012 Adobe Systems Incorporated. All Rights Reserved.  
+>
+> The Initial Developer of the examples/mxroyale/tourdeflexmodules,  
+> is Adobe Systems Incorporated (http://www.adobe.com/).  
+> Copyright 2009 - 2013 Adobe Systems Incorporated. All Rights Reserved.  
+>  
+> The ping sound effect (ping.mp3) in  
+> examples/mxroyale/tourdeflexmodules/src/mx/effects/assets  
+> was created by CameronMusic. (http://www.freesound.org/people/cameronmusic/sounds/138420/)  
+ 
+#### Apache Hive 프로젝트<sup>(74)</sup>의 예    
+
+1. /NOTICE
+> Apache Hive  
+> Copyright 2008-2018 The Apache Software Foundation  
+>  
+> This product includes software developed by The Apache Software  
+> Foundation (http://www.apache.org/).  
+>  
+> This project includes software licensed under the JSON license.  
+
+2. /LICENSE : Pointer 방식으로 고지  
+>   For the SQLLine package:  
+> 
+> Copyright (c) 2002, 2003, 2004, 2005 Marc Prud'hommeaux  
+> From: http://sqlline.sourceforge.net/#license  
+> "SQLLine is distributed under the BSD License, meaning that you are free to redistribute, modify, or sell the software with almost no restrictions."  
+>
+> Statement from Marc Prud'hommeaux regarding inconsistent licenses in some SQLLine source files:  
+>
+> SQLLine was once GPL, but it was changed to be BSD a few years back.  
+> Any references to the GPL are vestigial. Hopefully the license  
+> declaration at http://sqlline.sourceforge.net/#license is sufficiently  
+> authoritative in this regard.  
+   
+   
+3. /binary-package-licenses/** : 바이너리 파일에 포함된 오픈소스 라이선스와 저작권 고지
+
+
+#### 카카오톡의 예
+
+![kakao-notice](assets/kakaoNotice.png)
+
+#### LG 예
+https://opensource.lge.com  
+![lg-notice](assets/lgNotice.png)
+
+
 ## 오픈소스의 보안 취약성
 ### 오픈소스의 보안 취약성 현황
 Sonatype의 [소프트웨어 공급망 현황 보고서(2020)](https://www.sonatype.com/2020ssc) <sup>(12)</sup> 에 따르면 오픈소스를 겨냥한 차세대 사이버 공격도 작년보다 430%나 증가하였으며, 응용프로그램에서 사용되는 오픈소스 구성요소의 11%가 알려진 취약점을 가지고 있다고 한다. 가장 일반적인 공격 유형은 Typosquatting 이며, 이는 오픈소스를 검색할 때 단순한 오타를 유도하는 공격 방식으로 개발자가 "lodash"의 이름을 가진 오픈소스를 사용하려고 할 때 "lodahs"와 같은 유사한 이름의 악성 컴포넌트를 미리 등록해두어 설치하게 만드는 방식이다. 또 다른 방식으로는 프로젝트 관리자로부터 자격 증명을 가로채 악성 코드를 심는 방식 등 다양한 수단을 통해 이뤄지고 있다.
@@ -1966,118 +2048,82 @@ Issue tracker를 이용해서 사용자들과 소통할 수 있겠지만 사람�
 
 
 # 참고링크
-(1) Todo Group, Open Source Program Survey Results (2019) https://github.com/todogroup/survey/tree/master/2019  
+(1) Todo Group, Open Source Program Survey Results (2019) https://github.com/todogroup/survey/tree/master/2019    
 (2) Open Up, 공개SW 활용 지원 https://www.oss.kr/plaza_intro  
-(3) RedHat, The State of Enterprise Open Source (2020) https://www.redhat.com/en/enterprise-open-source-report/2020
-(4) Gartner, Hype Cycle for Open-Source Software (2016) https://www.gartner.com/en/documents/3371817/hype-cycle-for-open-source-software-2016
-(5) IDG, 오픈소스 기업에 안착하다 (2020) https://www.itworld.co.kr/techlibrary/144662
-(6) IDG, IT 전망보고서 (2020) https://www.itworld.co.kr/techlibrary/139540
-(7) KDB 미래전략연구소, 4차 산업혁명의 숨은 원동력, 오픈소스 현황과 시사점 (2020) https://rd.kdb.co.kr/fileView?groupId=633D8216-6F28-AACB-0DCA-0C5F29BD9AA0&fileId=0B5A6FCE-9061-B544-64F2-25B54AEF2A84
-(8) Linux Foundation, Open Source Jobs Report (2020) https://training.linuxfoundation.org/resources/2020-open-source-jobs-report
-(9) Gartner, Technology Insight for Software Composition Analysis (2019) https://www.gartner.com/en/documents/3971011/technology-insight-for-software-composition-analysis
-(10) Linux.com, Artifex v. Hancom: Open Source is Now an Enforceable Contract https://www.linux.com/topic/open-source/artifex-v-hancom-open-source-now-enforceable-contract
-(11) Kakao, Olive Platform https://olive.kakao.com
-(12) Sonatype, State of the Software Supply Chain Report (2020) https://www.sonatype.com/2020ssc
-(13) CVE https://cve.mitre.org
-(14) IBM, Open Source Security Trends (2020) https://developer.ibm.com/recipes/tutorials/open-source-security-trends-for-2020
-(15) SonarQube https://www.sonarqube.org
-(16) Sonatype, State of the Software Supply Chain Report (2020) https://www.sonatype.com/2020ssc
-(17) CHAOSS https://chaoss.community/metrics
-(18) Linux Kernel, https://github.com/torvalds/linux
-(19) Technical Steering Committee https://github.com/nodejs/TSC
-(20) Kubernetes contributing.md https://github.com/kubernetes/community/blob/master/contributors/guide/contributing.md
-(21) GitHub Docs, fork https://help.github.com/en/github/getting-started-with-github/fork-a-repo
-(22) Git, branch https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EB%A6%AC%EB%AA%A8%ED%8A%B8-%EB%B8%8C%EB%9E%9C%EC%B9%98
-(23) Git, rebase https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-Rebase-%ED%95%98%EA%B8%B0
-(24) Git, branch https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EB%B8%8C%EB%9E%9C%EC%B9%98%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80
-(25) Git, commit https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-%EC%88%98%EC%A0%95%ED%95%98%EA%B3%A0-%EC%A0%80%EC%9E%A5%EC%86%8C%EC%97%90-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0
-(26) Make a Pull Request http://makeapullrequest.com
-(27) GitHub first-contributions https://github.com/Roshanjossey/first-contributions
-(28) KIPRIS, 상표 검색 서비스 http://kdtj.kipris.or.kr/kdtj/searchLogina.do?method=loginTM
-(29) Apache, Software Foundation Contributor License Agreement https://www.apache.org/licenses/contributor-agreements.html
-(30) Cloud Native Computing Foundation Contributor License Agreement https://github.com/kubernetes/community/blob/master/CLA.md
-(31) Python Software Foundation Contributor Agreement https://www.python.org/psf/contrib
-
-(32) CLA assistant https://github.com/cla-assistant/cla-assistant
-(33) cla-bot https://colineberhardt.github.io/cla-bot
-(34) Google Developers Contributor License Agreements https://cla.developers.google.com/clas
-(35) Microsoft Contributor License Agreement https://cla.opensource.microsoft.com
-
-(36) Repolinter, The Open Source Repository Linter https://github.com/todogroup/repolinter
-
-(37) GitHub Docs, Creating a new repository https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-new-repository
-
-(38) GitHub Docs, Managing teams and people with access to your repository https://docs.github.com/en/github/administering-a-repository/managing-teams-and-people-with-access-to-your-repository
-
-(39) GitHub Docs, Adding topics to your repository https://docs.github.com/en/github/administering-a-repository/classifying-your-repository-with-topics#adding-topics-to-your-repository
-
-(40) GitLab Docs, Create a project https://docs.gitlab.com/ee/user/project/working_with_projects.html#create-a-project
-
-(41) GitLab Docs, Sharing and permissions https://docs.gitlab.com/ee/user/project/settings/index.html#sharing-and-permissions
-
-(42) GitLab Docs, General project settings https://docs.gitlab.com/ee/user/project/settings/#general-project-settings
-
-(43) DZone, How to Publish Your Artifacts to Maven Central https://dzone.com/articles/publish-your-artifacts-to-maven-central
-
-(44) npm Docs, Creating and publishing scoped public packages https://docs.npmjs.com/creating-and-publishing-scoped-public-packages
-
-(45) Python Packaging User Guide, Packaging Python Projects https://packaging.python.org/tutorials/packaging-projects/#packaging-python-projects
-
-(46) GitHub Docs, Changing a repository's visibility https://docs.github.com/en/github/administering-a-repository/setting-repository-visibility#changing-a-repositorys-visibility
-
-(47) GitLab Docs, How to change project visibility https://docs.gitlab.com/ee/public_access/public_access.html#how-to-change-project-visibility
-
-(48) LINE Developers Twitter https://twitter.com/line_developers/status/1330773983873011712?s=20
-
-(49) Facebook Open Source Twitter https://twitter.com/fbOpenSource/status/1356301287026028552?s=20
-
-(50) LINE Developers Facebook https://www.facebook.com/line.developers/posts/586622918705489
-
-(51) LINE Engineering, Mono-repo, Multi-project를 Gradle 플러그인으로 손쉽게 관리하기 https://engineering.linecorp.com/ko/blog/mono-repo-multi-project-gradle-plugin/
-
-(52) LINE Engineering, Armeria의 서킷 브레이커 사용해 보기 https://engineering.linecorp.com/ko/blog/try-armeria-circuit-breaker/
-
-(53) LINE Engineering, Kafka를 이용한 작업 큐 라이브러리 'Decaton' 활용 사례 https://engineering.linecorp.com/ko/blog/decaton-case-studies/
-
-(54) Slack https://slack.com/intl/ko-kr
-(55) Gitter https://gitter.im
-
-(56) GitHub Docs, About community profiles for public repositories https://docs.github.com/en/github/building-a-strong-community/about-community-profiles-for-public-repositories
-
-(57) Travis CI https://www.travis-ci.com
-
-(58) CircleCI https://circleci.com
-
-(59) Codecov https://about.codecov.io
-
-(60) Pull Panda https://pullpanda.com
-
-(61) Dependabot https://dependabot.com
-
-(62) Make a README https://www.makeareadme.com
-
-(63) Shields https://shields.io
-
-(64) ttygif https://github.com/icholy/ttygif
-
-(65) Asciinema https://asciinema.org
-
-(65) Yarn https://yarnpkg.com
-
-(66) NuGet https://www.nuget.org
-
-(67) Homebrew https://brew.sh
-
-(68) Stack Overflow, What is "Linting"? https://stackoverflow.com/questions/8503559/what-is-linting
-
-(69) Wikipedia, Test automation https://en.wikipedia.org/wiki/Test_automation
-
-(70) Selenium https://selenium.dev
-
-(71) Make a README, License https://www.makeareadme.com/#license-1
-
-(72) Awesome README, https://github.com/matiassingers/awesome-readme
-
+<<<<<<< HEAD
+(3) RedHat, The State of Enterprise Open Source (2020) https://www.redhat.com/en/enterprise-open-source-report/2020  
+(4) Gartner, Hype Cycle for Open-Source Software (2016) https://www.gartner.com/en/documents/3371817/hype-cycle-for-open-source-software-2016  
+(5) IDG, 오픈소스 기업에 안착하다 (2020) https://www.itworld.co.kr/techlibrary/144662  
+(6) IDG, IT 전망보고서 (2020) https://www.itworld.co.kr/techlibrary/139540  
+(7) KDB 미래전략연구소, 4차 산업혁명의 숨은 원동력, 오픈소스 현황과 시사점 (2020) https://rd.kdb.co.kr/fileView?groupId=633D8216-6F28-AACB-0DCA-0C5F29BD9AA0&fileId=0B5A6FCE-9061-B544-64F2-25B54AEF2A84  
+(8) Linux Foundation, Open Source Jobs Report (2020) https://training.linuxfoundation.org/resources/2020-open-source-jobs-report  
+(9) Gartner, Technology Insight for Software Composition Analysis (2019) https://www.gartner.com/en/documents/3971011/technology-insight-for-software-composition-analysis  
+(10) Linux.com, Artifex v. Hancom: Open Source is Now an Enforceable Contract https://www.linux.com/topic/open-source/artifex-v-hancom-open-source-now-enforceable-contract  
+(11) Kakao, Olive Platform https://olive.kakao.com  
+(12) Sonatype, State of the Software Supply Chain Report (2020) https://www.sonatype.com/2020ssc  
+(13) CVE https://cve.mitre.org  
+(14) IBM, Open Source Security Trends (2020) https://developer.ibm.com/recipes/tutorials/open-source-security-trends-for-2020  
+(15) SonarQube https://www.sonarqube.org  
+(16) Sonatype, State of the Software Supply Chain Report (2020) https://www.sonatype.com/2020ssc  
+(17) CHAOSS https://chaoss.community/metrics  
+(18) Linux Kernel, https://github.com/torvalds/linux  
+(19) Technical Steering Committee https://github.com/nodejs/TSC  
+(20) Kubernetes contributing.md https://github.com/kubernetes/community/blob/master/contributors/guide/contributing.md  
+(21) GitHub Docs, fork https://help.github.com/en/github/getting-started-with-github/fork-a-repo  
+(22) Git, branch https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EB%A6%AC%EB%AA%A8%ED%8A%B8-%EB%B8%8C%EB%9E%9C%EC%B9%98  
+(23) Git, rebase https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-Rebase-%ED%95%98%EA%B8%B0  
+(24) Git, branch https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EB%B8%8C%EB%9E%9C%EC%B9%98%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80  
+(25) Git, commit https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-%EC%88%98%EC%A0%95%ED%95%98%EA%B3%A0-%EC%A0%80%EC%9E%A5%EC%86%8C%EC%97%90-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0  
+(26) Make a Pull Request http://makeapullrequest.com  
+(27) GitHub first-contributions https://github.com/Roshanjossey/first-contributions  
+(28) KIPRIS, 상표 검색 서비스 http://kdtj.kipris.or.kr/kdtj/searchLogina.do?method=loginTM  
+(29) Apache, Software Foundation Contributor License Agreement https://www.apache.org/licenses/contributor-agreements.html  
+(30) Cloud Native Computing Foundation Contributor License Agreement https://github.com/kubernetes/community/blob/master/CLA.md  
+(31) Python Software Foundation Contributor Agreement https://www.python.org/psf/contrib  
+(32) CLA assistant https://github.com/cla-assistant/cla-assistant  
+(33) cla-bot https://colineberhardt.github.io/cla-bot  
+(34) Google Developers Contributor License Agreements https://cla.developers.google.com/clas    
+(35) Microsoft Contributor License Agreement https://cla.opensource.microsoft.com    
+(36) Repolinter, The Open Source Repository Linter https://github.com/todogroup/repolinter   
+(37) GitHub Docs, Creating a new repository https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-new-repository    
+(38) GitHub Docs, Managing teams and people with access to your repository https://docs.github.com/en/github/administering-a-repository/managing-teams-and-people-with-access-to-your-repository  
+(39) GitHub Docs, Adding topics to your repository https://docs.github.com/en/github/administering-a-repository/classifying-your-repository-with-topics#adding-topics-to-your-repository  
+(40) GitLab Docs, Create a project https://docs.gitlab.com/ee/user/project/working_with_projects.html#create-a-project  
+(41) GitLab Docs, Sharing and permissions https://docs.gitlab.com/ee/user/project/settings/index.html#sharing-and-permissions  
+(42) GitLab Docs, General project settings https://docs.gitlab.com/ee/user/project/settings/#general-project-settings  
+(43) DZone, How to Publish Your Artifacts to Maven Central https://dzone.com/articles/publish-your-artifacts-to-maven-central  
+(44) npm Docs, Creating and publishing scoped public packages https://docs.npmjs.com/creating-and-publishing-scoped-public-packages  
+(45) Python Packaging User Guide, Packaging Python Projects https://packaging.python.org/tutorials/packaging-projects/#packaging-python-projects  
+(46) GitHub Docs, Changing a repository's visibility https://docs.github.com/en/github/administering-a-repository/setting-repository-visibility#changing-a-repositorys-visibility  
+(47) GitLab Docs, How to change project visibility https://docs.gitlab.com/ee/public_access/public_access.html#how-to-change-project-visibility  
+(48) LINE Developers Twitter https://twitter.com/line_developers/status/1330773983873011712?s=20  
+(49) Facebook Open Source Twitter https://twitter.com/fbOpenSource/status/1356301287026028552?s=20  
+(50) Twitter Open Source Twitter https://twitter.com/TwitterOSS/status/1301557895541133313?s=20  
+(51) LINE Engineering, Armeria의 서킷 브레이커 사용해 보기 https://engineering.linecorp.com/ko/blog/try-armeria-circuit-breaker/  
+(52) TOAST UI, TOASI UI Chart 4.0가 출시되었습니다! https://ui.toast.com/weekly-pick/ko_20210126  
+(53) Airbnb Engineering & Data Science, Introducing visx from Aribnb https://medium.com/airbnb-engineering/introducing-visx-from-airbnb-fd6155ac4658  
+(54) Slack https://slack.com/intl/ko-kr  
+(55) Gitter https://gitter.im    
+(56) GitHub Docs, About community profiles for public repositories https://docs.github.com/en/github/building-a-strong-community/about-community-profiles-for-public-repositories  
+(57) Travis CI https://www.travis-ci.com  
+(58) CircleCI https://circleci.com  
+(59) Codecov https://about.codecov.io  
+(60) Pull Panda https://pullpanda.com  
+(61) Dependabot https://dependabot.com  
+(62) Make a README https://www.makeareadme.com  
+(63) Shields https://shields.io  
+(64) ttygif https://github.com/icholy/ttygif  
+(65) Asciinema https://asciinema.org  
+(65) Yarn https://yarnpkg.com  
+(66) NuGet https://www.nuget.org  
+(67) Homebrew https://brew.sh  
+(68) Stack Overflow, What is "Linting"? https://stackoverflow.com/questions/8503559/what-is-linting  
+(69) Wikipedia, Test automation https://en.wikipedia.org/wiki/Test_automation  
+(70) Selenium https://selenium.dev  
+(71) Make a README, License https://www.makeareadme.com/#license-1  
+(72) Awesome README, https://github.com/matiassingers/awesome-readme  
+(73) Apache, Assembling LICENSE and NOTICE files https://infra.apache.org/licensing-howto.html  
+(74) Apache, Hive Project GitHub https://github.com/apache/hive
 
 
 # 참고문헌
