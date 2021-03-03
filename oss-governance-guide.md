@@ -351,7 +351,7 @@ Apache 2.0 License의 예
 > The ping sound effect (ping.mp3) in  
 > examples/mxroyale/tourdeflexmodules/src/mx/effects/assets  
 > was created by CameronMusic. (http://www.freesound.org/people/cameronmusic/sounds/138420/)  
- 
+
 #### Apache Hive 프로젝트<sup>(74)</sup>의 예    
 
 1. /NOTICE
@@ -376,8 +376,8 @@ Apache 2.0 License의 예
 > Any references to the GPL are vestigial. Hopefully the license  
 > declaration at http://sqlline.sourceforge.net/#license is sufficiently  
 > authoritative in this regard.  
-   
-   
+
+
 3. /binary-package-licenses/** : 바이너리 파일에 포함된 오픈소스 라이선스와 저작권 고지
 
 
@@ -1752,7 +1752,11 @@ Issue tracker를 이용해서 사용자들과 소통할 수 있겠지만 사람�
 - 프로젝트가 지속 가능한가?
   - 공개 이후 중장기적으로 지속해서 발전할 수 있는 프로젝트인가? 단순 공개에서 그치진 않을 것인가?
 
-### (작성 예정) 공개 이후 운영 계획에 대해 생각해보기
+### 공개 이후 운영 계획에 대해 생각해보기
+
+바로 위에서도 언급했던 '프로젝트의 지속 가능성'에 대해 이야기하려고 한다. 아무리 좋은 프로젝트라도 적절히 돌봐주지 않으면 도태되기 때문이다. 가시적으로도 기업의 Organization에 등록된 저장소가 업데이트된 순서대로 정렬되기 때문에 변경이 없다면 저장소는 페이지 2로 넘어가게 된다. 
+
+사람들이 오픈소스를 선택하는 중요한 기준 중의 하나가 잘 관리되고 있는가? 이다. 따라서 앞으로의 변경을 예고하기 위해서 소스코드 공개 이후에 발전해나갈 마일스톤을 계획한다. 또 마일스톤을 누구든지 알 수 있도록 이슈트래커에 등록해둔다. 특히 다른 업무에서 이 오픈소스를 사용하는 경우라면 아주 좋다. 사용하면서 필요한 기능을 지속적으로 오픈소스에 반영할 수 있도록 한다. 오픈소스 공개 전부터 앞으로 투자하게 될 시간에 대해 미리 인지하고 있어야한다. 
 
 ### 오픈소스 운영에 필요한 도구 탐색하고 공부하기
 
@@ -1820,13 +1824,36 @@ Issue tracker를 이용해서 사용자들과 소통할 수 있겠지만 사람�
 >
 > 만약 이 프로젝트를 위해 쏟을 시간이나 여력이 더 이상 없다면 README에 개발이 느릴 수 있다거나 혹은 아예 더 이상 개발을 하지 않는다는 메모를 남긴다. 누군가가 이 프로젝트를 fork하거나, 메인테이너/오너로 자원해서 프로젝트를 유지할 수도 있다. 메인테이너를 위한 명시적인 요청을 남길 수도 있다.
 
-이 모든 내용을 다 적으면 좋겠지만 상황에 따라 적절히 생략하거나 추가한다.
+이 모든 내용을 다 기재하기 어렵다면 상황에 따라 적절히 생략하거나 추가한다.
 
 잘 작성된 README의 예시들은 [Awesome README](https://github.com/matiassingers/awesome-readme)<sup>(72)</sup>에서 확인할 수 있다.
 
-### (작성예정)`CONTRIBUTING.md` 작성 요령
+### `CONTRIBUTING.md` 작성 요령
 
-## (작성예정)오픈소스 운영하기
+ `CONTRIBUTING.md` 의 작성은 사람들로부터 도움을 받을 수 있는 방법 중 하나이다. 보통 사람들은 정확한 요구를 인지했을 때 도움을 줄 생각을 하기 때문이다. 또 다양한 사람들로부터 기여를 받아 개발을 할 때에 지켜야할 규칙을 미리 안내할 수 있는 문서이기도 하다. 그렇다면 어떤 내용이 들어가야 미래의 기여자에게도, 메인테이너에게도 도움이 될지 정리한다.
+
+- 받고자 하는 기여의 종류
+  - 코드 작성만이 기여는 아니다. 질문을 남기는 방법, 버그를 제보하는 방법, 새로운 기능을 제안하는 방법 등 기대하는 기여의 종류를 나열한다.
+- 코드 기여 방법
+  - 전체적인 코드 기여 방법을 설명한다. 개발 환경 설정, 저장소 fork 부터 시작해서 변경 사항을 제출하고 받아들여지기까지의 과정을 설명한다. 
+- 개발 환경 설정 방법
+  - 사람들이 직접 코드를 작성하고 기여를 하기 위한 개발 환경을 설정하는 방법을 설명한다. 
+- 코딩 컨벤션 / 스타일 가이드
+- Commit 메세지 규칙
+- Code of Conduct
+  - 커뮤니티 활동을 하면서 지켜야할 행동 규범에 대해서 언급한다.
+- CLA/DCO
+  - 기여를 제출할때 서명해야할 문서에 대해 안내하고 서명 방법도 함께 설명한다.
+
+`CONTRIBUTING.md`의 예시는 다음을 참고한다.
+
+- [Atom - Contributing to Atom](https://github.com/atom/atom/blob/master/CONTRIBUTING.md)<sup>75</sup>
+- [Kubernetes - Contributor's Guide](https://github.com/kubernetes/community/tree/master/contributors/guide)<sup>76 </sup>      
+- [Armeria - Developer guide](https://armeria.dev/community/developer-guide)<sup>77</sup>
+
+## 오픈소스 운영하기
+
+오픈소스 공개의 꽃! 바로 커뮤니티와 함께 프로젝트를 운영하는 일이다. 처음에는 단독으로 운영을 시작하겠지만 계속해서 커뮤니티에서 참여할만한 빈 틈을 만들어주어야한다. 나중에는 나를 대신하여 활동을 해줄 커뮤니티를 만들기 위한 씨앗이라고 생각하면 좋다.    
 
 ### Issue tracker 활용 best practice
 
@@ -2122,7 +2149,15 @@ Linux Foundation이 출간한 Open Source Compliance in the Enterprise에서는 
 (71) Make a README, License https://www.makeareadme.com/#license-1  
 (72) Awesome README, https://github.com/matiassingers/awesome-readme  
 (73) Apache, Assembling LICENSE and NOTICE files https://infra.apache.org/licensing-howto.html  
-(74) Apache, Hive Project GitHub https://github.com/apache/hive
+(74) Apache, Hive Project GitHub https://github.com/apache/hive 
+
+(75) Atom, Contributing to Atom https://github.com/atom/atom/blob/master/CONTRIBUTING.md 
+
+(76) Kubernetes, Contributor's Guide https://github.com/kubernetes/community/tree/master/contributors/guide  
+
+(77) Armeria, Developer guide https://armeria.dev/community/developer-guide 
+
+
 
 
 # 참고문헌
