@@ -351,7 +351,7 @@ Apache 2.0 License의 예
 > The ping sound effect (ping.mp3) in  
 > examples/mxroyale/tourdeflexmodules/src/mx/effects/assets  
 > was created by CameronMusic. (http://www.freesound.org/people/cameronmusic/sounds/138420/)  
- 
+
 #### Apache Hive 프로젝트<sup>(74)</sup>의 예    
 
 1. /NOTICE
@@ -376,8 +376,8 @@ Apache 2.0 License의 예
 > Any references to the GPL are vestigial. Hopefully the license  
 > declaration at http://sqlline.sourceforge.net/#license is sufficiently  
 > authoritative in this regard.  
-   
-   
+
+
 3. /binary-package-licenses/** : 바이너리 파일에 포함된 오픈소스 라이선스와 저작권 고지
 
 
@@ -1625,11 +1625,7 @@ CLA는 기여 과정의 하나이기 때문에 Contributing 에서 다루면 좋
 
 #### 배포 준비
 
-소스코드를 공개한 이후에 패키지 배포까지 생각하고 있는 경우에는 배포를 어떻게 할지 정해야한다. 패키지 저장소마다 사용 방법이 다르니 개발자와 상의한다. 구체적인 방법은 다음을 참고한다.
-
-- [Maven Central - Artifacts 배포하기](https://dzone.com/articles/publish-your-artifacts-to-maven-central)<sup>(43)</sup>
-- [npm - scoped public packages 배포하기](https://docs.npmjs.com/creating-and-publishing-scoped-public-packages)<sup>(44)</sup>
-- [pypi - Python 프로젝트를 packaging하고 배포하기](https://packaging.python.org/tutorials/packaging-projects/#packaging-python-projects)<sup>(45)</sup>
+소스코드를 공개한 이후에 패키지 배포까지 생각하고 있는 경우에는 배포를 어떻게 할지 정해야한다. 패키지 저장소마다 사용 방법이 다르니 개발자와 상의한다. 배포와 관련한 상세 내용은 오픈소스 공개하기 - 개발자편: 배포하기 를 참고한다. 
 
 ### 공개
 
@@ -1752,7 +1748,11 @@ Issue tracker를 이용해서 사용자들과 소통할 수 있겠지만 사람�
 - 프로젝트가 지속 가능한가?
   - 공개 이후 중장기적으로 지속해서 발전할 수 있는 프로젝트인가? 단순 공개에서 그치진 않을 것인가?
 
-### (작성 예정) 공개 이후 운영 계획에 대해 생각해보기
+### 공개 이후 운영 계획에 대해 생각해보기
+
+바로 위에서도 언급했던 '프로젝트의 지속 가능성'에 대해 이야기하려고 한다. 아무리 좋은 프로젝트라도 적절히 돌봐주지 않으면 도태되기 때문이다. 가시적으로도 기업의 Organization에 등록된 저장소가 업데이트된 순서대로 정렬되기 때문에 변경이 없다면 저장소는 페이지 2로 넘어가게 된다. 
+
+사람들이 오픈소스를 선택하는 중요한 기준 중의 하나가 잘 관리되고 있는가? 이다. 따라서 앞으로의 변경을 예고하기 위해서 소스코드 공개 이후에 발전해나갈 마일스톤을 계획한다. 또 마일스톤을 누구든지 알 수 있도록 이슈트래커에 등록해둔다. 특히 다른 업무에서 이 오픈소스를 사용하는 경우라면 아주 좋다. 사용하면서 필요한 기능을 지속적으로 오픈소스에 반영할 수 있도록 한다. 오픈소스 공개 전부터 앞으로 투자하게 될 시간에 대해 미리 인지하고 있어야한다. 
 
 ### 오픈소스 운영에 필요한 도구 탐색하고 공부하기
 
@@ -1820,19 +1820,137 @@ Issue tracker를 이용해서 사용자들과 소통할 수 있겠지만 사람�
 >
 > 만약 이 프로젝트를 위해 쏟을 시간이나 여력이 더 이상 없다면 README에 개발이 느릴 수 있다거나 혹은 아예 더 이상 개발을 하지 않는다는 메모를 남긴다. 누군가가 이 프로젝트를 fork하거나, 메인테이너/오너로 자원해서 프로젝트를 유지할 수도 있다. 메인테이너를 위한 명시적인 요청을 남길 수도 있다.
 
-이 모든 내용을 다 적으면 좋겠지만 상황에 따라 적절히 생략하거나 추가한다.
+이 모든 내용을 다 기재하기 어렵다면 상황에 따라 적절히 생략하거나 추가한다.
 
 잘 작성된 README의 예시들은 [Awesome README](https://github.com/matiassingers/awesome-readme)<sup>(72)</sup>에서 확인할 수 있다.
 
-### (작성예정)`CONTRIBUTING.md` 작성 요령
+### `CONTRIBUTING.md` 작성 요령
 
-## (작성예정)오픈소스 운영하기
+ `CONTRIBUTING.md` 의 작성은 사람들로부터 도움을 받을 수 있는 방법 중 하나이다. 보통 사람들은 정확한 요구를 인지했을 때 도움을 줄 생각을 하기 때문이다. 또 다양한 사람들로부터 기여를 받아 개발을 할 때에 지켜야할 규칙을 미리 안내할 수 있는 문서이기도 하다. 그렇다면 어떤 내용이 들어가야 미래의 기여자에게도, 메인테이너에게도 도움이 될지 정리한다.
+
+- 받고자 하는 기여의 종류
+  - 코드 작성만이 기여는 아니다. 질문을 남기는 방법, 버그를 제보하는 방법, 새로운 기능을 제안하는 방법 등 기대하는 기여의 종류를 나열한다.
+- 코드 기여 방법
+  - 전체적인 코드 기여 방법을 설명한다. 개발 환경 설정, 저장소 fork 부터 시작해서 변경 사항을 제출하고 받아들여지기까지의 과정을 설명한다. 
+- 개발 환경 설정 방법
+  - 사람들이 직접 코드를 작성하고 기여를 하기 위한 개발 환경을 설정하는 방법을 설명한다. 
+- 코딩 컨벤션 / 스타일 가이드
+- Commit 메세지 규칙
+- Code of Conduct
+  - 커뮤니티 활동을 하면서 지켜야할 행동 규범에 대해서 언급한다.
+- CLA/DCO
+  - 기여를 제출할때 서명해야할 문서에 대해 안내하고 서명 방법도 함께 설명한다.
+
+`CONTRIBUTING.md`의 예시는 다음을 참고한다.
+
+- [Atom - Contributing to Atom](https://github.com/atom/atom/blob/master/CONTRIBUTING.md)<sup>(75)</sup>
+- [Kubernetes - Contributor's Guide](https://github.com/kubernetes/community/tree/master/contributors/guide)<sup>(76) </sup>      
+- [Armeria - Developer guide](https://armeria.dev/community/developer-guide)<sup>(77)</sup>
+
+## 오픈소스 운영하기
+
+오픈소스 공개의 꽃! 바로 커뮤니티와 함께 프로젝트를 운영하는 일이다. 처음에는 단독으로 운영을 시작하겠지만 계속해서 커뮤니티에서 참여할만한 빈 틈을 만들어주어야한다. 나중에는 나를 대신하여 활동을 해줄 커뮤니티를 만들기 위한 씨앗이라고 생각하면 좋다. 
+
+열정적으로 오픈소스를 운영하는 것은 좋지만 계속해서 혼자 짐을 지면 프로젝트를 오래 지속하기 어렵다. 가능한 선에서 메인테이너가 혼자 짐을 지는 것을 줄여나가도록 한다. 
+
+### 오픈소스 배포하기
+
+소스코드를 배포하고 나면 사용이 용이하도록 하기 위해 패키지 배포도 함께 진행할 가능성이 높다. 그러나 평소 업무에서 배포하는 환경과 다른 환경에서 배포를 하게될터라 시행착오가 있을 수 있다. 가장 대중적인 오픈소스 패키지 배포의 방법과 자동화 방법은 아래를 참고한다. 
+
+- [Maven Central에 배포하기](https://dzone.com/articles/publish-your-artifacts-to-maven-central)<sup>(43)</sup>
+- [npm에 배포하기](https://docs.npmjs.com/creating-and-publishing-scoped-public-packages)<sup>(44)</sup>
+- [PyPI에 배포하기](https://packaging.python.org/tutorials/packaging-projects/#packaging-python-projects)<sup>(45)</sup>
+- [자동화: 유용한 GitHub Actions workflow 모음](https://github.com/sdras/awesome-actions)<sup>(80)</sup>
 
 ### Issue tracker 활용 best practice
 
+Issue tracker는 현업에서도 많이 사용하고 있는데 오픈소스에서도 똑같이 사용하면 된다고 생각할 수 있다. 그러나 이 Issue tracker를 들여다보는 대상이 사뭇 다르다는 것을 알아야한다. 현업에서는 주로 회의 등을 통해 선별된 이슈를 Issue tracker에 등록하고, 이에 맞추어 개발 일정을 관리한다. 그러나 오픈소스에서는 의견 교환을 즉시 할 수가 없다. 어떤 의견을 적어놓고 다른 사람이 다른 동의하거나 다른 의견을 제시할 때까지 기다려야한다. 사람들이 궁금한 부분이 있을때 이 Issue tracker에서 도움을 받지 못한다면 이 일거리는 고스란히 메인테이너에게 돌아온다. 또 사람들은 구체적인 어떤 도움의 요청을 보았을 때 비로소 움직일지 고민한다. 그 고민들을 통해 일부는 기여로 이어지게 된다.  
+
+이렇게 다양한 기능을 하는 Issue tracker에서 커뮤니케이션을 조금 더 효율적으로 하기 위한 팁들을 정리한다. 
+
+#### 이슈 템플릿 활용
+
+새 이슈를 생성하려고 New issue 버튼을 클릭하고 빈 화면을 마주하면 어떤 내용을 써야할지 막막한 경우가 있다. 이슈 템플릿은 프로젝트에서 이슈를 처음 생성하는 사람들에게 이슈 작성 방법을 안내한다. 사람들이 오픈소스 프로젝트를 탐색하고 사용하면서 마주한 질문 거리를 마음속에 쌓아두지 않고 적극적으로 소통하도록 돕는다. 템플릿 예시들에서 체크 리스트를 제공하는 경우를 흔히 볼 수 있다. 이는 이슈를 해결하기 위해 필요한 정보들을 미리 제공하도록 유도하는데, 부족한 정보를 묻고 답하느라 사용하는 커뮤니케이션을 줄이고 문제 해결에만 집중하도록 돕는다. 
+
+- [GitHub에서 Issue template를 만드는 방법](https://docs.github.com/en/github/building-a-strong-community/manually-creating-a-single-issue-template-for-your-repository#adding-an-issue-template)<sup>(81)</sup>
+- [GitLab에서 Issue template를 만드는 방법](https://docs.gitlab.com/ee/user/project/description_templates.html#create-an-issue-template)<sup>(82)</sup>
+- [이슈 템플릿 예시 모음](https://github.com/stevemao/github-issue-templates)<sup>(83)</sup>
+
+#### Label 활용
+
+이슈의 제목을 명확하게 작성하는 것도 중요하지만 아무래도 문장은 한 눈에 어떤 내용인지 파악하기 어렵다. 이슈에 라벨을 달아 필터가 작동할 수 있도록 하고, 이슈의 종류를 한 눈에 파악할 수 있게 한다. 
+
+![issue label](./assets/issue-label.png)
+
+[https://github.com/line/armeira/issues](https://github.com/line/armeria/issues)<sup>(78)</sup>
+
+기여를 염두에 두고 있는 사람들에게는 이런 라벨들이 도전할만한 일감을 탐색하기에 아주 좋을 것이다.
+
+#### 초심자를 위한 이슈 
+
+많은 개발자들은 오픈소스에 기여하는 일을 '언젠간 해보고 싶은 것' 목록에 넣어두는 경우가 많다. 직접 나서지 않는 이유는 여러가지가 있겠지만 보통 시간이 없어서 다음으로 많이 꼽히는 이유는 '자신이 없어서' 이다. 바로 이런 사람들을 오픈소스 기여의 세계로 불러오는 방법 중 하나가 바로 초심자를 위한 이슈 라벨이다. 
+
+주로 `good first issue` 혹은 `first timers only` 라는 이름으로 지어진 이 라벨은 메인테이너나 기존 커미터들이 해결할 수 있지만 초심자를 위해 남겨두었다는 표식으로 사용된다. 따라서 기존 다른 이슈보다 해결 방안에 대한 더 자세한 설명이나 힌트를 달아놓는 경우가 많다. 이렇게 작은 이슈부터 시작할 수 있는 환경을 만들어 조금씩 어려운 이슈에도 도전할 수 있도록 자신감을 키워주는 과정을 거치도록 한다. 이 과정을 통해 꾸준한 커미터를 만들 수 있다. 
+
+GitHub에서는 사진과 같이 good first issue의 탐색을 장려하는 메세지를 띄워주기도한다. 
+
+![GitHub Issues - Good first issues](./assets/github-good-first-issue.png)
+
+[https://github.com/line/armeira/issues](https://github.com/line/armeria/issues)<sup>(79)</sup>
+
 ### Pull request 운영 best practice
 
+이슈를 둘러보며 기여를 할지 고민만하던 한 사람이 드디어 Pull request를 만들 결심을 했다고 가정해보자! 이 사람이 헤매지 않고 정기 기여자로 정착하기 위해서는 커뮤니케이션 과정에서 발생할 수 있는 불편함을 최소한으로 줄여야할 것이다. 물론 CONTRIBUTING 에서 많은 부분을 다루고 있겠지만, 기여 과정을 효율적으로 하기 위한 팁들을 정리한다. 
+
+####  Pull request 템플릿 활용
+
+각기 다른 생각을 가진 사람들이 어떤 변경을 반영하려고 할 때에는 다른 사람의 동의를 얻어야할 것이다. 동의를 구하기 위해서는 어떤 문제 의식이 있었고, 어떤 변경을 했고, 이로 인해 어떤 결과가 나왔는지에 대한 설명이 필요하다. 하지만 어떤 방식으로 이 논리를 작성해야할지 모르는 사람들을 위해 Pull request 템플릿을 제공한다. 개발 과정이 익숙한 메인테이너들도 동일한 템플릿대로 작성한다. 다른 사람들이 템플릿을 처음 사용할 때 작성 예시로 참고할 수 있기 때문이다.
+
+문제 해결 이외에도 CONTRIBUTING에서 제시한 각종 개발 규칙이 있을 것이다. 이 내용들은 Pull request 템플릿에서 체크리스트로 제공하여 코드리뷰 과정에서 문제 해결에 집중할 수 있도록 돕는다. 
+
+- [GitHub에서 Pull request template를 만드는 방법](https://docs.github.com/en/github/building-a-strong-community/creating-a-pull-request-template-for-your-repository)<sup>(84)</sup>
+- [GitLab에서 Merge request template를 만드는 방법](https://docs.gitlab.com/ee/user/project/description_templates.html#create-a-merge-request-template)<sup>(85)</sup>
+- [Pull request 템플릿 예시 모음](https://github.com/stevemao/github-issue-templates)<sup>(83)</sup>
+
+#### 적극적으로 댓글을 활용
+
+사람들은 글자로만 소통했을 때 그 어감을 부정적으로 해석하는 경향이 있다. 누군가가 열심히 기여를 했는데 환영받지 못한다고 느낀다면 이 사람은 지속적으로 기여하지 않을 가능성이 높다. 따라서 어떤 것이든 긍정적인 반응을 댓글에 남겨두도록 한다. 이모지를 활용하는 것도 좋은 방법이 될 수 있다. 
+
+또 어떤 변경에 대해서 기존에 다른 사람이 개발한 것과 연관이 된다면 이전에 개발했던 사람을 언급하여 확인할 수 있도록 안내한다. 기존 개발자는 해당 코드에 대해 주인 의식을 느낄 수도 있고, 또 새로운 변경이 기존 코드에서 의도했던 것을 헤칠 수도 있기 때문이다. 여러 사람이 참여할 수록 커뮤니케이션 비용도 들고 시간도 더 많이 사용하겠지만, 결과적으로는 더 건강하고 적극적인 커뮤니티를 만드는데 큰 도움이 된다. 이 커뮤니티는 나중에 메인테이너의 많은 일들을 줄여주게 된다. 
+
+#### 부드러운 재촉
+
+여러 사람들이 함께 개발하고 코드리뷰 과정에 참여하다보면 누군가의 응답이 늦어져 일이 진행이 안되는 경우가 종종 발생한다. 다른 일을 하느라 오픈소스에 몰두하기 어려운 경우가 대부분이다. 하지만 하염없이 그 사람의 반응을 기다렸다간 다른 의존적인 작업들까지 지연이 될 수 있다. 이 때에는 당사자를 다시 한 번 언급하여 특정 행동을 요구한다. 어떤 행동을 해달라고 다그치는 것이 아니라 "바쁠 것으로 생각되는데 혹시 이렇게 진행해도 괜찮겠어요?" 혹은 "혹시 이 것에 대해 더 의견이 없으신가요?" 등 부드럽게 이야기한다. 
+
 ## 요약
+
+지금까지 기업에 속한 개발자들이 오픈소스 공개를 준비하고 운영하는데에 미리 알면 좋을 팁들을 살펴보았다. 요약하면 다음과 같다. 
+
+**오픈소스 공개를 준비하기**
+
+- 왜 나의 프로젝트를 오픈소스로 공개해야할지 기업의 입장에서 생각해보기
+- 공개 이후에 운영 계획에 대해서 생각해보기
+- 오픈소스 운영에 필요한 각종 도구들을 탐색하고 공부하기
+- `README.md` 잘 작성하기 
+- `CONTRIBUTING.md` 잘 작성하기
+
+**오픈소스 운영하기**
+
+- 패키지 배포 방법 탐색하고 공부하기
+- Issue tracker 잘 활용하기
+  - 이슈 템플릿의 활용
+  - 이슈 라벨 활용
+  - 초심자를 위한 이슈
+- Pull request 잘 활용하기
+  - Pull request 템플릿의 활용
+  - 댓글 활용
+  - 사람들을 부드럽게 재촉하기
+
+이 내용들은 오픈소스 담당자의 시각으로 여러 프로젝트가 운영되는 모습을 살펴보면서 "개발자들이 이 점을 조금 더 고려해줬다면 커뮤니티를 더 잘 형성했을텐데..." 라는 아쉬운 마음이 들었던 상황을 정리한 것이다. 따라서 기술적인 부분과는 거리가 멀다. 하지만 오픈소스에서 기술만큼 중요한 것은 커뮤니케이션이다. 온화한 커뮤니케이션은 더 강력한 커뮤니티를 형성한다. 강력한 커뮤니티는 다시 기술력 향상이 될 밑거름이 되고, 오픈소스가 성장하는 선순환의 고리가 시작된다. 
+
+이 뿐만 아니라 _오픈소스 공개 가이드 - 기업편: 공개만 하면 끝인가요? 그 이후에 해야할 일_ 에서 나열된 일에도 관심을 가질 것을 추천한다. 사실 오픈소스를 가장 잘 설명할 수 있는 사람은 개발한 사람이기 때문이다. 하지만 메인테이너에게 너무 많은 짐이라고 생각할 수도 있다. 이럴 때를 위해서! 커뮤니티를 잘 형성해야한다. 그들이 메인테이너를 대신하여 오픈소스 프로젝트를 바깥에 더 널리 알리는 역할을 할 것이다. 
+
+앞으로 성공적으로 커뮤니티를 형성한 개발자의 경험을 통해 이 가이드의 업데이트에도 도움을 받는 날이 오기를 기원한다. 
 
 ---
 
@@ -2122,7 +2240,31 @@ Linux Foundation이 출간한 Open Source Compliance in the Enterprise에서는 
 (71) Make a README, License https://www.makeareadme.com/#license-1  
 (72) Awesome README, https://github.com/matiassingers/awesome-readme  
 (73) Apache, Assembling LICENSE and NOTICE files https://infra.apache.org/licensing-howto.html  
-(74) Apache, Hive Project GitHub https://github.com/apache/hive
+(74) Apache, Hive Project GitHub https://github.com/apache/hive 
+
+(75) Atom, Contributing to Atom https://github.com/atom/atom/blob/master/CONTRIBUTING.md 
+
+(76) Kubernetes, Contributor's Guide https://github.com/kubernetes/community/tree/master/contributors/guide  
+
+(77) Armeria, Developer guide https://armeria.dev/community/developer-guide 
+
+(78) Armeria, GitHub Issues https://github.com/line/armeria/issues
+
+(79) Armeria, GitHub Issues https://github.com/line/armeria/issues
+
+(80) sdras, Awesome Actions, https://github.com/sdras/awesome-actions
+
+(81) GitHub Docs, Adding an issue template https://docs.github.com/en/github/building-a-strong-community/manually-creating-a-single-issue-template-for-your-repository#adding-an-issue-template
+
+(82) GitLab Docs, Create an issue template https://docs.gitlab.com/ee/user/project/description_templates.html#create-an-issue-template
+
+(83) A collection of GitHub issue and pull request templates https://github.com/stevemao/github-issue-templates
+
+(84) GitHub Docs, Creating a pull request template for your repository https://docs.github.com/en/github/building-a-strong-community/creating-a-pull-request-template-for-your-repository
+
+(85) GirLab Docs, Create a merge request template https://docs.gitlab.com/ee/user/project/description_templates.html#create-a-merge-request-template
+
+
 
 
 # 참고문헌
