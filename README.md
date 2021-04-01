@@ -12,6 +12,10 @@
 | [장학성](https://github.com/haksungjang) | SK텔레콤 | haksung@sk.com |
 | [황민호](https://github.com/revfactory) | 카카오 | robin.hwang@kakaocorp.com |
 
+## 문서 작업
+
+작성 중인 가이드는 다음 페이지에서 확인하실 수 있습니다. : [기업 공개 소프트웨어 거버넌스 가이드](./oss-governance-guide.md)
+
 ## License
 
 * 이 문서는 ____ 으로 공개합니다. 
