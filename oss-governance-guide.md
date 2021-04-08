@@ -1666,7 +1666,7 @@ GitHub에서 자신의 Repository에 가면 Compare & pull request 버튼이 활
 
 이후 Upstream Repository의 관리자는 요청된 Pull Request를 검토하여 Merge 여부를 결정한다.
 
-> **Git 사용이 처음이라면**
+> **Git 사용이 처음이라면**  
 > 다음의 Git에 대한 안내서를 참고할 수 있다. 
 > * [Git cheat sheet](https://training.github.com/downloads/ko/github-git-cheat-sheet)
 > * [Do it! 지옥에서 온 문서 관리자 깃&깃허브 입문](https://opentutorials.org/course/2708)
