@@ -304,11 +304,11 @@ Kakao는 자사의 수많은 프로젝트의 오픈소스 관리를 위해 사�
 2015년 설립된 실리콘밸리 스타트업에서 제공하는 서비스로, 풍부한 오픈소스 메타데이터 및 정교한 정책 거버넌스를 제공한다. CI/CD 통합 등 DevOps 환경을 지원하며 개발자 친화적 기능들로 구성되어 있다. Twitter, Uber, Zendesk 등과 파트너를 맺고 있으며, JS Foundation, Linux Foundation, NPM 등과 제휴하고 있다. 기본적인 사용은 무료이나 일부 추가 기능들을 유료로 제공하며, 팀 규모가 100명 이상이라면 엔터프라이즈 버전이 적용된다.
 
 #### [**FOSSID**](https://fossid.com/) - https://fossid.com/
-![logo-fossid](assets/logo-fossid.png)
+![logo-fossid](assets/logo-fossid.png)  
 2016년 스웨덴에서 설립된 FOSSID는 오픈소스 라이선스 및 보안취약점 관리를 위한 솔루션이다. 소스 코드 내 오픈소스 콤포넌트를 탐지하고, 각 콤포넌트의 라이선스 및 보안취약점을 식별한다. 방대한 오픈소스 DB 및 자동 데이터 수집 기술, AI를 통한 향상된 탐지 성능 등 특징을 갖고 있다. 특히, 코드 일부에서 보안 취약점을 탐지하는 유일한 오픈소스 스캐너라는 장점을 갖는다. 
 
 #### [**Black Duck**](https://www.blackducksoftware.com/) - https://www.blackducksoftware.com/
-![logo-blackduck](assets/logo-blackduck.png)
+![logo-blackduck](assets/logo-blackduck.png)  
 Black Duck은 오픈소스를 사용하는 동안 발생하는 라이선스와 취약점, 소스코드 품질 관리를 위한 포괄적인 솔루션이다. 전반적인 소프트웨어의 공급망과 애플리케이션 라이프사이클 전반에 거쳐 오픈소스의 라이선스와 보안을 관리한다. 정확도를 높이고 오탐을 줄이기 위해 오픈 소스 검색에 다각적 접근 방식을 취하여 신뢰성 있는 BOM을 생성한다. 
 
 
@@ -326,16 +326,16 @@ Black Duck은 오픈소스를 사용하는 동안 발생하는 라이선스와 �
 https://openchain-project.github.io/OpenChain-KWG/guide/appendix/3-tools/fossology
 
 #### [**CodeEye**](https://www.olis.or.kr/codeEye/introduction.do) - https://www.olis.or.kr/codeEye/introduction.do
-![codeeyep](assets/logo-codeeye.png)
+![codeeyep](assets/logo-codeeye.png)  
 CodeEye는 오픈소스 라이선스 비교·분석·검사를 위해 사람이 해야 할 수작업(Eye Checking)을 원활하게 수행하거나 도움을 주는 시스템으로 오픈소스 사용 시 준수 해야할 라이선스(GNU GPL등) 내용을 효과적으로 검사하여 보여준다. 한국저작권위원회에서 구축한 오픈소스 DB(지속적 Update)를 기반으로 검사하며, 중소기업기본법 시행령 제3조(중소기업의 범위)규정에 따른 중소기업 대상으로 무료로 서비스 한다. 
 
 #### [**Clarity**](http://insignary.com/) - http://insignary.com/
-![insignary](assets/logo-insignary.png)
+![insignary](assets/logo-insignary.png)  
 Clarity는 바이너리 코드 분석을 통한 오픈소스 관리 솔루션으로, 바이너리 코드를 스캐닝하여 소프트웨어 내에 존재하는 오픈소스 컴포넌트를 식별하고 해당 오픈소스의 라이선스 및 보안취약점 정보를 제공한다. 기업은 클래리티의 바이너리 코드 점검을 통해 라이선스 위반에 대한 법적이슈와 오픈소스 보안취약점을 사전에 방지하여
 외부에서 공급되는 소프트웨어를 안전하게 활용할 수 있다.
 
 #### [**LABRADOR**](https://www.iotcube.com/) - https://www.iotcube.com/
-![labrador](assets/logo-labrador.png)
+![labrador](assets/logo-labrador.png)  
 LABRADOR는 R&D 및 공급망에서 오픈소스 취약점 및 라이선스 이슈를 분석하고 수정하기 위해 제작되었다. 단순 취약점의 나열에 그치지 않고 한발 더 나아가 수정을 위한 다양한 방안을 제시한다. 이를 통해 기업은 취약한 구성 요소를 식별하고 수정할 뿐 아니라 추후 문제의 여지가 있는 라이선스에 대한 사전 조치가 가능하다. 함수 단위 소스 취약점 분석으로 보다 빠르고 정확한 진단이 가능합니다.
 
 #### [**SW360**](https://www.eclipse.org/sw360) - https://www.eclipse.org/sw360
