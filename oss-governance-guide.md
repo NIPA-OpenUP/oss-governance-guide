@@ -209,6 +209,17 @@ Gartner의 [Technology Insight for Software Composition Analysis (2019) 보고�
 
 ![compliance](assets/compliance.png)
 
+
+~~~
+참고로, 지난 2020년 12월, 오픈소스 컴플랑리언스에 대한 국제 표준이 ISO에 등록되었다. 
+
+ISO/IEC 5230(https://www.iso.org/standard/81039.html)은 기업이 오픈소스 컴플라이언스를 
+달성하기 위해 수행해야 할 최소한의 요구사항을 정의하고 있다. NIPA에서 출간한 기업 공개소프트웨어 
+거버넌스 OpenChain 해설서에서는 이에 대한 자세한 내용 및 준수 방법을 설명한다. 
+가이드는 다음 페이지에서 다운받을 수 있다. : https://www.oss.kr/oss_guide/show/7050bff0-d06b-43f0-99a6-9975afcd486f
+~~~
+
+
 #### 오픈소스 컴플라이언스 프로세스
 기업은 오픈소스 라이선스 의무사항을 준수할 수 있도록 오픈소스의 사용, 기여, 감사 및 배포에 이르는 일련의 과정을 관리/감독해야 한다. 검증 단계까지 전반적인 내용을 체크 리스트를 작성하여, 일관성을 보장하고 검증 단계를 간과하지 않도록 하는 것이 중요하다. 여기서는 일반적인 오픈소스 컴플라이언스 프로세스를 소개하고 각 단계별 주요 내용을 설명한다.
 
@@ -296,6 +307,7 @@ Gartner의 [Technology Insight for Software Composition Analysis](https://www.ga
 - [x] 라이선스, 저작권, 버전 관리 등 관련 정보를 포함한 보고서 발급 기능이 있는가?
 
 #### 주요 오픈소스 관리 도구 소개
+
 ##### [**Olive (Kakao)**](https://olive.kakao.com) - https://olive.kakao.com
 ![logo-olive](assets/logo-olive.png)  
 Kakao는 자사의 수많은 프로젝트의 오픈소스 관리를 위해 사용하던 시스템을 누구나 사용할 수 있도록 [Olive Platform](https://olive.kakao.com) <sup>(11)</sup> Beta를 무료로 오픈했다. Olive는 Github 프로젝트를 분석하여 사용한 오픈소스 데이터를 관리하고, 라이선스 및 의무사항을 확인하여 Report를 제공한다. 쉽고, 빠르고 정확한 오픈소스 검증을 목표로 직관적인 기능과 UI로 구성되어 있으며, 간단히 Dependency와 라이선스 확인이 가능한 심플 체크 기능 등 사용자 편의에 초점을 맞추고 있다.
@@ -303,6 +315,15 @@ Kakao는 자사의 수많은 프로젝트의 오픈소스 관리를 위해 사�
 ##### [**Fossa**](https://fossa.com) - https://fossa.com
 ![logo-fossa](assets/logo-fossa.png)  
 2015년 설립된 실리콘밸리 스타트업에서 제공하는 서비스로, 풍부한 오픈소스 메타데이터 및 정교한 정책 거버넌스를 제공한다. CI/CD 통합 등 DevOps 환경을 지원하며 개발자 친화적 기능들로 구성되어 있다. Twitter, Uber, Zendesk 등과 파트너를 맺고 있으며, JS Foundation, Linux Foundation, NPM 등과 제휴하고 있다. 기본적인 사용은 무료이나 일부 추가 기능들을 유료로 제공하며, 팀 규모가 100명 이상이라면 엔터프라이즈 버전이 적용된다.
+
+##### [**FOSSID**](https://fossid.com/) - https://fossid.com/
+![logo-fossid](assets/logo-fossid.png)  
+2016년 스웨덴에서 설립된 FOSSID는 오픈소스 라이선스 및 보안취약점 관리를 위한 솔루션이다. 소스 코드 내 오픈소스 콤포넌트를 탐지하고, 각 콤포넌트의 라이선스 및 보안취약점을 식별한다. 방대한 오픈소스 DB 및 자동 데이터 수집 기술, AI를 통한 향상된 탐지 성능 등 특징을 갖고 있다. 특히, 코드 일부에서 보안 취약점을 탐지하는 유일한 오픈소스 스캐너라는 장점을 갖는다. 
+
+##### [**Black Duck**](https://www.blackducksoftware.com/) - https://www.blackducksoftware.com/
+![logo-blackduck](assets/logo-blackduck.png)  
+Black Duck은 오픈소스를 사용하는 동안 발생하는 라이선스와 취약점, 소스코드 품질 관리를 위한 포괄적인 솔루션이다. 전반적인 소프트웨어의 공급망과 애플리케이션 라이프사이클 전반에 거쳐 오픈소스의 라이선스와 보안을 관리한다. 정확도를 높이고 오탐을 줄이기 위해 오픈 소스 검색에 다각적 접근 방식을 취하여 신뢰성 있는 BOM을 생성한다. 
+
 
 ##### [**Snyk**](https://snyk.io) - https://snyk.io
 ![logo-snyk](assets/logo-snyk.png)  
@@ -316,6 +337,19 @@ Kakao는 자사의 수많은 프로젝트의 오픈소스 관리를 위해 사�
 ![fossology](assets/fossology.png)  
 소스 코드 스캐닝 도구로 소스 파일 상단의 문구를 스캔하여 라이선스를 자동으로 확인한다. FOSSology의 자세한 설치 및 사용 방법은 다음 사이트를 참고할 수 있다.  
 https://openchain-project.github.io/OpenChain-KWG/guide/appendix/3-tools/fossology
+
+##### [**CodeEye**](https://www.olis.or.kr/codeEye/introduction.do) - https://www.olis.or.kr/codeEye/introduction.do
+![codeeyep](assets/logo-codeeye.png)  
+CodeEye는 오픈소스 라이선스 비교·분석·검사를 위해 사람이 해야 할 수작업(Eye Checking)을 원활하게 수행하거나 도움을 주는 시스템으로 오픈소스 사용 시 준수 해야할 라이선스(GNU GPL등) 내용을 효과적으로 검사하여 보여준다. 한국저작권위원회에서 구축한 오픈소스 DB(지속적 Update)를 기반으로 검사하며, 중소기업기본법 시행령 제3조(중소기업의 범위)규정에 따른 중소기업 대상으로 무료로 서비스 한다. 
+
+##### [**Clarity**](http://insignary.com/) - http://insignary.com/
+![insignary](assets/logo-insignary.png)  
+Clarity는 바이너리 코드 분석을 통한 오픈소스 관리 솔루션으로, 바이너리 코드를 스캐닝하여 소프트웨어 내에 존재하는 오픈소스 컴포넌트를 식별하고 해당 오픈소스의 라이선스 및 보안취약점 정보를 제공한다. 기업은 클래리티의 바이너리 코드 점검을 통해 라이선스 위반에 대한 법적이슈와 오픈소스 보안취약점을 사전에 방지하여
+외부에서 공급되는 소프트웨어를 안전하게 활용할 수 있다.
+
+##### [**LABRADOR**](https://www.iotcube.com/) - https://www.iotcube.com/
+![labrador](assets/logo-labrador.png)  
+LABRADOR는 R&D 및 공급망에서 오픈소스 취약점 및 라이선스 이슈를 분석하고 수정하기 위해 제작되었다. 단순 취약점의 나열에 그치지 않고 한발 더 나아가 수정을 위한 다양한 방안을 제시한다. 이를 통해 기업은 취약한 구성 요소를 식별하고 수정할 뿐 아니라 추후 문제의 여지가 있는 라이선스에 대한 사전 조치가 가능하다. 함수 단위 소스 취약점 분석으로 보다 빠르고 정확한 진단이 가능합니다.
 
 ##### [**SW360**](https://www.eclipse.org/sw360) - https://www.eclipse.org/sw360
 ![sw360](assets/SW360.png)  
@@ -1353,6 +1387,13 @@ git push -f origin myfeature
 GitHub에서 자신의 Repository에 가면 Compare & pull request 버튼이 활성화 된 것을 볼 수 있다. 이를 눌러서 Pull Request를 생성한다.
 
 이후 Upstream Repository의 관리자는 요청된 Pull Request를 검토하여 Merge 여부를 결정한다.
+
+> **Git 사용이 처음이라면**  
+> 다음의 Git에 대한 안내서를 참고할 수 있다. 
+> * [Git cheat sheet](https://training.github.com/downloads/ko/github-git-cheat-sheet)
+> * [Do it! 지옥에서 온 문서 관리자 깃&깃허브 입문](https://opentutorials.org/course/2708)
+> * [누구나 쉽게 이해할 수 있는 Git입문](https://backlog.com/git-tutorial/kr/intro/intro1_1.html)
+
 
 > **Pull Request가 처음이라면**
 > * Pull Request가 처음이라면 [**Make a Pull Request**](http://makeapullrequest.com/) <sup>(26)</sup>(비디오 강의)를 참고한다.
