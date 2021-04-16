@@ -116,7 +116,7 @@ Gartner는 [오픈소스 소프트웨어 하이프 사이클 보고서 (2016)](h
 
 응답자의 59%가 이미 오픈소스를 도입해 사용 중이며, 17%는 1년 이내에 오픈소스 도입을 하기 위해 준비 중이라는 점을 고려한다면, 기업들의 오픈소스 수용은 더욱 활발해질 것으로 예상이 된다.
 
-![opensouece-company](images/opensource-company.png)
+![opensouece-company](assets/opensource-company.png)
 
 #### 국내 오픈소스 시장 현황
 현재 국내 기업들의 오픈소스 전환 움직임은 주로 기술 지원 서비스를 보유한 상업적 버전에 초점이 맞춰져 있으나, 앞으로는 [커뮤니티 버전의 범위가 훨씬 커질 것으로 전망](https://www.itworld.co.kr/techlibrary/139540) <sup>(6)</sup>이 된다. 다음에서 나열하는 커뮤니티 버전 오픈소스가 대표적이며, 이들은 기업이 클라우드, 마이크로서비스, 인공지능, 빅데이터 등 비즈니스 전략을 수립하는 데 있어서 매우 중요한 역할을 하고 있다.
@@ -207,7 +207,7 @@ Gartner의 [Technology Insight for Software Composition Analysis (2019) 보고�
 
 오픈소스 컴플라이언스의 범위를 보면 단순히 기업 내에서의 사용하는 것뿐만 아니라 3rd party 공급자와 소프트웨어 공급 및 수급 계약을 하면서 발생하게 될 오픈소스 라이선스 의무사항을 준수하는 활동도 포함된다. 이런 활동들은 오픈소스 커뮤니티와 존중과 신뢰를 바탕으로 한 관계를 구축하는 기반이 되기도 한다. 궁극적으로는 오픈소스 컴플라이언스는 저작권자의 지식재산권을 보호하는 데에 그 목적이 있다는 것을 기억해야 한다.
 
-![compliance](images/compliance.png)
+![compliance](assets/compliance.png)
 
 
 ~~~
@@ -223,7 +223,7 @@ ISO/IEC 5230(https://www.iso.org/standard/81039.html)은 기업이 오픈소스 
 #### 오픈소스 컴플라이언스 프로세스
 기업은 오픈소스 라이선스 의무사항을 준수할 수 있도록 오픈소스의 사용, 기여, 감사 및 배포에 이르는 일련의 과정을 관리/감독해야 한다. 검증 단계까지 전반적인 내용을 체크 리스트를 작성하여, 일관성을 보장하고 검증 단계를 간과하지 않도록 하는 것이 중요하다. 여기서는 일반적인 오픈소스 컴플라이언스 프로세스를 소개하고 단계별 주요 내용을 설명한다.
 
-![compliance-process](images/compliance-process.png)
+![compliance-process](assets/compliance-process.png)
 
 ##### **1. 오픈소스 라이브러리 식별**
 프로젝트에 사용된 오픈소스를 식별하고 목록을 도출하는 단계이다. 모든 오픈소스 컴포넌트가 식별되어야 하며, 오픈소스 원본의 위치와 라이선스 정보 등도 함께 기록이 되어야 한다. 자동화된 스캐닝 도구를 통해 식별하는 것을 권장한다. 자동화된 스캐닝 도구는 [주요 오픈소스 관리 도구 소개](#주요-오픈소스-관리-도구-소개)에서 자세히 다룬다. 스캔은 배포 시점이나 변동 사항이 있을 때, 개발자의 요청이 있을 때, 혹은 주기적으로 수행할 수 있다.
@@ -252,7 +252,7 @@ ISO/IEC 5230(https://www.iso.org/standard/81039.html)은 기업이 오픈소스 
 
 #### 오픈소스 라이선스 공통 의무사항
 오픈소스 라이선스는 오픈소스 저작자의 권리를 존중하기 위해 공통으로 네 가지의 의무 사항을 기본으로 둔다. 오픈소스 사용자는 저작권을 고지해야 하고, 라이선스 사본을 포함해야 한다. 오픈소스 사용 시 보증은 제공되지 않으며, 오픈소스 사용으로 인해 발생한 손해에 대해서도 책임을 지지 않는다.  
-![common-right](images/common-right.png)
+![common-right](assets/common-right.png)
 
 ### 오픈소스 라이선스 컴플라이언스 실행
 #### 사용 중인 오픈소스를 추적해야 하는 이유
@@ -309,59 +309,59 @@ Gartner의 [Technology Insight for Software Composition Analysis](https://www.ga
 #### 주요 오픈소스 관리 도구 소개
 
 ##### [**Olive (Kakao)**](https://olive.kakao.com) - https://olive.kakao.com
-![logo-olive](images/logo-olive.png)  
+![logo-olive](assets/logo-olive.png)  
 Kakao는 자사의 수많은 프로젝트의 오픈소스 관리를 위해 사용하던 시스템을 누구나 사용할 수 있도록 [Olive Platform](https://olive.kakao.com) <sup>(11)</sup> Beta를 무료로 오픈했다. Olive는 Github 프로젝트를 분석하여 사용한 오픈소스 데이터를 관리하고, 라이선스 및 의무사항을 확인하여 Report를 제공한다. 쉽고, 빠르고 정확한 오픈소스 검증을 목표로 직관적인 기능과 UI로 구성되어 있으며, 간단히 Dependency와 라이선스 확인이 가능한 심플 체크 기능 등 사용자 편의에 초점을 맞추고 있다.
 
 ##### [**Fossa**](https://fossa.com) - https://fossa.com
-![logo-fossa](images/logo-fossa.png)  
+![logo-fossa](assets/logo-fossa.png)  
 2015년 설립된 실리콘밸리 스타트업에서 제공하는 서비스로, 풍부한 오픈소스 메타데이터 및 정교한 정책 거버넌스를 제공한다. CI/CD 통합 등 DevOps 환경을 지원하며 개발자 친화적 기능들로 구성되어 있다. Twitter, Uber, Zendesk 등과 파트너를 맺고 있으며, JS Foundation, Linux Foundation, NPM 등과 제휴하고 있다. 기본적인 사용은 무료이나 일부 추가 기능들을 유료로 제공하며, 팀 규모가 100명 이상이라면 엔터프라이즈 버전이 적용된다.
 
 ##### [**FOSSID**](https://fossid.com/) - https://fossid.com/
-![logo-fossid](images/logo-fossid.png)  
+![logo-fossid](assets/logo-fossid.png)  
 2016년 스웨덴에서 설립된 FOSSID는 오픈소스 라이선스 및 보안 취약점 관리를 위한 솔루션이다. 소스 코드 내 오픈소스 콤포넌트를 탐지하고, 각 콤포넌트의 라이선스 및 보안 취약점을 식별한다. 방대한 오픈소스 DB 및 자동 데이터 수집 기술, AI를 통한 향상된 탐지 성능 등 특징을 갖고 있다. 특히, 코드 일부에서 보안 취약점을 탐지하는 유일한 오픈소스 스캐너라는 장점이 있다. 
 
 ##### [**Black Duck**](https://www.blackducksoftware.com/) - https://www.blackducksoftware.com/
-![logo-blackduck](images/logo-blackduck.png)  
+![logo-blackduck](assets/logo-blackduck.png)  
 Black Duck은 오픈소스를 사용하는 동안 발생하는 라이선스와 취약점, 소스 코드 품질 관리를 위한 포괄적인 솔루션이다. 전반적인 소프트웨어의 공급망과 애플리케이션 라이프사이클 전반에 거쳐 오픈소스의 라이선스와 보안을 관리한다. 정확도를 높이고 오탐을 줄이기 위해 오픈 소스 검색에 다각적 접근 방식을 취하여 신뢰성 있는 BOM을 생성한다. 
 
 
 ##### [**Snyk**](https://snyk.io) - https://snyk.io
-![logo-snyk](images/logo-snyk.png)  
+![logo-snyk](assets/logo-snyk.png)  
 오픈소스 라이선스 취약점 관리를 위한 서비스를 제공하다가 2020년부터 라이선스 준수 관리 기능이 추가되었다. Dependency Tree 뷰어, 이슈 우선순위 선별 시스템, 런타임 모니터링 등 기능을 제공하며, 전담 보안 연구팀이 리뷰를 진행한다. 현재 Docker 공식 독점 보안 파트너로 IBM Cloud, RedHat, OpenShift, Kubernetes 등과 제휴를 맺고 있다. 무료로 사용할 수 있지만 팀 규모와 프리미엄 기능에 따라 유료 Plan이 세부적으로 마련되어 있다.
 
 ##### [**WhiteSource**](https://www.whitesourcesoftware.com) - https://www.whitesourcesoftware.com
-![logo-whitesource](images/logo-whitesource.png)    
+![logo-whitesource](assets/logo-whitesource.png)    
 2011년 설립되어 라이선스 준수 및 취약점 관리 서비스를 제공하며, 오래된 서비스인 만큼 방대한 데이터베이스를 확보하고 있다. 110억 개 이상의 소스 코드 파일, 200개 이상의 언어지원, 1억 개 이상의 라이브러리를 확보하고 있다. 컨테이너 및 서비리스 등 모든 환경을 지원하며 현재 Microsoft Azure DevOps 서비스로도 제공되고 있다. GitHub의 Ultimate에서 사용 가능한 옵션으로 제공되고 있으며 GitHub Package도 지원한다. WhiteSource도 기본적인 사용은 무료이며, 팀 규모가 20명을 넘어가면 유료로 사용 가능하며, 추가 프리미엄 기능을 제공한다.
 
 ##### [**FOSSology**](https://www.fossology.org) - https://www.fossology.org
-![fossology](images/fossology.png)  
+![fossology](assets/fossology.png)  
 소스 코드 스캐닝 도구로 소스 파일 상단의 문구를 스캔하여 라이선스를 자동으로 확인한다. FOSSology의 자세한 설치 및 사용 방법은 다음 사이트를 참고할 수 있다.  
 https://openchain-project.github.io/OpenChain-KWG/guide/appendix/3-tools/fossology
 
 ##### [**CodeEye**](https://www.olis.or.kr/codeEye/introduction.do) - https://www.olis.or.kr/codeEye/introduction.do
-![codeeyep](images/logo-codeeye.png)  
+![codeeyep](assets/logo-codeeye.png)  
 CodeEye는 오픈소스 라이선스 비교·분석·검사를 위해 사람이 해야 할 수작업(Eye Checking)을 원활하게 수행하거나 도움을 주는 시스템으로 오픈소스 사용 시 준수 해야 할 라이선스(GNU GPL 등) 내용을 효과적으로 검사하여 보여준다. 한국저작권위원회에서 구축한 오픈소스 DB(지속적 Update)를 기반으로 검사하며, 중소기업기본법 시행령 제3조(중소기업의 범위) 규정에 따른 중소기업 대상으로 무료로 서비스한다. 
 
 ##### [**Clarity**](http://insignary.com/) - http://insignary.com/
-![insignary](images/logo-insignary.png)  
+![insignary](assets/logo-insignary.png)  
 Clarity는 바이너리 코드 분석을 통한 오픈소스 관리 솔루션으로, 바이너리 코드를 스캐닝하여 소프트웨어 내에 존재하는 오픈소스 컴포넌트를 식별하고 해당 오픈소스의 라이선스 및 보안 취약점 정보를 제공한다. 기업은 클래리티의 바이너리 코드 점검을 통해 라이선스 위반에 대한 법적 이슈와 오픈소스 보안 취약점을 사전에 방지하여
 외부에서 공급되는 소프트웨어를 안전하게 활용할 수 있다.
 
 ##### [**LABRADOR**](https://www.iotcube.com/) - https://www.iotcube.com/
-![labrador](images/logo-labrador.png)  
+![labrador](assets/logo-labrador.png)  
 LABRADOR는 R&D 및 공급망에서 오픈소스 취약점 및 라이선스 이슈를 분석하고 수정하기 위해 제작되었다. 단순 취약점의 나열에 그치지 않고 한발 더 나아가 수정을 위한 다양한 방안을 제시한다. 이를 통해 기업은 취약한 구성 요소를 식별하고 수정할 뿐 아니라 추후 문제의 여지가 있는 라이선스에 대한 사전 조치가 가능하다. 함수 단위 소스 취약점 분석으로 더 빠르고 정확한 진단이 가능합니다.
 
 ##### [**SW360**](https://www.eclipse.org/sw360) - https://www.eclipse.org/sw360
-![sw360](images/SW360.png)  
+![sw360](assets/SW360.png)  
 소프트웨어에 포함된 구성요소를 관리하기 위한 도구이다. 오픈소스를 포함하는 제품을 개발하고 배포하는 기업이라면 각 제품과 릴리스 버전마다 사용한 오픈소스의 버전, 라이선스 등의 정보를 수집하고 추적해야 한다. 이를 통해 기업은 올바른 오픈소스 컴플라이언스 활동을 수행할 수 있다. SW360은 오픈소스 정보를 추적하기 위한 도구이다. SW360의 자세한 설치 및 사용 방법은 다음 사이트를 참고할 수 있다.  
 https://openchain-project.github.io/OpenChain-KWG/guide/appendix/3-tools/sw360
 
 ##### [**SPDX**](https://spdx.dev) - https://spdx.dev
-![spdx](images/SPDX.png)  
+![spdx](assets/SPDX.png)  
 SPDX(Software Package Data  소프트웨어 정보 교환 방식을 표준화하고 이를 용이하게 하기 위한 도구를 제공한다.
 
 ##### [**ClearlyDefined**](https://clearlydefined.io) - https://clearlydefined.io
-![clearlydefined](images/ClearyDefined.png)  
+![clearlydefined](assets/ClearyDefined.png)  
 ClearlyDefined는 오픈소스 데이터베이스를 제공하여 사용자가 오픈소스의 출처, 라이선스 등의 정보를 확인할 수 있게 한다. 또한 정보의 오류가 있다면 사용자가 자발적으로 데이터를 개선할 수 있게 하여 커뮤니티 기반의 신뢰성 있는 오픈소스 데이터베이스 구축을 가능하게 한다.
 
 
@@ -445,10 +445,10 @@ Apache 2.0 License의 예
 
 ##### [카카오톡](https://www.kakaocorp.com/service/KakaoTalk)<sup>(96)</sup>의 예
 
-![kakao-notice](images/kakaoNotice.png)
+![kakao-notice](assets/kakaoNotice.png)
 
 ##### [LG전자](https://opensource.lge.com)<sup>(95)</sup>의 예
-![lg-notice](images/lgNotice.png)
+![lg-notice](assets/lgNotice.png)
 
 ### 오픈소스의 보안 취약점
 #### 오픈소스의 보안 취약점 현황
@@ -469,16 +469,16 @@ Sonatype의 [소프트웨어 공급망 현황 보고서(2020)](https://www.sonat
 ##### [Mitre의 CVE(Common Vulnerabilities and Exposures)](https://cve.mitre.org) - https://cve.mitre.org
 상용 애플리케이션 및 비공개 소스 프로젝트를 비롯하여 다양한 유형의 취약점에 대한 정보를 제공한다. 취약점 정보는 개별 CVE 번호가 부여되어 관리된다.
 - 예) CVE-2015-5211 에 대한 CVE 정보
-  ![cve](images/cve.png)
+  ![cve](assets/cve.png)
 ##### [Sonatype OSS Index](https://ossindex.sonatype.org) - https://ossindex.sonatype.org
 Maven, npm, Go, Pypi 등 여러 유형의 Package Management 에서 보고된 오픈소스 취약점 정보 데이터베이스를 제공한다.
 - 예) CVE-2015-5211 에 대한 OSS Index 정보
-  ![sonatype-oss-index](images/sonatype-oss-index.png)
+  ![sonatype-oss-index](assets/sonatype-oss-index.png)
 
 ### DevSecOps
 2012년 Gartner는 "DevOpsSec: Creating the Agile Triangle" 이란 보고서를 통해 DevOps 이니셔티브에 보안 기반을 구축할 필요가 있다는 사실을 강조하기 위해 DevSecOps라는 개념을 소개했다. DevSecOps는 소프트웨어 개발(Development)과 운영(Operation), 보안(Security)의 합성어로 애플리케이션 개발자와, 운영, 보안 실무자 간의 소통과 협업, 통합을 강조하는 개발문화를 의미한다.
 
-![DevSecOps](images/devsecops.png)  
+![DevSecOps](assets/devsecops.png)  
 이미지 출처 : [RedHat](https://www.redhat.com/ko/topics/devops/what-is-devsecops)
 
 SDLC(Software System Development Life Cycle) 전체에 걸쳐 가능한 빨리, 그리고 자주 보안이 통합되도록 해야 한다. 오늘날 일반적인 애플리케이션에는 오픈소스 코드가 60~80% 포함된다는 점을 고려할 때 DevSecOps에서 중요한 것은 오픈소스 취약점에 대한 고려일 것이다. DevSecOps 전체에서 오픈소스 취약점을 추적하고 사용자에게 알려주는 것은 매우 중요하다.
@@ -519,21 +519,21 @@ GiHub은 소스 코드 저장소로 널리 사용되고 있는데, 최근 [GitHu
 
 ##### **Dependency Graph**
 프로젝트에서 사용 중인 외부 라이브러리 정보를 보여주는 기능이다. 사용 중인 라이브러리와 라이브러리 버전 정보들을 조회할 수 있다. Ruby, Javascript, Python 등 다양한 언어와 패키지 매니저를 지원한다. Dependency Graph 는 사용 중인 것뿐만 아니라 자신의 프로젝트를 참조하고 있는 다른 프로젝트도 확인할 수 있다.
-![dependency-graph](images/dependency-graph.png)
+![dependency-graph](assets/dependency-graph.png)
 
 
 ##### **dependabot**
 프로젝트에서 사용 중인 오픈소스 중 오래된 버전이 있다면 PR(Pull Request)를 추가해 준다. 개발자는 변경된 릴리즈 정보를 검토하여 새로운 버전 을 머지(Merge) 할 수 있게 한다.
-![dependabot](images/dependabot.jpg)
+![dependabot](assets/dependabot.jpg)
 
 
 ##### **코드 스캐닝**
 코드 스캐닝은 GitHub 네이티브 환경으로 제공된다. 코드 스캔이 활성화되면 모든 'git push'에서 새로운 잠재적 보안 취약점이 스캔 되고 결과는 풀 요청에 직접 표시된다. 코드 스캐닝은 세계에서 가장 진보된 시맨틱 분석 엔진인 CodeQL을 사용하는데, 이는 실제 취약점을 발견하는 최고의 기록을 가지고 있다. 오픈소스 코드 스캔은 무료로 제공되고 있다.
-![code-scanning](images/code-scanning.png)
+![code-scanning](assets/code-scanning.png)
 
 ##### **Secret 스캐닝**
 GitHub Private Repository와 Enterprise 버전에 추가된 기능으로 코드 내 Secret 코드를 스캔하는 기능이다. 소스 코드에 포함되어 노출되면 민감한 코드 정보들을 찾아내어 실수로 커밋 된 자격 증명의 부정 사용을 방지한다. 일치하는 Secret 포맷이 발견되면 지정된 HTTP 주소로 payload가 전달된다.
-![secret-scanning](images/secret-scanning.png)
+![secret-scanning](assets/secret-scanning.png)
 
 ---
 
@@ -552,7 +552,7 @@ GitHub Private Repository와 Enterprise 버전에 추가된 기능으로 코드 
 오픈소스 선택에 관한 내용에 앞서 오픈소스 생태계를 이해할 필요가 있다. 오픈소스 생태계의 구성은 크게 생산자, 공급자와 소비자로 나뉘는데 생산자는 오픈소스 커뮤니티 및 재단, 그리고 오픈소스 기여자 등으로 구성된다. 공급자로는 소프트웨어 인프라 공급자, 교육 및 컨설팅 기업, 기술지원 기업 등이 있다. 소비자로는 일반 사용자와 오픈소스를 활용하는 조직이 해당한다.
 
 #### 오픈소스 생태계 구성
-![opensource-ecosystem](images/opensouece-ecosystem.png)
+![opensource-ecosystem](assets/opensouece-ecosystem.png)
 ##### **생산자**
 - **오픈소스 커뮤니티** : 오픈소스 생태계에서 허브 역할
 - **오픈소스 재단** : 오픈소스 커뮤니티와 상용 오픈소스 밴더 사이에서 공동 작업을 지원
@@ -604,7 +604,7 @@ GitHub Private Repository와 Enterprise 버전에 추가된 기능으로 코드 
 #### 오픈소스 라이선스 구분
 오픈소스 라이선스는 크게 permissive 라이선스와 copyleft 라이선스로 나눌 수 있다.
 
-![license](images/license.jpg)
+![license](assets/license.jpg)
 
 두 가지 라이선스의 특징을 요약하면 다음과 같다.
 
@@ -1006,7 +1006,7 @@ SPDX-License-Identifier: {$SPDX_license_name}
 
 오픈소스 프로젝트는 어떻게 공동 작업을 통해 고품질의 소프트웨어 개발을 지속할 수 있을까? 어떻게 서로 모르는 다수의 사람이 코드를 함께 작성하며 안정적인 소프트웨어를 만들어 낼 수 있을까? 오픈소스 프로젝트는 명확한 역할 구분을 통해 이를 가능하게 한다.
 
-![membership](./images/membership.png)
+![membership](./assets/membership.png)
 
 
 ##### 리더 (Leader)
@@ -1080,7 +1080,7 @@ CODE OF CONDUCT는 행동수칙, 행동 강령이라고도 불리며 프로젝�
 
 GitHub에서의 Commit 현황은 화면 상단의 "Commits"에서 확인할 수 있다.
 
-![commits.png](./images/commits.png)
+![commits.png](./assets/commits.png)
 
 ##### 프로젝트 이슈를 확인하라
 
@@ -1094,7 +1094,7 @@ GitHub에서의 Commit 현황은 화면 상단의 "Commits"에서 확인할 수 
 
 GitHub에서 Issues 페이지 내 "closed" tab을 보면 Close 된 이슈 현황을 확인할 수 있다.
 
-![closed.png](./images/closed.png)
+![closed.png](./assets/closed.png)
 
 ##### 프로젝트의 Pull Request를 확인하라.
 
@@ -1106,7 +1106,7 @@ GitHub에서 Issues 페이지 내 "closed" tab을 보면 Close 된 이슈 현황
 
 GitHub에서 Pull Request 페이지 내 "closed" tab을 누르면 Close 된 Pull Request를 볼 수 있다.
 
-![pullrequests.png](./images/pullrequests.png)
+![pullrequests.png](./assets/pullrequests.png)
 
 
 ##### 프로젝트가 기여를 환영하는 분위기인가?
@@ -1174,7 +1174,7 @@ GitHub에서 Pull Request 페이지 내 "closed" tab을 누르면 Close 된 Pull
 
 CLA를 요구하는 대부분의 프로젝트는 번거로운 서면 서명 대신 bot을 이용하여 기여자가 몇 번의 클릭만으로 서명할 수 있도록 편의를 제공한다. 그래서 오히려 기여자가 쉽게 서명하고 지나갈 수 있다는 점에 더 유의해야 한다.
 
-![cla-bot](./images/cla-bot.png)
+![cla-bot](./assets/cla-bot.png)
 이미지 출처 : https://colineberhardt.github.io/cla-bot
 
 
@@ -1312,7 +1312,7 @@ Pull Request는 작업이 완료된 이후에 해야 하는 것은 아니다. �
 
 일반적으로 오픈소스 프로젝트는 다음 절차대로 Pull Request할 것을 요구한다.
 
-![prflow](./images/prflow.png)
+![prflow](./assets/prflow.png)
 
 **Step 1. Fork**
 
@@ -1491,7 +1491,7 @@ Pull Request를 생성한 상태로 응답하지 않고 남겨두는 건 실례�
 사실 위에서 언급한 장점을 모두 제치고 가장 강력한 설득 포인트가 될 부분이다. 이 장점을 제대로 이해하기 위해서 오픈소스가 잘 운영되는 방식을 보자.
 
 오픈소스가 공개되고 성공적으로 궤도에 오른다면 다음과 같은 순환을 기대해볼 수 있다. 사람들이 채택할 만큼 충분히 매력이 있다면 사용자들이 늘어날 것이고, 그 사용자들이 뭔가 문제에 맞닥트릴 때마다 버그를 제보하거나 새로운 기능에 대한 아이디어를 제공할지도 모른다. 더 나아가서는 사용자들이 기여자가 되어 직접 개발에 참여하게 된다면 프로젝트는 또다시 성장이 가속화될 것이다.  
-![community-resource](./images/community-resource.png)
+![community-resource](./assets/community-resource.png)
 
 오픈소스로 공개하지 않은 내부 프로그램의 경우와 비교해본다면 다음과 같이 요약할 수 있을 것이다.
 - 훨씬 더 많은 사람으로부터 제공되는 피드백, 아이디어
@@ -1661,7 +1661,7 @@ CLA와 DCO에 대한 더욱 자세한 내용은 **기업을 위한 오픈소스 
 
 GitHub에서는 다음의 7가지를 설정할 것을 권장한다. (GitHub repository > Insights > Community)
 
-![GitHub-Community profile](./images/community-profile.png)
+![GitHub-Community profile](./assets/community-profile.png)
 
 <sup>(56)</sup> GitHub Docs, About community profiles for public repositories
 
@@ -1726,11 +1726,11 @@ CLA는 기여 과정의 하나이기 때문에 Contributing 에서 다루면 좋
 
 만약 회사를 대표하는 소셜 미디어 계정이 있다면 새로운 오픈소스의 공개 소식을 알리자. 개발자들을 타깃으로 한 개발자 전용 계정이 있다면 더욱 좋다.
 
-![twitter-line](./images/twitter-line.png)
+![twitter-line](./assets/twitter-line.png)
 
 <sup>(48)</sup>
 
-![twitter-facebook](./images/twitter-facebook.png)
+![twitter-facebook](./assets/twitter-facebook.png)
 
 <sup>(49)</sup>
 
@@ -1744,7 +1744,7 @@ CLA는 기여 과정의 하나이기 때문에 Contributing 에서 다루면 좋
 
 블로그 글을 업로드하는 것에서 그치지 않고 다시 소셜 미디어로 공유하면 글 확산에 큰 도움이 된다.
 
-![LINE Developers Facebook](./images/line-facebook.png)
+![LINE Developers Facebook](./assets/line-facebook.png)
 
 <sup>(50)</sup>
 
@@ -1961,7 +1961,7 @@ Issue tracker는 현업에서도 많이 사용하고 있는데 오픈소스에�
 
 이슈의 제목을 명확하게 작성하는 것도 중요하지만 아무래도 문장은 한눈에 어떤 내용인지 파악하기 어렵다. 이슈에 라벨을 달아 필터가 작동할 수 있도록 하고, 이슈의 종류를 한눈에 파악할 수 있게 한다. 
 
-![issue label](./images/issue-label.png)
+![issue label](./assets/issue-label.png)
 
 [https://github.com/line/armeira/issues](https://github.com/line/armeria/issues)<sup>(78)</sup>
 
@@ -1975,7 +1975,7 @@ Issue tracker는 현업에서도 많이 사용하고 있는데 오픈소스에�
 
 GitHub에서는 사진과 같이 good first issue의 탐색을 장려하는 메시지를 띄워주기도 한다. 
 
-![GitHub Issues - Good first issues](./images/github-good-first-issue.png)
+![GitHub Issues - Good first issues](./assets/github-good-first-issue.png)
 
 [https://github.com/line/armeira/issues](https://github.com/line/armeria/issues)<sup>(79)</sup>
 
@@ -2050,7 +2050,7 @@ Microsoft, Google, Twitter, Netflix와 같은 소프트웨어 분야 리더 기�
 
 먼저, 오픈소스 프로그램이란 용어를 살펴보자. 오픈소스 프로그램이란 기업이 오픈소스를 활용하면서 (1) 라이선스 위반 리스크는 완화하고 (2) 오픈소스로부터 최고의 가치를 창출하기 위한 프로그램이다. 여기에는 오픈소스 정책과 절차, 그리고 이를 자동화/효율화할 수 있는 도구를 마련하는 일이 포함된다.
 
-![osp](./images/osp.png)
+![osp](./assets/osp.png)
 
 ### OSPO란?
 
@@ -2068,7 +2068,7 @@ OSPO는 오픈소스 프로그램을 구성하기 위한 조직이다. 어떻게
 
 OSPO의 세 가지 주요 역할은 다음과 같다.
 
-![ospo](./images/ospo.png)
+![ospo](./assets/ospo.png)
 
 #### 1. 올바른 오픈소스의 사용
 
@@ -2095,7 +2095,7 @@ OSPO는 기업의 비즈니스 전략을 고려하여 오픈소스 공개 정책
 
 기업이 OSPO를 만들기 위해서는 다음 절차를 수행해야 한다.
 
-![feedback](./images/feedback.png)
+![feedback](./assets/feedback.png)
 
 #### 1. 리더를 임명하라
 
@@ -2144,7 +2144,7 @@ OSPO의 인원 구성과 각 역할 및 책임을 알아보자.
 미리 한가지 첨언하면 아래의 인원 구성은 전략적으로 OSPO에 충분한 리소스를 투입해야 할 이유가 명확히 있는 기업을 고려하여 설명하였다. 기업의 규모가 크지 않고, 오픈소스 활용을 이제 시작하는 기업이라면, 처음부터 아래의 모든 인원과 역할을 지정할 필요는 없다. 한 명의 오픈소스 프로그램 매니저를 임명하고, 관련 부서와의 협업을 통해 OSPO의 역할을 수행하면서 점차 규모를 키워갈 것을 권장한다.
 
 
-![role](./images/role.png)
+![role](./assets/role.png)
 
 #### 오픈소스 프로그램 매니저
 
@@ -2217,12 +2217,12 @@ OSPO의 법률 담당은 다음의 역할을 수행한다.
 
 Linux Foundation이 출간한 Open Source Compliance in the Enterprise에서는 이러한 프로세스를 설명하고 있다.
 
-![process](./images/process.png)  
+![process](./assets/process.png)  
 이미지 출처 : https://www.linuxfoundation.org/compliance-and-security/2018/12/open-source-compliance-in-the-enterprise
 
 
 더불어 OpenChain 프로젝트에서 제공하는 Curriculum 문서에서도 유사하게 단계별 프로세스와 주요 활동을 설명하고 있다.
-![process2](./images/process2.png)  
+![process2](./assets/process2.png)  
 이미지 출처 : https://www.openchainproject.org/resources
 
 기업은 이러한 자료를 참고하여 기업의 환경에 맞게 오픈소스 프로세스를 구축할 수 있다. 주의할 점은 프로세스 활동이 소프트웨어 개발의 병목 현상을 유발하게 해서는 안 된다. 아무리 프로세스가 충실하게 구축되었다고 할지라도 실제 활동을 수행해야 할 소프트웨어 개발 조직에 과부하가 발생한다면, 프로세스는 곧 아무 역할도 하지 못하는 단지 한 장의 종이로 전락할 수 있음을 유념한다.
