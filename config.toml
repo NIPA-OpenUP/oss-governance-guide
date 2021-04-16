@@ -1,4 +1,5 @@
-baseURL = "https://NIPA-OpenUP.github.io/oss-governance-guide/"
+# baseURL = "https://NIPA-OpenUP.github.io/oss-governance-guide/"
+baseURL = "https://haksungjang.github.io/oss-governance-guide/"
 title = "NIPA OSS Guide"
 
 enableRobotsTXT = true
