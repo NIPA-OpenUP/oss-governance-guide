@@ -134,7 +134,7 @@ Gartner는 [오픈소스 소프트웨어 하이프 사이클 보고서 (2016)](h
 - [젠킨스(Jenkins)](https://www.jenkins.io)<sup>(92)</sup>
 - [아파치 스파크(Apache Spark)](http://spark.apache.org)<sup>(93)</sup>
 
-국내 오픈소스 시장은 [2019년 기준 2,784억 원 수준으로, 2022년까지 연평균 20% 이상의 성장률을 보이며 4,687억 원 규모에 도달할 것으로 전망](https://rd.kdb.co.kr/fileView?groupId=633D8216-6F28-AACB-0DCA-0C5F29BD9AA0&fileId=0B5A6FCE-9061-B544-64F2-25B54AEF2A84) <sup>(7)</sup>되고 있다.
+국내 오픈소스 시장은 [2020년 기준 2,843억 원 수준으로, 2024년까지 연평균 14% 이상의 성장률을 보이며 4,602억 원 규모에 도달할 것으로 전망](https://www.nipa.kr/main/selectBbsNttView.do?key=112&bbsNo=8&nttNo=7835) <sup>(7)</sup>되고 있다.
 
 
 ### 오픈소스 도입 이유
@@ -2310,8 +2310,8 @@ Linux Foundation이 출간한 Open Source Compliance in the Enterprise에서는 
 (3) RedHat, The State of Enterprise Open Source (2020) https://www.redhat.com/en/enterprise-open-source-report/2020    
 (4) Gartner, Hype Cycle for Open-Source Software (2016) https://www.gartner.com/en/documents/3371817/hype-cycle-for-open-source-software-2016    
 (5) IDG, 오픈소스 기업에 안착하다 (2020) https://www.itworld.co.kr/techlibrary/144662  
-(6) IDG, IT 전망보고서 (2020) https://www.itworld.co.kr/techlibrary/139540    
-(7) KDB 미래전략연구소, 4차 산업혁명의 숨은 원동력, 오픈소스 현황과 시사점 (2020) https://rd.kdb.co.kr/fileView?groupId=633D8216-6F28-AACB-0DCA-0C5F29BD9AA0&fileId=0B5A6FCE-9061-B544-64F2-25B54AEF2A84    
+(6) IDG, IT 전망보고서 (2020) https://www.itworld.co.kr/techlibrary/139540  
+(7) Nipa, 2020년 오픈소스SW (Open Source Software) 시장동향 조사보고서 https://www.nipa.kr/main/selectBbsNttView.do?key=112&bbsNo=8&nttNo=7835  
 (8) Linux Foundation, Open Source Jobs Report (2020) https://training.linuxfoundation.org/resources/2020-open-source-jobs-report  
 (9) Gartner, Technology Insight for Software Composition Analysis (2019) https://www.gartner.com/en/documents/3971011/technology-insight-for-software-composition-analysis  
 (10) Linux.com, Artifex v. Hancom: Open Source is Now an Enforceable Contract https://www.linux.com/topic/open-source/artifex-v-hancom-open-source-now-enforceable-contract    
