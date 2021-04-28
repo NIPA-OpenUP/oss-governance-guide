@@ -26,6 +26,7 @@ Gartner는 [오픈소스 소프트웨어 하이프 사이클 보고서 (2016)](h
 응답자의 59%가 이미 오픈소스를 도입해 사용 중이며, 17%는 1년 이내에 오픈소스 도입을 하기 위해 준비 중이라는 점을 고려한다면, 기업들의 오픈소스 수용은 더욱 활발해질 것으로 예상이 된다.
 
 {{< imgproc opensource-company Fit "768x768" >}}
+<center><i>[국내 오픈소스 도입현황]</i><center>
 {{< /imgproc >}}
 
 
@@ -53,9 +54,9 @@ Gartner는 [오픈소스 소프트웨어 하이프 사이클 보고서 (2016)](h
 [^jenkins]: 젠킨스(Jenkins) : https://www.jenkins.io
 [^spark]: 아파치 스파크(Apache Spark) : http://spark.apache.org
 
-국내 오픈소스 시장은 2019년 기준 2,784억 원 수준으로, 2022년까지 연평균 20% 이상의 성장률을 보이며 4,687억 원 규모에 도달할 것으로 [전망](https://rd.kdb.co.kr/fileView?groupId=633D8216-6F28-AACB-0DCA-0C5F29BD9AA0&fileId=0B5A6FCE-9061-B544-64F2-25B54AEF2A84)[^kdb-633]되고 있다.
+국내 오픈소스 시장은 [2020년 기준 2,843억 원 수준으로, 2024년까지 연평균 14% 이상의 성장률을 보이며 4,602억 원 규모에 도달할 것으로 전망](https://www.nipa.kr/main/selectBbsNttView.do?key=112&bbsNo=8&nttNo=7835)[^kdb-633]되고 있다.
 
-[^kdb-633]: 4차 산업혁명의 숨은 원동력, 오픈소스 현황과 시사점 : https://rd.kdb.co.kr/fileView?groupId=633D8216-6F28-AACB-0DCA-0C5F29BD9AA0&fileId=0B5A6FCE-9061-B544-64F2-25B54AEF2A84
+[^kdb-633]: Nipa, 2020년 오픈소스SW (Open Source Software) 시장동향 조사보고서 https://www.nipa.kr/main/selectBbsNttView.do?key=112&bbsNo=8&nttNo=7835
 
 
 ### 오픈소스 도입 이유
@@ -149,6 +150,7 @@ Gartner의 [Technology Insight for Software Composition Analysis (2019) 보고�
 오픈소스 컴플라이언스의 범위를 보면 단순히 기업 내에서의 사용하는 것뿐만 아니라 3rd party 공급자와 소프트웨어 공급 및 수급 계약을 하면서 발생하게 될 오픈소스 라이선스 의무사항을 준수하는 활동도 포함된다. 이런 활동들은 오픈소스 커뮤니티와 존중과 신뢰를 바탕으로 한 관계를 구축하는 기반이 되기도 한다. 궁극적으로는 오픈소스 컴플라이언스는 저작권자의 지식재산권을 보호하는 데에 그 목적이 있다는 것을 기억해야 한다.
 
 {{< imgproc compliance Fit "768x768" >}}
+<center><i>[오픈소스 컴플라이언스 범위]</i><center>
 {{< /imgproc >}}
 
 
@@ -166,6 +168,7 @@ Gartner의 [Technology Insight for Software Composition Analysis (2019) 보고�
 기업은 오픈소스 라이선스 의무사항을 준수할 수 있도록 오픈소스의 사용, 기여, 감사 및 배포에 이르는 일련의 과정을 관리/감독해야 한다. 검증 단계까지 전반적인 내용을 체크 리스트를 작성하여, 일관성을 보장하고 검증 단계를 간과하지 않도록 하는 것이 중요하다. 여기서는 일반적인 오픈소스 컴플라이언스 프로세스를 소개하고 단계별 주요 내용을 설명한다.
 
 {{< imgproc compliance-process Fit "768x768" >}}
+<center><i>[오픈소스 컴플라이언스 프로세스]</i><center>
 {{< /imgproc >}}
 
 
@@ -198,6 +201,7 @@ Gartner의 [Technology Insight for Software Composition Analysis (2019) 보고�
 오픈소스 라이선스는 오픈소스 저작자의 권리를 존중하기 위해 공통으로 네 가지의 의무 사항을 기본으로 둔다. 오픈소스 사용자는 저작권을 고지해야 하고, 라이선스 사본을 포함해야 한다. 오픈소스 사용 시 보증은 제공되지 않으며, 오픈소스 사용으로 인해 발생한 손해에 대해서도 책임을 지지 않는다.  
 
 {{< imgproc common-right Fit "768x768" >}}
+<center><i>[오픈소스 라이선스 공통 의무사항]</i><center>
 {{< /imgproc >}}
 
 
@@ -518,7 +522,7 @@ Maven, npm, Go, Pypi 등 여러 유형의 Package Management 에서 보고된 �
 [^devopsset]: DevOpsSec: Creating the Agile Triangle : https://www.gartner.com/en/documents/1896617/devopssec-creating-the-agile-triangle
 
 {{< imgproc devsecops Fit "768x768" >}}
-<center><i>RedHat : https://www.redhat.com/ko/topics/devops/what-is-devsecops</i></center>
+<center><i>DevSecOps (이미지 출처 https://www.redhat.com/ko/topics/devops/what-is-devsecops)</i></center>
 {{< /imgproc >}}
 
 
@@ -610,6 +614,7 @@ GitHub Private Repository와 Enterprise 버전에 추가된 기능으로 코드 
 #### 오픈소스 생태계 구성
 
 {{< imgproc opensouece-ecosystem Fit "768x768" >}}
+<center>[오픈소스 생태계]</center>
 {{< /imgproc >}}
 
 ##### **생산자**
@@ -664,6 +669,7 @@ GitHub Private Repository와 Enterprise 버전에 추가된 기능으로 코드 
 오픈소스 라이선스는 크게 permissive 라이선스와 copyleft 라이선스로 나눌 수 있다.
 
 {{< imgproc license Fit "768x768" >}}
+<center>[오픈소스 라이선스 구분]</center>
 {{< /imgproc >}}
 
 
@@ -734,4 +740,6 @@ GitHub Private Repository와 Enterprise 버전에 추가된 기능으로 코드 
 
 ---
 
-여기까지 오픈소스 사용 시 고려해야 할 사항에 대해 알아보았다. 
+여기까지 오픈소스 사용하기에 대한 내용들을 살펴보았다. 기업에서 오픈소스를 도입할때 고려해야 할 사항들과 오픈소스 컴플라이언스, 그리고 라이선스 의무사항과 각종 오픈소스 관리도구 및 오픈소스 보안 취약점 등에 대해 다뤘다. 기업은 자칫 잘못된 오픈소스 사용으로 인해 기업 이미지에도 큰 타격을 줄 수도 있음을 기억해야 하며, 오픈소스 사용시 오픈소스 라이선스 의무사항을 준수하지 않아 발생하는 법적 리스크도 반드시 고려해야 한다. 이를 위해서는 전사 차원에서 오픈소스 정책과 프로세스를 수립하는 등 오픈소스를 올바르게 사용하기 위한 지속적인 노력을 기울여야 할 것이다.      
+
+다음 장에서는 기업의 구성원이 외부 오픈소스 개발에 참여하고 직접 기여할 때 기업이 고려해야 할 사항들을 알아보도록 하겠다.
