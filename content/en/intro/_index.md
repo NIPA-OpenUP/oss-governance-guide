@@ -1,6 +1,6 @@
 ---
-title: "들어가기"
-linkTitle: "0. 들어가기"
+title: "들어가며"
+linkTitle: "0. 들어가며"
 weight: 10
 description: >
    
