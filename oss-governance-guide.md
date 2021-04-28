@@ -117,6 +117,10 @@ Gartner는 [오픈소스 소프트웨어 하이프 사이클 보고서 (2016)](h
 응답자의 59%가 이미 오픈소스를 도입해 사용 중이며, 17%는 1년 이내에 오픈소스 도입을 하기 위해 준비 중이라는 점을 고려한다면, 기업들의 오픈소스 수용은 더욱 활발해질 것으로 예상이 된다.
 
 ![opensouece-company](images/opensource-company.png)
+<div align="center">
+  <p>국내 오픈소스 도입현황<sup>(5)</sup></p>
+</div>
+
 
 #### 국내 오픈소스 시장 현황
 현재 국내 기업들의 오픈소스 전환 움직임은 주로 기술 지원 서비스를 보유한 상업적 버전에 초점이 맞춰져 있으나, 앞으로는 [커뮤니티 버전의 범위가 훨씬 커질 것으로 전망](https://www.itworld.co.kr/techlibrary/139540) <sup>(6)</sup>이 된다. 다음에서 나열하는 커뮤니티 버전 오픈소스가 대표적이며, 이들은 기업이 클라우드, 마이크로서비스, 인공지능, 빅데이터 등 비즈니스 전략을 수립하는 데 있어서 매우 중요한 역할을 하고 있다.
@@ -208,7 +212,9 @@ Gartner의 [Technology Insight for Software Composition Analysis (2019) 보고�
 오픈소스 컴플라이언스의 범위를 보면 단순히 기업 내에서의 사용하는 것뿐만 아니라 3rd party 공급자와 소프트웨어 공급 및 수급 계약을 하면서 발생하게 될 오픈소스 라이선스 의무사항을 준수하는 활동도 포함된다. 이런 활동들은 오픈소스 커뮤니티와 존중과 신뢰를 바탕으로 한 관계를 구축하는 기반이 되기도 한다. 궁극적으로는 오픈소스 컴플라이언스는 저작권자의 지식재산권을 보호하는 데에 그 목적이 있다는 것을 기억해야 한다.
 
 ![compliance](images/compliance.png)
-
+<div align="center">
+  <p>오픈소스 컴플라이언스 범위</p>
+</div>
 
 ~~~
 참고로, 지난 2020년 12월, 오픈소스 컴플라이언스에 대한 국제 표준이 ISO에 등록되었다. 
@@ -224,6 +230,10 @@ ISO/IEC 5230(https://www.iso.org/standard/81039.html)은 기업이 오픈소스 
 기업은 오픈소스 라이선스 의무사항을 준수할 수 있도록 오픈소스의 사용, 기여, 감사 및 배포에 이르는 일련의 과정을 관리/감독해야 한다. 검증 단계까지 전반적인 내용을 체크 리스트를 작성하여, 일관성을 보장하고 검증 단계를 간과하지 않도록 하는 것이 중요하다. 여기서는 일반적인 오픈소스 컴플라이언스 프로세스를 소개하고 단계별 주요 내용을 설명한다.
 
 ![compliance-process](images/compliance-process.png)
+<div align="center">
+  <p>오픈소스 컴플라이언스 프로세스</p>
+</div>
+
 
 ##### **1. 오픈소스 라이브러리 식별**
 프로젝트에 사용된 오픈소스를 식별하고 목록을 도출하는 단계이다. 모든 오픈소스 컴포넌트가 식별되어야 하며, 오픈소스 원본의 위치와 라이선스 정보 등도 함께 기록이 되어야 한다. 자동화된 스캐닝 도구를 통해 식별하는 것을 권장한다. 자동화된 스캐닝 도구는 [주요 오픈소스 관리 도구 소개](#주요-오픈소스-관리-도구-소개)에서 자세히 다룬다. 스캔은 배포 시점이나 변동 사항이 있을 때, 개발자의 요청이 있을 때, 혹은 주기적으로 수행할 수 있다.
@@ -253,6 +263,10 @@ ISO/IEC 5230(https://www.iso.org/standard/81039.html)은 기업이 오픈소스 
 #### 오픈소스 라이선스 공통 의무사항
 오픈소스 라이선스는 오픈소스 저작자의 권리를 존중하기 위해 공통으로 네 가지의 의무 사항을 기본으로 둔다. 오픈소스 사용자는 저작권을 고지해야 하고, 라이선스 사본을 포함해야 한다. 오픈소스 사용 시 보증은 제공되지 않으며, 오픈소스 사용으로 인해 발생한 손해에 대해서도 책임을 지지 않는다.  
 ![common-right](images/common-right.png)
+<div align="center">
+  <p>오픈소스 라이선스 공통 의무사항</p>
+</div>
+
 
 ### 오픈소스 라이선스 컴플라이언스 실행
 #### 사용 중인 오픈소스를 추적해야 하는 이유
@@ -479,7 +493,9 @@ Maven, npm, Go, Pypi 등 여러 유형의 Package Management 에서 보고된 �
 2012년 Gartner는 "DevOpsSec: Creating the Agile Triangle" 이란 보고서를 통해 DevOps 이니셔티브에 보안 기반을 구축할 필요가 있다는 사실을 강조하기 위해 DevSecOps라는 개념을 소개했다. DevSecOps는 소프트웨어 개발(Development)과 운영(Operation), 보안(Security)의 합성어로 애플리케이션 개발자와, 운영, 보안 실무자 간의 소통과 협업, 통합을 강조하는 개발문화를 의미한다.
 
 ![DevSecOps](images/devsecops.png)  
-이미지 출처 : [RedHat](https://www.redhat.com/ko/topics/devops/what-is-devsecops)
+<div align="center">
+  <p>DevSecOps (이미지 출처 https://www.redhat.com/ko/topics/devops/what-is-devsecops)</p>
+</div>
 
 SDLC(Software System Development Life Cycle) 전체에 걸쳐 가능한 빨리, 그리고 자주 보안이 통합되도록 해야 한다. 오늘날 일반적인 애플리케이션에는 오픈소스 코드가 60~80% 포함된다는 점을 고려할 때 DevSecOps에서 중요한 것은 오픈소스 취약점에 대한 고려일 것이다. DevSecOps 전체에서 오픈소스 취약점을 추적하고 사용자에게 알려주는 것은 매우 중요하다.
 
@@ -553,6 +569,10 @@ GitHub Private Repository와 Enterprise 버전에 추가된 기능으로 코드 
 
 #### 오픈소스 생태계 구성
 ![opensource-ecosystem](images/opensouece-ecosystem.png)
+<div align="center">
+  <p>오픈소스 생태계</p>
+</div>  
+
 ##### **생산자**
 - **오픈소스 커뮤니티** : 오픈소스 생태계에서 허브 역할
 - **오픈소스 재단** : 오픈소스 커뮤니티와 상용 오픈소스 밴더 사이에서 공동 작업을 지원
@@ -605,6 +625,9 @@ GitHub Private Repository와 Enterprise 버전에 추가된 기능으로 코드 
 오픈소스 라이선스는 크게 permissive 라이선스와 copyleft 라이선스로 나눌 수 있다.
 
 ![license](images/license.jpg)
+<div align="center">
+  <p>오픈소스 라이선스 구분</p>
+</div>  
 
 두 가지 라이선스의 특징을 요약하면 다음과 같다.
 
@@ -1007,7 +1030,9 @@ SPDX-License-Identifier: {$SPDX_license_name}
 오픈소스 프로젝트는 어떻게 공동 작업을 통해 고품질의 소프트웨어 개발을 지속할 수 있을까? 어떻게 서로 모르는 다수의 사람이 코드를 함께 작성하며 안정적인 소프트웨어를 만들어 낼 수 있을까? 오픈소스 프로젝트는 명확한 역할 구분을 통해 이를 가능하게 한다.
 
 ![membership](./images/membership.png)
-
+<div align="center">
+  <p>오픈소스 프로젝트 구성</p>
+</div>  
 
 ##### 리더 (Leader)
 
@@ -1175,7 +1200,9 @@ GitHub에서 Pull Request 페이지 내 "closed" tab을 누르면 Close 된 Pull
 CLA를 요구하는 대부분의 프로젝트는 번거로운 서면 서명 대신 bot을 이용하여 기여자가 몇 번의 클릭만으로 서명할 수 있도록 편의를 제공한다. 그래서 오히려 기여자가 쉽게 서명하고 지나갈 수 있다는 점에 더 유의해야 한다.
 
 ![cla-bot](./images/cla-bot.png)
-이미지 출처 : https://colineberhardt.github.io/cla-bot
+<div align="center">
+  <p>CLA Bot (이미지 출처 : https://colineberhardt.github.io/cla-bot)</p>
+</div>  
 
 
 #### 3. 기여 코드를 점검하라
@@ -1313,6 +1340,9 @@ Pull Request는 작업이 완료된 이후에 해야 하는 것은 아니다. �
 일반적으로 오픈소스 프로젝트는 다음 절차대로 Pull Request할 것을 요구한다.
 
 ![prflow](./images/prflow.png)
+<div align="center">
+  <p>GitHub Pull Request Workflow</p>
+</div>  
 
 **Step 1. Fork**
 
@@ -1492,6 +1522,9 @@ Pull Request를 생성한 상태로 응답하지 않고 남겨두는 건 실례�
 
 오픈소스가 공개되고 성공적으로 궤도에 오른다면 다음과 같은 순환을 기대해볼 수 있다. 사람들이 채택할 만큼 충분히 매력이 있다면 사용자들이 늘어날 것이고, 그 사용자들이 뭔가 문제에 맞닥트릴 때마다 버그를 제보하거나 새로운 기능에 대한 아이디어를 제공할지도 모른다. 더 나아가서는 사용자들이 기여자가 되어 직접 개발에 참여하게 된다면 프로젝트는 또다시 성장이 가속화될 것이다.  
 ![community-resource](./images/community-resource.png)
+<div align="center">
+  <p>오픈소스 운영</p>
+</div>  
 
 오픈소스로 공개하지 않은 내부 프로그램의 경우와 비교해본다면 다음과 같이 요약할 수 있을 것이다.
 - 훨씬 더 많은 사람으로부터 제공되는 피드백, 아이디어
@@ -1582,6 +1615,10 @@ CLA와 DCO에 대한 더욱 자세한 내용은 **기업을 위한 오픈소스 
 
 오픈소스가 잘 운영되기 위해서는 특정 역할을 맡은 사람이 있어야 한다. 만약 한 명의 메인테이너만 있는 오픈소스에서 그 한 명이 퇴사를 한다면? 그 오픈소스에 이미 커뮤니티가 강력하게 형성이 되어있다면 좋겠지만 그렇지 않다면 오픈소스는 점차 기억 속에서 사라지게 될 것이다. 혹은 너무 많은 사람에게 소유자 권한을 부여한다면? 누군가가 실수로 설정을 바꾸는 경우가 발생할 수 있을 것이다. 따라서 프로젝트의 규모에 따라 최소 몇 명의 멤버가 어떤 권한을 가지게 될지 사전에 정하는 것을 권한다. GitHub을 기준으로 역할별로 갖게 되는 권한을 참고하자.
 
+<div align="center">
+  <p>오픈소스 운영시 역할에 따른 권한</p>
+</div> 
+
 |역할 이름|권한|
 |---|---|
 |Read|저장소에 접근하고 clone 하기, issue 생성하고 의견남기기, pull request를 생성하고 의견남기기, `@` 기호로 언급할 수 있는 후보에 등록|
@@ -1589,6 +1626,7 @@ CLA와 DCO에 대한 더욱 자세한 내용은 **기업을 위한 오픈소스 
 |Write|Triage 역할의 권한 전부, 저장소에 push하기, pull request 관리하기|
 |Maintain|Write 역할의 권한 전부, 저장소 설정 중 일부에 접근하기|
 |Admin|Maintain 역할의 권한 전부, 멤버 관리를 포함한 저장소 설정의 전부에 접근하기|
+ 
 
 #### 언제?:언제 공개할 것인가? 공개 시점 정하기
 
@@ -1662,8 +1700,9 @@ CLA와 DCO에 대한 더욱 자세한 내용은 **기업을 위한 오픈소스 
 GitHub에서는 다음의 7가지를 설정할 것을 권장한다. (GitHub repository > Insights > Community)
 
 ![GitHub-Community profile](./images/community-profile.png)
-
-<sup>(56)</sup> GitHub Docs, About community profiles for public repositories
+<div align="center">
+  <p>GitHub Docs, About community profiles for public repositories<sup>(56)</sup> </p>
+</div>
 
 오픈소스의 거버넌스 문서들이 모두 마련되었는지 확인해주는 도구도 있으니 참고한다.
 
@@ -1727,12 +1766,14 @@ CLA는 기여 과정의 하나이기 때문에 Contributing 에서 다루면 좋
 만약 회사를 대표하는 소셜 미디어 계정이 있다면 새로운 오픈소스의 공개 소식을 알리자. 개발자들을 타깃으로 한 개발자 전용 계정이 있다면 더욱 좋다.
 
 ![twitter-line](./images/twitter-line.png)
-
-<sup>(48)</sup>
+<div align="center">
+  <p>Line, 오픈소스 Twitter <sup>(48)</sup> </p>
+</div>  
 
 ![twitter-facebook](./images/twitter-facebook.png)
-
-<sup>(49)</sup>
+<div align="center">
+  <p>Facebook, 오픈소스 Twitter <sup>(49)</sup> </p>
+</div>  
 
 ##### 기술 블로그
 
@@ -1745,8 +1786,9 @@ CLA는 기여 과정의 하나이기 때문에 Contributing 에서 다루면 좋
 블로그 글을 업로드하는 것에서 그치지 않고 다시 소셜 미디어로 공유하면 글 확산에 큰 도움이 된다.
 
 ![LINE Developers Facebook](./images/line-facebook.png)
-
-<sup>(50)</sup>
+<div align="center">
+  <p>Line Developers Facebook</p>
+</div>  
 
 ##### 웹사이트 제작
 
@@ -1962,8 +2004,9 @@ Issue tracker는 현업에서도 많이 사용하고 있는데 오픈소스에�
 이슈의 제목을 명확하게 작성하는 것도 중요하지만 아무래도 문장은 한눈에 어떤 내용인지 파악하기 어렵다. 이슈에 라벨을 달아 필터가 작동할 수 있도록 하고, 이슈의 종류를 한눈에 파악할 수 있게 한다. 
 
 ![issue label](./images/issue-label.png)
-
-[https://github.com/line/armeira/issues](https://github.com/line/armeria/issues)<sup>(78)</sup>
+<div align="center">
+  <p>Armeira, Github Issue Label <sup>(78)</sup></p>
+</div>  
 
 기여를 염두에 두고 있는 사람들에게는 이런 라벨들이 도전할만한 일감을 탐색하기에 아주 좋을 것이다.
 
@@ -1976,8 +2019,9 @@ Issue tracker는 현업에서도 많이 사용하고 있는데 오픈소스에�
 GitHub에서는 사진과 같이 good first issue의 탐색을 장려하는 메시지를 띄워주기도 한다. 
 
 ![GitHub Issues - Good first issues](./images/github-good-first-issue.png)
-
-[https://github.com/line/armeira/issues](https://github.com/line/armeria/issues)<sup>(79)</sup>
+<div align="center">
+  <p>Armeira, Github Good first issues <sup>(79)</sup></p>
+</div>  
 
 #### Pull request 운영 best practice
 
@@ -2051,6 +2095,9 @@ Microsoft, Google, Twitter, Netflix와 같은 소프트웨어 분야 리더 기�
 먼저, 오픈소스 프로그램이란 용어를 살펴보자. 오픈소스 프로그램이란 기업이 오픈소스를 활용하면서 (1) 라이선스 위반 리스크는 완화하고 (2) 오픈소스로부터 최고의 가치를 창출하기 위한 프로그램이다. 여기에는 오픈소스 정책과 절차, 그리고 이를 자동화/효율화할 수 있는 도구를 마련하는 일이 포함된다.
 
 ![osp](./images/osp.png)
+<div align="center">
+  <p>오픈소스 프로그램</p>
+</div>  
 
 ### OSPO란?
 
@@ -2069,6 +2116,10 @@ OSPO는 오픈소스 프로그램을 구성하기 위한 조직이다. 어떻게
 OSPO의 세 가지 주요 역할은 다음과 같다.
 
 ![ospo](./images/ospo.png)
+<div align="center">
+  <p>OSPO 주요 역할</p>
+</div>  
+
 
 #### 1. 올바른 오픈소스의 사용
 
@@ -2096,6 +2147,9 @@ OSPO는 기업의 비즈니스 전략을 고려하여 오픈소스 공개 정책
 기업이 OSPO를 만들기 위해서는 다음 절차를 수행해야 한다.
 
 ![feedback](./images/feedback.png)
+<div align="center">
+  <p>OSPO 구성 절차</p>
+</div>  
 
 #### 1. 리더를 임명하라
 
@@ -2143,8 +2197,10 @@ OSPO의 인원 구성과 각 역할 및 책임을 알아보자.
 
 미리 한가지 첨언하면 아래의 인원 구성은 전략적으로 OSPO에 충분한 리소스를 투입해야 할 이유가 명확히 있는 기업을 고려하여 설명하였다. 기업의 규모가 크지 않고, 오픈소스 활용을 이제 시작하는 기업이라면, 처음부터 아래의 모든 인원과 역할을 지정할 필요는 없다. 한 명의 오픈소스 프로그램 매니저를 임명하고, 관련 부서와의 협업을 통해 OSPO의 역할을 수행하면서 점차 규모를 키워갈 것을 권장한다.
 
-
 ![role](./images/role.png)
+<div align="center">
+  <p>OSPO의 인원 구성과 역할</p>
+</div>  
 
 #### 오픈소스 프로그램 매니저
 
@@ -2218,12 +2274,15 @@ OSPO의 법률 담당은 다음의 역할을 수행한다.
 Linux Foundation이 출간한 Open Source Compliance in the Enterprise에서는 이러한 프로세스를 설명하고 있다.
 
 ![process](./images/process.png)  
-이미지 출처 : https://www.linuxfoundation.org/compliance-and-security/2018/12/open-source-compliance-in-the-enterprise
-
+<div align="center">
+  <p>Linux Foundation, 오픈소스 컴플라이언스 프로세스 <sup>(97)</sup></p>
+</div>  
 
 더불어 OpenChain 프로젝트에서 제공하는 Curriculum 문서에서도 유사하게 단계별 프로세스와 주요 활동을 설명하고 있다.
 ![process2](./images/process2.png)  
-이미지 출처 : https://www.openchainproject.org/resources
+<div align="center">
+  <p>OpenChain, 오픈소스 컴플라이언스 프로세스 및 주요활동 <sup>(98)</sup></p>
+</div>  
 
 기업은 이러한 자료를 참고하여 기업의 환경에 맞게 오픈소스 프로세스를 구축할 수 있다. 주의할 점은 프로세스 활동이 소프트웨어 개발의 병목 현상을 유발하게 해서는 안 된다. 아무리 프로세스가 충실하게 구축되었다고 할지라도 실제 활동을 수행해야 할 소프트웨어 개발 조직에 과부하가 발생한다면, 프로세스는 곧 아무 역할도 하지 못하는 단지 한 장의 종이로 전락할 수 있음을 유념한다.
 
@@ -2246,45 +2305,44 @@ Linux Foundation이 출간한 Open Source Compliance in the Enterprise에서는 
 
 
 # 참고링크
-(1) Todo Group, Open Source Program Survey Results (2019) https://github.com/todogroup/survey/tree/master/2019    
-(2) Open Up, 공개소프트웨어 활용 지원 https://www.oss.kr/plaza_intro  
-<<<<<<< HEAD
-(3) RedHat, The State of Enterprise Open Source (2020) https://www.redhat.com/en/enterprise-open-source-report/2020  
-(4) Gartner, Hype Cycle for Open-Source Software (2016) https://www.gartner.com/en/documents/3371817/hype-cycle-for-open-source-software-2016  
+(1) Todo Group, Open Source Program Survey Results (2019) https://github.com/todogroup/survey/tree/master/2019      
+(2) Open Up, 공개소프트웨어 활용 지원 https://www.oss.kr/plaza_intro    
+(3) RedHat, The State of Enterprise Open Source (2020) https://www.redhat.com/en/enterprise-open-source-report/2020    
+(4) Gartner, Hype Cycle for Open-Source Software (2016) https://www.gartner.com/en/documents/3371817/hype-cycle-for-open-source-software-2016    
 (5) IDG, 오픈소스 기업에 안착하다 (2020) https://www.itworld.co.kr/techlibrary/144662  
 (6) IDG, IT 전망보고서 (2020) https://www.itworld.co.kr/techlibrary/139540  
 (7) Nipa, 2020년 오픈소스SW (Open Source Software) 시장동향 조사보고서 https://www.nipa.kr/main/selectBbsNttView.do?key=112&bbsNo=8&nttNo=7835  
 (8) Linux Foundation, Open Source Jobs Report (2020) https://training.linuxfoundation.org/resources/2020-open-source-jobs-report  
 (9) Gartner, Technology Insight for Software Composition Analysis (2019) https://www.gartner.com/en/documents/3971011/technology-insight-for-software-composition-analysis  
-(10) Linux.com, Artifex v. Hancom: Open Source is Now an Enforceable Contract https://www.linux.com/topic/open-source/artifex-v-hancom-open-source-now-enforceable-contract  
+(10) Linux.com, Artifex v. Hancom: Open Source is Now an Enforceable Contract https://www.linux.com/topic/open-source/artifex-v-hancom-open-source-now-enforceable-contract    
 (11) Kakao, Olive Platform https://olive.kakao.com  
 (12) Sonatype, State of the Software Supply Chain Report (2020) https://www.sonatype.com/2020ssc  
 (13) CVE https://cve.mitre.org  
-(14) IBM, Open Source Security Trends (2020) https://developer.ibm.com/recipes/tutorials/open-source-security-trends-for-2020  
+(14) IBM, Open Source Security Trends (2020) https://developer.ibm.com/recipes/tutorials/open-source-security-trends-for-2020    
 (15) SonarQube https://www.sonarqube.org  
 (16) Sonatype, State of the Software Supply Chain Report (2020) https://www.sonatype.com/2020ssc  
 (17) CHAOSS https://chaoss.community/metrics  
 (18) Linux Kernel, https://github.com/torvalds/linux  
 (19) Technical Steering Committee https://github.com/nodejs/TSC  
-(20) Kubernetes contributing.md https://github.com/kubernetes/community/blob/master/contributors/guide/contributing.md  
+(20) Kubernetes contributing.md https://github.com/kubernetes/community/blob/master/contributors/guide/contributing.md    
 (21) GitHub Docs, fork https://help.github.com/en/github/getting-started-with-github/fork-a-repo  
-(22) Git, branch https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EB%A6%AC%EB%AA%A8%ED%8A%B8-%EB%B8%8C%EB%9E%9C%EC%B9%98  
+(22) Git, branch https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EB%A6%AC%EB%AA%A8%ED%8A%B8-%EB%B8%8C%EB%9E%9C%EC%B9%98    
 (23) Git, rebase https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-Rebase-%ED%95%98%EA%B8%B0  
-(24) Git, branch https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EB%B8%8C%EB%9E%9C%EC%B9%98%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80  
-(25) Git, commit https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-%EC%88%98%EC%A0%95%ED%95%98%EA%B3%A0-%EC%A0%80%EC%9E%A5%EC%86%8C%EC%97%90-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0  
+(24) Git, branch https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EB%B8%8C%EB%9E%9C%EC%B9%98%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80    
+(25) Git, commit https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-%EC%88%98%EC%A0%95%ED%95%98%EA%B3%A0-%EC%A0%80%EC%9E%A5%EC%86%8C%EC%97%90-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0    
 (26) Make a Pull Request http://makeapullrequest.com  
 (27) GitHub first-contributions https://github.com/Roshanjossey/first-contributions  
-(28) KIPRIS, 상표 검색 서비스 http://kdtj.kipris.or.kr/kdtj/searchLogina.do?method=loginTM  
-(29) Apache, Software Foundation Contributor License Agreement https://www.apache.org/licenses/contributor-agreements.html  
-(30) Cloud Native Computing Foundation Contributor License Agreement https://github.com/kubernetes/community/blob/master/CLA.md  
+(28) KIPRIS, 상표 검색 서비스 http://kdtj.kipris.or.kr/kdtj/searchLogina.do?method=loginTM    
+(29) Apache, Software Foundation Contributor License Agreement https://www.apache.org/licenses/contributor-agreements.html    
+(30) Cloud Native Computing Foundation Contributor License Agreement https://github.com/kubernetes/community/blob/master/CLA.md    
 (31) Python Software Foundation Contributor Agreement https://www.python.org/psf/contrib  
 (32) CLA assistant https://github.com/cla-assistant/cla-assistant  
 (33) cla-bot https://colineberhardt.github.io/cla-bot  
 (34) Google Developers Contributor License Agreements https://cla.developers.google.com/clas    
 (35) Microsoft Contributor License Agreement https://cla.opensource.microsoft.com    
 (36) Repolinter, The Open Source Repository Linter https://github.com/todogroup/repolinter   
-(37) GitHub Docs, Creating a new repository https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-new-repository    
-(38) GitHub Docs, Managing teams and people with access to your repository https://docs.github.com/en/github/administering-a-repository/managing-teams-and-people-with-access-to-your-repository  
+(37) GitHub Docs, Creating a new repository https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-new-repository      
+(38) GitHub Docs, Managing teams and people with access to your repository https://docs.github.com/en/github/administering-a-repository/managing-teams-and-people-with-access-to-your-repository    
 (39) GitHub Docs, Adding topics to your repository https://docs.github.com/en/github/administering-a-repository/classifying-your-repository-with-topics#adding-topics-to-your-repository  
 (40) GitLab Docs, Create a project https://docs.gitlab.com/ee/user/project/working_with_projects.html#create-a-project  
 (41) GitLab Docs, Sharing and permissions https://docs.gitlab.com/ee/user/project/settings/index.html#sharing-and-permissions  
@@ -2320,53 +2378,32 @@ Linux Foundation이 출간한 Open Source Compliance in the Enterprise에서는 
 (70) Selenium https://selenium.dev  
 (71) Make a README, License https://www.makeareadme.com/#license-1  
 (72) Awesome README, https://github.com/matiassingers/awesome-readme  
-(73) Apache, Assembling LICENSE and NOTICE files https://infra.apache.org/licensing-howto.html  
-(74) Apache, Hive Project GitHub https://github.com/apache/hive 
-
-(75) Atom, Contributing to Atom https://github.com/atom/atom/blob/master/CONTRIBUTING.md 
-
-(76) Kubernetes, Contributor's Guide https://github.com/kubernetes/community/tree/master/contributors/guide  
-
-(77) Armeria, Developer guide https://armeria.dev/community/developer-guide 
-
-(78) Armeria, GitHub Issues https://github.com/line/armeria/issues
-
-(79) Armeria, GitHub Issues https://github.com/line/armeria/issues
-
-(80) sdras, Awesome Actions, https://github.com/sdras/awesome-actions
-
-(81) GitHub Docs, Adding an issue template https://docs.github.com/en/github/building-a-strong-community/manually-creating-a-single-issue-template-for-your-repository#adding-an-issue-template
-
-(82) GitLab Docs, Create an issue template https://docs.gitlab.com/ee/user/project/description_templates.html#create-an-issue-template
-
-(83) A collection of GitHub issue and pull request templates https://github.com/stevemao/github-issue-templates
-
-(84) GitHub Docs, Creating a pull request template for your repository https://docs.github.com/en/github/building-a-strong-community/creating-a-pull-request-template-for-your-repository
-
-(85) GirLab Docs, Create a merge request template https://docs.gitlab.com/ee/user/project/description_templates.html#create-a-merge-request-template
-
-(86) Docker, https://www.docker.com 
-
-(87) Kubernetes), https://kubernetes.io
-
-(88) Apache Tomcat, http://tomcat.apache.org
-
-(89) Apache HTTP Server https://httpd.apache.org
-
-(90) Maria DB, https://mariadb.org
-
-(91) Mongo DB, https://www.mongodb.com
-
-(92) Jenkins, https://www.jenkins.io
-
-(93) Apache Spark, http://spark.apache.org
-
-(94) Open Source Initiative, https://opensource.org
-
-(95) LG Electronics, OpenSource Code Distribution https://opensource.lge.com  
-
-(96) KakaoTalk, https://www.kakaocorp.com/service/KakaoTalk
-
+(73) Apache, Assembling LICENSE and NOTICE files https://infra.apache.org/licensing-howto.html    
+(74) Apache, Hive Project GitHub https://github.com/apache/hive   
+(75) Atom, Contributing to Atom https://github.com/atom/atom/blob/master/CONTRIBUTING.md   
+(76) Kubernetes, Contributor's Guide https://github.com/kubernetes/community/tree/master/contributors/guide    
+(77) Armeria, Developer guide https://armeria.dev/community/developer-guide   
+(78) Armeria, GitHub Issues https://github.com/line/armeria/issues  
+(79) Armeria, GitHub Issues https://github.com/line/armeria/issues  
+(80) sdras, Awesome Actions, https://github.com/sdras/awesome-actions    
+(81) GitHub Docs, Adding an issue template https://docs.github.com/en/github/building-a-strong-community/manually-creating-a-single-issue-template-for-your-repository#adding-an-issue-template    
+(82) GitLab Docs, Create an issue template https://docs.gitlab.com/ee/user/project/description_templates.html#create-an-issue-template    
+(83) A collection of GitHub issue and pull request templates https://github.com/stevemao/github-issue-templates    
+(84) GitHub Docs, Creating a pull request template for your repository https://docs.github.com/en/github/building-a-strong-community/creating-a-pull-request-template-for-your-repository    
+(85) GirLab Docs, Create a merge request template https://docs.gitlab.com/ee/user/project/description_templates.html#create-a-merge-request-template    
+(86) Docker, https://www.docker.com      
+(87) Kubernetes), https://kubernetes.io    
+(88) Apache Tomcat, http://tomcat.apache.org    
+(89) Apache HTTP Server https://httpd.apache.org    
+(90) Maria DB, https://mariadb.org    
+(91) Mongo DB, https://www.mongodb.com    
+(92) Jenkins, https://www.jenkins.io    
+(93) Apache Spark, http://spark.apache.org    
+(94) Open Source Initiative, https://opensource.org    
+(95) LG Electronics, OpenSource Code Distribution https://opensource.lge.com      
+(96) KakaoTalk, https://www.kakaocorp.com/service/KakaoTalk  
+(97) Linux Foundation, Open Source Compliance in the enterprise https://www.linuxfoundation.org/compliance-and-security/2018/12/open-source-compliance-in-the-enterprise    
+(98) OpenChain, Open Source Reference Library https://www.openchainproject.org/resources
 
 # 참고문헌
 * TODO Guide, Participating in open source communities https://todogroup.org/guides/participating/
