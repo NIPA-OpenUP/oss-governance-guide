@@ -62,6 +62,7 @@ description: >
 오픈소스가 공개되고 성공적으로 궤도에 오른다면 다음과 같은 순환을 기대해볼 수 있다. 사람들이 채택할 만큼 충분히 매력이 있다면 사용자들이 늘어날 것이고, 그 사용자들이 뭔가 문제에 맞닥트릴 때마다 버그를 제보하거나 새로운 기능에 대한 아이디어를 제공할지도 모른다. 더 나아가서는 사용자들이 기여자가 되어 직접 개발에 참여하게 된다면 프로젝트는 또다시 성장이 가속화될 것이다.  
 
 {{< imgproc community-resource Fit "768x768" >}}
+<center>[오픈소스 운영]</center>
 {{< /imgproc >}}
 
 
@@ -240,7 +241,7 @@ CLA와 DCO에 대한 더욱 자세한 내용은 **기업을 위한 오픈소스 
 GitHub에서는 다음의 7가지를 설정할 것을 권장한다.
 
 {{< imgproc community-profile Fit "768x768" >}}
-<center><i>GitHub Docs, About community profiles for public repositories</i></center>
+<center>[GitHub Docs, About community profiles for public repositories]</center>
 {{< /imgproc >}}
 
 오픈소스의 거버넌스 문서들이 모두 마련되었는지 확인해주는 도구도 있으니 참고한다.
@@ -349,7 +350,7 @@ CLA는 기여 과정의 하나이기 때문에 Contributing 에서 다루면 좋
 
 블로그 글을 업로드하는 것에서 그치지 않고 다시 소셜 미디어로 공유하면 글 확산에 큰 도움이 된다.
 
-{{< imgproc ine-facebook Fit "768x768" >}}
+{{< imgproc line-facebook Fit "768x768" >}}
 <center><i>https://engineering.linecorp.com/ko/blog/try-armeria-circuit-breaker/</i></center>
 {{< /imgproc >}}
 

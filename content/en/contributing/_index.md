@@ -356,6 +356,7 @@ SPDX-License-Identifier: {$SPDX_license_name}
 ]
 
 {{< imgproc membership Fit "768x768" >}}
+<center>[오픈소스 프로젝트 구성]</center>
 {{< /imgproc >}}
 
 ##### 리더 (Leader)
@@ -539,7 +540,7 @@ CLA를 요구하는 대부분의 프로젝트는 번거로운 서면 서명 대�
 
 
 {{< imgproc cla-bot Fit "768x768" >}}
-<center><i>출처 : https://colineberhardt.github.io/cla-bot</i></center>
+<center>CLA Bot (이미지 출처 : https://colineberhardt.github.io/cla-bot)</center>
 {{< /imgproc >}}
 
 
@@ -700,6 +701,7 @@ Pull Request는 작업이 완료된 이후에 해야 하는 것은 아니다. �
 일반적으로 오픈소스 프로젝트는 다음 절차대로 Pull Request할 것을 요구한다.
 
 {{< imgproc prflow Fit "768x768" >}}
+<center>[GitHub Pull Request Workflow]</center>
 {{< /imgproc >}}
 
 **Step 1. Fork**

@@ -26,6 +26,7 @@ Microsoft, Google, Twitter, Netflix와 같은 소프트웨어 분야 리더 기�
 
 
 {{< imgproc osp Fit "768x768" >}}
+<center>[오픈소스 프로그램]</center>
 {{< /imgproc >}}
 
 
@@ -51,6 +52,7 @@ OSPO의 세 가지 주요 역할은 다음과 같다.
 
 
 {{< imgproc ospo Fit "768x768" >}}
+<center>[OSPO 주요 역할]</center>
 {{< /imgproc >}}
 
 
@@ -83,6 +85,7 @@ OSPO는 기업의 비즈니스 전략을 고려하여 오픈소스 공개 정책
 
 
 {{< imgproc feedback Fit "768x768" >}}
+<center>[OSPO 구성 절차]</center>
 {{< /imgproc >}}
 
 #### 1. 리더를 임명하라
@@ -135,6 +138,7 @@ OSPO의 인원 구성과 각 역할 및 책임을 알아보자.
 
 
 {{< imgproc role Fit "768x768" >}}
+<center>[OSPO의 인원 구성과 역할]</center>
 {{< /imgproc >}}
 
 
@@ -215,14 +219,14 @@ OSPO의 법률 담당은 다음의 역할을 수행한다.
 Linux Foundation이 출간한 Open Source Compliance in the Enterprise에서는 이러한 프로세스를 설명하고 있다.
 
 {{< imgproc process Fit "768x768" >}}
-<center><i>https://www.linuxfoundation.org/compliance-and-security/2018/12/open-source-compliance-in-the-enterprise</i></center>
+<center>Linux Foundation, 오픈소스 컴플라이언스 프로세스 : https://www.linuxfoundation.org/compliance-and-security/2018/12/open-source-compliance-in-the-enterprise</center>
 {{< /imgproc >}}
 
 
 더불어 OpenChain 프로젝트에서 제공하는 Curriculum 문서에서도 유사하게 단계별 프로세스와 주요 활동을 설명하고 있다.
 
 {{< imgproc process2 Fit "768x768" >}}
-<center><i>https://www.openchainproject.org/resources</i></center>
+<center>OpenChain, 오픈소스 컴플라이언스 프로세스 및 주요활동 : https://www.openchainproject.org/resources</center>
 {{< /imgproc >}}
 
 
