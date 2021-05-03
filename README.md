@@ -21,7 +21,7 @@
 
 ## 문서 작업
 
-작성 중인 가이드는 다음 페이지에서 확인하실 수 있습니다. : [NIPA 기업 공개 소프트웨어 거버넌스 가이드]([./oss-governance-guide.md](https://nipa-openup.github.io/oss-governance-guide/))
+가이드는 다음 페이지에서 확인하실 수 있습니다. : [NIPA 기업 공개 소프트웨어 거버넌스 가이드](https://nipa-openup.github.io/oss-governance-guide/)
 
 ## CONTRIBUTING
 
