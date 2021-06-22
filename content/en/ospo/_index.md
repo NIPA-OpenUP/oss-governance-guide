@@ -252,14 +252,14 @@ TODO Group은 기업이 OSPO를 설립하고 운영하기 위한 가이드를 �
 * [Measuring Your Open Source Program](https://todogroup.org/guides/measuring)[^measuring]
 * [Tools for Managing Your Open Source Program](https://todogroup.org/guides/management-tools)[^tools]
 
-[^howtocreate]: How to Create an Open Source Program : https://todogroup.org/guides/create-program)
-[^measuring]: Measuring Your Open Source Program : https://todogroup.org/guides/measuring)
-[^tools]: Tools for Managing Your Open Source Program : https://todogroup.org/guides/management-tools)[
+[^howtocreate]: How to Create an Open Source Program : https://todogroup.org/guides/create-program
+[^measuring]: Measuring Your Open Source Program : https://todogroup.org/guides/measuring
+[^tools]: Tools for Managing Your Open Source Program : https://todogroup.org/guides/management-tools
 
 
 ### OSPO 기업 사례
 
-또한, TODO Group은 Microsoft, Faceboo, Uber 등 오픈소스를 효과적으로 활용하는 기업들이 어떻게 OSPO를 운영하고 있는지, 각 기업의 사례를 취합하여 공개하였다. 이를 참고하면 보다 구체적인 인사이트를 얻을 수 있다. 
+또한, TODO Group은 Microsoft, Facebook, Uber 등 오픈소스를 효과적으로 활용하는 기업들이 어떻게 OSPO를 운영하고 있는지, 각 기업의 사례를 취합하여 공개하였다. 이를 참고하면 보다 구체적인 인사이트를 얻을 수 있다. 
 
 * [Autodesk](https://github.com/todogroup/todogroup.github.io/blob/master/content/en/guides/casestudies/autodesk.md)[^autodesk]
 * [Capital One](https://github.com/todogroup/todogroup.github.io/blob/master/content/en/guides/casestudies/capitalone.md)[^capitalone]
@@ -272,7 +272,7 @@ TODO Group은 기업이 OSPO를 설립하고 운영하기 위한 가이드를 �
 * [Uber](https://github.com/todogroup/todogroup.github.io/blob/master/content/en/guides/casestudies/uber.md)[^uber]
 * [Yahoo/Verizon Media](https://github.com/todogroup/todogroup.github.io/blob/master/content/en/guides/casestudies/oath.md)[^yahoo]
 
-[^autodesk]: Autodesk's OSPO : https://bit.ly/3mVdi0I)
+[^autodesk]: Autodesk's OSPO : https://bit.ly/3mVdi0I
 [^capitalone]: Capital One's OSPO : https://bit.ly/3sxbf4e
 [^comcast]: Comcast's OSPO : https://bit.ly/2RAIw1A
 [^facebook]: Facebook's OSPO : https://bit.ly/3gkwOmg
