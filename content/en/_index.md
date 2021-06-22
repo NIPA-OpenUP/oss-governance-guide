@@ -19,7 +19,7 @@ menu:
 1. [<b>오픈소스 사용하기</b>](./using/)
 2. [<b>오픈소스 기여하기</b>](./contributing/)
 3. [<b>오픈소스 공개하기</b>](./releasing/)
-4. [<b>OSPO</b><sub>Open Source Review Board</sub>](./ospo/)
+4. [<b>OSPO</b><sub>Open Source Program Office</sub>](./ospo/)
 
 ------
 
