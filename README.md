@@ -35,4 +35,7 @@
 
 ## License
 
-* 이 문서는 ____ 으로 공개합니다. 
+이 문서는 [공공누리의 제1유형](https://www.kogl.or.kr/info/license.do#01-tab)으로 공개합니다.   
+![license](./images/img_opentype01.jpg)
+
+출처표시만 한다면 누구든지 어떠한 목적으로든 자유롭게 사용하실 수 있습니다. 
