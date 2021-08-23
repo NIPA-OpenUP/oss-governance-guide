@@ -35,4 +35,11 @@ menu:
 
 #### GitHub
 
-문서는 GitHub에서 공동 작성하고 있으며, 다음 페이지에서 확인하실 수 있습니다. : https://github.com/NIPA-OpenUP/oss-governance-guide
+이 문서는 GitHub에서 공동 작성하고 있으며, 다음 페이지에서 확인하실 수 있습니다. : https://github.com/NIPA-OpenUP/oss-governance-guide
+
+#### License
+
+이 문서는 [공공누리의 제1유형](https://www.kogl.or.kr/info/license.do#01-tab)으로 공개합니다.   
+![license](./img_opentype01.jpg)
+
+출처표시만 한다면 누구든지 어떠한 목적으로든 자유롭게 사용하실 수 있습니다. 
