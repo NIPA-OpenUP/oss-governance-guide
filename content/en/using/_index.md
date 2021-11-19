@@ -261,6 +261,39 @@ Gartner의 [Technology Insight for Software Composition Analysis](https://www.ga
 
 #### 주요 오픈소스 관리 도구 소개
 
+##### **FOSSology** - https://www.fossology.org
+
+{{< imgproc fossology Fit "768x768" >}}
+{{< /imgproc >}}
+
+소스 코드 스캐닝 도구로 소스 파일 상단의 문구를 스캔하여 라이선스를 자동으로 확인한다. FOSSology의 자세한 설치 및 사용 방법은 다음 사이트를 참고할 수 있다.  
+https://openchain-project.github.io/OpenChain-KWG/guide/appendix/3-tools/fossology
+
+##### **SW360** - https://www.eclipse.org/sw360
+
+{{< imgproc SW360 Fit "768x768" >}}
+{{< /imgproc >}}
+
+소프트웨어에 포함된 구성요소를 관리하기 위한 도구이다. 오픈소스를 포함하는 제품을 개발하고 배포하는 기업이라면 각 제품과 릴리스 버전마다 사용한 오픈소스의 버전, 라이선스 등의 정보를 수집하고 추적해야 한다. 이를 통해 기업은 올바른 오픈소스 컴플라이언스 활동을 수행할 수 있다. SW360은 오픈소스 정보를 추적하기 위한 도구이다. SW360의 자세한 설치 및 사용 방법은 다음 사이트를 참고할 수 있다.  
+https://openchain-project.github.io/OpenChain-KWG/guide/appendix/3-tools/sw360
+
+##### **SPDX** - https://spdx.dev
+
+{{< imgproc SPDX Fit "768x768" >}}
+{{< /imgproc >}}
+
+SPDX(Software Package Data  소프트웨어 정보 교환 방식을 표준화하고 이를 용이하게 하기 위한 도구를 제공한다.
+
+##### **FOSSLight** - https://fosslight.org/
+
+{{< imgproc logo-fosslight Fit "768x768" >}}
+<i>FOSSLight</i>
+{{< /imgproc >}}
+
+LG전자는 [FOSSLight 오픈소스 Project](https://fosslight.org/)[^fosslight]로 FOSSLight Hub와 FOSSLight Scanner를 공개했다. **FOSSLight Hub**는 오픈소스, 라이선스, 그리고 보안취약점까지 관리해줌으로써 오픈 소스 소프트웨어 사용 시 Compliance를 준수하고 보안취약점으로부터 안전하게 사용할 수 있도록 해준다. 또한 프로젝트 별 BOM 관리, 라이선스의 의무사항 및 보안취약점 조회 기능을 제공하여 OSC(Open Source Compliance) Process를 수행할 수 있도록 도와준다. **FOSSLight Scanner**는 Dependency, 소스 코드, 바이너리로부터 오픈소스 정보를 스캔하는 도구이다.  
+
+[^fosslight]: FOSSLight : https://fosslight.org/
+
 ##### **Olive (Kakao)** - https://olive.kakao.com
 
 {{< imgproc logo-olive Fit "768x768" >}}
@@ -307,14 +340,6 @@ Black Duck은 오픈소스를 사용하는 동안 발생하는 라이선스와 �
 
 2011년 설립되어 라이선스 준수 및 취약점 관리 서비스를 제공하며, 오래된 서비스인 만큼 방대한 데이터베이스를 확보하고 있다. 110억 개 이상의 소스 코드 파일, 200개 이상의 언어지원, 1억 개 이상의 라이브러리를 확보하고 있다. 컨테이너 및 서비리스 등 모든 환경을 지원하며 현재 Microsoft Azure DevOps 서비스로도 제공되고 있다. GitHub의 Ultimate에서 사용 가능한 옵션으로 제공되고 있으며 GitHub Package도 지원한다. WhiteSource도 기본적인 사용은 무료이며, 팀 규모가 20명을 넘어가면 유료로 사용 가능하며, 추가 프리미엄 기능을 제공한다.
 
-##### **FOSSology** - https://www.fossology.org
-
-{{< imgproc fossology Fit "768x768" >}}
-{{< /imgproc >}}
-
-소스 코드 스캐닝 도구로 소스 파일 상단의 문구를 스캔하여 라이선스를 자동으로 확인한다. FOSSology의 자세한 설치 및 사용 방법은 다음 사이트를 참고할 수 있다.  
-https://openchain-project.github.io/OpenChain-KWG/guide/appendix/3-tools/fossology
-
 ##### **CodeEye** - https://www.olis.or.kr/codeEye/introduction.do
 
 {{< imgproc logo-codeeye Fit "768x768" >}}
@@ -336,21 +361,6 @@ Clarity는 바이너리 코드 분석을 통한 오픈소스 관리 솔루션으
 {{< /imgproc >}}
 
 LABRADOR는 R&D 및 공급망에서 오픈소스 취약점 및 라이선스 이슈를 분석하고 수정하기 위해 제작되었다. 단순 취약점의 나열에 그치지 않고 한발 더 나아가 수정을 위한 다양한 방안을 제시한다. 이를 통해 기업은 취약한 구성 요소를 식별하고 수정할 뿐 아니라 추후 문제의 여지가 있는 라이선스에 대한 사전 조치가 가능하다. 함수 단위 소스 취약점 분석으로 더 빠르고 정확한 진단이 가능합니다.
-
-##### **SW360** - https://www.eclipse.org/sw360
-
-{{< imgproc SW360 Fit "768x768" >}}
-{{< /imgproc >}}
-
-소프트웨어에 포함된 구성요소를 관리하기 위한 도구이다. 오픈소스를 포함하는 제품을 개발하고 배포하는 기업이라면 각 제품과 릴리스 버전마다 사용한 오픈소스의 버전, 라이선스 등의 정보를 수집하고 추적해야 한다. 이를 통해 기업은 올바른 오픈소스 컴플라이언스 활동을 수행할 수 있다. SW360은 오픈소스 정보를 추적하기 위한 도구이다. SW360의 자세한 설치 및 사용 방법은 다음 사이트를 참고할 수 있다.  
-https://openchain-project.github.io/OpenChain-KWG/guide/appendix/3-tools/sw360
-
-##### **SPDX** - https://spdx.dev
-
-{{< imgproc SPDX Fit "768x768" >}}
-{{< /imgproc >}}
-
-SPDX(Software Package Data  소프트웨어 정보 교환 방식을 표준화하고 이를 용이하게 하기 위한 도구를 제공한다.
 
 ##### **ClearlyDefined** - https://clearlydefined.io
 
