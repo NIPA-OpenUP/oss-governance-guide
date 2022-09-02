@@ -11,21 +11,23 @@ menu:
 
 {{% pageinfo %}}
 기업 공개 소프트웨어 거버넌스 가이드는 정보통신산업진흥원(NIPA)이 주관하고 [오픈업](https://www.oss.kr/open_up_intro)이 연구를 수행하여 국내 기업의 올바른 오픈소스 활용을 안내하고자 작성하고 있습니다. 
+* [2021년 기업 공개 소프트웨어 거버넌스 가이드 발간](https://www.oss.kr/oss_guide/show/2f7c25e8-df31-4ad9-9d25-1d8234c322c0?page=9)
+{{< imgproc Company_gov Resize "300x" />}}
 {{% /pageinfo %}}
 
-## 목차
 
-0. [<b>들어가며</b>](./intro/)
-1. [<b>오픈소스 사용하기</b>](./using/)
-2. [<b>오픈소스 기여하기</b>](./contributing/)
-3. [<b>오픈소스 공개하기</b>](./releasing/)
-4. [<b>OSPO</b><sub>Open Source Program Office</sub>](./ospo/)
+
+<!-- ## 목차
+
+1. [<b>들어가며</b>](./intro/)
+2. [<b>오픈소스 사용하기</b>](./using/)
+3. [<b>오픈소스 기여하기</b>](./contributing/)
+4. [<b>오픈소스 공개하기</b>](./releasing/)
+5. [<b>OSPO</b><sub>Open Source Program Office</sub>](./ospo/) -->
 
 ------
 
-### 가이드 작성
-
-#### 집필진
+## 집필진
 
 | Name | Company | Email |
 |--|--|--|
@@ -33,11 +35,11 @@ menu:
 | [장학성](https://github.com/haksungjang) | SK텔레콤 | haksung@sk.com |
 | [황민호](https://github.com/revfactory) | 카카오 | robin.hwang@kakaocorp.com |
 
-#### GitHub
+## GitHub
 
 이 문서는 GitHub에서 공동 작성하고 있으며, 다음 페이지에서 확인하실 수 있습니다. : https://github.com/NIPA-OpenUP/oss-governance-guide
 
-#### License
+## License
 
 이 문서는 [공공누리의 제1유형](https://www.kogl.or.kr/info/license.do#01-tab)으로 공개합니다.   
 ![license](./img_opentype01.jpg)
