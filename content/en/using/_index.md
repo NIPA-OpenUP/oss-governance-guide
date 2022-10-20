@@ -9,9 +9,9 @@ description: >
 ## 배경
 
 ### 기업이 바라보는 오픈소스
-2020년에 RedHat에서는 전 세계 IT 리더 950명을 대상으로 설문조사를 진행했다. 이 [오픈소스 Enterprise 현황 보고서 (2020)](https://www.redhat.com/en/enterprise-open-source-report/2020)[^redhat2020]에 따르면 오픈소스 사용이 증가함에 따라 엔터프라이즈 소프트웨어 시장에서 점차 독점 소프트웨어 사용이 감소하고 있다는 것을 확인할 수 있다. 앞으로는 독점 소프트웨어 사용이 2019년 55%에서 2020년에는 42%로 떨어졌으며, 2022년에는 32%대로 줄어들 것으로 전망하고 있다. 그리고 2021년 현재 오픈소스 기반의 엔터프라이즈 소프트웨어의 시장 점유율은 32%이며, 2022년에는 44%로 증가할 것으로 예상한다. 또한 응답자 중 무려 95%가 오픈소스가 전략적으로 중요하다고 응답했으며, 그중 75%는 매우 중요하다고 답했다. 
+2022년 RedHat은 전 세계 IT 리더 1296명을 대상으로 한 인터뷰 결과를 발표했다. 이 [오픈소스 Enterprise 현황 보고서 (2022)](https://www.redhat.com/en/resources/state-of-enterprise-open-source-report-2022)[^redhat2022]에 따르면 오픈소스 사용이 증가함에 따라 엔터프라이즈 소프트웨어 시장에서 점차 독점 소프트웨어 사용이 감소하고 있다는 것을 확인할 수 있다. 앞으로 독점 소프트웨어 사용이 향후 2년 동안 현재 45%에서 37%로 8%나 줄어들 것으로 전망하고 있으며, 같은 기간 동안 엔터프라이즈 오픈소스와 커뮤니티 기반 오픈 소스는 각각 5%, 3% 증가할 것으로 예상한다. 또한 IT 리더의 80%는 조직의 새로운 기술을 위한 엔터프라이즈 오픈 소스 소프트웨어 사용이 증가할 것이라고 답했다.
 
-[^redhat2020]: 오픈소스 Enterprise 현황 보고서 (2020) : https://www.redhat.com/en/enterprise-open-source-report/2020
+[^redhat2022]: 오픈소스 Enterprise 현황 보고서 (2022) : https://www.redhat.com/en/resources/state-of-enterprise-open-source-report-2022
 
 Gartner는 [오픈소스 소프트웨어 하이프 사이클 보고서 (2016)](https://www.gartner.com/en/documents/3371817/hype-cycle-for-open-source-software-2016)[^gartner2016]에서 ‘주류 IT 조직의 95%는 사실을 인지하고 있는지를 떠나서 적지 않은 오픈소스 소프트웨어 자산을 활용하고 있다’라고 보고하기도 했다.
 
@@ -23,7 +23,7 @@ Gartner는 [오픈소스 소프트웨어 하이프 사이클 보고서 (2016)](h
 
 [^itworld144662]: 오픈소스, 기업 IT에 안착하다 (2020) : https://www.itworld.co.kr/techlibrary/144662
 
-응답자의 59%가 이미 오픈소스를 도입해 사용 중이며, 17%는 1년 이내에 오픈소스 도입을 하기 위해 준비 중이라는 점을 고려한다면, 기업들의 오픈소스 수용은 더욱 활발해질 것으로 예상이 된다.
+[2021년 국내 기업의 공개SW 활용률은 61.5%](https://www.nipa.kr/main/selectBbsNttView.do?key=113&bbsNo=9&nttNo=8859)인 것으로 나타났다. 세부적으로는 전사적 활용 비율이 전년 10.7%에서 26.4%로 크게 증가했으며, 부분적 활용 비율은 35.1% 이다.
 
 {{< imgproc opensource-company Fit "768x768" >}}
 <center><i>[국내 오픈소스 도입현황]</i><center>
@@ -54,9 +54,9 @@ Gartner는 [오픈소스 소프트웨어 하이프 사이클 보고서 (2016)](h
 [^jenkins]: 젠킨스(Jenkins) : https://www.jenkins.io
 [^spark]: 아파치 스파크(Apache Spark) : http://spark.apache.org
 
-국내 오픈소스 시장은 [2020년 기준 2,843억 원 수준으로, 2024년까지 연평균 14% 이상의 성장률을 보이며 4,602억 원 규모에 도달할 것으로 전망](https://www.nipa.kr/main/selectBbsNttView.do?key=112&bbsNo=8&nttNo=7835)[^kdb-633]되고 있다.
+국내 오픈소스 시장은 [2021년 OSS 시장규모는 2020년 대비 6.6% 성장한 3,032억 원이고, OSS 시장가치는 2020년 대비 6.1% 성장한 약 7조 원](https://www.nipa.kr/main/selectBbsNttView.do?key=113&bbsNo=9&nttNo=8859)[^kdb-633]으로 성장하고 있다.
 
-[^kdb-633]: Nipa, 2020년 오픈소스SW (Open Source Software) 시장동향 조사보고서 https://www.nipa.kr/main/selectBbsNttView.do?key=112&bbsNo=8&nttNo=7835
+[^kdb-633]: Nipa, 2021 오픈소스SW(OSS) 실태조사 보고서 https://www.nipa.kr/main/selectBbsNttView.do?key=113&bbsNo=9&nttNo=8859
 
 
 ### 오픈소스 도입 이유
