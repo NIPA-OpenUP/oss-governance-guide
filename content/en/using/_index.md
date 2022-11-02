@@ -26,7 +26,7 @@ Gartner는 [오픈소스 소프트웨어 하이프 사이클 보고서 (2016)](h
 [2021년 국내 기업의 공개SW 활용률은 61.5%](https://www.nipa.kr/main/selectBbsNttView.do?key=113&bbsNo=9&nttNo=8859)인 것으로 나타났다. 세부적으로는 전사적 활용 비율이 전년 10.7%에서 26.4%로 크게 증가했으며, 부분적 활용 비율은 35.1% 이다.
 
 {{< imgproc opensource-company Fit "768x768" >}}
-<center><i>[국내 오픈소스 도입현황]</i><center>
+<center><i>[국내 기업 오픈소스 도입 및 활용]</i><center>
 {{< /imgproc >}}
 
 
@@ -263,7 +263,7 @@ Gartner의 [Technology Insight for Software Composition Analysis](https://www.ga
 
 ##### **FOSSology** - https://www.fossology.org
 
-{{< imgproc fossology Fit "768x768" >}}
+{{< imgproc fossology Fit "384x384" >}}
 {{< /imgproc >}}
 
 소스 코드 스캐닝 도구로 소스 파일 상단의 문구를 스캔하여 라이선스를 자동으로 확인한다. FOSSology의 자세한 설치 및 사용 방법은 다음 사이트를 참고할 수 있다.  
@@ -271,7 +271,7 @@ https://openchain-project.github.io/OpenChain-KWG/guide/appendix/3-tools/fossolo
 
 ##### **SW360** - https://www.eclipse.org/sw360
 
-{{< imgproc SW360 Fit "768x768" >}}
+{{< imgproc SW360 Fit "384x384" >}}
 {{< /imgproc >}}
 
 소프트웨어에 포함된 구성요소를 관리하기 위한 도구이다. 오픈소스를 포함하는 제품을 개발하고 배포하는 기업이라면 각 제품과 릴리스 버전마다 사용한 오픈소스의 버전, 라이선스 등의 정보를 수집하고 추적해야 한다. 이를 통해 기업은 올바른 오픈소스 컴플라이언스 활동을 수행할 수 있다. SW360은 오픈소스 정보를 추적하기 위한 도구이다. SW360의 자세한 설치 및 사용 방법은 다음 사이트를 참고할 수 있다.  
@@ -279,15 +279,14 @@ https://openchain-project.github.io/OpenChain-KWG/guide/appendix/3-tools/sw360
 
 ##### **SPDX** - https://spdx.dev
 
-{{< imgproc SPDX Fit "768x768" >}}
+{{< imgproc SPDX Fit "384x384" >}}
 {{< /imgproc >}}
 
 SPDX(Software Package Data  소프트웨어 정보 교환 방식을 표준화하고 이를 용이하게 하기 위한 도구를 제공한다.
 
 ##### **FOSSLight** - https://fosslight.org/
 
-{{< imgproc logo-fosslight Fit "768x768" >}}
-<i>FOSSLight</i>
+{{< imgproc logo-fosslight Fit "384x384" >}}
 {{< /imgproc >}}
 
 LG전자는 [FOSSLight 오픈소스 Project](https://fosslight.org/)[^fosslight]로 FOSSLight Hub와 FOSSLight Scanner를 공개했다. **FOSSLight Hub**는 오픈소스, 라이선스, 그리고 보안취약점까지 관리해줌으로써 오픈 소스 소프트웨어 사용 시 Compliance를 준수하고 보안취약점으로부터 안전하게 사용할 수 있도록 해준다. 또한 프로젝트 별 BOM 관리, 라이선스의 의무사항 및 보안취약점 조회 기능을 제공하여 OSC(Open Source Compliance) Process를 수행할 수 있도록 도와준다. **FOSSLight Scanner**는 Dependency, 소스 코드, 바이너리로부터 오픈소스 정보를 스캔하는 도구이다.  
@@ -296,8 +295,7 @@ LG전자는 [FOSSLight 오픈소스 Project](https://fosslight.org/)[^fosslight]
 
 ##### **Olive (Kakao)** - https://olive.kakao.com
 
-{{< imgproc logo-olive Fit "768x768" >}}
-<i>Kakao Olive</i>
+{{< imgproc logo-olive Fit "384x384" >}}
 {{< /imgproc >}}
 
 Kakao는 자사의 수많은 프로젝트의 오픈소스 관리를 위해 사용하던 시스템을 누구나 사용할 수 있도록 [Olive Platform](https://olive.kakao.com)[^olive] Beta를 무료로 오픈했다. Olive는 Github 프로젝트를 분석하여 사용한 오픈소스 데이터를 관리하고, 라이선스 및 의무사항을 확인하여 Report를 제공한다. 쉽고, 빠르고 정확한 오픈소스 검증을 목표로 직관적인 기능과 UI로 구성되어 있으며, 간단히 Dependency와 라이선스 확인이 가능한 심플 체크 기능 등 사용자 편의에 초점을 맞추고 있다.
@@ -306,21 +304,21 @@ Kakao는 자사의 수많은 프로젝트의 오픈소스 관리를 위해 사�
 
 ##### **Fossa** - https://fossa.com
 
-{{< imgproc logo-fossa Fit "768x768" >}}
+{{< imgproc logo-fossa Fit "384x384" >}}
 {{< /imgproc >}}
 
 2015년 설립된 실리콘밸리 스타트업에서 제공하는 서비스로, 풍부한 오픈소스 메타데이터 및 정교한 정책 거버넌스를 제공한다. CI/CD 통합 등 DevOps 환경을 지원하며 개발자 친화적 기능들로 구성되어 있다. Twitter, Uber, Zendesk 등과 파트너를 맺고 있으며, JS Foundation, Linux Foundation, NPM 등과 제휴하고 있다. 기본적인 사용은 무료이나 일부 추가 기능들을 유료로 제공하며, 팀 규모가 100명 이상이라면 엔터프라이즈 버전이 적용된다.
 
 ##### **FOSSID** - https://fossid.com/
 
-{{< imgproc logo-fossid Fit "768x768" >}}
+{{< imgproc logo-fossid Fit "384x384" >}}
 {{< /imgproc >}}
 
 2016년 스웨덴에서 설립된 FOSSID는 오픈소스 라이선스 및 보안 취약점 관리를 위한 솔루션이다. 소스 코드 내 오픈소스 콤포넌트를 탐지하고, 각 콤포넌트의 라이선스 및 보안 취약점을 식별한다. 방대한 오픈소스 DB 및 자동 데이터 수집 기술, AI를 통한 향상된 탐지 성능 등 특징을 갖고 있다. 특히, 코드 일부에서 보안 취약점을 탐지하는 유일한 오픈소스 스캐너라는 장점이 있다. 
 
 ##### **Black Duck** - https://www.blackducksoftware.com/
 
-{{< imgproc logo-blackduck Fit "768x768" >}}
+{{< imgproc logo-blackduck Fit "384x384" >}}
 {{< /imgproc >}}
 
 Black Duck은 오픈소스를 사용하는 동안 발생하는 라이선스와 취약점, 소스 코드 품질 관리를 위한 포괄적인 솔루션이다. 전반적인 소프트웨어의 공급망과 애플리케이션 라이프사이클 전반에 거쳐 오픈소스의 라이선스와 보안을 관리한다. 정확도를 높이고 오탐을 줄이기 위해 오픈 소스 검색에 다각적 접근 방식을 취하여 신뢰성 있는 BOM을 생성한다. 
@@ -328,28 +326,28 @@ Black Duck은 오픈소스를 사용하는 동안 발생하는 라이선스와 �
 
 ##### **Snyk** - https://snyk.io
 
-{{< imgproc logo-snyk Fit "768x768" >}}
+{{< imgproc logo-snyk Fit "384x384" >}}
 {{< /imgproc >}}
 
 오픈소스 라이선스 취약점 관리를 위한 서비스를 제공하다가 2020년부터 라이선스 준수 관리 기능이 추가되었다. Dependency Tree 뷰어, 이슈 우선순위 선별 시스템, 런타임 모니터링 등 기능을 제공하며, 전담 보안 연구팀이 리뷰를 진행한다. 현재 Docker 공식 독점 보안 파트너로 IBM Cloud, RedHat, OpenShift, Kubernetes 등과 제휴를 맺고 있다. 무료로 사용할 수 있지만 팀 규모와 프리미엄 기능에 따라 유료 Plan이 세부적으로 마련되어 있다.
 
 ##### **WhiteSource** - https://www.whitesourcesoftware.com
 
-{{< imgproc logo-whitesource Fit "768x768" >}}
+{{< imgproc logo-whitesource Fit "384x384" >}}
 {{< /imgproc >}}
 
 2011년 설립되어 라이선스 준수 및 취약점 관리 서비스를 제공하며, 오래된 서비스인 만큼 방대한 데이터베이스를 확보하고 있다. 110억 개 이상의 소스 코드 파일, 200개 이상의 언어지원, 1억 개 이상의 라이브러리를 확보하고 있다. 컨테이너 및 서비리스 등 모든 환경을 지원하며 현재 Microsoft Azure DevOps 서비스로도 제공되고 있다. GitHub의 Ultimate에서 사용 가능한 옵션으로 제공되고 있으며 GitHub Package도 지원한다. WhiteSource도 기본적인 사용은 무료이며, 팀 규모가 20명을 넘어가면 유료로 사용 가능하며, 추가 프리미엄 기능을 제공한다.
 
 ##### **CodeEye** - https://www.olis.or.kr/codeEye/introduction.do
 
-{{< imgproc logo-codeeye Fit "768x768" >}}
+{{< imgproc logo-codeeye Fit "384x384" >}}
 {{< /imgproc >}}
 
 CodeEye는 오픈소스 라이선스 비교·분석·검사를 위해 사람이 해야 할 수작업(Eye Checking)을 원활하게 수행하거나 도움을 주는 시스템으로 오픈소스 사용 시 준수 해야 할 라이선스(GNU GPL 등) 내용을 효과적으로 검사하여 보여준다. 한국저작권위원회에서 구축한 오픈소스 DB(지속적 Update)를 기반으로 검사하며, 중소기업기본법 시행령 제3조(중소기업의 범위) 규정에 따른 중소기업 대상으로 무료로 서비스한다. 
 
 ##### **Clarity** - http://insignary.com/
 
-{{< imgproc logo-insignary Fit "768x768" >}}
+{{< imgproc logo-insignary Fit "384x384" >}}
 {{< /imgproc >}}
 
 Clarity는 바이너리 코드 분석을 통한 오픈소스 관리 솔루션으로, 바이너리 코드를 스캐닝하여 소프트웨어 내에 존재하는 오픈소스 컴포넌트를 식별하고 해당 오픈소스의 라이선스 및 보안 취약점 정보를 제공한다. 기업은 클래리티의 바이너리 코드 점검을 통해 라이선스 위반에 대한 법적 이슈와 오픈소스 보안 취약점을 사전에 방지하여
@@ -357,14 +355,14 @@ Clarity는 바이너리 코드 분석을 통한 오픈소스 관리 솔루션으
 
 ##### **LABRADOR** - https://www.iotcube.com/
 
-{{< imgproc logo-labrador Fit "768x768" >}}
+{{< imgproc logo-labrador Fit "384x384" >}}
 {{< /imgproc >}}
 
 LABRADOR는 R&D 및 공급망에서 오픈소스 취약점 및 라이선스 이슈를 분석하고 수정하기 위해 제작되었다. 단순 취약점의 나열에 그치지 않고 한발 더 나아가 수정을 위한 다양한 방안을 제시한다. 이를 통해 기업은 취약한 구성 요소를 식별하고 수정할 뿐 아니라 추후 문제의 여지가 있는 라이선스에 대한 사전 조치가 가능하다. 함수 단위 소스 취약점 분석으로 더 빠르고 정확한 진단이 가능합니다.
 
 ##### **ClearlyDefined** - https://clearlydefined.io
 
-{{< imgproc ClearyDefined Fit "768x768" >}}
+{{< imgproc ClearyDefined Fit "384x384" >}}
 {{< /imgproc >}}
 
 ClearlyDefined는 오픈소스 데이터베이스를 제공하여 사용자가 오픈소스의 출처, 라이선스 등의 정보를 확인할 수 있게 한다. 또한 정보의 오류가 있다면 사용자가 자발적으로 데이터를 개선할 수 있게 하여 커뮤니티 기반의 신뢰성 있는 오픈소스 데이터베이스 구축을 가능하게 한다.
