@@ -490,9 +490,9 @@ authoritative in this regard.
 
 ### 오픈소스의 보안 취약점
 #### 오픈소스의 보안 취약점 현황
-Sonatype의 [소프트웨어 공급망 현황 보고서(2020)](https://www.sonatype.com/2020ssc)[^sonatype2020]에 따르면 오픈소스를 겨냥한 차세대 사이버 공격도 작년보다 430%나 증가하였으며, 응용프로그램에서 사용되는 오픈소스 구성요소의 11%가 알려진 취약점을 가지고 있다고 한다. 가장 일반적인 공격 유형은 Typosquatting 이며, 이는 오픈소스를 검색할 때 단순한 오타를 유도하는 공격 방식으로 개발자가 "lodash"의 이름을 가진 오픈소스를 사용하려고 할 때 "lodahs"와 같은 유사한 이름의 악성 컴포넌트를 미리 등록해두어 설치하게 만드는 방식이다. 또 다른 방식으로는 프로젝트 관리자로부터 자격 증명을 가로채 악성 코드를 심는 방식 등 다양한 수단을 통해 이뤄지고 있다.
+Sonatype의 [소프트웨어 공급망 현황(2021)](https://www.sonatype.com/resources/state-of-the-software-supply-chain-2021)[^sonatype2021]에 따르면 소프트웨어 공급망 공격도 작년보다 650%나 증가하였으며, 인기있는 상위 10%의 오픈소스 프로젝트에서 취약점을 포함할 가능성이 평균 29%이다. 가장 일반적인 공격 유형은 Typosquatting 이며, 이는 오픈소스를 검색할 때 단순한 오타를 유도하는 공격 방식으로 개발자가 "lodash"의 이름을 가진 오픈소스를 사용하려고 할 때 "lodahs"와 같은 유사한 이름의 악성 컴포넌트를 미리 등록해두어 설치하게 만드는 방식이다. 또 다른 방식으로는 프로젝트 관리자로부터 자격 증명을 가로채 악성 코드를 심는 방식 등 다양한 수단을 통해 이뤄지고 있다.
 
-[^sonatype2020]: Sonatype, State of the Software Supply Chain Report (2020) : https://www.sonatype.com/2020ssc
+[^sonatype2021]: Sonatype, State of the Software Supply Chain Report (2021) : https://www.sonatype.com/resources/state-of-the-software-supply-chain-2021
 
 특히 소프트웨어 공급망을 통해 공격이 증가하는 이유는 하나의 오픈소스가 다른 많은 오픈소스를 포함하는 종속 관계로 구성되어 있다 보니 실제 프로젝트에서 사용되는 오픈소스는 엄청난 수의 의존성을 가진 오픈소스를 사용하게 되어 전체를 파악하기가 힘든 점이 있다. 그리고 오픈소스 정신은 **신뢰하는 공유**에 기반을 두고 있다 보니 이것은 공격자가 쉽게 접근할 수 있게 하는 토대가 되기도 한다.
 
@@ -572,9 +572,9 @@ SDLC<sub>Software System Development Life Cycle)</sub> 전체에 걸쳐 가능�
 
 
 #### GitHub 기능을 활용한 보안 관리 사례
-GiHub은 소스 코드 저장소로 널리 사용되고 있는데, 최근 [GitHub Octoverse (2020)](https://octoverse.github.com)[^github-octoverse] 자료를 보면, **Fortune 50대 기업 중 72%가 GitHub Enterprise를 사용**하고 있다고 한다. 그에 맞춰 최근 GitHub에서도 단순히 소스 코드 저장소 기능을 넘어 새로운 기능들을 추가하고 있는데, 특히 보안과 관련된 다양한 기능을 제공하고 있어 주목을 받고 있다. 이러한 보안 기능들을 활용한 보안 관리 사례를 살펴보고자 한다.
+GiHub은 소스 코드 저장소로 널리 사용되고 있는데, 최근 [GitHub Octoverse (2021)](https://octoverse.github.com)[^github-octoverse] 자료를 보면, **Fortune 100대 기업 중 84%가 GitHub Enterprise를 사용**하고 있다고 한다. 그에 맞춰 최근 GitHub에서도 단순히 소스 코드 저장소 기능을 넘어 새로운 기능들을 추가하고 있는데, 특히 보안과 관련된 다양한 기능을 제공하고 있어 주목을 받고 있다. 이러한 보안 기능들을 활용한 보안 관리 사례를 살펴보고자 한다.
 
-[^github-octoverse]: GitHub Octoverse (2020) : https://octoverse.github.com
+[^github-octoverse]: GitHub Octoverse (2021) : https://octoverse.github.com
 
 ##### **Dependency Graph**
 프로젝트에서 사용 중인 외부 라이브러리 정보를 보여주는 기능이다. 사용 중인 라이브러리와 라이브러리 버전 정보들을 조회할 수 있다. Ruby, Javascript, Python 등 다양한 언어와 패키지 매니저를 지원한다. Dependency Graph 는 사용 중인 것뿐만 아니라 자신의 프로젝트를 참조하고 있는 다른 프로젝트도 확인할 수 있다.
@@ -610,10 +610,10 @@ GitHub Private Repository와 Enterprise 버전에 추가된 기능으로 코드 
 
 ## 오픈소스 사용 가이드 - 개발자 편
 
-오픈소스는 생태계는 매년 그 규모가 매우 빠르게 발전하고 있다. 오픈소스 거버넌스 플랫폼을 운영하는 Sonatype 에서 최근 발표한 [소프트웨어 공급망 현황 보고서 (2020)](https://www.sonatype.com/campaign/wp-2020-state-of-the-software-supply-chain-report)[^sonatype-report]에 따르면 Java 패키지의 2020년도 다운로드 수가 3,700억 건을 웃돌며 이는 작년 대비 무려 55%나 증가한 것으로 나타난다. Javascript 패키지의 경우에는 주로 npm을 통해 유통되는데 이 역시 패키지 다운로드가 1조에 이르러 매년 100% 성장세로 발전하고 있다. 2019년에는 50만 개 이상의 새로운 오픈소스가 릴리즈되었는데 2020년에는 130만 개로 지난해보다도 63%가 증가했다.
-
-[^sonatype-report]: Sonatype, State of the Software Supply Chain Report (2020) https://www.sonatype.com/2020ssc
-
+오픈소스는 생태계는 매년 그 규모가 매우 빠르게 발전하고 있다. 
+오픈소스 거버넌스 플랫폼을 운영하는 Sonatype 에서 최근 발표한 [소프트웨어 공급망 현황(2021)](https://www.sonatype.com/resources/state-of-the-software-supply-chain-2021)[^sonatype-report]에 따르면 오픈소스 공급은 상위 4개 오픈 소스 생태계(Java, Javascript, Python, .NET)에서만 3천7백만개 이상의 컴포넌트와 패키지가 포함되어 있다.
+또한, 2021년에 전 세계 개발자의 오픈 소스 패키지 다운로드 수가 2조 2천억 개 이상이며, 이는 전년 대비 73% 증가한 수치이다.
+****
 이처럼 수많은 오픈소스가 생겨나면서 오픈소스를 선택하는 폭도 그만큼 넓어졌다. 이번 장에서는 오픈소스를 올바르게 선택하는 방법에 관한 내용을 알아보고자 한다.
 
 ### 오픈소스 생태계의 이해
@@ -713,10 +713,7 @@ GitHub Private Repository와 Enterprise 버전에 추가된 기능으로 코드 
 
 
 ##### **보안**
-[2020년 소프트웨어 공급망 현황 보고서](https://www.sonatype.com/resources/white-paper-state-of-the-software-supply-chain-2020)[^sonatype-white-paper-2020]를 보면 오픈소스의 11%가 알려진 취약점을 가지고 있다는 통계가 있다. 오픈소스 검토 보안과 관련된 부분을 반드시 확인하고 사용해야 하며, 취약점이 발견되었을 때 빠르게 조치가 이뤄지고 있는지 등도 검토 대상이 되어야 한다. 오픈소스의 마지막 릴리즈가 오래되었다면, 그만큼 보안 취약점을 가지고 있을 가능성이 높다. GitHub 이슈 또는 오픈소스 설명에 명시된 이슈 트래커등을 통해 보안 문제가 있는지 확인하고, 지난 버전 릴리즈 노트를 살펴보자.
-
-[^sonatype-white-paper-2020]: 2020년 소프트웨어 공급망 현황 보고서 : https://www.sonatype.com/resources/white-paper-state-of-the-software-supply-chain-2020
-
+[소프트웨어 공급망 현황(2021)](https://www.sonatype.com/resources/state-of-the-software-supply-chain-2021)[^sonatype2021]를 보면 인기있는 상위 10%의 오픈소스 프로젝트에서 취약점을 포함할 가능성이 평균 29%이다. 오픈소스 검토 보안과 관련된 부분을 반드시 확인하고 사용해야 하며, 취약점이 발견되었을 때 빠르게 조치가 이뤄지고 있는지 등도 검토 대상이 되어야 한다. 오픈소스의 마지막 릴리즈가 오래되었다면, 그만큼 보안 취약점을 가지고 있을 가능성이 높다. GitHub 이슈 또는 오픈소스 설명에 명시된 이슈 트래커등을 통해 보안 문제가 있는지 확인하고, 지난 버전 릴리즈 노트를 살펴보자.
 
 ##### **인기도**
 오픈소스가 GitHub 에서 관리 중이라면, Star 개수나 Watch, Fork 횟수 등으로 얼마나 많은 사용자가 오픈소스를 활용할 수 있는지 가늠해볼 수 있다. 그뿐만 아니라 오픈된 이슈 개수나 PR 수, 마지막 커밋 일시 등을 통해 얼마나 활발하게 오픈소스 개발이 이뤄지고 있고 계속 발전할 가능성이 얼마나 되는지 파악할 수 있다. 그 밖에도 해당 오픈소스와 관련된 StackOverflow 질문 수, 오픈소스 다운로드 수, Google 쿼리 결과 수 등과 같은 간단한 측정을 통해서 인기도를 확인해 볼 수 있다. 이러한 여러 지표를 측정하여 오픈소스 커뮤니티의 건강성을 측정하는 [CHAOSS](https://chaoss.community/metrics)[^chaoss] 와 같은 도구도 있다.
