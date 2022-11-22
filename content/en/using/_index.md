@@ -245,6 +245,90 @@ Gartner의 [Technology Insight for Software Composition Analysis (2019) 보고�
 - 오픈소스 BOM(Bill of Materials, 사용된 소프트웨어의 ) 관리 도구
 - 전반적으로 프로젝트를 관리하고 오픈소스 목록을 관리할 포탈
 
+
+### 오픈소스 목록 관리와 SBOM
+
+오픈소스 목록 관리의 중요성은 2021년 5월 미 행정명령 ([Executive Order 14028 of May 12, 2021](https://www.nist.gov/itl/executive-order-14028-improving-nations-cybersecurity)[^order-14028])에서도 알 수 있다. 미 정부는 국가 사이버 보안 강화의 일환으로 SBOM(Software Bill of Materials) 제출을 의무화 하였다. SBOM은 위에서 설명한 오픈소스 목록과 유사한 개념이며, NITA(미 전기통신 및 정보청)[^nita]는 이 행정 명령에 따라 [SBOM의 최소 요구 사항](https://www.ntia.doc.gov/files/ntia/publications/sbom_minimum_elements_report.pdf)[^minimum_element]을 정의하였다. 미 연방 정부가 가진 지배적 지위를 고려하면 이러한 요구 사항은 SBOM의 표준이 될 가능성이 크다고 볼 수 있다. 
+
+[^order-14028]: Executive Order 14028 of May 12, 2021 : https://www.nist.gov/itl/executive-order-14028-improving-nations-cybersecurity
+[^nita]: National Telecommunications and Information Administration
+[^minimum_element]: Department of Commerce, The Minimum Elements for an SBOM, 2021, https://www.ntia.doc.gov/files/ntia/publications/sbom_minimum_elements_report.pdf
+
+#### SBOM 최소 요구 사항
+
+NITA는 라이선스 및 보안취약점 관리를 위해 SBOM이 갖춰야 할 다음 세가지의 요구 사항을 제시하였다. 
+1. 데이터 필드 : SBOM이 포함해야 할 데이터 (다음 단락에서 세부 내용 설명)
+2. 자동화 지원 : SBOM 생성 자동화
+  - SBOM는 인간이 읽을 수 있어야 하고 동시에 기계 판독이 가능하여야 한다. 
+  - SBOM가 자동으로 생성되는 환경을 지원해야 한다. 
+3. Practice와 절차 : SBOM 생성 및 운영 방법을 정의해야 한다.
+
+#### 데이터 필드
+
+NITA는 SBOM이 포함해야 하는 7가지 데이터 필드를 명시하였다. 
+
+| Data Field   |      Description      |
+|:----------|:-------------|
+| 공급자 이름 |  구성요소를 만들고 정의하고 식별하는 주체의 이름 |
+| 구성요소 이름 | 최초 공급자에 의해 정의된 소프트웨어 단위의 명칭 |
+| 구성요소 버전 | 공급자가 이전에 식별된 소프트웨어 버전으로부터의 변경을 명시하기 위해 사용하는 식별자 |
+| 기타 고유 식별자 | 구성요소를 식별하는 데 사용되거나 관련 데이터베이스를 위한 조회 키 역할을 하는 기타 식별자 |
+| 종속성 관계 | 업스트림 구성요소 X가 소프트웨어 Y에 포함된다는 관계의 명시 |
+| SBOM 데이터 작성자 | 이 구성요소에 대한 SBOM 데이터를 만든 주체의 이름 |
+| 타임스탬프 | SBOM 데이터 어셈블리의 날짜 및 시간 기록 |
+
+그리고 이러한 데이터 필드를 포함하는 SBOM은 기계가 판독(Machine Readable)하도록 다음 세가지 표준화된 형식 중 하나로 작성되어야 한다. 
+* [SPDX](https://spdx.org/)
+* [CycloneDX](https://cyclonedx.org/)
+* [SWID Tags](https://nvd.nist.gov/products/swid)
+
+이 중 SPDX 표준에 대해서 좀 더 자세히 살펴보자. 
+
+#### SPDX
+
+여기서는 Linux Foundation의 프로젝트인 SPDX에서 만든 SPDX 표준과 SPDX 문서 작성 방법에 대해 알아보겠다. SPDX 표준은 2021년 9월 ISO 표준([ISO/IEC 5962](https://www.iso.org/standard/81870.html))[^isoiec5962]으로 등록된 대표적인 SBOM 포맷이다. 기업의 SBOM 관리 체계가 모든 포맷의 SBOM을 지원하면 좋겠지만, 하나의 포맷을 선택해야 한다면 국제 표준인 SPDX를 먼저 지원하는 것을 권장한다. 더불어 SPDX는 당초 오픈소스 라이선스 컴플라이언스를 위해 만들어진 포맷이기에 기업의 오픈소스 라이선스 관리에 효율적으로 사용할 수 있다. 
+
+[^isoiec5962]: ISO/IEC 5962 : https://www.iso.org/standard/81870.html 
+
+SPDX 표준은 2022년 9월 현재 v2.3까지 나왔으며 다음과 같은 정보를 포함한다. 
+
+{{< imgproc spdx-info Fit "512x512" >}}
+<center><i>[SPDX v2.3 format]</i><center>
+{{< /imgproc >}}
+
+
+SPDX는 소프트웨어가 포함하고 있는 패키지, 파일, 스니핏(코드 조각) 등에 대한 각각의 라이선스, 버전, 저작권 등의 정보를 관리할 수 있다. 또한 SPDX는 자동으로 정보를 읽고 쓸 수 있도록 JSON, YAML 등 프로그래밍 언어로 쉽게 조작할 수 있도록 광범위하게 사용되는 데이터 포맷을 채택하였다. 현재 아래의 네가지 포맷을 지원한다. 
+
+- [JSON](https://github.com/spdx/spdx-spec/blob/development/v2.2.2/examples/SPDXJSONExample-v2.2.spdx.json)[^spdx-json]
+- [YAML](https://github.com/spdx/spdx-spec/blob/development/v2.2.2/examples/SPDXYAMLExample-2.2.spdx.yaml)[^spdx-yaml]
+- [Tag/Value](https://github.com/spdx/spdx-spec/blob/development/v2.2.2/examples/SPDXTagExample-v2.2.spdx)[^spdx-tagvalue]
+- [RDF/xml](https://github.com/spdx/spdx-spec/blob/development/v2.2.2/examples/SPDXRdfExample-v2.2.spdx.rdf.xml)[^spdx-rdfxml]
+
+[^spdx-json]: JSON SPDX sample : https://github.com/spdx/spdx-spec/blob/development/v2.2.2/examples/SPDXJSONExample-v2.2.spdx.json
+[^spdx-yaml]: YAML SPDX sample : https://github.com/spdx/spdx-spec/blob/development/v2.2.2/examples/SPDXYAMLExample-2.2.spdx.yaml
+[^spdx-tagvalue]: Tag/Value SPDX sample : https://github.com/spdx/spdx-spec/blob/development/v2.2.2/examples/SPDXTagExample-v2.2.spdx
+[^spdx-rdfxml]: RDF/xml SPDX sample : https://github.com/spdx/spdx-spec/blob/development/v2.2.2/examples/SPDXRdfExample-v2.2.spdx.rdf.xml
+
+그런데, SPDX 규격은 100 페이지가 넘는 적지 않은 분량의 문서이기 때문에 처음 SPDX 표준에 맞추어 문서를 작성하는건 쉽지 않다. SPDX 프로젝트는 Excel로 작성된 SBOM을 SPDX 문서로 자동 변환하는 도구를 제공하고 있다. 즉, 사용자는 먼저 SPDX 프로젝트에서 제공하는 [Excel template 파일](https://github.com/spdx/tools/blob/master/Examples/SPDXRdfExample-v2.1.xls)[^spdx-excel]을 다운받아서 각 시트에 필요한 정보를 기입한다. 
+
+[^spdx-excel]: SPDX 엑셀 파일 : https://github.com/spdx/tools/blob/master/Examples/SPDXRdfExample-v2.1.xls
+
+{{< imgproc spdx-excel Fit "1024x768" >}}
+<center><i>[SPDX가 제공하는 Excel 파일 캡쳐]</i><center>
+{{< /imgproc >}}
+
+그리고, 이 Excel 파일을 SPDX에서 제공하는 도구를 사용하면 SPDX가 지원하는 데이터 포맷인 JSON, YAML 등의 데이터 포맷으로 변환할 수 있다. 간단하게는 [SPDX Online Tool 웹사이트](https://tools.spdx.org/app/convert/)[^spdx-online]에서 원하는 형태의 데이터 포맷으로 쉽게 변환할 수 있다.
+
+{{< imgproc spdx-web Fit "1024x768" >}}
+<center><i>[SPDX Online Tool - Convert to other SPDX format]</i><center>
+{{< /imgproc >}}
+
+[^spdx-online]: SPDX Online Tool : https://tools.spdx.org/app/convert/ 
+
+위에서 설명한 SBOM 최소 요구사항에 의하면 SBOM은 자동으로 생성되는 환경이어야 한다. 지금까지 설명한 SPDX 문서를 만드는 방법은 사람이 Excel 파일을 작성하고, 이를 온라인에서 SPDX 형태로 컨버팅을 수동으로 수행하는 방식이기 때문에 이런 절차를 자동화하는 노력이 필요하다. SPDX는 다양한 [Tool](https://spdx.dev/spdx-tools/)[^spdx-tools]을 제공하여 프로그래밍적으로 SPDX 문서를 생성할 수 있는 방법을 제공한다. 기업은 소프트웨어 빌드 프로세스에서 자동으로 SBOM을 생성하고, SPDX 형태의 SBOM 문서를 생성할 수 있는 환경을 갖추어야 한다.
+
+[^spdx-tools]: SPDX Community Tools : https://spdx.dev/spdx-tools/
+
 ### 오픈소스 관리 도구 소개
 앞서 언급한 것처럼 오픈소스 사용에 따른 의무사항 준수와 위험 요소 확인을 위해서는 SDLC(Software System Development Life Cycle) 전체에서 지속적인 스캔 및 모니터링이 필요하다. 이에 **SCA(Software Composition Analysis)** 라는 오픈소스 관리 도구들이 생겨났다. SCA는 보안 및 라이선스 규정 준수를 발견하고 관리하기 위한 자동화된 프로세스를 제공한다.
 
