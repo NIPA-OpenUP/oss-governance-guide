@@ -149,7 +149,7 @@ Gartner의 [Technology Insight for Software Composition Analysis (2019) 보고�
 
 오픈소스 컴플라이언스의 범위를 보면 단순히 기업 내에서의 사용하는 것뿐만 아니라 3rd party 공급자와 소프트웨어 공급 및 수급 계약을 하면서 발생하게 될 오픈소스 라이선스 의무사항을 준수하는 활동도 포함된다. 이런 활동들은 오픈소스 커뮤니티와 존중과 신뢰를 바탕으로 한 관계를 구축하는 기반이 되기도 한다. 궁극적으로는 오픈소스 컴플라이언스는 저작권자의 지식재산권을 보호하는 데에 그 목적이 있다는 것을 기억해야 한다.
 
-{{< imgproc compliance Fit "768x768" >}}
+{{< imgproc compliancerange Fit "768x768" >}}
 <center><i>[오픈소스 컴플라이언스 범위]</i><center>
 {{< /imgproc >}}
 
