@@ -34,6 +34,7 @@ menu:
 | [이서연](https://github.com/syleeeee) | 라인플러스| seo-yeon.lee@linecorp.com |
 | [장학성](https://github.com/haksungjang) | SK텔레콤 | haksung@sk.com |
 | [황민호](https://github.com/revfactory) | 카카오 | robin.hwang@kakaocorp.com |
+| [황은경](https://github.com/violetblue) | 카카오 | violet.blue@kakaocorp.com |
 
 ## GitHub
 
