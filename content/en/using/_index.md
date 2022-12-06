@@ -248,15 +248,15 @@ Gartner의 [Technology Insight for Software Composition Analysis (2019) 보고�
 
 ### 오픈소스 목록 관리와 SBOM
 
-오픈소스 목록 관리의 중요성은 2021년 5월 미 행정명령 ([Executive Order 14028 of May 12, 2021](https://www.nist.gov/itl/executive-order-14028-improving-nations-cybersecurity)[^order-14028])에서도 알 수 있다. 미 정부는 국가 사이버 보안 강화의 일환으로 SBOM(Software Bill of Materials) 제출을 의무화 하였다. SBOM은 위에서 설명한 오픈소스 목록과 유사한 개념이며, NITA(미 전기통신 및 정보청)[^nita]는 이 행정 명령에 따라 [SBOM의 최소 요구 사항](https://www.ntia.doc.gov/files/ntia/publications/sbom_minimum_elements_report.pdf)[^minimum_element]을 정의하였다. 미 연방 정부가 가진 지배적 지위를 고려하면 이러한 요구 사항은 SBOM의 표준이 될 가능성이 크다고 볼 수 있다. 
+오픈소스 목록 관리의 중요성은 2021년 5월 미 행정명령 ([Executive Order 14028 of May 12, 2021](https://www.nist.gov/itl/executive-order-14028-improving-nations-cybersecurity)[^order-14028])에서도 알 수 있다. 미 정부는 국가 사이버 보안 강화의 일환으로 SBOM(Software Bill of Materials) 제출을 의무화 하였다. SBOM은 위에서 설명한 오픈소스 목록과 유사한 개념이며, NTIA(미 전기통신 및 정보청)[^ntia]는 이 행정 명령에 따라 [SBOM의 최소 요구 사항](https://www.ntia.doc.gov/files/ntia/publications/sbom_minimum_elements_report.pdf)[^minimum_element]을 정의하였다. 미 연방 정부가 가진 지배적 지위를 고려하면 이러한 요구 사항은 SBOM의 표준이 될 가능성이 크다고 볼 수 있다. 
 
 [^order-14028]: Executive Order 14028 of May 12, 2021 : https://www.nist.gov/itl/executive-order-14028-improving-nations-cybersecurity
-[^nita]: National Telecommunications and Information Administration
+[^ntia]: National Telecommunications and Information Administration
 [^minimum_element]: Department of Commerce, The Minimum Elements for an SBOM, 2021, https://www.ntia.doc.gov/files/ntia/publications/sbom_minimum_elements_report.pdf
 
 #### SBOM 최소 요구 사항
 
-NITA는 라이선스 및 보안취약점 관리를 위해 SBOM이 갖춰야 할 다음 세가지의 요구 사항을 제시하였다. 
+NTIA는 라이선스 및 보안취약점 관리를 위해 SBOM이 갖춰야 할 다음 세가지의 요구 사항을 제시하였다. 
 1. 데이터 필드 : SBOM이 포함해야 할 데이터 (다음 단락에서 세부 내용 설명)
 2. 자동화 지원 : SBOM 생성 자동화
   - SBOM는 인간이 읽을 수 있어야 하고 동시에 기계 판독이 가능하여야 한다. 
@@ -265,7 +265,7 @@ NITA는 라이선스 및 보안취약점 관리를 위해 SBOM이 갖춰야 할 
 
 #### 데이터 필드
 
-NITA는 SBOM이 포함해야 하는 7가지 데이터 필드를 명시하였다. 
+NTIA는 SBOM이 포함해야 하는 7가지 데이터 필드를 명시하였다. 
 
 | Data Field   |      Description      |
 |:----------|:-------------|
@@ -329,6 +329,31 @@ SPDX는 소프트웨어가 포함하고 있는 패키지, 파일, 스니핏(코�
 
 [^spdx-tools]: SPDX Community Tools : https://spdx.dev/spdx-tools/
 
+#### SBOM 정책 추진 동향
+
+##### 미국
+
+* NTIA Software Component Transparency : NTIA는 소프트웨어 구성요소 투명성 연구를 위하여 2018년 다중 이해관계자 프로세스를 구성하였다. 이후 현재까지 SBOM에 관한 연구를 지속하며 정책 수립을 위한 활동을 이어가고 있다.
+* 행정명령 14028: Improving the Nation’s Cybersecurity : 2021년 5월 미 행정명령 ([Executive Order 14028 of May 12, 2021](https://www.nist.gov/itl/executive-order-14028-improving-nations-cybersecurity)[^order-14028]) 발표
+  * 2021년 7월 12일 NTIA(미 전기통신 및 정보청)[^ntia]는 이 행정 명령에 따라 [SBOM의 최소 요구 사항](https://www.ntia.doc.gov/files/ntia/publications/sbom_minimum_elements_report.pdf)[^minimum_element] 보고서 제공
+  * 2021년 11월 1일 NIST(미 국립표준기술연구소)[^nist]는 라벨링 프로그램에 사용할 수 있는 소비자 소프트웨어 기준 초안 발표
+* FDD(미 민주주의수호재단)[^fdd] ‘A Software Bill of Materials Is Critical for Comprehensive Risk Management’ : FDD TCIL(Transformative Cyber Innovation Lab)은 SBOM의 유용성에 대하여 공공 및 민간부문의 이해를 돕고자 직접 SBOM을 개발하고 분석한 결과 보고서 ‘[포괄적인 위험관리를 위한 SBOM의 중요성](https://fdd.org/analysis/2021/09/29/a-software-bill-of-materials-is-critical-for-comprehensive-risk-management)’[^fdd-risk-manage]을 공개하였다.
+
+[^nist]: National Institute of Standards and Technology
+[^fdd]: Foundation for Defense of Democracies
+[^fdd-risk-manage]: A Software Bill of Material Is Critical for Comprehensive Risk Management : https://fdd.org/analysis/2021/09/29/a-software-bill-of-materials-is-critical-for-comprehensive-risk-management
+
+##### EU
+
+* ENISA ‘Guidelines for Securing the IoT’ : ENISA는 2020년 11월 ‘[IoT 보안을 위한 지침](https://enisa.europa.eu/publications/guidelines-for-securing-the-internet-of-things)’[^enisa-iot]을 발행하였다. 문서 내에 공급망 보호를 위한 모범 사례로 SBOM 제공을 제안하며 공급망 보안을 위한 활동에 SBOM 활용 가능성을 언급하였다.
+* 네덜란드 NCSC ‘Using the Software Bill of Materials for Enhancing Cybersecurity : 네덜란드 NCSC는 사이버보안의 현황에서 잠재적 목적 및 SBOM 사용 현황을 조사하였고 이를 바탕으로 [‘사이버보안 강화를 위한 SBOM 활용’ 백서](https://english.ncsc.nl/publications/publications/2021/february/4/using-the-software-bill-of-materials-forenhancing-cybersecurity)[^ncsc-security]를 발행하였다.
+
+[^enisa-iot]: Guidelines for Securing the Internet of Things(ENISA) : https://enisa.europa.eu/publications/guidelines-for-securing-the-internet-of-things
+[^ncsc-security]: Using the Software Bill of Materials for Enhancing Cybersecurity. National Cyber Security Centre(NCSC) : https://english.ncsc.nl/publications/publications/2021/february/4/using-the-software-bill-of-materials-forenhancing-cybersecurity
+
+<i>참고) [사이버안보 강화를 위한 소프트웨어 공급망 보안 정책 연구: SBOM 정책 추진 사례를 중심으로](https://www.koreascience.or.kr/article/JAKO202209541952684.pdf)</i>[^policy-case]
+[^policy-case]: 사이버안보 강화를 위한 소프트웨어 공급망 보안 정책 연구: SBOM 정책 추진 사례를 중심으로 (손효현, 김동희, 김소정 *국가보안기술연구소) : https://www.koreascience.or.kr/article/JAKO202209541952684.pdf
+
 ### 오픈소스 관리 도구 소개
 앞서 언급한 것처럼 오픈소스 사용에 따른 의무사항 준수와 위험 요소 확인을 위해서는 SDLC(Software System Development Life Cycle) 전체에서 지속적인 스캔 및 모니터링이 필요하다. 이에 **SCA(Software Composition Analysis)** 라는 오픈소스 관리 도구들이 생겨났다. SCA는 보안 및 라이선스 규정 준수를 발견하고 관리하기 위한 자동화된 프로세스를 제공한다.
 
@@ -374,17 +399,25 @@ SPDX(Software Package Data  소프트웨어 정보 교환 방식을 표준화하
 {{< /imgproc >}}
 
 LG전자는 [FOSSLight 오픈소스 Project](https://fosslight.org/)[^fosslight]로 FOSSLight Hub와 FOSSLight Scanner를 공개했다. **FOSSLight Hub**는 오픈소스, 라이선스, 그리고 보안취약점까지 관리해줌으로써 오픈 소스 소프트웨어 사용 시 Compliance를 준수하고 보안취약점으로부터 안전하게 사용할 수 있도록 해준다. 또한 프로젝트 별 BOM 관리, 라이선스의 의무사항 및 보안취약점 조회 기능을 제공하여 OSC(Open Source Compliance) Process를 수행할 수 있도록 도와준다. **FOSSLight Scanner**는 Dependency, 소스 코드, 바이너리로부터 오픈소스 정보를 스캔하는 도구이다.  
+* [FOSSLight 사용자 문서](https://fosslight.org/fosslight-guide/)[^fosslight-doc]
 
 [^fosslight]: FOSSLight : https://fosslight.org/
+[^fosslight-doc]: FOSSLight 사용자 문서 : https://fosslight.org/fosslight-guide/
 
-##### **Olive (Kakao)** - https://olive.kakao.com
+##### **OLIVE Platform** - https://olive.kakao.com
 
 {{< imgproc logo-olive Fit "384x384" >}}
 {{< /imgproc >}}
 
-Kakao는 자사의 수많은 프로젝트의 오픈소스 관리를 위해 사용하던 시스템을 누구나 사용할 수 있도록 [Olive Platform](https://olive.kakao.com)[^olive] Beta를 무료로 오픈했다. Olive는 Github 프로젝트를 분석하여 사용한 오픈소스 데이터를 관리하고, 라이선스 및 의무사항을 확인하여 Report를 제공한다. 쉽고, 빠르고 정확한 오픈소스 검증을 목표로 직관적인 기능과 UI로 구성되어 있으며, 간단히 Dependency와 라이선스 확인이 가능한 심플 체크 기능 등 사용자 편의에 초점을 맞추고 있다.
+Kakao는 자사의 수많은 프로젝트의 오픈소스 관리를 위해 사용하던 시스템을 누구나 사용할 수 있도록 [OLIVE Platform](https://olive.kakao.com)[^olive] 을 무료 웹서비스로 오픈했다. **OLIVE Platform**은 프로젝트 실시간 스캔을 통해 사용한 오픈소스 컴포넌트를 조회하고, 오픈소스의 라이선스 의무사항과 이슈를 확인하여 고지 의무를 준수할 수 있도록 지원하는 오픈소스 관리 서비스다. 쉽고, 빠르고 정확한 오픈소스 검증을 목표로 직관적인 기능과 UI로 구성되어 있으며, 소셜 로그인으로 프로젝트를 관리하고, 라이선스 의무사항 확인, 고지문 다운로드를 할 수 있다. 체험하기를 이용하면 로그인 없이 간단하게 Dependency와 라이선스 확인이 가능하다.
 
-[^olive]: Kakao, Olive Platform : https://olive.kakao.com
+또한, 보안상 웹 서비스 사용이 어렵거나, 소스코드 노출이 우려되는 경우 안심하고 사용할 수 있도록 [OLIVE CLI](https://github.com/kakao/olive-cli)를 제공한다. **OLIVE CLI**는 사용자 PC에서 OLIVE Platform 기능을 수행할 수 있으며, 보안이 엄격한 금융권에서도 사용되고 있다.
+* [OLIVE 사용자 문서](https://olive.kakao.com/docs/)[^olive-doc]
+* [OLIVE CLI 사용자 문서](https://olive.kakao.com/docs/cli/)[^olive-cli-doc]
+
+[^olive]: Kakao, OLIVE Platform : https://olive.kakao.com
+[^olive-doc]: OLIVE 사용자 문서 : https://olive.kakao.com/docs/
+[^olive-cli-doc]: OLIVE CLI 사용자 문서 : https://olive.kakao.com/docs/cli/
 
 ##### **Fossa** - https://fossa.com
 
@@ -697,6 +730,8 @@ GitHub Private Repository와 Enterprise 버전에 추가된 기능으로 코드 
 오픈소스는 생태계는 매년 그 규모가 매우 빠르게 발전하고 있다. 
 오픈소스 거버넌스 플랫폼을 운영하는 Sonatype 에서 최근 발표한 [소프트웨어 공급망 현황(2021)](https://www.sonatype.com/resources/state-of-the-software-supply-chain-2021)[^sonatype-report]에 따르면 오픈소스 공급은 상위 4개 오픈 소스 생태계(Java, Javascript, Python, .NET)에서만 3천7백만개 이상의 컴포넌트와 패키지가 포함되어 있다.
 또한, 2021년에 전 세계 개발자의 오픈 소스 패키지 다운로드 수가 2조 2천억 개 이상이며, 이는 전년 대비 73% 증가한 수치이다.
+
+[^sonatype-report]: Sonatype, State of the Software Supply Chain (2021) : https://www.sonatype.com/resources/state-of-the-software-supply-chain-2021
 ****
 이처럼 수많은 오픈소스가 생겨나면서 오픈소스를 선택하는 폭도 그만큼 넓어졌다. 이번 장에서는 오픈소스를 올바르게 선택하는 방법에 관한 내용을 알아보고자 한다.
 
