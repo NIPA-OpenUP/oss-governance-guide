@@ -351,7 +351,7 @@ SPDX는 소프트웨어가 포함하고 있는 패키지, 파일, 스니핏(코�
 [^enisa-iot]: Guidelines for Securing the Internet of Things(ENISA) : https://enisa.europa.eu/publications/guidelines-for-securing-the-internet-of-things
 [^ncsc-security]: Using the Software Bill of Materials for Enhancing Cybersecurity. National Cyber Security Centre(NCSC) : https://english.ncsc.nl/publications/publications/2021/february/4/using-the-software-bill-of-materials-forenhancing-cybersecurity
 
-출처) [사이버안보 강화를 위한 소프트웨어 공급망 보안 정책 연구: SBOM 정책 추진 사례를 중심으로](https://www.koreascience.or.kr/article/JAKO202209541952684.pdf)[^policy-case]
+<i>참고) [사이버안보 강화를 위한 소프트웨어 공급망 보안 정책 연구: SBOM 정책 추진 사례를 중심으로](https://www.koreascience.or.kr/article/JAKO202209541952684.pdf)</i>[^policy-case]
 [^policy-case]: 사이버안보 강화를 위한 소프트웨어 공급망 보안 정책 연구: SBOM 정책 추진 사례를 중심으로 (손효현, 김동희, 김소정 *국가보안기술연구소) : https://www.koreascience.or.kr/article/JAKO202209541952684.pdf
 
 ### 오픈소스 관리 도구 소개
