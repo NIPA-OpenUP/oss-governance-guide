@@ -191,11 +191,11 @@ OSPO의 법률 담당은 다음의 역할을 수행한다.
 
 - Linux Foundation의 [Generic FOSS Policy](https://wiki.linuxfoundation.org/_media/openchain/lf_compliance_generic_foss_policy.pdf)[^fosspolicy]
 - Google의 [Sample Policy](https://opensource.google.com/docs/)[^samplepolicy]
-- NIPA의 [기업 공개소프트웨어 거버넌스 OpenChain 해설서](https://openchain-project.github.io/OpenChain-KWG/guide/nipa_openchain/appendix/1-policy-template/)[^policy-template]
+- NIPA의 [기업 오픈소스 거버넌스 OpenChain 해설서](https://openchain-project.github.io/OpenChain-KWG/guide/nipa_openchain/appendix/1-policy-template/)[^policy-template]
 
 [^fosspolicy]: Linux Foundation의 Generic FOSS Policy : https://wiki.linuxfoundation.org/_media/openchain/lf_compliance_generic_foss_policy.pdf
 [^samplepolicy]: Google의 Sample Policy : https://opensource.google.com/docs/
-[^policy-template]:  NIPA의 기업 공개소프트웨어 거버넌스 OpenChain 해설서 : https://openchain-project.github.io/OpenChain-KWG/guide/nipa_openchain/appendix/1-policy-template/
+[^policy-template]:  NIPA의 기업 오픈소스 거버넌스 OpenChain 해설서 : https://openchain-project.github.io/OpenChain-KWG/guide/nipa_openchain/appendix/1-policy-template/
 
 ##### 정책을 전파하라
 
@@ -228,7 +228,7 @@ Linux Foundation이 출간한 Open Source Compliance in the Enterprise에서는 
 <center>OpenChain, 오픈소스 컴플라이언스 프로세스 및 주요활동 : https://www.openchainproject.org/resources</center>
 {{< /imgproc >}}
 
-위에서 한번 언급한 NIPA의 기업 공개소프트웨어 거버넌스 OpenChain 해설서에서도 [샘플 오픈소스 컴플라이언스 프로세스](https://openchain-project.github.io/OpenChain-KWG/guide/nipa_openchain/appendix/2-process-template/)[^process-template]를 제공한다. 
+위에서 한번 언급한 NIPA의 기업 오픈소스 거버넌스 OpenChain 해설서에서도 [샘플 오픈소스 컴플라이언스 프로세스](https://openchain-project.github.io/OpenChain-KWG/guide/nipa_openchain/appendix/2-process-template/)[^process-template]를 제공한다. 
 
 [^process-template]: 샘플 오픈소스 컴플라이언스 프로세스 : https://openchain-project.github.io/OpenChain-KWG/guide/nipa_openchain/appendix/2-process-template/
 

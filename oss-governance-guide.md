@@ -220,7 +220,7 @@ Gartner의 [Technology Insight for Software Composition Analysis (2019) 보고�
 참고로, 지난 2020년 12월, 오픈소스 컴플라이언스에 대한 국제 표준이 ISO에 등록되었다. 
 
 ISO/IEC 5230(https://www.iso.org/standard/81039.html)은 기업이 오픈소스 컴플라이언스를 
-달성하기 위해 수행해야 할 최소한의 요구사항을 정의하고 있다. NIPA에서 출간한 기업 공개소프트웨어 
+달성하기 위해 수행해야 할 최소한의 요구사항을 정의하고 있다. NIPA에서 출간한 기업 오픈소스 
 거버넌스 OpenChain 해설서에서는 이에 대한 자세한 내용 및 준수 방법을 설명한다. 
 가이드는 다음 페이지에서 다운받을 수 있다. : https://www.oss.kr/oss_guide/show/7050bff0-d06b-43f0-99a6-9975afcd486f
 ~~~
@@ -2253,7 +2253,7 @@ OSPO의 법률 담당은 다음의 역할을 수행한다.
 
 - Linux Foundation의 Generic FOSS Policy : https://wiki.linuxfoundation.org/_media/openchain/lf_compliance_generic_foss_policy.pdf
 - Google의 Sample Policy : https://opensource.google.com/docs/
-- NIPA의 기업 공개소프트웨어 거버넌스 OpenChain 2.0 해설: https://openchain-project.github.io/OpenChain-KWG/guide/appendix/1-policy-template/
+- NIPA의 기업 오픈소스 거버넌스 OpenChain 2.0 해설: https://openchain-project.github.io/OpenChain-KWG/guide/appendix/1-policy-template/
 
 
 #### 정책을 전파하라
@@ -2309,7 +2309,7 @@ Linux Foundation이 출간한 Open Source Compliance in the Enterprise에서는 
 
 # 참고링크
 (1) Todo Group, Open Source Program Survey Results (2019) https://github.com/todogroup/survey/tree/master/2019      
-(2) Open Up, 공개소프트웨어 활용 지원 https://www.oss.kr/plaza_intro    
+(2) Open Up, 공개 소프트웨어 활용 지원 https://www.oss.kr/plaza_intro    
 (3) RedHat, The State of Enterprise Open Source (2020) https://www.redhat.com/en/enterprise-open-source-report/2020    
 (4) Gartner, Hype Cycle for Open-Source Software (2016) https://www.gartner.com/en/documents/3371817/hype-cycle-for-open-source-software-2016    
 (5) IDG, 오픈소스 기업에 안착하다 (2020) https://www.itworld.co.kr/techlibrary/144662  

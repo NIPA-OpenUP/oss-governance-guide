@@ -1,6 +1,6 @@
 
 ---
-title: "NIPA 기업 공개 소프트웨어 거버넌스 가이드"
+title: "NIPA 기업 오픈소스  거버넌스 가이드"
 linkTitle: "NIPA 오픈소스 가이드"
 weight: 20
 type: list
@@ -10,8 +10,8 @@ menu:
 ---
 
 {{% pageinfo %}}
-기업 공개 소프트웨어 거버넌스 가이드는 정보통신산업진흥원(NIPA)이 주관하고 [오픈업](https://www.oss.kr/open_up_intro)이 연구를 수행하여 국내 기업의 올바른 오픈소스 활용을 안내하고자 작성하고 있습니다. 
-* [2021년 기업 공개 소프트웨어 거버넌스 가이드 발간](https://www.oss.kr/oss_guide/show/2f7c25e8-df31-4ad9-9d25-1d8234c322c0?page=9)
+기업 오픈소스  거버넌스 가이드는 정보통신산업진흥원(NIPA)이 주관하고 [오픈업](https://www.oss.kr/open_up_intro)이 연구를 수행하여 국내 기업의 올바른 오픈소스 활용을 안내하고자 작성하고 있습니다. 
+* [2021년 기업 오픈소스 거버넌스 가이드 발간](https://www.oss.kr/oss_guide/show/2f7c25e8-df31-4ad9-9d25-1d8234c322c0?page=9)
 {{< imgproc Company_gov Resize "300x" />}}
 {{% /pageinfo %}}
 

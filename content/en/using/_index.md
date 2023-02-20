@@ -157,7 +157,7 @@ Gartner의 [Technology Insight for Software Composition Analysis (2019) 보고�
 
 > 참고로, 지난 2020년 12월, 오픈소스 컴플라이언스에 대한 국제 표준이 ISO에 등록되었다. 
 > 
-> [ISO/IEC 5230](https://www.iso.org/standard/81039.html)[^iso5230]은 기업이 오픈소스 컴플라이언스를 달성하기 위해 수행해야 할 최소한의 요구사항을 정의하고 있다. NIPA에서 출간한 기업 공개소프트웨어 거버넌스 OpenChain 해설서에서는 이에 대한 자세한 내용 및 준수 방법을 설명한다. 
+> [ISO/IEC 5230](https://www.iso.org/standard/81039.html)[^iso5230]은 기업이 오픈소스 컴플라이언스를 달성하기 위해 수행해야 할 최소한의 요구사항을 정의하고 있다. NIPA에서 출간한 기업 오픈소스 거버넌스 OpenChain 해설서에서는 이에 대한 자세한 내용 및 준수 방법을 설명한다. 
 > 
 > 가이드는 다음 페이지에서 다운받을 수 있다. : https://www.oss.kr/oss_guide/show/7050bff0-d06b-43f0-99a6-9975afcd486f
 
