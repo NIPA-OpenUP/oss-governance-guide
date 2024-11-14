@@ -9,9 +9,9 @@ description: >
 ## 배경
 
 ### 기업이 바라보는 오픈소스
-2020년에 RedHat에서는 전 세계 IT 리더 950명을 대상으로 설문조사를 진행했다. 이 [오픈소스 Enterprise 현황 보고서 (2020)](https://www.redhat.com/en/enterprise-open-source-report/2020)[^redhat2020]에 따르면 오픈소스 사용이 증가함에 따라 엔터프라이즈 소프트웨어 시장에서 점차 독점 소프트웨어 사용이 감소하고 있다는 것을 확인할 수 있다. 앞으로는 독점 소프트웨어 사용이 2019년 55%에서 2020년에는 42%로 떨어졌으며, 2022년에는 32%대로 줄어들 것으로 전망하고 있다. 그리고 2021년 현재 오픈소스 기반의 엔터프라이즈 소프트웨어의 시장 점유율은 32%이며, 2022년에는 44%로 증가할 것으로 예상한다. 또한 응답자 중 무려 95%가 오픈소스가 전략적으로 중요하다고 응답했으며, 그중 75%는 매우 중요하다고 답했다. 
+2022년 RedHat은 전 세계 IT 리더 1296명을 대상으로 한 인터뷰 결과를 발표했다. 이 [오픈소스 Enterprise 현황 보고서 (2022)](https://www.redhat.com/en/resources/state-of-enterprise-open-source-report-2022)[^redhat2022]에 따르면 오픈소스 사용이 증가함에 따라 엔터프라이즈 소프트웨어 시장에서 점차 독점 소프트웨어 사용이 감소하고 있다는 것을 확인할 수 있다. 앞으로 독점 소프트웨어 사용이 향후 2년 동안 현재 45%에서 37%로 8%나 줄어들 것으로 전망하고 있으며, 같은 기간 동안 엔터프라이즈 오픈소스와 커뮤니티 기반 오픈 소스는 각각 5%, 3% 증가할 것으로 예상한다. 또한 IT 리더의 80%는 조직의 새로운 기술을 위한 엔터프라이즈 오픈 소스 소프트웨어 사용이 증가할 것이라고 답했다.
 
-[^redhat2020]: 오픈소스 Enterprise 현황 보고서 (2020) : https://www.redhat.com/en/enterprise-open-source-report/2020
+[^redhat2022]: 오픈소스 Enterprise 현황 보고서 (2022) : https://www.redhat.com/en/resources/state-of-enterprise-open-source-report-2022
 
 Gartner는 [오픈소스 소프트웨어 하이프 사이클 보고서 (2016)](https://www.gartner.com/en/documents/3371817/hype-cycle-for-open-source-software-2016)[^gartner2016]에서 ‘주류 IT 조직의 95%는 사실을 인지하고 있는지를 떠나서 적지 않은 오픈소스 소프트웨어 자산을 활용하고 있다’라고 보고하기도 했다.
 
@@ -23,10 +23,10 @@ Gartner는 [오픈소스 소프트웨어 하이프 사이클 보고서 (2016)](h
 
 [^itworld144662]: 오픈소스, 기업 IT에 안착하다 (2020) : https://www.itworld.co.kr/techlibrary/144662
 
-응답자의 59%가 이미 오픈소스를 도입해 사용 중이며, 17%는 1년 이내에 오픈소스 도입을 하기 위해 준비 중이라는 점을 고려한다면, 기업들의 오픈소스 수용은 더욱 활발해질 것으로 예상이 된다.
+[2021년 국내 기업의 공개SW 활용률은 61.5%](https://www.nipa.kr/main/selectBbsNttView.do?key=113&bbsNo=9&nttNo=8859)인 것으로 나타났다. 세부적으로는 전사적 활용 비율이 전년 10.7%에서 26.4%로 크게 증가했으며, 부분적 활용 비율은 35.1% 이다.
 
 {{< imgproc opensource-company Fit "768x768" >}}
-<center><i>[국내 오픈소스 도입현황]</i><center>
+<center><i>[국내 기업 오픈소스 도입 및 활용]</i><center>
 {{< /imgproc >}}
 
 
@@ -54,22 +54,22 @@ Gartner는 [오픈소스 소프트웨어 하이프 사이클 보고서 (2016)](h
 [^jenkins]: 젠킨스(Jenkins) : https://www.jenkins.io
 [^spark]: 아파치 스파크(Apache Spark) : http://spark.apache.org
 
-국내 오픈소스 시장은 [2020년 기준 2,843억 원 수준으로, 2024년까지 연평균 14% 이상의 성장률을 보이며 4,602억 원 규모에 도달할 것으로 전망](https://www.nipa.kr/main/selectBbsNttView.do?key=112&bbsNo=8&nttNo=7835)[^kdb-633]되고 있다.
+국내 오픈소스 시장은 [2021년 OSS 시장규모는 2020년 대비 6.6% 성장한 3,032억 원이고, OSS 시장가치는 2020년 대비 6.1% 성장한 약 7조 원](https://www.nipa.kr/main/selectBbsNttView.do?key=113&bbsNo=9&nttNo=8859)[^kdb-633]으로 성장하고 있다.
 
-[^kdb-633]: Nipa, 2020년 오픈소스SW (Open Source Software) 시장동향 조사보고서 https://www.nipa.kr/main/selectBbsNttView.do?key=112&bbsNo=8&nttNo=7835
+[^kdb-633]: Nipa, 2021 오픈소스SW(OSS) 실태조사 보고서 https://www.nipa.kr/main/selectBbsNttView.do?key=113&bbsNo=9&nttNo=8859
 
 
 ### 오픈소스 도입 이유
-해를 거듭할수록 기업들은 점점 더 많은 오픈소스를 도입하고 있다. 기업들이 오픈소스를 도입하게 된 이유로는 비용 절감이 가장 크다. 독점 소프트웨어를 사용하면 라이선스 비용이 계속 발생하며, 벤더에 종속되는 문제가 있다. 또한 독점 소프트웨어는 오픈소스보다 시장이나 기술의 변화에 빠르게 대응하지 못하는 경우가 많다. 따라서 오픈소스가 소프트웨어의 기능, 품질, 보안 면에서 독점 소프트웨어보다 더 나은 것으로 인식되고 있다. 그 외에도 최신 기술 확보, IT 기술 역량 강화, 경쟁력 강화, 시장 확대 및 인재 확보 등 그 이유가 다양하게 나타난다. 결과적으로는 오픈소스가 총 소유 비용(TCO) 감소뿐만 아니라 다른 여러 측면에서도 유리하다. 그렇다면 각각의 오픈소스 도입 이유에 대해 더 자세히 살펴보자. 
+해를 거듭할수록 기업들은 점점 더 많은 오픈소스를 도입하고 있다. 기업들이 오픈소스를 도입하게 된 이유로는 비용 절감이 가장 크다. 독점 소프트웨어를 사용하면 라이선스 비용이 계속 발생하며, 벤더에게 종속되는 문제가 있다. 또한 독점 소프트웨어는 오픈소스보다 시장이나 기술의 변화에 빠르게 대응하지 못하는 경우가 많다. 따라서 오픈소스가 소프트웨어의 기능, 품질, 보안 면에서 독점 소프트웨어보다 더 나은 것으로 인식되고 있다. 그 외에도 최신 기술 확보, IT 기술 역량 강화, 경쟁력 강화, 시장 확대 및 인재 확보 등 그 이유가 다양하게 나타난다. 결과적으로는 오픈소스가 총소유 비용(TCO) 감소뿐만 아니라 다른 여러 측면에서도 유리하다. 그렇다면 각각의 오픈소스 도입 이유에 대해 더 자세히 살펴보자. 
 
 #### 비용 절감
-일반적으로 오픈소스는 권리자인 저작권자가 라이선스를 통해 이용을 허락한 것이며, [OSI(Open Source Initiative)](https://opensource.org)[^osi]에서 인증한 오픈소스 라이선스들은 모두 상업적 이용을 제한하지 않는다. 라이선스 의무 사항만 준수하면 기업은 비용을 지불하지 않고 자유롭게 오픈소스를 사용할 수 있다. 그리고 오픈소스는 완성된 패키지 형태로 제공되기도 하는데 종종 누구나 자유롭게 사용 가능한 커뮤니티 버전과 과금 정책이 포함된 엔터프라이즈 버전이 따로 존재하기도 한다. 엔터프라이즈 버전은 프리미엄 기능이나 보안 패치, 기술 지원 등을 통한 차별화 전략을 사용하기에 기업은 사용 환경에 따라 적절히 선택할 수 있다.
+일반적으로 오픈소스는 권리자인 저작권자가 라이선스를 통해 이용을 허락한 것이며, [OSI(Open Source Initiative)](https://opensource.org)[^osi]에서 인증한 오픈소스 라이선스들은 모두 상업적 이용을 제한하지 않는다. 라이선스 의무 사항만 준수하면 기업은 비용을 지불하지 않고 자유롭게 오픈소스를 사용할 수 있다. 그리고 오픈소스는 완성된 패키지 형태로 제공되기도 하는데 종종 누구나 자유롭게 사용할 수 있는 커뮤니티 버전과 과금 정책이 포함된 엔터프라이즈 버전이 따로 존재하기도 한다. 엔터프라이즈 버전은 프리미엄 기능이나 보안 패치, 기술 지원 등을 통한 차별화 전략을 사용하기에 기업은 사용 환경에 따라 적절히 선택할 수 있다.
 
 [^osi]: OSI(Open Source Initiative) : https://opensource.org
 
 
 #### 최신 기술
-오픈소스는 전 세계의 누구나 조건 없이 참여 가능하며, 급변하는 기술의 변화에 민첩하게 대응하다 보니 최신 기술이 자연스럽게 집약된다. 최근에는 클라우드 환경을 기반으로 하는 오픈소스, AI 관련 오픈소스들이 인기를 얻어 많이 등장하고 있다. 기업들은 최신 오픈소스를 적극적으로 도입하여 사내 개발자들에게 사용을 권장하고 최신 기술력을 확보하는 데 힘쓰고 있다.
+오픈소스는 전 세계의 누구나 조건 없이 참여할 수 있으며, 급변하는 기술의 변화에 민첩하게 대응하다 보니 최신 기술이 자연스럽게 집약된다. 최근에는 클라우드 환경을 기반으로 하는 오픈소스, AI 관련 오픈소스들이 인기를 얻어 많이 등장하고 있다. 기업들은 최신 오픈소스를 적극적으로 도입하여 사내 개발자들에게 사용을 권장하고 최신 기술력을 확보하는 데 힘쓰고 있다.
 
 #### 안정성
 
@@ -80,7 +80,7 @@ Gartner는 [오픈소스 소프트웨어 하이프 사이클 보고서 (2016)](h
 - 독점 소프트웨어의 상당 부분도 이미 오픈소스를 사용 중이다: 독점 소프트웨어 개발기업가 사용 중인 오픈소스의 보안 이슈를 제대로 추적하고 관리하지 않으면 버그 및 취약점이 포함된 상태로 배포될 가능성이 크다. 또한, 개선되었다 하더라도 실제 배포까지는 오랜 시간이 걸린다.
 
 #### 역량 강화
-오픈소스는 수많은 개발자의 손을 거쳐 높은 품질의 소스 코드와 아키텍처를 가지게 된다. 이는 기존 코드에만 익숙한 개발자들에게 시각의 변화를 주거나 새로운 기술을 습득할 수 있는 기회가 된다. 그뿐만 아니라 보편적 기능은 오픈소스로 대체하고 개발자는 비즈니스 로직 개발에 집중할 수 있는 환경을 만들 수 있기 때문에 오픈소스의 사용은 성공적으로 프로젝트를 완성하기 위한 필수 요건이 되어가고 있다.
+오픈소스는 수많은 개발자의 손을 거쳐 높은 품질의 소스 코드와 아키텍처를 가지게 된다. 이는 기존 코드에만 익숙한 개발자들에게 시각의 변화를 주거나 새로운 기술을 습득할 기회가 된다. 그뿐만 아니라 보편적 기능은 오픈소스로 대체하고 개발자는 비즈니스 로직 개발에 집중할 수 있는 환경을 만들 수 있기 때문에 오픈소스의 사용은 성공적으로 프로젝트를 완성하기 위한 필수 요건이 되어가고 있다.
 
 #### 생산성의 증가
 개발 프레임워크부터 모니터링, 테스트 자동화, 부하 테스트, 빌드, 배포까지 개발 프로젝트를 수행하는 과정 전체에서 오픈소스를 적극적으로 도입하게 되면 부서별로 각자 따로 개발할 필요가 없고, 코드 중복도 최소화할 수 있다. 이렇게 얻어진 효율성은 조금 더 혁신적인 기술에 투자할 여력을 만들어 준다.
@@ -89,13 +89,13 @@ Gartner는 [오픈소스 소프트웨어 하이프 사이클 보고서 (2016)](h
 국내 소프트웨어 기업의 글로벌 진출은 현실적으로 매우 어렵다. 하지만 소스 코드를 공개하면 사용자를 전 세계에서 확보할 수 있고, 안정성, 보안성, 지속적 발전 가능성이라는 오픈소스라는 긍정적인 기대감이 소프트웨어의 가치를 높일 수 있다. 그 때문에 이전보다 사업을 글로벌로 확장할 기회를 훨씬 더 많이 창출할 수 있다.
 
 #### 인재 확보
-독점 소프트웨어를 사용하게 될 경우, 해당 소프트웨어 개발 경력이 있는 인재를 확보하는데 상당한 어려움이 따른다. 하지만 오픈소스의 경우에는 누구나 접근 가능한 코드이기 때문에 더욱 많은 인력 풀을 대상으로 인재를 확보할 기회가 늘어난다. 기존 직원들에게는 오픈소스 교육을 하는 기업이 늘어나고 있으며, 이제는 단순히 오픈소스를 사용하는 것뿐만 아니라 오픈소스에 직접 참여하고 [오픈소스 역량을 가진 오픈소스 전문가 고용을 고려한다는 인사담당자가 늘어 가는 추세](https://training.linuxfoundation.org/resources/2020-open-source-jobs-report)[^training-resource]이다.
+독점 소프트웨어를 사용하게 될 경우, 해당 소프트웨어 개발 경력이 있는 인재를 확보하는 데 상당한 어려움이 따른다. 하지만 오픈소스의 경우에는 누구나 접근할 수 있는 코드이기 때문에 더욱 많은 인력 풀을 대상으로 인재를 확보할 기회가 늘어난다. 기존 직원들에게는 오픈소스 교육을 하는 기업이 늘어나고 있으며, 이제는 단순히 오픈소스를 사용하는 것뿐만 아니라 오픈소스에 직접 참여하고 [오픈소스 역량을 가진 오픈소스 전문가 고용을 고려한다는 인사담당자가 늘어 가는 추세](https://training.linuxfoundation.org/resources/2020-open-source-jobs-report)[^training-resource]이다.
 
 [^training-resource]: 2020 Open Source Jobs Report : https://training.linuxfoundation.org/resources/2020-open-source-jobs-report/
 
 
 ### 오픈소스 도입 시 고려사항
-Gartner의 [Technology Insight for Software Composition Analysis (2019) 보고서](https://www.gartner.com/en/documents/3971011/technology-insight-for-software-composition-analysis)[^gartner-3971011]에서는 기업은 오픈소스를 도입할 때 고려해야 할 사항으로 크게 4가지를 꼽고 있다. (1) 오픈소스가 장기적으로 생존할 가능성이 큰가? (2) 보안 이슈는 없는가? (3) 벤더 이슈는 없는가? (4) 컴플라이언스 및 지식재산권 확인 이다. 이 밖에도 오픈소스가 우리의 제품 또는 서비스에 적합한 기술인지, 오픈소스를 도입했을 때 충분한 기술 지원을 받을 수 있는지 등도 확인해야 한다. 검토 사항 중 일부를 조금 더 자세히 살펴본다. 
+Gartner의 [Technology Insight for Software Composition Analysis (2019) 보고서](https://www.gartner.com/en/documents/3971011/technology-insight-for-software-composition-analysis)[^gartner-3971011]에서는 기업은 오픈소스를 도입할 때 고려해야 할 사항으로 크게 4가지를 꼽고 있다. (1) 오픈소스가 장기적으로 생존할 가능성이 큰가? (2) 보안 이슈는 없는가? (3) 벤더 이슈는 없는가? (4) 컴플라이언스 및 지식재산권 확인이다. 이 밖에도 오픈소스가 우리의 제품 또는 서비스에 적합한 기술인지, 오픈소스를 도입했을 때 충분한 기술 지원을 받을 수 있는지 등도 확인해야 한다. 검토 사항 중 일부를 조금 더 자세히 살펴본다. 
 
 [^gartner-3971011]: Technology Insight for Software Composition Analysis (2019) 보고서 : https://www.gartner.com/en/documents/3971011/technology-insight-for-software-composition-analysis
 
@@ -145,11 +145,11 @@ Gartner의 [Technology Insight for Software Composition Analysis (2019) 보고�
 
 {{% /alert %}}
 
-오픈소스 컴플라이언스란, 오픈소스를 사용하고 개발하는 사람들이 오픈소스의 저작권을 존중하기 위해서 오픈소스의 라이선스 의무를 이행하는 과정이다. 종종 조직에서는 오픈소스 라이선스 컴플라이언스를 성가시다고 여긴다. 물론, 모든 라이선스를 식별하고 각각의 라이선스 의무를 준수한다는 것은 어려운 작업이다. 하지만 오픈소스가 고갈되지 않고 유지될 수 있도록 보장하는 것은 오픈소스를 활용하는 기업이 맡은 책임의 일부이기도 하다. 규정을 준수하기 위한 노력을 통해 기업은 오픈소스를 사용하면서 발생할 수 있는 비용과 위험을 이해하기도 하며, 결과적으로는 오픈소스를 더 잘 이해하고 사용할 수 있게 된다. 
+오픈소스 컴플라이언스란, 오픈소스를 사용하고 개발하는 사람들이 오픈소스의 저작권을 존중하기 위해서 오픈소스의 라이선스 의무를 이행하는 과정이다. 종종 조직에서는 오픈소스 라이선스 컴플라이언스를 성가시다고 여긴다. 물론, 모든 라이선스를 식별하고 각각의 라이선스 의무를 준수한다는 것은 어려운 작업이다. 하지만 오픈소스가 고갈되지 않고 유지될 수 있도록 보장하는 것은 오픈소스를 활용하는 기업이 담당할 책임의 일부이기도 하다. 규정을 준수하기 위한 노력을 통해 기업은 오픈소스를 사용하면서 발생할 수 있는 비용과 위험을 이해하기도 하며, 결과적으로는 오픈소스를 더 잘 이해하고 사용할 수 있게 된다. 
 
 오픈소스 컴플라이언스의 범위를 보면 단순히 기업 내에서의 사용하는 것뿐만 아니라 3rd party 공급자와 소프트웨어 공급 및 수급 계약을 하면서 발생하게 될 오픈소스 라이선스 의무사항을 준수하는 활동도 포함된다. 이런 활동들은 오픈소스 커뮤니티와 존중과 신뢰를 바탕으로 한 관계를 구축하는 기반이 되기도 한다. 궁극적으로는 오픈소스 컴플라이언스는 저작권자의 지식재산권을 보호하는 데에 그 목적이 있다는 것을 기억해야 한다.
 
-{{< imgproc compliance Fit "768x768" >}}
+{{< imgproc compliancerange Fit "768x768" >}}
 <center><i>[오픈소스 컴플라이언스 범위]</i><center>
 {{< /imgproc >}}
 
@@ -157,7 +157,7 @@ Gartner의 [Technology Insight for Software Composition Analysis (2019) 보고�
 
 > 참고로, 지난 2020년 12월, 오픈소스 컴플라이언스에 대한 국제 표준이 ISO에 등록되었다. 
 > 
-> [ISO/IEC 5230](https://www.iso.org/standard/81039.html)[^iso5230]은 기업이 오픈소스 컴플라이언스를 달성하기 위해 수행해야 할 최소한의 요구사항을 정의하고 있다. NIPA에서 출간한 기업 공개소프트웨어 거버넌스 OpenChain 해설서에서는 이에 대한 자세한 내용 및 준수 방법을 설명한다. 
+> [ISO/IEC 5230](https://www.iso.org/standard/81039.html)[^iso5230]은 기업이 오픈소스 컴플라이언스를 달성하기 위해 수행해야 할 최소한의 요구사항을 정의하고 있다. NIPA에서 출간한 기업 오픈소스 거버넌스 OpenChain 해설서에서는 이에 대한 자세한 내용 및 준수 방법을 설명한다. 
 > 
 > 가이드는 다음 페이지에서 다운받을 수 있다. : https://www.oss.kr/oss_guide/show/7050bff0-d06b-43f0-99a6-9975afcd486f
 
@@ -173,7 +173,7 @@ Gartner의 [Technology Insight for Software Composition Analysis (2019) 보고�
 
 
 ##### **1. 오픈소스 라이브러리 식별**
-프로젝트에 사용된 오픈소스를 식별하고 목록을 도출하는 단계이다. 모든 오픈소스 컴포넌트가 식별되어야 하며, 오픈소스 원본의 위치와 라이선스 정보 등도 함께 기록이 되어야 한다. 자동화된 스캐닝 도구를 통해 식별하는 것을 권장한다. 자동화된 스캐닝 도구는 [주요 오픈소스 관리 도구 소개](#주요-오픈소스-관리-도구-소개)에서 자세히 다룬다. 스캔은 배포 시점이나 변동 사항이 있을 때, 개발자의 요청이 있을 때, 혹은 주기적으로 수행할 수 있다.
+프로젝트에 사용된 오픈소스를 식별하고 목록을 도출하는 단계이다. 모든 오픈소스 컴포넌트가 식별되어야 하며, 오픈소스 원본의 위치와 라이선스 정보 등도 함께 기록되어야 한다. 자동화된 스캐닝 도구를 통해 식별하는 것을 권장한다. 자동화된 스캐닝 도구는 [주요 오픈소스 관리 도구 소개](#주요-오픈소스-관리-도구-소개)에서 자세히 다룬다. 스캔은 배포 시점이나 변동 사항이 있을 때, 개발자의 요청이 있을 때, 혹은 주기적으로 수행할 수 있다.
 
 ##### **2. 소스 코드 감사**
 코드 레벨의 스캔을 수행하여 아직 식별되지 않은 오픈소스를 추가로 더 찾아내는 단계이다. 코드 스캐닝 도구는 오픈소스의 코드를 기반으로 개발 언어가 바뀌었거나 함수명, 변수명이 변경되었더라도 식별이 되어야 하며, 기존 코드와 비교를 통해 수동으로 확인하는 과정을 거친다.
@@ -230,10 +230,10 @@ Gartner의 [Technology Insight for Software Composition Analysis (2019) 보고�
 소스 코드 수준에서 사용된 오픈소스까지 일일이 파악하는 것은 매우 힘든 작업이다. 오픈소스 코드를 그대로 가져다 쓰거나 혹은 오픈소스를 수정하여 사용하게 되면, 일부 제한된 라이선스에서는 오픈소스를 사용하는 모든 프로젝트의 소스 코드를 공개해야 할 수도 있다. 또한 오픈소스 목록에서 누락이 된다면 추후 개선되는 패치나 버그 수정도 불가능하게 되며 오픈소스에 취약점이 발견되어도 파악이 힘들어진다.
 
 ##### **사용된 오픈소스 목록 누락**
-사용 파악 시 미처 확인하지 못한 누락이 발생할 수 있다. 프로젝트 규모가 커질수록, 그 대상이 많아질수록 직접 오픈소스 파악하기는 어려워진다. 또한 개발이 진행되고, 배포까지 최종 단계에 이르기까지 수많은 변경 작업이 일어난다. 이 과정에서 사용된 오픈소스 목록과 실제 코드에 포함된 오픈소스를 완전히 똑같이 맞추기는 어려울 것이다. 현실적으로도 이러한 변경 사항을 추적하는 데 있어 상당히 많은 노력과 시간이 소모되기도 한다.
+사용 파악 시 미처 확인하지 못한 누락이 발생할 수 있다. 프로젝트 규모가 커질수록, 그 대상이 많아질수록 직접 오픈소스 파악하기는 어려워진다. 또한 개발이 진행되고, 배포까지 최종 단계에 이르기까지 수많은 변경 작업이 일어난다. 이 과정에서 사용된 오픈소스 목록과 실제 코드에 포함된 오픈소스를 완전히 똑같이 맞추기는 어려울 것이다. 현실적으로도 이러한 변경 사항을 추적하는 데 있어 상당히 큰 노력과 시간이 소모되기도 한다.
 
 ##### **배포 프로세스 지연**
-어플리케이션 개발과 배포에 영향을 줄 수 있다. 오픈소스 목록을 수동으로 관리하게 되면 승인 프로세스도 수동으로 수행되어 매우 느리게 진행될 가능성이 크다. 이미 통합된 오픈소스 중 이슈가 발생하게 되면 해당 오픈소스를 제거하고 대안을 찾도록 개발자에게 요구해야 할 수도 있는데 이렇게 되면 일정에 큰 차질을 빚게 될 것이다.
+애플리케이션 개발과 배포에 영향을 줄 수 있다. 오픈소스 목록을 수동으로 관리하게 되면 승인 프로세스도 수동으로 수행되어 매우 느리게 진행될 가능성이 크다. 이미 통합된 오픈소스 중 이슈가 발생하게 되면 해당 오픈소스를 제거하고 대안을 찾도록 개발자에게 요구해야 할 수도 있는데 이렇게 되면 일정에 큰 차질을 빚게 될 것이다.
 
 #### 오픈소스 목록 관리의 자동화
 위에서 언급한 것처럼 여러 측면에서 오픈소스 관리는 자동화가 필요하다. 자동화를 위해서는 아래와 같은 오픈소스를 식별하기 위한 적절한 도구를 구축하거나 도입하여 사용해야 한다.
@@ -244,6 +244,115 @@ Gartner의 [Technology Insight for Software Composition Analysis (2019) 보고�
 - 라이선스 결합 방식 분석 도구
 - 오픈소스 BOM(Bill of Materials, 사용된 소프트웨어의 ) 관리 도구
 - 전반적으로 프로젝트를 관리하고 오픈소스 목록을 관리할 포탈
+
+
+### 오픈소스 목록 관리와 SBOM
+
+오픈소스 목록 관리의 중요성은 2021년 5월 미 행정명령 ([Executive Order 14028 of May 12, 2021](https://www.nist.gov/itl/executive-order-14028-improving-nations-cybersecurity)[^order-14028])에서도 알 수 있다. 미 정부는 국가 사이버 보안 강화의 일환으로 SBOM(Software Bill of Materials) 제출을 의무화 하였다. SBOM은 위에서 설명한 오픈소스 목록과 유사한 개념이며, NTIA(미 전기통신 및 정보청)[^ntia]는 이 행정 명령에 따라 [SBOM의 최소 요구 사항](https://www.ntia.doc.gov/files/ntia/publications/sbom_minimum_elements_report.pdf)[^minimum_element]을 정의하였다. 미 연방 정부가 가진 지배적 지위를 고려하면 이러한 요구 사항은 SBOM의 표준이 될 가능성이 크다고 볼 수 있다. 
+
+[^order-14028]: Executive Order 14028 of May 12, 2021 : https://www.nist.gov/itl/executive-order-14028-improving-nations-cybersecurity
+[^ntia]: National Telecommunications and Information Administration
+[^minimum_element]: Department of Commerce, The Minimum Elements for an SBOM, 2021, https://www.ntia.doc.gov/files/ntia/publications/sbom_minimum_elements_report.pdf
+
+#### SBOM 최소 요구 사항
+
+NTIA는 라이선스 및 보안취약점 관리를 위해 SBOM이 갖춰야 할 다음 세가지의 요구 사항을 제시하였다. 
+1. 데이터 필드 : SBOM이 포함해야 할 데이터 (다음 단락에서 세부 내용 설명)
+2. 자동화 지원 : SBOM 생성 자동화
+  - SBOM는 인간이 읽을 수 있어야 하고 동시에 기계 판독이 가능하여야 한다. 
+  - SBOM가 자동으로 생성되는 환경을 지원해야 한다. 
+3. Practice와 절차 : SBOM 생성 및 운영 방법을 정의해야 한다.
+
+#### 데이터 필드
+
+NTIA는 SBOM이 포함해야 하는 7가지 데이터 필드를 명시하였다. 
+
+| Data Field   |      Description      |
+|:----------|:-------------|
+| 공급자 이름 |  구성요소를 만들고 정의하고 식별하는 주체의 이름 |
+| 구성요소 이름 | 최초 공급자에 의해 정의된 소프트웨어 단위의 명칭 |
+| 구성요소 버전 | 공급자가 이전에 식별된 소프트웨어 버전으로부터의 변경을 명시하기 위해 사용하는 식별자 |
+| 기타 고유 식별자 | 구성요소를 식별하는 데 사용되거나 관련 데이터베이스를 위한 조회 키 역할을 하는 기타 식별자 |
+| 종속성 관계 | 업스트림 구성요소 X가 소프트웨어 Y에 포함된다는 관계의 명시 |
+| SBOM 데이터 작성자 | 이 구성요소에 대한 SBOM 데이터를 만든 주체의 이름 |
+| 타임스탬프 | SBOM 데이터 어셈블리의 날짜 및 시간 기록 |
+
+그리고 이러한 데이터 필드를 포함하는 SBOM은 기계가 판독(Machine Readable)하도록 다음 세가지 표준화된 형식 중 하나로 작성되어야 한다. 
+* [SPDX](https://spdx.org/)
+* [CycloneDX](https://cyclonedx.org/)
+* [SWID Tags](https://nvd.nist.gov/products/swid)
+
+이 중 SPDX 표준에 대해서 좀 더 자세히 살펴보자. 
+
+#### SPDX
+
+여기서는 Linux Foundation의 프로젝트인 SPDX에서 만든 SPDX 표준과 SPDX 문서 작성 방법에 대해 알아보겠다. SPDX 표준은 2021년 9월 ISO 표준([ISO/IEC 5962](https://www.iso.org/standard/81870.html))[^isoiec5962]으로 등록된 대표적인 SBOM 포맷이다. 기업의 SBOM 관리 체계가 모든 포맷의 SBOM을 지원하면 좋겠지만, 하나의 포맷을 선택해야 한다면 국제 표준인 SPDX를 먼저 지원하는 것을 권장한다. 더불어 SPDX는 당초 오픈소스 라이선스 컴플라이언스를 위해 만들어진 포맷이기에 기업의 오픈소스 라이선스 관리에 효율적으로 사용할 수 있다. 
+
+[^isoiec5962]: ISO/IEC 5962 : https://www.iso.org/standard/81870.html 
+
+SPDX 표준은 2023년 1월 현재 v2.3까지 나왔으며 다음과 같은 정보를 포함한다. 
+
+{{< imgproc spdx-info Fit "512x512" >}}
+<center><i>[SPDX v2.3 format]</i><center>
+{{< /imgproc >}}
+
+
+SPDX는 소프트웨어가 포함하고 있는 패키지, 파일, 스니핏(코드 조각) 등에 대한 각각의 라이선스, 버전, 저작권 등의 정보를 관리할 수 있다. 또한 SPDX는 자동으로 정보를 읽고 쓸 수 있도록 JSON, YAML 등 프로그래밍 언어로 쉽게 조작할 수 있도록 광범위하게 사용되는 데이터 포맷을 채택하였다. 현재 아래의 네가지 포맷을 지원한다. 
+
+- [JSON](https://github.com/spdx/spdx-spec/blob/development/v2.2.2/examples/SPDXJSONExample-v2.2.spdx.json)[^spdx-json]
+- [YAML](https://github.com/spdx/spdx-spec/blob/development/v2.2.2/examples/SPDXYAMLExample-2.2.spdx.yaml)[^spdx-yaml]
+- [Tag/Value](https://github.com/spdx/spdx-spec/blob/development/v2.2.2/examples/SPDXTagExample-v2.2.spdx)[^spdx-tagvalue]
+- [RDF/xml](https://github.com/spdx/spdx-spec/blob/development/v2.2.2/examples/SPDXRdfExample-v2.2.spdx.rdf.xml)[^spdx-rdfxml]
+
+[^spdx-json]: JSON SPDX sample : https://github.com/spdx/spdx-spec/blob/development/v2.2.2/examples/SPDXJSONExample-v2.2.spdx.json
+[^spdx-yaml]: YAML SPDX sample : https://github.com/spdx/spdx-spec/blob/development/v2.2.2/examples/SPDXYAMLExample-2.2.spdx.yaml
+[^spdx-tagvalue]: Tag/Value SPDX sample : https://github.com/spdx/spdx-spec/blob/development/v2.2.2/examples/SPDXTagExample-v2.2.spdx
+[^spdx-rdfxml]: RDF/xml SPDX sample : https://github.com/spdx/spdx-spec/blob/development/v2.2.2/examples/SPDXRdfExample-v2.2.spdx.rdf.xml
+
+그런데, SPDX 규격은 100 페이지가 넘는 적지 않은 분량의 문서이기 때문에 처음 SPDX 표준에 맞추어 문서를 작성하는건 쉽지 않다. SPDX 프로젝트는 Excel로 작성된 SBOM을 SPDX 문서로 자동 변환하는 도구를 제공하고 있다. 즉, 사용자는 먼저 SPDX 프로젝트에서 제공하는 [Excel template 파일](https://github.com/spdx/tools/blob/master/Examples/SPDXRdfExample-v2.1.xls)[^spdx-excel]을 다운받아서 각 시트에 필요한 정보를 기입한다. 
+
+[^spdx-excel]: SPDX 엑셀 파일 : https://github.com/spdx/tools/blob/master/Examples/SPDXRdfExample-v2.1.xls
+
+{{< imgproc spdx-excel Fit "1024x768" >}}
+<center><i>[SPDX가 제공하는 Excel 파일 캡쳐]</i><center>
+{{< /imgproc >}}
+
+그리고, 이 Excel 파일을 SPDX에서 제공하는 도구를 사용하면 SPDX가 지원하는 데이터 포맷인 JSON, YAML 등의 데이터 포맷으로 변환할 수 있다. 간단하게는 [SPDX Online Tool 웹사이트](https://tools.spdx.org/app/convert/)[^spdx-online]에서 원하는 형태의 데이터 포맷으로 쉽게 변환할 수 있다.
+
+{{< imgproc spdx-web Fit "1024x768" >}}
+<center><i>[SPDX Online Tool - Convert to other SPDX format]</i><center>
+{{< /imgproc >}}
+
+[^spdx-online]: SPDX Online Tool : https://tools.spdx.org/app/convert/ 
+
+위에서 설명한 SBOM 최소 요구사항에 의하면 SBOM은 자동으로 생성되는 환경이어야 한다. 지금까지 설명한 SPDX 문서를 만드는 방법은 사람이 Excel 파일을 작성하고, 이를 온라인에서 SPDX 형태로 컨버팅을 수동으로 수행하는 방식이기 때문에 이런 절차를 자동화하는 노력이 필요하다. SPDX는 다양한 [Tool](https://spdx.dev/spdx-tools/)[^spdx-tools]을 제공하여 프로그래밍적으로 SPDX 문서를 생성할 수 있는 방법을 제공한다. 기업은 소프트웨어 빌드 프로세스에서 자동으로 SBOM을 생성하고, SPDX 형태의 SBOM 문서를 생성할 수 있는 환경을 갖추어야 한다.
+
+[^spdx-tools]: SPDX Community Tools : https://spdx.dev/spdx-tools/
+
+#### SBOM 정책 추진 동향
+
+##### 미국
+
+* NTIA Software Component Transparency : NTIA는 소프트웨어 구성요소 투명성 연구를 위하여 2018년 다중 이해관계자 프로세스를 구성하였다. 이후 현재까지 SBOM에 관한 연구를 지속하며 정책 수립을 위한 활동을 이어가고 있다.
+* 행정명령 14028: Improving the Nation’s Cybersecurity : 2021년 5월 미 행정명령 ([Executive Order 14028 of May 12, 2021](https://www.nist.gov/itl/executive-order-14028-improving-nations-cybersecurity)[^order-14028]) 발표
+  * 2021년 7월 12일 NTIA(미 전기통신 및 정보청)[^ntia]는 이 행정 명령에 따라 [SBOM의 최소 요구 사항](https://www.ntia.doc.gov/files/ntia/publications/sbom_minimum_elements_report.pdf)[^minimum_element] 보고서 제공
+  * 2021년 11월 1일 NIST(미 국립표준기술연구소)[^nist]는 라벨링 프로그램에 사용할 수 있는 소비자 소프트웨어 기준 초안 발표
+* FDD(미 민주주의수호재단)[^fdd] ‘A Software Bill of Materials Is Critical for Comprehensive Risk Management’ : FDD TCIL(Transformative Cyber Innovation Lab)은 SBOM의 유용성에 대하여 공공 및 민간부문의 이해를 돕고자 직접 SBOM을 개발하고 분석한 결과 보고서 ‘[포괄적인 위험관리를 위한 SBOM의 중요성](https://fdd.org/analysis/2021/09/29/a-software-bill-of-materials-is-critical-for-comprehensive-risk-management)’[^fdd-risk-manage]을 공개하였다.
+
+[^nist]: National Institute of Standards and Technology
+[^fdd]: Foundation for Defense of Democracies
+[^fdd-risk-manage]: A Software Bill of Material Is Critical for Comprehensive Risk Management : https://fdd.org/analysis/2021/09/29/a-software-bill-of-materials-is-critical-for-comprehensive-risk-management
+
+##### EU
+
+* ENISA ‘Guidelines for Securing the IoT’ : ENISA는 2020년 11월 ‘[IoT 보안을 위한 지침](https://enisa.europa.eu/publications/guidelines-for-securing-the-internet-of-things)’[^enisa-iot]을 발행하였다. 문서 내에 공급망 보호를 위한 모범 사례로 SBOM 제공을 제안하며 공급망 보안을 위한 활동에 SBOM 활용 가능성을 언급하였다.
+* 네덜란드 NCSC ‘Using the Software Bill of Materials for Enhancing Cybersecurity : 네덜란드 NCSC는 사이버보안의 현황에서 잠재적 목적 및 SBOM 사용 현황을 조사하였고 이를 바탕으로 [‘사이버보안 강화를 위한 SBOM 활용’ 백서](https://english.ncsc.nl/publications/publications/2021/february/4/using-the-software-bill-of-materials-forenhancing-cybersecurity)[^ncsc-security]를 발행하였다.
+
+[^enisa-iot]: Guidelines for Securing the Internet of Things(ENISA) : https://enisa.europa.eu/publications/guidelines-for-securing-the-internet-of-things
+[^ncsc-security]: Using the Software Bill of Materials for Enhancing Cybersecurity. National Cyber Security Centre(NCSC) : https://english.ncsc.nl/publications/publications/2021/february/4/using-the-software-bill-of-materials-forenhancing-cybersecurity
+
+<i>참고) [사이버안보 강화를 위한 소프트웨어 공급망 보안 정책 연구: SBOM 정책 추진 사례를 중심으로](https://www.koreascience.or.kr/article/JAKO202209541952684.pdf)</i>[^policy-case]
+[^policy-case]: 사이버안보 강화를 위한 소프트웨어 공급망 보안 정책 연구: SBOM 정책 추진 사례를 중심으로 (손효현, 김동희, 김소정 *국가보안기술연구소) : https://www.koreascience.or.kr/article/JAKO202209541952684.pdf
 
 ### 오픈소스 관리 도구 소개
 앞서 언급한 것처럼 오픈소스 사용에 따른 의무사항 준수와 위험 요소 확인을 위해서는 SDLC(Software System Development Life Cycle) 전체에서 지속적인 스캔 및 모니터링이 필요하다. 이에 **SCA(Software Composition Analysis)** 라는 오픈소스 관리 도구들이 생겨났다. SCA는 보안 및 라이선스 규정 준수를 발견하고 관리하기 위한 자동화된 프로세스를 제공한다.
@@ -263,7 +372,7 @@ Gartner의 [Technology Insight for Software Composition Analysis](https://www.ga
 
 ##### **FOSSology** - https://www.fossology.org
 
-{{< imgproc fossology Fit "768x768" >}}
+{{< imgproc fossology Fit "384x384" >}}
 {{< /imgproc >}}
 
 소스 코드 스캐닝 도구로 소스 파일 상단의 문구를 스캔하여 라이선스를 자동으로 확인한다. FOSSology의 자세한 설치 및 사용 방법은 다음 사이트를 참고할 수 있다.  
@@ -271,7 +380,7 @@ https://openchain-project.github.io/OpenChain-KWG/guide/appendix/3-tools/fossolo
 
 ##### **SW360** - https://www.eclipse.org/sw360
 
-{{< imgproc SW360 Fit "768x768" >}}
+{{< imgproc SW360 Fit "384x384" >}}
 {{< /imgproc >}}
 
 소프트웨어에 포함된 구성요소를 관리하기 위한 도구이다. 오픈소스를 포함하는 제품을 개발하고 배포하는 기업이라면 각 제품과 릴리스 버전마다 사용한 오픈소스의 버전, 라이선스 등의 정보를 수집하고 추적해야 한다. 이를 통해 기업은 올바른 오픈소스 컴플라이언스 활동을 수행할 수 있다. SW360은 오픈소스 정보를 추적하기 위한 도구이다. SW360의 자세한 설치 및 사용 방법은 다음 사이트를 참고할 수 있다.  
@@ -279,48 +388,54 @@ https://openchain-project.github.io/OpenChain-KWG/guide/appendix/3-tools/sw360
 
 ##### **SPDX** - https://spdx.dev
 
-{{< imgproc SPDX Fit "768x768" >}}
+{{< imgproc SPDX Fit "384x384" >}}
 {{< /imgproc >}}
 
 SPDX(Software Package Data  소프트웨어 정보 교환 방식을 표준화하고 이를 용이하게 하기 위한 도구를 제공한다.
 
 ##### **FOSSLight** - https://fosslight.org/
 
-{{< imgproc logo-fosslight Fit "768x768" >}}
-<i>FOSSLight</i>
+{{< imgproc logo-fosslight Fit "384x384" >}}
 {{< /imgproc >}}
 
 LG전자는 [FOSSLight 오픈소스 Project](https://fosslight.org/)[^fosslight]로 FOSSLight Hub와 FOSSLight Scanner를 공개했다. **FOSSLight Hub**는 오픈소스, 라이선스, 그리고 보안취약점까지 관리해줌으로써 오픈 소스 소프트웨어 사용 시 Compliance를 준수하고 보안취약점으로부터 안전하게 사용할 수 있도록 해준다. 또한 프로젝트 별 BOM 관리, 라이선스의 의무사항 및 보안취약점 조회 기능을 제공하여 OSC(Open Source Compliance) Process를 수행할 수 있도록 도와준다. **FOSSLight Scanner**는 Dependency, 소스 코드, 바이너리로부터 오픈소스 정보를 스캔하는 도구이다.  
+* [FOSSLight 사용자 문서](https://fosslight.org/fosslight-guide/)[^fosslight-doc]
 
 [^fosslight]: FOSSLight : https://fosslight.org/
+[^fosslight-doc]: FOSSLight 사용자 문서 : https://fosslight.org/fosslight-guide/
 
-##### **Olive (Kakao)** - https://olive.kakao.com
+##### **OLIVE Platform** - https://olive.kakao.com
 
-{{< imgproc logo-olive Fit "768x768" >}}
-<i>Kakao Olive</i>
+{{< imgproc logo-olive Fit "384x384" >}}
 {{< /imgproc >}}
 
-Kakao는 자사의 수많은 프로젝트의 오픈소스 관리를 위해 사용하던 시스템을 누구나 사용할 수 있도록 [Olive Platform](https://olive.kakao.com)[^olive] Beta를 무료로 오픈했다. Olive는 Github 프로젝트를 분석하여 사용한 오픈소스 데이터를 관리하고, 라이선스 및 의무사항을 확인하여 Report를 제공한다. 쉽고, 빠르고 정확한 오픈소스 검증을 목표로 직관적인 기능과 UI로 구성되어 있으며, 간단히 Dependency와 라이선스 확인이 가능한 심플 체크 기능 등 사용자 편의에 초점을 맞추고 있다.
+Kakao는 자사의 수많은 프로젝트의 오픈소스 관리를 위해 사용하던 시스템을 누구나 사용할 수 있도록 [OLIVE Platform](https://olive.kakao.com)[^olive] 을 무료 웹서비스로 오픈했다. **OLIVE Platform**은 프로젝트 실시간 스캔을 통해 사용한 오픈소스 컴포넌트를 조회하고, 오픈소스의 라이선스 의무사항과 이슈를 확인하여 고지 의무를 준수할 수 있도록 지원하는 오픈소스 관리 서비스다. 쉽고, 빠르고 정확한 오픈소스 검증을 목표로 직관적인 기능과 UI로 구성되어 있으며, 소셜 로그인으로 프로젝트를 관리하고, 라이선스 의무사항 확인, 고지문 다운로드를 할 수 있다. 체험하기를 이용하면 로그인 없이 간단하게 Dependency와 라이선스 확인이 가능하다.
 
-[^olive]: Kakao, Olive Platform : https://olive.kakao.com
+또한, 보안상 웹 서비스 사용이 어렵거나, 소스코드 노출이 우려되는 경우 안심하고 사용할 수 있도록 [OLIVE CLI](https://github.com/kakao/olive-cli)를 제공한다. **OLIVE CLI**는 사용자 PC에서 OLIVE Platform 기능을 수행할 수 있으며, 보안이 엄격한 금융권에서도 사용되고 있다.
+* [OLIVE 사용자 문서](https://olive.kakao.com/docs/)[^olive-doc]
+* [OLIVE CLI 사용자 문서](https://olive.kakao.com/docs/cli/)[^olive-cli-doc]
+
+[^olive]: Kakao, OLIVE Platform : https://olive.kakao.com
+[^olive-doc]: OLIVE 사용자 문서 : https://olive.kakao.com/docs/
+[^olive-cli-doc]: OLIVE CLI 사용자 문서 : https://olive.kakao.com/docs/cli/
 
 ##### **Fossa** - https://fossa.com
 
-{{< imgproc logo-fossa Fit "768x768" >}}
+{{< imgproc logo-fossa Fit "384x384" >}}
 {{< /imgproc >}}
 
 2015년 설립된 실리콘밸리 스타트업에서 제공하는 서비스로, 풍부한 오픈소스 메타데이터 및 정교한 정책 거버넌스를 제공한다. CI/CD 통합 등 DevOps 환경을 지원하며 개발자 친화적 기능들로 구성되어 있다. Twitter, Uber, Zendesk 등과 파트너를 맺고 있으며, JS Foundation, Linux Foundation, NPM 등과 제휴하고 있다. 기본적인 사용은 무료이나 일부 추가 기능들을 유료로 제공하며, 팀 규모가 100명 이상이라면 엔터프라이즈 버전이 적용된다.
 
 ##### **FOSSID** - https://fossid.com/
 
-{{< imgproc logo-fossid Fit "768x768" >}}
+{{< imgproc logo-fossid Fit "384x384" >}}
 {{< /imgproc >}}
 
-2016년 스웨덴에서 설립된 FOSSID는 오픈소스 라이선스 및 보안 취약점 관리를 위한 솔루션이다. 소스 코드 내 오픈소스 콤포넌트를 탐지하고, 각 콤포넌트의 라이선스 및 보안 취약점을 식별한다. 방대한 오픈소스 DB 및 자동 데이터 수집 기술, AI를 통한 향상된 탐지 성능 등 특징을 갖고 있다. 특히, 코드 일부에서 보안 취약점을 탐지하는 유일한 오픈소스 스캐너라는 장점이 있다. 
+2016년 스웨덴에서 설립된 FOSSID는 오픈소스 라이선스 및 보안 취약점 관리를 위한 솔루션이다. 소스 코드 내 오픈소스 컴포넌트를 탐지하고, 각 컴포넌트의 라이선스 및 보안 취약점을 식별한다. 방대한 오픈소스 DB 및 자동 데이터 수집 기술, AI를 통한 향상된 탐지 성능 등 특징을 갖고 있다. 특히, 코드 일부에서 보안 취약점을 탐지하는 유일한 오픈소스 스캐너라는 장점이 있다. 
 
 ##### **Black Duck** - https://www.blackducksoftware.com/
 
-{{< imgproc logo-blackduck Fit "768x768" >}}
+{{< imgproc logo-blackduck Fit "384x384" >}}
 {{< /imgproc >}}
 
 Black Duck은 오픈소스를 사용하는 동안 발생하는 라이선스와 취약점, 소스 코드 품질 관리를 위한 포괄적인 솔루션이다. 전반적인 소프트웨어의 공급망과 애플리케이션 라이프사이클 전반에 거쳐 오픈소스의 라이선스와 보안을 관리한다. 정확도를 높이고 오탐을 줄이기 위해 오픈 소스 검색에 다각적 접근 방식을 취하여 신뢰성 있는 BOM을 생성한다. 
@@ -328,28 +443,28 @@ Black Duck은 오픈소스를 사용하는 동안 발생하는 라이선스와 �
 
 ##### **Snyk** - https://snyk.io
 
-{{< imgproc logo-snyk Fit "768x768" >}}
+{{< imgproc logo-snyk Fit "384x384" >}}
 {{< /imgproc >}}
 
 오픈소스 라이선스 취약점 관리를 위한 서비스를 제공하다가 2020년부터 라이선스 준수 관리 기능이 추가되었다. Dependency Tree 뷰어, 이슈 우선순위 선별 시스템, 런타임 모니터링 등 기능을 제공하며, 전담 보안 연구팀이 리뷰를 진행한다. 현재 Docker 공식 독점 보안 파트너로 IBM Cloud, RedHat, OpenShift, Kubernetes 등과 제휴를 맺고 있다. 무료로 사용할 수 있지만 팀 규모와 프리미엄 기능에 따라 유료 Plan이 세부적으로 마련되어 있다.
 
 ##### **WhiteSource** - https://www.whitesourcesoftware.com
 
-{{< imgproc logo-whitesource Fit "768x768" >}}
+{{< imgproc logo-whitesource Fit "384x384" >}}
 {{< /imgproc >}}
 
-2011년 설립되어 라이선스 준수 및 취약점 관리 서비스를 제공하며, 오래된 서비스인 만큼 방대한 데이터베이스를 확보하고 있다. 110억 개 이상의 소스 코드 파일, 200개 이상의 언어지원, 1억 개 이상의 라이브러리를 확보하고 있다. 컨테이너 및 서비리스 등 모든 환경을 지원하며 현재 Microsoft Azure DevOps 서비스로도 제공되고 있다. GitHub의 Ultimate에서 사용 가능한 옵션으로 제공되고 있으며 GitHub Package도 지원한다. WhiteSource도 기본적인 사용은 무료이며, 팀 규모가 20명을 넘어가면 유료로 사용 가능하며, 추가 프리미엄 기능을 제공한다.
+2011년 설립되어 라이선스 준수 및 취약점 관리 서비스를 제공하며, 오래된 서비스인 만큼 방대한 데이터베이스를 확보하고 있다. 110억 개 이상의 소스 코드 파일, 200개 이상의 언어지원, 1억 개 이상의 라이브러리를 확보하고 있다. 컨테이너 및 서비리스 등 모든 환경을 지원하며 현재 Microsoft Azure DevOps 서비스로도 제공되고 있다. GitHub의 Ultimate에서 사용할 수 있는 옵션으로 제공되고 있으며 GitHub Package도 지원한다. WhiteSource도 기본적인 사용은 무료이며, 팀 규모가 20명을 넘어가면 유료로 사용 가능하며, 추가 프리미엄 기능을 제공한다.
 
 ##### **CodeEye** - https://www.olis.or.kr/codeEye/introduction.do
 
-{{< imgproc logo-codeeye Fit "768x768" >}}
+{{< imgproc logo-codeeye Fit "384x384" >}}
 {{< /imgproc >}}
 
-CodeEye는 오픈소스 라이선스 비교·분석·검사를 위해 사람이 해야 할 수작업(Eye Checking)을 원활하게 수행하거나 도움을 주는 시스템으로 오픈소스 사용 시 준수 해야 할 라이선스(GNU GPL 등) 내용을 효과적으로 검사하여 보여준다. 한국저작권위원회에서 구축한 오픈소스 DB(지속적 Update)를 기반으로 검사하며, 중소기업기본법 시행령 제3조(중소기업의 범위) 규정에 따른 중소기업 대상으로 무료로 서비스한다. 
+CodeEye는 오픈소스 라이선스 비교·분석·검사를 위해 사람이 해야 할 수작업(Eye Checking)을 원활하게 수행하거나 도움을 주는 시스템으로 오픈소스 사용 시 준수해야 할 라이선스(GNU GPL 등) 내용을 효과적으로 검사하여 보여준다. 한국저작권위원회에서 구축한 오픈소스 DB(지속적 Update)를 기반으로 검사하며, 중소기업기본법 시행령 제3조(중소기업의 범위) 규정에 따른 중소기업 대상으로 무료로 서비스한다. 
 
 ##### **Clarity** - http://insignary.com/
 
-{{< imgproc logo-insignary Fit "768x768" >}}
+{{< imgproc logo-insignary Fit "384x384" >}}
 {{< /imgproc >}}
 
 Clarity는 바이너리 코드 분석을 통한 오픈소스 관리 솔루션으로, 바이너리 코드를 스캐닝하여 소프트웨어 내에 존재하는 오픈소스 컴포넌트를 식별하고 해당 오픈소스의 라이선스 및 보안 취약점 정보를 제공한다. 기업은 클래리티의 바이너리 코드 점검을 통해 라이선스 위반에 대한 법적 이슈와 오픈소스 보안 취약점을 사전에 방지하여
@@ -357,14 +472,14 @@ Clarity는 바이너리 코드 분석을 통한 오픈소스 관리 솔루션으
 
 ##### **LABRADOR** - https://www.iotcube.com/
 
-{{< imgproc logo-labrador Fit "768x768" >}}
+{{< imgproc logo-labrador Fit "384x384" >}}
 {{< /imgproc >}}
 
 LABRADOR는 R&D 및 공급망에서 오픈소스 취약점 및 라이선스 이슈를 분석하고 수정하기 위해 제작되었다. 단순 취약점의 나열에 그치지 않고 한발 더 나아가 수정을 위한 다양한 방안을 제시한다. 이를 통해 기업은 취약한 구성 요소를 식별하고 수정할 뿐 아니라 추후 문제의 여지가 있는 라이선스에 대한 사전 조치가 가능하다. 함수 단위 소스 취약점 분석으로 더 빠르고 정확한 진단이 가능합니다.
 
 ##### **ClearlyDefined** - https://clearlydefined.io
 
-{{< imgproc ClearyDefined Fit "768x768" >}}
+{{< imgproc ClearyDefined Fit "384x384" >}}
 {{< /imgproc >}}
 
 ClearlyDefined는 오픈소스 데이터베이스를 제공하여 사용자가 오픈소스의 출처, 라이선스 등의 정보를 확인할 수 있게 한다. 또한 정보의 오류가 있다면 사용자가 자발적으로 데이터를 개선할 수 있게 하여 커뮤니티 기반의 신뢰성 있는 오픈소스 데이터베이스 구축을 가능하게 한다.
@@ -377,7 +492,7 @@ ClearlyDefined는 오픈소스 데이터베이스를 제공하여 사용자가 �
 
 ##### 저작권 고지
 
-소스 코드의 저작권 고지는 일반적으로 "copyright" 라는 단어를 포함하여 연도와 저작권자 혹은 회사명을 포함하는 문장열로 이루어진다. 이러한 고지는 저작물에 대한 저작권이 있음을 잠재적인 사용자에게 알려 주게 하며, 저작권 소유자를 식별하는데 필요하다. 오픈소스에 따라 저작권자뿐만 아니라 특허가 있으면, 특허 소유자, 오픈소스 기여자들을 표시하기도 한다. 연도는 일반적으로 최초 게시된 연도를 의미하며, 저작권 보호 기간을 결정하는데 사용될 수 있도록 저작권 기간을 의미하기도 한다.    
+소스 코드의 저작권 고지는 일반적으로 "copyright" 라는 단어를 포함하여 연도와 저작권자 혹은 회사명을 포함하는 문자열로 이루어진다. 이러한 고지는 저작물에 대한 저작권이 있음을 잠재적인 사용자에게 알려 주게 하며, 저작권 소유자를 식별하는 데 필요하다. 오픈소스에 따라 저작권자뿐만 아니라 특허가 있으면, 특허 소유자, 오픈소스 기여자들을 표시하기도 한다. 연도는 일반적으로 최초 게시된 연도를 의미하며, 저작권 보호 기간을 결정하는 데 사용될 수 있도록 저작권 기간을 의미하기도 한다.    
 
 ```
 Copyright (C) year1, year2, year3 저작권 보유자
@@ -412,7 +527,7 @@ Apache 2.0, MPL, GPL 2.0, GPL 3.0 등의 라이선스는 소스 코드 수정 �
 
 
 #### 고지 방법
-오픈소스 사용시 고지의무는 라이선스에 따라 고지 방법이 세부적으로 나와 있기도 하다. 대표적인 라이선스인 Apache 2.0의 경우, LICENSE와 NOTICE 파일을 두고, 라이선스 및 저작권 고지 등의 고지사항을 포함할 것을 안내하고 있다.
+오픈소스 사용 시 고지의무는 라이선스에 따라 고지 방법이 세부적으로 나와 있기도 하다. 대표적인 라이선스인 Apache 2.0의 경우, LICENSE와 NOTICE 파일을 두고, 라이선스 및 저작권 고지 등의 고지사항을 포함할 것을 안내하고 있다.
 
 ##### Apache Royale 프로젝트[^royale]의 예
 
@@ -492,9 +607,9 @@ authoritative in this regard.
 
 ### 오픈소스의 보안 취약점
 #### 오픈소스의 보안 취약점 현황
-Sonatype의 [소프트웨어 공급망 현황 보고서(2020)](https://www.sonatype.com/2020ssc)[^sonatype2020]에 따르면 오픈소스를 겨냥한 차세대 사이버 공격도 작년보다 430%나 증가하였으며, 응용프로그램에서 사용되는 오픈소스 구성요소의 11%가 알려진 취약점을 가지고 있다고 한다. 가장 일반적인 공격 유형은 Typosquatting 이며, 이는 오픈소스를 검색할 때 단순한 오타를 유도하는 공격 방식으로 개발자가 "lodash"의 이름을 가진 오픈소스를 사용하려고 할 때 "lodahs"와 같은 유사한 이름의 악성 컴포넌트를 미리 등록해두어 설치하게 만드는 방식이다. 또 다른 방식으로는 프로젝트 관리자로부터 자격 증명을 가로채 악성 코드를 심는 방식 등 다양한 수단을 통해 이뤄지고 있다.
+Sonatype의 [소프트웨어 공급망 현황(2021)](https://www.sonatype.com/resources/state-of-the-software-supply-chain-2021)[^sonatype2021]에 따르면 소프트웨어 공급망 공격도 작년보다 650%나 증가하였으며, 인기 있는 상위 10%의 오픈소스 프로젝트에서 취약점을 포함할 가능성이 평균 29%이다. 가장 일반적인 공격 유형은 Typosquatting 이며, 이는 오픈소스를 검색할 때 단순한 오타를 유도하는 공격 방식으로 개발자가 "lodash"의 이름을 가진 오픈소스를 사용하려고 할 때 "lodahs"와 같은 유사한 이름의 악성 컴포넌트를 미리 등록해두어 설치하게 만드는 방식이다. 또 다른 방식으로는 프로젝트 관리자로부터 자격 증명을 가로채 악성 코드를 심는 방식 등 다양한 수단을 통해 이뤄지고 있다.
 
-[^sonatype2020]: Sonatype, State of the Software Supply Chain Report (2020) : https://www.sonatype.com/2020ssc
+[^sonatype2021]: Sonatype, State of the Software Supply Chain Report (2021) : https://www.sonatype.com/resources/state-of-the-software-supply-chain-2021
 
 특히 소프트웨어 공급망을 통해 공격이 증가하는 이유는 하나의 오픈소스가 다른 많은 오픈소스를 포함하는 종속 관계로 구성되어 있다 보니 실제 프로젝트에서 사용되는 오픈소스는 엄청난 수의 의존성을 가진 오픈소스를 사용하게 되어 전체를 파악하기가 힘든 점이 있다. 그리고 오픈소스 정신은 **신뢰하는 공유**에 기반을 두고 있다 보니 이것은 공격자가 쉽게 접근할 수 있게 하는 토대가 되기도 한다.
 
@@ -574,9 +689,9 @@ SDLC<sub>Software System Development Life Cycle)</sub> 전체에 걸쳐 가능�
 
 
 #### GitHub 기능을 활용한 보안 관리 사례
-GiHub은 소스 코드 저장소로 널리 사용되고 있는데, 최근 [GitHub Octoverse (2020)](https://octoverse.github.com)[^github-octoverse] 자료를 보면, **Fortune 50대 기업 중 72%가 GitHub Enterprise를 사용**하고 있다고 한다. 그에 맞춰 최근 GitHub에서도 단순히 소스 코드 저장소 기능을 넘어 새로운 기능들을 추가하고 있는데, 특히 보안과 관련된 다양한 기능을 제공하고 있어 주목을 받고 있다. 이러한 보안 기능들을 활용한 보안 관리 사례를 살펴보고자 한다.
+GiHub은 소스 코드 저장소로 널리 사용되고 있는데, 최근 [GitHub Octoverse (2021)](https://octoverse.github.com)[^github-octoverse] 자료를 보면, **Fortune 100대 기업 중 84%가 GitHub Enterprise를 사용**하고 있다고 한다. 그에 맞춰 최근 GitHub에서도 단순히 소스 코드 저장소 기능을 넘어 새로운 기능들을 추가하고 있는데, 특히 보안과 관련된 다양한 기능을 제공하고 있어 주목받고 있다. 이러한 보안 기능들을 활용한 보안 관리 사례를 살펴보고자 한다.
 
-[^github-octoverse]: GitHub Octoverse (2020) : https://octoverse.github.com
+[^github-octoverse]: GitHub Octoverse (2021) : https://octoverse.github.com
 
 ##### **Dependency Graph**
 프로젝트에서 사용 중인 외부 라이브러리 정보를 보여주는 기능이다. 사용 중인 라이브러리와 라이브러리 버전 정보들을 조회할 수 있다. Ruby, Javascript, Python 등 다양한 언어와 패키지 매니저를 지원한다. Dependency Graph 는 사용 중인 것뿐만 아니라 자신의 프로젝트를 참조하고 있는 다른 프로젝트도 확인할 수 있다.
@@ -607,15 +722,17 @@ GitHub Private Repository와 Enterprise 버전에 추가된 기능으로 코드 
 
 ---
 
-여기까지 오픈소스 사용하는 데 있어 기업이 활용할 수 있는 가이드를 알아보았다. 이제 개발자는 어떻게 오픈소스를 사용하고 관리해야 하는지에 대해 알아보자.
+여기까지 오픈소스 사용하는 데 있어 기업이 활용할 수 있는 가이드를 알아보았다. 이제 개발자는 어떻게 오픈소스를 사용하고 관리해야 하는지를 알아보자.
 
 
 ## 오픈소스 사용 가이드 - 개발자 편
 
-오픈소스는 생태계는 매년 그 규모가 매우 빠르게 발전하고 있다. 오픈소스 거버넌스 플랫폼을 운영하는 Sonatype 에서 최근 발표한 [소프트웨어 공급망 현황 보고서 (2020)](https://www.sonatype.com/campaign/wp-2020-state-of-the-software-supply-chain-report)[^sonatype-report]에 따르면 Java 패키지의 2020년도 다운로드 수가 3,700억 건을 웃돌며 이는 작년 대비 무려 55%나 증가한 것으로 나타난다. Javascript 패키지의 경우에는 주로 npm을 통해 유통되는데 이 역시 패키지 다운로드가 1조에 이르러 매년 100% 성장세로 발전하고 있다. 2019년에는 50만 개 이상의 새로운 오픈소스가 릴리즈되었는데 2020년에는 130만 개로 지난해보다도 63%가 증가했다.
+오픈소스는 생태계는 매년 그 규모가 매우 빠르게 발전하고 있다. 
+오픈소스 거버넌스 플랫폼을 운영하는 Sonatype 에서 최근 발표한 [소프트웨어 공급망 현황(2021)](https://www.sonatype.com/resources/state-of-the-software-supply-chain-2021)[^sonatype-report]에 따르면 오픈소스 공급은 상위 4개 오픈 소스 생태계(Java, Javascript, Python, .NET)에서만 3천7백만개 이상의 컴포넌트와 패키지가 포함되어 있다.
+또한, 2021년에 전 세계 개발자의 오픈 소스 패키지 다운로드 수가 2조 2천억 개 이상이며, 이는 전년 대비 73% 증가한 수치이다.
 
-[^sonatype-report]: Sonatype, State of the Software Supply Chain Report (2020) https://www.sonatype.com/2020ssc
-
+[^sonatype-report]: Sonatype, State of the Software Supply Chain (2021) : https://www.sonatype.com/resources/state-of-the-software-supply-chain-2021
+****
 이처럼 수많은 오픈소스가 생겨나면서 오픈소스를 선택하는 폭도 그만큼 넓어졌다. 이번 장에서는 오픈소스를 올바르게 선택하는 방법에 관한 내용을 알아보고자 한다.
 
 ### 오픈소스 생태계의 이해
@@ -654,7 +771,7 @@ GitHub Private Repository와 Enterprise 버전에 추가된 기능으로 코드 
 
 
 ##### **Free Software Foundation** - https://www.fsf.org
-오픈소스 분야에서 유명한 리차드 스톨만이 1985년에 설립한 재단으로 자유(Free) 소프트웨어의 생산과 보급을 장려하고 있다. 주로 컴퓨터 소프트웨어를 만들어 배포하고 수정하는 보편적인 자유를 추구한다.
+오픈소스 분야에서 유명한 리처드 스톨만이 1985년에 설립한 재단으로 자유(Free) 소프트웨어의 생산과 보급을 장려하고 있다. 주로 컴퓨터 소프트웨어를 만들어 배포하고 수정하는 보편적인 자유를 추구한다.
 
 
 ##### **Linux Foundation** - https://linuxfoundation.org
@@ -707,7 +824,7 @@ GitHub Private Repository와 Enterprise 버전에 추가된 기능으로 코드 
 
 
 ##### **오픈소스 사용 조건 및 성능**
-오픈소스 사용 조건과 같은 비기능적인 부분도 반드시 살펴봐야 한다. 프로젝트에서 사용하는 아키텍처나 운영체제와 호환이 되어야 하고, 프로젝트가 현재 Linux 에서 작동하지만, Windows도 다음에 확장될 계획이라면 두 시스템 모두 지원하는 오픈소스여야 한다. 그리고 오픈소스의 성능이 조건에 충족하는지 살펴보고, 성능이 중요하다면 벤치마킹을 수행하여 성능을 반드시 측정해보아야 한다.
+오픈소스 사용 조건과 같은 비기능적인 부분도 반드시 살펴봐야 한다. 프로젝트에서 사용하는 아키텍처나 운영체제와 호환이 되어야 하고, 프로젝트가 현재 Linux에서 작동하지만, Windows도 다음에 확장될 계획이라면 두 시스템 모두 지원하는 오픈소스여야 한다. 그리고 오픈소스의 성능이 조건에 충족하는지 살펴보고, 성능이 중요하다면 벤치마킹을 수행하여 성능을 반드시 측정해보아야 한다.
 
 
 ##### **라이선스**
@@ -715,10 +832,7 @@ GitHub Private Repository와 Enterprise 버전에 추가된 기능으로 코드 
 
 
 ##### **보안**
-[2020년 소프트웨어 공급망 현황 보고서](https://www.sonatype.com/resources/white-paper-state-of-the-software-supply-chain-2020)[^sonatype-white-paper-2020]를 보면 오픈소스의 11%가 알려진 취약점을 가지고 있다는 통계가 있다. 오픈소스 검토 보안과 관련된 부분을 반드시 확인하고 사용해야 하며, 취약점이 발견되었을 때 빠르게 조치가 이뤄지고 있는지 등도 검토 대상이 되어야 한다. 오픈소스의 마지막 릴리즈가 오래되었다면, 그만큼 보안 취약점을 가지고 있을 가능성이 높다. GitHub 이슈 또는 오픈소스 설명에 명시된 이슈 트래커등을 통해 보안 문제가 있는지 확인하고, 지난 버전 릴리즈 노트를 살펴보자.
-
-[^sonatype-white-paper-2020]: 2020년 소프트웨어 공급망 현황 보고서 : https://www.sonatype.com/resources/white-paper-state-of-the-software-supply-chain-2020
-
+[소프트웨어 공급망 현황(2021)](https://www.sonatype.com/resources/state-of-the-software-supply-chain-2021)[^sonatype2021]를 보면 인기 있는 상위 10%의 오픈소스 프로젝트에서 취약점을 포함할 가능성이 평균 29%이다. 오픈소스 검토 보안과 관련된 부분을 반드시 확인하고 사용해야 하며, 취약점이 발견되었을 때 빠르게 조치가 이뤄지고 있는지 등도 검토 대상이 되어야 한다. 오픈소스의 마지막 릴리즈가 오래되었다면, 그만큼 보안 취약점을 가지고 있을 가능성이 높다. GitHub 이슈 또는 오픈소스 설명에 명시된 이슈 트래커등을 통해 보안 문제가 있는지 확인하고, 지난 버전 릴리즈 노트를 살펴보자.
 
 ##### **인기도**
 오픈소스가 GitHub 에서 관리 중이라면, Star 개수나 Watch, Fork 횟수 등으로 얼마나 많은 사용자가 오픈소스를 활용할 수 있는지 가늠해볼 수 있다. 그뿐만 아니라 오픈된 이슈 개수나 PR 수, 마지막 커밋 일시 등을 통해 얼마나 활발하게 오픈소스 개발이 이뤄지고 있고 계속 발전할 가능성이 얼마나 되는지 파악할 수 있다. 그 밖에도 해당 오픈소스와 관련된 StackOverflow 질문 수, 오픈소스 다운로드 수, Google 쿼리 결과 수 등과 같은 간단한 측정을 통해서 인기도를 확인해 볼 수 있다. 이러한 여러 지표를 측정하여 오픈소스 커뮤니티의 건강성을 측정하는 [CHAOSS](https://chaoss.community/metrics)[^chaoss] 와 같은 도구도 있다.
@@ -750,6 +864,6 @@ GitHub Private Repository와 Enterprise 버전에 추가된 기능으로 코드 
 
 ---
 
-여기까지 오픈소스 사용하기에 대한 내용들을 살펴보았다. 기업에서 오픈소스를 도입할때 고려해야 할 사항들과 오픈소스 컴플라이언스, 그리고 라이선스 의무사항과 각종 오픈소스 관리도구 및 오픈소스 보안 취약점 등에 대해 다뤘다. 기업은 자칫 잘못된 오픈소스 사용으로 인해 기업 이미지에도 큰 타격을 줄 수도 있음을 기억해야 하며, 오픈소스 사용시 오픈소스 라이선스 의무사항을 준수하지 않아 발생하는 법적 리스크도 반드시 고려해야 한다. 이를 위해서는 전사 차원에서 오픈소스 정책과 프로세스를 수립하는 등 오픈소스를 올바르게 사용하기 위한 지속적인 노력을 기울여야 할 것이다.      
+여기까지 오픈소스 사용하기에 대한 내용들을 살펴보았다. 기업에서 오픈소스를 도입할 때 고려해야 할 사항들과 오픈소스 컴플라이언스, 그리고 라이선스 의무사항과 각종 오픈소스 관리 도구 및 오픈소스 보안 취약점 등에 대해 다뤘다. 기업은 자칫 잘못된 오픈소스 사용으로 인해 기업 이미지에도 큰 타격을 줄 수도 있음을 기억해야 하며, 오픈소스 사용 시 오픈소스 라이선스 의무사항을 준수하지 않아 발생하는 법적 리스크도 반드시 고려해야 한다. 이를 위해서는 전사 차원에서 오픈소스 정책과 프로세스를 수립하는 등 오픈소스를 올바르게 사용하기 위한 지속적인 노력을 기울여야 할 것이다.      
 
 다음 장에서는 기업의 구성원이 외부 오픈소스 개발에 참여하고 직접 기여할 때 기업이 고려해야 할 사항들을 알아보도록 하겠다.
