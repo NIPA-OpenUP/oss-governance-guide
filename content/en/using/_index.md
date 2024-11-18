@@ -328,35 +328,6 @@ Gartner의 [Technology Insight for Software Composition Analysis (2019) 보고�
 
 #### SBOM 최소 요구 사항
 
-NTIA는 라이선스 및 보안취약점 관리를 위해 SBOM이 갖춰야 할 다음 세가지의 요구 사항을 제시하였다. 
-1. 데이터 필드 : SBOM이 포함해야 할 데이터 (다음 단락에서 세부 내용 설명)
-2. 자동화 지원 : SBOM 생성 자동화
-  - SBOM는 인간이 읽을 수 있어야 하고 동시에 기계 판독이 가능하여야 한다. 
-  - SBOM가 자동으로 생성되는 환경을 지원해야 한다. 
-3. Practice와 절차 : SBOM 생성 및 운영 방법을 정의해야 한다.
-
-#### 데이터 필드
-
-NTIA는 SBOM이 포함해야 하는 7가지 데이터 필드를 명시하였다. 
-
-| Data Field   |      Description      |
-|:----------|:-------------|
-| 공급자 이름 |  구성요소를 만들고 정의하고 식별하는 주체의 이름 |
-| 구성요소 이름 | 최초 공급자에 의해 정의된 소프트웨어 단위의 명칭 |
-| 구성요소 버전 | 공급자가 이전에 식별된 소프트웨어 버전으로부터의 변경을 명시하기 위해 사용하는 식별자 |
-| 기타 고유 식별자 | 구성요소를 식별하는 데 사용되거나 관련 데이터베이스를 위한 조회 키 역할을 하는 기타 식별자 |
-| 종속성 관계 | 업스트림 구성요소 X가 소프트웨어 Y에 포함된다는 관계의 명시 |
-| SBOM 데이터 작성자 | 이 구성요소에 대한 SBOM 데이터를 만든 주체의 이름 |
-| 타임스탬프 | SBOM 데이터 어셈블리의 날짜 및 시간 기록 |
-
-그리고 이러한 데이터 필드를 포함하는 SBOM은 기계가 판독(Machine Readable)하도록 다음 세가지 표준화된 형식 중 하나로 작성되어야 한다. 
-* [SPDX](https://spdx.org/)
-* [CycloneDX](https://cyclonedx.org/)
-* [SWID Tags](https://nvd.nist.gov/products/swid)
-
-
-#### SBOM 최소 요구 사항
-
 NTIA(National Telecommunications and Information Administration)는 라이선스 및 보안취약점 관리를 위해 SBOM이 갖춰야 할 다음 세 가지의 요구 사항을 제시하였다[^ntia2021].
 
 1. 데이터 필드: SBOM이 포함해야 할 데이터 (다음 단락에서 세부 내용 설명)
