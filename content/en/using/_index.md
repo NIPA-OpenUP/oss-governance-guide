@@ -413,11 +413,6 @@ NTIA는 SBOM이 포함해야 하는 7가지 데이터 필드를 [명시하였다
 
 #### SPDX
 
-
-요청하신 대로 내용을 2024년 기준으로 업데이트하고 SPDX 3.0에 대한 간단한 소개를 포함하여 보완하였습니다:
-
-#### SPDX
-
 여기서는 Linux Foundation의 프로젝트인 SPDX에서 만든 SPDX 표준과 SPDX 문서 작성 방법에 대해 알아보겠다. SPDX 표준은 2021년 9월 ISO 표준([ISO/IEC 5962](https://www.iso.org/standard/81870.html))[^isoiec5962]으로 등록된 대표적인 SBOM 포맷이다. 기업의 SBOM 관리 체계가 모든 포맷의 SBOM을 지원하면 좋겠지만, 하나의 포맷을 선택해야 한다면 국제 표준인 SPDX를 먼저 지원하는 것을 권장한다. 더불어 SPDX는 당초 오픈소스 라이선스 컴플라이언스를 위해 만들어진 포맷이기에 기업의 오픈소스 라이선스 관리에 효율적으로 사용할 수 있다.
 
 [^isoiec5962]: ISO/IEC 5962 : https://www.iso.org/standard/81870.html 
