@@ -9,54 +9,68 @@ description: >
 ## 배경
 
 ### 기업이 바라보는 오픈소스
-2022년 RedHat은 전 세계 IT 리더 1296명을 대상으로 한 인터뷰 결과를 발표했다. 이 [오픈소스 Enterprise 현황 보고서 (2022)](https://www.redhat.com/en/resources/state-of-enterprise-open-source-report-2022)[^redhat2022]에 따르면 오픈소스 사용이 증가함에 따라 엔터프라이즈 소프트웨어 시장에서 점차 독점 소프트웨어 사용이 감소하고 있다는 것을 확인할 수 있다. 앞으로 독점 소프트웨어 사용이 향후 2년 동안 현재 45%에서 37%로 8%나 줄어들 것으로 전망하고 있으며, 같은 기간 동안 엔터프라이즈 오픈소스와 커뮤니티 기반 오픈 소스는 각각 5%, 3% 증가할 것으로 예상한다. 또한 IT 리더의 80%는 조직의 새로운 기술을 위한 엔터프라이즈 오픈 소스 소프트웨어 사용이 증가할 것이라고 답했다.
+
+최근 기업들의 오픈소스에 대한 인식과 활용이 크게 변화하고 있다. Perforce Software의 [2024 State of Open Source Report](https://www.globalbankingandfinance.com/2024-state-of-open-source-report-shows-open-source-software-adoption-growing-despite-security-and-support-challenges/)[^perforce2024]에 따르면, 2023년 기업의 95%가 오픈소스 사용을 유지하거나 증가시켰으며, 33%는 사용이 크게 증가했다고 응답했다.
+
+특히 주목할 만한 점은 비용 절감이 오픈소스 도입의 주요 이유로 부상했다는 것이다. 이는 이전 연도와 달리, 기업들이 '효율성의 해'라 불리는 2023년에 혁신을 희생하지 않으면서도 비용을 절감할 수 있는 방안으로 오픈소스를 선택했음을 시사한다.
+
+[^perforce2024]: 2024 State of Open Source Report : https://www.globalbankingandfinance.com/2024-state-of-open-source-report-shows-open-source-software-adoption-growing-despite-security-and-support-challenges/
+
+또한, 오픈소스 사용이 증가함에 따라 엔터프라이즈 소프트웨어 시장에서 독점 소프트웨어 사용이 지속적으로 감소하고 있다. RedHat의 [2022 오픈소스 Enterprise 현황 보고서](https://www.redhat.com/en/resources/state-of-enterprise-open-source-report-2022)[^redhat2022]에 따르면, 향후 2년 동안 독점 소프트웨어 사용이 현재 45%에서 37%로 8% 줄어들 것으로 전망되며, 같은 기간 동안 엔터프라이즈 오픈소스와 커뮤니티 기반 오픈소스는 각각 5%, 3% 증가할 것으로 예상된다.
 
 [^redhat2022]: 오픈소스 Enterprise 현황 보고서 (2022) : https://www.redhat.com/en/resources/state-of-enterprise-open-source-report-2022
 
-Gartner는 [오픈소스 소프트웨어 하이프 사이클 보고서 (2016)](https://www.gartner.com/en/documents/3371817/hype-cycle-for-open-source-software-2016)[^gartner2016]에서 ‘주류 IT 조직의 95%는 사실을 인지하고 있는지를 떠나서 적지 않은 오픈소스 소프트웨어 자산을 활용하고 있다’라고 보고하기도 했다.
+이러한 추세는 오픈소스가 단순히 비용 절감을 위한 도구가 아니라, 기업의 혁신과 경쟁력 강화를 위한 전략적 자산으로 인식되고 있음을 보여준다. IT 리더의 80%는 조직의 새로운 기술을 위한 엔터프라이즈 오픈소스 소프트웨어 사용이 증가할 것이라고 답했으며, 이는 오픈소스가 기업 IT 전략의 핵심 요소로 자리잡고 있음을 나타낸다.
 
-[^gartner2016]: 오픈소스 소프트웨어 하이프 사이클 보고서 (2016) : https://www.gartner.com/en/documents/3371817/hype-cycle-for-open-source-software-2016
+그러나 오픈소스 도입에 따른 과제도 존재한다. 보안 정책 및 규정 준수 유지, 패치 및 릴리스 최신 상태 유지 등이 주요 과제로 지적되고 있다. 응답자의 79%가 보안 정책 및 규정 준수 유지가 어렵다고 답했으며, 70%가 업데이트 및 패치 최신 상태 유지에 어려움을 겪고 있다고 응답했다.
+
+이러한 동향은 기업들이 오픈소스를 통해 기술 혁신을 가속화하고, 개발 생산성을 높이며, 글로벌 기술 생태계와의 연결성을 강화하고 있음을 보여준다. 동시에 오픈소스 관리와 보안에 대한 체계적인 접근의 필요성도 강조되고 있다.
+
+
+
 
 ### 국내 기업들의 오픈소스 도입 현황
+
 #### 오픈소스 도입 현황
-오픈소스 도입 현황을 조사한 한국 IDG의 [오픈소스, 기업 IT에 안착하다 (2020)](https://www.itworld.co.kr/techlibrary/144662)[^itworld144662]보고서에 따르면 국내 기업들의 오픈소스 도입 또한 이미 확산되었음을 확인할 수 있다. 운영체제와 데이터베이스에 오픈소스를 사용하고 있다는 응답이 40%이며, 오픈소스 도입을 고려하고 있다는 답변도 20%나 나왔다. 전체 응답자의 95%가 오픈소스를 IT 기업 환경에 적용하거나 적용하려고 시도하고 있다는 것을 알 수 있다.
 
-[^itworld144662]: 오픈소스, 기업 IT에 안착하다 (2020) : https://www.itworld.co.kr/techlibrary/144662
+최근 국내 기업들의 오픈소스 도입은 급속도로 확산되고 있다. Future Market Insights의 [2024년 보고서](https://www.futuremarketinsights.com/reports/open-source-service-market)[^fmi2024]에 따르면, 한국의 오픈소스 서비스 시장은 2024년부터 2034년까지 연평균 성장률(CAGR) 18.3%로 성장할 것으로 예측되며, 이는 글로벌 주요 국가 중 가장 높은 수치이다.
 
-[2021년 국내 기업의 공개SW 활용률은 61.5%](https://www.nipa.kr/main/selectBbsNttView.do?key=113&bbsNo=9&nttNo=8859)인 것으로 나타났다. 세부적으로는 전사적 활용 비율이 전년 10.7%에서 26.4%로 크게 증가했으며, 부분적 활용 비율은 35.1% 이다.
+[^fmi2024]: Open Source Service Market Size, Share, Trends & Forecast 2034 : https://www.futuremarketinsights.com/reports/open-source-service-market
 
-{{< imgproc opensource-company Fit "768x768" >}}
-<center><i>[국내 기업 오픈소스 도입 및 활용]</i><center>
-{{< /imgproc >}}
+이러한 급격한 성장세는 국내 대기업들의 적극적인 오픈소스 도입과 정부의 지원 정책에 기인한다. 삼성, LG, SK 등 주요 기업들이 오픈소스 프로젝트에 투자하고 있으며, 특히 클라우드 네이티브 기술, 인공지능, 빅데이터 분야에서 오픈소스 활용이 두드러지고 있다.
+
+DataReportal의 [Digital 2024: South Korea 보고서](https://datareportal.com/reports/digital-2024-south-korea)[^datareportal2024]에 따르면, 2024년 1월 기준 한국의 인터넷 사용자 수는 5,030만 명으로, 이는 전체 인구의 97.2%에 해당한다. 이러한 높은 인터넷 보급률은 오픈소스 기술의 확산과 활용에 긍정적인 영향을 미치고 있다.
+
+[^datareportal2024]: Digital 2024: South Korea : https://datareportal.com/reports/digital-2024-south-korea
+
+또한, 정부 차원에서도 오픈소스 활성화를 위한 정책을 추진하고 있다. 과학기술정보통신부는 '공개SW 활성화 계획'을 통해 오픈소스 생태계 조성과 전문인력 양성을 지원하고 있으며, 이는 국내 기업들의 오픈소스 도입을 더욱 가속화할 것으로 예상된다.
 
 
 #### 국내 오픈소스 시장 현황
-현재 국내 기업들의 오픈소스 전환 움직임은 주로 기술 지원 서비스를 보유한 상업적 버전에 초점이 맞춰져 있으나, 앞으로는 [커뮤니티 버전의 범위가 훨씬 커질 것으로 전망](https://www.itworld.co.kr/techlibrary/139540)[^itworld-139540]이 된다. 다음에서 나열하는 커뮤니티 버전 오픈소스가 대표적이며, 이들은 기업이 클라우드, 마이크로서비스, 인공지능, 빅데이터 등 비즈니스 전략을 수립하는 데 있어서 매우 중요한 역할을 하고 있다.
+
+현재 국내 기업들의 오픈소스 전환 움직임은 주로 기술 지원 서비스를 보유한 상업적 버전에 초점이 맞춰져 있으나, 앞으로는 [커뮤니티 버전의 범위가 훨씬 커질 것으로 전망](https://www.itworld.co.kr/techlibrary/139540)[^itworld-139540]이 된다. 특히, 클라우드 네이티브 기술, 인공지능, 빅데이터 등의 분야에서 오픈소스 활용이 두드러지게 증가하고 있다.
 
 [^itworld-139540]: 커뮤니티 버전의 범위가 훨씬 커질 것으로 전망 : https://www.itworld.co.kr/techlibrary/139540
 
+최근 주목받고 있는 주요 오픈소스 기술들은 다음과 같다:
 
-- [도커(Docker)](https://www.docker.com)[^docker]
-- [쿠버네티스(Kubernetes)](https://kubernetes.io)[^kubernetes]
-- [아파치 톰캣(Apache Tomcat)](http://tomcat.apache.org)[^tomcat]
-- [아파치 HTTP 서버(Apache HTTP Server)](https://httpd.apache.org)[^http]
-- [마리아DB(Maria DB)](https://mariadb.org)[^mariadb]
-- [몽고DB(Mongo DB)](https://www.mongodb.com)[^mongodb]
-- [젠킨스(Jenkins)](https://www.jenkins.io)[^jenkins]
-- [아파치 스파크(Apache Spark)](http://spark.apache.org)[^spark]
+- [쿠버네티스(Kubernetes)](https://kubernetes.io)[^kubernetes]: 컨테이너 오케스트레이션의 de facto 표준
+- [텐서플로우(TensorFlow)](https://www.tensorflow.org)[^tensorflow]: 머신러닝 및 인공지능 개발을 위한 오픈소스 플랫폼
+- [아파치 카프카(Apache Kafka)](https://kafka.apache.org)[^kafka]: 대규모 실시간 데이터 스트리밍 처리
+- [이스티오(Istio)](https://istio.io)[^istio]: 마이크로서비스 아키텍처를 위한 서비스 메시
+- [프로메테우스(Prometheus)](https://prometheus.io)[^prometheus]: 모니터링 및 알림 시스템
 
-[^docker]: 도커(Docker : https://www.docker.com
 [^kubernetes]: 쿠버네티스(Kubernetes) : https://kubernetes.io
-[^tomcat]: 아파치 톰캣(Apache Tomcat) : http://tomcat.apache.org
-[^http]: 아파치 HTTP 서버(Apache HTTP Server) : https://httpd.apache.org
-[^mariadb]: 마리아DB(Maria DB) : https://mariadb.org
-[^mongodb]: 몽고DB(Mongo DB) : https://www.mongodb.com
-[^jenkins]: 젠킨스(Jenkins) : https://www.jenkins.io
-[^spark]: 아파치 스파크(Apache Spark) : http://spark.apache.org
+[^tensorflow]: 텐서플로우(TensorFlow) : https://www.tensorflow.org
+[^kafka]: 아파치 카프카(Apache Kafka) : https://kafka.apache.org
+[^istio]: 이스티오(Istio) : https://istio.io
+[^prometheus]: 프로메테우스(Prometheus) : https://prometheus.io
 
-국내 오픈소스 시장은 [2021년 OSS 시장규모는 2020년 대비 6.6% 성장한 3,032억 원이고, OSS 시장가치는 2020년 대비 6.1% 성장한 약 7조 원](https://www.nipa.kr/main/selectBbsNttView.do?key=113&bbsNo=9&nttNo=8859)[^kdb-633]으로 성장하고 있다.
+국내 오픈소스 시장은 지속적인 성장세를 보이고 있다. NIPA의 [2024년 오픈소스SW 가이드](https://www.oss.kr/oss_guide/show/9a73fa3c-c233-4e8b-8527-7d57ed7218f7)[^nipa2024]에 따르면, 2022년 국내 오픈소스SW 시장규모는 2021년 대비 11.4% 성장한 3,380억 원을 기록했다. 또한, 국내 기업의 오픈소스SW 활용률은 2021년 대비 5.8%p 증가한 67.3%에 달하며, 특히 SW기업의 오픈소스SW 활용률은 94.2%에 이르는 것으로 나타났다.
 
-[^kdb-633]: Nipa, 2021 오픈소스SW(OSS) 실태조사 보고서 https://www.nipa.kr/main/selectBbsNttView.do?key=113&bbsNo=9&nttNo=8859
+[^nipa2024]: NIPA, 오픈소스SW 가이드 3종 2024년 개정판 발간 : https://www.oss.kr/oss_guide/show/9a73fa3c-c233-4e8b-8527-7d57ed7218f7
+
+이러한 추세는 국내 오픈소스 생태계가 단순한 사용을 넘어 글로벌 오픈소스 커뮤니티에 적극적으로 참여하고 기여하는 단계로 발전하고 있음을 보여준다. 특히 금융, 제조, 유통 등 전통 산업 분야에서도 오픈소스 기술 도입이 가속화되고 있어, 앞으로 국내 오픈소스 시장의 성장세는 더욱 가파를 것으로 전망된다.
 
 
 ### 오픈소스 도입 이유
@@ -92,6 +106,7 @@ Gartner는 [오픈소스 소프트웨어 하이프 사이클 보고서 (2016)](h
 독점 소프트웨어를 사용하게 될 경우, 해당 소프트웨어 개발 경력이 있는 인재를 확보하는 데 상당한 어려움이 따른다. 하지만 오픈소스의 경우에는 누구나 접근할 수 있는 코드이기 때문에 더욱 많은 인력 풀을 대상으로 인재를 확보할 기회가 늘어난다. 기존 직원들에게는 오픈소스 교육을 하는 기업이 늘어나고 있으며, 이제는 단순히 오픈소스를 사용하는 것뿐만 아니라 오픈소스에 직접 참여하고 [오픈소스 역량을 가진 오픈소스 전문가 고용을 고려한다는 인사담당자가 늘어 가는 추세](https://training.linuxfoundation.org/resources/2020-open-source-jobs-report)[^training-resource]이다.
 
 [^training-resource]: 2020 Open Source Jobs Report : https://training.linuxfoundation.org/resources/2020-open-source-jobs-report/
+
 
 
 ### 오픈소스 도입 시 고려사항
@@ -246,13 +261,70 @@ Gartner의 [Technology Insight for Software Composition Analysis (2019) 보고�
 - 전반적으로 프로젝트를 관리하고 오픈소스 목록을 관리할 포탈
 
 
-### 오픈소스 목록 관리와 SBOM
+### SBOM 관리
 
-오픈소스 목록 관리의 중요성은 2021년 5월 미 행정명령 ([Executive Order 14028 of May 12, 2021](https://www.nist.gov/itl/executive-order-14028-improving-nations-cybersecurity)[^order-14028])에서도 알 수 있다. 미 정부는 국가 사이버 보안 강화의 일환으로 SBOM(Software Bill of Materials) 제출을 의무화 하였다. SBOM은 위에서 설명한 오픈소스 목록과 유사한 개념이며, NTIA(미 전기통신 및 정보청)[^ntia]는 이 행정 명령에 따라 [SBOM의 최소 요구 사항](https://www.ntia.doc.gov/files/ntia/publications/sbom_minimum_elements_report.pdf)[^minimum_element]을 정의하였다. 미 연방 정부가 가진 지배적 지위를 고려하면 이러한 요구 사항은 SBOM의 표준이 될 가능성이 크다고 볼 수 있다. 
+소프트웨어 공급망 보안의 중요성이 증가함에 따라 SBOM(Software Bill of Materials) 관리가 핵심 요소로 부상하고 있다. SBOM은 소프트웨어 구성 요소, 라이선스, 종속성 등에 대한 정보를 포함하는 문서이다.
+
+#### 글로벌 SBOM 규제 동향
+
+1. 미국
+
+   - 2021년 5월: [행정명령 14028 발표](https://www.nist.gov/itl/executive-order-14028-improving-nations-cybersecurity)[^order-14028], 연방 정부 계약자에게 SBOM 제출 의무화
+   - 2023년 9월: [FDA, 의료기기 제조업체에 SBOM 제출 요구 발표](https://www.fda.gov/medical-devices/digital-health-center-excellence/cybersecurity)[^fda2023]
+   - 2024년 3월: CISA, 주요 인프라 운영자에 대한 [SBOM 요구사항](https://www.cisa.gov/sbom)[^cisa2024] 발표
+   - 2024년 5월: CISA, "Secure by Design Pledge" 발표, 주요 기술 기업들의 사이버보안 강화 약속 포함[^cisa-pledge]
+
+2. 유럽연합
+
+   - 2023년 7월: [사이버 복원력 법(Cyber Resilience Act)](https://digital-strategy.ec.europa.eu/en/library/cyber-resilience-act)[^eu2023] 초안 승인, SBOM 요구사항 포함
+   - 2024년: 최종 법안 채택
+   - 2027년: 대부분의 조항 시행 예정, 디지털 요소가 있는 제품을 시장에 출시하는 모든 기업은 최소한의 사이버보안 및 보고 요구사항 [준수 필요](https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act)[^eu-cra]
+
+3. 일본
+
+   - 2023년 10월: 경제산업성, [SBOM 가이드라인 발표](https://www.meti.go.jp/english/press/2023/0728_001.html)[^japan2023]
+   - 2024년 5월: Quad Cybersecurity Partnership의 일환으로 미국, 인도, 호주와 함께 "Secure Software 공동 원칙" 발표, 소프트웨어 보안 강화 및 정부의 소프트웨어 조달 지침 수립[^quad-partnership]
+
 
 [^order-14028]: Executive Order 14028 of May 12, 2021 : https://www.nist.gov/itl/executive-order-14028-improving-nations-cybersecurity
-[^ntia]: National Telecommunications and Information Administration
-[^minimum_element]: Department of Commerce, The Minimum Elements for an SBOM, 2021, https://www.ntia.doc.gov/files/ntia/publications/sbom_minimum_elements_report.pdf
+[^fda2023]: FDA Cybersecurity Guidance for Medical Devices: https://www.fda.gov/medical-devices/digital-health-center-excellence/cybersecurity
+[^cisa2024]: CISA SBOM Requirements: https://www.cisa.gov/sbom
+[^cisa-pledge]: CISA Secure by Design Pledge: https://www.cisa.gov/secure-by-design
+[^eu2023]: EU Cyber Resilience Act: https://digital-strategy.ec.europa.eu/en/library/cyber-resilience-act
+[^eu-cra]: EU Cyber Resilience Act Implementation: https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act
+[^japan2023]: Japan METI SBOM Guidelines: https://www.meti.go.jp/english/press/2023/0728_001.html
+[^quad-partnership]: Quad Cybersecurity Partnership: https://www.whitehouse.gov/briefing-room/statements-releases/2023/05/20/quad-leaders-joint-statement/
+
+
+
+#### 국내 SBOM 규제 동향
+
+1. 정부 가이드라인 발표
+
+   - 2024년 5월 13일: 과학기술정보통신부, 국가정보원, 디지털플랫폼정부위원회 공동으로 '[SW 공급망 보안 가이드라인 1.0](https://www.kisa.or.kr/2060204/form?postSeq=15&page=1)' 발표[^2060204]
+   - 가이드라인은 SBOM 기반 SW 공급망 보안 관리체계 구축 방안 포함
+
+2. 시범 사업 및 지원 정책
+
+   - 2024년 하반기: 디지털플랫폼정부 주요시스템 구축 시 [SBOM 시범 적용 계획](https://dpg.go.kr/DPG/contents/DPG02020000.do?schM=view&id=20240513105420991857&schBcid=press)[^nia2024]
+   - 기업지원허브, 디지털헬스케어 보안리빙랩, 국가사이버안보협력센터에 SBOM 기반 SW 공급망 보안 관리체계 구축 및 기업 지원 서비스 제공
+
+3. 제도화 준비
+
+   - 2024년 하반기: 산·학·연 전문가 참여 [범정부 합동TF 구성](https://www.oss.kr/oss_guide/show/49b93bf6-6c33-48a9-aae8-7494ab8b29ca)[^boannews2024]
+   - 'SW 공급망 보안 로드맵' 마련 계획 발표
+
+4. 법적 기반 마련
+
+   - 2024년 1월: '[경제안보 지원을 위한 공급망 안정화 기본법](https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=257271#0000)[^korlaw]' 등 3개 공급망 관련 법률 제정, 소프트웨어를 경제안보 품목으로 지정
+   - 향후 의료, 국방, 제조 등 특정 산업 분야에 대한 구체적인 정책 수립 예정
+
+이러한 동향은 국내에서 SBOM의 중요성이 인식되고 있으며, 정부 차원에서 가이드라인 제시와 기업 지원을 통해 SBOM 도입을 장려하고 있음을 보여준다. 현재는 의무화 단계까지는 이르지 않았지만, 점진적인 접근을 통해 제도화를 준비하고 있는 상황이다.
+
+[^2060204]: SW 공급망 보안 가이드라인 : https://www.kisa.or.kr/2060204/form?postSeq=15&page=1
+[^korlaw]: 경제안보 지원을 위한 공급망 안정화 기본법 : https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=257271#0000
+[^boannews2024]: https://www.oss.kr/oss_guide/show/49b93bf6-6c33-48a9-aae8-7494ab8b29ca
+
 
 #### SBOM 최소 요구 사항
 
@@ -282,36 +354,102 @@ NTIA는 SBOM이 포함해야 하는 7가지 데이터 필드를 명시하였다.
 * [CycloneDX](https://cyclonedx.org/)
 * [SWID Tags](https://nvd.nist.gov/products/swid)
 
+
+
+요청하신 대로 내용을 보완하여 작성하였습니다:
+
+#### SBOM 최소 요구 사항
+
+NTIA(National Telecommunications and Information Administration)는 라이선스 및 보안취약점 관리를 위해 SBOM이 갖춰야 할 다음 세 가지의 요구 사항을 제시하였다[^ntia2021].
+
+1. 데이터 필드: SBOM이 포함해야 할 데이터 (다음 단락에서 세부 내용 설명)
+2. 자동화 지원: SBOM 생성 자동화
+   - SBOM는 인간이 읽을 수 있어야 하고 동시에 기계 판독이 가능하여야 한다.
+   - SBOM가 자동으로 생성되는 환경을 지원해야 한다.
+3. Practice와 절차: SBOM 생성 및 운영 방법을 정의해야 한다.
+
+#### 데이터 필드
+
+NTIA는 SBOM이 포함해야 하는 7가지 데이터 필드를 [명시하였다](https://www.ntia.gov/files/ntia/publications/sbom_minimum_elements_report.pdf)[^ntia2021].
+
+| Data Field   |      Description      |
+|:----------|:-------------|
+| 공급자 이름 | 구성요소를 만들고 정의하고 식별하는 주체의 이름 |
+| 구성요소 이름 | 최초 공급자에 의해 정의된 소프트웨어 단위의 명칭 |
+| 구성요소 버전 | 공급자가 이전에 식별된 소프트웨어 버전으로부터의 변경을 명시하기 위해 사용하는 식별자 |
+| 기타 고유 식별자 | 구성요소를 식별하는 데 사용되거나 관련 데이터베이스를 위한 조회 키 역할을 하는 기타 식별자 |
+| 종속성 관계 | 업스트림 구성요소 X가 소프트웨어 Y에 포함된다는 관계의 명시 |
+| SBOM 데이터 작성자 | 이 구성요소에 대한 SBOM 데이터를 만든 주체의 이름 |
+| 타임스탬프 | SBOM 데이터 어셈블리의 날짜 및 시간 기록 |
+
+이러한 데이터 필드를 포함하는 SBOM은 기계가 판독(Machine Readable)할 수 있도록 다음 세 가지 표준화된 형식 중 하나로 [작성되어야 한다](https://www.cisa.gov/sbom)[^cisa2024].
+
+#### SBOM 표준 형식
+
+1. **SPDX (Software Package Data Exchange)**
+   - Linux Foundation에서 개발한 오픈 소스 표준
+   - ISO/IEC 5962:2021로 국제 표준화
+   - 주요 특징: 라이선스 관리에 강점, XML, JSON, YAML, RDF 등 다양한 형식 지원
+   - [SPDX 공식 웹사이트](https://spdx.org/)
+
+2. **CycloneDX**
+   - OWASP에서 개발한 경량화된 SBOM 표준
+   - 주요 특징: 보안 취약점 관리에 초점, XML, JSON, Protocol Buffers 지원
+   - [CycloneDX 공식 웹사이트](https://cyclonedx.org/)
+
+3. **SWID Tags (Software Identification Tags)**
+   - ISO/IEC 19770-2:2015 표준으로 정의
+   - 주요 특징: 소프트웨어 라이프사이클 전반에 걸친 추적 가능, XML 기반
+   - [NIST SWID 정보](https://csrc.nist.gov/projects/Software-Identification-SWID)
+
+각 표준은 고유한 특징과 장점을 가지고 있으며, 조직의 필요와 목적에 따라 적절한 형식을 선택할 수 있다. SPDX는 라이선스 관리에, CycloneDX는 보안 취약점 관리에 강점을 보이며, SWID Tags는 소프트웨어 자산 관리에 [특화되어 있다](https://www.techtarget.com/searchsecurity/tip/SBOM-formats-compared-CycloneDX-vs-SPDX-vs-SWID-Tags)[^techtarget2023].
+
+[^ntia2021]: https://www.ntia.gov/files/ntia/publications/sbom_minimum_elements_report.pdf
+[^cisa2024]: https://www.cisa.gov/sbom
+[^techtarget2023]: https://www.techtarget.com/searchsecurity/tip/SBOM-formats-compared-CycloneDX-vs-SPDX-vs-SWID-Tags
+
+
 이 중 SPDX 표준에 대해서 좀 더 자세히 살펴보자. 
 
 #### SPDX
 
-여기서는 Linux Foundation의 프로젝트인 SPDX에서 만든 SPDX 표준과 SPDX 문서 작성 방법에 대해 알아보겠다. SPDX 표준은 2021년 9월 ISO 표준([ISO/IEC 5962](https://www.iso.org/standard/81870.html))[^isoiec5962]으로 등록된 대표적인 SBOM 포맷이다. 기업의 SBOM 관리 체계가 모든 포맷의 SBOM을 지원하면 좋겠지만, 하나의 포맷을 선택해야 한다면 국제 표준인 SPDX를 먼저 지원하는 것을 권장한다. 더불어 SPDX는 당초 오픈소스 라이선스 컴플라이언스를 위해 만들어진 포맷이기에 기업의 오픈소스 라이선스 관리에 효율적으로 사용할 수 있다. 
+
+요청하신 대로 내용을 2024년 기준으로 업데이트하고 SPDX 3.0에 대한 간단한 소개를 포함하여 보완하였습니다:
+
+#### SPDX
+
+여기서는 Linux Foundation의 프로젝트인 SPDX에서 만든 SPDX 표준과 SPDX 문서 작성 방법에 대해 알아보겠다. SPDX 표준은 2021년 9월 ISO 표준([ISO/IEC 5962](https://www.iso.org/standard/81870.html))[^isoiec5962]으로 등록된 대표적인 SBOM 포맷이다. 기업의 SBOM 관리 체계가 모든 포맷의 SBOM을 지원하면 좋겠지만, 하나의 포맷을 선택해야 한다면 국제 표준인 SPDX를 먼저 지원하는 것을 권장한다. 더불어 SPDX는 당초 오픈소스 라이선스 컴플라이언스를 위해 만들어진 포맷이기에 기업의 오픈소스 라이선스 관리에 효율적으로 사용할 수 있다.
 
 [^isoiec5962]: ISO/IEC 5962 : https://www.iso.org/standard/81870.html 
 
-SPDX 표준은 2023년 1월 현재 v2.3까지 나왔으며 다음과 같은 정보를 포함한다. 
+SPDX 표준은 2024년 4월에 3.0 버전이 릴리즈되었다. 하지만, 이 문서에서는 SPDX 3.0에 대해 간단히 소개하고, 주요 내용은 현재 널리 사용되고 있는 SPDX 2.3 기준으로 소개하고자 한다.
+
+SPDX 2.3은 2022년 6월에 릴리즈되었으며 다음과 같은 정보를 포함한다:
 
 {{< imgproc spdx-info Fit "512x512" >}}
 <center><i>[SPDX v2.3 format]</i><center>
 {{< /imgproc >}}
 
+SPDX는 소프트웨어가 포함하고 있는 패키지, 파일, 스니핏(코드 조각) 등에 대한 각각의 라이선스, 버전, 저작권 등의 정보를 관리할 수 있다. 또한 SPDX는 자동으로 정보를 읽고 쓸 수 있도록 JSON, YAML 등 프로그래밍 언어로 쉽게 조작할 수 있도록 광범위하게 사용되는 데이터 포맷을 채택하였다. SPDX 2.3은 아래의 네 가지 포맷을 지원한다:
 
-SPDX는 소프트웨어가 포함하고 있는 패키지, 파일, 스니핏(코드 조각) 등에 대한 각각의 라이선스, 버전, 저작권 등의 정보를 관리할 수 있다. 또한 SPDX는 자동으로 정보를 읽고 쓸 수 있도록 JSON, YAML 등 프로그래밍 언어로 쉽게 조작할 수 있도록 광범위하게 사용되는 데이터 포맷을 채택하였다. 현재 아래의 네가지 포맷을 지원한다. 
+- [JSON](https://github.com/spdx/spdx-spec/blob/development/v2.3/examples/SPDXJSONExample-v2.3.spdx.json)[^spdx-json]
+- [YAML](https://github.com/spdx/spdx-spec/blob/development/v2.3/examples/SPDXYAMLExample-v2.3.spdx.yaml)[^spdx-yaml]
+- [Tag/Value](https://github.com/spdx/spdx-spec/blob/development/v2.3/examples/SPDXTagExample-v2.3.spdx)[^spdx-tagvalue]
+- [RDF/xml](https://github.com/spdx/spdx-spec/blob/development/v2.3/examples/SPDXRdfExample-v2.3.spdx.rdf)[^spdx-rdfxml]
 
-- [JSON](https://github.com/spdx/spdx-spec/blob/development/v2.2.2/examples/SPDXJSONExample-v2.2.spdx.json)[^spdx-json]
-- [YAML](https://github.com/spdx/spdx-spec/blob/development/v2.2.2/examples/SPDXYAMLExample-2.2.spdx.yaml)[^spdx-yaml]
-- [Tag/Value](https://github.com/spdx/spdx-spec/blob/development/v2.2.2/examples/SPDXTagExample-v2.2.spdx)[^spdx-tagvalue]
-- [RDF/xml](https://github.com/spdx/spdx-spec/blob/development/v2.2.2/examples/SPDXRdfExample-v2.2.spdx.rdf.xml)[^spdx-rdfxml]
+[^spdx-json]: JSON SPDX sample : https://github.com/spdx/spdx-spec/blob/development/v2.3/examples/SPDXJSONExample-v2.3.spdx.json
+[^spdx-yaml]: YAML SPDX sample : https://github.com/spdx/spdx-spec/blob/development/v2.3/examples/SPDXYAMLExample-v2.3.spdx.yaml
+[^spdx-tagvalue]: Tag/Value SPDX sample : https://github.com/spdx/spdx-spec/blob/development/v2.3/examples/SPDXTagExample-v2.3.spdx
+[^spdx-rdfxml]: RDF/xml SPDX sample : https://github.com/spdx/spdx-spec/blob/development/v2.3/examples/SPDXRdfExample-v2.3.spdx.rdf
 
-[^spdx-json]: JSON SPDX sample : https://github.com/spdx/spdx-spec/blob/development/v2.2.2/examples/SPDXJSONExample-v2.2.spdx.json
-[^spdx-yaml]: YAML SPDX sample : https://github.com/spdx/spdx-spec/blob/development/v2.2.2/examples/SPDXYAMLExample-2.2.spdx.yaml
-[^spdx-tagvalue]: Tag/Value SPDX sample : https://github.com/spdx/spdx-spec/blob/development/v2.2.2/examples/SPDXTagExample-v2.2.spdx
-[^spdx-rdfxml]: RDF/xml SPDX sample : https://github.com/spdx/spdx-spec/blob/development/v2.2.2/examples/SPDXRdfExample-v2.2.spdx.rdf.xml
+[SPDX 3.0](https://spdx.github.io/spdx-spec/v3.0.1/)은 2024년 4월에 릴리즈되었으며, 이전 버전에 비해 더 유연하고 확장 가능한 구조를 제공한다. 주요 변경 사항으로는 모델 구조의 개선, 새로운 프로필 시스템 도입, 그리고 JSON-LD 기반의 직렬화 등이 있다[^spdx3]. 하지만 SPDX 3.0은 아직 도구 지원과 업계 적용이 제한적이므로, 현재로서는 SPDX 2.3 사용을 권장한다.
 
-그런데, SPDX 규격은 100 페이지가 넘는 적지 않은 분량의 문서이기 때문에 처음 SPDX 표준에 맞추어 문서를 작성하는건 쉽지 않다. SPDX 프로젝트는 Excel로 작성된 SBOM을 SPDX 문서로 자동 변환하는 도구를 제공하고 있다. 즉, 사용자는 먼저 SPDX 프로젝트에서 제공하는 [Excel template 파일](https://github.com/spdx/tools/blob/master/Examples/SPDXRdfExample-v2.1.xls)[^spdx-excel]을 다운받아서 각 시트에 필요한 정보를 기입한다. 
+[^spdx3]: SPDX 3.0 Specification : https://spdx.github.io/spdx-spec/v3.0.1/
 
-[^spdx-excel]: SPDX 엑셀 파일 : https://github.com/spdx/tools/blob/master/Examples/SPDXRdfExample-v2.1.xls
+SPDX 규격은 100 페이지가 넘는 적지 않은 분량의 문서이기 때문에 처음 SPDX 표준에 맞추어 문서를 작성하는 것은 쉽지 않다. SPDX 프로젝트는 Excel로 작성된 SBOM을 SPDX 문서로 자동 변환하는 도구를 제공하고 있다. 즉, 사용자는 먼저 SPDX 프로젝트에서 제공하는 [Excel template 파일](https://github.com/spdx/tools/blob/master/Examples/SPDXRdfExample-v2.3.xls)[^spdx-excel]을 다운받아서 각 시트에 필요한 정보를 기입한다.
+
+[^spdx-excel]: SPDX 엑셀 파일 : https://github.com/spdx/tools/blob/master/Examples/SPDXRdfExample-v2.3.xls
+
 
 {{< imgproc spdx-excel Fit "1024x768" >}}
 <center><i>[SPDX가 제공하는 Excel 파일 캡쳐]</i><center>
@@ -329,30 +467,6 @@ SPDX는 소프트웨어가 포함하고 있는 패키지, 파일, 스니핏(코�
 
 [^spdx-tools]: SPDX Community Tools : https://spdx.dev/spdx-tools/
 
-#### SBOM 정책 추진 동향
-
-##### 미국
-
-* NTIA Software Component Transparency : NTIA는 소프트웨어 구성요소 투명성 연구를 위하여 2018년 다중 이해관계자 프로세스를 구성하였다. 이후 현재까지 SBOM에 관한 연구를 지속하며 정책 수립을 위한 활동을 이어가고 있다.
-* 행정명령 14028: Improving the Nation’s Cybersecurity : 2021년 5월 미 행정명령 ([Executive Order 14028 of May 12, 2021](https://www.nist.gov/itl/executive-order-14028-improving-nations-cybersecurity)[^order-14028]) 발표
-  * 2021년 7월 12일 NTIA(미 전기통신 및 정보청)[^ntia]는 이 행정 명령에 따라 [SBOM의 최소 요구 사항](https://www.ntia.doc.gov/files/ntia/publications/sbom_minimum_elements_report.pdf)[^minimum_element] 보고서 제공
-  * 2021년 11월 1일 NIST(미 국립표준기술연구소)[^nist]는 라벨링 프로그램에 사용할 수 있는 소비자 소프트웨어 기준 초안 발표
-* FDD(미 민주주의수호재단)[^fdd] ‘A Software Bill of Materials Is Critical for Comprehensive Risk Management’ : FDD TCIL(Transformative Cyber Innovation Lab)은 SBOM의 유용성에 대하여 공공 및 민간부문의 이해를 돕고자 직접 SBOM을 개발하고 분석한 결과 보고서 ‘[포괄적인 위험관리를 위한 SBOM의 중요성](https://fdd.org/analysis/2021/09/29/a-software-bill-of-materials-is-critical-for-comprehensive-risk-management)’[^fdd-risk-manage]을 공개하였다.
-
-[^nist]: National Institute of Standards and Technology
-[^fdd]: Foundation for Defense of Democracies
-[^fdd-risk-manage]: A Software Bill of Material Is Critical for Comprehensive Risk Management : https://fdd.org/analysis/2021/09/29/a-software-bill-of-materials-is-critical-for-comprehensive-risk-management
-
-##### EU
-
-* ENISA ‘Guidelines for Securing the IoT’ : ENISA는 2020년 11월 ‘[IoT 보안을 위한 지침](https://enisa.europa.eu/publications/guidelines-for-securing-the-internet-of-things)’[^enisa-iot]을 발행하였다. 문서 내에 공급망 보호를 위한 모범 사례로 SBOM 제공을 제안하며 공급망 보안을 위한 활동에 SBOM 활용 가능성을 언급하였다.
-* 네덜란드 NCSC ‘Using the Software Bill of Materials for Enhancing Cybersecurity : 네덜란드 NCSC는 사이버보안의 현황에서 잠재적 목적 및 SBOM 사용 현황을 조사하였고 이를 바탕으로 [‘사이버보안 강화를 위한 SBOM 활용’ 백서](https://english.ncsc.nl/publications/publications/2021/february/4/using-the-software-bill-of-materials-forenhancing-cybersecurity)[^ncsc-security]를 발행하였다.
-
-[^enisa-iot]: Guidelines for Securing the Internet of Things(ENISA) : https://enisa.europa.eu/publications/guidelines-for-securing-the-internet-of-things
-[^ncsc-security]: Using the Software Bill of Materials for Enhancing Cybersecurity. National Cyber Security Centre(NCSC) : https://english.ncsc.nl/publications/publications/2021/february/4/using-the-software-bill-of-materials-forenhancing-cybersecurity
-
-<i>참고) [사이버안보 강화를 위한 소프트웨어 공급망 보안 정책 연구: SBOM 정책 추진 사례를 중심으로](https://www.koreascience.or.kr/article/JAKO202209541952684.pdf)</i>[^policy-case]
-[^policy-case]: 사이버안보 강화를 위한 소프트웨어 공급망 보안 정책 연구: SBOM 정책 추진 사례를 중심으로 (손효현, 김동희, 김소정 *국가보안기술연구소) : https://www.koreascience.or.kr/article/JAKO202209541952684.pdf
 
 ### 오픈소스 관리 도구 소개
 앞서 언급한 것처럼 오픈소스 사용에 따른 의무사항 준수와 위험 요소 확인을 위해서는 SDLC(Software System Development Life Cycle) 전체에서 지속적인 스캔 및 모니터링이 필요하다. 이에 **SCA(Software Composition Analysis)** 라는 오픈소스 관리 도구들이 생겨났다. SCA는 보안 및 라이선스 규정 준수를 발견하고 관리하기 위한 자동화된 프로세스를 제공한다.
