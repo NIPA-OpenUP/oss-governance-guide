@@ -355,9 +355,6 @@ NTIA는 SBOM이 포함해야 하는 7가지 데이터 필드를 명시하였다.
 * [SWID Tags](https://nvd.nist.gov/products/swid)
 
 
-
-요청하신 대로 내용을 보완하여 작성하였습니다:
-
 #### SBOM 최소 요구 사항
 
 NTIA(National Telecommunications and Information Administration)는 라이선스 및 보안취약점 관리를 위해 SBOM이 갖춰야 할 다음 세 가지의 요구 사항을 제시하였다[^ntia2021].
