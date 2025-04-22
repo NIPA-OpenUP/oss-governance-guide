@@ -725,7 +725,7 @@ Upstream Repository를 자신의 GitHub 계정으로 [Fork](https://help.github.
 
 **Step 2. Clone**
 
-Fork한 Repository를 자산의 Local working directory로 Clone 한다.
+Fork한 Repository를 자신의 Local working directory로 Clone 한다.
 
 ```text
 $ mkdir -p $working_dir
@@ -771,7 +771,7 @@ Branch를 fetch와 [rebase](https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9
 ```text
 # While on your myfeature branch
 $ git fetch upstream
-$ git rebase upstream/master
+$ git rebase upstream/main
 ```
 
 그 상태에서 code 작업을 한다.
