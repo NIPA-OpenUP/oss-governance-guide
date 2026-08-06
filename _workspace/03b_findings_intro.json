@@ -1,0 +1,85 @@
+{
+  "target_section": "intro",
+  "findings": [
+    {
+      "topic": "기존 원고 갱신 — intro의 'AI와 오픈소스의 융합' 서술이 본문에 없다",
+      "claim": "content/en/intro/_index.md:111은 이 가이드가 'AI와 오픈소스의 융합'을 포함한다고 서술하지만, 실제 5개 장 어디에도 AI 라이선스·모델·AI BOM 서술이 없다. 서술과 내용이 불일치한다.",
+      "detail": "grep 검증: OSAID|open weight|Llama|Hugging Face|Copilot|AI BOM|ML-BOM|파인튜닝|가중치 패턴이 content/en/*/_index.md 전체에서 0건, _workspace/00_published_2025.md에서도 0건. intro:14와 intro:107의 '2024년 현재'도 2026 개정판에서 그대로 남으면 안 된다. 이 축의 발견 33건 중 24건이 기존 장에 붙일 자리가 없어 신규 장 독립이 필요하다는 근거이기도 하다.",
+      "confidence": "high",
+      "target_section": "intro",
+      "applies_to_korean_firms": "해당 없음 (원고 정합성 문제)",
+      "action_for_firms": "AI 장을 신설하거나, 신설하지 않는다면 intro:111의 'AI와 오픈소스의 융합' 문구를 삭제해야 한다. 둘 중 하나는 반드시 해야 한다.",
+      "practicality": "개념설명",
+      "replaces": "content/en/intro/_index.md:111 '특히 2024년 현재의 트렌드와 규제 환경을 반영하여, AI와 오픈소스의 융합, ... 등을 포함하고 있다'",
+      "sources": [],
+      "_evidence": "research_ai#findings[30]"
+    },
+    {
+      "topic": "OSSRA 라이선스 충돌 비율 3개년 추세 (53%→56%→68%)",
+      "claim": "Black Duck OSSRA가 측정하는 '라이선스 충돌 포함 코드베이스 비율'이 2024년판 53%(2023년 데이터) → 2025년판 56%(2024년 데이터, 965개 코드베이스·16개 산업) → 2026년판 68%(2025년 데이터, 947개 코드베이스·17개 산업, OSSRA 역사상 최고치·전년 대비 최대 단일 연도 상승폭)로 뛰었다. 오픈소스 포함 코드베이스 비율도 97%→98%, 취약점 포함 비율 86%→87%(고위험 78%, 치명적 44%, 평균 취약점 수 코드베이스당 581개, +107%)로 함께 악화됐다.",
+      "detail": "원고 intro L16이 인용한 '53%'는 2024년판(2023년 감사 데이터) 수치다. 원문을 blackduck.com 블로그에서 직접 확인한 결과 '2023년에 감사받은 코드베이스 중 53%'라는 정확한 표현이었다. 2025년판(2025-02, news.blackduck.com 보도자료)과 2026년판(2026-02-25, 부제 'Software Governance in the AI Era')을 각각 공식 보도자료로 확인했다. 2026년판은 AI 관련 신규 지표도 포함: AI 생성 코드를 보안 관점에서 검토하는 조직 76%, IP/라이선스 관점에서 검토 54%, 두 관점 모두 포괄적으로 평가하는 조직은 24%에 불과 — 검토 관행이 코드 생성 속도를 못 따라가는 거버넌스 공백을 보여준다.",
+      "confidence": "high",
+      "target_section": "intro",
+      "applies_to_korean_firms": "오픈소스를 포함한 제품·서비스를 개발·배포하는 모든 국내 기업, 특히 M&A 실사 대상이 되는 기업",
+      "action_for_firms": "본문의 53% 인용을 68%(2026년판)로 교체하고, 3개년 추세표(53%→56%→68%)를 함께 제시해 '악화 추세'라는 맥락을 전달한다. AI 생성 코드 검토율(보안 76%/IP 54%/포괄 24%) 통계를 AI 코딩 도구 정책 절에 추가한다.",
+      "practicality": "사례+통계표",
+      "effective_dates": [
+        "2026-02-25 (2026 OSSRA 발간)",
+        "2025-02-25 (2025 OSSRA 발간)"
+      ],
+      "replaces": "content/en/intro/_index.md L16: 2024년 OSSRA 보고서, 53% 인용",
+      "sources": [
+        {
+          "title": "Black Duck Research Shows Open Source Vulnerabilities Have Doubled as AI Accelerates Code Creation (2026 OSSRA 보도자료)",
+          "url": "https://news.blackduck.com/2026-02-25-Black-Duck-Research-Shows-Open-Source-Vulnerabilities-Have-Doubled-as-AI-Accelerates-Code-Creation",
+          "kind": "primary"
+        },
+        {
+          "title": "New Black Duck Report: 86% of Commercial Codebases Contain Vulnerable Open Source (2025 OSSRA 보도자료)",
+          "url": "https://news.blackduck.com/2025-02-25-New-Black-Duck-Report-86-of-Commercial-Codebases-Contain-Vulnerable-Open-Source,-Exposing-Organizations-to-Security-Risks",
+          "kind": "primary"
+        },
+        {
+          "title": "OSSRA data answers open source questions (원고가 인용한 원문, 53%의 정확한 정의 확인)",
+          "url": "https://www.blackduck.com/blog/ossra-license-compliance-risks.html",
+          "kind": "primary"
+        },
+        {
+          "title": "2026 OSSRA Report 랜딩 페이지",
+          "url": "https://www.blackduck.com/resources/analyst-reports/open-source-security-risk-analysis.html",
+          "kind": "primary"
+        }
+      ],
+      "_evidence": "research_market#findings[0]"
+    }
+  ],
+  "baseline": {
+    "baseline_source": "merge",
+    "rationale": "본문은 사실상 동일하다(저장소→발간본 문장 대응률 97.2%, 미대응 2건은 조사 수준 윤문). 발간본에만 '구성' 절 도입 문장 1개가 있고, 저장소에만 Hugo alert 박스로 감싼 GitHub 저장소 안내가 있다. 어느 쪽도 상대를 대체하지 못하므로 저장소 마크다운을 운반체로 두고 발간본 문장 1개와 용어 표기만 흡수한다. 발간본 p7-14는 2024-11-18 저장소 갱신분(2024년 현재 서술, CRA 언급, SBOM 문단)을 이미 반영하고 있어 어느 쪽도 뒤처지지 않는다.",
+    "published_only_worth_keeping": [
+      {
+        "topic": "'구성' 절 도입 문장",
+        "published_ref": "page:9",
+        "summary": "'본 가이드는 기업이 오픈소스SW를 활용하는 경우를 세 가지로 나누어 구분하였고, 마지막으로는 기업에서 오픈소스SW 정책/프로세스와 관련된 체계를 세우는 데에 필요할 조직의 구성 방안에 관해 설명한다.' — 저장소 '## 구성'(intro#L30)은 번호 목록으로 바로 들어가 이 안내 문장이 없다. 4개 장 구성의 근거를 설명하는 문장이므로 개정판 '구성' 절 첫 문장으로 넣을 것.",
+        "worth_keeping": true
+      }
+    ],
+    "repo_only_worth_keeping": [
+      {
+        "topic": "GitHub 저장소 안내 alert 박스",
+        "repo_ref": "intro#L121-123",
+        "summary": "{{% alert title=\"가이드 전문 GitHub Repository\" %}} 로 감싼 저장소 URL. 발간본 p14에는 같은 URL이 본문 뒤 박스로 조판되어 있어 내용 차이는 없고 형식만 다르다.",
+        "worth_keeping": true
+      }
+    ],
+    "diverged": [
+      {
+        "topic": "출처 표기 [1]이 정의 없이 본문에 남아 있음",
+        "published_ref": "page:7",
+        "repo_ref": "intro#L14",
+        "difference": "'오픈소스의 역할이 더욱 강조되고 있다[1].' — 양쪽 모두 [1]의 출처 정의가 없다. 발간본이 각주 번호로 바꾸지 않고 그대로 조판했다. 개정판에서 출처를 채우거나 마커를 지워야 한다.",
+        "newer": "unclear"
+      }
+    ]
+  }
+}

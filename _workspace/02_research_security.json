@@ -1,0 +1,1511 @@
+{
+  "axis": "security",
+  "findings": [
+    {
+      "topic": "SLSA 현행 판번호와 레벨 정의",
+      "claim": "SLSA는 v1.2가 현행(Approved)이며, 기존 Build 트랙(L0~L3)에 더해 Source 트랙(L1~L4)이 정식 승인되었다. v1.1은 Retired 상태다.",
+      "detail": "SLSA 운영위원회는 2025-11-12 v1.2를 승인했고 공식 발표는 2025-11 말이다. Build 트랙은 v1.0 이후 정의가 유지된다 — Build L0(요구사항 없음), L1(프로비넌스 존재, 위조 용이), L2(호스팅 빌드 플랫폼이 프로비넌스를 생성·서명, 위조에 명시적 공격 필요), L3(강화된 빌드 — 빌드 간 상호 영향 차단, 서명 키를 사용자 정의 빌드 단계로부터 격리). v1.2에서 신설·승격된 Source 트랙은 Source L1 'Version Controlled'(현대적 VCS로 관리), L2 'History & Provenance'(브랜치 이력이 연속·불변·보존되고 SCS가 리비전마다 Source Provenance Attestation 발급), L3 'Continuous Technical Controls'(조직의 기술적 통제를 보호 브랜치에 지속 강제), L4 'Two-Party Review'(보호 브랜치의 모든 변경에 신뢰된 2인 리뷰 필수)로 구성된다. 개발 중인 트랙으로 Build Environment 트랙과 Dependency 트랙이 예고되었으나 v1.2에는 포함되지 않았다. v1.2는 v1.1과 하위 호환이다. 기존 원고에는 SLSA 언급 자체가 없다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "자체 빌드 파이프라인으로 소프트웨어를 배포하는 모든 기업. 특히 EU CRA 대응 또는 공공 납품을 준비하는 기업.",
+      "action_for_firms": "① 사내 릴리스 파이프라인을 Build L1(프로비넌스 생성) → L2(호스팅 러너 + 서명) → L3(재사용 워크플로 격리) 순으로 단계 목표화한다. GitHub Actions 사용 기업은 actions/attest-build-provenance 도입으로 Build L2에 즉시 도달하고, 조직 공용 reusable workflow로 빌드를 강제하면 L3에 도달한다. ② 자체 호스팅 Jenkins 기반 기업은 L2부터가 난관이므로 (a) 빌드 노드 임시화(ephemeral agent), (b) 서명 키를 빌드 스텝에서 분리(HSM/KMS 또는 OIDC 키리스), (c) 빌드 정의를 파이프라인 코드로 고정 — 3가지를 먼저 확보한다. ③ Source 트랙은 L2(브랜치 이력 보존 + 강제 푸시 금지)까지가 국내 기업의 현실적 1차 목표. L4(2인 리뷰)는 GitHub ruleset/GitLab approval rule로 기술적으로는 즉시 가능하나 인력 배분이 실제 장벽이다.",
+      "practicality": "판단기준표 (레벨별 요구사항 × 국내 기업 도달 조건 매트릭스)",
+      "replaces": "신규 (기존 원고에 SLSA 서술 없음)",
+      "effective_dates": [
+        "2025-11-12 (SLSA v1.2 운영위 승인)",
+        "v1.1은 Retired로 전환"
+      ],
+      "sources": [
+        {
+          "title": "SLSA Specification v1.2 (Approved)",
+          "url": "https://slsa.dev/spec/v1.2/",
+          "kind": "primary"
+        },
+        {
+          "title": "SLSA Build Track Basics (v1.2)",
+          "url": "https://slsa.dev/spec/v1.2/build-track-basics",
+          "kind": "primary"
+        },
+        {
+          "title": "SLSA Source: Requirements for producing source (v1.2)",
+          "url": "https://slsa.dev/spec/v1.2/source-requirements",
+          "kind": "primary"
+        },
+        {
+          "title": "Announcing SLSA v1.2",
+          "url": "https://slsa.dev/blog/2025/11/announce-slsa-v1.2",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "Sigstore / cosign 현행 버전과 CI 검증 방법",
+      "claim": "Sigstore는 npm 프로비넌스·PyPI 어테스테이션·Homebrew·GitHub Artifact Attestations의 공통 기반이 되었고, cosign v3.x로 이들을 단일 명령으로 검증할 수 있다.",
+      "detail": "cosign 최신 릴리스는 v3.1.2(2026-07-17). Rekor(투명성 로그)는 v2가 2025-10 GA되어 타일 기반으로 재구축되었다. 검증 실무는 두 갈래다. ① 패키지 레지스트리 수준: `npm audit signatures`가 설치된 npm 패키지의 레지스트리 서명과 프로비넌스 어테스테이션을 일괄 검증하고, `--json --include-attestations`로 원문 번들을 뽑을 수 있다. PyPI는 PEP 740 기반 어테스테이션을 Trusted Publishing + pypa/gh-action-pypi-publish v1.11.0 이상에서 기본 생성한다. ② 아티팩트 수준: cosign v2.4.0 이상에서 `cosign verify-blob-attestation --bundle <file> --new-bundle-format --certificate-oidc-issuer=https://token.actions.githubusercontent.com --certificate-identity-regexp=^https://github.com/<org>/<repo>/.github/workflows/<wf>.yml.? <artifact>` 형태로 npm 프로비넌스·GitHub Artifact Attestations·Homebrew 프로비넌스를 모두 검증한다. GitHub CLI를 쓰면 `gh attestation verify`가 동일 역할을 한다. 주의: `--certificate-identity-regexp`는 패턴 매칭, `--certificate-identity`는 완전 일치이며, 신원 검증 없이 서명만 확인하는 것은 무의미하다(누구나 서명할 수 있다).",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "외부 오픈소스 패키지를 CI에서 설치하는 모든 기업. 자사 오픈소스를 배포하는 기업은 생성 측면도 해당.",
+      "action_for_firms": "① CI의 의존성 설치 직후 단계에 `npm audit signatures`(Node) 또는 어테스테이션 검증을 추가하고, 검증 실패 시 빌드를 중단(fail)하도록 한다. 경고만 남기는 설정은 사고 시 무용하다. ② 검증 대상 신원(OIDC issuer + workflow path)을 허용 목록으로 관리한다 — 이 목록이 없으면 공격자가 자기 저장소에서 만든 정상 서명도 통과한다. ③ 자사 배포물에는 GitHub Actions의 actions/attest-build-provenance 또는 `npm publish --provenance`(npm CLI 9.5.0 이상, GitHub Actions/GitLab CI 호스팅 러너 필요)를 적용한다.",
+      "practicality": "체크리스트 + CI 스니펫 템플릿",
+      "replaces": "신규",
+      "effective_dates": [
+        "cosign v3.1.2 (2026-07-17)",
+        "Rekor v2 GA (2025-10)",
+        "GitHub Artifact Attestations GA (2024-06-25)"
+      ],
+      "sources": [
+        {
+          "title": "cosign Verification of npm Provenance, GitHub Artifact Attestations, and Homebrew Provenance — Sigstore Blog",
+          "url": "https://blog.sigstore.dev/cosign-verify-bundles/",
+          "kind": "primary"
+        },
+        {
+          "title": "npm Docs — Generating provenance statements",
+          "url": "https://docs.npmjs.com/generating-provenance-statements/",
+          "kind": "primary"
+        },
+        {
+          "title": "sigstore/cosign releases",
+          "url": "https://github.com/sigstore/cosign/releases",
+          "kind": "primary"
+        },
+        {
+          "title": "PyPI now supports digital attestations (PEP 740)",
+          "url": "https://blog.pypi.org/posts/2024-11-14-pypi-now-supports-digital-attestations/",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "npm 인증 체계 전면 개편 (classic token 폐기 · Trusted Publishing)",
+      "claim": "npm은 2025-12-09에 모든 classic token을 영구 폐기했고, 쓰기 권한 granular token은 최대 90일로 제한되며, 신규 패키지는 2FA가 기본값이다.",
+      "detail": "2025년 npm 대규모 공급망 사고(Shai-Hulud 등) 이후 GitHub이 발표한 로드맵의 실제 시행 결과다. ▸2025-11-05: classic token 신규 생성 중단, 쓰기 granular token에 2FA 강제 기본화, 만료일이 2026-02-03 이후인 토큰은 2026-02-03으로 강제 조정. ▸2025-12-09(당초 11-19에서 연기): 기존 classic token 전량 영구 폐기 — 재생성·복구 불가. 동시에 `npm login`은 2시간짜리 세션 토큰만 발급하고, CLI에서 granular token을 생성·조회·폐기하는 `npm token` 명령이 제공된다. 신규 생성 패키지는 2FA가 기본 활성. ▸쓰기 권한 토큰 최대 수명 90일. ▸권장 최종 형태는 OIDC 기반 Trusted Publishing(GitHub Actions·GitLab CI/CD 지원)으로, 이때 프로비넌스 어테스테이션이 자동 생성·게시된다. 2026-02-18부터 `npm trust` 명령으로 여러 패키지의 Trusted Publishing 설정을 일괄 구성할 수 있다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "npm에 사내 패키지를 배포하거나 CI에서 npm 토큰을 사용하는 모든 기업. 2025-12-09 이후 파이프라인이 깨진 조직이 다수.",
+      "action_for_firms": "① 사내 CI/CD에 남아 있는 npm classic token 잔재를 전수 조사하고 OIDC Trusted Publishing으로 전환한다. ② 전환이 불가한 파이프라인은 granular token(최대 90일)으로 바꾸고 90일 회전을 스케줄에 등록한다 — 회전 절차가 없으면 90일마다 배포가 멈춘다. ③ 개인 개발자 계정의 2FA를 TOTP에서 WebAuthn(FIDO)으로 상향한다.",
+      "practicality": "체크리스트 (전환 대상 조사 → 방식 선택 → 회전 주기 등록)",
+      "replaces": "신규",
+      "effective_dates": [
+        "2025-11-05 (classic token 신규 생성 중단)",
+        "2025-12-09 (classic token 전량 폐기, 세션 기반 인증 도입)",
+        "2026-02-03 (기존 granular token 강제 만료일)",
+        "2026-02-18 (npm trust 명령 제공)"
+      ],
+      "sources": [
+        {
+          "title": "npm classic tokens revoked, session-based auth and CLI token management now available — GitHub Changelog",
+          "url": "https://github.blog/changelog/2025-12-09-npm-classic-tokens-revoked-session-based-auth-and-cli-token-management-now-available/",
+          "kind": "primary"
+        },
+        {
+          "title": "npm security update: Classic token creation disabled and granular token changes — GitHub Changelog",
+          "url": "https://github.blog/changelog/2025-11-05-npm-security-update-classic-token-creation-disabled-and-granular-token-changes/",
+          "kind": "primary"
+        },
+        {
+          "title": "Revised npm Security Timeline Based on Your Feedback (GitHub community discussion #178140)",
+          "url": "https://github.com/orgs/community/discussions/178140",
+          "kind": "primary"
+        },
+        {
+          "title": "Our plan for a more secure npm supply chain — GitHub Blog",
+          "url": "https://github.blog/security/supply-chain-security/our-plan-for-a-more-secure-npm-supply-chain/",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "OpenSSF Scorecard 활용법과 점수의 한계",
+      "claim": "Scorecard 최신 버전은 v5.5.0(2026-04-23)이며, 의존성 선택의 '보조 신호'로는 유용하나 점수와 실제 취약점 수 사이에 음의 상관은 확인되지 않았다.",
+      "detail": "Scorecard는 저장소의 프로세스 위생(브랜치 보호, 의존성 고정, 코드 리뷰, 위험한 워크플로, 서명된 릴리스 등)을 0~10으로 자동 채점한다. v5.5.0에서 저장소 유형에 맞지 않는 검사는 자동 생략되고, 공식 도커 이미지가 GHCR로 이전되었다. v5.4.0(2025-11-14)에는 `--repos`/`--org` 플래그로 다중 저장소·조직 전체 스캔이 추가되어 기업 일괄 평가가 실용화됐다. 한계: Zahan 등(NC State)의 실증 연구는 npm·PyPI 패키지를 대상으로 '집계 보안 점수가 높아질수록 보고된 취약점 수가 오히려 증가'하는 결과를 얻었고, 회귀 모델의 설명력은 R² 9~12%에 그쳤다. 개별 실천 중에서는 Maintained·Code Review·Branch Protection·Security Policy가 취약점 수에 가장 큰 영향을 준 것으로 보고됐다. 즉 Scorecard 점수는 '코드가 안전하다'가 아니라 '프로젝트 운영이 관리되고 있다'를 나타내는 지표이며, 인기 있는 프로젝트일수록 취약점 보고가 많다는 교란 요인이 있다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "사내 오픈소스 도입 심사 기준을 운영하는 기업, 승인된 오픈소스 목록(허용 목록)을 관리하는 OSPO.",
+      "action_for_firms": "① Scorecard 총점을 통과/탈락 기준으로 쓰지 말고, 개별 체크 4개(Maintained, Code-Review, Branch-Protection, Security-Policy)를 '심사 시 확인 항목'으로 삼는다. ② 총점은 동일 기능 후보 라이브러리 비교 시의 참고 지표로만 쓰고, 낮은 점수는 탈락 사유가 아니라 '추가 확인 사유'로 처리한다. ③ `scorecard --org <조직>`으로 사내 공개 저장소를 일괄 채점해 자사 프로젝트의 기준선을 먼저 만든다. ④ 심사 문서에 '점수와 실제 취약점 수의 상관은 실증되지 않았다'는 한계를 명시한다 — 이 문장이 없으면 점수가 면책 근거로 오용된다.",
+      "practicality": "판단기준표 (체크 항목별 해석과 오용 금지 사항)",
+      "replaces": "신규",
+      "effective_dates": [
+        "Scorecard v5.5.0 (2026-04-23)",
+        "Scorecard v5.4.0 (2025-11-14, --org 스캔 추가)"
+      ],
+      "sources": [
+        {
+          "title": "ossf/scorecard v5.5.0 release notes",
+          "url": "https://github.com/ossf/scorecard/releases",
+          "kind": "primary"
+        },
+        {
+          "title": "OpenSSF Scorecard",
+          "url": "https://scorecard.dev/",
+          "kind": "primary"
+        },
+        {
+          "title": "Zahan et al., Do Software Security Practices Yield Fewer Vulnerabilities? (arXiv:2210.14884, ICSE-SEIP 2023)",
+          "url": "https://arxiv.org/abs/2210.14884",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "OpenSSF OSPS Baseline — 오픈소스 프로젝트 보안 최소 기준",
+      "claim": "OpenSSF는 성숙도 3단계·8개 범주의 오픈소스 프로젝트 보안 기준선(OSPS Baseline)을 정식 배포했고, 현행판은 v2026.02.19다. CRA·SSDF·OpenChain(ISO/IEC 18974)에 매핑되어 있다.",
+      "detail": "Level 1은 유지관리자 수·이용자 수에 무관한 모든 프로젝트, Level 2는 유지관리자 2인 이상 + 일정 이용자를 가진 코드 프로젝트, Level 3은 이용자가 많은 코드 프로젝트에 적용된다. 범주별 요구사항 수(Level1/Level2/Level3 누적)는 Access Control 5/6/8, Build & Release 6/11/14, Documentation 3/9/14, Governance 3/7/9, Legal 4/6/6, Quality 7/11/17, Security Assessment 2/4/5, Vulnerability Management 2/7/14다. 각 요구사항에 CRA·NIST SSDF(SP 800-218)·OpenChain(ISO/IEC 18974)·OpenSSF Best Practices Badge 매핑이 붙어 있어, 하나의 점검으로 여러 체계에 대응할 수 있다.",
+      "confidence": "high",
+      "target_section": "releasing",
+      "applies_to_korean_firms": "자사 오픈소스를 공개·운영하는 기업(releasing), 사외 오픈소스 도입 심사 기준을 만드는 OSPO(using).",
+      "action_for_firms": "① 사내에서 공개한 오픈소스 저장소를 OSPS Baseline Level 1으로 먼저 전수 정렬하고, 회사 대표 프로젝트만 Level 2/3을 목표로 한다. ② CRA 대응이 필요한 조직은 Baseline의 CRA 매핑 표를 근거 문서로 활용해 중복 점검을 줄인다. ③ 외부 의존성 심사에서는 Scorecard 점수 대신 Baseline Level 1 충족 여부를 정성 기준으로 쓰는 편이 해석이 명확하다.",
+      "practicality": "체크리스트 (레벨별 요구사항 목록을 사내 저장소 점검표로 변환)",
+      "replaces": "신규",
+      "effective_dates": [
+        "OSPS Baseline v2026.02.19 (2026-02-19)"
+      ],
+      "sources": [
+        {
+          "title": "Open Source Project Security Baseline",
+          "url": "https://baseline.openssf.org/",
+          "kind": "primary"
+        },
+        {
+          "title": "OSPS Baseline v2026-02-19 (요구사항 전문)",
+          "url": "https://baseline.openssf.org/versions/2026-02-19",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "CISA 2026 SBOM 최소 요소 — 한국(KISA·국정원 NCSC)이 공동 작성 기관으로 참여",
+      "claim": "2026-07-29 CISA·NSA·FBI와 17개국 기관(한국 NIS/NCSC, KISA 포함)이 '2026 Minimum Elements for a Software Bill of Materials'를 발표해 2021년 NTIA 최소 요소를 대체했다. 데이터 필드가 7개에서 17개로 확대되었다.",
+      "detail": "버전 이력은 1.0(2021-07-12, NTIA) → 2.0(2025-08-22, 의견수렴 초안) → 2.1(2026-07-29, 최종)이다. 최종 데이터 필드 17개는 SBOM 메타데이터 9개(SBOM Author, SBOM Author Signature, SBOM Data Format Name, SBOM Data Format Version, SBOM Generation Context, SBOM Timestamp, SBOM Tool Name, SBOM Tool Version, SBOM Version)와 컴포넌트 데이터 8개(Component Dependency Relationship, Component Hash Algorithm, Component Hash Value, Component Identifiers, Component License, Component Name, Component Producer, Component Version)다. 신규 필드는 SBOM Author Signature(디지털 서명), SBOM Data Format Name/Version, SBOM Generation Context(before build / build / after build), SBOM Tool Name/Version, SBOM Version, Component Hash Value/Algorithm, Component License. 주요 변경은 Supplier Name→Component Producer 개명, Depth→Coverage 대체(수직 깊이뿐 아니라 수평 범위 포함, '최소 깊이 없음' 명시), Access Controls 요소 삭제 후 Distribution and Delivery에 흡수, '알 수 없는 정보'와 '의도적으로 비공개한 정보'를 명시적으로 구분하도록 요구. 실무·프로세스 요소는 Accommodation of Updates, Coverage, Distribution and Delivery, Explicitly Identifying Unknown Information, Frequency(버전·릴리스마다 새 SBOM), Machine-Processable Data(SPDX·CycloneDX 모두 수용, deprecated 판번호 거부)다. 별도 논의 절에서 VEX(OpenVEX 명세를 각주로 지목)와 CSAF를 SBOM과 상관시키는 방식을 권고한다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "미국·EU에 소프트웨어를 공급하거나 국내 공공 조달을 준비하는 모든 기업. 한국 기관이 공동 작성자로 이름을 올린 문서이므로 국내 제도가 이 필드 정의를 따를 개연성이 높다.",
+      "action_for_firms": "① 현재 생성 중인 SBOM에 신규 필수 필드(컴포넌트 해시값·해시 알고리즘, 컴포넌트 라이선스, SBOM 생성 도구명·버전, 생성 시점 컨텍스트, SBOM 서명)가 들어가는지 도구 출력으로 직접 확인한다 — 상당수 도구가 기본 설정에서 해시·라이선스를 비운다. ② '생성 컨텍스트'를 기록하려면 소스 기반 SBOM(before build)과 바이너리 기반 SBOM(after build)을 구분해 산출해야 한다. 두 결과의 차이가 곧 누락 컴포넌트다. ③ 알 수 없는 값은 빈칸으로 두지 말고 'unknown' 또는 '비공개'로 명시하고, 수요자가 비공개 항목을 문의할 수 있는 창구를 문서화한다. ④ SBOM에 서명을 붙이고(Sigstore 또는 사내 PKI), 배포 채널을 버전별 URL 또는 API로 상시 제공한다.",
+      "practicality": "판단기준표 (17개 필드 × 자사 도구 출력 대조표)",
+      "replaces": "content/en/using/_index.md L329-354 'SBOM 최소 요구 사항 / 데이터 필드'의 NTIA 2021 기준 7개 필드 서술",
+      "effective_dates": [
+        "2026-07-29 (2026 Minimum Elements, v2.1 발표)",
+        "2025-08-22 (초안 v2.0)",
+        "2021-07-12 (NTIA 원판 v1.0)"
+      ],
+      "sources": [
+        {
+          "title": "2026 Minimum Elements for a Software Bill of Materials (SBOM) — CISA 외 공동 작성 (PDF)",
+          "url": "https://www.ic3.gov/CSA/2026/260729.pdf",
+          "kind": "primary"
+        },
+        {
+          "title": "2026 Minimum Elements for a Software Bill of Materials (SBOM) — CISA 랜딩 페이지",
+          "url": "https://www.cisa.gov/resources-tools/resources/2026-minimum-elements-software-bill-materials-sbom",
+          "kind": "primary"
+        },
+        {
+          "title": "CISA sets a new SBOM baseline — Help Net Security",
+          "url": "https://www.helpnetsecurity.com/2026/07/30/cisa-sbom-guidance-updated/",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "topic": "NVD의 CVE 보강(enrichment) 정책 전환 — 스캐너 정확도에 직접 영향",
+      "claim": "2026-04-15부터 NIST NVD는 KEV 등재 CVE·연방정부 사용 SW·EO 14028 중요 SW에 해당하는 CVE만 보강하고, 2026-03-01 이전 발행 CVE는 'Not Scheduled'로 전환했다.",
+      "detail": "CVE 제출량이 2020~2025년 사이 263% 증가했고 NIST는 2025년에만 약 4.2만 건을 보강했으나(전년 대비 45% 증가) 유입 속도를 따라잡지 못했다. 정책 전환의 결과로 (a) 우선순위 밖 CVE는 CVSS 점수·CPE 제품 매핑·CWE 분류가 붙지 않으며, (b) 약 2.9만 건의 백로그가 'Not Scheduled'로 재분류되었고, (c) 제출 기관(CNA)이 이미 점수를 제공한 경우 NIST가 별도 심각도 점수를 부여하지 않는다. KEV 등재 CVE는 접수 후 1영업일 내 보강을 목표로 한다. 실무 영향이 결정적이다 — CPE가 없으면 NVD 기반 스캐너는 CVE를 제품에 매칭할 수 없다. 업계 추산으로 우선순위 범주는 향후 CVE 물량의 15~20%만 커버한다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "NVD 데이터에 의존하는 SCA/취약점 스캐너를 운영하는 모든 기업. 국내 상용 도구 다수가 NVD를 1차 소스로 쓴다.",
+      "action_for_firms": "① 사용 중인 스캐너가 NVD 단독인지 확인하고, OSV(osv.dev)·GitHub Security Advisories·벤더 자체 DB(예: 배포판 보안 권고)를 최소 2개 이상 병행하도록 구성을 바꾼다. 언어 생태계 패키지는 OSV가 NVD보다 정확도가 높다. ② 스캐너 계약·갱신 시 '데이터 소스 목록과 NVD 미보강 CVE 대응 방식'을 서면으로 확인한다. ③ 사내 취약점 대응 SLA를 'NVD의 CVSS 점수'에만 연동해 두었다면 점수가 없는 CVE에서 프로세스가 멈춘다 — CNA 제공 점수 또는 자체 평가로 대체하는 분기를 규정에 넣는다.",
+      "practicality": "체크리스트 + 개념설명(NVD 단독 의존의 실패 모드)",
+      "replaces": "content/en/using/_index.md L931-969 '주요 취약점 데이터베이스'의 NVD 중심 서술",
+      "effective_dates": [
+        "2026-04-15 (신규 보강 우선순위 정책 시행)",
+        "2026-03-01 (이전 발행 CVE의 Not Scheduled 전환 기준일)"
+      ],
+      "sources": [
+        {
+          "title": "NIST Updates NVD Operations to Address Record CVE Growth",
+          "url": "https://www.nist.gov/news-events/news/2026/04/nist-updates-nvd-operations-address-record-cve-growth",
+          "kind": "primary"
+        },
+        {
+          "title": "NIST admits defeat on NVD backlog — Help Net Security",
+          "url": "https://www.helpnetsecurity.com/2026/04/16/nist-national-vulnerability-database-nvd-enrichment/",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "topic": "CISA BOD 26-04 — CVSS 점수 기준 대응 SLA의 대체 모델",
+      "claim": "2026-06-10 CISA는 BOD 26-04를 발령해 BOD 22-01(KEV)과 BOD 19-02를 폐지하고, 4개 변수(공개 노출·KEV 등재·자동화 가능성·기술적 영향)에 따른 16행 SSVC 기반 조치 기한표로 대체했다.",
+      "detail": "변수는 ①Publicly Exposed(자산이 인터넷에 노출되었는가) ②In the KEV(CISA KEV 등재 여부) ③Automatable by Adversary(공격 전 과정 자동화 가능 여부) ④Technical Impact(partial control / total control)다. Table 1(달력일 기준): 노출Y·KEV Y·자동화Y·total → 3일 + 포렌식 트리아지 / 노출Y·KEV Y·자동화Y·partial → 3일 / 노출Y·KEV Y·자동화N·total → 3일 + 포렌식 트리아지 / 노출Y·KEV Y·자동화N·partial → 14일 / 노출Y·KEV N·자동화Y·total → 3일 / 노출Y·KEV N·자동화Y·partial → 14일 / 노출Y·KEV N·자동화N·total → 14일 / 노출Y·KEV N·자동화N·partial → 60일 / 노출N·KEV Y·자동화Y·total → 3일 + 포렌식 트리아지 / 노출N·KEV Y·자동화Y·partial → 14일 / 노출N·KEV Y·자동화N·total → 14일 / 노출N·KEV Y·자동화N·partial → 14일 / 노출N·KEV N·자동화Y·total → 60일 / 노출N·KEV N·자동화Y·partial → 60일 / 노출N·KEV N·자동화N·total → 시스템 업그레이드 시 조치 / 노출N·KEV N·자동화N·partial → 시스템 업그레이드 시 조치. 타이머는 KEV 등재 시점 또는 기관이 자산에서 해당 CVE를 식별한 시점 중 먼저 오는 쪽에서 시작하며, 인터넷 노출 해제 같은 완화 조치로 값이 바뀌면 기한도 재계산된다. 기관 이행 일정: 즉시(정책 개정) → 60일 이내(프로세스 개정) → 180일 이내(기한 준수 시작). CISA가 KEV·자동화 가능성·기술적 영향 값을 Vulnrichment 프로그램으로 CVE 레코드에 제공한다. 미국 연방기관 구속 지침이며 계약자에게 자동 적용되지는 않는다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "취약점 대응 SLA를 운영하는 모든 기업. 특히 기존 원고의 'CVSS 9.0~10.0 → 24시간' 식 표를 사내 규정으로 채택한 조직.",
+      "action_for_firms": "① 사내 취약점 대응 규정의 'CVSS 점수 → 대응 시간' 단일축 표를 최소 2축(인터넷 노출 여부 × 악용 확인 여부)으로 확장한다. CVSS는 심각도이지 위험이 아니며 FIRST 자신도 'CVSS-B Base scores are not risk'라고 명시한다. ② 자산의 인터넷 노출 여부를 자동 태깅한다 — BOD 26-04가 기관에 요구하는 자산 태그(조직/환경(prod·dev)/노출(public·internal)/자산유형)를 그대로 사내 CMDB 필드로 채택할 수 있다. ③ KEV 등재는 매일 자동 조회해 티켓 우선순위를 즉시 재계산한다. ④ '노출N·KEV N·자동화N' 조합은 정기 업그레이드로 미루는 것이 CISA가 공식화한 판단이다 — 모든 취약점을 기한 내 처리하려는 규정은 실패한다.",
+      "practicality": "판단기준표 (16행 기한표를 사내 SLA 표로 이식)",
+      "replaces": "content/en/using/_index.md L883-888 '취약점 심각도 | CVSS 점수 | 대응 시간' 표 (긴급 9.0-10.0=24시간 / 높음 7.0-8.9=1주일 / 중간 4.0-6.9=1개월 / 낮음 0.1-3.9=3개월)",
+      "effective_dates": [
+        "2026-06-10 (BOD 26-04 발령, BOD 22-01·19-02 폐지)",
+        "2026-08-09 (발령 후 60일: 프로세스 개정 기한)",
+        "2026-12-07 (발령 후 180일: 기한 준수 시작)"
+      ],
+      "sources": [
+        {
+          "title": "BOD 26-04: Prioritizing Security Updates Based on Risk — CISA",
+          "url": "https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk",
+          "kind": "primary"
+        },
+        {
+          "title": "BOD 26-04 Table 1: Remediation Timelines (이미지)",
+          "url": "https://www.cisa.gov/sites/default/files/2026-06/BOD_26-04_Table_1_Remediation_Timelines_0.png",
+          "kind": "primary"
+        },
+        {
+          "title": "BOD 22-01: Reducing the Significant Risk of Known Exploited Vulnerabilities (Revoked)",
+          "url": "https://www.cisa.gov/news-events/directives/bod-22-01-reducing-significant-risk-known-exploited-vulnerabilities-revoked",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "CISA KEV 카탈로그 현황 수치 (1차 데이터 직접 집계)",
+      "claim": "2026-07-29 기준 KEV 카탈로그는 총 1,656건이며, 연도별 등재는 2021년 311건, 2022년 555건, 2023년 187건, 2024년 186건, 2025년 245건, 2026년(7/29까지) 172건이다.",
+      "detail": "CISA가 배포하는 known_exploited_vulnerabilities.json을 직접 집계한 값이다(catalogVersion 2026.07.29, count 1656). 2025년 말 누적은 1,484건으로, 국내 기사에 인용된 '2025년 신규 245건, 누적 1,484건'과 일치한다. 반면 일부 2차 자료의 '2026년 6월 기준 1,313건'은 실제와 맞지 않는다 — KEV 수치를 2차 자료에서 재인용하면 틀린다. KEV는 전체 CVE 대비 매우 작은 집합(연 5만~7만 건 유입 대비 연 200건대)이므로 '먼저 처리할 목록'으로는 유효하지만 '이것만 처리하면 된다'는 목록은 아니다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "취약점 우선순위 체계를 운영하는 모든 기업.",
+      "action_for_firms": "KEV JSON 피드(https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json)를 사내 취약점 관리 시스템에 매일 자동 동기화하고, SBOM 컴포넌트 목록과 CVE ID로 조인해 '자사 영향 KEV' 목록을 상시 유지한다. 이 목록의 크기는 보통 수십 건 수준이라 사람이 관리 가능하다.",
+      "practicality": "체크리스트 + 수치표",
+      "replaces": "신규 (기존 원고에 KEV 언급 없음)",
+      "effective_dates": [
+        "2026-07-29 (catalogVersion 2026.07.29 기준 집계)"
+      ],
+      "sources": [
+        {
+          "title": "CISA Known Exploited Vulnerabilities Catalog (JSON 피드)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "kind": "primary"
+        },
+        {
+          "title": "Known Exploited Vulnerabilities Catalog — CISA",
+          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "EPSS 현행 모델 판번호 — v5 (model_version v2026.06.15)",
+      "claim": "EPSS 현행 모델은 v5이며, 공식 데이터 피드의 model_version은 v2026.06.15다. 직전 v4는 2025-03에 배포되었다.",
+      "detail": "EPSS 점수 CSV 피드의 헤더가 `#model_version:v2026.06.15`로 명시된다(2026-07-30 조회). EPSS는 공개된 CVE가 향후 30일 내 실제 악용될 확률을 0~1로 매일 산출한다. 모델은 CVE당 약 2,850개 피처를 사용하며, 공개 익스플로잇 코드의 종류·게시 위치·채택 정도, 보안 도메인의 언급(chatter)과 최신성, CVSS 개별 지표(집계 점수가 아니라 지표 각각), 취약점 나이와 참조 수를 입력으로 쓴다. 데이터 파트너는 VulnCheck KEV, Shadowserver Foundation, LevelBlue다. 주목할 사실: 나이가 개별 예측에 가장 크게 기여하며, 공개 2년 초과 취약점이 1개월 미만 취약점보다 약 5배 높은 비율로 악용된다. v4 도입 시 제시된 비교로는, 동일 커버리지(악용 취약점의 약 74.6%)를 CVSS 7.0 이상 일괄 패치 전략은 전체의 50.7% 패치로 달성하는 반면 EPSS 기반은 6% 패치로 달성한다. v5는 v4 대비 순위 지표 0.514→0.633(약 23% 개선)으로 보고되었고 318,000건 이상의 CVE에 점수를 부여한다. 다만 v5의 정확한 공개일에 대해 2차 자료가 2026-05-13과 2026-06-15로 엇갈린다 — 데이터 피드의 model_version(2026-06-15)을 기준으로 삼는다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "취약점 티켓이 월 수백 건 이상 발생해 CVSS만으로는 우선순위가 정해지지 않는 기업.",
+      "action_for_firms": "① 취약점 우선순위 산식에 EPSS를 2번째 축으로 넣는다. 실무적 조합: (KEV 등재) > (EPSS 상위 백분위 + 인터넷 노출) > (CVSS 심각도). ② EPSS는 매일 바뀌므로 티켓 생성 시점 값으로 고정하지 말고 재조회한다. ③ EPSS API(https://api.first.org/data/v1/epss?cve=...)는 무료·무인증이라 사내 스크립트로 즉시 연동 가능하다. ④ EPSS는 '악용 확률'이지 '자사 영향도'가 아니다. 자산 중요도는 별도 축으로 유지한다.",
+      "practicality": "판단기준표 (KEV × EPSS × 노출 3축 우선순위 매트릭스)",
+      "replaces": "content/en/using/_index.md L879-888 'CVSS 활용' 단독 우선순위 서술",
+      "effective_dates": [
+        "EPSS 모델 v2026.06.15 (현행)",
+        "EPSS v4 (2025-03)",
+        "EPSS v3 (2023-03)"
+      ],
+      "sources": [
+        {
+          "title": "EPSS 점수 데이터 피드 (헤더에 model_version 표기)",
+          "url": "https://epss.empiricalsecurity.com/epss_scores-current.csv.gz",
+          "kind": "primary"
+        },
+        {
+          "title": "How EPSS Works — FIRST",
+          "url": "https://www.first.org/epss/how-it-works",
+          "kind": "primary"
+        },
+        {
+          "title": "Exploit Prediction Scoring System (EPSS) — FIRST",
+          "url": "https://www.first.org/epss/",
+          "kind": "primary"
+        },
+        {
+          "title": "Introducing EPSS version 4 — Empirical Security",
+          "url": "https://research.empiricalsecurity.com/research/introducing-epss-version-4",
+          "kind": "secondary"
+        },
+        {
+          "title": "EPSS v5 Is Here — Empirical Security",
+          "url": "https://research.empiricalsecurity.com/research/epss-v5-is-here",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "topic": "CVSS 4.0 도입 현황과 실무 판단",
+      "claim": "CVSS v4.0은 2023-11 공개되었으나 2026년 중반 기준 실무 지배 판번호는 여전히 v3.1이며, NVD는 신규 CVE에 v4.0과 v3.1을 병기하되 과거 CVE의 v4.0 소급 재채점 계획은 없다.",
+      "detail": "CVSS v4.0은 지표군을 Base / Threat(기존 Temporal 대체) / Environmental / Supplemental 4개로 재편했다. 그러나 (a) 대다수 CNA가 v3.1으로 점수를 제출하고, (b) NVD가 과거 CVE를 v4.0으로 소급 재채점하지 않으며, (c) 2026-04-15 NVD 보강 정책 전환으로 NIST가 CNA 제공 점수가 있으면 별도 점수를 부여하지 않게 되어, 데이터셋에 v3.1과 v4.0이 혼재하는 상태가 장기화된다. FIRST 자신이 CVSS v4.0 FAQ에서 'CVSS-B Base scores are not risk'라고 명시했다.",
+      "confidence": "medium",
+      "target_section": "using",
+      "applies_to_korean_firms": "CVSS 임계값을 사내 규정에 숫자로 박아 둔 기업.",
+      "action_for_firms": "① 사내 규정에서 CVSS 임계값을 쓸 때 판번호를 명시한다('CVSS v3.1 기준 7.0 이상'). 판번호 없는 임계값은 v3.1/v4.0 혼재 데이터에서 일관성이 깨진다. ② v4.0 전환을 서두르기보다 '점수 축 하나로 우선순위를 정하지 않는' 구조 전환(KEV·EPSS·노출 병용)을 먼저 한다. ③ 두 판번호가 모두 있으면 높은 쪽을 쓰는 등 사내 tie-break 규칙을 명문화한다.",
+      "practicality": "개념설명 + 규정 문구 예시",
+      "replaces": "content/en/using/_index.md L880 'CVSS(Common Vulnerability Scoring System) 활용' 서술의 판번호 미표기",
+      "effective_dates": [
+        "CVSS v4.0 공개 2023-11-01",
+        "CVSS v3.1 공개 2019-06"
+      ],
+      "sources": [
+        {
+          "title": "CVSS v4.0 Specification Document — FIRST",
+          "url": "https://www.first.org/cvss/specification-document",
+          "kind": "primary"
+        },
+        {
+          "title": "NVD — Vulnerability Metrics",
+          "url": "https://nvd.nist.gov/vuln-metrics/cvss",
+          "kind": "primary"
+        },
+        {
+          "title": "What Is CVSS? Understanding Vulnerability Severity Scoring — Sbomify (2026-02-05)",
+          "url": "https://sbomify.com/2026/02/05/what-is-cvss-vulnerability-scoring/",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "topic": "OSV / OSV-Scanner 현황과 스캐너 조합",
+      "claim": "OSV.dev는 40개 이상 생태계·70만 건 이상의 권고를 집계하고, OSV-Scanner는 v2.4.0(2026-06-18)에서 CycloneDX 1.7 출력과 다수 소스 플러그인을 지원한다. 다만 VEX 문서 소비는 지원하지 않는다.",
+      "detail": "OSV.dev는 GitHub Security Advisories, PyPA, RustSec, 배포판 보안 권고 등을 OSV 스키마(현행 v1.8.0, 2026-07-09)로 정규화한다. 생태계별 최대 규모는 npm이며, 언어 패키지의 버전 범위 표현이 정밀해 NVD의 CPE 매칭보다 오탐/미탐이 적다. OSV-Scanner v2.4.0의 변경점: CycloneDX 1.7 명세 지원, .csproj·NuGet Central Package Management 소스 스캔 기본 활성화, Swift Package.resolved 기본 지원, Alpine PURL distro 한정자 파싱, Canonical Chisel 이미지 스캔. 출력 포맷은 table/markdown/vertical/HTML/JSON/SARIF/SPDX 2.3/CycloneDX 1.4·1.5. 억제(suppression)는 VEX 문서가 아니라 osv-scanner.toml의 `[[IgnoredVulns]] id=..., reason=...` 항목으로 한다 — 조직 간 유통 가능한 VEX와 달리 저장소 로컬 설정이므로, 공급망을 타고 오탐 판단을 전달하려면 별도 도구가 필요하다. 반면 Trivy는 `--vex` 플래그로 로컬 VEX 파일·VEX Repository·OCI 어테스테이션·SBOM 참조를 통해 VEX 필터링을 지원한다(실험적). Dependency-Track 5.0(2026-06-03 GA)은 CycloneDX VEX/VDR 생성·소비를 지원하며, 이번 릴리스부터 업로드된 BOM·VEX의 스키마 검증을 강제해 스키마 위반 파일을 거부한다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "SCA 도구를 운영하는 모든 기업. 특히 오탐 처리 부담이 큰 조직.",
+      "action_for_firms": "① 컨테이너/OS 패키지는 Trivy 또는 Grype, 언어 패키지는 OSV-Scanner를 조합해 최소 2계층으로 스캔한다. 단일 도구·단일 DB 구성은 NVD 보강 축소 이후 미탐 위험이 커졌다. ② 오탐 억제 판단을 조직 밖으로 전달해야 하면(예: 원청→고객, 또는 자사 제품 사용자) OSV-Scanner의 로컬 ignore가 아니라 VEX(OpenVEX/CycloneDX VEX)로 발행하고, 소비 측은 Trivy `--vex` 또는 Dependency-Track으로 받는다. ③ Dependency-Track 5.0으로 올릴 때 스키마 검증 강제로 기존 파이프라인이 깨질 수 있으므로 사전 검증한다.",
+      "practicality": "판단기준표 (도구별 지원 포맷·VEX 지원 여부 대조표)",
+      "replaces": "content/en/using/_index.md L972-990 '오픈소스 보안 관리 도구 및 플랫폼'의 도구 3종 서술(OWASP Dependency-Check / Trivy / Grype)",
+      "effective_dates": [
+        "OSV-Scanner v2.4.0 (2026-06-18)",
+        "OSV 스키마 v1.8.0 (2026-07-09)",
+        "Dependency-Track 5.0 GA (2026-06-03, 최신 5.0.4 2026-07-30)",
+        "Trivy v0.72.0 (2026-06-30)"
+      ],
+      "sources": [
+        {
+          "title": "OSV — Open Source Vulnerabilities",
+          "url": "https://osv.dev/",
+          "kind": "primary"
+        },
+        {
+          "title": "google/osv-scanner v2.4.0 release notes",
+          "url": "https://github.com/google/osv-scanner/releases",
+          "kind": "primary"
+        },
+        {
+          "title": "Trivy — VEX 문서로 취약점 필터링",
+          "url": "https://trivy.dev/latest/docs/supply-chain/vex/",
+          "kind": "primary"
+        },
+        {
+          "title": "OWASP Dependency-Track 5.0 Is Now Generally Available",
+          "url": "https://owasp.org/blog/2026/06/09/dependency-track-v5",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "VEX / OpenVEX — SBOM만으로 대응이 불가한 이유와 생성·소비 실무",
+      "claim": "OpenVEX 명세는 2023-07-18의 v0.2.0 이후 판번호가 올라가지 않았고 OpenSSF sandbox 단계에 머물러 있으나, CISA 2026 SBOM 최소 요소가 VEX·CSAF 연계를 공식 권고하면서 실무 채택 압력이 커졌다.",
+      "detail": "SBOM은 '무엇이 들어 있는가'만 답한다. 컴포넌트가 존재한다는 사실과 그 취약점이 실제로 악용 가능한가는 별개이므로, SBOM만 유통하면 수요자가 대량의 오탐을 떠안는다. VEX는 그 간극을 메우는 문서다. OpenVEX 문서 필수 필드는 @context, @id, author, timestamp, version, statements이며 상태값은 not_affected / affected / fixed / under_investigation 4가지다. not_affected를 쓰려면 justification 또는 impact_statement가 있어야 하고, justification 허용값은 component_not_present, vulnerable_code_not_present, vulnerable_code_not_in_execute_path, vulnerable_code_cannot_be_controlled_by_adversary, inline_mitigations_already_exist 5가지다. 생성 도구는 OpenSSF의 vexctl(v0.4.4, 2026-06-16). 소비는 Trivy `--vex`, Dependency-Track(CycloneDX VEX/VDR)로 가능하나 OSV-Scanner는 미지원이다. 명세 저장소 커밋은 2026-01까지 이어지나 태그는 v0.2.0이 최신이다 — '표준이 확정되어 안정적'이라기보다 '아직 활발히 표준화되지 않은 채 관행으로 쓰인다'가 정확한 서술이다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "SBOM을 고객·원청에 제출하는 기업(생성 측), 협력사·벤더로부터 SBOM을 받는 기업(소비 측). 국내 SI 원-하청 구조에서는 원청이 소비 측, 하청이 생성 측이다.",
+      "action_for_firms": "① 오탐 판단을 사람이 스프레드시트로 관리하고 있다면 그것을 OpenVEX 문서로 바꾼다 — 판단 근거(justification)를 5개 허용값 중 하나로 강제하는 것만으로 판단 품질이 올라간다. ② 제품 릴리스마다 SBOM과 VEX를 한 쌍으로 발행하고, 같은 버전별 URL에서 함께 제공한다. ③ 소비 측은 협력사 VEX를 무조건 신뢰하지 말고 '누가 서명했는가(author)'와 'justification이 5개 값 중 하나인가'를 수용 조건으로 계약에 명시한다. impact_statement 자유 서술만 있는 VEX는 자동 처리가 불가능하다. ④ 명세가 v0.x라는 점을 감안해 VEX 저장 형식을 도구에 종속시키지 말고 원본 JSON을 보존한다.",
+      "practicality": "템플릿 (OpenVEX 최소 문서 예시 + 수용 조건 계약 문구)",
+      "replaces": "신규 (기존 원고에 VEX 언급 없음)",
+      "effective_dates": [
+        "OpenVEX 명세 v0.2.0 (2023-07-18, 현행)",
+        "vexctl v0.4.4 (2026-06-16)",
+        "CISA 2026 SBOM 최소 요소의 VEX·CSAF 연계 권고 (2026-07-29)"
+      ],
+      "sources": [
+        {
+          "title": "OpenVEX Specification (v0.2.0)",
+          "url": "https://github.com/openvex/spec/blob/main/OPENVEX-SPEC.md",
+          "kind": "primary"
+        },
+        {
+          "title": "openvex/vexctl",
+          "url": "https://github.com/openvex/vexctl",
+          "kind": "primary"
+        },
+        {
+          "title": "2026 Minimum Elements for a SBOM — Correlating SBOM With Security Advisories 절",
+          "url": "https://www.ic3.gov/CSA/2026/260729.pdf",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "CycloneDX v1.7 / ECMA-424 2판",
+      "claim": "CycloneDX v1.7이 2025-10-21 공개되었고 2025-12 Ecma 총회에서 ECMA-424 2판으로 채택되었다.",
+      "detail": "v1.6이 2024-06 ECMA-424 1판으로 비준된 데 이어 v1.7이 2판이 되었다. 주요 추가는 암호 자재명세서(CBOM) 강화(암호 알고리즘 계열·타원곡선 레지스트리 표준화), 데이터 출처·귀속을 기록하는 citations 메커니즘, 특허 및 특허 패밀리를 표현하는 지식재산 투명성이다. CISA 2026 SBOM 최소 요소는 SPDX(ISO/IEC 5962:2021)와 CycloneDX(ECMA-424, 2025-12)를 널리 쓰이는 두 포맷으로 병기하며, deprecated 판번호로 생성된 SBOM은 신규 소프트웨어에 대해 수용하지 말라고 권고한다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "SBOM 포맷을 사내 표준으로 정해야 하는 모든 기업.",
+      "action_for_firms": "① 원고의 'SPDX를 먼저 지원 권장' 서술은 유지하되, CycloneDX가 ECMA 국제표준(ECMA-424)이 되었고 취약점·VEX 표현이 스펙 내부에 있다는 점을 병기한다. 두 포맷 중 하나를 배제하는 정책은 이제 근거가 약하다. ② 수용 정책에 '판번호 하한'을 넣는다(예: CycloneDX 1.5 이상, SPDX 2.3 또는 3.0.1). deprecated 판번호 거부는 CISA 권고 사항이다.",
+      "practicality": "판단기준표 (포맷 × 판번호 × 수용 여부)",
+      "replaces": "content/en/using/_index.md L384-433 SPDX 중심 서술 및 L408 'SPDX 3.0은 아직 도구 지원과 업계 적용이 제한적' 판단",
+      "effective_dates": [
+        "CycloneDX v1.7 공개 2025-10-21",
+        "ECMA-424 2판 채택 2025-12",
+        "SPDX 3.0.1 (2024-12-17)"
+      ],
+      "sources": [
+        {
+          "title": "CycloneDX v1.7 Released — CycloneDX Newsroom",
+          "url": "https://cyclonedx.org/news/cyclonedx-v1.7-released/",
+          "kind": "primary"
+        },
+        {
+          "title": "ECMA-424 CycloneDX Bill of Materials Specification",
+          "url": "https://ecma-international.org/publications-and-standards/standards/ecma-424/",
+          "kind": "primary"
+        },
+        {
+          "title": "CycloneDX/specification 1.7.1 release",
+          "url": "https://github.com/CycloneDX/specification/releases",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "[사고·빌드시스템 침해] TanStack npm 공급망 침해 (2026-05)",
+      "claim": "2026-05-11 공격자가 GitHub Actions의 pull_request_target 패턴 + 캐시 오염 + 러너 메모리에서 OIDC 토큰 탈취를 연쇄해, 42개 @tanstack/* 패키지의 84개 악성 버전을 6분 만에 게시했다.",
+      "detail": "▸발생 경로: (1) bundle-size.yml 워크플로가 `pull_request_target`으로 포크 PR의 코드를 실행해 최초 기여자 승인 게이트를 우회. (2) 공격자가 난독화된 vite_setup.mjs(약 3만 줄)를 PR head에 force-push하고, actions/cache@v5의 post-job save가 오염된 pnpm 스토어를 base 저장소 캐시 키로 저장(2026-05-10 17:16 ~ 05-11 11:31 UTC). (3) 릴리스 워크플로가 그 캐시를 복원해 빌드하는 동안 공격자 바이너리가 /proc/*/cmdline로 Runner.Worker 프로세스를 찾아 /proc/<pid>/maps·/proc/<pid>/mem에서 OIDC 토큰을 추출, 정의된 배포 스텝을 건너뛰고 registry.npmjs.org에 직접 POST. ▸영향 범위: 42개 패키지 × 각 2개 버전 = 84개 악성 버전. 게시 2026-05-11 19:20~19:26 UTC, 외부 탐지 약 26분 후, 전량 deprecate 약 1시간 43분 후, npm tarball 삭제 완료 약 4시간 35분 후. 페이로드는 AWS IMDS/Secrets Manager, GCP 메타데이터, Kubernetes 토큰, Vault 토큰, ~/.npmrc, GitHub 토큰, SSH 키를 수집해 Session 네트워크로 반출하고 유지관리자의 다른 패키지로 자가 전파했다. TanStack의 Query·DB·Store·AI·Table·Form 등 다른 저장소는 미영향. ▸근본 원인: 세 취약점이 각각 상대가 지킨다고 가정한 신뢰 경계를 하나씩 넘었다 — 포크 PR 코드가 base 저장소 캐시에 접근, 그 캐시가 릴리스 워크플로까지 지속, 릴리스 워크플로가 배포 가능한 OIDC 토큰을 보유. 어느 하나만으로는 성립하지 않았다. ▸기업이 취할 방어 조치: (a) 신뢰되지 않는 코드를 실행하는 워크플로에서 `pull_request_target`을 제거한다. 필요하면 `repository_owner` 가드를 건다. (b) 서드파티 GitHub Action을 태그가 아니라 커밋 SHA로 고정한다. (c) 포크 PR 워크플로와 릴리스 워크플로가 캐시를 공유하지 않도록 캐시 키를 분리하고, 사고 시 조직 전체 캐시를 퍼지한다. (d) 배포 권한 OIDC 토큰의 유효 범위를 배포 잡으로 한정하고, 빌드 잡과 배포 잡을 분리한다. (e) 자사 패키지의 레지스트리 게시 이벤트를 실시간 모니터링해 '내가 하지 않은 배포'를 탐지한다. (f) 프로비넌스의 소스 워크플로를 검증해 예상치 못한 워크플로 배포를 걸러낸다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "GitHub Actions로 패키지를 배포하는 모든 기업. 오픈소스를 공개 운영하며 외부 PR을 받는 조직은 직접 해당.",
+      "action_for_firms": "사내 전 저장소를 대상으로 ① `pull_request_target` 사용 워크플로 전수 조사 ② 서드파티 액션의 SHA 고정 여부 점검 ③ 캐시 액션과 배포 권한이 같은 잡에 있는지 점검 — 3개 항목을 1회성 감사로 수행하고 조직 정책(GitHub ruleset)으로 재발을 막는다.",
+      "practicality": "사례 + 체크리스트",
+      "replaces": "content/en/using/_index.md L763-765 'SolarWinds 공급망 공격 (2020년)' — 빌드 시스템 침해 유형의 대표 사례로 교체 후보. SolarWinds는 6년 전 사건이고 오픈소스 공급망 맥락이 아니다.",
+      "effective_dates": [
+        "2026-05-10~11 (캐시 오염)",
+        "2026-05-11 19:20 UTC (악성 버전 게시)",
+        "2026-05-15 (TanStack 전면 점검 완료 선언)"
+      ],
+      "sources": [
+        {
+          "title": "Postmortem: TanStack npm supply-chain compromise — TanStack Blog",
+          "url": "https://tanstack.com/blog/npm-supply-chain-compromise-postmortem",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "[사고·CI 액션 침해] tj-actions/changed-files 침해 (2025-03, CVE-2025-30066)",
+      "claim": "2025-03-14~15 널리 쓰이는 GitHub Action tj-actions/changed-files의 다수 버전 태그가 악성 커밋으로 소급 변경되어, 사용 저장소의 CI 시크릿이 워크플로 로그로 유출되었다.",
+      "detail": "▸발생 경로: 공격자가 tj-actions-bot 계정의 개인 액세스 토큰(PAT)을 탈취해, 기존의 여러 버전 태그가 악성 커밋을 가리키도록 소급 이동시켰다. 악성 코드는 Runner Worker 프로세스 메모리에서 시크릿을 추출해 GitHub Actions 로그에 출력했고, 공개 저장소는 로그가 공개이므로 시크릿이 그대로 노출됐다. 선행 사건으로 reviewdog/action-setup@v1 침해(CVE-2025-30154)가 있었고, tj-actions/changed-files가 tj-actions/eslint-changed-files를 통해 reviewdog/action-setup에 의존한 것이 연쇄 침해의 경로로 지목됐다. ▸영향 범위: 사용 저장소 23,000개 이상. 유출 대상은 액세스 키, GitHub PAT, npm 토큰, 개인 RSA 키 등. 최초 표적은 Coinbase였고 이후 광범위 확산으로 전환됐다. ▸근본 원인: (a) 태그가 불변이 아니라 이동 가능한 참조라는 Git의 성질을 신뢰 지점으로 삼은 것, (b) 액션 유지관리 봇 계정의 장수명 토큰. ▸기업이 취할 방어 조치: (a) 모든 서드파티 GitHub Action을 `uses: owner/action@<40자 커밋 SHA>` 형태로 고정한다. 태그·브랜치 참조는 소급 변조 가능하다. (b) Dependabot으로 액션 SHA를 갱신 관리해 고정과 최신화를 양립시킨다. (c) 워크플로에 최소 권한(`permissions:` 명시)을 적용하고, 시크릿이 필요 없는 잡에는 시크릿을 주입하지 않는다. (d) 공개 저장소 워크플로 로그에 시크릿이 찍히지 않도록 마스킹만 믿지 말고, 애초에 해당 잡에 시크릿을 주지 않는다. (e) CISA 권고대로 사고 시 노출 가능한 모든 자격증명을 회전한다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "GitHub Actions를 쓰는 모든 기업.",
+      "action_for_firms": "사내 전 저장소의 워크플로 파일에서 서드파티 액션 참조를 grep하여 SHA 미고정 항목을 목록화하고, 조직 설정에서 '허용된 액션' 목록(verified creators + 명시 허용)을 강제한다.",
+      "practicality": "사례 + 체크리스트",
+      "replaces": "보완 (기존 원고의 'GitHub 기능을 활용한 보안 관리 사례' 절에 CI 자체가 공격면이라는 관점이 없음)",
+      "effective_dates": [
+        "2025-03-14~15 (침해 기간)",
+        "2025-03-18 (CISA 경보 발령)"
+      ],
+      "sources": [
+        {
+          "title": "Supply Chain Compromise of Third-Party tj-actions/changed-files (CVE-2025-30066) and reviewdog/action-setup@v1 (CVE-2025-30154) — CISA",
+          "url": "https://www.cisa.gov/news-events/alerts/2025/03/18/supply-chain-compromise-third-party-tj-actionschanged-files-cve-2025-30066-and-reviewdogaction",
+          "kind": "primary"
+        },
+        {
+          "title": "GHSA-mrrh-fwg8-r2c3 (CVE-2025-30066) — GitHub Advisory Database",
+          "url": "https://github.com/advisories/ghsa-mrrh-fwg8-r2c3",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "[사고·계정 탈취] axios npm 패키지 침해 (2026-03-31)",
+      "claim": "2026-03-31 axios 대표 유지관리자의 npm 자격증명이 표적 소셜 엔지니어링과 RAT 감염으로 탈취되어, 백도어가 심긴 axios@1.14.1과 axios@0.30.4가 약 3시간 동안 게시되었다.",
+      "detail": "▸발생 경로: 침해 약 2주 전 대표 유지관리자를 겨냥한 소셜 엔지니어링 캠페인이 있었고, 그 결과 RAT 악성코드로 기기가 감염되면서 npm 자격증명이 탈취됐다. 공격자는 수동으로 두 개 버전을 게시했다(1.14.1은 00:21 UTC, 0.30.4는 약 01:00 UTC). 두 버전 모두 plain-crypto-js@4.2.1이라는 악성 의존성이 주입되어 있었다. ▸영향 범위: 게시~삭제 사이(약 00:21~03:15 UTC) 해당 버전을 설치한 모든 환경. 페이로드는 macOS·Windows·Linux 전 플랫폼에 원격 접근 트로이목마를 배포했다. axios는 주간 다운로드가 수천만 회 규모인 최상위 의존성이다. ▸근본 원인: 유지관리자 개인 기기의 침해 → 장수명 배포 자격증명 보유. 코드 저장소나 CI가 아니라 사람과 기기가 경로였다. ▸기업이 취할 방어 조치: (a) 사내 빌드에서 의존성 버전을 lockfile로 고정하고, `npm ci`를 쓰며, 신규 버전 자동 승격(caret/tilde 범위 자동 반영)을 릴리스 브랜치에서 금지한다. (b) 신규 버전 게시 후 일정 시간(예: 24~72시간) 경과 후에만 사내 미러로 승격하는 'cooldown' 정책을 둔다. 이번 사고는 3시간 내에 삭제되었으므로 cooldown만으로 회피된다. (c) `npm audit signatures`로 프로비넌스 검증을 강제한다 — 수동 게시된 버전은 프로비넌스가 없어 검증에서 걸린다. (d) 사내 유지관리자 계정은 OIDC Trusted Publishing으로 전환해 개인 기기에 배포 자격증명 자체를 두지 않는다. axios 팀도 사후 조치로 OIDC 배포와 immutable release를 도입했다. (e) 개발자 기기의 EDR과 피싱 저항 MFA(WebAuthn)를 의무화한다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "npm 의존성을 사용하는 모든 기업. 특히 사내 미러/프록시 없이 공개 레지스트리를 직접 당겨 쓰는 조직.",
+      "action_for_firms": "사내 아티팩트 프록시(Nexus/Artifactory 등)에 'npm 신규 버전 최소 유예 기간' 정책을 설정하고, 릴리스 파이프라인은 lockfile 고정 + 프로비넌스 검증을 통과한 버전만 사용하도록 게이트를 건다.",
+      "practicality": "사례 + 체크리스트",
+      "replaces": "content/en/using/_index.md L767-769 'event-stream 패키지 악성코드 삽입 (2018년)' — 계정 탈취 유형의 대표 사례로 교체 후보. event-stream은 8년 전 사건이며 당시에는 프로비넌스·Trusted Publishing 같은 대응 수단이 존재하지 않아 '무엇을 했으면 막았나'를 쓸 수 없다.",
+      "effective_dates": [
+        "2026-03-31 00:21 UTC (첫 악성 버전 게시)",
+        "2026-03-31 03:15 UTC 경 (삭제 완료)"
+      ],
+      "sources": [
+        {
+          "title": "Post Mortem: axios npm supply chain compromise (axios/axios issue #10636)",
+          "url": "https://github.com/axios/axios/issues/10636",
+          "kind": "primary"
+        },
+        {
+          "title": "Supply Chain Compromise of axios npm Package — Huntress",
+          "url": "https://www.huntress.com/blog/supply-chain-compromise-axios-npm-package",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "topic": "[사고·자가전파 웜] Shai-Hulud npm 웜 1차·2차 및 파생(Mini Shai-Hulud/Miasma)",
+      "claim": "2025-09 npm 생태계에서 자가 복제 웜 'Shai-Hulud'가 500개 이상 패키지를 감염시켰고, 2025-11 2차 웜은 수만 개 GitHub 저장소로 확산되었으며, 2026년에는 공개된 파생 도구킷이 다른 조직 침해에 재사용되었다.",
+      "detail": "▸발생 경로: 유지관리자 자격증명 탈취로 초기 접근 → 악성코드가 환경을 스캔해 GitHub PAT와 AWS·GCP·Azure API 키를 수집 → 수집한 자격증명을 공격자 엔드포인트로 반출하고 GitHub /user/repos API로 'Shai-Hulud'라는 공개 저장소에 업로드 → 탈취한 npm 토큰으로 레지스트리에 인증해 해당 개발자의 다른 패키지에 코드를 주입·게시하는 과정을 자동화해 지수적으로 확산. 2025-11 2차 웜은 preinstall 단계에서 setup_bun.js가 난독화된 bun_environment.js를 투입하는 방식으로 고도화됐다. ▸영향 범위: 1차(2025-09-14~18) 200~500개 이상 패키지·500개 이상 버전, AsyncAPI·Zapier·PostHog·Postman 등 포함(수치가 자료마다 엇갈려 병기). 2차(2025-11-24~)는 약 350개 계정에 걸쳐 25,000개 이상 악성 저장소가 생성될 만큼 확산 폭이 컸다. 2026-06에는 파생 도구킷 'Miasma'(Mini Shai-Hulud)가 Red Hat의 @redhat-cloud-services 네임스페이스 32개 패키지 침해에 사용됐다. ▸근본 원인: (a) 레지스트리 토큰이 장수명이고 범위가 넓어 하나의 탈취가 유지관리자의 전체 패키지 권한으로 이어짐, (b) install 라이프사이클 스크립트가 기본 실행되어 설치만으로 코드가 돌아감, (c) 개발자 워크스테이션과 CI가 클라우드 자격증명을 평문 보유. ▸기업이 취할 방어 조치: CISA 경보 권고 기준 — (a) package-lock.json/yarn.lock으로 의존성 트리 전수 검토, (b) 아티팩트 저장소의 캐시된 악성 버전까지 검색·제거, (c) 안전한 시점 이전 버전으로 핀 고정, (d) 개발자 자격증명 즉시 회전, (e) GitHub·npm 등 핵심 플랫폼에 피싱 저항 MFA 의무화, (f) webhook.site 등 반출 도메인 아웃바운드 차단, (g) 불필요한 GitHub App·OAuth 앱 제거 및 저장소 웹훅·시크릿 감사, (h) 브랜치 보호·Secret Scanning·Dependabot 활성화. 추가로 CI 설치 시 `npm ci --ignore-scripts`를 기본으로 하고 스크립트가 꼭 필요한 패키지만 허용 목록으로 관리하면 preinstall/postinstall 계열 공격의 대부분이 무력화된다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "npm을 사용하는 모든 기업. 개발자 워크스테이션에 클라우드 자격증명을 두는 조직은 피해 규모가 커진다.",
+      "action_for_firms": "① CI 컨테이너와 개발자 기기에서 클라우드 장수명 키를 제거하고 단기 OIDC 자격증명으로 전환한다(웜의 수익 모델이 바로 이 키다). ② `--ignore-scripts` 기본화 + 예외 허용 목록을 표준 .npmrc로 배포한다. ③ 사고 대응 플레이북에 '레지스트리 웜' 시나리오를 추가하고, 자격증명 일괄 회전 소요 시간을 측정해 둔다.",
+      "practicality": "사례 + 체크리스트(사고 대응 플레이북 항목)",
+      "replaces": "보완 (기존 원고 '주요 오픈소스 보안 사고 사례'에 자가전파 유형이 없음)",
+      "effective_dates": [
+        "2025-09-14~18 (1차 확산)",
+        "2025-09-23 (CISA 경보)",
+        "2025-11-24~ (2차 확산)",
+        "2026-05-29~06-01 (Miasma 파생, Red Hat 사례)"
+      ],
+      "sources": [
+        {
+          "title": "Widespread Supply Chain Compromise Impacting npm Ecosystem — CISA Alert (2025-09-23)",
+          "url": "https://www.cisa.gov/news-events/alerts/2025/09/23/widespread-supply-chain-compromise-impacting-npm-ecosystem",
+          "kind": "primary"
+        },
+        {
+          "title": "RHSB-2026-006 Supply chain compromise of @redhat-cloud-services npm packages — Red Hat",
+          "url": "https://access.redhat.com/security/vulnerabilities/RHSB-2026-006",
+          "kind": "primary"
+        },
+        {
+          "title": "Shai-Hulud 2.0: Guidance for detecting, investigating, and defending — Microsoft Security Blog",
+          "url": "https://www.microsoft.com/en-us/security/blog/2025/12/09/shai-hulud-2-0-guidance-for-detecting-investigating-and-defending-against-the-supply-chain-attack/",
+          "kind": "secondary"
+        },
+        {
+          "title": "\"Shai-Hulud\" Worm Compromises npm Ecosystem — Unit 42",
+          "url": "https://unit42.paloaltonetworks.com/npm-supply-chain-attack/",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "topic": "[사고·개발도구 침해] Red Hat @redhat-cloud-services npm 패키지 침해 (2026-06)",
+      "claim": "악성 VS Code 확장으로 GitHub 계정이 탈취되어 2026-05-29 Red Hat GitHub 조직의 저장소에 악성 코드가 주입되었고, @redhat-cloud-services 네임스페이스의 32개 npm 패키지가 침해되었다.",
+      "detail": "▸발생 경로: 개발자가 설치한 악성 VS Code 확장 → GitHub 계정 탈취 → Red Hat GitHub 조직 저장소에 악성 코드 주입 및 설정 파일 변조(같은 디렉터리에서 작업하는 다른 개발자에게도 영향) → npm 레지스트리에 침해 버전 게시. 공개 악성 도구킷 'Miasma'(Mini Shai-Hulud) 사용. ▸영향 범위: 32개 @redhat-cloud-services 패키지. 이들은 Hybrid Cloud Console(console.redhat.com) 개발 전용 프론트엔드 라이브러리로 고객 제품이 아니며, 침해 기간 중 Console 릴리스가 없었고 Red Hat 배포 프로세스가 install 스크립트를 제거하므로 운영 환경까지 도달하지 않았다. Azure Red Hat OpenShift·OpenShift Dedicated·ROSA 등 클라우드 서비스는 미영향. 2026-06-01 봉쇄·공개, 2026-06-17 사건 종결. ▸근본 원인: 에디터 확장이 개발자 계정 권한 전체에 접근할 수 있는 신뢰 지점이라는 점. 패키지 레지스트리와 CI만 방어하고 IDE 확장 생태계는 통제하지 않은 공백. ▸기업이 취할 방어 조치: (a) 사내 개발자 IDE의 확장 설치를 허용 목록 기반으로 통제한다. (b) 개발자 기기에서 GitHub 인증을 장수명 PAT 대신 짧은 세션·SSO로 유지한다. (c) Red Hat의 피해를 줄인 요인이 '배포 파이프라인이 install 스크립트를 제거하는 설계'였다는 점에 주목해, 사내 빌드도 `--ignore-scripts`를 기본으로 한다. (d) 조직 저장소에 푸시 보호(push protection)와 필수 리뷰를 걸어 계정 하나의 침해가 곧 코드 변경으로 이어지지 않게 한다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "개발자가 자유롭게 IDE 확장을 설치하는 모든 기업. 국내 다수 기업이 이 영역을 통제하지 않는다.",
+      "action_for_firms": "IDE 확장 정책을 사내 보안 정책 문서에 신설한다 — 허용 목록, 설치 승인 절차, 확장 업데이트 모니터링. 이는 '오픈소스 사용 정책'의 사각지대다.",
+      "practicality": "사례 + 정책 항목 템플릿",
+      "replaces": "신규",
+      "effective_dates": [
+        "2026-05-29 (악성 코드 주입)",
+        "2026-06-01 (봉쇄·공개)",
+        "2026-06-17 (사건 종결)"
+      ],
+      "sources": [
+        {
+          "title": "RHSB-2026-006 Supply chain compromise of @redhat-cloud-services npm packages — Red Hat Customer Portal",
+          "url": "https://access.redhat.com/security/vulnerabilities/RHSB-2026-006",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "[사고·유지관리자 소셜 엔지니어링] XZ Utils 백도어 (2024-03, CVE-2024-3094) — 서술 보정",
+      "claim": "기존 원고의 XZ Utils 서술은 사실관계는 맞으나 '코드 리뷰의 취약성'으로만 결론지어 기업이 취할 조치가 없다. 실제 핵심은 단일 유지관리자 프로젝트에 대한 장기 신뢰 획득 공격이었고, 방어는 조직 차원의 의존성 관리에 있다.",
+      "detail": "▸발생 경로: 공격자 'Jia Tan'이 약 2년에 걸쳐 XZ Utils에 기여하며 신뢰를 쌓아 공동 유지관리자 권한을 얻은 뒤, 소스 저장소가 아니라 릴리스 tarball에만 존재하는 빌드 스크립트와 테스트 픽스처 형태로 백도어를 삽입했다. 동시에 여러 계정이 원 유지관리자에게 '릴리스가 느리다'는 압박을 가한 정황이 보고됐다. ▸영향 범위: xz 5.6.0·5.6.1을 포함한 배포판(Fedora Rawhide/40 beta, Debian testing/unstable, openSUSE Tumbleweed 등)에서 sshd의 인증 우회 가능. 안정 배포판 도달 직전에 발견되어 대규모 실피해는 회피됐다. ▸근본 원인: (a) 사실상 1인 유지관리 프로젝트가 광범위한 배포판의 핵심 경로에 있었던 구조적 리스크, (b) 소스 저장소와 배포 tarball의 내용이 달랐다는 점 — 소스만 리뷰해서는 발견할 수 없었다. ▸기업이 취할 방어 조치: (a) 자사 제품의 필수 경로에 있는 오픈소스 중 '유지관리자 수 1~2명' 프로젝트를 식별해 목록화한다(Scorecard의 Maintained·Contributors 체크, OpenSSF Criticality Score 활용). (b) 그 목록에 대해 후원·기여·인력 배정 중 하나를 선택해 실행한다. 목록만 만들고 아무것도 하지 않으면 리스크는 그대로다. (c) 배포판 tarball이 아니라 VCS 태그에서 빌드하는 것을 원칙으로 하고, tarball을 써야 하면 소스와의 차이를 검증한다(SLSA Source 트랙과 재현 가능 빌드가 다루는 문제다). (d) 상류 프로젝트의 유지관리자 변경 이벤트를 모니터링한다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "리눅스 배포판 위에서 제품을 만드는 모든 기업. 임베디드·네트워크 장비 제조사는 특히.",
+      "action_for_firms": "SBOM에서 '유지관리자 1인' 컴포넌트를 추출하는 정기 리포트를 만들고, 상위 20개에 대해 후원/기여/대체 중 하나를 연 1회 의사결정한다.",
+      "practicality": "사례 보완 + 체크리스트",
+      "replaces": "content/en/using/_index.md L755-757 XZ Utils 서술 — 유지 하되 '기업이 취할 조치'를 추가하고, 원고의 각주 [^blackkilt2024](blackkilt.com 블로그)를 1차 출처로 교체 필요",
+      "effective_dates": [
+        "2024-03-29 (공개)"
+      ],
+      "sources": [
+        {
+          "title": "CVE-2024-3094 — NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-3094",
+          "kind": "primary"
+        },
+        {
+          "title": "OpenSSF and OpenJS Foundations Issue Alert for Social Engineering Takeovers of Open Source Projects",
+          "url": "https://openssf.org/blog/2024/04/15/open-source-security-openssf-and-openjs-foundations-issue-alert-for-social-engineering-takeovers-of-open-source-projects/",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "[사고·타이포스쿼팅] 결제 SDK 대상 npm·PyPI 동시 타이포스쿼팅 캠페인 (2026-07) 및 PyPI Shai-Hulud 모방 캠페인 (2026-06)",
+      "claim": "2026-07-07 npm 13개·PyPI 4개의 악성 패키지가 PaySafe·Skrill·Neteller 결제 SDK를 사칭했고, 2026-06-07에는 Flask·Requests·NumPy를 사칭한 PyPI 패키지가 CI/CD 자격증명을 노렸다.",
+      "detail": "▸발생 경로: 정상 패키지와 유사한 이름으로 레지스트리에 등록(타이포스쿼팅). 설치 시점에 실행되는 스크립트로 API 키·토큰·시크릿을 수집해 외부(예: AWS 인프라)로 반출한다. import나 함수 호출이 필요 없다. ▸영향 범위: 2026-07 캠페인은 npm 13개(각 1.0.0~1.0.3 버전)·PyPI 4개, 결제 SDK 사용 개발자 대상. npm 패키지는 게시 6분 내 악성으로 분류됐다. 2026-06 캠페인은 단일 계정(elitexp)의 PyPI 패키지 5개(사칭 4개 + 무기화된 정상 프로젝트 1개)로, 주요 클라우드 전반의 CI/CD 환경을 노리는 자가 전파 자격증명 탈취기를 포함했다. ▸근본 원인: 레지스트리가 이름 등록을 사전 심사하지 않는 구조 + 설치 시 스크립트 자동 실행 + 개발자의 오타·기억 의존 설치. ▸기업이 취할 방어 조치: (a) 공개 레지스트리 직접 접근을 막고 사내 프록시/미러만 허용하되, 미러의 신규 패키지 반입에 승인 절차를 둔다. (b) 설치 스크립트를 기본 비활성화(`--ignore-scripts`)한다. (c) 신규 패키지·신규 게시자 여부를 CI에서 검사한다(게시일이 며칠 이내인 패키지는 차단 후 검토). (d) 자사 브랜드·내부 프로젝트명과 유사한 이름이 공개 레지스트리에 등록되는지 모니터링하고, 사내 스코프(@회사명)를 공개 레지스트리에 선점 등록한다.",
+      "confidence": "medium",
+      "target_section": "using",
+      "applies_to_korean_firms": "npm·PyPI를 사용하는 모든 기업. 결제·금융 SDK를 쓰는 조직은 표적성이 높다.",
+      "action_for_firms": "사내 아티팩트 프록시에 '신규 게시 N일 이내 패키지 차단' 규칙과 '설치 스크립트 비활성' 기본값을 설정한다. 이 두 가지가 타이포스쿼팅 대응의 비용 대비 효과가 가장 크다.",
+      "practicality": "사례 + 체크리스트",
+      "replaces": "content/en/using/_index.md L738 '이름 혼동 공격' 서술 — 개념만 있고 사례·조치가 없음",
+      "effective_dates": [
+        "2026-07-07 (결제 SDK 캠페인 발견)",
+        "2026-06-07 (PyPI Shai-Hulud 모방 캠페인 발견)"
+      ],
+      "sources": [
+        {
+          "title": "Shai-Hulud copycat campaign targets Python developers through PyPI typosquatting — GitLab",
+          "url": "https://about.gitlab.com/blog/shai-hulud-copycat-campaign-targets-python-developers/",
+          "kind": "secondary"
+        },
+        {
+          "title": "Coordinated npm and PyPI Campaign Typosquats Popular Secure Payment Apps — Socket",
+          "url": "https://socket.dev/blog/npm-pypi-campaign-typosquats-popular-secure-payment-apps",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "topic": "[사고·의존성 혼동] 조직 스코프 사칭 npm 패키지 45건 (2026-05)",
+      "claim": "2026-05-28~29 세 개의 npm 계정이 9개 조직 스코프를 사칭한 45개 악성 패키지를 게시했다. 버전을 100.100.100처럼 비정상적으로 높게 매겨 의존성 해석에서 내부 패키지를 이기도록 설계했다.",
+      "detail": "▸발생 경로: 공격자가 표적 조직의 내부 패키지 스코프명(@cloudplatform-single-spa, @wb-track, @data-science, @payments-widget, @travel-autotests, @capibar.chat, @sber-ecom-core 등)을 알아내 공개 npm에 동일 스코프로 패키지를 등록. 버전을 100.100.100·99.0.7·5.7.1 등으로 부풀려, 사내 레지스트리와 공개 레지스트리를 함께 조회하는 잘못된 설정에서 공개 쪽 패키지가 선택되게 했다. 일부는 2026-05-04에 미리 심어 두었다(pre-staging). postinstall 훅으로 자동 실행되며 피해자의 코드 호출이 필요 없다. ▸영향 범위: 45개 패키지(계정별 26·7·12개), 9개 조직 스코프. 수집 대상은 시스템 정보, 호스트명, 환경변수, 개발자 컨텍스트, 그리고 자격증명·CI/CD 시크릿. ▸근본 원인: 사내 패키지 이름이 외부에 노출되고(구인 공고, 공개 저장소, 이슈의 에러 메시지, Docker 레이어 메타데이터 등), 패키지 매니저가 사내와 공개 레지스트리를 모두 조회하되 버전이 높은 쪽을 고르는 기본 해석 규칙을 따르는 것. ▸기업이 취할 방어 조치: (a) .npmrc에 스코프별 레지스트리를 고정한다(`@회사명:registry=https://사내레지스트리`). 이것 하나로 의존성 혼동 대부분이 차단된다. (b) 사내 스코프명을 공개 npm에 선점 등록해 둔다. (c) `npm install --ignore-scripts`를 기본으로 하고 postinstall 필요 패키지를 예외 관리한다. (d) 사내 패키지 이름이 공개 아티팩트(Docker 이미지 레이어, 소스맵, 공개 이슈)에 새는지 점검한다. (e) 사고 시 영향 시스템의 자격증명·토큰·CI/CD 시크릿을 회전한다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "사내 npm/PyPI 레지스트리를 운영하며 공개 레지스트리를 폴백으로 두는 모든 기업. 국내 대기업·SI의 사내 저장소 구성에서 흔한 취약 패턴.",
+      "action_for_firms": "사내 표준 .npmrc(스코프별 레지스트리 고정 + ignore-scripts)를 배포하고, 사내 스코프명의 공개 레지스트리 선점 등록 여부를 확인한다. 이 두 항목을 신규 프로젝트 생성 템플릿에 넣는다.",
+      "practicality": "사례 + 설정 템플릿(.npmrc)",
+      "replaces": "신규 (기존 원고에 의존성 혼동 유형 없음)",
+      "effective_dates": [
+        "2026-05-04 (사전 심기)",
+        "2026-05-28~29 (본 캠페인)"
+      ],
+      "sources": [
+        {
+          "title": "Malicious npm packages abuse dependency confusion to profile developer environments — Microsoft Security Blog (2026-05-29)",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/05/29/33-malicious-npm-packages-abuse-dependency-confusion-profile-developer-environments/",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "topic": "유지관리자 지속가능성 — curl 버그바운티 종료 사건이 보여주는 구조",
+      "claim": "curl은 AI로 생성된 허위 취약점 보고의 홍수로 2026-01-31에 7년간 운영한 버그바운티를 종료했고, 2026-03-01 HackerOne으로 복귀했으나 포상금은 부활시키지 않았다.",
+      "detail": "▸경과: 2019년 시작한 curl 버그바운티는 87건의 실제 취약점을 확인하고 총 10만 달러 이상을 지급했다. 2024년 하반기부터 보고의 성격이 바뀌어, 예전 약 15%였던 '보고 → 실제 취약점' 비율이 2025년에는 5% 미만으로 떨어졌다. 존재하지 않는 함수를 근거로 GDB 세션과 레지스터 덤프까지 붙인 HTTP/3 취약점 보고 같은 사례가 대표적이다. Stenberg는 2026-01-26 종료를 공지하고 2026-01-31까지만 HackerOne 접수를 받은 뒤 GitHub Security Advisory로 이전했으나, GitHub 방식의 결함 15가지(보고 전문이 이메일 알림으로 발송되어 비활성화 불가, 무효 보고를 '무효'로 명시해 공개할 수 없음, curl이 자체 CNA임에도 CVE 번호 필드 편집 불가, 팀 전용 비공개 코멘트 부재 등)를 이유로 2026-03-01 HackerOne으로 복귀했다. 포상금은 영구 폐지 상태다. ▸구조적 함의: 오픈소스 유지관리자의 병목은 '취약점을 못 고치는 것'이 아니라 '무엇이 진짜 취약점인지 판별하는 데 드는 시간'으로 이동했다. Linux Foundation이 2026-03-17 발표한 1,250만 달러 보조금(Anthropic·AWS·GitHub·Google·Google DeepMind·Microsoft·OpenAI 출연, Alpha-Omega와 OpenSSF가 집행)도 명시적으로 'AI가 생성한 취약점 보고를 감당하는 유지관리자 지원'과 '트리아지·수정 자동화 도구'를 용도로 든다. Alpha-Omega는 지금까지 70건 이상, 2,000만 달러 이상을 배분했다.",
+      "confidence": "high",
+      "target_section": "contributing",
+      "applies_to_korean_firms": "오픈소스에 취약점을 보고하거나, 사내 보안팀이 AI 도구로 오픈소스를 스캔해 상류에 보고하는 기업. 그리고 자사 오픈소스를 운영하는 기업.",
+      "action_for_firms": "① 사내 보안팀·AI 도구가 상류 오픈소스에 취약점을 보고할 때 '사람이 재현 검증한 것만 보고한다'를 규칙으로 명문화한다. AI 출력을 그대로 보내는 것은 커뮤니티에 대한 비용 전가이며, 기업 평판 리스크다. ② 자사가 의존하는 핵심 프로젝트의 유지관리 부담을 실제로 덜어주는 기여(트리아지 인력 배정, 재현 케이스 작성)를 후원금보다 우선 검토한다. ③ 자사 오픈소스를 운영한다면 보안 보고 접수 채널에 '재현 절차 필수' 요건과 AI 생성 보고 정책을 SECURITY.md에 명시한다.",
+      "practicality": "사례 + 정책 문구 템플릿(SECURITY.md 및 사내 취약점 보고 규칙)",
+      "replaces": "보완 (기존 원고의 기여 장에 '보고 품질'이라는 관점이 없음)",
+      "effective_dates": [
+        "2026-01-26 (종료 공지)",
+        "2026-01-31 (HackerOne 접수 종료)",
+        "2026-03-01 (HackerOne 복귀, 포상금 없음)",
+        "2026-03-17 (LF 1,250만 달러 보조금 발표)"
+      ],
+      "sources": [
+        {
+          "title": "The end of the curl bug-bounty — daniel.haxx.se (2026-01-26)",
+          "url": "https://daniel.haxx.se/blog/2026/01/26/the-end-of-the-curl-bug-bounty/",
+          "kind": "primary"
+        },
+        {
+          "title": "curl security moves again — daniel.haxx.se (2026-02-25)",
+          "url": "https://daniel.haxx.se/blog/2026/02/25/curl-security-moves-again/",
+          "kind": "primary"
+        },
+        {
+          "title": "Linux Foundation Announces $12.5 Million in Grant Funding to Advance Open Source Security — OpenSSF (2026-03-17)",
+          "url": "https://openssf.org/press-release/2026/03/17/linux-foundation-announces-12-5-million-in-grant-funding-from-leading-organizations-to-advance-open-source-security/",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "AI 생성 코드의 패키지 환각과 슬롭스쿼팅(slopsquatting)",
+      "claim": "LLM이 생성한 코드가 존재하지 않는 패키지를 import하는 비율은 상용 모델 평균 5.2%, 오픈 모델 평균 21.7%이며, 공격자가 그 이름을 선점 등록하는 '슬롭스쿼팅'이 새로운 이름 혼동 공격 유형으로 성립했다.",
+      "detail": "USENIX Security 2025 발표 논문(Spracklen 외, UT San Antonio·Oklahoma·Virginia Tech)이 16개 LLM·2개 프롬프트 데이터셋의 576,000개 코드 샘플을 분석한 결과, 추천된 패키지의 약 19.7%가 환각이었고 고유한 비존재 패키지 이름이 205,000개 이상 나왔다. 모델군별로는 상용 모델 5.2%, 오픈소스 모델 21.7%. 환각 이름은 무작위가 아니라 반복 재현되는 패턴을 보여(개념 혼성 38%, 오타 변형 13%, 순수 창작 51%) 공격자가 예측·선점하기 쉽다. 또한 Python 코드에서 환각된 패키지 이름의 8.7%가 실제로 npm에 존재해 생태계 교차 혼동 위험이 있다. 주의: 위 비율은 2025년 시점의 모델 판본 기준이며 최신 모델에서는 다를 수 있다. 2026년 프론티어 모델 코호트를 재평가한 후속 연구가 arXiv에 프리프린트로 올라와 있으나 피어리뷰 상태는 미확인이다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "AI 코딩 도구를 사용하는 모든 개발 조직. 국내 기업 대부분이 해당한다.",
+      "action_for_firms": "① AI가 제안한 import·의존성 추가는 사람이 레지스트리에서 실제 존재와 게시자를 확인한 뒤에만 커밋하도록 코드 리뷰 체크리스트에 넣는다. ② CI에 '신규 의존성 추가 감지' 게이트를 두어, package.json/requirements.txt에 새 항목이 들어오면 리뷰어를 자동 지정한다. ③ 사내 프록시에서 '게시된 지 N일 이내' 및 '다운로드 수 임계 이하' 패키지를 차단해 선점 등록된 슬롭스쿼팅 패키지를 걸러낸다. ④ 사내 AI 코딩 도구 정책에 '환각 패키지 확인 의무'를 명문 조항으로 넣는다.",
+      "practicality": "체크리스트 + 사내 AI 코딩 정책 조항 템플릿",
+      "replaces": "신규",
+      "effective_dates": [
+        "2025-08 (USENIX Security 2025 발표)"
+      ],
+      "sources": [
+        {
+          "title": "Spracklen et al., We Have a Package for You! A Comprehensive Analysis of Package Hallucinations by Code Generating LLMs — USENIX Security 2025",
+          "url": "https://www.usenix.org/conference/usenixsecurity25/presentation/spracklen",
+          "kind": "primary"
+        },
+        {
+          "title": "논문 PDF (USENIX)",
+          "url": "https://www.usenix.org/system/files/usenixsecurity25-spracklen.pdf",
+          "kind": "primary"
+        },
+        {
+          "title": "Spracks/PackageHallucination (코드·데이터)",
+          "url": "https://github.com/Spracks/PackageHallucination",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "AI 생성 코드의 취약점 유입률과 검증 절차",
+      "claim": "Veracode의 반복 측정에서 LLM이 생성한 코드가 보안 검사를 통과하는 비율은 약 55%로 2년째 개선되지 않았다. 모델이 커지고 새로워져도 보안 품질은 나아지지 않았다.",
+      "detail": "Veracode의 2025 GenAI Code Security Report는 100개 이상 모델·80개 이상 코딩 과제에서 45%의 샘플이 OWASP Top 10 유형 취약점을 포함한다고 보고했다. 2026-03-24 공개된 Spring 2026 업데이트는 누적 150개 이상 모델을 대상으로 4개 언어(Java·JavaScript·C#·Python)와 4개 CWE(SQL Injection CWE-89, XSS CWE-80, Log Injection CWE-117, 취약한 암호 알고리즘 CWE-327)를 조합별 5개 과제로 측정해, 보안 통과율이 약 55%로 정체되어 있다고 밝혔다. 언어별 통과율은 Python 62%, C# 58%, JavaScript 57%, Java 29%. CWE별로는 SQL Injection과 취약 암호 알고리즘이 82~86%로 양호한 반면, 데이터 흐름 분석이 필요한 XSS와 Log Injection은 13~15%로 매우 낮다. 별도로, 공개 GitHub 저장소의 AI 생성 파일 7,703개를 CodeQL로 분석한 연구(Schreiber·Tippe, arXiv:2510.26103, 2025-10-30 제출, LNCS 게재본 존재)는 4,241건의 CWE 인스턴스·77개 유형을 확인했고, 파일의 87.9%에는 CWE 매핑 취약점이 없었다고 보고했다. 언어별 취약 비율은 Python 16.18~18.50%, JavaScript 8.66~8.99%, TypeScript 2.50~7.14%. ▸측정 방식이 서로 달라(과제 기반 생성 vs 실제 저장소 정적분석) 수치를 직접 비교할 수 없다. 두 결과가 공통으로 시사하는 것은 언어별·취약점 유형별 편차가 크고, 데이터 흐름을 추적해야 하는 유형(XSS·인젝션 계열)에서 AI 생성 코드가 특히 약하다는 점이다.",
+      "confidence": "medium",
+      "target_section": "using",
+      "applies_to_korean_firms": "AI 코딩 도구를 도입한 모든 개발 조직.",
+      "action_for_firms": "① AI 생성 코드에 대해서도 동일한 SAST/코드 스캐닝을 예외 없이 적용하고, '사람이 쓴 코드'와 구분해 통계를 낸다. ② 데이터 흐름 분석 기반 검사(taint analysis)를 반드시 포함한다 — 패턴 매칭만 하는 린터는 AI 코드가 가장 약한 유형을 놓친다. ③ Java 코드에 AI 도구를 쓰는 조직은 검증 강도를 높인다(측정에서 일관되게 최하위). ④ 사내 AI 코딩 정책에 '생성 코드도 리뷰·스캔 대상이며 예외 없음'을 명문화한다. ⑤ 벤더 수치를 사내 문서에 인용할 때는 측정 방식(과제 기반인지 실제 코드베이스인지)을 함께 적는다.",
+      "practicality": "체크리스트 + 개념설명(측정 방식 차이 해석)",
+      "replaces": "신규",
+      "effective_dates": [
+        "2025-07-30 (Veracode 2025 GenAI Code Security Report)",
+        "2026-03-24 (Veracode Spring 2026 업데이트)"
+      ],
+      "sources": [
+        {
+          "title": "Spring 2026 GenAI Code Security Update — Veracode",
+          "url": "https://www.veracode.com/blog/spring-2026-genai-code-security/",
+          "kind": "secondary"
+        },
+        {
+          "title": "2025 GenAI Code Security Report — Veracode (PDF)",
+          "url": "https://www.veracode.com/wp-content/uploads/2025_GenAI_Code_Security_Report_Final.pdf",
+          "kind": "secondary"
+        },
+        {
+          "title": "Schreiber & Tippe, Security Vulnerabilities in AI-Generated Code: A Large-Scale Analysis of Public GitHub Repositories (arXiv:2510.26103)",
+          "url": "https://arxiv.org/abs/2510.26103",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "공급망 위협 규모 통계 갱신 (Sonatype)",
+      "claim": "Sonatype 11번째 연례 보고서(2026-01-28 발표, 2025년 데이터)에 따르면 2025년 신규 악성 패키지는 454,600건 이상, 누적 차단 1,233,000건 이상(전년 대비 75% 증가), 4대 레지스트리 연간 다운로드는 9.8조 건(전년 대비 67% 증가)이다.",
+      "detail": "기존 원고가 인용한 '2024년 6.6조 건 다운로드(+52%)', '악성 패키지 512,847건(+156%)'을 대체한다. 표본·측정 방식: Maven Central을 주 렌즈로 한 익명 집계 레지스트리 텔레메트리 + Sonatype 보안 연구팀의 악성코드 조사(자동 탐지 + 전문가 검토). 중복·변종을 정규화해 과대 집계를 방지했다고 밝힌다. 취약점 분석 대상 기간은 2025-01-01~12-31, AI 에이전트 분석은 2025-06~08 기업 애플리케이션 스캔. 다운로드는 '고유 사용자 수의 대리 지표가 아니라 빌드 시스템이 실제로 당긴 소비 신호'로 정의한다. 기타 수치: 악성 패키지의 99% 이상이 npm에 집중, 자가 복제 웜만으로 몇 달 만에 171,000개 이상 추가, Log4Shell이 2025년에도 4,200만 회 다운로드, CVE가 있는 EOL·패치 불가 패키지 버전 최소 81,000개, GPT-5의 컴포넌트 버전 추천 환각률 27.8%. ▸주의: 이 보고서의 '2026 State of the Software Supply Chain'이라는 명칭은 발간 연도 기준이며 데이터는 2025년이다. 원고에 인용할 때 연도 혼동이 생기기 쉽다.",
+      "confidence": "medium",
+      "target_section": "using",
+      "applies_to_korean_firms": "전 기업 (배경 통계).",
+      "action_for_firms": "통계는 배경 설명용으로만 쓰고, 사내 의사결정 근거로는 자사 SBOM에서 추출한 수치(총 컴포넌트 수, EOL 컴포넌트 수, KEV 해당 건수)를 쓴다.",
+      "practicality": "개념설명 + 수치표",
+      "replaces": "content/en/using/_index.md L690, L705, L723-728 Sonatype 2024 보고서 인용 수치 전체",
+      "effective_dates": [
+        "2026-01-28 (보고서 발표, 2025년 데이터)"
+      ],
+      "sources": [
+        {
+          "title": "Sonatype Research Reveals Open Source Malware Grows 75% as Yearly Open Source Downloads Surpass 9.8 Trillion (2026-01-28)",
+          "url": "https://www.sonatype.com/press-releases/sonatype-research-reveals-open-malware-grows-75-percent",
+          "kind": "secondary"
+        },
+        {
+          "title": "Methodology — 2026 Software Supply Chain Report, Sonatype",
+          "url": "https://www.sonatype.com/state-of-the-software-supply-chain/2026/methodology",
+          "kind": "secondary"
+        },
+        {
+          "title": "Open Source Malware — 2026 Software Supply Chain Report, Sonatype",
+          "url": "https://www.sonatype.com/state-of-the-software-supply-chain/2026/open-source-malware",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "topic": "SBOM 정확도 — 매니페스트 기반 스캔만으로는 컴포넌트 6분의 1을 놓친다",
+      "claim": "Black Duck 2026 OSSRA 감사에서 오픈소스 컴포넌트의 84%만 패키지 매니저·매니페스트 자동 탐지로 발견되었고, 나머지 16%는 스니펫 매칭·바이너리 분석·수동 검토가 필요했다.",
+      "detail": "표본: 2024-11~2025-10 사이 Black Duck Audit Services가 감사한 947개 상용 코드베이스, 17개 산업(최대 세그먼트는 Enterprise Software/SaaS 415개). 주요 수치 — 오픈소스를 포함한 코드베이스 98%(전년 97%), 애플리케이션당 평균 오픈소스 컴포넌트 1,180개(전년 911개, +30%), 취약점 1건 이상 포함 코드베이스 87%, 코드베이스당 평균 취약점 581건(전년 280건, +107%)·중앙값 78건·평균 고유 취약점 237건, 고위험 취약점 포함 78%(전년 81%), 치명적 위험 포함 44%(전년 48%), 2년 이상 개발 활동이 없는 컴포넌트를 포함한 코드베이스 93%, 4년 이상 뒤처진 컴포넌트를 포함 92%, 컴포넌트의 68%가 24개월 초과 경과. 별도 설문(표본·방법 미상세)에서 응답 조직의 65%가 최근 1년 내 소프트웨어 공급망 공격을 경험했다고 답했으며, Black Duck이 확인한 악성 패키지 중 66%는 타이포스쿼팅·의존성 혼동 등 처음부터 악의로 만든 것, 34%는 신뢰를 얻은 뒤 탈취된 정상 패키지였다. ▸주의: 감사 데이터(947개 코드베이스)와 설문 데이터(65%)는 모수가 다르다. 원고에서 병기할 때 구분해야 한다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "SBOM을 생성해 제출하는 모든 기업. 특히 벤더 코드·복사 붙여넣기 코드·바이너리 포함이 많은 임베디드·SI 산출물.",
+      "action_for_firms": "① SBOM 생성 도구가 매니페스트만 읽는지 확인한다. Syft·Trivy·cdxgen 같은 매니페스트 기반 도구만 쓰면 컴포넌트의 약 6분의 1이 SBOM에 없다. ② 릴리스 SBOM은 소스 기반(before build)과 바이너리 기반(after build) 두 벌을 만들어 차이를 검토한다 — CISA 2026 최소 요소의 'SBOM Generation Context' 필드가 요구하는 구분과 일치한다. ③ 벤더 납품물·오래된 레거시 모듈에는 스니펫/바이너리 분석 도구를 최소 릴리스 1회 적용한다. ④ 계약서에 'SBOM은 매니페스트 외 경로로 유입된 컴포넌트를 포함해야 한다'를 명시한다.",
+      "practicality": "판단기준표 (탐지 방식별 커버리지와 도구 조합)",
+      "replaces": "content/en/using/_index.md L701 '현대 소프트웨어 애플리케이션의 90%가 오픈소스 컴포넌트로 구성' 및 L1089 '오픈소스 코드가 60~80% 포함' — 출처 없는 수치를 OSSRA 2026의 '코드베이스의 98%가 오픈소스 포함, 애플리케이션당 평균 1,180개 컴포넌트'로 대체",
+      "effective_dates": [
+        "2026-02-25 (OSSRA 2026 발표, 2024-11~2025-10 감사 데이터)"
+      ],
+      "sources": [
+        {
+          "title": "2026 Open Source Security and Risk Analysis (OSSRA) Report — Black Duck (PDF)",
+          "url": "https://www.blackduck.com/content/dam/black-duck/en-us/reports/rep-ossra.pdf",
+          "kind": "secondary"
+        },
+        {
+          "title": "2026 OSSRA Report 랜딩 페이지",
+          "url": "https://www.blackduck.com/resources/analyst-reports/open-source-security-risk-analysis.html",
+          "kind": "secondary"
+        },
+        {
+          "title": "Black Duck Research Shows Open Source Vulnerabilities Have Doubled (2026-02-25)",
+          "url": "https://news.blackduck.com/2026-02-25-Black-Duck-Research-Shows-Open-Source-Vulnerabilities-Have-Doubled-as-AI-Accelerates-Code-Creation",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "topic": "[국내] SW 공급망 보안 강화 로드맵 (2026-06-24) — 공공 SBOM 제도화 일정",
+      "claim": "과기정통부·국정원이 2026-06-24 'SW 공급망 보안 강화 로드맵'을 발표했다. 공공 도입 IT시스템·SW 제품의 SBOM 제출을 2027년까지 제도화하고, 2028년부터 외교·안보·국방 등 주요 기관 납품에 체크리스트를 우선 적용한다.",
+      "detail": "비전은 '안전하고 책임 있는 공급망 보안 체계의 전환을 통한 사이버 복원력 확보'이며 3대 전략은 ①공급망 위협 예방 역량 강화(공급망 보안 기준·가이드 개발, 기업 보안 수준 점검, 개발환경 전환 지원, SBOM 활용 공급망 보안 관리 모델 확산, AI 기반 자동화 연구, 전문인력 양성) ②신속한 탐지·대응 체계 마련(버그바운티·취약점 신고포상제, CVD/VDP 제도 활용, AI 기반 공급망 방어체계, 공공납품 정보통신제품 검증 방안) ③정책·제도적 기반 조성(범정부 SW 공급망 보안협의체 구성, 민간 자율 활동 지원, 보안적합성 제도 대상 제품 확대와 요구사항 세분화, 국제 협력)이다. 연도별 주요 일정: 2026년 공공 분야 SBOM 관리체계 개발 및 SBOM 등록·관리 통합관리시스템 구축 착수 / 2027년 보안기능 시험 신청 제품부터 SBOM 생성·검증 실증, SBOM 제출 제도화 / 2028년 외교·안보·국방 등 주요 기관 제품 납품 시 체크리스트 우선 적용, 국내외 취약점 정보 DB 구축. 공공 분야 정보시스템 구축·운영 사업의 보안 요구사항에 SBOM 제출과 취약점 대응 절차를 포함할 계획이며, 중대 취약점이 발견된 제품은 보안 패치 등 조치가 끝날 때까지 공공 조달을 일시 제한하는 방안을 마련한다. 발표는 2026년도 공급망 보안 워크숍(서울 양재 aT센터)에서 이뤄졌고, 로드맵 전문은 국가사이버안보센터와 KISA 누리집에서 제공된다. ▸주의: 로드맵은 정책 계획이며 법령이 아니다. 국내 정책은 '예정' 발표 후 시행이 미뤄지는 경우가 많으므로 원고에서는 발표 시점과 시행 시점을 분리해 기술해야 한다.",
+      "confidence": "medium",
+      "target_section": "using",
+      "applies_to_korean_firms": "공공 부문에 SW·정보시스템을 납품하는 모든 기업과 그 하위 협력사. 보안기능 시험(보안적합성) 대상 제품 제조사.",
+      "action_for_firms": "① 2027년 SBOM 제출 제도화를 역산해 2026년 내에 (a) 릴리스마다 SBOM을 자동 생성하는 파이프라인, (b) SBOM 품질 검증 절차, (c) 취약점 대응 SLA 문서 — 3가지를 갖춘다. ② 공공 조달 일시 제한 방안이 실행되면 '중대 취약점 발견 → 패치 완료'까지의 소요 시간이 곧 매출 정지 기간이 된다. 자사의 패치 리드타임을 지금 측정해 둔다. ③ 하위 협력사에 SBOM 제출을 요구하는 계약 조항을 2026년 계약 갱신분부터 넣는다 — 2027년에 요구하면 이미 늦다.",
+      "practicality": "체크리스트 + 연도별 준비 로드맵 표",
+      "replaces": "content/en/using/_index.md L300-328 '국내 SBOM 규제 동향'의 2024년 기준 서술 및 L826-846 '국내 규제 및 정책 현황'(2024~2025 예정 항목)",
+      "effective_dates": [
+        "2026-06-24 (로드맵 발표)",
+        "2026년 (SBOM 관리체계·통합관리시스템 구축 착수)",
+        "2027년 (SBOM 제출 제도화, 보안기능 시험 신청 제품 대상 실증)",
+        "2028년 (외교·안보·국방 기관 납품 체크리스트 우선 적용)"
+      ],
+      "sources": [
+        {
+          "title": "SW 공급망 보안 강화 로드맵 발표(2026.06.) — KISA 게시물",
+          "url": "https://www.kisa.or.kr/2060204/form?postSeq=24&page=1",
+          "kind": "primary"
+        },
+        {
+          "title": "공공 소프트웨어 납품 때 '성분표' 낸다…정부, 내년부터 단계 적용 — 뉴시스 (2026-06-24)",
+          "url": "https://www.newsis.com/view/NISX20260624_0003682005",
+          "kind": "secondary"
+        },
+        {
+          "title": "\"SW공급망 보안 강화\"...정부, 로드맵 발표 — ZDNet Korea (2026-06-24)",
+          "url": "https://zdnet.co.kr/view/?no=20260624094118",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "topic": "[국내] 보안기능 시험제도 운영지침 시행 — 개발환경 보안 자체 점검 의무화",
+      "claim": "국정원이 제정한 '보안기능 시험제도 운영지침'이 2026-01-01 시행되었고, 개발환경 보안 자체 점검 목록은 2026-07-01부터 적용된다. 제품 결과물뿐 아니라 개발 환경과 관리 체계까지 검증 범위가 확대되었다.",
+      "detail": "적용 대상은 정보보호제품, 네트워크 장비, 양자암호통신 장비, 영상정보처리기기 등이다. 총 84개 점검 항목 중 1단계 48개 항목이 2026-07-01부터 적용된다. 취약점 개선 내역서 제출도 요구된다. 국정원은 SW 공급망 보안 가이드라인을 통해 NIS-SBOM(SBOM 기본 항목)을 제시했는데, 목적은 기본 항목 간소화, 보안 취약점 정보 연계, 사이버 위험관리 효율화다. 한국정보보호학회지 논문(김지민·조은정·이만희, 정보보호학회지 35권 1호, 2025-02-28)은 NIS-SBOM 속성을 CycloneDX와 SPDX로 구현하는 방식을 비교해, 두 표준 모두 필수 요구사항을 충족할 수 있으나 CycloneDX는 계층 구조와 명시적 필드로 직관적 구현이, SPDX는 평면 구조로 확장성과 상세한 보안 정보 표현이 유리하다고 결론지었다. ▸주의: NIS-SBOM 항목 수에 대해 자료마다 15개와 20개로 엇갈린다. 국정원 원문 규격을 확인하지 못했다.",
+      "confidence": "medium",
+      "target_section": "using",
+      "applies_to_korean_firms": "보안기능 확인서·보안적합성 검증을 받아 공공에 납품하는 제조사와 그 개발 협력사.",
+      "action_for_firms": "① 개발환경 보안 자체 점검 84개 항목(1단계 48개)에 대한 자체 진단을 2026년 상반기 내 완료하고 미충족 항목의 개선 계획을 문서화한다. ② SBOM 생성 도구가 SPDX·CycloneDX와 함께 NIS-SBOM 요구 항목을 출력할 수 있는지 확인한다. 국내 상용 도구 일부가 NIS-SBOM 출력을 지원한다. ③ 개발 협력사(하청)에도 동일 점검 목록을 전달해 사전 정렬한다 — 원청만 통과해도 개발환경이 하청에 있으면 실효가 없다.",
+      "practicality": "체크리스트",
+      "replaces": "신규",
+      "effective_dates": [
+        "2026-01-01 (보안기능 시험제도 운영지침 시행)",
+        "2026-07-01 (개발환경 보안 자체 점검 목록 1단계 48개 항목 적용)"
+      ],
+      "sources": [
+        {
+          "title": "김지민·조은정·이만희, NIS SBOM 속성의 CycloneDX 및 SPDX 구현, 정보보호학회지 35(1), 2025-02-28, 25-32쪽",
+          "url": "https://koreascience.kr/article/JAKO202509954007244.view",
+          "kind": "primary"
+        },
+        {
+          "title": "보안적합성 검증 보안요구사항 — 국가정보원",
+          "url": "https://www.nis.go.kr/AF/1_7_2_4/list.do",
+          "kind": "primary"
+        },
+        {
+          "title": "보안기능 확인서 획득 대비! 2026 보안기능 시험제도 운영지침 총정리 — 스패로우 (2026-05-04)",
+          "url": "https://sparrow.im/kr/2026/05/04/",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "topic": "[국내] SI 하위 공급망에 SBOM을 관철하는 계약·검증 방법",
+      "claim": "SBOM 요구를 하청에 관철하려면 (1) 계약서의 산출물 정의에 SBOM을 넣고 (2) 수용 판정 기준을 기계 검증 가능한 형태로 명시하며 (3) 검수 시 자동 검증 도구를 돌리는 3단 구성이 필요하다. '보안 협의체 운영·교육' 같은 협력적 수단만으로는 강제력이 없다.",
+      "detail": "국내 SI·수급 구조에서 하청이 SBOM을 제출하지 않는 이유는 대개 (a) 계약서에 산출물로 정의되어 있지 않고, (b) 정의되어 있어도 '무엇이 합격인가'가 없어 빈 파일도 통과하며, (c) 검수 담당자가 SBOM을 읽을 도구가 없기 때문이다. 각 단계의 실행 형태는 다음과 같다. ▸계약: 과업지시서·기술협상서의 산출물 목록에 'SBOM(포맷·판번호 지정)'과 'VEX(해당 시)'를 명시하고, 하자보수 기간 동안 신규 취약점 발생 시 갱신 SBOM과 대응 계획을 제출할 의무를 넣는다. 재하도급이 있는 경우 동일 의무를 전가하는 조항(flow-down)을 둔다. ▸수용 기준: CISA 2026 최소 요소 17개 필드 충족, 포맷은 SPDX 2.3/3.0.1 또는 CycloneDX 1.5 이상(deprecated 판번호 거부), 전이 의존성 포함(Coverage 요소), 미상 정보는 'unknown'으로 명시, SBOM에 작성자 서명 첨부. ▸검증: 검수 자동화 도구로 (i) 스키마 유효성 — Dependency-Track 5.0이 업로드 시 CycloneDX 스키마 검증을 강제한다, (ii) 최소 요소 충족 — SPDX는 spdx/ntia-conformance-checker(웹 도구 https://tools.spdx.org/app/ntia_checker/ 제공), 포맷 무관 품질 점수는 interlynk-io/sbomqs(1~10점, NTIA·BSI TR-03183-2·OpenChain Telco 등 기준 지원), (iii) 실물 대조 — 납품 바이너리를 Syft/Trivy로 재스캔해 제출 SBOM과 컴포넌트 목록 차집합을 확인한다. 이 (iii)이 핵심이다. 서류만 검증하면 하청은 '빌드와 무관한 SBOM'을 낼 수 있다. ▸국내 지원: KISA가 2026년 'SW 공급망 보안 모델 구축' 사업에 총 40억 원을 투입하며, 공급망 보안 관리체계 구축(6개 과제, SBOM 생성·검증 프로세스와 거버넌스 수립)과 공급망 위협 모니터링·대응체계(2개 과제)로 이원화해 컨소시엄당 최대 5억 원을 지원한다. 올해부터 SW 개발·공급 기업뿐 아니라 제품을 도입·운영하는 기업까지 신청 대상이 확대됐다. 판교 사이버 회복력 센터가 영세·중소기업 상시 기술 지원을 제공한다.",
+      "confidence": "medium",
+      "target_section": "using",
+      "applies_to_korean_firms": "공공·대기업 SI 원청, 그리고 다단계 하도급 구조에서 상위 사업자에게 SBOM을 요구받는 중견·중소 기업.",
+      "action_for_firms": "① 표준 계약서/과업지시서에 SBOM 조항(산출물 정의 + 수용 기준 + flow-down)을 신설한다. 문구 없이 요청만 하면 이행되지 않는다. ② 검수 프로세스에 자동 검증 3종(스키마 유효성 / 최소 요소 충족 / 납품물 재스캔 대조)을 넣고, 통과하지 못한 산출물은 검수 미완료로 처리한다. ③ 하청 역량이 부족하면 SBOM 생성 도구·CI 템플릿을 원청이 제공한다. 요구만 하고 수단을 주지 않으면 형식적 제출물만 늘어난다. ④ KISA 지원 사업을 협력사 지원 재원으로 활용한다.",
+      "practicality": "템플릿 (계약 조항 문구 + 수용 기준표 + 검수 자동화 절차)",
+      "replaces": "content/en/using/_index.md L1053-1074 '하위 공급망 보안 관리' 표 — 협력·교육·모니터링·관리 4영역의 일반론이며 계약 문구와 기계 검증 절차가 없어 실행 불가능하다. 강제력 있는 3단 구성으로 재작성 필요.",
+      "effective_dates": [
+        "2026년 (KISA SW 공급망 보안 모델 구축 사업, 총 40억 원)",
+        "2027년 (공공 SBOM 제출 제도화 목표)"
+      ],
+      "sources": [
+        {
+          "title": "interlynk-io/sbomqs — SBOM 품질·컴플라이언스 점수 도구",
+          "url": "https://github.com/interlynk-io/sbomqs",
+          "kind": "primary"
+        },
+        {
+          "title": "spdx/ntia-conformance-checker — SPDX SBOM의 NTIA/CISA 최소 요소 검증",
+          "url": "https://github.com/spdx/ntia-conformance-checker",
+          "kind": "primary"
+        },
+        {
+          "title": "OWASP Dependency-Track 5.0 GA — BOM/VEX 스키마 검증 강제",
+          "url": "https://owasp.org/blog/2026/06/09/dependency-track-v5",
+          "kind": "primary"
+        },
+        {
+          "title": "\"공급망 보안, 생태계 전체 문제\"...KISA, 40억 투입해 SBOM 도입·운영 기업 지원 — 보안뉴스",
+          "url": "https://m.boannews.com/html/detail.html?idx=142637",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "topic": "CVE 프로그램 거버넌스와 EUVD — 취약점 데이터 단일 의존의 리스크",
+      "claim": "2025-04 CVE 프로그램 계약 만료 직전의 자금 위기 이후, CVE 재단이 설립되고 ENISA가 EUVD(유럽 취약점 데이터베이스)를 개시했다. 2026-01 기준 CISA는 CVE 프로그램에 '3월 자금 절벽은 없다'고 밝혔다.",
+      "detail": "MITRE와 CISA의 5,780만 달러 계약은 2025-04-16 만료 예정이었으나 2026-03-16까지의 연장 옵션이 행사되어 서비스 중단은 없었다. 그 과정에서 CVE 보드 구성원들이 프로그램의 자율성을 확보하기 위한 비영리 CVE 재단 설립을 공표했다. ENISA는 CRA 이행의 일환으로 EUVD를 개시했으며, CVE ID를 그대로 복제하지 않고 자체 식별 체계를 사용해 독립적 검증과 보완을 지향한다. ENISA는 2024-01부터 CNA로 활동한다. ▸주의: 계약 금액·조건의 세부가 CVE 보드 구성원에게도 공개되지 않았다는 지적이 있으며, 장기 거버넌스는 확정되지 않은 진행 중 사안이다.",
+      "confidence": "medium",
+      "target_section": "using",
+      "applies_to_korean_firms": "취약점 데이터에 의존하는 모든 기업. EU 시장 대응 기업은 EUVD 조회 경로 확보가 필요하다.",
+      "action_for_firms": "① 취약점 데이터 소스를 CVE/NVD 단일에 묶지 않는다. 최소 구성은 OSV + GitHub Advisory + 배포판/벤더 권고이며, EU 대응이 필요하면 EUVD를 추가한다. ② 사내 취약점 관리 시스템이 CVE ID 외 식별자(GHSA, OSV ID, EUVD ID)를 저장할 수 있는지 확인한다. 스키마가 CVE ID만 지원하면 대체 소스를 붙일 수 없다.",
+      "practicality": "체크리스트 + 개념설명",
+      "replaces": "content/en/using/_index.md L933-956 취약점 DB 목록 (NVD·CVE·OSV·GitHub Advisory·Mitre CVE 중복 항목 정리 필요, EUVD 추가)",
+      "effective_dates": [
+        "2025-04-16 (계약 연장 옵션 행사)",
+        "2025-05 (EUVD 베타 공개)",
+        "2026-01-21 (CVE 보드 회의: 3월 자금 절벽 없음 확인)"
+      ],
+      "sources": [
+        {
+          "title": "Consult the European Vulnerability Database to enhance your digital security! — ENISA",
+          "url": "https://www.enisa.europa.eu/news/consult-the-european-vulnerability-database-to-enhance-your-digital-security",
+          "kind": "primary"
+        },
+        {
+          "title": "CVE program funding secured, easing fears of repeat crisis — CSO Online",
+          "url": "https://www.csoonline.com/article/4142600/cve-program-funding-secured-easing-fears-of-repeat-crisis.html",
+          "kind": "secondary"
+        },
+        {
+          "title": "CISA Throws Lifeline to CVE Program with Contract Extension — Infosecurity Magazine",
+          "url": "https://www.infosecurity-magazine.com/news/cisa-cve-program-mitre-contract/",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "topic": "GitHub 보안 기능 재편 — GHAS 분리와 immutable releases",
+      "claim": "GitHub Advanced Security는 2025-04-01부터 GitHub Secret Protection($19/월/활성 커미터)과 GitHub Code Security($30/월/활성 커미터) 두 개의 독립 제품으로 분리되었고, Team 플랜에서도 구매 가능해졌다. Immutable releases는 2025-10 GA되었다.",
+      "detail": "▸GHAS 분리(2025-03-04 발표, 2025-04-01 시행): Secret Protection은 시크릿 스캐닝·AI 기반 비밀번호 탐지·푸시 보호를, Code Security는 코드 스캐닝(CodeQL)과 취약점 수정을 담당한다. 종량제(metered billing)로 제공되며, 기존 고객은 2025-04-01 이후 갱신 시점에 신규 플랜으로 전환한다. ▸Immutable releases(2025-08 퍼블릭 프리뷰, 2025-10-28 GA): 릴리스를 불변으로 게시하면 자산의 추가·수정·삭제가 불가능해지고, 태그도 삭제·이동이 금지된다. 서명된 어테스테이션이 함께 발급되어 GitHub 안팎에서 진위·무결성을 검증할 수 있다. tj-actions 사건처럼 태그를 소급 이동시키는 공격에 대한 직접 대응이다. ▸GitHub Artifact Attestations(2024-06-25 GA): 기본 구성으로 SLSA v1.0 Build Level 2를 달성하며, 조직 공용 reusable workflow로 빌드를 격리하면 Build Level 3을 충족한다. 공개 저장소는 Sigstore Public Good Instance와 Rekor에 기록되고, GitHub Enterprise 비공개 저장소는 내부 비공개 DB에 기록된다. 소비 측 검증은 `gh attestation verify`.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "GitHub Enterprise/Team을 쓰는 모든 기업. 기존 GHAS 라이선스 보유 기업은 비용 구조가 바뀐다.",
+      "action_for_firms": "① 사내 GitHub 조직에서 immutable releases를 기본 정책으로 켠다 — 비용이 들지 않고 태그 소급 변조를 차단한다. ② 자사 릴리스에 actions/attest-build-provenance를 적용하고, 조직 공용 reusable workflow로 빌드를 통일해 SLSA Build L3을 노린다. ③ GHAS 갱신 시 Secret Protection과 Code Security를 분리 구매할 수 있게 되었으므로 필요 범위만 산정한다.",
+      "practicality": "체크리스트 + 개념설명",
+      "replaces": "content/en/using/_index.md L1125-1155 'GitHub 기능을 활용한 보안 관리 사례' — Octoverse 2021 인용, GHAS 분리·Artifact Attestations·immutable releases 미반영",
+      "effective_dates": [
+        "2025-04-01 (GHAS 분리 시행)",
+        "2024-06-25 (Artifact Attestations GA)",
+        "2025-10-28 (Immutable releases GA)"
+      ],
+      "sources": [
+        {
+          "title": "Introducing GitHub Secret Protection and GitHub Code Security — GitHub Changelog (2025-03-04)",
+          "url": "https://github.blog/changelog/2025-03-04-introducing-github-secret-protection-and-github-code-security/",
+          "kind": "primary"
+        },
+        {
+          "title": "Immutable releases are now generally available — GitHub Changelog (2025-10-28)",
+          "url": "https://github.blog/changelog/2025-10-28-immutable-releases-are-now-generally-available/",
+          "kind": "primary"
+        },
+        {
+          "title": "Artifact attestations — GitHub Docs",
+          "url": "https://docs.github.com/en/actions/concepts/security/artifact-attestations",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "[구조 제안] 보안 절에 신설이 필요한 6개 소절",
+      "claim": "기존 원고의 '오픈소스의 보안 취약점' 절은 2021~2024년 실무를 전제로 짜여 있어, 2026년 기준 필수 주제 6개를 담을 자리가 없다. 소절 신설이 필요하다.",
+      "detail": "신설 후보와 근거는 다음과 같다. ①'서명·프로비넌스 검증(Sigstore/SLSA)' — npm·PyPI·GitHub이 모두 서명·어테스테이션을 표준 기능으로 제공하게 되었으나 원고에 절 자체가 없다(using). ②'VEX로 오탐 줄이기 — SBOM만으로 안 되는 이유' — SBOM 절은 있으나 수요자가 오탐에 파묻히는 문제와 해법이 없다(using). ③'취약점 우선순위 3축 모델(KEV × EPSS × 인터넷 노출)' — CVSS 단일축 표를 대체할 절(using). ④'CI/CD 자체가 공격면이다 — 워크플로 보안 체크리스트' — 2025~2026년 주요 사고 다수가 CI 경로였으나 원고는 CI를 '보안 검사를 넣는 곳'으로만 다룬다(using). ⑤'AI 코딩 도구 사용 시 의존성 검증' — 패키지 환각·슬롭스쿼팅은 개발자가 커밋 전에 막아야 하는 유형이므로 '개발자 편'에 배치(using). ⑥'취약점을 보고할 때의 책임 — AI 생성 보고 금지' — curl 사례가 보여주듯 기업의 무분별한 자동 보고가 커뮤니티 비용이 되고 있다(contributing). 동시에 기존 소절 중 '오픈소스 보안 관련 규제 및 정책 동향'(L801-857)은 SBOM 규제 동향 절(L268-328)과 내용이 상당 부분 겹치므로 규제 축 결과와 병합해 하나로 정리하는 편이 낫다.",
+      "confidence": "high",
+      "target_section": "new",
+      "applies_to_korean_firms": "가이드 개정 작업 자체에 해당. 독자 관점에서는 보안 실무 담당자.",
+      "action_for_firms": "개정 계획 수립 시 위 6개 소절을 신설 항목으로 잡고, 각 소절에 대응하는 findings(Sigstore, VEX, BOD 26-04·KEV·EPSS, TanStack·tj-actions, 슬롭스쿼팅, curl)를 재료로 배정한다.",
+      "practicality": "개념설명 (목차 구조 제안)",
+      "replaces": "content/en/using/_index.md L685-1160 보안 절 전체 구조",
+      "effective_dates": [],
+      "sources": []
+    }
+  ],
+  "stale_items": [
+    {
+      "quote": "content/en/using/_index.md L883-888 | 취약점 심각도 | CVSS 점수 | 대응 시간 | ... 긴급 9.0-10.0 24시간 이내 / 높음 7.0-8.9 1주일 이내 / 중간 4.0-6.9 1개월 이내 / 낮음 0.1-3.9 3개월 이내",
+      "reason": "CVSS 단일축 SLA는 2026년 실무 기준에서 폐기 방향이다. CISA는 2026-06-10 BOD 26-04로 BOD 22-01을 폐지하고 '공개 노출 × KEV 등재 × 자동화 가능성 × 기술적 영향' 4변수 기반 기한표로 전환했다. 또한 FIRST 자신이 'CVSS-B Base scores are not risk'라고 명시하며, 2026-04-15 NVD 보강 정책 전환으로 상당수 CVE에 CVSS 점수 자체가 부여되지 않는다 — 점수가 없으면 이 표는 작동하지 않는다.",
+      "suggested_fix": "BOD 26-04 Table 1의 16행 구조를 사내 SLA 표로 이식한다. 최소한 2축(인터넷 노출 여부 × KEV/악용 확인 여부)으로 확장하고, CVSS는 판번호를 명시한 보조 축으로 강등한다. '점수가 없는 CVE'의 처리 분기를 반드시 넣는다."
+    },
+    {
+      "quote": "content/en/using/_index.md L690, L723-728 | Sonatype의 2024 소프트웨어 공급망 현황 보고서에 따르면, 2024년 말까지 오픈소스 패키지 다운로드 수가 6.6조 건에 이를 것으로 예상된다. 이는 전년 대비 52%나 증가한 수치이다. / 지난 1년간 51만 2,847개의 악성 패키지가 발견되었으며, 이는 전년 대비 156% 증가한 수치이다.",
+      "reason": "2024년판 수치이며 2회 갱신되었다. Sonatype 11번째 연례 보고서(2026-01-28)는 2025년 신규 악성 패키지 454,600건 이상, 누적 1,233,000건 이상(+75%), 4대 레지스트리 연간 다운로드 9.8조 건(+67%)을 보고한다.",
+      "suggested_fix": "2026년 발간분 수치로 교체하되, 보고서명이 '2026 State of the Software Supply Chain'이고 데이터는 2025년이라는 점을 각주에 명시한다. 3개 연도 추세(6.6조 → 9.8조)를 병기하면 단일 수치보다 유용하다."
+    },
+    {
+      "quote": "content/en/using/_index.md L694-699 | 2024년 기준으로: Java (Maven) 생태계: 6.7만 개의 프로젝트, 1,870만 개의 버전 / JavaScript (npm) 생태계: 480만 개의 프로젝트, 4,880만 개의 버전 ...",
+      "reason": "2024년판 생태계 규모 수치. 이 목록은 매년 바뀌며 갱신하지 않으면 즉시 낡는다. 더 중요한 문제는 이 수치가 기업의 어떤 판단에도 쓰이지 않는다는 점이다.",
+      "suggested_fix": "생태계 규모 나열을 축소하고, 대신 기업이 행동 가능한 수치(악성 패키지의 99% 이상이 npm에 집중, EOL·패치 불가 패키지 버전 최소 81,000개, Log4Shell이 2025년에도 4,200만 회 다운로드)로 대체한다."
+    },
+    {
+      "quote": "content/en/using/_index.md L701 | 실제로 현대 소프트웨어 애플리케이션의 90%가 오픈소스 컴포넌트로 구성되어 있다고 한다. / L1089 | 오늘날 일반적인 애플리케이션에는 오픈소스 코드가 60~80% 포함된다는 점을 고려할 때",
+      "reason": "출처가 없고 두 문장의 수치가 서로 다르다(90% vs 60~80%). '~라고 한다'는 이 가이드의 신뢰도를 직접 깎는 표현이다.",
+      "suggested_fix": "Black Duck 2026 OSSRA(947개 코드베이스, 2024-11~2025-10 감사)의 '코드베이스의 98%가 오픈소스를 포함', '애플리케이션당 평균 오픈소스 컴포넌트 1,180개'로 교체하고 표본을 명시한다."
+    },
+    {
+      "quote": "content/en/using/_index.md L763-765 | c) SolarWinds 공급망 공격 (2020년) — 2020년 말, SolarWinds의 Orion 플랫폼이 공급망 공격의 대상이 되었다. 공격자들은 SolarWinds의 빌드 프로세스에 침투하여 악성 코드를 삽입했고, 이는 수많은 고객사에 배포되었다.",
+      "reason": "6년 전 사건이며 오픈소스 공급망이 아니라 상용 제품 사건이다. 이후 SLSA·프로비넌스·Trusted Publishing 등 대응 수단이 모두 새로 생겨서, 이 사례로는 '지금 무엇을 하면 막나'를 쓸 수 없다. 각주 [^cisa2024]도 2020년 CISA 권고(aa20-352a)를 가리키면서 파일명은 2024로 되어 있어 혼동을 준다.",
+      "suggested_fix": "빌드 시스템 침해 사례를 TanStack npm 침해(2026-05-11, pull_request_target + Actions 캐시 오염 + 러너 메모리 OIDC 토큰 탈취)로 교체한다. 프로젝트 자체 포스트모템이 1차 출처로 공개되어 있고, 방어 조치가 GitHub Actions를 쓰는 국내 기업에 그대로 적용된다. SolarWinds는 '공급망 공격이라는 개념의 기원' 한 문장으로 축약한다."
+    },
+    {
+      "quote": "content/en/using/_index.md L767-769 | d) event-stream 패키지 악성코드 삽입 (2018년) — 2018년, npm의 인기 있는 JavaScript 패키지인 event-stream에 악성 코드가 삽입되었다.",
+      "reason": "8년 전 사건. 당시에는 npm 프로비넌스·Trusted Publishing·2FA 강제가 존재하지 않아 '무엇을 했으면 막았나'를 쓸 수 없다. 계정 탈취 유형의 최신 사례가 다수 있다.",
+      "suggested_fix": "axios 침해(2026-03-31, 유지관리자 RAT 감염 → 자격증명 탈취 → 백도어 버전 3시간 게시)로 교체한다. axios 저장소의 공식 포스트모템이 1차 출처이며, 방어 조치(lockfile 고정, 신규 버전 cooldown, 프로비넌스 검증, OIDC 배포 전환)가 모두 국내 기업이 오늘 실행할 수 있는 것이다."
+    },
+    {
+      "quote": "content/en/using/_index.md L795 | [^blackkilt2024]: https://www.blackkilt.com/blog/2024/04/29/open-source-xz-utils-vulnerability/",
+      "reason": "XZ Utils 백도어라는 중요 사례의 유일한 각주가 출처 불명의 개인/기업 블로그다. 제목도 표기되어 있지 않아 각주 변환 규약(문서 제목 원문 표기)을 위반한다.",
+      "suggested_fix": "NVD의 CVE-2024-3094 항목과 OpenSSF·OpenJS 공동 경보(오픈소스 프로젝트 소셜 엔지니어링 탈취 경고)를 1차 출처로 교체한다."
+    },
+    {
+      "quote": "content/en/using/_index.md L801-857 | 오픈소스 보안 관련 규제 및 정책 동향 — 2024년: 'EU 사이버보안법(Cybersecurity Act)' 개정 예정 / 2024년: '소프트웨어 관리 가이드라인' 발표 예정 / 2024년 하반기: 범정부 합동TF 구성 예정 / 2025년: '국가 사이버보안 기본계획' 수립 예정 / 2024년~2025년: 의료, 국방, 제조 등 특정 산업 분야에 대한 오픈소스 보안 정책 수립 예정",
+      "reason": "'예정' 항목이 5개인데 모두 시점이 지났고 실제 결과가 반영되지 않았다. 국내 항목은 2026-06-24 발표된 'SW 공급망 보안 강화 로드맵'이 상위 계획으로 나온 상태다. 표(L841-846)의 '2024년(예정)' 표기도 그대로 남아 있다.",
+      "suggested_fix": "'예정' 항목을 모두 결과 확인 후 실제 시행 여부로 갱신하거나 삭제한다. 국내는 SW 공급망 보안 강화 로드맵(2026-06-24 발표: 2026 관리체계 구축 → 2027 SBOM 제출 제도화 → 2028 외교·안보·국방 우선 적용)으로 대체한다. 규제 축(oss-regulation-analyst)과 내용이 겹치므로 병합 시 중복을 정리해야 한다."
+    },
+    {
+      "quote": "content/en/using/_index.md L329-354 | SBOM 최소 요구 사항 / 데이터 필드 (NTIA 2021 기준 7개 필드)",
+      "reason": "2026-07-29 CISA·NSA·FBI와 17개국 기관(한국 NIS/NCSC·KISA 포함)이 발표한 '2026 Minimum Elements for a SBOM'이 2021년 NTIA 문서를 대체했다. 데이터 필드가 7개에서 17개로 늘었고, Supplier Name→Component Producer 개명, Depth→Coverage 대체, Access Controls 삭제 등 변경이 크다.",
+      "suggested_fix": "17개 필드 표로 교체하고, 신규 필드(SBOM Author Signature, Component Hash Value/Algorithm, Component License, SBOM Tool Name/Version, SBOM Generation Context 등)를 별도 표시한다. 한국 기관이 공동 작성자로 참여했다는 사실을 명시하면 국내 제도 정합성 판단에 도움이 된다."
+    },
+    {
+      "quote": "content/en/using/_index.md L972-990 | 오픈소스 보안 관리 도구 및 플랫폼 — 1. OWASP Dependency-Check 2. Trivy 3. Grype",
+      "reason": "3종만 있고 판번호·최근 릴리스가 없으며, SBOM을 만든 다음 무엇으로 관리하는지(Dependency-Track)와 VEX 지원 여부가 빠져 있다. OSV-Scanner도 목록에 없다.",
+      "suggested_fix": "도구별 최신 판번호와 VEX 지원 여부를 포함한 대조표로 재작성한다. 확인된 최신 릴리스: OSV-Scanner v2.4.0(2026-06-18), Trivy v0.72.0(2026-06-30), Grype v0.116.1(2026-07-28), Syft v1.50.0(2026-07-28), Dependency-Track 5.0.4(2026-07-30). 도구 축(oss-tooling-researcher)과 겹치므로 병합 시 조율 필요."
+    },
+    {
+      "quote": "content/en/using/_index.md L1091-1093 | IBM에서 제시한 모범 사례 (2020)를 통해 DevSecOps 관점에서 본 오픈소스 취약점 관리에 대해 좀 더 알아보자. / [^bestpractive2020]: IBM, Open Source Security Trends (2020) : https://developer.ibm.com/recipes/tutorials/open-source-security-trends-for-2020",
+      "reason": "6년 전 자료이고, developer.ibm.com/recipes 경로는 IBM이 2021년 폐지한 섹션이라 URL 생존 가능성이 매우 낮다. 이어지는 'IBM DevSecOps 모범 사례' 7개 항목(자산 추적/위협 평가/보안 체크리스트/자동화/문화/컨테이너/암호화)은 2026년 기준으로 너무 일반론이다.",
+      "suggested_fix": "URL 생존을 확인하고 죽었으면 교체한다. 내용은 NIST SSDF(SP 800-218) 또는 OpenSSF의 'Improving Risk Management Decisions with SBOM Data'(2025-09-18)와 OWASP/CycloneDX 'Authoritative Guide to SBOM'(2025-10-21)처럼 현행 1차 출처로 대체하는 편이 낫다."
+    },
+    {
+      "quote": "content/en/using/_index.md L1126-1128 | 최근 GitHub Octoverse (2021) 자료를 보면, Fortune 100대 기업 중 84%가 GitHub Enterprise를 사용하고 있다고 한다. / [^github-octoverse]: GitHub Octoverse (2021)",
+      "reason": "5년 전 Octoverse 인용에 '최근'이라는 표현이 붙어 있다. 또한 이후 GitHub Advanced Security가 2025-04-01부터 Secret Protection·Code Security 두 제품으로 분리되었고, Artifact Attestations(2024-06 GA)와 immutable releases(2025-10 GA)가 추가되어 절 전체가 낡았다.",
+      "suggested_fix": "'최근' 표현을 제거하고 Octoverse 최신판으로 갱신하거나(시장 축 담당) 통계 자체를 삭제한다. 기능 목록에 Artifact Attestations와 immutable releases를 추가하고, GHAS 분리로 라이선스 구조가 바뀐 점을 명시한다."
+    },
+    {
+      "quote": "content/en/using/_index.md L933-956 | 주요 취약점 데이터베이스 — 1. NVD 2. CVE 3. OSV 4. GitHub Advisory Database 5. Mitre의 CVE ... 1. Sonatype OSS Index",
+      "reason": "(a) 'CVE(Mitre)'와 'Mitre의 CVE'가 중복 항목이고 번호 매김이 깨져 있다(5번 다음에 다시 1번). (b) NVD를 첫 번째 포괄적 소스로 서술하는데, 2026-04-15부터 NVD는 KEV·연방 사용 SW·EO 14028 중요 SW에 해당하는 CVE만 보강한다. (c) EUVD와 KEV가 목록에 없다.",
+      "suggested_fix": "중복 항목을 정리하고 번호를 바로잡는다. NVD 항목에 2026-04-15 보강 정책 전환과 그 실무 영향(CPE 미부여 시 스캐너 매칭 불가)을 명시한다. CISA KEV 카탈로그와 ENISA EUVD를 추가하고, 각 소스의 용도(NVD=CVE 메타데이터, OSV=언어 패키지 정밀 매칭, KEV=악용 확인, EPSS=악용 확률)를 구분해 서술한다."
+    },
+    {
+      "quote": "content/en/using/_index.md L1053-1074 | 하위 공급망 보안 관리 표 (협력/교육/모니터링/관리 4영역)",
+      "reason": "'보안 협의체 운영', '통합 보안 교육 프로그램', '1:1 멘토링' 등 협력적 수단만 나열되어 강제력이 없고, 담당자가 자사 계약서에 옮겨 쓸 수 있는 문구가 하나도 없다. SBOM은 '일부 해결할 수 있다'고만 언급되고 어떻게 관철하는지가 빠져 있다.",
+      "suggested_fix": "계약(산출물 정의 + 수용 기준 + 재하도급 flow-down) → 수용 기준(CISA 2026 최소 요소 17개 필드, 포맷 판번호 하한, 전이 의존성 포함) → 검수 자동화(스키마 검증 / ntia-conformance-checker·sbomqs / 납품 바이너리 재스캔 대조) 3단 구성으로 재작성한다. 표는 유지하되 각 행에 '계약 문구 예시'와 '검증 방법' 열을 추가한다."
+    },
+    {
+      "quote": "content/en/using/_index.md L1049-1050 | [^itworld2024]: https://www.itworld.co.kr/news/263110 / [^checkpoint2024]: https://www.checkpoint.com/kr/cyber-hub/cloud-security/what-is-open-source-security/",
+      "reason": "각주에 문서 제목이 없고 URL만 있다. 각주 변환 규약(문서 제목 원문 표기 + 발행 주체 + 시점)을 위반한다. 벤더 마케팅 페이지(Check Point)를 보안 전략의 근거로 인용하는 것도 부적절하다.",
+      "suggested_fix": "제목·발행 주체·시점을 보완하고, Check Point 페이지 인용은 OpenSSF·NIST SSDF 등 중립적 1차 출처로 교체한다."
+    }
+  ],
+  "checklist_unconfirmed": [
+    "SLSA 국내 기업 실제 도달 현황 — 국내 기업 중 SLSA Build L2/L3을 공표한 사례를 찾지 못했다. 도달 경로는 GitHub/GitLab 문서로 구성했으나 국내 적용 사례는 미확인.",
+    "Sigstore/cosign의 국내 도입 수준 — 전역 통계(Rekor 1억 건 이상 항목, 3.3만 개 이상 프로젝트, Fulcio 2,100만 건 이상 인증서)는 2차 출처로만 확인했고 Sigstore 공식 대시보드의 현재 수치는 미검증. 국내 기업 도입 사례는 확인 실패.",
+    "국정원 NIS-SBOM 규격의 정확한 항목 수와 필드 목록 — 자료마다 15개/20개로 엇갈리며 국정원 원문 규격 문서에 접근하지 못했다. 정보보호학회지 논문(2025-02)은 '총 20개 항목'이라 기술한다.",
+    "SW 공급망 보안 강화 로드맵 PDF 원문 — KISA 게시물(2026-06-24)과 첨부 파일명(SW 공급망 보안 강화 로드맵.pdf, 4MB)은 확인했으나 PDF 본문을 열지 못했다. 연도별 세부 과제는 언론 보도(뉴시스·ZDNet) 기반이므로 원문 대조가 필요하다.",
+    "EPSS v5의 정확한 공개일 — 데이터 피드의 model_version은 v2026.06.15로 확정했으나, 2차 자료가 2026-05-13과 2026-06-15로 엇갈린다. FIRST 공식 공지를 찾지 못했다.",
+    "CISA 'Software Bill of Materials for AI – Minimum Elements'(G7 공동, 2026-05) 원문 — CISA 사이트가 자동 조회를 차단해 본문 미확인. 2026 SBOM 최소 요소 문서의 각주로 존재를 확인했을 뿐 AI SBOM 최소 요소 항목은 미확인. (ai 축과 겹침)",
+    "OpenSSF 'Improving Risk Management Decisions with SBOM Data'(2025-09-18)와 OWASP/CycloneDX 'Authoritative Guide to SBOM'(2025-10-21) — CISA 문서의 참고문헌으로 존재와 발행일만 확인했고 본문 미검토. 둘 다 SBOM 운영 실무의 유력한 인용원이므로 다음 라운드에서 확인 필요.",
+    "국내 SI 표준 계약서·과업지시서에 SBOM 조항이 실제로 반영된 공개 사례 — 조달청 규격서나 공공 SI 과업지시서에서 SBOM 조항 실물을 확인하지 못했다. 계약 문구 템플릿은 CISA 2026 최소 요소를 근거로 구성한 것이며 국내 관행 확인이 필요하다.",
+    "in-toto 도입 실무 — in-toto Attestation Framework v1.2.0(2026-03-18) 릴리스만 확인했고, 국내 기업이 SLSA 프로비넌스 외에 in-toto 레이아웃을 직접 쓰는 실무 방식은 조사하지 못했다.",
+    "Shai-Hulud 1차 확산의 정확한 패키지 수 — CISA 경보는 '500개 이상', 다른 2차 자료는 '200개 이상 패키지·500개 이상 버전'으로 표현이 엇갈린다. 어느 쪽이 맞는지 판단할 근거를 찾지 못해 병기했다.",
+    "OSSRA 2026의 '65% 조직이 공급망 공격 경험' 설문 — 표본 크기·모집단·조사 시점이 보고서 본문에 명시되어 있지 않다. 감사 데이터(947개 코드베이스)와 다른 모수이며 방법론 불명이므로 인용 시 주의가 필요하다."
+  ],
+  "extra": {
+    "workspace_file": "/Users/robin/IdeaProjects/oss-governance-guide/_workspace/02_research_security.json",
+    "frameworks": [
+      {
+        "name": "SLSA",
+        "version": "v1.2 (Approved)",
+        "date": "2025-11-12 승인",
+        "note": "Build L0-L3 + Source L1-L4. Build Environment·Dependency 트랙은 개발 중",
+        "url": "https://slsa.dev/spec/v1.2/"
+      },
+      {
+        "name": "OpenSSF Scorecard",
+        "version": "v5.5.0",
+        "date": "2026-04-23",
+        "note": "--org 전체 스캔(v5.4.0), 저장소 유형별 검사 자동 생략",
+        "url": "https://github.com/ossf/scorecard/releases"
+      },
+      {
+        "name": "OSPS Baseline",
+        "version": "v2026.02.19",
+        "date": "2026-02-19",
+        "note": "3 성숙도 레벨 × 8 범주. CRA·SSDF·OpenChain(ISO/IEC 18974) 매핑",
+        "url": "https://baseline.openssf.org/versions/2026-02-19"
+      },
+      {
+        "name": "OpenVEX",
+        "version": "v0.2.0",
+        "date": "2023-07-18",
+        "note": "판번호 정체. OpenSSF sandbox 단계. 상태값 4종·justification 5종",
+        "url": "https://github.com/openvex/spec/blob/main/OPENVEX-SPEC.md"
+      },
+      {
+        "name": "CycloneDX",
+        "version": "1.7 / ECMA-424 2판",
+        "date": "2025-10-21 공개, 2025-12 ECMA 채택",
+        "note": "CBOM 강화, citations, 특허 투명성",
+        "url": "https://cyclonedx.org/news/cyclonedx-v1.7-released/"
+      },
+      {
+        "name": "SPDX",
+        "version": "3.0.1",
+        "date": "2024-12-17",
+        "note": "ISO/IEC 5962:2021은 SPDX 2.2.1 기준",
+        "url": "https://github.com/spdx/spdx-spec/releases"
+      },
+      {
+        "name": "in-toto Attestation Framework",
+        "version": "v1.2.0",
+        "date": "2026-03-18",
+        "note": "SLSA 프로비넌스의 기반 포맷",
+        "url": "https://github.com/in-toto/attestation/releases"
+      },
+      {
+        "name": "CISA SBOM Minimum Elements",
+        "version": "2.1 (2026)",
+        "date": "2026-07-29",
+        "note": "17개 데이터 필드. 한국 NIS/NCSC·KISA 공동 작성",
+        "url": "https://www.ic3.gov/CSA/2026/260729.pdf"
+      },
+      {
+        "name": "EPSS",
+        "version": "v5 (model_version v2026.06.15)",
+        "date": "2026-06-15",
+        "note": "CVE당 약 2,850개 피처. 데이터 파트너 VulnCheck KEV·Shadowserver·LevelBlue",
+        "url": "https://www.first.org/epss/"
+      },
+      {
+        "name": "CVSS",
+        "version": "v4.0 (2023-11) / 실무 지배는 v3.1",
+        "date": "2023-11-01",
+        "note": "NVD 신규 CVE에 병기, 과거 CVE 소급 재채점 없음",
+        "url": "https://www.first.org/cvss/specification-document"
+      },
+      {
+        "name": "CISA BOD 26-04",
+        "version": "-",
+        "date": "2026-06-10",
+        "note": "BOD 22-01·19-02 폐지. SSVC 기반 16행 조치 기한표",
+        "url": "https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk"
+      }
+    ],
+    "tools": [
+      {
+        "name": "OSV-Scanner",
+        "version": "v2.4.0",
+        "date": "2026-06-18",
+        "vex_support": "미지원 (osv-scanner.toml의 IgnoredVulns로 로컬 억제만)",
+        "formats": "table/markdown/vertical/HTML/JSON/SARIF/SPDX 2.3/CycloneDX 1.4·1.5"
+      },
+      {
+        "name": "Trivy",
+        "version": "v0.72.0",
+        "date": "2026-06-30",
+        "vex_support": "지원 (--vex: 로컬 파일 / VEX Repository / OCI 어테스테이션 / SBOM 참조, 실험적)",
+        "formats": "SPDX, CycloneDX 등"
+      },
+      {
+        "name": "Grype",
+        "version": "v0.116.1",
+        "date": "2026-07-28",
+        "vex_support": "부분 (OpenVEX)",
+        "formats": "-"
+      },
+      {
+        "name": "Syft",
+        "version": "v1.50.0",
+        "date": "2026-07-28",
+        "vex_support": "-",
+        "formats": "SPDX, CycloneDX"
+      },
+      {
+        "name": "Dependency-Track",
+        "version": "5.0.4 (5.0 GA 2026-06-03)",
+        "date": "2026-07-30",
+        "vex_support": "지원 (CycloneDX VEX/VDR 생성·소비). 업로드 BOM/VEX 스키마 검증 강제",
+        "formats": "CycloneDX"
+      },
+      {
+        "name": "cosign",
+        "version": "v3.1.2",
+        "date": "2026-07-17",
+        "vex_support": "-",
+        "formats": "Sigstore bundle (--new-bundle-format)"
+      },
+      {
+        "name": "vexctl",
+        "version": "v0.4.4",
+        "date": "2026-06-16",
+        "vex_support": "OpenVEX 생성·적용·어테스트",
+        "formats": "OpenVEX"
+      },
+      {
+        "name": "sbomqs",
+        "version": "-",
+        "date": "-",
+        "vex_support": "-",
+        "formats": "SBOM 품질 점수(1~10). NTIA·BSI TR-03183-2·OpenChain Telco 기준"
+      },
+      {
+        "name": "ntia-conformance-checker (SPDX)",
+        "version": "-",
+        "date": "-",
+        "vex_support": "-",
+        "formats": "SPDX 문서의 NTIA/CISA 최소 요소 충족 검증. 웹 도구 tools.spdx.org/app/ntia_checker/"
+      },
+      {
+        "name": "osv-scalibr",
+        "version": "0.5.1",
+        "date": "2026-07-27",
+        "vex_support": "-",
+        "formats": "OSV-Scanner의 추출 엔진"
+      }
+    ],
+    "cases": [
+      {
+        "type": "빌드 시스템 침해",
+        "name": "TanStack npm 침해",
+        "date": "2026-05-11",
+        "scale": "42개 패키지 84개 버전",
+        "source": "https://tanstack.com/blog/npm-supply-chain-compromise-postmortem"
+      },
+      {
+        "type": "CI 액션 침해",
+        "name": "tj-actions/changed-files (CVE-2025-30066)",
+        "date": "2025-03-14~15",
+        "scale": "23,000개 이상 저장소",
+        "source": "https://www.cisa.gov/news-events/alerts/2025/03/18/supply-chain-compromise-third-party-tj-actionschanged-files-cve-2025-30066-and-reviewdogaction"
+      },
+      {
+        "type": "계정 탈취",
+        "name": "axios 침해",
+        "date": "2026-03-31",
+        "scale": "axios@1.14.1, axios@0.30.4 약 3시간 노출",
+        "source": "https://github.com/axios/axios/issues/10636"
+      },
+      {
+        "type": "자가전파 웜",
+        "name": "Shai-Hulud 1차·2차",
+        "date": "2025-09 / 2025-11",
+        "scale": "500개 이상 패키지 / 25,000개 이상 저장소",
+        "source": "https://www.cisa.gov/news-events/alerts/2025/09/23/widespread-supply-chain-compromise-impacting-npm-ecosystem"
+      },
+      {
+        "type": "개발도구(IDE 확장) 침해",
+        "name": "Red Hat @redhat-cloud-services",
+        "date": "2026-05-29~06-01",
+        "scale": "32개 패키지",
+        "source": "https://access.redhat.com/security/vulnerabilities/RHSB-2026-006"
+      },
+      {
+        "type": "유지관리자 소셜 엔지니어링",
+        "name": "XZ Utils (CVE-2024-3094)",
+        "date": "2024-03-29",
+        "scale": "주요 배포판 테스트 채널",
+        "source": "https://nvd.nist.gov/vuln/detail/CVE-2024-3094"
+      },
+      {
+        "type": "타이포스쿼팅",
+        "name": "결제 SDK 사칭 npm·PyPI 캠페인 / PyPI Shai-Hulud 모방",
+        "date": "2026-07-07 / 2026-06-07",
+        "scale": "17개 / 5개 패키지",
+        "source": "https://socket.dev/blog/npm-pypi-campaign-typosquats-popular-secure-payment-apps"
+      },
+      {
+        "type": "의존성 혼동",
+        "name": "조직 스코프 사칭 npm 패키지 45건",
+        "date": "2026-05-28~29",
+        "scale": "9개 조직 스코프, 45개 패키지",
+        "source": "https://www.microsoft.com/en-us/security/blog/2026/05/29/33-malicious-npm-packages-abuse-dependency-confusion-profile-developer-environments/"
+      },
+      {
+        "type": "AI 생성 보고 부하",
+        "name": "curl 버그바운티 종료",
+        "date": "2026-01-31 종료 / 2026-03-01 HackerOne 복귀",
+        "scale": "유효 보고율 15%→5% 미만",
+        "source": "https://daniel.haxx.se/blog/2026/01/26/the-end-of-the-curl-bug-bounty/"
+      }
+    ],
+    "stats": [
+      {
+        "metric": "CISA KEV 카탈로그 총 등재",
+        "value": "1,656건",
+        "as_of": "2026-07-29",
+        "sample": "CISA 배포 JSON 직접 집계",
+        "kind": "primary"
+      },
+      {
+        "metric": "KEV 연도별 등재",
+        "value": "2021:311 / 2022:555 / 2023:187 / 2024:186 / 2025:245 / 2026(7-29까지):172",
+        "as_of": "2026-07-29",
+        "sample": "동상",
+        "kind": "primary"
+      },
+      {
+        "metric": "오픈소스 패키지 연간 다운로드",
+        "value": "9.8조 건 (+67% YoY)",
+        "as_of": "2025년 데이터",
+        "sample": "Sonatype, npm·PyPI·Maven·NuGet 텔레메트리",
+        "kind": "secondary"
+      },
+      {
+        "metric": "신규 악성 패키지",
+        "value": "2025년 454,600건 이상 / 누적 1,233,000건 이상 (+75%)",
+        "as_of": "2025년 데이터",
+        "sample": "Sonatype 자동 탐지+전문가 검토, 중복·변종 정규화",
+        "kind": "secondary"
+      },
+      {
+        "metric": "코드베이스의 오픈소스 포함률",
+        "value": "98% (전년 97%)",
+        "as_of": "2024-11~2025-10 감사",
+        "sample": "Black Duck OSSRA, 947개 상용 코드베이스, 17개 산업",
+        "kind": "secondary"
+      },
+      {
+        "metric": "애플리케이션당 평균 오픈소스 컴포넌트",
+        "value": "1,180개 (전년 911개, +30%)",
+        "as_of": "동상",
+        "sample": "동상",
+        "kind": "secondary"
+      },
+      {
+        "metric": "코드베이스당 평균 취약점",
+        "value": "581건 (전년 280건, +107%), 중앙값 78건",
+        "as_of": "동상",
+        "sample": "동상",
+        "kind": "secondary"
+      },
+      {
+        "metric": "매니페스트 자동 탐지 커버리지",
+        "value": "84% (나머지 16%는 스니펫·바이너리·수동 분석 필요)",
+        "as_of": "동상",
+        "sample": "동상",
+        "kind": "secondary"
+      },
+      {
+        "metric": "LLM 생성 코드의 패키지 환각률",
+        "value": "전체 19.7% / 상용 모델 5.2% / 오픈 모델 21.7%",
+        "as_of": "2025년 (USENIX Security 2025)",
+        "sample": "16개 LLM, 576,000개 코드 샘플, 2개 프롬프트 데이터셋",
+        "kind": "primary"
+      },
+      {
+        "metric": "LLM 생성 코드의 보안 통과율",
+        "value": "약 55% (Python 62 / C# 58 / JS 57 / Java 29)",
+        "as_of": "2026-03-24",
+        "sample": "Veracode, 150개 이상 모델, 80개 과제, 4개 언어 × 4개 CWE",
+        "kind": "secondary"
+      },
+      {
+        "metric": "CVE 제출량 증가",
+        "value": "2020~2025 사이 263% 증가. NIST 2025년 보강 약 42,000건(+45%)",
+        "as_of": "2026-04",
+        "sample": "NIST 발표",
+        "kind": "primary"
+      },
+      {
+        "metric": "NVD 백로그 재분류",
+        "value": "약 29,000건이 'Not Scheduled'로 전환",
+        "as_of": "2026-04-15",
+        "sample": "NIST 발표 및 2차 보도",
+        "kind": "secondary"
+      }
+    ],
+    "korea": [
+      {
+        "item": "SW 공급망 보안 강화 로드맵",
+        "date": "2026-06-24",
+        "body": "과기정통부·국정원",
+        "url": "https://www.kisa.or.kr/2060204/form?postSeq=24&page=1"
+      },
+      {
+        "item": "SW 공급망 보안 가이드라인 1.0",
+        "date": "2024-05-13",
+        "body": "과기정통부·국정원·디지털플랫폼정부위원회·KISA",
+        "url": "https://www.kisa.or.kr/2060204/form?postSeq=15&page=1"
+      },
+      {
+        "item": "보안기능 시험제도 운영지침",
+        "date": "2026-01-01 시행 (개발환경 자체점검 2026-07-01)",
+        "body": "국가정보원",
+        "url": "https://www.nis.go.kr/AF/1_7_2_4/list.do"
+      },
+      {
+        "item": "국가 사이버보안 기본지침 개정 (N2SF 도입)",
+        "date": "2026-05-01",
+        "body": "국가정보원",
+        "url": "https://www.ahnlab.com/ko/contents/content-center/36176"
+      },
+      {
+        "item": "SW 공급망 보안 모델 구축 사업 (40억 원)",
+        "date": "2026년",
+        "body": "KISA",
+        "url": "https://m.boannews.com/html/detail.html?idx=142637"
+      },
+      {
+        "item": "CISA 2026 SBOM 최소 요소 공동 작성 참여",
+        "date": "2026-07-29",
+        "body": "한국 NIS/NCSC, KISA",
+        "url": "https://www.ic3.gov/CSA/2026/260729.pdf"
+      }
+    ],
+    "open_questions": [
+      "SLSA Source 트랙 L4(2인 리뷰)가 국내 중견기업 개발 조직 규모에서 현실적인가 — 리뷰어 부족으로 형식적 승인이 되는 실패 모드를 어떻게 다룰 것인가.",
+      "VEX 명세가 v0.x에 머무는 상태에서 계약서에 VEX 제출을 의무화해도 되는가 — 명세 변경 시 기존 문서의 처리 방침이 필요하다.",
+      "NVD 보강 축소 이후 국내 상용 SCA 도구의 탐지율이 어떻게 변했는지 — 벤더별 데이터 소스 공개 수준이 낮아 비교 불가.",
+      "공공 SBOM 제출 제도화(2027 목표) 시 하위 협력사 제출물의 검증 주체가 원청인지 발주기관인지 — 로드맵에 명시되지 않았다.",
+      "AI 생성 코드가 SBOM에 어떻게 기록되어야 하는가 — 패키지 매니저를 거치지 않고 들어온 코드(OSSRA 기준 16%)의 상당 부분이 AI 생성일 가능성이 있으나 측정 방법이 없다."
+    ],
+    "new_candidates": [
+      {
+        "section": "using > 오픈소스의 보안 취약점",
+        "title": "서명·프로비넌스 검증 (Sigstore / SLSA)",
+        "reason": "패키지 서명 검증이 2026년 npm·PyPI·GitHub에서 모두 표준 기능이 되었는데 원고에 절 자체가 없다."
+      },
+      {
+        "section": "using > 오픈소스의 보안 취약점",
+        "title": "VEX로 오탐 줄이기 — SBOM만으로 안 되는 이유",
+        "reason": "SBOM 절은 있으나 SBOM 수요자가 오탐에 파묻히는 문제와 그 해법이 없다."
+      },
+      {
+        "section": "using > 오픈소스의 보안 취약점",
+        "title": "취약점 우선순위 3축 모델 (KEV × EPSS × 노출)",
+        "reason": "CVSS 단일축 표를 대체하는 절이 필요하다."
+      },
+      {
+        "section": "using > 오픈소스의 보안 취약점",
+        "title": "CI/CD 자체가 공격면이다 — 워크플로 보안 체크리스트",
+        "reason": "2025~2026년 주요 사고 다수가 CI 파이프라인 경로였는데 원고는 CI를 '보안 검사를 넣는 곳'으로만 다룬다."
+      },
+      {
+        "section": "using > 오픈소스 사용 가이드 - 개발자 편",
+        "title": "AI 코딩 도구 사용 시 의존성 검증",
+        "reason": "패키지 환각·슬롭스쿼팅은 개발자가 커밋 전에 막아야 하는 유형이다."
+      },
+      {
+        "section": "contributing",
+        "title": "취약점을 보고할 때의 책임 — AI 생성 보고 금지",
+        "reason": "curl 사례가 보여주듯 기업의 무분별한 자동 보고가 커뮤니티 비용이 되고 있다."
+      }
+    ],
+    "removals": [
+      "content/en/using/_index.md L763-765 SolarWinds 사례 → TanStack 침해로 교체 (개념 언급 한 문장만 유지)",
+      "content/en/using/_index.md L767-769 event-stream 사례 → axios 침해로 교체",
+      "content/en/using/_index.md L694-699 생태계별 프로젝트·버전 수 나열 → 행동 가능한 수치로 대체",
+      "content/en/using/_index.md L953-956 'Mitre의 CVE' 항목 → 2번 'CVE(Mitre)'와 중복이므로 통합",
+      "content/en/using/_index.md L841-846 국가별 정책 표의 '2024년(예정)' 행 → 결과 확인 후 갱신 또는 삭제",
+      "content/en/using/_index.md L1050 [^checkpoint2024] 벤더 마케팅 페이지 각주 → 중립 1차 출처로 교체"
+    ]
+  }
+}

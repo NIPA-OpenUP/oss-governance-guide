@@ -1,0 +1,145 @@
+{
+  "_note": "임시 조각 3/3 — 최종 병합본은 04b_plan_using.json 이다.",
+  "directives": [
+    {
+      "id": "US-29",
+      "priority": 1,
+      "op": "restructure",
+      "anchor_line": 688,
+      "anchor_quote": "#### 오픈소스 보안의 중요성\n\n오픈소스 소프트웨어는 현대 소프트웨어 개발의 근간이 되었으며, 그 사용량은 지속적으로 증가하고 있다. Sonatype의 [2024 소프트웨어 공급망 현황 보고서]",
+      "instruction": "'오픈소스 보안의 중요성'(L688~L714)과 '오픈소스 보안 취약점 현황'(L717~L747) 두 절이 같은 Sonatype 2024년판을 두 번 요약한다 — 6.6조 건/52%와 51만2,847개/156%가 L690·L705와 L725·L726에 그대로 반복된다. 두 절을 하나로 병합하고 통계는 1회만 인용한다. 수치는 Sonatype 11번째 연례 보고서(2026-01-28 발표, 2025년 데이터)로 교체한다: 2025년 신규 악성 패키지 454,600건 이상, 누적 차단 1,233,000건 이상(전년 대비 75% 증가), 4대 레지스트리 연간 다운로드 9.8조 건(전년 대비 67% 증가). 주의 두 가지 — 보고서명이 '2026 State of the Software Supply Chain'이지만 데이터는 2025년이라는 점을 각주에 명시하고, 9.8조를 이전 6.6조와 산술 비교하면 +48%가 되어 Sonatype 발표치 +67%와 어긋나므로 두 수치를 출처 표기 그대로 병기하고 임의로 조정하지 마라. L694~L699의 생태계 규모 나열(Maven 6.7만 프로젝트 등)은 매년 바뀌고 기업의 어떤 판단에도 쓰이지 않으므로 삭제하고, 행동 가능한 수치로 대체한다: 악성 패키지의 99% 이상이 npm에 집중, CVE가 있는 EOL·패치 불가 패키지 버전 최소 81,000개, Log4Shell이 2025년에도 4,200만 회 다운로드. L701의 출처 없는 '현대 소프트웨어 애플리케이션의 90%'와 L1089의 '오픈소스 코드가 60~80%'는 같은 파일 안에서 충돌하므로 Black Duck 2026 OSSRA의 '코드베이스의 98%가 오픈소스를 포함, 애플리케이션당 평균 오픈소스 컴포넌트 1,180개(전년 911개)'로 통일하고 표본(947개 상용 코드베이스, 2024-11~2025-10 감사)을 명시한다. L709의 GII Korea 시장 예측 문단과 각주 [^giikorea2024]는 링크가 HTTP 410 Gone이고 '시장이 커지니 보안이 중요하다'는 논증도 약하므로 삭제한다 — 보안의 중요성은 시장 규모가 아니라 사고 사례와 규제 시한으로 논증한다. 통계 인용 뒤에는 '배경 통계는 배경으로만 쓰고 사내 의사결정 근거로는 자사 SBOM에서 추출한 수치(총 컴포넌트 수, EOL 컴포넌트 수, KEV 해당 건수)를 쓴다'는 한 문장을 붙인다. 목표 분량: 60행 → 25행(-35).",
+      "evidence": ["audit_using#issues[49]", "audit_using#issues[50]", "audit_using#issues[51]", "research_security#findings[25]", "research_security#findings[26]", "research_market#findings[4]", "research_security#stale_items[1]", "research_security#stale_items[2]", "research_security#stale_items[3]", "research_market#stale_items[9]"],
+      "practicality": "통계표"
+    },
+    {
+      "id": "US-30",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 734,
+      "anchor_quote": "OWASP(Open Web Application Security Project)에서 발표한 [오픈소스 소프트웨어 Top 10 리스크](https://owasp.org/www-project-open-source-software-top-10/)[^owasp2024]를 바탕으로 주요 취약점 유형과 공격 벡터를 살펴보면 다음과 같다:",
+      "instruction": "'Top 10'이라 해놓고 5개만 소개한다. OWASP OSS Top 10 프로젝트 페이지에서 현행 10개 항목을 확인해 전부 표로 옮기고, 각 항목에 '이 가이드의 어느 절에서 다루는가'를 매핑하는 열을 추가한다. 매핑되지 않는 항목이 곧 이 섹션의 공백이므로 그 사실을 표 아래 한 줄로 적는다. 빠져 있던 항목 중 라이선스·규제 리스크와 의존성 혼동은 이 가이드의 다른 절과 직접 연결되므로 반드시 링크를 건다(의존성 혼동은 US-32의 사례 절, 라이선스 리스크는 US-06의 도입 심사 축). 항목 명칭은 프로젝트 원문 표기를 확인해 쓰고, 확인하지 못한 항목을 추정으로 채우지 마라. 목표 분량: 8행 → 16행(+8).",
+      "evidence": ["audit_using#issues[52]", "research_security#findings[21]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "US-31",
+      "priority": 1,
+      "op": "restructure",
+      "anchor_line": 753,
+      "anchor_quote": "##### 1. 최근 5년간의 주요 사례\n   \na) XZ Utils 취약점 (2024년)",
+      "instruction": "제목의 '최근 5년간'이라는 상대 시점 표현을 없애고 '주요 오픈소스 공급망 사고 사례'로 바꾼 뒤, 사례를 유형별로 재편한다. 각 사례는 '무슨 일이 있었나 → 근본 원인 → 우리 조직이 이 유형을 막는 통제'의 3단 구성으로 쓰고, 세 번째 항목이 없는 사례는 넣지 마라. 유형과 사례: (1) 유지관리자 신뢰 악용 — XZ Utils(2024-03, CVE-2024-3094) 유지. 기존 서술이 '코드 리뷰의 취약성'으로만 끝나 기업이 할 일이 없으므로, 소스 저장소가 아니라 릴리스 tarball에만 백도어가 있었다는 사실과 통제 4가지(유지관리자 1~2인 프로젝트 목록화, 후원·기여·인력배정 중 택일 실행, VCS 태그에서 빌드, 상류 유지관리자 변경 모니터링)를 추가한다. 각주 [^blackkilt2024]는 출처 불명 블로그이므로 NVD의 CVE-2024-3094 항목과 OpenSSF·OpenJS 공동 경보로 교체한다. (2) 빌드 시스템 침해 — SolarWinds(2020)를 TanStack npm 침해(2026-05-11)로 교체한다. pull_request_target으로 포크 PR 코드 실행 → actions/cache가 오염된 pnpm 스토어를 base 캐시에 저장 → 릴리스 워크플로가 그 캐시를 복원하는 동안 러너 메모리에서 OIDC 토큰 탈취 → 42개 패키지 84개 악성 버전을 6분 만에 게시. 세 취약점이 각각 상대가 지킨다고 가정한 신뢰 경계를 하나씩 넘었다는 것이 근본 원인이다. SolarWinds는 '공급망 공격이라는 개념의 기원' 한 문장으로 축약한다. (3) 계정 탈취 — event-stream(2018)을 axios 침해(2026-03-31)로 교체한다. 소셜 엔지니어링과 RAT 감염으로 유지관리자 자격증명이 탈취되어 백도어 버전이 약 3시간 게시됐고, 통제는 lockfile 고정과 npm ci, 신규 버전 24~72시간 cooldown, npm audit signatures로 프로비넌스 검증, OIDC Trusted Publishing 전환, 개발자 기기 EDR과 WebAuthn MFA다. event-stream 시대에는 이 대응 수단이 존재하지 않아 '무엇을 했으면 막았나'를 쓸 수 없다는 것이 교체 사유다. (4) CI 액션 침해 — tj-actions/changed-files(2025-03, CVE-2025-30066). 태그가 소급 이동 가능한 참조라는 Git의 성질이 신뢰 지점이었고, 23,000개 이상 저장소의 CI 시크릿이 워크플로 로그로 유출됐다. 통제는 서드파티 액션의 40자 커밋 SHA 고정과 Dependabot 병행, permissions 최소 권한, 시크릿 미주입이다. (5) 자가 전파 웜 — Shai-Hulud 1차(2025-09, 200~500개 이상 패키지·수치가 자료마다 엇갈려 병기)와 2차(2025-11~, 약 350개 계정에 걸쳐 25,000개 이상 악성 저장소), 파생 도구킷 Miasma가 2026-06 Red Hat @redhat-cloud-services 32개 패키지 침해에 재사용됨. 통제는 CI·개발자 기기에서 클라우드 장수명 키 제거와 단기 OIDC 전환, `--ignore-scripts` 기본화와 예외 허용 목록, 사고 대응 플레이북에 '레지스트리 웜' 시나리오 추가다. (6) 개발도구 침해 — Red Hat 사례에서 악성 VS Code 확장이 경로였다는 점을 살려 IDE 확장 정책(허용 목록, 설치 승인, 업데이트 모니터링)이 '오픈소스 사용 정책'의 사각지대라는 것을 한 문단으로 쓴다. (7) 이름 혼동 — L738의 개념뿐인 서술에 2026-07-07 결제 SDK 사칭 캠페인(npm 13개·PyPI 4개)과 2026-05-28~29 조직 스코프 사칭 45개 패키지(버전을 100.100.100 등으로 부풀려 의존성 해석에서 내부 패키지를 이기게 설계)를 붙인다. 통제는 .npmrc의 스코프별 레지스트리 고정(`@회사명:registry=사내레지스트리`), 사내 스코프명 공개 레지스트리 선점 등록, 신규 게시 N일 이내 패키지 차단, `--ignore-scripts` 기본값이며 이 네 가지를 신규 프로젝트 생성 템플릿에 넣으라고 지시한다. (8) 알려진 취약점 미패치 — Log4Shell 유지. L765의 SolarWinds 각주 [^cisa2024]는 L291에서 먼저 정의된 라벨이라 Hugo가 CISA SBOM 페이지로 연결하는 오참조 상태다. 라벨을 [^cisa-solarwinds] 같은 고유 라벨로 바꾸고 L797 정의를 그 라벨로 옮긴 뒤, L376의 중복 [^cisa2024] 정의를 삭제해 라벨당 정의 1개 원칙을 세운다. 목표 분량: 46행 → 84행(+38).",
+      "evidence": ["research_security#findings[14]", "research_security#findings[15]", "research_security#findings[16]", "research_security#findings[17]", "research_security#findings[18]", "research_security#findings[19]", "research_security#findings[20]", "research_security#findings[21]", "audit_using#issues[53]", "audit_using#issues[54]", "audit_using#issues[31]", "research_security#stale_items[4]", "research_security#stale_items[5]", "research_security#stale_items[6]"],
+      "practicality": "사례"
+    },
+    {
+      "id": "US-32",
+      "priority": 1,
+      "op": "delete",
+      "anchor_line": 801,
+      "anchor_quote": "#### 오픈소스 보안 관련 규제 및 정책 동향\n\n오픈소스 보안과 관련된 규제 및 정책은 [SBOM 관리](#sbom-관리)를 넘어서 더 광범위한 영역으로 확대되고 있다.",
+      "instruction": "L801~L857 절 전체(각주 [^oss-act], [^cisa-roadmap], [^eu-cyber-act], [^nis2], [^japan-strategy], [^korea-law], [^korea-tf], [^korea-industry] 포함, 약 57행)를 삭제한다. 이 절은 앞쪽 'SBOM 규제 동향'(L268~L328)과 내용이 상당 부분 겹치고, 남은 항목이 전부 2024년 시점의 '예정' 목록이다 — 'EU 사이버보안법 개정 예정(2024)', '일본 소프트웨어 관리 가이드라인 발표 예정(2024)', '범정부 합동TF 구성 예정(2024 하반기)', '국가 사이버보안 기본계획 수립 예정(2025)', '산업별 정책 수립 예정(2024~2025)' 5건이 모두 시점이 지났고 L841~L846의 표도 '2024년(예정)' 표기 그대로다. 삭제하면서 아래 3건만 US-13의 기한 순 표로 흡수한다: (a) NIS2 — 2024-10-17 전환 기한, 2024-11-28 23개국 위반 절차 개시, 2026-07-08 아일랜드·스페인·프랑스·네덜란드 CJEU 회부. 지침이므로 회원국별 국내법 시행일과 등록 의무를 개별 확인해야 한다는 실무 주의를 반드시 붙인다 — 'EU 전체 2024-10-17 시행'으로 정리하면 실제 기한을 놓친다. (b) 국가 사이버안보 기본계획 — '2025년 수립 예정'이 아니라 2024-09-01 국가안보실이 14개 부처와 100대 실천과제로 이미 발표했다. 명칭도 '사이버보안'이 아니라 '사이버안보'다. 후속 문서인 2026-06-24 SW 공급망 보안 강화 로드맵으로 참조를 옮긴다(US-16에서 처리). (c) EU 사이버보안법 개정으로 오픈소스 보안 인증 체계가 도입됐다는 사실은 2026-07-31 현재 확인되지 않았다. 항목을 삭제하고 'CRA 제25조가 자유·오픈소스 소프트웨어 자발적 보안 인증(security attestation) 프로그램의 위임법 근거를 두었으나 2026-07 현재 미채택'이라는 쟁점 서술 한 줄로 대체한다 — 단정하지 마라. 일본 항목은 '2024년 발표 예정'을 삭제하고 'METI가 CISA 2026 SBOM 최소 요소의 공동 저자로 참여했다'는 확인된 사실 한 줄로 대체한다. 삭제 후 이 위치에는 앞쪽 규제 절로 가는 앵커 링크 한 줄만 남긴다. 경고: L803과 L863이 `[SBOM 관리](#sbom-관리)` 앵커를 참조하므로 '### SBOM 관리'(L264) 헤딩은 건드리지 마라. 목표 분량: -57(그중 약 17행이 US-13으로 흡수되므로 순감 -40).",
+      "evidence": ["research_regulation#findings[20]", "research_regulation#findings[21]", "research_regulation#findings[24]", "audit_using#issues[55]", "audit_using#issues[56]", "research_security#stale_items[7]", "research_regulation#stale_items[11]", "research_regulation#stale_items[12]", "research_regulation#stale_items[13]", "research_regulation#stale_items[14]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "US-33",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 880,
+      "anchor_quote": "c) 취약점 심각도 평가 및 우선순위 설정\n   - [CVSS(Common Vulnerability Scoring System)](https://www.first.org/cvss/) 활용[^cvss]",
+      "instruction": "L879~L888의 CVSS 단일축 우선순위 서술과 대응 시간 표(긴급 9.0-10.0=24시간 / 높음 7.0-8.9=1주일 / 중간 4.0-6.9=1개월 / 낮음 0.1-3.9=3개월)를 3축 모델로 '교체'한다. 신·구를 병기하지 마라 — 둘을 나란히 두면 조직마다 옛 표를 계속 쓴다. 교체 근거: CISA가 2026-06-10 BOD 26-04를 발령해 BOD 22-01과 19-02를 폐지하고 4개 변수(공개 노출 / KEV 등재 / 자동화 가능성 / 기술적 영향) 기반 16행 기한표로 전환했다. 새 표는 최소 2축(인터넷 노출 여부 × KEV 등재 또는 악용 확인 여부)으로 만들고 각 조합에 사내 SLA를 매핑한다. BOD 26-04 Table 1의 값을 그대로 옮겨도 좋다 — 노출Y·KEV Y·자동화Y → 3일, 노출Y·KEV N·자동화N·partial → 60일, 노출N·KEV N·자동화N → 정기 업그레이드 시 조치. 마지막 조합이 중요하다: '모든 취약점을 기한 내 처리하려는 규정은 실패한다'는 것이 CISA가 공식화한 판단이므로 표 아래 한 줄로 명시한다. 함께 넣을 것: (1) EPSS를 두 번째 축으로 — 현행 모델은 v5(데이터 피드 model_version v2026.06.15)이며 무료·무인증 API(https://api.first.org/data/v1/epss?cve=...)로 즉시 연동된다. 점수가 매일 바뀌므로 티켓 생성 시점 값으로 고정하지 말고 재조회하라는 운영 규칙을 붙인다. v5 공개일은 2차 자료가 2026-05-13과 2026-06-15로 엇갈리므로 데이터 피드의 model_version을 기준으로 표기한다. (2) KEV — 2026-07-29 기준 카탈로그 총 1,656건(catalogVersion 2026.07.29 직접 집계), 연도별 2021년 311건 / 2022년 555건 / 2023년 187건 / 2024년 186건 / 2025년 245건 / 2026년 7-29까지 172건. KEV JSON 피드를 매일 자동 동기화해 SBOM 컴포넌트 목록과 CVE ID로 조인하면 '자사 영향 KEV' 목록이 보통 수십 건 수준이라 사람이 관리 가능하다는 실무 결론을 적는다. KEV 수치는 2차 자료 재인용 시 틀리므로 1차 JSON 피드를 각주로 단다. (3) CVSS의 위치 — 판번호를 명시한 보조 축으로 강등한다. v4.0은 2023-11 공개됐으나 2026년 중반 실무 지배 판번호는 여전히 v3.1이고, NVD는 신규 CVE에 v4.0과 v3.1을 병기하되 과거 CVE의 소급 재채점 계획이 없어 데이터셋에 두 판번호가 혼재한다. 따라서 사내 규정에는 반드시 판번호를 박고('CVSS v3.1 기준 7.0 이상'), 두 판번호가 모두 있을 때의 tie-break 규칙을 명문화한다. FIRST 자신이 'CVSS-B Base scores are not risk'라고 명시한다는 점을 인용한다. (4) 점수가 없는 CVE의 처리 분기 — 2026-04-15부터 NVD가 KEV 등재·연방 사용 SW·EO 14028 중요 SW에 해당하는 CVE만 보강하므로 상당수 CVE에 CVSS 점수와 CPE가 붙지 않는다. CVSS 점수에만 연동된 SLA는 여기서 멈추므로 CNA 제공 점수 또는 자체 평가로 대체하는 분기를 규정에 넣어야 한다. 이 분기가 없으면 새 표도 작동하지 않는다. 산문으로 풀지 말고 표를 중심에 두어라. 목표 분량: 10행 → 40행(+30). 그림 IL-using-04가 이 표의 앞 단계(탐지·선별)를 보여주므로 표 위에 배치한다.",
+      "evidence": ["research_security#findings[7]", "research_security#findings[8]", "research_security#findings[9]", "research_security#findings[10]", "research_security#findings[6]", "audit_using#issues[57]", "research_security#stale_items[0]", "audit_using#illustration_gaps[3]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "US-34",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 899,
+      "anchor_quote": "b) 자동화된 업데이트 시스템 구축\n   - 패키지 관리자(예: npm, pip) 활용한 자동 업데이트 설정",
+      "instruction": "패치 관리 절(L890~L919)이 a)~f) 항목 나열로만 되어 있어 담당자가 착수할 일이 없다. '무엇으로 어떻게'를 넣는다: Renovate 또는 Dependabot 설정 예시를 코드 블록으로 제시하고(그룹핑, 자동 머지 조건, 보안 업데이트만 즉시 적용, 메이저 버전 수동 검토), lockfile 정책과 사내 아티팩트 프록시(Nexus/Artifactory) 경유 강제, 컨테이너 베이스 이미지 갱신 주기를 한 흐름으로 서술한다. 프록시 정책에는 두 가지 규칙을 반드시 넣는다 — '신규 게시 N일 이내 패키지 차단'(axios 사건은 3시간 만에 삭제됐으므로 cooldown만으로 회피된다)과 '설치 스크립트 기본 비활성화(`npm ci --ignore-scripts`) + 예외 허용 목록'. Red Hat 사례에서 피해를 줄인 요인이 '배포 파이프라인이 install 스크립트를 제거하는 설계'였다는 점을 근거로 붙인다. 목표 분량: 21행 → 33행(+12).",
+      "evidence": ["audit_using#issues[58]", "research_security#findings[16]", "research_security#findings[17]", "research_security#findings[18]", "research_security#findings[20]", "research_security#findings[21]"],
+      "practicality": "템플릿"
+    },
+    {
+      "id": "US-35",
+      "priority": 1,
+      "op": "insert",
+      "anchor_line": 925,
+      "anchor_quote": "[^cvss]: Common Vulnerability Scoring System: https://www.first.org/cvss/",
+      "instruction": "이 각주 아래에 '서명·프로비넌스 검증' 소절(H4)을 신설한다. 순증이 허용된 신설 소절이며, 오픈소스를 '가져다 쓰는' 단계에서 무결성을 확보하는 2026년 표준 수단인데 현재 섹션 전체에 언급이 없다. 넣을 것: (1) 검증 실무 2갈래 — 패키지 레지스트리 수준에서 `npm audit signatures`가 설치된 패키지의 레지스트리 서명과 프로비넌스 어테스테이션을 일괄 검증하고, 아티팩트 수준에서 cosign(v3.1.2, 2026-07-17)의 `verify-blob-attestation --bundle <file> --new-bundle-format --certificate-oidc-issuer=... --certificate-identity-regexp=...` 또는 `gh attestation verify`로 npm 프로비넌스·GitHub Artifact Attestations·Homebrew 프로비넌스를 검증한다. PyPI는 PEP 740 기반 어테스테이션을 Trusted Publishing에서 기본 생성한다. (2) 가장 중요한 경고 — 신원 검증 없이 서명만 확인하는 것은 무의미하다(누구나 서명할 수 있다). 검증 대상 신원(OIDC issuer + 워크플로 경로)을 허용 목록으로 관리하지 않으면 공격자가 자기 저장소에서 만든 정상 서명도 통과한다. `--certificate-identity-regexp`는 패턴 매칭, `--certificate-identity`는 완전 일치라는 차이도 적는다. (3) CI 게이트 규칙 — 의존성 설치 직후 단계에 검증을 넣고 실패 시 빌드를 중단한다. 경고만 남기는 설정은 사고 시 무용하다. (4) SLSA 레벨 목표 — 현행 판번호는 v1.2(2025-11-12 운영위 승인, v1.1은 Retired)이며 Build 트랙 L0~L3에 더해 Source 트랙 L1~L4가 정식 승인됐다. Build L1(프로비넌스 존재) → L2(호스팅 빌드 플랫폼이 생성·서명) → L3(빌드 간 상호 영향 차단, 서명 키를 사용자 정의 빌드 단계로부터 격리) 단계 목표를 표로 만들고, 국내 기업 도달 조건을 열로 붙인다: GitHub Actions 사용 조직은 actions/attest-build-provenance 도입으로 Build L2에 즉시 도달하고 조직 공용 reusable workflow로 빌드를 강제하면 L3에 도달한다. 자체 호스팅 Jenkins 기반은 L2부터가 난관이므로 빌드 노드 임시화, 서명 키를 빌드 스텝에서 분리(HSM/KMS 또는 OIDC 키리스), 빌드 정의의 파이프라인 코드 고정 3가지를 먼저 확보한다. Source 트랙은 L2(브랜치 이력 보존 + 강제 푸시 금지)까지가 현실적 1차 목표이고 L4(2인 리뷰)는 기술적으로는 즉시 가능하나 인력 배분이 실제 장벽이라는 점을 적는다. 개발 중인 Build Environment 트랙과 Dependency 트랙은 v1.2에 포함되지 않았음을 명시하고 있는 것처럼 쓰지 마라. (5) npm 인증 체계 전면 개편 — 2025-12-09 classic token 전량 영구 폐기(재생성·복구 불가), 쓰기 권한 granular token 최대 수명 90일, 신규 패키지 2FA 기본, 권장 최종 형태는 OIDC 기반 Trusted Publishing이며 이때 프로비넌스가 자동 생성·게시된다. 사내 CI에 남은 classic token 전수 조사와 90일 회전 스케줄 등록을 체크리스트로 낸다 — 회전 절차가 없으면 90일마다 배포가 멈춘다. (6) GitHub 측 대응 — immutable releases(2025-10-28 GA)를 조직 기본 정책으로 켜라. 비용이 들지 않고 태그 소급 변조를 차단하므로 tj-actions 유형 공격에 직접 대응한다. 그림 IL-using-07을 이 소절 도입부에 배치한다. 목표 분량: +38.",
+      "evidence": ["research_security#findings[0]", "research_security#findings[1]", "research_security#findings[2]", "research_security#findings[31]", "research_security#findings[15]", "audit_using#issues[66]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "US-36",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 933,
+      "anchor_quote": "1. **NVD (National Vulnerability Database)**\n   - 운영: 미국 국립표준기술연구소(NIST)\n   - 특징: CVE(Common Vulnerabilities and Exposures)를 기반으로 한 포괄적인 취약점 정보 제공",
+      "instruction": "취약점 데이터베이스 목록(L931~L969)을 '단일 DB에 의존하지 말 것'을 결론으로 하는 소절로 재작성한다. 먼저 구조 결함부터 고친다 — 2번 'CVE(MITRE Corporation)'와 5번 'Mitre의 CVE'가 같은 DB를 두 번 등재하고 있으므로 5번을 삭제하고 그 안의 유용한 설명(CVE 번호 체계, CVE-2015-5211 예시와 cve.png 이미지)을 2번으로 합친다. 5번 다음이 다시 '1. Sonatype OSS Index'로 번호가 리셋되는 것도 5번으로 바로잡는다. 내용 갱신: (1) NVD 항목에 2026-04-15 보강 정책 전환을 명시한다 — KEV 등재 CVE·연방정부 사용 SW·EO 14028 중요 SW에 해당하는 CVE만 보강하고, 2026-03-01 이전 발행 CVE 약 2.9만 건은 'Not Scheduled'로 재분류됐으며, CNA가 이미 점수를 제공한 경우 NIST가 별도 심각도 점수를 부여하지 않는다. 실무 영향이 결정적이다: CPE가 없으면 NVD 기반 스캐너는 CVE를 제품에 매칭할 수 없다. 업계 추산으로 우선순위 범주가 향후 CVE 물량의 15~20%만 커버한다는 수치는 '추산'임을 밝혀 인용한다. (2) CISA KEV 카탈로그와 ENISA EUVD를 목록에 추가한다. EUVD는 CVE ID를 그대로 복제하지 않고 자체 식별 체계를 쓴다는 점, CVE 프로그램은 2025-04 자금 위기 이후 CVE 재단 설립이 공표됐고 2026-01 기준 CISA가 '3월 자금 절벽은 없다'고 밝혔으나 장기 거버넌스는 확정되지 않은 진행 중 사안이라는 점을 쟁점으로 서술한다(confidence medium — 단정하지 마라). (3) 각 소스의 용도를 구분해 한 줄씩 붙인다: NVD=CVE 메타데이터, OSV=언어 패키지 정밀 매칭(버전 범위 표현이 정밀해 CPE 매칭보다 오탐·미탐이 적다), GitHub Advisory=생태계 권고, KEV=악용 확인, EPSS=악용 확률, EUVD=EU 대응. (4) 실행 지시 3줄: 사용 중인 스캐너가 NVD 단독인지 확인하고 최소 2개 이상 병행하도록 구성을 바꾼다 / 스캐너 계약·갱신 시 '데이터 소스 목록과 NVD 미보강 CVE 대응 방식'을 서면으로 확인한다 / 사내 취약점 관리 시스템이 CVE ID 외 식별자(GHSA, OSV ID, EUVD ID)를 저장할 수 있는지 스키마를 점검한다 — CVE ID만 지원하는 스키마에는 대체 소스를 붙일 수 없다. (5) Sonatype OSS Index 항목에는 2026년 4월부터 'Sonatype Guide API 토큰' 체계로 이관이 시작됐고 기존 OSS Index API 키가 2026년 말 이전에 폐지될 예정이라는 사실을 각주로 붙인다(2차 출처, confidence medium) — OWASP Dependency-Check를 CI에 연동한 조직은 마이그레이션이 필요하다. 목표 분량: 39행 → 42행(+3).",
+      "evidence": ["research_security#findings[6]", "research_security#findings[30]", "research_security#findings[11]", "research_tooling#findings[7]", "audit_using#issues[60]", "audit_using#issues[61]", "research_security#stale_items[12]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "US-37",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 974,
+      "anchor_quote": "##### 오픈소스 보안 관리 도구 및 플랫폼\n\n1. **OWASP Dependency-Check**",
+      "instruction": "보안 도구 3종(Dependency-Check/Trivy/Grype)을 역할별 파이프라인으로 재구성한다. 판번호와 확인 시점을 각 도구에 붙인다: OSV-Scanner v2.4.0(2026-06-18), Trivy v0.72.0(2026-06-30), Grype v0.116.1(2026-07-28), Syft v1.50.0(2026-07-28), Dependency-Track 5.0.4(2026-07-30). VEX 지원 여부 열을 반드시 넣어라 — Trivy는 `--vex` 플래그로 로컬 VEX 파일·VEX Repository·OCI 어테스테이션을 지원(실험적), Dependency-Track은 CycloneDX VEX/VDR 생성·소비 지원, OSV-Scanner는 미지원(osv-scanner.toml의 [[IgnoredVulns]] 로컬 억제만 가능). 조합 원칙 2줄: 컨테이너/OS 패키지는 Trivy 또는 Grype, 언어 패키지는 OSV-Scanner로 최소 2계층 스캔한다(단일 도구·단일 DB 구성은 NVD 보강 축소 이후 미탐 위험이 커졌다). OpenSSF Scorecard(v5.5.0, 2026-04-23)를 평가 도구로 추가하되 한계를 반드시 함께 쓴다 — 총점을 통과/탈락 기준으로 쓰지 말고 개별 체크 4개(Maintained, Code-Review, Branch-Protection, Security-Policy)를 심사 확인 항목으로 삼으며, 낮은 점수는 탈락 사유가 아니라 추가 확인 사유다. Zahan 등(NC State, ICSE-SEIP 2023)의 실증 연구에서 집계 보안 점수가 높을수록 보고된 취약점 수가 오히려 증가했고 회귀 모델 설명력이 R² 9~12%에 그쳤다는 사실을 각주로 달고, '점수와 실제 취약점 수의 상관은 실증되지 않았다'는 한계를 심사 문서에 명시하라고 지시한다 — 이 문장이 없으면 점수가 면책 근거로 오용된다. v5.4.0부터 `--repos`/`--org` 플래그로 조직 전체 일괄 채점이 가능해졌으므로 자사 공개 저장소를 먼저 채점해 기준선을 만들라는 실행 지시를 붙인다. L990의 '이러한 도구들을 CI/CD 파이프라인에 통합하는 것이 중요하다'는 문장은 US-12에서 정의한 4개 통합 지점(PR 체크 / 이미지 빌드 후 / 릴리스 게이트 / 야간 재스캔)에 어떤 도구가 붙는지로 구체화하되, 지점 정의 자체를 여기서 반복하지 말고 상호 참조한다. 목표 분량: 19행 → 41행(+22).",
+      "evidence": ["research_security#findings[11]", "research_security#findings[3]", "research_tooling#findings[16]", "audit_using#issues[62]", "research_security#stale_items[9]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "US-38",
+      "priority": 1,
+      "op": "insert",
+      "anchor_line": 992,
+      "anchor_quote": "오픈소스 보안 취약점 관리는 단순히 도구를 사용하는 것에 그치지 않고, 개발 팀의 보안 인식 제고와 함께 체계적인 프로세스 수립이 필요하다.",
+      "instruction": "이 문단 아래에 'CI/CD 자체가 공격면이다 — 워크플로 보안 체크리스트' 소절(H4)을 신설한다. 순증이 허용된 신설 소절이다. 현재 원고에는 CI가 방어 수단으로만 등장하고 공격 대상이라는 관점이 없는데, 2025~2026년 실제 사고의 다수가 CI 경로였다(tj-actions, TanStack). 체크리스트 형태로 쓰고 산문으로 풀지 마라. 항목: (1) `pull_request_target`을 쓰는 워크플로 전수 조사 — 신뢰되지 않는 코드를 실행하는 워크플로에서 제거하고, 불가피하면 `repository_owner` 가드를 건다. (2) 서드파티 GitHub Action을 태그가 아니라 40자 커밋 SHA로 고정하고 Dependabot으로 SHA를 갱신 관리해 고정과 최신화를 양립시킨다. 태그·브랜치 참조는 소급 변조 가능하다. (3) 포크 PR 워크플로와 릴리스 워크플로가 캐시를 공유하지 않도록 캐시 키를 분리하고, 사고 시 조직 전체 캐시를 퍼지한다. (4) 빌드 잡과 배포 잡을 분리하고 배포 권한 OIDC 토큰의 유효 범위를 배포 잡으로 한정한다. (5) 워크플로에 `permissions:`를 명시해 최소 권한을 적용하고, 시크릿이 필요 없는 잡에는 시크릿을 주입하지 않는다. 공개 저장소 로그는 공개이므로 마스킹만 믿지 마라. (6) 조직 설정에서 '허용된 액션' 목록(verified creators + 명시 허용)을 강제한다. (7) 자사 패키지의 레지스트리 게시 이벤트를 실시간 모니터링해 '내가 하지 않은 배포'를 탐지하고, 프로비넌스의 소스 워크플로를 검증해 예상치 못한 워크플로 배포를 걸러낸다. (8) 개발자 IDE 확장을 허용 목록으로 통제한다 — Red Hat 사례의 경로가 악성 VS Code 확장이었고, 국내 다수 기업이 이 영역을 통제하지 않는다. 체크리스트 앞에 '아래 8개 항목은 1회성 감사로 수행하고 조직 정책(GitHub ruleset)으로 재발을 막는다'는 운영 규칙 한 줄을 둔다. 목표 분량: +32.",
+      "evidence": ["research_security#findings[14]", "research_security#findings[15]", "research_security#findings[18]", "research_security#findings[31]", "research_security#findings[2]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "US-39",
+      "priority": 1,
+      "op": "restructure",
+      "anchor_line": 994,
+      "anchor_quote": "#### 기업의 오픈소스 보안 전략\n\n기업이 오픈소스를 안전하게 활용하기 위해서는 체계적인 보안 전략이 필요하다.",
+      "instruction": "'오픈소스 보안 취약점 관리 방안'(L861~L925)과 '기업의 오픈소스 보안 전략'(L994~L1050) 두 절이 모니터링·대응·비상계획을 각각 다시 서술하고 L916~L918과 L1037~L1039는 문장까지 같다. 두 절을 하나로 병합해 중복 문장을 삭제한다 — 이 병합만으로 60행 이상을 걷어낼 수 있다. 병합 골격은 '취약점 관리 방안'을 상위로 두고(탐지 → 선별 → 조치 → 검증 → 기록), '보안 전략'의 내용 중 남길 것만 흡수한다. 이관 규칙: L998~L1002의 OSPO 설립·역할 서술은 별도 ospo 장(295행)과 겹치므로 여기서 지우고, 이 자리에는 '보안 관점에서 OSPO가 소유해야 할 결정 3가지'(승인 정책, 취약점 대응 SLA, 예외 승인 권한)만 한 문단으로 남긴 뒤 ospo 장으로 상대 경로 링크(/ospo/)를 건다. 개발자 교육·인식 제고(L1013~L1025)와 오픈소스 정책 수립·전사 거버넌스 서술도 조직 체계 주제이므로 ospo 장으로 이관 대상이며, using에는 '개발자가 지켜야 할 규칙'만 남긴다. 판정 기준: 서술의 주어가 '개발자/프로젝트'면 using에 남기고 '회사/조직/OSPO'면 ospo로 보낸다. L1041~L1045의 3행 요약표는 병합 후 중복이므로 삭제한다. 각주 [^itworld2024]와 [^checkpoint2024]는 제목 없이 URL만 있는 형식 위반이고, 벤더 마케팅 페이지(Check Point)를 보안 전략의 근거로 인용하는 것은 부적절하므로 OpenSSF 또는 NIST SSDF(SP 800-218) 같은 중립적 1차 출처로 교체한다. 목표 분량: 116행 → 56행(-60).",
+      "evidence": ["audit_using#issues[59]", "audit_using#issues[63]", "research_security#stale_items[14]", "structure_decision#using_relief.moves[3]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "US-40",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 1053,
+      "anchor_quote": "#### 하위 공급망 보안 관리\n\n한국의 소프트웨어 개발 환경, 특히 공공 부문과 대기업이 주도하는 SI(시스템 통합) 프로젝트에서 하위 공급망의 보안 관리는 종종 간과되지만 매우 중요한 부분이다.",
+      "instruction": "L1057~L1067의 4영역(협력/교육/모니터링/관리) 표는 '~를 운영한다/실시한다' 수준의 방침만 담고 있어 강제력이 없다. '보안 협의체 운영'이나 '1:1 멘토링'만으로는 하청이 SBOM을 내지 않는다. 표를 유지하되 각 행에 '계약 문구 예시'와 '검증 방법' 두 열을 추가하고, 그 아래에 강제력 있는 3단 구성을 신설한다: (1) 계약 — 과업지시서·기술협상서의 산출물 목록에 'SBOM(포맷·판번호 지정)'과 'VEX(해당 시)'를 명시하고, 하자보수 기간 동안 신규 취약점 발생 시 갱신 SBOM과 대응 계획을 제출할 의무를 넣으며, 재하도급이 있으면 동일 의무를 전가하는 flow-down 조항을 둔다. (2) 수용 기준 — CISA 2026 최소 요소 17개 필드 충족, 포맷은 SPDX 2.3/3.0.1 또는 CycloneDX 1.5 이상(deprecated 판번호 거부), 전이 의존성 포함(Coverage 요소), 미상 정보는 'unknown'으로 명시, 작성자 서명 첨부. '무엇이 합격인가'가 없으면 빈 파일도 통과한다. (3) 검증 — 스키마 유효성(Dependency-Track 5.0이 업로드 시 스키마 검증을 강제), 최소 요소 충족(spdx/ntia-conformance-checker 또는 interlynk-io/sbomqs), 실물 대조(납품 바이너리를 Syft/Trivy로 재스캔해 제출 SBOM과 컴포넌트 차집합 확인). (3)의 실물 대조가 핵심이며 서류만 검증하면 하청은 빌드와 무관한 SBOM을 낸다는 점을 명시한다. 추가로 '요구만 하고 수단을 주지 않으면 형식적 제출물만 늘어난다'는 원칙 아래, 하청 역량이 부족하면 원청이 SBOM 생성 도구·CI 템플릿을 제공하라는 지시와 KISA의 2026년 SW 공급망 보안 모델 구축 사업(총 40억 원, 컨소시엄당 최대 5억 원, 올해부터 도입·운영 기업까지 신청 대상 확대)을 협력사 지원 재원으로 활용하라는 안내를 각 1~2행으로 붙인다. 대기업 주도 공급망 지원 사례로 현대차·기아·현대모비스·현대오토에버가 2023-11-08 NIPA와 체결한 업무협약(부품 중소·중견기업 대상 오픈소스 컴플라이언스·라이선스 검증 지원)을 3행 사례로 추가한다. 목표 분량: 22행 → 52행(+30). 그림 IL-using-05를 이 절 도입부에 배치한다.",
+      "evidence": ["research_security#findings[29]", "research_security#findings[5]", "research_market#findings[18]", "audit_using#issues[64]", "research_security#stale_items[13]", "audit_using#illustration_gaps[4]"],
+      "practicality": "템플릿"
+    },
+    {
+      "id": "US-41",
+      "priority": 2,
+      "op": "restructure",
+      "anchor_line": 1078,
+      "anchor_quote": "### DevSecOps\n2012년 Gartner는 \"DevOpsSec: Creating the Agile Triangle\"[^devopsset] 이란 보고서를 통해 DevOps 이니셔티브에 보안 기반을 구축할 필요가 있다는 사실을 강조하기 위해 DevSecOps라는 개념을 소개했다.",
+      "instruction": "DevSecOps가 '오픈소스의 보안 취약점'(L685)과 나란한 H3로 놓여 있으나 내용상 취약점 관리의 실행 방식이므로 H4로 강등해 보안 절 하위로 넣는다(발간본도 같은 판단을 했다). 2012년 Gartner 유래 서술은 한 문장으로 줄여라 — 2026년 독자에게 DevSecOps는 정의가 필요한 신개념이 아니다. L1089의 '오픈소스 코드가 60~80% 포함'은 US-29에서 통일한 OSSRA 2026 수치로 바꾼다. 'IBM DevSecOps 모범 사례' 절(L1091~L1122, 각주 [^bestpractive2020] 포함) 전체를 삭제한다. 삭제 사유 3가지를 커밋 메시지에 남겨라: 링크가 HTTP 503(developer.ibm.com/recipes 플랫폼 폐지) + 6년 전 자료 + '모든 데이터에 암호화를 적용한다' 수준의 오픈소스와 무관한 일반론. 확보한 지면에는 '오픈소스 관점에서 파이프라인 어느 지점에 무엇을 거는가'를 4단계로 배치한다: PR 단계 SCA → 빌드 단계 SBOM 생성·서명 → 레지스트리 단계 정책 게이트 → 운영 단계 지속 모니터링. US-12·US-37과 내용이 겹치므로 여기서는 배치도만 쓰고 도구·판정 규칙은 반복하지 마라. 경고: '### DevSecOps' 헤딩의 레벨을 바꾸면 슬러그가 유지되더라도 목차 위계가 달라진다. 이 헤딩을 가리키는 링크가 없는지 `grep -n '](#devsecops' content/en/using/_index.md` 로 먼저 확인하라. 목표 분량: 45행 → 20행(-25).",
+      "evidence": ["audit_using#issues[65]", "audit_using#issues[66]", "research_security#stale_items[10]", "research_security#findings[26]"],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "US-42",
+      "priority": 2,
+      "op": "move",
+      "anchor_line": 1125,
+      "anchor_quote": "#### GitHub 기능을 활용한 보안 관리 사례\nGiHub은 소스 코드 저장소로 널리 사용되고 있는데, 최근 [GitHub Octoverse (2021)](https://octoverse.github.com)[^github-octoverse] 자료를 보면",
+      "instruction": "이 절(L1125~L1155)을 개발자 편으로 이동한다 — 저장소에서 기능을 켜는 것은 개인 실무이지 조직 정책이 아니어서 현재 위치가 편 구분 기준과 어긋난다. 이동하면서 내용을 2026년 상태로 갱신한다: (1) Octoverse 2021 인용과 '최근'이라는 표현을 제거하고, 통계가 필요하면 Octoverse 2025(공개 저장소 기여 11억 2천만 건 +13%, 신규 개발자 3,600만 명 +23%, LLM SDK 사용 저장소 110만 개 +178%, 조사 기간 2024-09-01~2025-08-31)로 교체한다. 'Fortune 100 중 84%' 같은 확인되지 않은 수치는 최신판에서 대응 수치를 찾지 못하면 삭제한다. (2) 기능 목록을 현행 제품 구성으로 재정리한다 — GitHub Advanced Security가 2025-04-01부터 GitHub Secret Protection($19/월/활성 커미터)과 GitHub Code Security($30/월/활성 커미터) 두 제품으로 분리되었고 Team 플랜에서도 구매 가능해졌으므로, 'Private Repository와 Enterprise 버전에 추가된 기능'이라는 서술은 사실과 맞지 않는다. 각 기능에 '무료 범위 vs 유료 범위'를 한 줄로 명시한다. 가격은 변하므로 각주에 조회 시점을 적는다. (3) Artifact Attentions(2024-06-25 GA, 기본 구성으로 SLSA Build L2 달성)와 immutable releases(2025-10-28 GA)를 기능 목록에 추가하고 US-35와 상호 참조한다. (4) 이미지 4장(dependency-graph, dependabot, code-scanning, secret-scanning)은 2021년 UI 캡처이므로 현행 UI로 재촬영이 필요하다 — 재촬영 전까지는 캡션에 촬영 시점을 명시한다. 목표 분량: 이동 후 31행 → 41행(+10).",
+      "evidence": ["research_security#findings[31]", "research_market#findings[3]", "audit_using#issues[67]", "audit_using#issues[68]", "audit_using#issues[69]", "research_security#stale_items[11]"],
+      "practicality": "체크리스트"
+    }
+  ]
+}

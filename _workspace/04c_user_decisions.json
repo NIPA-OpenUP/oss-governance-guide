@@ -1,0 +1,25 @@
+{
+  "decided_at": "2026-08-01",
+  "global_term": {
+    "choice": "오픈소스SW",
+    "note": "발간본(NIPA 관례) 표기로 전역 통일한다. 저장소 현행 '오픈소스'를 '오픈소스SW'로 치환한다.",
+    "exceptions": [
+      "고유명사·조직명·라이선스명·인용문 내부는 원문 유지 (예: Open Source Initiative, 오픈소스 이니셔티브)",
+      "OSAID가 정의한 용어 'Open Source AI'의 한국어 대응은 '오픈소스 AI'로 둔다 — 모델·데이터셋은 소프트웨어가 아니어서 '오픈소스SW AI'가 성립하지 않는다. 이 예외는 AI 장의 개방성 등급 용어에만 적용하고, 같은 장에서도 소프트웨어를 가리키는 서술은 '오픈소스SW'를 쓴다."
+    ]
+  },
+  "g7_labels": {
+    "choice": "한글만",
+    "labels": {
+      "Open Source AI with Open Data": "데이터 공개 오픈소스 AI",
+      "Open Source AI": "오픈소스 AI",
+      "Open Weights AI": "가중치 공개 AI",
+      "Weights Available AI": "가중치 제공 AI"
+    },
+    "note": "본문·표·모델 대장 컬럼 값에 한글 라벨만 쓴다. 영문 병기는 하지 않는다. 'Weights Available AI'는 한글 정착 표기가 없어 '가중치 제공 AI'로 정한다 — 가중치를 받을 수는 있으나 사용 제한이 붙는 등급임을 각주 한 줄로 설명한다."
+  },
+  "scope": {
+    "choice": "AI 장 전체 + 나머지 섹션 P1",
+    "note": "AI 장 35건 전부 + 기존 5개 섹션의 priority 1 지시만 집필한다. P2·P3는 이번 실행에서 제외하고 계획 파일에 보존한다."
+  }
+}

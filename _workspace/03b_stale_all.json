@@ -1,0 +1,320 @@
+[
+  {
+    "quote": "2027년: 대부분의 조항 시행 예정, 디지털 요소가 있는 제품을 시장에 출시하는 모든 기업은 최소한의 사이버보안 및 보고 요구사항 준수 필요",
+    "reason": "연도만 있어 기업이 행동할 수 없다. CRA는 2026-06-11 / 2026-09-11 / 2027-12-11 3단계로 적용되며 기업이 먼저 맞는 기한은 2026-09-11이다.",
+    "suggested_fix": "'2026-06-11 적합성평가기관 통보(Chapter IV) → 2026-09-11 제조사 보고 의무(제14조) → 2027-12-11 전면 적용' 3단계 표로 교체한다.",
+    "_evidence": "research_regulation#stale_items[0]"
+  },
+  {
+    "quote": "2024년: 최종 법안 채택",
+    "reason": "CRA는 Regulation (EU) 2024/2847로 확정되어 2024-12-10 발효했다. '채택'에서 멈춘 서술은 낡았다.",
+    "suggested_fix": "'2024-11-20 관보 게재, 2024-12-10 발효(Regulation (EU) 2024/2847)'로 대체하고 EUR-Lex 원문 링크를 각주로 단다.",
+    "_evidence": "research_regulation#stale_items[1]"
+  },
+  {
+    "quote": "2021년 5월: 행정명령 14028 발표, 연방 정부 계약자에게 SBOM 제출 의무화",
+    "reason": "EO 14306(2025-06-06)이 SBOM FAR 조항 신설 지시를 삭제했고 OMB M-26-05(2026-01-23)가 M-22-18·M-23-16을 폐지해 SBOM·증명 요구가 기관 재량이 되었다. '의무화'는 현재 사실이 아니다.",
+    "suggested_fix": "'2021-05 EO 14028로 시작된 연방 SBOM 요구는 EO 14306(2025-06-06)과 OMB M-26-05(2026-01-23)를 거쳐 기관 재량으로 후퇴했다. 반면 CISA는 2026-07-29 SBOM 최소 요소를 개정·강화했다'로 대체한다.",
+    "_evidence": "research_regulation#stale_items[2]"
+  },
+  {
+    "quote": "NTIA(National Telecommunications and Information Administration)는 라이선스 및 보안취약점 관리를 위해 SBOM이 갖춰야 할 다음 세 가지의 요구 사항을 제시하였다",
+    "reason": "CISA가 2026-07-29 '2026 Minimum Elements for a Software Bill of Materials (SBOM)'를 발표해 NTIA 2021 문서를 명시적으로 대체했다. 데이터 필드 7개도 17개로 재편됐다.",
+    "suggested_fix": "출처를 CISA 2026판으로 교체하고 데이터 필드 표를 Appendix A의 17개 필드로 갱신한다. Component License가 새로 필수라는 점을 라이선스 컴플라이언스 절과 연결한다.",
+    "_evidence": "research_regulation#stale_items[3]"
+  },
+  {
+    "quote": "SPDX 표준은 2024년 4월에 3.0 버전이 릴리즈되었다. 하지만, 이 문서에서는 SPDX 3.0에 대해 간단히 소개하고, 주요 내용은 현재 널리 사용되고 있는 SPDX 2.3 기준으로 소개하고자 한다.",
+    "reason": "현행 안정판은 3.0.1(2024-12-17)이고 3.1-RC1이 2026-01-24에 나왔다. 판번호와 권고가 모두 낡았다.",
+    "suggested_fix": "'현행 안정판은 SPDX 3.0.1(2024-12), 3.1은 2026-01 RC 단계'로 갱신하고 ISO/IEC 5962:2021은 여전히 SPDX 2.2.1 기반이며 SPDX 3.0 반영판(ISO/IEC DIS 5962)이 진행 중임을 병기한다.",
+    "_evidence": "research_regulation#stale_items[4]"
+  },
+  {
+    "quote": "하나의 포맷을 선택해야 한다면 국제 표준인 SPDX를 먼저 지원하는 것을 권장한다.",
+    "reason": "CycloneDX도 ECMA-424(1판 2024-06, 2판 2025-12)로 국제 표준 지위를 확보해 '국제 표준이므로 SPDX' 논리가 성립하지 않는다.",
+    "suggested_fix": "용도 기준 선택으로 바꾼다 — 라이선스 컴플라이언스 중심이면 SPDX, 취약점·VEX·암호자산 중심이면 CycloneDX, 양방향 변환 확보를 권고.",
+    "_evidence": "research_regulation#stale_items[5]"
+  },
+  {
+    "quote": "지난 2020년 12월, 오픈소스 컴플라이언스에 대한 국제 표준이 ISO에 등록되었다.",
+    "reason": "표준 자체는 유효하나 '2020년 12월' 시점 서술만 남아 있고 보안 보증 표준 ISO/IEC 18974:2023의 존재, 국내 취득 현황, 정기 검토(2026-03-05 종료) 사실이 빠져 있다.",
+    "suggested_fix": "ISO/IEC 5230:2020과 ISO/IEC 18974:2023을 함께 소개하고 공개 준수 조직 수(5230 157곳, 18974 24곳)와 국내 기업 목록을 넣는다.",
+    "_evidence": "research_regulation#stale_items[6]"
+  },
+  {
+    "quote": "[^policy-template]:  NIPA의 기업 오픈소스 거버넌스 OpenChain 해설서 : https://openchain-project.github.io/OpenChain-KWG/guide/nipa_openchain/appendix/1-policy-template/",
+    "reason": "OpenChain 한국 워킹그룹이 '[2026] ISO 표준 기반 기업 오픈소스 관리 가이드'로 통합·대체했고 기존 문서는 아카이브 표기로 남았다.",
+    "suggested_fix": "각주 URL을 https://openchain-project.github.io/OpenChain-KWG/guide/opensource_for_enterprise/ 로 교체하고 문서명을 '[2026] ISO 표준 기반 기업 오픈소스 관리 가이드'로 바꾼다. process-template 각주도 동일 처리.",
+    "_evidence": "research_regulation#stale_items[7]"
+  },
+  {
+    "quote": "2025년: '국가 사이버보안 기본계획' 수립 예정",
+    "reason": "국가안보실이 2024-09-01 '국가 사이버안보 기본계획'(100대 실천과제)을 이미 발표했다. 명칭도 '사이버보안'이 아니라 '사이버안보'다.",
+    "suggested_fix": "'2024-09-01 국가안보실, 국가 사이버안보 기본계획 발표(14개 부처 100대 실천과제)'로 교체하고 후속 문서인 2026-06-24 SW 공급망 보안 강화 로드맵으로 연결한다.",
+    "_evidence": "research_regulation#stale_items[8]"
+  },
+  {
+    "quote": "2024년 하반기: 산·학·연 전문가 참여 범정부 합동TF 구성 / 'SW 공급망 보안 로드맵' 마련 계획 발표",
+    "reason": "로드맵은 계획 단계를 지나 2026-06-24 'AI 일상화 시대를 준비하는 SW 공급망 보안 강화 로드맵'으로 실제 발표됐다.",
+    "suggested_fix": "'2026-06-24 과기정통부·국정원, SW 공급망 보안 강화 로드맵 발표 — 2026년 보안적합성 검증 SBOM 반영, 2027년 공공 정보화사업 보안 요구사항 반영, 2028년 주요 기관 체크리스트 우선 적용'으로 교체한다.",
+    "_evidence": "research_regulation#stale_items[9]"
+  },
+  {
+    "quote": "현재는 의무화 단계까지는 이르지 않았지만, 점진적인 접근을 통해 제도화를 준비하고 있는 상황이다.",
+    "reason": "2026 로드맵이 공공 조달·보안적합성 검증에 SBOM 제출을 단계 적용하기 시작했고 정부가 2027년까지 제도화를 명시했다.",
+    "suggested_fix": "'2026년부터 보안적합성 검증에 SBOM 제출이 반영되기 시작했고 정부는 2027년까지 공공 도입 SW의 SBOM 제출 제도화를 목표로 한다'로 갱신한다.",
+    "_evidence": "research_regulation#stale_items[10]"
+  },
+  {
+    "quote": "2024년: 'EU 사이버보안법(Cybersecurity Act)' 개정 예정 / 오픈소스 소프트웨어의 보안 인증 체계 도입",
+    "reason": "2026-07-31 현재 해당 개정으로 오픈소스 보안 인증 체계가 도입됐다는 사실을 확인하지 못했다. CRA 제25조가 FOSS 자발적 보안 인증 프로그램의 위임법 근거를 두었으나 아직 채택 전이다.",
+    "suggested_fix": "이 항목을 삭제하고 'CRA 제25조가 FOSS 자발적 보안 인증(security attestation) 프로그램의 위임법 근거를 두었으며 2026-07 현재 미채택'이라는 쟁점 서술로 대체한다.",
+    "_evidence": "research_regulation#stale_items[11]"
+  },
+  {
+    "quote": "2024년 10월: NIS2 지침 이행 기한 / 주요 기반시설 운영자의 오픈소스 소프트웨어 보안 관리 강화 요구",
+    "reason": "기한은 맞으나 대부분 회원국이 지키지 못했고 2026-07-08 집행위가 4개국을 CJEU에 회부한 상태다. 회원국별 시행 시점이 다르다는 실무 정보가 빠져 있다.",
+    "suggested_fix": "'2024-10-17 전환 기한 / 2024-11-28 23개국 위반 절차 개시 / 2026-07-08 아일랜드·스페인·프랑스·네덜란드 CJEU 회부'로 보완하고 지침이므로 회원국별 국내법을 확인해야 한다는 실무 주의를 덧붙인다.",
+    "_evidence": "research_regulation#stale_items[12]"
+  },
+  {
+    "quote": "2024년~2025년: 의료, 국방, 제조 등 특정 산업 분야에 대한 오픈소스 보안 정책 수립 예정",
+    "reason": "이미 지나간 예측이며 2026-07-31 현재 산업별 정책의 성립 여부를 확인하지 못했다.",
+    "suggested_fix": "확인되지 않은 예측 서술을 삭제하고 확인된 사실(2026 로드맵의 2028년 외교·안보·국방 등 주요 기관 체크리스트 우선 적용)로 대체한다.",
+    "_evidence": "research_regulation#stale_items[13]"
+  },
+  {
+    "quote": "2024년: '소프트웨어 관리 가이드라인' 발표 예정 (일본)",
+    "reason": "지나간 예측이며 발표 여부를 확인하지 못했다. 다만 일본 METI는 CISA 2026 SBOM 최소 요소의 공동 저자로 참여했다.",
+    "suggested_fix": "예측 서술을 삭제하고 '일본 METI가 CISA 2026 SBOM 최소 요소 공동 저자로 참여'라는 확인된 사실로 대체한다.",
+    "_evidence": "research_regulation#stale_items[14]"
+  },
+  {
+    "quote": "content/en/using/_index.md L883-888 | 취약점 심각도 | CVSS 점수 | 대응 시간 | ... 긴급 9.0-10.0 24시간 이내 / 높음 7.0-8.9 1주일 이내 / 중간 4.0-6.9 1개월 이내 / 낮음 0.1-3.9 3개월 이내",
+    "reason": "CVSS 단일축 SLA는 2026년 실무 기준에서 폐기 방향이다. CISA는 2026-06-10 BOD 26-04로 BOD 22-01을 폐지하고 '공개 노출 × KEV 등재 × 자동화 가능성 × 기술적 영향' 4변수 기반 기한표로 전환했다. 또한 FIRST 자신이 'CVSS-B Base scores are not risk'라고 명시하며, 2026-04-15 NVD 보강 정책 전환으로 상당수 CVE에 CVSS 점수 자체가 부여되지 않는다 — 점수가 없으면 이 표는 작동하지 않는다.",
+    "suggested_fix": "BOD 26-04 Table 1의 16행 구조를 사내 SLA 표로 이식한다. 최소한 2축(인터넷 노출 여부 × KEV/악용 확인 여부)으로 확장하고, CVSS는 판번호를 명시한 보조 축으로 강등한다. '점수가 없는 CVE'의 처리 분기를 반드시 넣는다.",
+    "_evidence": "research_security#stale_items[0]"
+  },
+  {
+    "quote": "content/en/using/_index.md L690, L723-728 | Sonatype의 2024 소프트웨어 공급망 현황 보고서에 따르면, 2024년 말까지 오픈소스 패키지 다운로드 수가 6.6조 건에 이를 것으로 예상된다. 이는 전년 대비 52%나 증가한 수치이다. / 지난 1년간 51만 2,847개의 악성 패키지가 발견되었으며, 이는 전년 대비 156% 증가한 수치이다.",
+    "reason": "2024년판 수치이며 2회 갱신되었다. Sonatype 11번째 연례 보고서(2026-01-28)는 2025년 신규 악성 패키지 454,600건 이상, 누적 1,233,000건 이상(+75%), 4대 레지스트리 연간 다운로드 9.8조 건(+67%)을 보고한다.",
+    "suggested_fix": "2026년 발간분 수치로 교체하되, 보고서명이 '2026 State of the Software Supply Chain'이고 데이터는 2025년이라는 점을 각주에 명시한다. 3개 연도 추세(6.6조 → 9.8조)를 병기하면 단일 수치보다 유용하다.",
+    "_evidence": "research_security#stale_items[1]"
+  },
+  {
+    "quote": "content/en/using/_index.md L694-699 | 2024년 기준으로: Java (Maven) 생태계: 6.7만 개의 프로젝트, 1,870만 개의 버전 / JavaScript (npm) 생태계: 480만 개의 프로젝트, 4,880만 개의 버전 ...",
+    "reason": "2024년판 생태계 규모 수치. 이 목록은 매년 바뀌며 갱신하지 않으면 즉시 낡는다. 더 중요한 문제는 이 수치가 기업의 어떤 판단에도 쓰이지 않는다는 점이다.",
+    "suggested_fix": "생태계 규모 나열을 축소하고, 대신 기업이 행동 가능한 수치(악성 패키지의 99% 이상이 npm에 집중, EOL·패치 불가 패키지 버전 최소 81,000개, Log4Shell이 2025년에도 4,200만 회 다운로드)로 대체한다.",
+    "_evidence": "research_security#stale_items[2]"
+  },
+  {
+    "quote": "content/en/using/_index.md L701 | 실제로 현대 소프트웨어 애플리케이션의 90%가 오픈소스 컴포넌트로 구성되어 있다고 한다. / L1089 | 오늘날 일반적인 애플리케이션에는 오픈소스 코드가 60~80% 포함된다는 점을 고려할 때",
+    "reason": "출처가 없고 두 문장의 수치가 서로 다르다(90% vs 60~80%). '~라고 한다'는 이 가이드의 신뢰도를 직접 깎는 표현이다.",
+    "suggested_fix": "Black Duck 2026 OSSRA(947개 코드베이스, 2024-11~2025-10 감사)의 '코드베이스의 98%가 오픈소스를 포함', '애플리케이션당 평균 오픈소스 컴포넌트 1,180개'로 교체하고 표본을 명시한다.",
+    "_evidence": "research_security#stale_items[3]"
+  },
+  {
+    "quote": "content/en/using/_index.md L763-765 | c) SolarWinds 공급망 공격 (2020년) — 2020년 말, SolarWinds의 Orion 플랫폼이 공급망 공격의 대상이 되었다. 공격자들은 SolarWinds의 빌드 프로세스에 침투하여 악성 코드를 삽입했고, 이는 수많은 고객사에 배포되었다.",
+    "reason": "6년 전 사건이며 오픈소스 공급망이 아니라 상용 제품 사건이다. 이후 SLSA·프로비넌스·Trusted Publishing 등 대응 수단이 모두 새로 생겨서, 이 사례로는 '지금 무엇을 하면 막나'를 쓸 수 없다. 각주 [^cisa2024]도 2020년 CISA 권고(aa20-352a)를 가리키면서 파일명은 2024로 되어 있어 혼동을 준다.",
+    "suggested_fix": "빌드 시스템 침해 사례를 TanStack npm 침해(2026-05-11, pull_request_target + Actions 캐시 오염 + 러너 메모리 OIDC 토큰 탈취)로 교체한다. 프로젝트 자체 포스트모템이 1차 출처로 공개되어 있고, 방어 조치가 GitHub Actions를 쓰는 국내 기업에 그대로 적용된다. SolarWinds는 '공급망 공격이라는 개념의 기원' 한 문장으로 축약한다.",
+    "_evidence": "research_security#stale_items[4]"
+  },
+  {
+    "quote": "content/en/using/_index.md L767-769 | d) event-stream 패키지 악성코드 삽입 (2018년) — 2018년, npm의 인기 있는 JavaScript 패키지인 event-stream에 악성 코드가 삽입되었다.",
+    "reason": "8년 전 사건. 당시에는 npm 프로비넌스·Trusted Publishing·2FA 강제가 존재하지 않아 '무엇을 했으면 막았나'를 쓸 수 없다. 계정 탈취 유형의 최신 사례가 다수 있다.",
+    "suggested_fix": "axios 침해(2026-03-31, 유지관리자 RAT 감염 → 자격증명 탈취 → 백도어 버전 3시간 게시)로 교체한다. axios 저장소의 공식 포스트모템이 1차 출처이며, 방어 조치(lockfile 고정, 신규 버전 cooldown, 프로비넌스 검증, OIDC 배포 전환)가 모두 국내 기업이 오늘 실행할 수 있는 것이다.",
+    "_evidence": "research_security#stale_items[5]"
+  },
+  {
+    "quote": "content/en/using/_index.md L795 | [^blackkilt2024]: https://www.blackkilt.com/blog/2024/04/29/open-source-xz-utils-vulnerability/",
+    "reason": "XZ Utils 백도어라는 중요 사례의 유일한 각주가 출처 불명의 개인/기업 블로그다. 제목도 표기되어 있지 않아 각주 변환 규약(문서 제목 원문 표기)을 위반한다.",
+    "suggested_fix": "NVD의 CVE-2024-3094 항목과 OpenSSF·OpenJS 공동 경보(오픈소스 프로젝트 소셜 엔지니어링 탈취 경고)를 1차 출처로 교체한다.",
+    "_evidence": "research_security#stale_items[6]"
+  },
+  {
+    "quote": "content/en/using/_index.md L801-857 | 오픈소스 보안 관련 규제 및 정책 동향 — 2024년: 'EU 사이버보안법(Cybersecurity Act)' 개정 예정 / 2024년: '소프트웨어 관리 가이드라인' 발표 예정 / 2024년 하반기: 범정부 합동TF 구성 예정 / 2025년: '국가 사이버보안 기본계획' 수립 예정 / 2024년~2025년: 의료, 국방, 제조 등 특정 산업 분야에 대한 오픈소스 보안 정책 수립 예정",
+    "reason": "'예정' 항목이 5개인데 모두 시점이 지났고 실제 결과가 반영되지 않았다. 국내 항목은 2026-06-24 발표된 'SW 공급망 보안 강화 로드맵'이 상위 계획으로 나온 상태다. 표(L841-846)의 '2024년(예정)' 표기도 그대로 남아 있다.",
+    "suggested_fix": "'예정' 항목을 모두 결과 확인 후 실제 시행 여부로 갱신하거나 삭제한다. 국내는 SW 공급망 보안 강화 로드맵(2026-06-24 발표: 2026 관리체계 구축 → 2027 SBOM 제출 제도화 → 2028 외교·안보·국방 우선 적용)으로 대체한다. 규제 축(oss-regulation-analyst)과 내용이 겹치므로 병합 시 중복을 정리해야 한다.",
+    "_evidence": "research_security#stale_items[7]"
+  },
+  {
+    "quote": "content/en/using/_index.md L329-354 | SBOM 최소 요구 사항 / 데이터 필드 (NTIA 2021 기준 7개 필드)",
+    "reason": "2026-07-29 CISA·NSA·FBI와 17개국 기관(한국 NIS/NCSC·KISA 포함)이 발표한 '2026 Minimum Elements for a SBOM'이 2021년 NTIA 문서를 대체했다. 데이터 필드가 7개에서 17개로 늘었고, Supplier Name→Component Producer 개명, Depth→Coverage 대체, Access Controls 삭제 등 변경이 크다.",
+    "suggested_fix": "17개 필드 표로 교체하고, 신규 필드(SBOM Author Signature, Component Hash Value/Algorithm, Component License, SBOM Tool Name/Version, SBOM Generation Context 등)를 별도 표시한다. 한국 기관이 공동 작성자로 참여했다는 사실을 명시하면 국내 제도 정합성 판단에 도움이 된다.",
+    "_evidence": "research_security#stale_items[8]"
+  },
+  {
+    "quote": "content/en/using/_index.md L972-990 | 오픈소스 보안 관리 도구 및 플랫폼 — 1. OWASP Dependency-Check 2. Trivy 3. Grype",
+    "reason": "3종만 있고 판번호·최근 릴리스가 없으며, SBOM을 만든 다음 무엇으로 관리하는지(Dependency-Track)와 VEX 지원 여부가 빠져 있다. OSV-Scanner도 목록에 없다.",
+    "suggested_fix": "도구별 최신 판번호와 VEX 지원 여부를 포함한 대조표로 재작성한다. 확인된 최신 릴리스: OSV-Scanner v2.4.0(2026-06-18), Trivy v0.72.0(2026-06-30), Grype v0.116.1(2026-07-28), Syft v1.50.0(2026-07-28), Dependency-Track 5.0.4(2026-07-30). 도구 축(oss-tooling-researcher)과 겹치므로 병합 시 조율 필요.",
+    "_evidence": "research_security#stale_items[9]"
+  },
+  {
+    "quote": "content/en/using/_index.md L1091-1093 | IBM에서 제시한 모범 사례 (2020)를 통해 DevSecOps 관점에서 본 오픈소스 취약점 관리에 대해 좀 더 알아보자. / [^bestpractive2020]: IBM, Open Source Security Trends (2020) : https://developer.ibm.com/recipes/tutorials/open-source-security-trends-for-2020",
+    "reason": "6년 전 자료이고, developer.ibm.com/recipes 경로는 IBM이 2021년 폐지한 섹션이라 URL 생존 가능성이 매우 낮다. 이어지는 'IBM DevSecOps 모범 사례' 7개 항목(자산 추적/위협 평가/보안 체크리스트/자동화/문화/컨테이너/암호화)은 2026년 기준으로 너무 일반론이다.",
+    "suggested_fix": "URL 생존을 확인하고 죽었으면 교체한다. 내용은 NIST SSDF(SP 800-218) 또는 OpenSSF의 'Improving Risk Management Decisions with SBOM Data'(2025-09-18)와 OWASP/CycloneDX 'Authoritative Guide to SBOM'(2025-10-21)처럼 현행 1차 출처로 대체하는 편이 낫다.",
+    "_evidence": "research_security#stale_items[10]"
+  },
+  {
+    "quote": "content/en/using/_index.md L1126-1128 | 최근 GitHub Octoverse (2021) 자료를 보면, Fortune 100대 기업 중 84%가 GitHub Enterprise를 사용하고 있다고 한다. / [^github-octoverse]: GitHub Octoverse (2021)",
+    "reason": "5년 전 Octoverse 인용에 '최근'이라는 표현이 붙어 있다. 또한 이후 GitHub Advanced Security가 2025-04-01부터 Secret Protection·Code Security 두 제품으로 분리되었고, Artifact Attestations(2024-06 GA)와 immutable releases(2025-10 GA)가 추가되어 절 전체가 낡았다.",
+    "suggested_fix": "'최근' 표현을 제거하고 Octoverse 최신판으로 갱신하거나(시장 축 담당) 통계 자체를 삭제한다. 기능 목록에 Artifact Attestations와 immutable releases를 추가하고, GHAS 분리로 라이선스 구조가 바뀐 점을 명시한다.",
+    "_evidence": "research_security#stale_items[11]"
+  },
+  {
+    "quote": "content/en/using/_index.md L933-956 | 주요 취약점 데이터베이스 — 1. NVD 2. CVE 3. OSV 4. GitHub Advisory Database 5. Mitre의 CVE ... 1. Sonatype OSS Index",
+    "reason": "(a) 'CVE(Mitre)'와 'Mitre의 CVE'가 중복 항목이고 번호 매김이 깨져 있다(5번 다음에 다시 1번). (b) NVD를 첫 번째 포괄적 소스로 서술하는데, 2026-04-15부터 NVD는 KEV·연방 사용 SW·EO 14028 중요 SW에 해당하는 CVE만 보강한다. (c) EUVD와 KEV가 목록에 없다.",
+    "suggested_fix": "중복 항목을 정리하고 번호를 바로잡는다. NVD 항목에 2026-04-15 보강 정책 전환과 그 실무 영향(CPE 미부여 시 스캐너 매칭 불가)을 명시한다. CISA KEV 카탈로그와 ENISA EUVD를 추가하고, 각 소스의 용도(NVD=CVE 메타데이터, OSV=언어 패키지 정밀 매칭, KEV=악용 확인, EPSS=악용 확률)를 구분해 서술한다.",
+    "_evidence": "research_security#stale_items[12]"
+  },
+  {
+    "quote": "content/en/using/_index.md L1053-1074 | 하위 공급망 보안 관리 표 (협력/교육/모니터링/관리 4영역)",
+    "reason": "'보안 협의체 운영', '통합 보안 교육 프로그램', '1:1 멘토링' 등 협력적 수단만 나열되어 강제력이 없고, 담당자가 자사 계약서에 옮겨 쓸 수 있는 문구가 하나도 없다. SBOM은 '일부 해결할 수 있다'고만 언급되고 어떻게 관철하는지가 빠져 있다.",
+    "suggested_fix": "계약(산출물 정의 + 수용 기준 + 재하도급 flow-down) → 수용 기준(CISA 2026 최소 요소 17개 필드, 포맷 판번호 하한, 전이 의존성 포함) → 검수 자동화(스키마 검증 / ntia-conformance-checker·sbomqs / 납품 바이너리 재스캔 대조) 3단 구성으로 재작성한다. 표는 유지하되 각 행에 '계약 문구 예시'와 '검증 방법' 열을 추가한다.",
+    "_evidence": "research_security#stale_items[13]"
+  },
+  {
+    "quote": "content/en/using/_index.md L1049-1050 | [^itworld2024]: https://www.itworld.co.kr/news/263110 / [^checkpoint2024]: https://www.checkpoint.com/kr/cyber-hub/cloud-security/what-is-open-source-security/",
+    "reason": "각주에 문서 제목이 없고 URL만 있다. 각주 변환 규약(문서 제목 원문 표기 + 발행 주체 + 시점)을 위반한다. 벤더 마케팅 페이지(Check Point)를 보안 전략의 근거로 인용하는 것도 부적절하다.",
+    "suggested_fix": "제목·발행 주체·시점을 보완하고, Check Point 페이지 인용은 OpenSSF·NIST SSDF 등 중립적 1차 출처로 교체한다.",
+    "_evidence": "research_security#stale_items[14]"
+  },
+  {
+    "quote": "특히 2024년 현재의 트렌드와 규제 환경을 반영하여, AI와 오픈소스의 융합, 지속가능성을 위한 오픈소스 활용, 그리고 최신 보안 관행 등을 포함하고 있다.",
+    "reason": "content/en/intro/_index.md:111. 'AI와 오픈소스의 융합'을 다룬다고 선언하지만 5개 장 전체에 OSAID·모델 라이선스·AI BOM·생성형 코딩 리스크 서술이 0건이다. grep으로 검증했다(2025 발간본도 동일). 연도('2024년 현재')도 지났다.",
+    "suggested_fix": "AI 장을 신설하고 문구를 '2026년 개정판은 오픈소스 AI 정의, 모델·데이터셋 라이선스, 생성형 AI 코딩 도구 정책, AI BOM을 새로 다룬다'로 교체한다. 신설하지 않는다면 해당 문구를 삭제한다.",
+    "_evidence": "research_ai#stale_items[0]"
+  },
+  {
+    "quote": "하지만 SPDX 3.0은 아직 도구 지원과 업계 적용이 제한적이므로, 현재로서는 SPDX 2.3 사용을 권장한다.",
+    "reason": "content/en/using/_index.md:408. 2026-07-31 기준 SPDX 안정판은 3.0.1(2024-12-17)이고 3.1-RC1(2026-01-24)이 나왔다. AI/Dataset 프로필은 3.x에만 존재하므로 AI 자산을 SBOM에 넣으려면 2.3으로는 불가능하다.",
+    "suggested_fix": "'AI 모델·데이터셋을 SBOM에 포함해야 하면 SPDX 3.0.1 이상(AI/Dataset 프로필) 또는 CycloneDX 1.7(ML-BOM)을 쓴다. 소프트웨어 컴포넌트만 다루고 수취처가 2.3을 요구하면 2.3을 유지한다'는 조건부 권고로 교체한다.",
+    "_evidence": "research_ai#stale_items[1]"
+  },
+  {
+    "quote": "SPDX 표준은 2024년 4월에 3.0 버전이 릴리즈되었다. 하지만, 이 문서에서는 SPDX 3.0에 대해 간단히 소개하고, 주요 내용은 현재 널리 사용되고 있는 SPDX 2.3 기준으로 소개하고자 한다.",
+    "reason": "content/en/using/_index.md:388. SPDX 3.0(2024-04-15) 이후 3.0.1(2024-12-17), 3.1-RC1(2026-01-24)이 나왔다. 2026 개정판에서 3.0을 '간단히 소개'하는 구조는 AI 프로필 서술 공간을 만들지 못한다.",
+    "suggested_fix": "SPDX 판번호 연혁을 3.0 → 3.0.1 → 3.1-RC1로 갱신하고, AI/Dataset 프로필 절을 신설한다.",
+    "_evidence": "research_ai#stale_items[2]"
+  },
+  {
+    "quote": "각 표준은 고유한 특징과 장점을 가지고 있으며, 조직의 필요와 목적에 따라 적절한 형식을 선택할 수 있다. SPDX는 라이선스 관리에, CycloneDX는 보안 취약점 관리에 강점을 보이며, SWID Tags는 소프트웨어 자산 관리에 특화되어 있다.",
+    "reason": "content/en/using/_index.md:373 및 각주 [^techtarget2023]. CycloneDX는 1.7(2025-10-21)에서 ECMA-424 2판(2025-12-10) 국제 표준이 되었고 ML-BOM·CBOM 등 BOM 유형을 확장했다. '보안 취약점 관리에 강점'이라는 2023년 기준 요약이 현재 지위를 반영하지 못한다.",
+    "suggested_fix": "CycloneDX의 ECMA-424 2판 표준 지위와 지원 BOM 유형(SBOM, ML-BOM, CBOM 등)을 명시하고, 두 포맷 모두 AI 자산 표현 능력이 있음을 서술한다.",
+    "_evidence": "research_ai#stale_items[3]"
+  },
+  {
+    "quote": "2024년 현재, 오픈소스는 기업이 추구하는 혁신을 빠르게 이룰 수 있게 하는 중요한 동력일 뿐만 아니라, 디지털 전환과 AI 혁명의 핵심 요소로 자리잡았다.",
+    "reason": "content/en/intro/_index.md:107. 연도가 지났고, 'AI 혁명의 핵심 요소'라는 수사 뒤에 실제 AI 거버넌스 서술이 이어지지 않는다.",
+    "suggested_fix": "연도를 갱신하고, G7 AI 개방성 typology나 오픈웨이트 모델의 확산 같은 검증 가능한 사실로 대체한다.",
+    "_evidence": "research_ai#stale_items[4]"
+  },
+  {
+    "quote": "content/en/intro/_index.md L16: \"[2024년 \\\"Open Source Security and Risk Analysis\\\" (OSSRA) 보고서]에 따르면, 감사된 코드베이스의 53%가 라이선스 충돌을 포함한 오픈소스를 포함하고 있어 이에 대한 주의가 필요하다.\"",
+    "reason": "OSSRA는 이후 2025년판(56%)과 2026년판(68%, 역대 최고치, AI 시대를 부제로 명시)을 발간했다. 53%는 2개 판 뒤처져 현재 위험도를 15%p 과소평가한다.",
+    "suggested_fix": "68%(2026년판)로 교체하고 53%→56%→68% 3개년 추세를 함께 제시. 2026년판의 AI 생성 코드 검토율(보안 76%/IP 54%/포괄 24%) 통계를 병기해 AI 시대 맥락을 추가.",
+    "_evidence": "research_market#stale_items[0]"
+  },
+  {
+    "quote": "content/en/using/_index.md L13: \"Perforce Software의 2024 State of Open Source Report에 따르면, 2023년 기업의 95%가 오픈소스 사용을 유지하거나 증가시켰으며, 33%는 사용이 크게 증가했다고 응답했다.\"",
+    "reason": "2025년판(96%)과 2026년판(98%, 감소 2% 미만)이 이미 발간되어 2개 판 뒤처졌다. 또한 '비용 절감' 중심 서사가 2026년판에서 '벤더 락인 회피·디지털 자주권' 중심으로 이동했다.",
+    "suggested_fix": "98%(2026년판)로 교체, 3개년 추세(95%→96%→98%) 제시. 도입 이유에 벤더 락인 회피(55%, 전년 대비 68%↑)를 비용 절감과 병기.",
+    "_evidence": "research_market#stale_items[1]"
+  },
+  {
+    "quote": "content/en/using/_index.md L19: \"RedHat의 2022 오픈소스 Enterprise 현황 보고서에 따르면, 향후 2년 동안 독점 소프트웨어 사용이 현재 45%에서 37%로 8% 줄어들 것으로 전망되며...\"",
+    "reason": "이 시리즈는 2022년판(4번째, 마지막판)을 끝으로 중단됐다. '향후 2년'이라는 예측 시한(2024년)이 이미 지났고 사후 검증판이 없어 이 전망이 실현됐는지 확인할 방법이 없다. 후속 'Global Tech Trends' 시리즈는 오픈소스 대 독점SW 비중을 더 이상 다루지 않는다.",
+    "suggested_fix": "전망 문장을 삭제하거나 '2022년 시점 전망(검증 안 됨)'으로 명시. Perforce 2026년판의 벤더 락인 회피 통계로 대체 권장.",
+    "_evidence": "research_market#stale_items[2]"
+  },
+  {
+    "quote": "content/en/using/_index.md L69: \"NIPA의 2024년 오픈소스SW 가이드에 따르면, 2022년 국내 오픈소스SW 시장규모는 2021년 대비 11.4% 성장한 3,380억 원을 기록했다. 또한, 국내 기업의 오픈소스SW 활용률은 2021년 대비 5.8%p 증가한 67.3%에 달하며...\"",
+    "reason": "NIPA는 이후 2023년 데이터 기준 실태조사(2024-06 발간: 시장규모 3,835억 원, 활용률 69%)를 발표했다. 단일 연도(2022년) 수치만 남아 있어 4개년(2020~2023) 추세를 놓치고 있다.",
+    "suggested_fix": "2020~2023년 4개년 시장규모·활용률 추세표로 교체(원문 PDF는 접근 불가해 전자신문 보도로 확인, confidence medium 명시). 2024년판(82.7%) 존재 가능성은 미확인으로 별도 각주 처리.",
+    "_evidence": "research_market#stale_items[3]"
+  },
+  {
+    "quote": "content/en/using/_index.md L36: \"Future Market Insights의 2024년 보고서에 따르면, 한국의 오픈소스 서비스 시장은 2024년부터 2034년까지 연평균 성장률(CAGR) 18.3%로 성장할 것으로 예측되며...\"",
+    "reason": "같은 벤더가 예측 창을 2025~2035로 갱신했고(수치 18.3%는 동일), 같은 절 뒤쪽(L709)에서 인용하는 GII Korea 수치(글로벌 CAGR 24.3%)와 성장률 가정이 상충하는데 원고가 이를 조정하지 않고 병렬 서술한다.",
+    "suggested_fix": "예측 창을 2025~2035로 갱신하고, GII Korea 수치와의 상충을 각주로 명시(양쪽 다 paywall로 원문 미확인)하거나 NIPA 국내 통계를 1차 근거로 승격.",
+    "_evidence": "research_market#stale_items[4]"
+  },
+  {
+    "quote": "content/en/ospo/_index.md L11: \"IT, 가전, 금융 및 통신 분야에서의 50% 이상 기업이 OSPO를 만들었거나 만들 예정이라는 조사 결과도 있다\" (각주: TODO Group survey, 2019)",
+    "reason": "7년 전 조사다. Linux Foundation Research가 2022~2025년 매년 후속판을 발간했고, 최신(2025년)판은 정식 OSPO 보유율이 30%→43%→26%→32%로 등락하며 기업 규모·지역에 따라 크게 갈린다는 훨씬 정교한 그림을 제공한다.",
+    "suggested_fix": "2025 LF Research 데이터(전체 추세 + 규모별 + 지역별 3개 표)로 전면 교체. 아시아태평양이 전 지역 중 최저(35%)라는 사실을 포함.",
+    "_evidence": "research_market#stale_items[5]"
+  },
+  {
+    "quote": "content/en/ospo/_index.md L253-259 (TODO Group 가이드 3종 각주)와 L277-286 (OSPO 기업 사례 10건 bit.ly 각주)",
+    "reason": "todogroup.org 사이트 개편으로 /guides/ 하위 경로가 /resources/guides/[전체-슬러그]/ 로 바뀌어 원 URL이 404를 반환한다(create-program/ 직접 확인). bit.ly 단축 URL은 이미 발간본에서 Capital One 각주가 Comcast URL로 잘못 연결되는 사고가 있었던 취약한 형식이다.",
+    "suggested_fix": "가이드 3종과 사례 10건의 URL을 모두 todogroup.org 직접 경로로 교체. Bloomberg·Porsche 등 신규 사례 추가와 OSPO Book(ospobook.todogroup.org) 소개도 함께 검토.",
+    "_evidence": "research_market#stale_items[6]"
+  },
+  {
+    "quote": "content/en/using/_index.md L106-108: \"오픈소스 역량을 가진 오픈소스 전문가 고용을 고려한다는 인사담당자가 늘어 가는 추세이다\" (각주: 2020 Open Source Jobs Report)",
+    "reason": "이 시리즈는 2021년(9회차, edX 공동) 이후 후속판을 확인하지 못했다. 6년 전 자료를 '늘어 가는 추세'라는 현재형 서술의 근거로 쓰고 있어 시효 문제가 있다.",
+    "suggested_fix": "'2021년 최종판(edX 공동)' 임을 명시하거나, GitHub Octoverse 2025의 개발자·기여자 증가 통계로 대체.",
+    "_evidence": "research_market#stale_items[7]"
+  },
+  {
+    "quote": "content/en/using/_index.md L1128 각주: \"[^github-octoverse]: GitHub Octoverse (2021)\"",
+    "reason": "4개 판(2022~2025) 뒤처져 있으며, 2025년판은 AI가 주도한 개발자 급증·언어 순위 변화 등 완전히 다른 그림을 보여준다.",
+    "suggested_fix": "Octoverse 2025(기여 11.2억 건 +13%, 신규 개발자 3,600만 명 +23%, LLM SDK 저장소 +178%)로 교체.",
+    "_evidence": "research_market#stale_items[8]"
+  },
+  {
+    "quote": "content/en/using/_index.md L713 [^sonatype2024]와 L1168 [^sonatype-report] — 같은 보고서 시리즈를 2024년판과 2021년판으로 각각 다르게 인용",
+    "reason": "동일 절 안에서 같은 시리즈의 서로 다른 두 판을 각주 라벨만 다르게 중복 인용해 내적 일관성이 없다. 둘 다 2026년판(9.8조 건, +67%)보다 오래됐다.",
+    "suggested_fix": "두 각주를 2026년판 하나로 통합.",
+    "_evidence": "research_market#stale_items[9]"
+  },
+  {
+    "quote": "content/en/using/_index.md L42: \"DataReportal의 Digital 2024: South Korea 보고서에 따르면, 2024년 1월 기준 한국의 인터넷 사용자 수는 5,030만 명으로, 이는 전체 인구의 97.2%에 해당한다.\"",
+    "reason": "Digital 2026판이 발간되어(5,060만 명, 97.9%) 수치가 갱신됐다. 오픈소스와 직접 관련은 낮으나 원고에 남은 절대 연도 표기라 갱신 대상이다.",
+    "suggested_fix": "5,060만 명·97.9%(Digital 2026)로 교체.",
+    "_evidence": "research_market#stale_items[10]"
+  },
+  {
+    "quote": "##### **LABRADOR** - https://www.iotcube.com/",
+    "reason": "IoTcube는 2022-08-30 Labrador Labs로 사명 변경했다. 2025-02 발간본은 이미 https://www.labradorlabs.ai/ 로 갱신되어 있어 저장소가 발간본보다 뒤처진 상태다.",
+    "suggested_fix": "URL을 https://www.labradorlabs.ai/ 로 교체하고 '(구 IoTcube)' 병기, 로고 파일 교체",
+    "_evidence": "research_tooling#stale_items[0]"
+  },
+  {
+    "quote": "2016년 스웨덴에서 설립된 FOSSID는 오픈소스 라이선스 및 보안 취약점 관리를 위한 솔루션이다.",
+    "reason": "FOSSID는 2021-05 Snyk에 인수되었다가 2022-09 원 창업자들이 재인수해 다시 독립 회사가 된 이력이 있다. 소유권 안정성을 판단하려는 독자에게 이 정보가 빠져 있다.",
+    "suggested_fix": "'2021년 Snyk에 인수되었다가 2022년 원 창업자들이 재인수해 현재 독립 회사로 운영되고 있다'는 문장 추가",
+    "_evidence": "research_tooling#stale_items[1]"
+  },
+  {
+    "quote": "##### **Black Duck** - https://www.blackducksoftware.com/",
+    "reason": "URL이 301로 https://www.blackduck.com/ 에 리다이렉트된다. 회사도 2024-10-01 Synopsys에서 분리되어 독립 법인 Black Duck Software, Inc.로 재출범했다.",
+    "suggested_fix": "URL을 https://www.blackduck.com/ 으로 교체하고 'Synopsys Software Integrity Group에서 2024년 독립 법인으로 분리' 문장 추가, 로고 교체 검토",
+    "_evidence": "research_tooling#stale_items[2]"
+  },
+  {
+    "quote": "##### **WhiteSource** - https://www.whitesourcesoftware.com",
+    "reason": "WhiteSource는 2022-05-25 Mend로 공식 리브랜딩했다. 원고가 4년 넘게 옛 이름과 옛 URL을 쓰고 있다.",
+    "suggested_fix": "제목·본문의 'WhiteSource'를 'Mend(구 WhiteSource)'로, URL을 https://www.mend.io 로 교체, 로고 파일 교체",
+    "_evidence": "research_tooling#stale_items[3]"
+  },
+  {
+    "quote": "##### **SW360** - https://www.eclipse.org/sw360",
+    "reason": "URL이 301로 https://eclipse.dev/sw360 에 리다이렉트된다.",
+    "suggested_fix": "URL을 https://eclipse.dev/sw360 으로 교체",
+    "_evidence": "research_tooling#stale_items[4]"
+  },
+  {
+    "quote": "SPDX(Software Package Data  소프트웨어 정보 교환 방식을 표준화하고 이를 용이하게 하기 위한 도구를 제공한다.",
+    "reason": "문장이 'Software Package Data Exchange'에서 끊겨 있는 편집 결함으로 보인다.",
+    "suggested_fix": "'SPDX(Software Package Data Exchange)는 소프트웨어 정보 교환 방식을 표준화하고 이를 용이하게 하기 위한 도구를 제공한다.'로 복구",
+    "_evidence": "research_tooling#stale_items[5]"
+  },
+  {
+    "quote": "[^gartner-3971011]: Gartner, Technology Insight for Software Composition Analysis (2019) : https://www.gartner.com/en/documents/3971011/technology-insight-for-software-composition-analysis",
+    "reason": "7년 지난 보고서다. Gartner는 SCA를 별도 MQ로 유지하지 않고 2026년 신설 'Magic Quadrant for Software Supply Chain Security'로 통합했다.",
+    "suggested_fix": "2026 Magic Quadrant for Software Supply Chain Security를 병기하거나 대체 인용(원문은 유료 장벽 뒤에 있어 공개 벤더 보도자료로만 확인했음을 명시)",
+    "_evidence": "research_tooling#stale_items[6]"
+  }
+]

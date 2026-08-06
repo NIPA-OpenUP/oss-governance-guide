@@ -1,0 +1,50 @@
+[
+ {
+  "line": 623,
+  "quote": "예전에는 약 15%였던 '보고 → 실제 취약점' 비율이 2025년에는 5% 미만으로 떨어졌다",
+  "kind": "wrong_number",
+  "severity": "minor",
+  "reason": "원문(https://daniel.haxx.se/blog/2026/01/26/the-end-of-the-curl-bug-bounty/)은 \"Previous years we have had a rate of somewhere north of 15% of the submissions ending up confirmed vulnerabilities\"라고 썼다. 'north of 15%'는 '15%를 웃도는'이라는 하한 표현이지 '약 15%'(근사값)가 아니다. 초안의 '약 15%'는 기준값을 15% 이하로도 읽히게 만들어 하락 폭을 실제보다 작게 보이게 한다 — 원문이 강조한 대비(15% 초과 → 5% 미만, \"Not even one in twenty was real\")가 약화된다. 이 표현 손실은 근거 JSON(02_research_security.json#findings[22]의 detail: '예전 약 15%')에서 이미 발생했고 초안이 그대로 전사했다.",
+  "suggested_fix": "curl은 2019년에 시작한 버그바운티에서 87건의 실제 취약점을 확인하고 총 10만 달러 이상을 지급했다. 그런데 2024년 하반기부터 보고의 성격이 바뀌어, 예전에는 15%를 웃돌던 '보고 → 실제 취약점' 비율이 2025년에는 5% 미만으로 떨어졌다(스무 건 중 한 건도 실제 취약점이 아니었다).",
+  "lens": "numbers"
+ },
+ {
+  "line": 623,
+  "quote": "2026년 1월 31일까지만 HackerOne으로 보고를 접수했다[^curl-bounty-end]. 이후 2026년 3월 1일 HackerOne으로 돌아왔으나",
+  "kind": "stale_timing",
+  "severity": "minor",
+  "reason": "각주로 단 2026-01-26 글은 \"It officially stops on January 31, 2026\"이라고 버그바운티 '종료일'을 말할 뿐, HackerOne 접수를 1월 31일까지 받았다고 쓰지 않았다. 같은 글의 Actions 절은 \"We stop using Hackerone as the recommended channel\"과 \"We refer everyone to submit ... on GitHub using their Private vulnerability reporting feature\"로 창구를 GitHub로 옮긴다고 명시한다. 두 번째 각주(2026-02-25)도 \"When we announced the end of the curl bug-bounty at the end of January 2026, we simultaneously moved over and started accepting curl security reports on GitHub instead\"라고 확인한다. 즉 1/31~2/28 사이 접수 창구는 GitHub였고, 이 중간 단계가 빠지면 '3월 1일 HackerOne으로 돌아왔다'의 기점이 독자에게 성립하지 않는다. 날짜 자체는 맞지만 날짜가 가리키는 사건이 바뀌었다.",
+  "suggested_fix": "curl의 메인테이너 Daniel Stenberg는 2026년 1월 26일 버그바운티 종료를 공지했고, 버그바운티는 2026년 1월 31일 공식 종료되었다. 접수 창구도 HackerOne에서 GitHub Private vulnerability reporting으로 옮겼다[^curl-bounty-end]. 그러나 무효 보고를 공개할 수 없고 자체 CNA임에도 CVE 번호를 직접 넣을 수 없는 등의 제약 때문에 2026년 3월 1일 다시 HackerOne으로 돌아왔으며, 포상금은 부활시키지 않았다[^curl-security-moves].",
+  "lens": "numbers"
+ },
+ {
+  "line": 623,
+  "quote": "이후 2026년 3월 1일 HackerOne으로 돌아왔으나 포상금은 부활시키지 않았다",
+  "checked_url": "https://daniel.haxx.se/blog/2026/04/22/high-quality-chaos/",
+  "kind": "stale_timing",
+  "severity": "major",
+  "reason": "curl 서사가 2026-03-01에서 끊겨 있고, 같은 1차 출처(Daniel Stenberg 블로그)가 2026-04-22 'High-Quality Chaos'에서 발표한 후속 결과가 빠졌다. 해당 글 원문: \"The quality is higher. The rate of confirmed vulnerabilities is back to and even surpassing the 2024 pre-AI level, meaning somewhere in the 15-16% range.\", \"The report frequency is higher than ever. Recently it's been about double the rate we had through 2025\", \"The slop situation is not a problem anymore.\" 즉 포상금 폐지 이후 '보고 → 실제 취약점' 비율은 15~16%로 회복했고 슬롭은 curl에서 더 이상 병목이 아니다. 2026-08-01 시점에 3월까지의 상태만 제시하면 독자는 AI 슬롭 위기가 현재진행형이라고 읽게 되며, 이는 같은 저자의 최신 1차 자료와 어긋난다. (2026-04-22 URL 접속 200 확인, 4월 아카이브 목록에서 정확한 경로 확인)",
+  "suggested_fix": "해당 문장을 다음으로 교체한다 — \"이후 2026년 3월 1일 HackerOne으로 돌아왔으나 포상금은 부활시키지 않았다[^curl-security-moves]. 결과는 기업이 참고할 만하다. Stenberg는 2026년 4월 보고 건수가 2025년의 약 두 배로 늘었지만 '보고 → 실제 취약점' 비율은 AI 이전 수준인 15~16%대로 회복했고 슬롭은 더 이상 병목이 아니라고 정리했다 — 금전적 유인을 제거하자 보고의 양이 아니라 질이 바뀐 것이다[^curl-high-quality-chaos].\" 각주를 추가한다 — \"[^curl-high-quality-chaos]: High-Quality Chaos (2026-04-22) : https://daniel.haxx.se/blog/2026/04/22/high-quality-chaos/\"",
+  "lens": "support"
+ },
+ {
+  "line": 623,
+  "quote": "예전에는 약 15%였던 '보고 → 실제 취약점' 비율이 2025년에는 5% 미만으로 떨어졌다",
+  "checked_url": "https://daniel.haxx.se/blog/2026/01/26/the-end-of-the-curl-bug-bounty/",
+  "kind": "wrong_number",
+  "severity": "minor",
+  "reason": "원문은 \"Previous years we have had a rate of somewhere north of 15% of the submissions ending up confirmed vulnerabilities.\" — '15%를 웃도는(north of 15%)' 하한값이다. 초안의 '약 15%'는 하한을 근사값으로 바꿔 하락 폭을 과소 표현한다(원문은 15% 초과 → 5% 미만). 뒤의 '5% 미만'은 원문 \"Starting 2025, the confirmed-rate plummeted to below 5%\"와 일치한다.",
+  "suggested_fix": "해당 부분을 다음으로 교체한다 — \"예전에는 15%를 웃돌던 '보고 → 실제 취약점' 비율이 2025년에는 5% 미만으로 떨어졌다\"",
+  "lens": "support"
+ },
+ {
+  "line": 623,
+  "quote": "예전에는 약 15%였던 '보고 → 실제 취약점' 비율이 2025년에는 5% 미만으로 떨어졌다",
+  "kind": "wrong_number",
+  "severity": "minor",
+  "reason": "원문(https://daniel.haxx.se/blog/2026/01/26/the-end-of-the-curl-bug-bounty/)은 'Previous years we have had a rate of somewhere north of 15% of the submissions ending up confirmed vulnerabilities'로, 15%를 '웃도는' 비율이라고 썼다. 초안의 '약 15%'는 원문이 하한으로 제시한 값을 근사치로 바꾼 것이어서 하락 폭을 실제보다 작게 표현한다. 5% 미만 부분은 원문 'Starting 2025, the confirmed-rate plummeted to below 5%'와 일치한다.",
+  "suggested_fix": "해당 부분을 '예전에는 15%를 웃돌던 \\'보고 → 실제 취약점\\' 비율이 2025년에는 5% 미만으로 떨어졌다'로 고친다.",
+  "checked_url": "https://daniel.haxx.se/blog/2026/01/26/the-end-of-the-curl-bug-bounty/",
+  "lens": "timing"
+ }
+]

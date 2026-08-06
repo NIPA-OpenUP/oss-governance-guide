@@ -1,0 +1,526 @@
+{
+  "section": "releasing",
+  "file": "content/en/releasing/_index.md",
+  "total_lines": 688,
+  "baseline_source_used": "repo + published. (1) content/en/releasing/_index.md 전체 688행 통독(1-425, 426-688 2회 분할). (2) 발간본 _workspace/00_published_2025.md 의 III. 공개하기 전 구간 = L2028(page:121)~L2692(page:162) 통독. (3) _workspace/01_baseline_reconciliation.json 의 releasing 항목(published_only 2건 / repo_only 2건 / diverged 2건) 반영. (4) check_guide_integrity.py 실행(blocking 3 + warn 1). (5) 본문 URL 58개 curl 상태 확인 + GitHub API 로 참조 저장소 7개 archived 여부 확인 + imgproc 이미지 7개 파일 존재 확인(전부 존재).",
+  "issues": [
+    {
+      "line": 120,
+      "quote": "라이선스 선택에 관한 자세한 내용은 오픈소스 공개 가이드 - 기업 편 [어떻게?:어떤 조건으로 공개할 것인가? 공개에 적합한 라이선스 후보군 정하기](#어떻게?:어떤-조건으로-공개할-것인가?-공개에-적합한-라이선스-후보군-정하기)에서 다룬다.",
+      "kind": "dead_anchor",
+      "severity": "major",
+      "diagnosis": "Hugo 슬러그는 '?' 와 ':' 를 제거하므로 L182 헤딩의 실제 슬러그는 '어떻게어떤-조건으로-공개할-것인가-공개에-적합한-라이선스-후보군-정하기' 다. 현재 앵커는 문장부호를 그대로 남겨 링크가 깨진다(check_guide_integrity.py blocking). 기존 알려진 결함이며 발간본 p129(L2141)가 '「5) 어떻게? : 어떤 조건으로 공개할 것인가? 공개에 적합한 라이선스 후보군 정하기」' 로 대상을 확정해 두었다.",
+      "action": "replace",
+      "suggestion": "근본 해결로 L182 헤딩을 '#### 어떻게? 어떤 조건으로 공개할 것인가 — 공개에 적합한 라이선스 후보군 정하기' 처럼 콜론/물음표를 슬러그에서 문제되지 않게 정리하고, 헤딩에 명시적 {#license-candidates} 형태의 고정 앵커를 부여한 뒤 본문 링크 3곳(L120·L144·L216)을 고정 앵커로 교체한다. 절 제목을 그대로 유지할 경우 앵커는 '#어떻게어떤-조건으로-공개할-것인가-공개에-적합한-라이선스-후보군-정하기' 로 쓴다."
+    },
+    {
+      "line": 144,
+      "quote": "이런 내용은 라이선스에 명시되어 있으며, 법적으로 기업에 피해가 발생하지 않도록 보장해야 한다. 라이선스 선택에 관한 자세한 내용은 오픈소스 공개 가이드 - 기업 편 [어떻게?:어떤 조건으로 공개할 것인가? ...](#어떻게?:어떤-조건으로-공개할-것인가?-...)에서 다룬다.",
+      "kind": "dead_anchor",
+      "severity": "major",
+      "diagnosis": "L120 과 동일한 깨진 앵커. 발간본 p132(L2177)는 '다음의 「5) 어떻게?:어떤 조건으로 공개할 것인가? …」' 로 같은 대상을 가리킨다.",
+      "action": "replace",
+      "suggestion": "L120 과 동일하게 고정 앵커로 교체한다. 두 곳이 같은 절을 가리키므로 문구도 통일한다."
+    },
+    {
+      "line": 216,
+      "quote": "- 로드맵: [언제?:언제 공개할 것인가? 공개 시점 정하기](#언제?:언제-공개할-것인가?-공개-시점-정하기) 에서 언급한 것처럼 공개 이후에도 꾸준히 기능을 개선하는 등의 관리가 필요하다.",
+      "kind": "dead_anchor",
+      "severity": "major",
+      "diagnosis": "L172 헤딩('#### 언제?:언제 공개할 것인가? 공개 시점 정하기')의 실제 슬러그와 불일치. 발간본 p137(L2254)이 '「3) 언제?:언제 공개할 것인가? 공개 시점 정하기」' 로 대상을 확정.",
+      "action": "replace",
+      "suggestion": "L172 헤딩에 고정 앵커(예: {#release-timing})를 달고 링크를 '#release-timing' 으로 교체한다."
+    },
+    {
+      "line": 110,
+      "quote": "이제 '왜?' 에 대한 대답이 채워졌다. 그렇다. 아직 5개의 물음이 더 남았다는 뜻이다. 누가? 언제? 어디서? 무엇을? 어떻게? 앞으로는 이 다섯 개의 물음에 답하며 오픈소스 공개의 여정을 알아본다.",
+      "kind": "structure",
+      "severity": "major",
+      "diagnosis": "5W 를 약속했으나 실제 하위 절은 '누가?(1)', '누가?(2)', '언제?', '어디서?', '어떻게?' 5개뿐이고 '무엇을?' 에 대응하는 절이 없다. 독자는 '무엇을 공개할 것인가(공개 대상 선정 기준)' 를 기업 편에서 찾다가 실패하고, 그 내용은 개발자 편 L428 '기업의 입장에서 오픈소스를 판단하는 기준을 생각해보기' 에만 있다. 발간본 p129도 동일한 결함을 그대로 갖고 있다.",
+      "action": "expand",
+      "suggestion": "기업 편 '공개 규칙 마련하기' 에 '무엇을?: 무엇을 공개할 것인가 — 공개 대상 선정 기준' 절을 신설한다. 내용은 (a) 사업 코어/차별화 자산 제외 기준, (b) 사내 공용 라이브러리·SDK·도구·데이터셋·AI 모델 등 공개 후보 유형, (c) 공개 부적합 신호(고객 데이터 결합, 규제 대상 암호모듈, 제3자 계약 코드), (d) 사전 심사 체크리스트. 개발자 편 L428~438 과 중복되지 않도록 기업 편은 '심사 기준', 개발자 편은 '자기 점검' 으로 역할을 나눈다."
+    },
+    {
+      "line": 124,
+      "quote": "한국의 경우에는 [KIPRIS의 상표 검색 서비스](http://kdtj.kipris.or.kr/kdtj/searchLogina.do?method=loginTM)[^kipris]를 이용할 수 있다.",
+      "kind": "dead_link",
+      "severity": "major",
+      "diagnosis": "curl 결과 HTTP 502 Bad Gateway. kdtj.kipris.or.kr 는 구 KIPRIS 상표 전용 서브도메인으로 현재 서비스되지 않는다. 각주 정의 L126 도 같은 URL. 발간본 p130 각주 70)도 동일한 죽은 주소를 그대로 싣고 있어 병합으로 해결되지 않는다.",
+      "action": "replace",
+      "suggestion": "https://www.kipris.or.kr (KIPRIS 통합검색, 상표 탭)으로 교체하고, 오픈소스 명칭은 국경을 넘으므로 해외 조사 창구를 함께 제시한다: WIPO Global Brand Database(branddb.wipo.int), EUIPO TMview(tmdn.org/tmview), USPTO Trademark Search(tmsearch.uspto.gov). 추가로 '패키지 저장소 네임스페이스(npm scope, PyPI project name, Maven groupId)와 도메인·GitHub org 의 동시 가용성 확인' 을 상표 조사와 한 세트로 묶는 실행 지침을 붙인다."
+    },
+    {
+      "line": 156,
+      "quote": "최근 CLA를 대체하는 DCO(Developer Certificate of Origin, 이하 DCO)를 채택하는 오픈소스들이 늘어나고 있다. CLA는 계약서에 직접 서명하여 제출하는 등 번거로움이 있는 반면에 개발자들이 git commit을 통해 간단히 서명하는 방식이다.",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "'최근 … 늘어나고 있다' 는 2021년 시점의 상대 서술이다. 2026년 기준 DCO 는 이미 대세를 넘어 표준에 가깝고, CLA 를 쓰는 대형 프로젝트는 Linux Foundation EasyCLA 로 수렴했다. 또 '계약서에 직접 서명하여 제출' 은 전자서명이 보편화된 현재 상황과 어긋난다(L255 에서 스스로 전자서명이 대부분이라고 말해 자기모순).",
+      "action": "replace",
+      "suggestion": "'최근' 을 걷어내고 현재형 판단 기준으로 재서술한다: 기여 규모·기업 기여자 비중·재단 이관 계획에 따라 DCO(기본값) / CLA(재단 이관·리라이선싱 여지가 필요한 경우) 를 고르는 2×2 판단표를 제시하고, 도구로 DCO GitHub App, LF EasyCLA, CLA assistant 를 명시한다."
+    },
+    {
+      "line": 158,
+      "quote": "CLA와 DCO에 대한 더욱 자세한 내용은 **기업을 위한 오픈소스 기여 가이드 - CLA (Contributor License Agreement)** 를 참고한다.",
+      "kind": "structure",
+      "severity": "major",
+      "diagnosis": "지칭한 제목이 실재하지 않는다. contributing 섹션의 실제 헤딩은 '#### 4. CLA / DCO에 주의하라'(content/en/contributing/_index.md L204)다. 독자가 목차에서 이 제목을 찾을 수 없다. 발간본 p134(L2197)는 '「II.2. 오픈소스SW 기여 가이드 - 기업 편 : 4) CLA / DCO에 주의하라」' 로 정확히 특정했다 — 발간본이 정답을 갖고 있는 published_only 항목.",
+      "action": "replace",
+      "suggestion": "'오픈소스 기여 가이드 - 기업 편: CLA / DCO에 주의하라' 로 제목을 바로잡고, 웹 판본이므로 /contributing/#4-cla--dco에-주의하라 형태의 실제 링크를 건다. 같은 원칙을 L239·L253·L306·L379·L686 의 교차 참조 전부에 적용한다."
+    },
+    {
+      "line": 253,
+      "quote": "따라서 작성 요령에 대한 자세한 내용은 _오픈소스 공개 가이드 - 개발자 편: 공개를 준비할 때 알면 좋은 팁_ 에서 다룬다.",
+      "kind": "structure",
+      "severity": "minor",
+      "diagnosis": "'공개를 준비할 때 알면 좋은 팁' 이라는 절은 존재하지 않는다. 실제 헤딩은 L426 '### 오픈소스 공개를 준비하기' 다. 발간본 p139(L2284)는 '「III. 3. 오픈소스SW 공개 가이드 - 개발자 편」' 으로 표기했다.",
+      "action": "replace",
+      "suggestion": "'오픈소스 공개 가이드 - 개발자 편: 오픈소스 공개를 준비하기' 로 제목을 일치시키고 앵커 링크를 건다."
+    },
+    {
+      "line": 306,
+      "quote": "배포와 관련한 상세 내용은 오픈소스 공개하기 - 개발자 편: 배포하기 를 참고한다.",
+      "kind": "structure",
+      "severity": "minor",
+      "diagnosis": "실제 헤딩은 L575 '#### 오픈소스 배포하기'(상위 '### 오픈소스 운영하기') 로 제목·경로가 모두 어긋난다. 참고로 발간본 p142(L2336)는 이 교차 참조를 지우고 '패키지 저장소마다 사용 방법이 다르니 다음을 참고한다.' 로 끝내 버려 뒤에 오는 목록이 없는 더 나쁜 상태다 — 이 부분은 저장소 쪽을 유지하고 제목만 고치는 것이 맞다.",
+      "action": "replace",
+      "suggestion": "'오픈소스 공개 가이드 - 개발자 편: 오픈소스 운영하기 > 오픈소스 배포하기' 로 정정하고 앵커 링크를 건다."
+    },
+    {
+      "line": 162,
+      "quote": "따라서 프로젝트의 규모에 따라 최소 몇 명의 멤버가 어떤 권한을 가지게 될지 사전에 정하는 것을 권한다. GitHub을 기준으로 역할별로 갖게 되는 권한을 참고하자.",
+      "kind": "impracticality",
+      "severity": "major",
+      "diagnosis": "'누가 공개하고 운영할 것인가' 절이 GitHub 저장소 권한 5단계 표(L164-170) 로만 끝난다. 표 자체는 2026년에도 유효하지만, 이 절이 답해야 할 진짜 질문 — 메인테이너가 퇴사하면 어떻게 되는가, 의사결정은 누가 하는가, 기여자를 커미터로 어떻게 승격시키는가 — 은 하나도 답하지 못한다. 서두(L162)에서 '한 명이 퇴사한다면?' 이라고 문제를 제기해 놓고 권한표로 응답하는 구조적 불일치다.",
+      "action": "expand",
+      "suggestion": "권한표 뒤에 (a) GOVERNANCE.md 로 문서화할 거버넌스 모델 3종(단독 메인테이너 / 메인테이너 위원회 / 재단 이관) 비교, (b) MAINTAINERS.md·CODEOWNERS 로 소유권을 사람이 아닌 파일에 고정하는 방법, (c) 기여자 사다리(User→Contributor→Committer→Maintainer)의 승격 기준과 이탈 시 회수 절차, (d) 조직 계정 소유 계정 최소 2인 + 복구 코드 보관 규칙을 추가한다. 2026년 GitHub 기준 보완 항목으로 Custom repository roles, Organization rulesets, 조직 단위 2FA 강제, fine-grained PAT 도 표 아래 주석으로 넣는다."
+    },
+    {
+      "line": 174,
+      "quote": "따라서 적당한 시점에 오픈소스로 내놓고 발전시키는 과정이 필요하다. 정량적으로 어느 정도의 완성이라고 표현하기는 어렵기 때문에 공개하는 과정마다 이 점을 인지하고 공개 시점을 정할 것을 권한다.",
+      "kind": "impracticality",
+      "severity": "major",
+      "diagnosis": "'적당한 시점' 이라는 결론만 있고 기업 담당자가 승인/반려 판단에 쓸 기준이 없다. '정량적으로 표현하기 어렵다' 고 선언해 버려 후속 판단을 전부 독자에게 떠넘긴다.",
+      "action": "expand",
+      "suggestion": "최소 공개 기준(Definition of Ready)을 체크리스트로 제시한다: README 로 5분 내 첫 실행 가능, 자동 빌드/테스트 통과, LICENSE·SECURITY.md·CoC 존재, 최소 1개 릴리스 태그(v0.1.0)와 CHANGELOG, 알려진 CVE 0건, 향후 2개 마일스톤 공개. 여기에 SemVer 채택 여부와 0.x 의 의미, 릴리스 노트 작성 주체를 함께 명시한다."
+    },
+    {
+      "line": 178,
+      "quote": "기업에서 처음 오픈소스를 공개하는 경우라면 GitHub 혹은 GitLab 등 인기 있는 오픈소스 저장소에 기업 이름으로 된 조직(Organization)을 생성할 수 있는지 확인해야 한다. 미리 선점하는 사람이 우선이기 때문에 모든 절차 중에서 가장 먼저 선점해놓는 것도 좋은 방법이다.",
+      "kind": "missing_topic",
+      "severity": "major",
+      "diagnosis": "'어디에 공개할 것인가' 가 자사 조직 계정 선점 하나로 끝난다. 2026년 기업이 실제로 마주하는 선택지 — 자사 org 로 둘 것인가, 중립 재단(Linux Foundation/CNCF/Apache/OpenInfra)에 이관할 것인가, 여러 기업이 공동 소유하는 별도 org 를 만들 것인가 — 가 빠져 있다. 이 결정은 상표·CLA·거버넌스 선택을 모두 되돌리게 만드는 상위 결정이라 순서상 여기에 있어야 한다.",
+      "action": "expand",
+      "suggestion": "'자사 org / 중립 재단 / 공동 org' 3안 비교표(통제권, 채택 신뢰도, 상표 소유, 비용, 이관 난이도)를 추가하고, 재단 이관을 택할 경우의 사전 요건(상표 이전, CLA→DCO 전환, 특허 정책 동의)을 명시한다. 조직 계정 생성 직후 적용할 보안 기준선(전 구성원 2FA 강제, SSO 연동, org ruleset, secret scanning push protection 기본 활성)도 함께 넣는다."
+    },
+    {
+      "line": 187,
+      "quote": "- 이 오픈소스에 만약 Copyleft licesne를 적용한다고 해도 저작권자와 사용자(라이선스 의무사항을 지켜야 할 사람)이 동일하므로 법적인 이슈가 생길 가능성은 없을 것이다.",
+      "kind": "stale_fact",
+      "severity": "minor",
+      "diagnosis": "'licesne' 오타(license). 발간본 p135(L2226)에서는 'Copyleft license' 로 교정되어 있어 발간본 쪽이 정확하다 — diverged 윤문 항목과 같은 성격.",
+      "action": "replace",
+      "suggestion": "'Copyleft license' 로 교정. 같은 문단의 '사용자(…)이 동일하므로' 도 '사용자가 동일하므로' 로 조사를 바로잡는다."
+    },
+    {
+      "line": 184,
+      "quote": "오픈소스에 적용할 라이선스를 고르기 위해서는 다양한 상황과 우선순위를 고려해야 한다.",
+      "kind": "missing_topic",
+      "severity": "major",
+      "diagnosis": "라이선스 선택 절이 2020년 지형에 멈춰 있다. 2026년 기업이 '어떤 조건으로 공개할 것인가' 를 정할 때 반드시 통과해야 하는 세 가지가 통째로 빠졌다: (1) 소스가용(source-available) 라이선스 — HashiCorp 의 BUSL 전환(2023), Redis 의 RSALv2/SSPL 전환(2024), Elastic 의 AGPL 추가(2024) 와 그 결과인 커뮤니티 포크(OpenTofu, Valkey) — 즉 '오픈소스로 공개할 것인가, 소스가용으로 공개할 것인가' 라는 선행 질문. (2) 나중에 라이선스를 바꿀 수 있게 하려면 지금 무엇을 확보해야 하는가(CLA 또는 저작권 집중). (3) AI 모델·가중치·데이터셋 공개 시의 라이선스(OSI 의 Open Source AI Definition, 모델 전용 라이선스와 OSD 비적합 라이선스 구분).",
+      "action": "expand",
+      "suggestion": "기존 3개 시나리오 뒤에 '④ 오픈소스 버전과 상용 버전의 경계를 나중에 옮길 가능성이 있는 경우' 와 '⑤ AI 모델·데이터셋을 함께 공개하는 경우' 를 추가한다. ④ 에서는 리라이선싱 사례와 커뮤니티 반발·포크 비용을 사실로 제시하고 '리라이선싱 옵션을 남기려면 CLA 가 필요하다' 는 인과를 CLA 절(L145)과 연결한다. ⑤ 에서는 코드/가중치/데이터를 각각 다른 라이선스로 다루는 실무와 OSAID 적합성 판단을 다룬다. 전 절에 걸쳐 SPDX 식별자 표기와 REUSE 규격(파일 헤더 + LICENSES/ 디렉터리)을 공개 전 필수 작업으로 못박는다."
+    },
+    {
+      "line": 191,
+      "quote": "- 공개한 이후에 유지보수 계획도 없는 경우에는 Public domain, CC0, Unlicense 등 저작권을 포기하는 쪽도 고려해볼 만하다. (발표/데모에서 사용하는 code snippet 등)",
+      "kind": "stale_fact",
+      "severity": "minor",
+      "diagnosis": "CC0 는 특허 라이선스를 명시적으로 부여하지 않으며(오히려 특허권을 유보한다고 해석됨) 그 때문에 다수 재단·기업이 코드에 CC0 사용을 피한다. '저작권을 포기' 라는 표현도 한국 저작권법상 저작인격권 포기가 불가능한 점과 충돌한다. 특허를 다룬 L118-120 과 논리적으로 어긋난다.",
+      "action": "replace",
+      "suggestion": "'저작권을 포기' → '가장 넓게 허용' 으로 바꾸고, 자사 특허가 조금이라도 얽힐 가능성이 있으면 CC0/Unlicense 대신 MIT 또는 Apache-2.0(명시적 특허 실시권 포함)을 권장한다는 단서를 단다."
+    },
+    {
+      "line": 239,
+      "quote": "거버넌스는 오픈소스 커뮤니티를 형성하고 사람들이 문제없이 어울리기 위해 필요하다. 사용 규칙은 License에서, 커뮤니티에서 지켜야 할 행동 강령은 Code of conduct에서, 그리고 기여 규칙은 Contributing 에서 정의한다.",
+      "kind": "missing_topic",
+      "severity": "critical",
+      "diagnosis": "공개 저장소에 넣어야 할 거버넌스 문서가 License / Code of conduct / Contributing 3종으로만 정의되어 있다. 2026년 기준 SECURITY.md(취약점 신고 창구와 대응 SLA)는 선택이 아니라 필수다 — GitHub 커뮤니티 표준 자체가 Security policy 를 포함하고, 기업 채택자는 SECURITY.md 유무를 채택 심사 항목으로 본다. 더 결정적으로 EU 사이버복원력법(CRA, 규정 2024/2847) 은 상용 제품에 쓰이는 오픈소스를 지원하는 기업을 'open source software steward' 로 규정해 취약점 처리 정책 보유와 당국 보고 의무를 부과하며, 적극 악용 취약점 보고 의무가 2026년 9월부터 적용된다. 공개 시점에 신고 경로가 없으면 이 의무를 이행할 수 없다.",
+      "action": "expand",
+      "suggestion": "문서 세트를 SECURITY.md, GOVERNANCE.md, MAINTAINERS.md, SUPPORT.md, CODEOWNERS, NOTICE 까지 확장하고 각 문서의 최소 항목을 한 줄씩 규정한다. SECURITY.md 에는 지원 버전 표, 신고 채널(GitHub Private vulnerability reporting 활성화 권장), 접수 후 응답/패치/공개까지의 목표 기간, CVE 발급 경로(GitHub Security Advisory)를 반드시 넣는다. 별도 소절 'CRA 시대의 공개 준비' 를 신설해 manufacturer / open source steward 구분과 각각의 의무를 정리하고, 시행 일자는 집필 시 EU 공식 문서로 재확인한다(verify)."
+    },
+    {
+      "line": 241,
+      "quote": "GitHub에서는 다음의 7가지를 설정할 것을 권장한다.",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "바로 아래 community-profile.png 스크린샷(파일은 존재)에 의존한 서술인데, GitHub 의 community profile 체크리스트 구성은 그 뒤로 바뀌었고(Security policy 포함) '7가지' 라는 숫자가 현재 화면과 일치한다는 보장이 없다. 이미지도 2020~2021년 UI 다. 발간본 p139 는 이미지 캡션만 남고 그림이 유실된 상태('Github Docs, About community profiles for public responses' — 오타 포함)라 병합으로도 보정되지 않는다.",
+      "action": "replace",
+      "suggestion": "숫자를 본문에서 빼고 '저장소 루트에 두어야 할 문서 세트' 를 가이드 자체의 표로 확정한 뒤, GitHub 화면은 최신 스크린샷으로 교체하거나 Insights > Community Standards 경로 안내로 대체한다. 캡션의 'public responses' 오타도 'public repositories' 로 교정한다."
+    },
+    {
+      "line": 249,
+      "quote": "- [Repolinter](https://github.com/todogroup/repolinter)[^repolinter]",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "GitHub API 확인 결과 todogroup/repolinter 는 archived: true (읽기 전용). 유지되지 않는 도구를 유일한 점검 수단으로 제시하고 있다. 발간본 p139 각주 74)도 동일.",
+      "action": "replace",
+      "suggestion": "OpenSSF Scorecard(자동 점수화 + GitHub Action), OpenSSF Allstar(조직 정책 강제), REUSE tool(라이선스 헤더 규격 검증), GitHub 자체 Community Standards 페이지로 교체한다. Repolinter 는 '아카이브됨' 명시와 함께 유지하거나 삭제한다. 특히 Scorecard 는 채택자가 우리 프로젝트를 평가할 때 쓰는 지표이기도 하므로 '공개 전 자가 점검' 도구로 자리매김시킨다."
+    },
+    {
+      "line": 258,
+      "quote": "- [cla-bot](https://colineberhardt.github.io/cla-bot)[^cla-bot]",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "CLA 도구 목록이 CLA assistant / cla-bot / Google CLA / Microsoft CLA 4개인데, 2026년 기업·재단이 실제로 쓰는 Linux Foundation EasyCLA 와 DCO GitHub App 이 빠져 있다. Google·Microsoft CLA 링크는 그 회사 기여자용 서명 페이지이지 우리가 도입할 도구가 아니어서 '관리 도구' 목록에 섞여 있는 것 자체가 분류 오류다(원문도 '도구와 관리 운영 사례' 라고 뭉뚱그림).",
+      "action": "replace",
+      "suggestion": "목록을 '도구'(CLA assistant, LF EasyCLA, DCO GitHub App)와 '운영 사례'(Google, Microsoft) 두 줄로 분리하고, DCO 를 택했을 때의 설정법(git commit -s, DCO 앱 필수 체크 등록)을 한 문단으로 추가한다. cla-bot 은 유지보수 상태를 확인해 정리한다(verify)."
+    },
+    {
+      "line": 274,
+      "quote": "- [Geek Feminizm Code of Conduct](https://geekfeminismdotorg.wordpress.com/about/code-of-conduct/)[^geekcoc]",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "Geek Feminism 위키/블로그는 2021년 활동을 종료하고 아카이브 상태다(URL 은 200 응답하나 유지되지 않는 자료). 'Feminizm' 오타도 그대로다. 더 큰 문제는 CoC 절 전체가 '문서를 두어라' 에서 끝나고, 기업 담당자에게 실제로 필요한 신고 접수·조사·조치·기록 절차가 없다는 점이다. CoC 는 채택하는 순간 기업이 운영 책임을 지는 문서다.",
+      "action": "replace",
+      "suggestion": "예시를 Contributor Covenant 2.1(집행 가이드라인 포함), Django CoC, CNCF CoC + Code of Conduct Committee 운영 문서로 교체하고 오타를 고친다. 그 아래 'CoC 집행 체계' 소절을 신설해 신고 창구(전용 메일/폼), 접수 후 조사 주체(사무국인가 메인테이너인가), 조치 단계(경고→일시 차단→영구 차단), 이해충돌 회피, 기록 보존 기간을 규정한다."
+    },
+    {
+      "line": 282,
+      "quote": "검토 과정에서 정해진 이름으로 비공개 저장소를 생성한다. 개발에 필요한 멤버들의 username을 취합하고 비공개 저장소에 접근 권한을 부여한다. Description과 Topics를 추가하면 오픈소스의 개요를 더 간략하게 표현할 수 있다.",
+      "kind": "impracticality",
+      "severity": "major",
+      "diagnosis": "저장소 생성 단계에서 켜야 할 보안·품질 기본값이 하나도 없다. 공개 전환 이후에는 되돌릴 수 없는 설정(브랜치 보호, secret scanning push protection, 서명 커밋 요구, 필수 상태 검사)이 있어 이 순서가 중요하다. 링크 6개는 살아 있으나 모두 docs.github.com/en/github/... 구 경로로 리다이렉트되며, GitLab 링크는 /ee/ 경로 개편 대상이다.",
+      "action": "expand",
+      "suggestion": "'저장소 초기 설정 체크리스트' 를 추가한다: 기본 브랜치명, 브랜치 보호/ruleset(리뷰 1인 이상, 필수 CI), secret scanning + push protection 활성(공개 저장소 무료), Dependabot alerts/security updates 활성, Private vulnerability reporting 활성, 이슈/PR 템플릿 사전 배치, Topics·Description·라이선스 메타데이터. 링크 6개는 현행 docs.github.com/en/repositories/... 및 docs.gitlab.com 신 경로로 일괄 교체한다."
+    },
+    {
+      "line": 302,
+      "quote": "코드를 옮기기 전에 commit 이력을 모두 공개할 것인지, 삭제할 것인지 정해야 한다. 하지만 검토 과정에서 보안 권고에 따라, 혹은 명칭을 변경하는 등 코드가 수정되었다면 commit 이력을 공개하지 않는 것이 안전하다.",
+      "kind": "impracticality",
+      "severity": "critical",
+      "diagnosis": "'코드 이전' 절이 두 문장뿐이고 커밋 이력 공개 여부만 다룬다. 실제로 기업 오픈소스 공개 사고의 대부분이 이 단계에서 발생한다 — 이력에 남은 액세스 키·내부 호스트명·직원 개인 이메일, 사내 전용 의존성, 출처 불명 서드파티 코드. 히스토리를 남기기로 결정한 경우의 정제 절차가 전혀 없고, '삭제하면 안전' 이라는 서술은 squash 후에도 남는 파일 내용·주석·테스트 픽스처 문제를 놓친다. 되돌릴 수 없는 단계라 심각도가 높다.",
+      "action": "expand",
+      "suggestion": "공개 전 코드 정제 절차를 단계로 명시한다: (1) 전체 이력 대상 시크릿 스캔(gitleaks/trufflehog), (2) 발견 시 git-filter-repo 또는 BFG 로 제거 + 노출된 자격증명 즉시 폐기·회전(제거만으로는 유출 대응이 아님), (3) 커밋 작성자 이메일 정리(사내 도메인·개인 메일 → noreply 정책), (4) 내부 호스트·IP·경로 문자열 grep, (5) 서드파티 코드 출처·라이선스 확인 후 NOTICE/THIRD_PARTY 작성, (6) 파일별 SPDX 헤더·저작권 표기 삽입, (7) AI 코드 어시스턴트로 생성된 코드 구간의 출처 검토. 각 단계의 책임 부서(보안팀/검수팀/개발자)를 함께 적는다."
+    },
+    {
+      "line": 306,
+      "quote": "소스 코드를 공개한 이후에 패키지 배포까지 생각하고 있는 경우에는 배포를 어떻게 할지 정해야 한다. 패키지 저장소마다 사용 방법이 다르니 개발자와 상의한다.",
+      "kind": "impracticality",
+      "severity": "major",
+      "diagnosis": "'배포 준비' 가 '개발자와 상의한다' 로 끝난다. 기업 편 독자(사무국)가 여기서 판단해야 할 항목 — 어떤 계정으로 게시할 것인가(개인 계정 금지, 조직 계정/봇 계정), 자격증명은 누가 보관하는가, 퇴사 시 게시 권한은 어떻게 승계하는가 — 이 전부 빠져 있다. 이는 실제로 기업에서 자주 사고가 나는 지점(개인 계정으로 게시된 패키지의 소유권 실종)이다.",
+      "action": "expand",
+      "suggestion": "'배포 계정과 자격증명 거버넌스' 를 명시한다: 조직/스코프 소유(npm org, PyPI project owner 복수 지정, Maven groupId 도메인 소유 검증), 개인 토큰 대신 OIDC 기반 Trusted Publishing 사용, 릴리스는 CI 에서만 수행, 자격증명 보관 주체와 회수 절차. 세부 배포 방법은 개발자 편 L575 로 넘기되 그 링크를 정확히 건다."
+    },
+    {
+      "line": 310,
+      "quote": "더이상 설정하고 확인할 것이 없다면 이제 비공개 저장소를 공개 저장소로 전환한다.",
+      "kind": "impracticality",
+      "severity": "major",
+      "diagnosis": "공개 절이 '전환 버튼을 누른다' 한 문장 + 링크 2개로 끝난다. 공개 직후 며칠이 프로젝트의 첫인상을 결정하는데 그 구간의 행동 지침이 없다. 뒤의 '소통하기'(L322~) 는 채널 소개일 뿐 시점 계획이 아니다.",
+      "action": "expand",
+      "suggestion": "'공개 D-day 체크리스트' 를 추가한다: 전환 직전 최종 시크릿 스캔, 첫 릴리스 태그·릴리스 노트 발행, good first issue 3~5개 사전 등록, 이슈/PR 템플릿 동작 확인, SECURITY.md 신고 경로 실제 테스트, 사내 공지 → 기술 블로그 → 소셜 순서와 담당자, 공개 후 2주간 이슈 응답 당번 편성. 그리고 D+30/D+90 회고 시점을 못박는다."
+    },
+    {
+      "line": 313,
+      "quote": "- [GitLab - 공개 저장소로 전환하기](https://docs.gitlab.com/ee/public_access/public_access.html#how-to-change-project-visibility)[^gitlab-change-repo]",
+      "kind": "dead_link",
+      "severity": "minor",
+      "diagnosis": "리다이렉트 추적 결과 /ee/public_access/public_access/ → /public_access/public_access/ → projects.gitlab.io/auth 인증 페이지로 빠진다(최종 302, 문서 미도달). 현행 문서는 https://docs.gitlab.com/user/public_access/ 이며 200 응답을 확인했다. 다만 리다이렉트 체인이 지역/세션에 따라 달라질 수 있어 확인 실패 가능성을 배제하지 않는다.",
+      "action": "replace",
+      "suggestion": "https://docs.gitlab.com/user/public_access/ 로 교체. 같은 이유로 L287-289 의 docs.gitlab.com/ee/... 3건, L601·L643 의 /ee/ 경로 2건도 함께 신 경로로 점검·교체한다."
+    },
+    {
+      "line": 331,
+      "quote": "<center><i>LINE Developers Twitter : https://twitter.com/line_developers/status/1330773983873011712?s=20</i></center>",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "'Twitter' 는 2023년 7월 X 로 리브랜딩되어 서비스명 자체가 존재하지 않는다. 예시 2건 모두 2020~2021년 트윗이고 첨부 이미지(twitter-line.png, twitter-facebook.png)도 구 UI 스크린샷이다. 또 API 정책 변화 이후 개발자 커뮤니티가 여러 플랫폼으로 분산된 현재, 소셜 채널 전략을 X 한 곳으로 예시하는 것은 오도한다.",
+      "action": "replace",
+      "suggestion": "'소셜 미디어' 절을 채널 포트폴리오 관점으로 다시 쓴다: 회사 개발자 계정(X/LinkedIn), 개발자 커뮤니티(Mastodon/Bluesky), 국내 채널(브런치·페이스북 개발자 그룹·커뮤니티 뉴스레터), 그리고 릴리스마다 자동으로 나가는 채널(GitHub Releases → RSS/웹훅). 이미지 2장은 교체하거나 삭제하고, 대신 '공개 발표 1회로 끝내지 말고 릴리스마다 반복하라' 는 원칙 서술로 대체한다."
+    },
+    {
+      "line": 343,
+      "quote": "- 새로 공개한 오픈소스를 소개하는 블로그 글: [LINE 기술 블로그 - Mono-repo, Multi-project를 Gradle 플러그인으로 손쉽게 관리하기](https://engineering.linecorp.com/ko/blog/mono-repo-multi-project-gradle-plugin/)[^line-mono]",
+      "kind": "stale_fact",
+      "severity": "minor",
+      "diagnosis": "링크 3건 모두 현재 200 응답으로 살아 있으나, LINE 은 2023년 10월 LY Corporation 으로 통합되어 'LINE 기술 블로그' 라는 명칭과 engineering.linecorp.com 도메인이 장기 유지된다는 보장이 없다. 또 기술 블로그 예시 3건이 모두 한 회사에서 나와 국내 독자에게 사례 다양성이 부족하다.",
+      "action": "replace",
+      "suggestion": "링크 유효성은 유지하되 표기를 'LY Corporation(구 LINE) 기술 블로그' 로 바꾸고, 글 유형 3분류(신규 공개 소개 / 기능 소개 / 도입 사례)는 좋은 틀이므로 유지한 채 국내 다른 기업 사례 1~2건을 보태 균형을 맞춘다. 도메인 이전 여부는 집필 시 재확인한다(verify)."
+    },
+    {
+      "line": 363,
+      "quote": "Issue tracker를 이용해서 사용자들과 소통할 수 있겠지만 사람들은 Issue tracker를 질의응답의 수단으로 잘 생각하지 않는다. 조금 더 가볍게 소통할 수 있도록 [Slack](https://slack.com/intl/ko-kr)[^slack]이나 [Gitter](https://gitter.im)[^glitter]등 대화형 커뮤니케이션을 위한 도구를 사용할 수도 있다.",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "제기한 문제('이슈 트래커는 Q&A 수단이 아니다')의 표준 해답인 GitHub Discussions 가 빠져 있다. Gitter 는 Matrix/Element 로 이관되어 신규 프로젝트가 선택할 만한 채널이 아니고, Slack 무료 플랜은 메시지 보관 제한이 있어 오픈소스 아카이브 용도로 부적합하다(검색 가능한 지식이 사라진다). 각주 이름 오타 'glitter' 도 있다.",
+      "action": "replace",
+      "suggestion": "채널을 목적별로 재정리한다: 비동기 Q&A·설계 논의는 GitHub Discussions(검색·인덱싱 가능, 이슈로 승격 가능), 실시간 대화는 Discord/Slack/Matrix/Zulip, 공지는 릴리스 노트+메일링. 각 채널의 '검색 가능성/보관' 특성을 한 줄로 비교하고, 채널을 늘리면 응답 부담도 늘어난다는 운영 비용 경고를 붙인다. 각주 식별자 오타를 고친다."
+    },
+    {
+      "line": 371,
+      "quote": "그동안은 해외에서 열리는 콘퍼런스에 참여하기 위해서 적지 않은 시간과 비용, 그리고 노력을 들여야 했지만, 2020년부터는 대부분의 행사가 온라인으로 전환했다. 온라인 콘퍼런스의 좋은 점은 참석자와 발표자의 다양성이 커진다는 점이다.",
+      "kind": "stale_fact",
+      "severity": "critical",
+      "diagnosis": "2026년 기준 사실이 아니다. 팬데믹기 서술이 그대로 남아 있으며, 주요 오픈소스 행사는 이미 오프라인/하이브리드로 복귀했다. 이 문장을 근거로 콘퍼런스 예산·출장 계획을 세우는 담당자를 오도한다.",
+      "action": "replace",
+      "suggestion": "해당 두 문장을 삭제하고 실행 지침으로 대체한다: 프로젝트 성격별 목표 행사 선정(CNCF 계열은 KubeCon, 일반 OSS 는 Open Source Summit/FOSDEM, 국내는 공개SW 관련 행사·오픈소스 컨트리뷰션 아카데미·자체 개발자 콘퍼런스), CFP 마감 역산 일정, 발표 자료의 재활용(블로그·영상), 부스/스폰서십 판단 기준, 하이브리드 행사에서 원격 참여로 비용을 낮추는 방법. 행사명·개최 형태는 집필 시 재확인한다(verify)."
+    },
+    {
+      "line": 381,
+      "quote": "1. 많이 쓰이고 있는 오픈소스인가? ☞ 사내의 다른 제품/프로젝트에서 도입할 수 있도록 사내에서 이미 적용하고 있는 유즈 케이스를 보여준다. 이후 사용자가 생길 때마다 유즈 케이스를 공유할 수 있도록 독려한다.",
+      "kind": "missing_topic",
+      "severity": "major",
+      "diagnosis": "'사용자 늘리기' 가 사용자의 채택 기준 5개를 역이용하는 좋은 구조인데, 그 5개가 2020년 기준이다. 2026년 기업 채택자는 여기에 더해 공급망 요건을 본다 — SBOM 제공 여부, 릴리스 아티팩트 서명·프로버넌스, OpenSSF Scorecard 점수, SECURITY.md 와 취약점 대응 이력, SPDX 로 명확히 선언된 라이선스, 지원 버전/EOL 정책. 이 항목들이 없으면 대기업·공공 조달에서 탈락한다.",
+      "action": "expand",
+      "suggestion": "역이용 목록에 6~10번을 추가한다: 6) 우리 SBOM 을 릴리스마다 첨부하는가, 7) 아티팩트에 서명·프로버넌스가 있는가, 8) 취약점 신고 후 며칠 안에 답하는가(SECURITY.md 에 공표), 9) 라이선스가 SPDX 로 기계 판독 가능한가, 10) 지원 버전과 EOL 이 공표되어 있는가. 각 항목마다 '채택자가 무엇으로 확인하는가' 를 함께 적어 실행 가능하게 만든다."
+    },
+    {
+      "line": 397,
+      "quote": "### 요약",
+      "kind": "duplication",
+      "severity": "minor",
+      "diagnosis": "L660 에도 동일한 '### 요약' 헤딩이 있어 Hugo 슬러그가 '요약-1' 로 밀린다(check_guide_integrity.py warn). 목차·링크에서 두 요약을 구분할 수 없다. 발간본은 '(5) 요 약' / '(3) 요 약' 으로 장번호가 붙어 충돌하지 않는다(repo_only 항목).",
+      "action": "replace",
+      "suggestion": "L397 을 '### 기업 편 요약', L660 을 '### 개발자 편 요약' 으로 바꾼다."
+    },
+    {
+      "line": 397,
+      "quote": "지금까지 기업의 오픈소스 담당자의 관점에서 공개 정책을 설정하는 것부터 시작해서 새로운 오픈소스를 공개하기까지의 과정을 살펴보았다.",
+      "kind": "missing_topic",
+      "severity": "major",
+      "diagnosis": "기업 편 전체에 '공개한 뒤 무엇을 측정할 것인가' 가 없다. 사무국이 경영진에게 공개 프로그램의 성과를 보고할 수단이 없고, L420 이 '성과가 눈에 가시적으로 드러나기 어렵다' 고 인정하면서도 대안을 주지 않는다. 측정 없이는 다음 해 예산과 인력이 유지되지 않는다.",
+      "action": "expand",
+      "suggestion": "요약 앞에 '공개 프로그램 성과 측정' 소절을 신설한다: 프로젝트 단위 지표(외부 기여자 수, 첫 응답 시간, 이슈 종결률, 다운로드/의존 저장소 수, Scorecard 점수)와 기업 단위 지표(공개 건수, 아카이브 건수, 공개 검토 리드타임, 채용 유입 경로 중 오픈소스 비중)를 나누고, CHAOSS 지표 체계를 참고 자료로 건다. OSPO 섹션의 성과 지표와 중복되지 않도록 여기서는 '공개' 에 한정한다."
+    },
+    {
+      "line": 420,
+      "quote": "오픈소스 공개와 운영은 마치 다이어트와 같다. 여기까지만 진행한다면 오픈소스 공개를 할 수 없었던 기업에서 얼마든지 훌륭한 오픈소스를 배출해낼 수 있는 기업으로 성장한 것이다.",
+      "kind": "missing_topic",
+      "severity": "major",
+      "diagnosis": "기업 편이 '공개 → 홍보 → 사용자 늘리기 → 요약' 으로 끝나고 프로젝트의 종료(sunset)를 다루지 않는다. 실제 기업 사무국이 가장 자주 마주하는 상황은 새 공개가 아니라 '3년 전에 공개했는데 담당자가 없는 저장소를 어떻게 할 것인가' 다. 아카이브·이관·EOL 공지 절차가 없으면 방치된 저장소가 기업 브랜드에 역효과를 낸다.",
+      "action": "expand",
+      "suggestion": "'공개한 오픈소스를 접거나 넘기기' 절을 신설한다: 유지 여부 판정 기준(최근 커밋·이슈 응답·내부 사용 여부), 단계적 조치(유지보수 모드 공지 → 새 메인테이너 공모 → 재단/개인 이관 → 아카이브), README 상단 EOL 배너와 SECURITY.md 지원 종료 명시, 패키지 저장소 deprecate 표시(npm deprecate, PyPI yank), 상표·조직 계정 정리. 아카이브는 실패가 아니라 정상 종료임을 명시한다."
+    },
+    {
+      "line": 442,
+      "quote": "가시적으로도 기업의 Organization에 등록된 저장소가 업데이트된 순서대로 정렬되기 때문에 변경이 없다면 저장소는 페이지 2로 넘어가게 된다.",
+      "kind": "stale_fact",
+      "severity": "minor",
+      "diagnosis": "GitHub 조직 저장소 목록의 정렬은 사용자가 바꿀 수 있고 기본값도 변할 수 있어 근거가 약하다. 논지('관리되지 않으면 눈에 띄지 않는다')에 비해 지엽적인 UI 관찰에 기대고 있다.",
+      "action": "delete",
+      "suggestion": "이 문장을 삭제하고, 대신 '저장소 상단의 최근 커밋 일자와 이슈 응답 이력이 채택자의 첫 판단 근거가 된다' 는 관찰로 대체한다."
+    },
+    {
+      "line": 450,
+      "quote": "상용 도구에도 오픈소스에 사용하면 가격을 할인해주는 경우가 많다. 그러나 역시 오픈소스에서 무료로 사용할 수 있는 도구들이 더 대중적으로 쓰이고 있다. 오픈소스에서 무료로 사용할 수 있으며, GitHub/GitLab과 연동이 가능한 몇 가지 도구들을 나열한다.",
+      "kind": "stale_fact",
+      "severity": "critical",
+      "diagnosis": "'오픈소스에서 무료' 라는 전제 아래 나열한 5개 도구 중 최소 3개가 현재 그 전제를 만족하지 않는다(Travis CI 는 오픈소스 무제한 무료 정책을 종료하고 크레딧 기반으로 전환, Pull Panda 는 서비스 종료, Dependabot 은 독립 서비스가 아니라 GitHub 내장 기능). 목록 전체가 2020년 스냅숏이다.",
+      "action": "replace",
+      "suggestion": "목록을 2026년 기준으로 전면 교체한다. CI/CD: GitHub Actions(공개 저장소 무료) 또는 GitLab CI. 의존성 갱신: Dependabot(GitHub 내장) 또는 Renovate. 커버리지: Codecov(오픈소스 플랜 조건 확인). 릴리스 자동화: semantic-release / Release Please. 보안: OpenSSF Scorecard Action, CodeQL, gitleaks, OSV-Scanner. 라이선스: REUSE. 기여자 관리: All Contributors. 각 항목에 '무료 조건' 을 한 줄로 명시해 정책 변경에 강한 서술로 만든다."
+    },
+    {
+      "line": 452,
+      "quote": "- Contiuous Integration - [Travis CI](https://www.travis-ci.com)[^travis-ci]\n- Contiuous Integration - [CircleCI](https://circleci.com)[^circleci]",
+      "kind": "stale_fact",
+      "severity": "critical",
+      "diagnosis": "두 줄 모두 'Contiuous' 오타. 더 중요하게는 오픈소스 CI 의 사실상 표준인 GitHub Actions 가 목록에 없다 — 이 문서가 GitHub/GitLab 기준으로 쓰였고 L582 에서 GitHub Actions 모음을 링크하면서도 도구 목록에는 빠져 자기모순이다. Travis CI 는 오픈소스 무료 정책이 바뀌어 이 맥락의 대표 예시로 부적절하다.",
+      "action": "replace",
+      "suggestion": "오타를 고치고 GitHub Actions 를 첫 항목으로 올린다. Travis CI 는 삭제하거나 '과거 오픈소스 CI 의 표준이었으나 무료 정책이 변경됨' 이라는 단서와 함께만 남긴다."
+    },
+    {
+      "line": 455,
+      "quote": "- Pull request management - [Pull Panda](https://pullpanda.com)[^pullpanda]",
+      "kind": "dead_link",
+      "severity": "critical",
+      "diagnosis": "curl 응답 없음(연결 실패). Pull Panda 는 2019년 GitHub 에 인수된 뒤 별도 서비스가 종료되고 기능이 GitHub 의 scheduled reminders 로 흡수되었다. 존재하지 않는 제품을 권장하고 있다. 각주 정의 L461 도 동일.",
+      "action": "delete",
+      "suggestion": "항목과 각주를 삭제하고, 같은 목적(PR 리뷰 리마인드/부하 분산)을 GitHub scheduled reminders, CODEOWNERS 자동 리뷰어 지정, 머지 큐로 대체 서술한다."
+    },
+    {
+      "line": 456,
+      "quote": "- Dependency update management - [Dependabot](https://dependabot.com)[^dependabot]",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "dependabot.com 은 github.com/security/advanced-security 로 301 리다이렉트된다. Dependabot 은 더 이상 독립 서비스가 아니라 GitHub 저장소 설정에서 켜는 기능이며, 도입 방법(.github/dependabot.yml)이 완전히 달라졌다.",
+      "action": "replace",
+      "suggestion": "링크를 GitHub Dependabot 공식 문서로 교체하고, 설명을 '저장소 설정 > Security 에서 alerts/security updates 를 켜고 .github/dependabot.yml 로 갱신 주기를 정의' 로 바꾼다. GitHub 외 환경용 대안으로 Renovate 를 함께 제시한다."
+    },
+    {
+      "line": 467,
+      "quote": "잘 쓴 README의 형식은  [Make a README](https://www.makeareadme.com)[^makeareadme]에 정리되어 있다. 아래는 그 내용 중 일부이다.",
+      "kind": "structure",
+      "severity": "major",
+      "diagnosis": "L471~536, 약 66행(파일의 10%)이 외부 문서 Make a README 의 번역 요약으로 채워져 있다. 원문 링크가 있는데도 전문을 옮겨 놓아 분량 대비 가이드 고유의 부가가치가 낮고, 정작 '기업이 공개하는 README' 에 필요한 항목(사내 사용 사례, 지원 정책, 보안 신고 경로, 기업 저작권 표기)은 없다. 발간본 p151-153 도 같은 분량을 조판만 바꿔 실었다(diverged 항목).",
+      "action": "expand",
+      "suggestion": "인용 블록을 절반 이하로 압축(항목명 + 한 줄 설명)하고 원문 링크로 넘긴 뒤, 확보한 분량으로 '기업 오픈소스 README 에 추가로 넣을 것' 을 신설한다: 회사명/저작권 표기와 상표 사용 안내, 지원 버전·EOL 표, SECURITY.md 링크, SPDX 라이선스 배지, 릴리스 서명 검증 방법, 사내 채택 사례 링크, AI 생성 코드 기여 정책 링크."
+    },
+    {
+      "line": 471,
+      "quote": "{{% alert title=\"Make a README\" color=\"warning\" %}}\n{{% /alert %}}",
+      "kind": "structure",
+      "severity": "minor",
+      "diagnosis": "본문이 비어 있는 alert 숏코드. 렌더링 시 제목만 있는 빈 경고 박스가 출력된다. 의도한 바(아래 인용문이 Make a README 인용임을 표시)가 전달되지 않는다.",
+      "action": "replace",
+      "suggestion": "alert 안에 출처 문장을 넣거나(예: '아래 내용은 Make a README 의 항목을 요약한 것이다'), 숏코드를 없애고 인용 블록 앞에 출처 문장을 평문으로 둔다."
+    },
+    {
+      "line": 485,
+      "quote": "[^shields]: Shields : https://shields.io",
+      "kind": "structure",
+      "severity": "minor",
+      "diagnosis": "L485, L490-491, L496-498, L519-521, L530 의 각주 정의가 '>' 인용 블록 사이에 '>' 없이 삽입되어 있다. Markdown 파서가 인용 블록을 여러 조각으로 분할해 L474~534 의 인용 표시가 중간중간 끊긴다. 실제 렌더링에서 인용문과 본문의 경계가 무너진다.",
+      "action": "move",
+      "suggestion": "인용 블록 내부의 각주 정의 9건을 모두 블록 종료(L535) 이후로 모아 옮긴다. 이 파일의 다른 구간(예: L152-154, L262-265)처럼 목록 뒤에 각주를 몰아 두는 방식과 일관되게 한다."
+    },
+    {
+      "line": 541,
+      "quote": "`CONTRIBUTING.md` 의 작성은 사람들로부터 도움을 받을 수 있는 방법 중 하나이다. ... 그렇다면 어떤 내용이 들어가야 미래의 기여자에게도, 메인테이너에게도 도움이 될지 정리한다.",
+      "kind": "missing_topic",
+      "severity": "major",
+      "diagnosis": "CONTRIBUTING 필수 항목 7개가 2020년 기준이다. 2026년 메인테이너가 CONTRIBUTING 에 반드시 써야 하는 것 두 가지가 빠졌다: (1) AI 코딩 도구로 생성한 코드의 기여 허용 여부와 고지 의무 — 저작권 출처가 불명확한 대량 PR 유입은 현재 오픈소스 메인테이너의 주요 부담이고 기업 프로젝트는 법무 리스크에 직결된다. (2) 보안 취약점은 이슈로 올리지 말고 SECURITY.md 경로로 신고하라는 안내 — 공개 이슈에 취약점이 올라오는 사고를 막는 최소 장치다.",
+      "action": "expand",
+      "suggestion": "목록에 'AI 생성 코드 기여 정책'(허용 여부, 기여자 고지 의무, 라이선스 호환 확인 책임, 리뷰 시 판단 기준)과 '보안 취약점 신고 경로(SECURITY.md 로 유도, 이슈 금지)' 를 추가한다. 함께 '이슈/PR 응답 목표 시간', '리뷰·머지 기준', '릴리스 주기', '기여자 사다리' 도 넣어 기여자가 기대치를 알 수 있게 한다."
+    },
+    {
+      "line": 560,
+      "quote": "- [Atom - Contributing to Atom](https://github.com/atom/atom/blob/master/CONTRIBUTING.md)[^atom-contributing]",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "GitHub API 확인 결과 atom/atom 은 archived: true, 마지막 푸시 2023-01-03. Atom 은 2022년 12월 서비스가 종료된 프로젝트다. 종료된 프로젝트의 CONTRIBUTING 을 모범 예시로 첫 자리에 두고 있다.",
+      "action": "replace",
+      "suggestion": "Atom 을 삭제하고 현재 활발히 운영되는 예시로 교체한다: Kubernetes Contributor's Guide(유지), Node.js CONTRIBUTING, VS Code CONTRIBUTING, Armeria Developer guide(유지), 국내 사례 1건. 규모별로 '소규모 프로젝트용 짧은 예시' 와 '대규모 프로젝트용 분리형 예시' 를 나눠 제시하면 실용성이 커진다."
+    },
+    {
+      "line": 579,
+      "quote": "- [Maven Central에 배포하기](https://dzone.com/articles/publish-your-artifacts-to-maven-central)[^maven-central]",
+      "kind": "stale_fact",
+      "severity": "critical",
+      "diagnosis": "이 글이 설명하는 OSSRH(oss.sonatype.org) 기반 배포 경로는 2025년 6월 30일자로 종료되었고, 현재 Maven Central 게시는 Central Portal(central.sonatype.com)로 일원화되었다. 절차·엔드포인트·플러그인 설정이 모두 달라 이 링크를 따라가면 배포가 되지 않는다. 링크 자체는 curl 403(봇 차단)으로 생존 여부 확인이 불완전하나, 내용의 유효성 문제가 더 크다.",
+      "action": "replace",
+      "suggestion": "Sonatype Central Portal 공식 문서(central.sonatype.org/publish/)로 교체하고, namespace 소유 검증(도메인 TXT 또는 io.github.<user>), GPG 서명 요건, Gradle/Maven 플러그인 설정을 단계로 요약한다. 종료된 OSSRH 경로는 '더 이상 사용할 수 없음' 을 한 줄로 남겨 구 문서를 보고 온 독자를 안내한다. 종료일자는 집필 시 공식 공지로 재확인한다(verify)."
+    },
+    {
+      "line": 580,
+      "quote": "- [npm에 배포하기](https://docs.npmjs.com/creating-and-publishing-scoped-public-packages)[^npm]\n- [PyPI에 배포하기](https://packaging.python.org/tutorials/packaging-projects/#packaging-python-projects)[^pypi]",
+      "kind": "missing_topic",
+      "severity": "major",
+      "diagnosis": "링크는 살아 있으나 2026년 패키지 배포의 핵심인 공급망 보증이 전혀 없다. PyPI 는 Trusted Publishing(OIDC 기반, 장기 토큰 불필요)과 2FA 를 사실상 요구하고, npm 은 provenance/attestation 발행을 지원한다. 기업이 공개한 패키지가 채택되려면 서명·프로버넌스가 있어야 한다는 점(앞의 '사용자 늘리기' 와 직결)이 배포 절에서 다뤄지지 않는다.",
+      "action": "expand",
+      "suggestion": "'안전하게 배포하기' 소절을 신설한다: 장기 API 토큰 대신 CI 의 OIDC Trusted Publishing 사용(PyPI/npm), 릴리스 워크플로에서 provenance/attestation 생성(npm --provenance, Sigstore/cosign), 릴리스 아티팩트에 SBOM 첨부(SPDX 또는 CycloneDX), 게시 계정 2FA 강제, 태그 서명. using 섹션의 SBOM 설명과 중복되지 않도록 여기서는 '생성·첨부하는 쪽' 관점으로 한정한다."
+    },
+    {
+      "line": 600,
+      "quote": "- [GitHub에서 Issue template를 만드는 방법](https://docs.github.com/en/github/building-a-strong-community/manually-creating-a-single-issue-template-for-your-repository#adding-an-issue-template)[^github-issue]",
+      "kind": "stale_fact",
+      "severity": "minor",
+      "diagnosis": "링크는 리다이렉트로 살아 있으나 'manually-creating-a-single-issue-template' 은 구 방식이다. 현재는 YAML 기반 issue forms 로 필수 입력·드롭다운·체크박스를 강제할 수 있어, 본문이 강조하는 '필요한 정보를 미리 제공하도록 유도' 목적을 훨씬 잘 달성한다. 또 이슈 템플릿에서 Discussions·보안 신고로 라우팅하는 config.yml 도 빠져 있다.",
+      "action": "replace",
+      "suggestion": "issue forms(.github/ISSUE_TEMPLATE/*.yml) 문서로 교체하고, config.yml 의 contact_links 로 질문은 Discussions, 취약점은 보안 신고 경로로 보내는 설정을 예시로 든다."
+    },
+    {
+      "line": 628,
+      "quote": "<center><i>https://github.com/line/armeira/issues</i></center>",
+      "kind": "dead_link",
+      "severity": "minor",
+      "diagnosis": "캡션 URL 오타(armeira → armeria). 확인 결과 이 주소는 404, 올바른 주소는 https://github.com/line/armeria/issues (200). L613 캡션은 철자가 맞다. 두 이미지 모두 2021년 GitHub UI 스크린샷이라 현재 화면과 다르다.",
+      "action": "replace",
+      "suggestion": "캡션 오타를 고치고, 스크린샷 2장(issue-label.png, github-good-first-issue.png)은 현행 GitHub UI 로 갱신하거나 라벨 체계를 표로 대체한다. 라벨 예시는 특정 회사 저장소 대신 라벨 분류 체계(type/area/priority/good first issue)를 제시하는 편이 오래 간다."
+    },
+    {
+      "line": 644,
+      "quote": "- [Pull request 템플릿 예시 모음](https://github.com/stevemao/github-issue-templates)[^pr-template]",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "'Pull request 템플릿 예시 모음' 이라면서 L602 의 '이슈 템플릿 예시 모음' 과 완전히 같은 저장소(github-issue-templates)를 가리킨다. 명백한 잘못된 참조이며 발간본 p159 각주 124)에도 같은 오류가 그대로 있다.",
+      "action": "replace",
+      "suggestion": "PR 템플릿 예시 저장소(예: stevemao/github-issue-templates 대신 실제 PR 템플릿 모음 또는 대형 프로젝트의 .github/PULL_REQUEST_TEMPLATE.md 직접 링크)로 교체한다. 마땅한 모음이 없으면 링크를 삭제하고 본문에 최소 템플릿 예시를 직접 코드 블록으로 싣는다."
+    },
+    {
+      "line": 632,
+      "quote": "#### Pull request 운영 best practice",
+      "kind": "missing_topic",
+      "severity": "minor",
+      "diagnosis": "PR 운영이 템플릿·댓글·재촉 3가지 커뮤니케이션 팁으로만 구성되어 있다. 2026년 메인테이너 부하의 상당 부분은 자동화로 걷어낼 수 있는데(리뷰어 자동 지정, 필수 CI 체크, 자동 라벨, 머지 큐, stale 봇) 그 층위가 없다. 또 외부 기여자의 PR 에서 시크릿에 접근하는 워크플로가 도는 위험(pull_request_target 오용)은 기업 저장소에서 실제 사고로 이어지는 항목인데 언급이 없다.",
+      "action": "expand",
+      "suggestion": "'사람이 할 일과 자동화할 일' 로 나눈다. 자동화: CODEOWNERS 리뷰어 지정, 필수 상태 검사, 자동 라벨링, 머지 큐, 장기 미응답 PR 처리 정책. 안전: 포크 PR 에서 도는 워크플로의 권한 최소화와 승인 후 실행 설정. 커뮤니케이션 3항목은 그대로 유지한다."
+    },
+    {
+      "line": 104,
+      "quote": "최근 경력 개발자 채용 공고에서는 특정 대형 오픈소스 사용 경험이나 오픈소스 활동 경험을 우대 사항으로 명시하는 것을 심심치 않게 볼 수 있다.",
+      "kind": "stale_fact",
+      "severity": "minor",
+      "diagnosis": "'최근' 이라는 상대 시점 표현. 2021년에 쓰인 '최근' 이 2026년 독자에게는 시점 불명이 된다. 이 절 전체(기업/개발자 이점 13개)가 정성적 서술뿐이라 설득 자료로 쓰기에는 근거가 약하다.",
+      "action": "replace",
+      "suggestion": "'최근' 을 삭제하고 현재형 서술로 바꾼다. 나아가 이점 절 전체에 검증 가능한 근거를 1~2개 붙인다(오픈소스 활동과 채용·리텐션의 관계를 다룬 최신 조사, 국내 기업 사례). 사무국이 경영진 설득 자료로 그대로 인용할 수 있는 형태가 되어야 이 절의 목적이 달성된다."
+    },
+    {
+      "line": 86,
+      "quote": "#### 1.가독성 높은 코드의 작성 실력",
+      "kind": "structure",
+      "severity": "minor",
+      "diagnosis": "'1.' 뒤 공백 누락. 같은 목록의 L90 '#### 2. 문서 작성 실력' 등 나머지 항목과 표기가 불일치한다. L134 '##### 5. 인사팀' 계열 헤딩도 문장부호·띄어쓰기가 절마다 제각각이다(L114 '누가?(1):누가', L172 '언제?:언제').",
+      "action": "replace",
+      "suggestion": "'#### 1. 가독성 높은 코드의 작성 실력' 로 고치고, 5W 헤딩 표기를 '누가? — …' 형태로 통일한다. 이 표기 통일은 앞서 지적한 죽은 앵커 3건 수정과 한 번에 처리하는 것이 효율적이다."
+    },
+    {
+      "line": 688,
+      "quote": "앞으로 성공적으로 커뮤니티를 형성한 개발자의 경험을 통해 이 가이드의 업데이트에도 도움을 받는 날이 오기를 바란다.",
+      "kind": "stale_fact",
+      "severity": "minor",
+      "diagnosis": "2021년 초판의 맺음말이 2026년 개정판에 그대로 남아 있다. 초판 이후 5년이 지났으므로 '언젠가 사례가 쌓이기를 바란다' 는 서술은 개정 시점과 어긋난다.",
+      "action": "replace",
+      "suggestion": "삭제하거나, 초판 이후 실제로 축적된 국내 기업 공개 사례를 1~2개 소개하는 문장으로 대체한다."
+    }
+  ],
+  "missing_topics": [
+    "EU 사이버복원력법(CRA) 하의 공개 주체 구분 — 제품과 함께 유상 공급하면 manufacturer, 상용 제품에 쓰이는 오픈소스를 기업이 지원하면 open source software steward. 각각의 취약점 처리 정책 보유·당국 보고 의무와 시행 일정(적극 악용 취약점 보고 2026-09, 전면 적용 2027-12)을 공개 결정 단계에서 판단하도록 하는 절. 현재 releasing 에는 'CRA' 문자열 자체가 0건이고 using 섹션의 SBOM 규제 동향에만 초안 단계 언급이 있다.",
+    "SECURITY.md 와 취약점 대응 프로세스 — 신고 창구(GitHub Private vulnerability reporting), 지원 버전 표, 접수→분류→패치→공개까지의 목표 기간, CVE 발급(GitHub Security Advisory), 공개 저장소에 취약점이 이슈로 올라왔을 때의 대응. 공개하는 쪽의 보안 책임이 통째로 빠져 있다.",
+    "릴리스 아티팩트의 공급망 보증 — Sigstore/cosign 서명, npm provenance, PyPI·npm Trusted Publishing(OIDC), 릴리스마다 SBOM(SPDX/CycloneDX) 첨부. 2026년 기업 채택자의 필수 확인 항목이자 CRA 대응의 실무 수단.",
+    "Maven Central 게시 경로 전환 — OSSRH 종료 후 Central Portal 기반 절차(namespace 소유 검증, 서명 요건, 플러그인 설정). 현행 링크는 사용할 수 없는 절차를 안내한다.",
+    "프로젝트 거버넌스 문서와 승계 구조 — GOVERNANCE.md, MAINTAINERS.md, CODEOWNERS, 기여자 사다리, 메인테이너 이탈·퇴사 시 권한 승계. '누가 운영할 것인가' 절이 GitHub 권한표로만 답하고 있다.",
+    "AI 시대의 공개 — (a) AI 코딩 도구로 생성된 코드를 공개 대상에 포함할 때의 출처·라이선스 검토, (b) 외부에서 들어오는 AI 생성 기여의 허용 정책과 고지 의무를 CONTRIBUTING 에 명시, (c) AI 모델·가중치·데이터셋을 공개할 때의 라이선스 선택(OSI 의 Open Source AI Definition 적합성, 모델 전용 라이선스와 오픈소스의 구분).",
+    "오픈소스와 소스가용(source-available) 사이의 선택 — BUSL/SSPL/FSL 등 비 OSI 라이선스로 공개하는 선택지, 사업 모델 변화에 따른 리라이선싱 가능성과 그 전제(CLA·저작권 집중), 리라이선싱이 촉발한 커뮤니티 포크 사례와 비용. '어떤 조건으로 공개할 것인가' 절의 가장 큰 공백.",
+    "재단 이관과 중립 거버넌스 — Linux Foundation/CNCF/Apache 등에 이관할 때의 요건(상표 이전, CLA/DCO 전환, IP 정책), 자사 org 유지와 비교한 장단점, 여러 기업이 공동 개발하는 프로젝트의 소유 구조. '어디에 공개할 것인가' 가 자사 계정 선점에서 멈춰 있다.",
+    "공개 종료(sunset)·아카이브·이관 절차 — 유지 여부 판정 기준, 유지보수 모드 공지, 새 메인테이너 공모, README/SECURITY.md EOL 표기, 패키지 저장소 deprecate/yank, 조직 계정과 상표 정리. 기업 사무국이 가장 자주 마주하는 상황인데 전혀 없다.",
+    "SPDX 식별자와 REUSE 규격 — 파일 헤더 저작권·라이선스 표기, LICENSES/ 디렉터리, NOTICE/THIRD_PARTY 작성. 공개 전 코드 정제 단계와 라이선스 선택 단계 양쪽에 걸치는 필수 실무.",
+    "공개 전 코드 정제 절차 — 전체 커밋 이력 시크릿 스캔, 발견 시 제거와 자격증명 폐기·회전, 커밋 작성자 이메일 정리, 내부 식별자 제거, 서드파티 코드 출처 정리. 현재 '코드 이전' 절 두 문장이 담당하고 있다.",
+    "GitHub Discussions 를 포함한 커뮤니케이션 채널 설계 — 비동기 Q&A / 실시간 대화 / 공지의 역할 분리와 검색 가능성·보관 관점의 채널 선택. 현재 Slack·Gitter 두 줄이 전부다.",
+    "공개 프로그램 성과 측정 — 프로젝트 지표(외부 기여자, 첫 응답 시간, 이슈 종결률, 의존 저장소 수, OpenSSF Scorecard)와 기업 지표(공개 건수, 검토 리드타임, 아카이브 건수). 예산·인력 유지의 근거가 없다.",
+    "공개 소프트웨어의 수출 통제·규제 확인 — 암호 기능을 포함한 코드를 공개할 때의 전략물자 판정·신고 필요성 등 국내 기업이 실제로 부딪히는 법무 확인 항목. 법무팀/특허팀 절에 자연스럽게 들어갈 자리가 있으나 없다.",
+    "우리 프로젝트의 상표 사용 정책 — 상표 침해 조사(현재 있음)를 넘어, 공개한 프로젝트 이름·로고를 제3자가 어떻게 쓸 수 있는지 규정하는 trademark policy 문서. 로고 제작 절(L373)과 짝을 이루어야 한다."
+  ],
+  "structure_note": "기업 편/개발자 편 2분할은 전 구간에서 유지되고 있고, 기업 편을 5W 로, 개발자 편을 '준비하기/운영하기' 로 나눈 골격 자체는 2026년에도 유효하다. 다만 서두 L110 이 약속한 다섯 물음 중 '무엇을?'(공개 대상 선정)에 대응하는 절이 기업 편에 없고 그 내용이 개발자 편 L428 에만 있어, 사무국 독자가 심사 기준을 찾지 못한다 — 개정판에서 가장 먼저 메울 구조적 구멍이다. 두 편 사이의 중복은 대체로 잘 통제되어 있으나(README/CONTRIBUTING 은 기업 편 L253 이 개발자 편으로 넘김), 커뮤니티 운영은 기업 편 '소통하기·사용자 늘리기'(L322-395)와 개발자 편 '오픈소스 운영하기'(L569-658)에 갈라져 있고 실제 수행자는 같은 메인테이너라 독자가 두 곳을 오가야 한다 — 기업 편은 '지원·홍보·측정', 개발자 편은 '일상 운영' 으로 역할을 다시 선언해 주면 해소된다. 절 순서 자체는 판단 흐름(왜→규칙→문서화→공개→공개 이후)과 잘 맞으나, 흐름이 '공개' 에서 끝나고 '종료·이관' 이 없어 생애주기가 미완인 점, 그리고 공개 전 필수 관문인 보안(SECURITY.md·코드 정제)과 배포 보증(서명·SBOM)이 각각 두 문장짜리 소절로 눌려 있는 점이 실용성의 최대 결함이다. 교차 참조는 저장소 판본이 절 제목만 적는 방식이라 L158·L253·L306 세 곳이 실재하지 않는 제목을 가리키고 있는데, 발간본(p134·p139·p142)이 장·절 번호로 대상을 확정해 두었으므로 발간본 표기를 흡수해 앵커 링크로 바꾸는 것이 병합의 핵심 작업이다.",
+  "illustration_gaps": [
+    {
+      "near_line": 110,
+      "why": "기업 편 전체가 5W 질문에 절을 하나씩 대응시키는 구조인데, 텍스트로만 이어져 있어 독자가 지금 어느 단계를 읽고 있는지, 앞으로 몇 개의 관문이 남았는지 알 수 없다. 게다가 '무엇을?' 절이 실제로는 없어 약속과 본문이 어긋나는데 이 어긋남도 그림이 있어야 드러난다.",
+      "what": "왜? → 누가(검토) → 누가(운영) → 무엇을 → 언제 → 어디서 → 어떻게 → 문서화 → 공개 → 공개 이후 를 한 줄 파이프라인으로 배치하고, 각 단계에 담당 주체(사무국/유관부서/개발자)와 산출물(신청서, 검토 의견, 라이선스 결정서, 공개 가이드 문서)을 아래 레인으로 붙인 전체 여정 도해."
+    },
+    {
+      "near_line": 116,
+      "why": "유관부서 7개와 각 부서가 볼 항목이 L118-145 에 걸쳐 28행의 산문으로 늘어져 있다. 사무국 담당자가 실제로 필요한 것은 '누구에게 무엇을 언제까지 요청하는가' 한 장인데, 현재 형태로는 매번 본문을 다시 읽어야 한다.",
+      "what": "7개 부서(특허·상표·보안·검수·인사·홍보/마케팅·법무)를 행으로, 확인 항목 / 사무국이 제출할 입력물 / 부서가 돌려줄 산출물 / 표준 소요 기간 / 반려 시 재검토 경로를 열로 둔 검토 매트릭스. 병렬 진행 가능한 검토와 선행 의존이 있는 검토(예: 상표 확정 → 저장소 이름 생성)를 화살표로 구분."
+    },
+    {
+      "near_line": 184,
+      "why": "라이선스 선택이 세 가지 상황별 산문으로만 제시되어, 실제 결정 시 여러 조건이 동시에 걸릴 때(제품에도 포함되고 널리 쓰이길 원하는 경우 등) 어디로 가야 할지 알 수 없다. 여기에 개정판에서 추가될 소스가용 라이선스와 AI 모델 라이선스까지 얹히면 산문으로는 감당이 안 된다.",
+      "what": "판단 노드로 시작하는 의사결정 트리: 특허 포함 여부 → 제품 동봉·제3자 배포 여부 → 상용 버전 분리 계획 여부 → 채택 극대화 우선 여부 → 리라이선싱 여지 필요 여부. 잎 노드에 MIT/Apache-2.0/MPL-2.0/LGPL/GPL/AGPL/소스가용(BUSL 등)을 배치하고, 각 잎에 '함께 준비할 것'(NOTICE, CLA, SPDX 헤더)을 태그로 표시."
+    },
+    {
+      "near_line": 237,
+      "why": "공개 저장소에 무엇을 두어야 하는지가 License/CoC/Contributing 3개 산문 + 스크린샷 한 장으로만 제시되어 있고, 개정판에서 SECURITY·GOVERNANCE·MAINTAINERS·CODEOWNERS·NOTICE 가 추가되면 산문으로는 파악이 불가능해진다. 파일 배치(루트냐 .github/ 냐)까지 정보에 포함되어야 실행 가능하다.",
+      "what": "저장소 루트 파일 트리 도해. README.md, LICENSE, NOTICE, CONTRIBUTING.md, CODE_OF_CONDUCT.md, SECURITY.md, GOVERNANCE.md, MAINTAINERS.md, SUPPORT.md, CHANGELOG.md, .github/(ISSUE_TEMPLATE/, PULL_REQUEST_TEMPLATE.md, CODEOWNERS, workflows/, dependabot.yml)를 계층으로 그리고, 각 파일 옆에 '필수/권장' 과 '작성 주체(사무국/개발자)' 를 뱃지로 표시. 기존 community-profile.png 를 대체."
+    },
+    {
+      "near_line": 304,
+      "why": "배포가 '개발자와 상의한다' 한 문장인데, 2026년 기준으로 여기에 들어가야 할 서명·프로버넌스·SBOM·Trusted Publishing 은 순서와 산출물이 정해진 파이프라인이라 그림 없이 산문으로 쓰면 단계가 뒤섞인다. 어느 지점에 자격증명이 개입하고 어디서 검증 가능한 증거가 생기는지가 시각적으로 드러나야 한다.",
+      "what": "릴리스 파이프라인 도해: 태그 푸시 → CI 빌드(재현 가능 빌드) → 테스트 → SBOM 생성 → 아티팩트 서명(Sigstore) → OIDC 기반 Trusted Publishing 으로 패키지 저장소 게시 → GitHub Release 에 SBOM·서명·릴리스 노트 첨부. 각 단계 아래에 '사용자가 검증하는 방법' 을 대응시켜, 앞의 '사용자 늘리기' 절과 연결."
+    },
+    {
+      "near_line": 160,
+      "why": "메인테이너 1인 퇴사 리스크로 절을 열어 놓고 GitHub 권한 5단계 표로 답하는 불일치를 해소하려면, 권한(정적)이 아니라 사람이 어떻게 올라오고 빠지는지(동적)를 보여야 한다. 표 자체는 텍스트로 충분하므로 그림이 필요한 쪽은 승격 경로다.",
+      "what": "기여자 사다리 도해: 사용자 → 기여자 → 커미터 → 메인테이너 → 이머리터스(emeritus)로 이어지는 단계와 각 단계의 승격 기준(기여 건수·리뷰 참여·기간), 부여되는 GitHub 권한(Read/Triage/Write/Maintain/Admin) 매핑, 이탈 시 권한 회수 경로. GOVERNANCE.md·MAINTAINERS.md 에 무엇을 적어야 하는지를 옆에 주석으로."
+    }
+  ]
+}

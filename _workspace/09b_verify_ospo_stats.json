@@ -1,0 +1,104 @@
+{
+  "report": {
+    "title": "The 2025 State of OSPOs and Open Source Management: Aligning with New Organizational Priorities",
+    "publisher": "Linux Foundation Research (with TODO Group, CNCF, FOSSID, FinOps Foundation)",
+    "published": "2025-08",
+    "sample": "338명 응답(2025-05~06 웹서베이 조사, 5년차). 문항별 유효 표본은 337(전체 크로스탭, DKNS 1건 제외)~283(규모별)~285(연도추이 최신값)~123(지속가능성 문항)~116(OSPO 보유 조직 세부문항)으로 문항마다 다름. 구성: 지역(아메리카39%·유럽38%·아시아태평양16%·기타7%), 규모(1~49명26%·50~999명21%·1,000~9,999명22%·10,000명이상30%·모름1%), 조직유형(HW/SW벤더35%·정부재단학계23%·CSP/MSP/컨설턴트22%·IT최종사용자21%), 응답자직군(개발자36%·기타IT보안20%·IT/PM16%·비IT16%·기타12%)",
+    "url": "https://www.linuxfoundation.org/hubfs/Research%20Reports/LFResearch_StateofOSPO_082825.pdf",
+    "kind": "primary",
+    "fulltext_accessed": true
+  },
+  "by_region": [
+    {
+      "region": "아시아태평양",
+      "metric": "formal (Appendix A2, 표본337, Rest of World 포함)",
+      "value": "37%",
+      "denominator": "아시아태평양 응답자 전체(전체 337명 중 아시아태평양 비중 16%)",
+      "source_note": "p9 Figure 5 + p32 Appendix A2 표('Does your organization currently have... by region'), 두 곳에서 완전히 동일한 수치로 확인됨"
+    },
+    {
+      "region": "아시아태평양",
+      "metric": "formal+informal 합계 (Appendix A2)",
+      "value": "50% (정식37%+비정식13%)",
+      "denominator": "아시아태평양 응답자 전체",
+      "source_note": "p32 Appendix A2"
+    },
+    {
+      "region": "아메리카",
+      "metric": "formal+informal 합계 (Appendix A2)",
+      "value": "46% (정식29%+비정식17%)",
+      "denominator": "아메리카 응답자 전체",
+      "source_note": "p32 Appendix A2"
+    },
+    {
+      "region": "유럽",
+      "metric": "formal+informal 합계 (Appendix A2)",
+      "value": "36% (정식22%+비정식14%)",
+      "denominator": "유럽 응답자 전체",
+      "source_note": "p32 Appendix A2"
+    },
+    {
+      "region": "그 외 지역(Rest of World)",
+      "metric": "formal+informal 합계 (Appendix A2)",
+      "value": "28% (정식17%+비정식11%)",
+      "denominator": "그 외 지역 응답자 전체",
+      "source_note": "p32 Appendix A2"
+    },
+    {
+      "region": "[상충 발견] 아시아태평양",
+      "metric": "formal+informal 합계 (Figure 7, 표본285, Rest of World 제외)",
+      "value": "35% (정식21%+비정식14%) — Appendix A2와 정반대 순위",
+      "denominator": "아메리카+유럽+아시아태평양만(Rest of World 제외), DKNS 제외",
+      "source_note": "p11 Figure 7 본문 서술. 아메리카89%(43+46)·유럽68%(32+36)·APAC35%(21+14)로 APAC이 최저라고 서술하나, 이는 같은 보고서 Appendix A2와 직접 모순되며 아래 검증 결과 신뢰도가 낮음"
+    }
+  ],
+  "by_size": [
+    {
+      "size": "대·초대형 조직 (전체 지역, Figure 6, 표본283)",
+      "metric": "formal 단독",
+      "value": "83%",
+      "denominator": "전체 응답자 중 대·초대형 조직(비정식·합계 수치는 보고서 본문에 명시되지 않음 — 차트 상 다른 세부 막대값은 판독이 불안정해 확정하지 않음)"
+    },
+    {
+      "size": "중소 조직 (전체 지역, Figure 6, 표본283)",
+      "metric": "formal+informal 합계",
+      "value": "72% (정식17%+비정식55%)",
+      "denominator": "전체 응답자 중 중소 조직"
+    },
+    {
+      "size": "대·초대형 조직 (아시아태평양 한정, Appendix A3, 표본52)",
+      "metric": "formal+informal 합계",
+      "value": "60% (정식50%+비정식10%)",
+      "denominator": "아시아태평양 응답자 중 대·초대형 조직"
+    },
+    {
+      "size": "중소 조직 (아시아태평양 한정, Appendix A3, 표본52)",
+      "metric": "formal+informal 합계",
+      "value": "36% (정식18%+비정식18%)",
+      "denominator": "아시아태평양 응답자 중 중소 조직"
+    }
+  ],
+  "apac_rank": {
+    "highest_or_lowest": "highest",
+    "on_metric": "정식(formal) 단독 37%와 정식+비정식 합계 50% 모두, Appendix A2(표본337, Rest of World 포함) 기준으로 아메리카·유럽·아시아태평양·그외지역 4개 그룹 중 최고",
+    "note": "같은 보고서 11페이지 Figure 7(표본285, Rest of World 제외)은 정반대로 아시아태평양을 최저(35%)로 서술한다. 두 수치 중 어느 쪽이 맞는지 가중평균 교차검증으로 판정했다: Appendix A2 수치(정식29/22/37/17%)를 지역별 응답 비중(아메리카39%·유럽38%·APAC16%·기타7%, 표본338)으로 가중평균하면 26.8%가 나와 보고서가 별도로 명시한 전체 정식 OSPO 비율 27%(p29)와 사실상 정확히 일치한다. 반면 Figure 7 수치(43/32/21%)로 같은 가중평균(Rest of World 제외 재계산)을 하면 약 34.7%가 나오는데, 이는 전체 정식 27%(p29)와 크게 어긋나고, formal+informal 합계 기준으로 재계산하면 71%가 나와 전체 합계 42%(p29)와도 완전히 모순된다. 따라서 Figure 7은 원보고서 자체의 데이터/제작 오류로 판단하며, Appendix A2를 신뢰 가능한 기준으로 채택한다."
+  },
+  "korea_specific": {
+    "exists": false,
+    "note": "본문(1~24p), 부록 A1~A11(32~34p), 방법론·인구통계(28~30p) 전체를 확인했으나 한국 또는 개별 국가 단위 수치는 전혀 없다. 지역 구분은 Americas / Europe / Asia-Pacific / Rest of World 4개뿐이며, 아시아태평양 표본(전체 338명 중 16%, 약 54명)이 국가별로 어떻게 분포하는지도 보고서에 없다."
+  },
+  "verdict_plan_OS02": {
+    "correct": false,
+    "note": "규모별 수치(대·초대형83%/중소72%)는 Figure 6(p10, 전체 지역, 표본283)을 정확히 인용했으나, 83%는 '정식(formal) 단독' 수치이고 72%는 '정식+비정식 합계' 수치로 서로 다른 지표를 나란히 놓은 것이므로 이 구분을 표에 명시해야 한다. 지역별 수치(아메리카89%/유럽68%/APAC35%)와 '아시아태평양이 전 지역 중 가장 낮다'는 서술은 Figure 7(p11)에서 가져온 것인데, 위 apac_rank에서 검증했듯 Figure 7은 같은 보고서의 Appendix A2 및 전체 헤드라인 수치와 정면으로 모순되고 교차검증에서 신뢰도가 낮은 것으로 판정됐다. 따라서 계획 지시 OS-02의 지역별 수치와 '아시아태평양 최저'라는 결론은 원보고서의 신뢰 가능한 부분과 반대이며 오류다."
+  },
+  "verdict_draft_L23_28": {
+    "correct": true,
+    "note": "지역별 표의 수치(아시아태평양 50%[37%+13%]/아메리카46%[29%+17%]/유럽36%[22%+14%]/기타28%[17%+11%])는 Appendix A2 및 Figure 5와 정확히 일치하며, 위 교차검증 결과 이 수치가 원보고서에서 더 신뢰할 수 있는 쪽이다. '아시아태평양이 정식 OSPO 비율(37%)에서 4개 지역 중 가장 높다'는 서술도 정확하다. 다만 두 가지 보완이 필요하다: (1) 같은 보고서 안에 정반대 서술(Figure 7)이 존재한다는 사실과 그 근거로 Appendix A2를 택한 이유(교차검증)를 밝히지 않아 검증자가 재현할 수 없다. (2) 규모별 행이 '아시아태평양 한정'(Appendix A3, 표본52)으로 되어 있어 계획이 의도한 전체 지역 기준(Figure 6, 83%/72%)과 다른 모집단을 쓰고 있다 — 오류는 아니지만 계획의 원래 의도(지역행·규모행 모두 전체 지역 기준으로 나란히 비교)에서 벗어난 것이므로 전체 지역 기준으로 되돌리는 것을 권장한다."
+  },
+  "recommended_text": "| 구분 | 조사 결과 |\n|------|-----------|\n| 정식 OSPO 보유율 추이(전체, 연도별) | 2022년 30% → 2023년 43% → 2024년 26% → 2025년 32% |\n| 비정식 OSPO 보유율 추이(전체, 연도별) | 2023년 23% → 2025년 18% |\n| 규모별 보유율(전체 지역, 표본 283) | 대·초대형 조직 83%(정식 OSPO 단독 수치이며, 비정식·합계는 보고서 본문에 없음) / 중소조직 72%(정식 17%+비정식 55%, 합계 기준) |\n| 지역별 보유율(정식+비정식 합계, 부록 A2·표본 337) | 아시아태평양 50%(정식 37%+비정식 13%) / 아메리카 46%(정식 29%+비정식 17%) / 유럽 36%(정식 22%+비정식 14%) / 그 외 지역 28%(정식 17%+비정식 11%) |\n\n한국 단독 수치는 이 보고서에 없다. 아시아태평양은 부록 A2 기준으로 정식 OSPO 비율(37%)과 정식+비정식 합계(50%) 모두 4개 지역·그룹 중 가장 높다. 다만 같은 보고서 11페이지 본문(표본 285, Rest of World 제외)은 반대로 '아메리카 89%·유럽 68%·아시아태평양 35%로 아시아태평양이 가장 낮다'고 서술해 보고서 내부적으로 상충한다. 부록 A2 수치를 지역별 응답 비중(아메리카 39%·유럽 38%·아시아태평양 16%·그 외 7%, 표본 338)으로 가중평균하면 보고서가 별도로 명시한 전체 정식 OSPO 비율 27%(29쪽)와 사실상 일치하는 반면, 11페이지 수치로 같은 방식의 계산을 하면 전체 정식+비정식 합계가 약 71%로 나와 보고서의 전체 수치(42%, 29쪽)와 크게 어긋난다. 이 때문에 이 가이드는 부록 A2 수치를 기준으로 삼았다. 이 조사의 표본은 오픈소스SW 거버넌스에 이미 관심이 있는 응답자 중심이므로 지역 모집단 전체의 보유율로 확대 해석해서는 안 된다.\n\n[^ospo-survey-2025]: The 2025 State of OSPOs and Open Source Management, Linux Foundation Research, 2025년 8월 발간 (본문 Figure 5·부록 Appendix A2, p9·p32) : https://www.linuxfoundation.org/hubfs/Research%20Reports/LFResearch_StateofOSPO_082825.pdf",
+  "unresolved": [
+    "대·초대형 조직(전체 지역)의 비정식 OSPO·합계 수치 — Figure 6 차트의 두 번째 이후 막대값은 이미지 판독이 불안정하고(예: 128% 초과 등 산술적으로 불가능한 조합이 나옴) 본문 서술에도 없어 확정하지 못했다. 83%(정식)만 신뢰 가능하다.",
+    "Figure 7(p11)이 왜 Appendix A2와 다른 수치를 내는지의 원인 — 표본 필터링 오류인지, 다른 문항 코드 혼용인지(캡션이 'Q6/Q10'과 'Q10/Q5'로 지역·상태 코드 표기가 뒤섞여 있음) 원문에서 명시적으로 밝히지 않아 추정에 그친다. Linux Foundation Research에 직접 정오표 확인을 요청하는 것을 권장한다.",
+    "아시아태평양 표본(전체 338명 중 16%, 약 54명) 내 한국 응답자 수 — 보고서에 국가 단위 세부 표가 없어 확인 불가."
+  ]
+}

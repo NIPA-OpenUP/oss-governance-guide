@@ -1,0 +1,197 @@
+{
+  "slug": "ospo",
+  "file": "content/en/ospo/_index.md",
+  "front_matter": {
+    "title": "OSPO",
+    "linkTitle": "4. OSPO",
+    "weight": 50
+  },
+  "scope": "priority-1 only",
+  "directives": [
+    {
+      "id": "OS-01",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 11,
+      "anchor_quote": "Microsoft, Google, Twitter, Netflix와 같은 소프트웨어 분야 리더 기업뿐만 아니라 삼성전자, Comcast, Intel과 같은 전통 IT 기업도 OSPO를 운영하고 있다.",
+      "instruction": "Twitter를 목록에서 뺀다. 2023년 X로 사명이 바뀌었고 인수 이후 OSPO 조직이 사실상 해체되어, 2026년 독자에게 존재하지 않는 조직을 모범 사례로 제시하는 문장이 된다. 첫 문장은 'Microsoft, Google, Meta, Netflix와 같은 소프트웨어 리더 기업뿐만 아니라 Comcast, Intel, Bosch와 같은 전통 제조·통신 기업도 OSPO를 운영하고 있다'로 교체한다. 이어서 국내 기업을 별도 문장으로 분리해 '국내에서도 삼성전자, LG전자, SK텔레콤, 카카오, 네이버, LINE 등이 OSPO 또는 이에 준하는 전담 조직을 운영한다'를 쓰고, 구체적 근거는 OS-26이 만드는 국내 사례 표로 넘긴다(여기서 사례를 설명하지 않는다). 목표 증감 +1행.",
+      "evidence": [
+        "audit_ospo#issues[0]",
+        "research_market#findings[15]",
+        "research_market#findings[16]"
+      ],
+      "practicality": "사례"
+    },
+    {
+      "id": "OS-02",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 11,
+      "anchor_quote": "이러한 거대 기업이 아니더라도 IT, 가전, 금융 및 통신 분야에서의 50% 이상 기업이 OSPO를 만들었거나 만들 예정이라는 [조사 결과](https://github.com/todogroup/survey/tree/master/2019)[^todo-survey]도 있다.",
+      "instruction": "2019년 TODO Group 조사 인용을 통째로 버리고 2025 LF Research 'The 2025 State of OSPOs and Open Source Management'(표본 338건, 2025-08 발간) 수치로 교체한다. 본문은 한 문장으로 줄이고 나머지는 마크다운 표 하나로 쓴다 — 표의 행은 '정식 OSPO 보유율 추이(2022년 30% → 2023년 43% → 2024년 26% → 2025년 32%)', '비정식 OSPO(2023년 23% → 2025년 18%)', '규모별(대·초대형 83% / 중소 72%)', '지역별(아메리카 89% / 유럽 68% / 아시아태평양 35%)' 네 줄이다. 표 아래에 '한국 단독 수치는 이 보고서에 없다. 아시아태평양 평균이 전 지역 중 가장 낮다는 사실만 확인된다'는 유보 문장을 반드시 붙인다 — 한국 수치를 추정해 쓰면 없는 통계를 만드는 것이다. L13의 각주 [^todo-survey]는 정의와 참조를 함께 LF Research 보고서 PDF(https://www.linuxfoundation.org/hubfs/Research%20Reports/LFResearch_StateofOSPO_082825.pdf)로 교체하고 각주 이름은 [^ospo-survey-2025]로 바꾼다. 목표 증감 +8행.",
+      "evidence": [
+        "audit_ospo#issues[1]",
+        "audit_ospo#issues[2]",
+        "research_market#findings[9]",
+        "research_market#stale_items[5]"
+      ],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "OS-03",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 9,
+      "anchor_quote": "기업은 오픈소스로부터 최대한의 가치를 창출하고 동시에 법적인 리스크를 완화하기 위한 오픈소스 거버넌스 체계 수립이 필요하다.",
+      "instruction": "OSPO의 존재 이유를 '가치 창출 + 법적 리스크 완화' 2축에서 '가치 창출 + 라이선스 리스크 완화 + 규제·공급망 보안 대응' 3축으로 고쳐 쓴다. 2026년 기업이 OSPO를 만드는 가장 강한 동인이 규제라는 점을 도입부에 세우지 않으면 담당자가 이 장에서 경영진 설득 논거를 얻지 못한다. 다만 EU CRA·AI Act·국내 법령의 시행 일자와 조문은 이 장에서 새로 쓰지 말고 '규제별 요구사항과 시행 일정은 [오픈소스 사용하기](../using/)의 규제 동향 절에서 다룬다'로 크로스링크만 건다 — 규제 사실관계의 근거는 using 계획에 배정되어 있으므로 여기서 날짜를 쓰면 근거 없는 서술이 된다. 근거로 쓸 수 있는 사실은 'OSPO 보유 조직의 92%가 오픈소스 보안 의사결정에 관여한다(42% 의사결정권, 50% 자문)'와 '79%가 생성형 AI 리스크 관리에 OSPO가 효과적이라고 답했다(2024년 65%)'이며, 이 두 수치를 각주와 함께 넣는다. 목표 증감 +4행.",
+      "evidence": [
+        "audit_ospo#issues[37]",
+        "research_market#findings[10]"
+      ],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "OS-04",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 17,
+      "anchor_quote": "> 이 장의 내용은 TODO Group의 [How to create an open source program](https://todogroup.org/guides/create-program/)[^howtoospo]의 내용을 기반으로 작성하였다.",
+      "instruction": "실측 404다. TODO Group 사이트가 /guides/ → /resources/guides/ 로 개편되고 문서명도 'How to create an open source program office'로 바뀌었다. 링크를 https://todogroup.org/resources/guides/how-to-create-an-open-source-program-office/ 로, 문서 제목을 'How to create an open source program office'로 교체하고 '2026년 7월 기준 판본을 참조했다'는 참조 시점을 문장에 넣는다. L19의 [^howtoospo]와 L257의 [^howtocreate]는 같은 자원을 가리키므로 각주 하나([^howtoospo])로 통합하고 L257 정의는 삭제한다 — 각주를 지울 때 본문 참조도 함께 지워야 무결성 검사가 통과한다. 이 지시는 링크·각주 정정이므로 본문 산문을 늘리지 않는다. 목표 증감 -2행.",
+      "evidence": [
+        "audit_ospo#issues[4]",
+        "audit_ospo#issues[29]",
+        "research_market#findings[11]"
+      ],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "OS-05",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 43,
+      "anchor_quote": "다음 [블로그](https://sktelecom.github.io/blog/2021/20210418-ospo-definition/)[^ospodefinitionkorean]에서는 이 글을 한국어로 번역하여 소개하였으니 참고하기를 바란다.",
+      "instruction": "SK텔레콤 블로그 링크는 실측 404이고 블로그 인덱스 자체가 비워져 있어 한국어 독자에게 제공하던 유일한 OSPO 정의 번역 경로가 끊겼다. 웹아카이브로 연명시키지 말고 살아 있는 한국어 1차 자료로 갈아탄다 — OpenChain 한국 워킹그룹의 '[2026] ISO 표준 기반 기업 오픈소스 관리 가이드'(https://openchain-project.github.io/OpenChain-KWG/guide/opensource_for_enterprise/)의 조직 구성 절을 한국어 참고 자료로 지목한다. TODO Group ospodefinition.org 링크(L43 앞부분, [^ospodefinition])는 생존했으므로 그대로 둔다. L46의 [^ospodefinitionkorean] 각주 정의도 함께 교체하고 각주 이름을 [^kwg-guide-2026]으로 바꾼다(이 각주는 OS-07·OS-27에서도 재사용하므로 중복 정의하지 말고 하나만 둔다). 목표 증감 0행.",
+      "evidence": [
+        "audit_ospo#issues[7]",
+        "research_regulation#findings[15]"
+      ],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "OS-06",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 167,
+      "anchor_quote": "참고로 NIPA의 오픈업(오픈소스 통합지원센터)에서는 오픈소스 활용을 위한 신뢰성 있는 [컨설팅 서비스](https://www.oss.kr/plaza_intro)[^plaza]를 제공하고 있다.",
+      "instruction": "실측 404다. oss.kr 개편으로 경로가 /pages/{id} 형태로 바뀌었으므로 URL을 https://www.oss.kr/pages/5 (오픈업 센터 소개)로 교체하고, 라이선스 검증을 원하는 독자를 위해 https://www.oss.kr/pages/14 (라이선스 검증 신청)를 병기한다. 기관명 표기는 발간본 p5 표기인 '오픈업 센터(Open UP)'로 통일한다(저장소·발간본에 세 가지 표기가 혼재). 여기에 각주 한 줄을 덧붙여 '2024년 3월 NIPA 조직개편으로 SW산업본부 산하 공개소프트웨어팀이 SW미래본부 SW산업팀으로 통합되었으므로 컨설팅 신청 시 담당 창구를 확인한다'를 적는다 — 이 사실은 confidence medium이고 사업 중단을 뜻하지 않으므로 본문이 아니라 각주에만 두고, 사업이 없어졌다고 단정하지 않는다. L169 각주 정의의 URL도 함께 고친다. 목표 증감 +2행.",
+      "evidence": [
+        "audit_ospo#issues[13]",
+        "research_market#findings[6]"
+      ],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "OS-07",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 192,
+      "anchor_quote": "- Linux Foundation의 [Generic FOSS Policy](https://wiki.linuxfoundation.org/_media/openchain/lf_compliance_generic_foss_policy.pdf)[^fosspolicy]",
+      "instruction": "정책 템플릿 링크 3건(L192~L194)과 대응 각주 3건(L196~L198)을 한꺼번에 정리한다. (1) Linux Foundation Generic FOSS Policy는 HTTP 403으로 생존 확인에 실패했고 내용도 OpenChain 1.x 시절 산출물이므로, 브라우저로 재확인해 살아 있으면 '작성 시점(OpenChain 1.x 기준)' 주석을 붙여 유지하고 접근 불가이거나 1.x 기반이면 목록에서 삭제한다. (2) Google Sample Policy는 리다이렉트 착지 페이지가 단일 문서가 아니므로 URL을 https://opensource.google/documentation/reference 로 갱신하고 링크 텍스트를 'Google 오픈소스 정책 레퍼런스'로 바꾼다. (3) NIPA 해설서 링크는 실측 404이므로 https://openchain-project.github.io/OpenChain-KWG/guide/templates/1-policy/ 로 교체하고 명칭을 'OpenChain 한국 워킹그룹 오픈소스 정책 템플릿'으로 바꾼다 — '해설서'라는 명칭 자체가 낡았다. 여기에 네 번째 항목으로 OpenChain KWG '[2026] ISO 표준 기반 기업 오픈소스 관리 가이드'를 추가하되 각주는 OS-05가 만든 [^kwg-guide-2026]을 재사용한다. 목표 증감 +1행.",
+      "evidence": [
+        "audit_ospo#issues[18]",
+        "audit_ospo#issues[19]",
+        "audit_ospo#issues[20]",
+        "research_regulation#findings[15]"
+      ],
+      "practicality": "템플릿"
+    },
+    {
+      "id": "OS-08",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 231,
+      "anchor_quote": "위에서 한번 언급한 NIPA의 기업 오픈소스 거버넌스 OpenChain 해설서에서도 [샘플 오픈소스 컴플라이언스 프로세스](https://openchain-project.github.io/OpenChain-KWG/guide/nipa_openchain/appendix/2-process-template/)[^process-template]를 제공한다.",
+      "instruction": "실측 404다. URL을 https://openchain-project.github.io/OpenChain-KWG/guide/templates/2-process-template/ 로 교체하고 L233 각주 정의도 함께 고친다. 발간본(p176)은 이 문장을 'OpenChain 2.0 해설서의 [부록 2]'로 구체화했는데, 어느 문서의 어느 부분인지 밝히는 미덕은 취하되 규격 표기는 취하지 않는다 — OpenChain 2.0은 ISO/IEC 5230:2020으로 대체된 규격이라 그대로 옮기면 낡은 규격 번호를 새로 박아 넣게 된다. 문장을 'OpenChain 한국 워킹그룹은 ISO/IEC 5230:2020 기반의 샘플 오픈소스 컴플라이언스 프로세스 템플릿을 제공한다'로 다시 쓰고 'OpenChain 2.0'이라는 표기는 쓰지 않는다. 목표 증감 0행.",
+      "evidence": [
+        "audit_ospo#issues[25]",
+        "research_regulation#findings[13]",
+        "research_regulation#findings[15]"
+      ],
+      "practicality": "템플릿"
+    },
+    {
+      "id": "OS-09",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 266,
+      "anchor_quote": "* [Autodesk](https://github.com/todogroup/todogroup.github.io/blob/master/content/en/guides/casestudies/autodesk.md)[^autodesk]",
+      "instruction": "L266~L275의 인라인 링크 10개와 L277~L286의 bit.ly 각주 10개, 총 20개 URL이 전부 404다. 이 장에서 가장 심각한 결함이므로 절 전체를 다시 쓴다. 목록을 축소해 대표 사례 5건만 남기고(Meta·Microsoft·Comcast·Capital One·Porsche) 각 항목은 https://todogroup.org/resources/case-studies/{meta, microsoft, comcast, capital-one, porsche}/ 정식 URL을 쓰며, 나머지는 'TODO Group 사례 인덱스(https://todogroup.org/resources/case-studies/)에서 전체 목록을 볼 수 있다'는 한 줄로 대체한다 — 개별 링크를 20개 유지하는 구조가 이번 링크 부패의 원인이므로 인덱스 대표 링크가 부패에 강하다. bit.ly 단축 URL은 전면 폐기한다(발간본에서 Capital One 각주가 Comcast URL로 잘못 붙어 링크가 소실된 사고의 원인이다). Facebook 항목은 'Meta'로, Yahoo/Verizon Media 항목은 삭제한다(2018년 Oath 시절 내용이라 갱신 가치가 낮다). L264 본문의 '​Microsoft, Facebook, Uber 등'도 'Microsoft, Meta, Uber 등'으로 고친다. 각주는 5건만 남기고 나머지 정의를 삭제한 뒤 무결성 검사를 돌린다. 목표 증감 -18행.",
+      "evidence": [
+        "audit_ospo#issues[31]",
+        "audit_ospo#issues[32]",
+        "audit_ospo#issues[33]",
+        "audit_ospo#issues[34]",
+        "audit_ospo#issues[35]",
+        "research_market#findings[11]",
+        "research_market#stale_items[6]"
+      ],
+      "practicality": "사례"
+    },
+    {
+      "id": "OS-10",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 243,
+      "anchor_quote": "우선 오픈소스 도구는 무료로 사용할 수 있기 때문에 비용이 발생하지 않는다.",
+      "instruction": "사실상 틀린 서술이다. 오픈소스 SCA/SBOM 도구는 라이선스 비용이 없을 뿐 도입·연동·룰 튜닝·오탐 정리·운영 인력에서 비용이 발생하며 그 합이 상용 구독료를 넘는 경우도 흔하다. 이 문장을 근거로 예산을 잡은 담당자는 실패하므로 '라이선스 비용이 없다'와 '총소유비용(TCO)이 낮다'를 분리해 서술한다. 산문으로 늘리지 말고 도구 선택 기준 표 한 개로 대체한다 — 열은 '기준 / 확인 방법', 행은 스캔 정확도(오탐·미탐률), 지원 SBOM 포맷(SPDX·CycloneDX), VEX 발행 지원, 스캔 대상 범위(소스·바이너리·컨테이너·모델), CI/CD 연동성, 운영 인력 확보 가능성 6개다. 결론 문장은 '초기에는 오픈소스 도구로 시작하되 운영 인력을 확보할 수 있는지를 먼저 따진다'로 바꾼다. 도구 제품명은 나열하지 않고 [오픈소스 사용하기](../using/#오픈소스-관리-도구-소개)로 넘긴다. 목표 증감 +6행.",
+      "evidence": [
+        "audit_ospo#issues[27]"
+      ],
+      "practicality": "판단기준표"
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "IL-ospo-01",
+      "near_line": 52,
+      "purpose": "OSPO가 무엇을 관장하는 조직인지 한눈에 보여주는 이 장의 중심 도해다. 현재 ospo.png는 Comply/Contribute/Release 3원 구조라, 본문만 4축으로 고치면 2026년 OSPO 업무의 큰 축인 보안·규제 대응이 그림에서 통째로 빠져 그림과 본문이 어긋난다. 이 그림이 없으면 독자는 보안·규제 대응이 OSPO의 부수 업무인지 정식 축인지 판단하지 못한다.",
+      "kind": "structure",
+      "content_spec": "중앙에 OSPO를 두고 네 방향으로 축을 배치한다. 축 이름은 사용(Comply) / 기여(Contribute) / 공개(Release) / 보안·규제 대응(Secure). 각 축 아래에 대표 산출물을 1~2개 적는다 — 사용 축: 라이선스 검토 결과, OSS Notice / 기여 축: 기여 승인 기록, CLA·DCO / 공개 축: 공개 심의 결과, 프로젝트 라이선스 / 보안·규제 축: SBOM, VEX, 취약점 대응 SLA. 각 축에서 이 가이드의 어느 장으로 이어지는지 축 바깥에 표시한다(사용→1장, 기여→2장, 공개→3장, 보안·규제→1장 보안 절). 텍스트는 한글로 쓰고 영문은 괄호 병기만 한다.",
+      "replaces": "ospo.png",
+      "filename": "ospo-roles-2026",
+      "section": "ospo"
+    },
+    {
+      "id": "IL-ospo-02",
+      "near_line": 139,
+      "purpose": "독자의 실제 질문은 '우리 규모에서 몇 명이 필요한가'인데 현재 role.png는 손그림 스케치라 한글 필기 가독성이 낮고, 프로그램 매니저 중심의 4역할만 배치해 2026년 필수인 공급망 보안·AI 거버넌스 역할이 없다. 이 그림이 없으면 독자는 조직이 커질 때 어떤 역할을 언제 분리해야 하는지 판단하지 못한다.",
+      "kind": "comparison",
+      "content_spec": "기업 규모별 OSPO 인원 구성을 왼쪽에서 오른쪽으로 3단계로 배치한다. 1단계: 겸직 프로그램 매니저 1명. 2단계: 전담 프로그램 매니저 + 컴플라이언스·보안 겸직 1명. 3단계: 전담팀(프로그램 매니저·컴플라이언스 담당·공급망 보안 담당·법무 담당·IT 지원 담당·AI 거버넌스 담당·에반젤리스트). 단계 사이 화살표에 '어떤 역할이 새로 분리되는가'를 적고, 같은 단계 안에서 겸직 가능한 역할 조합을 점선으로 묶는다. 각 단계 아래에 해당하는 조직 규모(개발자 100명 미만 / 100~1000명 / 1000명 이상)를 표기하며, 이 구분은 본문 OS-13의 표와 문구를 일치시킨다.",
+      "replaces": "role.png",
+      "filename": "ospo-staffing-by-size-2026",
+      "section": "ospo"
+    },
+    {
+      "id": "IL-ospo-03",
+      "near_line": 220,
+      "purpose": "현재 process.png(2018 Linux Foundation)와 process2.png(OpenChain 구판)가 나란히 놓여 사실상 같은 내용을 반복하며, 둘 다 영문 전용이고 SBOM·VEX·규제 신고 단계가 없다. 이 그림이 없으면 독자는 2026년 기준으로 어느 단계에서 어떤 산출물이 나오고 누가 책임지는지 알 수 없다.",
+      "kind": "process",
+      "content_spec": "오픈소스 컴플라이언스 프로세스를 8단계 흐름으로 그린다. 도입 심의 → 식별·스캔 → SBOM 생성 → 라이선스 의무 판정 → 취약점 판정·VEX → 승인 → 고지·소스 배포 → 배포 후 모니터링·신고. 각 단계 아래에 산출물 1개와 담당 역할 1개를 적고, 담당 역할 명칭은 IL-ospo-02의 역할명과 동일하게 쓴다. 마지막 단계에서 첫 단계로 돌아가는 피드백 화살표를 그려 신규 취약점 발견 시 재판정으로 되돌아간다는 점을 표시한다. 전체 텍스트를 한글로 쓴다(기존 두 그림이 영문 전용이라 국내 독자가 읽지 못하는 것이 교체 이유다).",
+      "replaces": "process.png, process2.png",
+      "filename": "compliance-process-2026",
+      "section": "ospo"
+    },
+    {
+      "id": "IL-ospo-04",
+      "near_line": 246,
+      "purpose": "정책→전파→프로세스→도구→측정이 다시 정책 개선으로 돌아오는 순환이라는 것이 이 장의 핵심 메시지인데, 현재 원고에는 그 순환이 그림으로도 텍스트로도 없다. 이 그림이 없으면 독자는 측정을 마지막 보고 절차로 오해하고 개선 루프를 만들지 않는다.",
+      "kind": "process",
+      "content_spec": "OSPO 운영 순환도. 정책 수립 → 정책 전파 → 프로세스 구축 → 도구 지원 → 성과 측정 → (개선 피드백) → 정책 수립으로 닫히는 원형 흐름을 그린다. 측정 노드에서 세 갈래로 지표 분류(컴플라이언스 / 보안 / 생태계)를 뽑고 각 분류에 대표 지표 2개씩 적는다 — 컴플라이언스: SBOM 커버리지, 평균 검토 소요일 / 보안: 취약점 MTTR, 심각도별 잔존 건수 / 생태계: 기여 PR 수, 공개 프로젝트 수. 측정 노드에서 바깥으로 '분기 경영진 보고'로 나가는 화살표를 하나 그린다. 지표 명칭은 본문 OS-23의 표와 일치시킨다.",
+      "replaces": null,
+      "filename": "ospo-operation-cycle-2026",
+      "section": "ospo"
+    }
+  ],
+  "deletions_summary": "가장 크게 걷어내는 것은 OSPO 기업 사례 절이다. 인라인 링크 10개와 bit.ly 각주 10개가 전부 404인데, 개별 링크를 20개 유지하는 구조 자체가 링크 부패의 원인이므로 대표 5건 + 인덱스 링크로 줄여 18행을 없앤다(OS-09). 다음은 프로세스 절의 외부 그림 두 장이다 — 2018년 Linux Foundation 도해와 OpenChain 구판 도해는 SBOM·VEX·규제 신고 단계가 없어 2026년 표준으로 제시할 수 없고 서로 내용이 겹치므로 한글 자체 제작 도해 한 장으로 통합한다(OS-21, IL-ospo-03). 조직 배치 3안을 설명하는 H5 소절 세 개와 죽은 SK텔레콤 블로그 링크, Yahoo/Verizon Media 사례, 중복된 '프로그램 매니저 한 명부터 시작하라' 권고도 삭제 대상이다 — 앞의 셋은 낡았거나 끊겼고, 마지막은 마무리 alert 박스와 같은 논거를 반복해 정보량이 0이다. 삭제로 확보한 약 40행을 성과 측정·자체인증·국내 사례·AI 코딩 도구 정책 체크리스트라는 실용 산출물에 쓴다.",
+  "excluded_count": 23
+}

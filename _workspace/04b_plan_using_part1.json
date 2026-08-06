@@ -1,0 +1,125 @@
+{
+  "_note": "임시 조각 1/3 — 최종 병합본은 04b_plan_using.json 이다. 이 파일은 병합 후 삭제해도 된다.",
+  "directives": [
+    {
+      "id": "US-01",
+      "priority": 2,
+      "op": "replace",
+      "anchor_line": 13,
+      "anchor_quote": "최근 기업들의 오픈소스에 대한 인식과 활용이 크게 변화하고 있다. Perforce Software의 [2024 State of Open Source Report]",
+      "instruction": "L13~L27(각주 [^perforce2024], [^redhat2022] 포함) 전체를 다시 쓴다. Perforce/OpenLogic 통계를 3개년 추세(2024년판 95% → 2025년판 96% → 2026년판 98%, 감소 조직 2% 미만)로 교체하고, 도입 동인을 '비용 절감' 단독에서 '벤더 락인 회피 55%(전년 33%)·디지털 자주권'과 병기로 바꾼다. L15의 '효율성의 해라 불리는 2023년' 문장은 통째로 삭제한다 — 2023년 빅테크 감원기 시사 용어라 2026년 원고에 남으면 미개정 신호가 된다. L19~L21 Red Hat 2022 전망(45%→37%)은 시리즈가 2022년판으로 중단되어 검증 경로가 없으므로 문단과 각주를 함께 삭제한다. L23·L25의 출처 없는 80%/79%/70% 수치는 Perforce 2026년판에서 대응 수치를 찾아 각주를 달거나, 찾지 못하면 삭제한다 — 출처 없이 남기지 않는다. 목표 분량: 현재 15행 → 10행(-5).",
+      "evidence": ["research_market#findings[1]", "research_market#findings[2]", "audit_using#issues[0]", "audit_using#issues[1]", "audit_using#issues[2]", "audit_using#issues[3]", "research_market#stale_items[1]", "research_market#stale_items[2]"],
+      "practicality": "통계표"
+    },
+    {
+      "id": "US-02",
+      "priority": 2,
+      "op": "delete",
+      "anchor_line": 36,
+      "anchor_quote": "Future Market Insights의 [2024년 보고서]",
+      "instruction": "L36~L38(FMI CAGR 18.3% 예측과 각주 [^fmi2024])과 L42~L44(DataReportal 인터넷 보급률 문단과 각주 [^datareportal2024])를 삭제한다. 삭제 사유: (a) 상업 시장조사 업체의 10년 CAGR 예측은 유료 장벽 뒤에 있어 검증할 수 없고 같은 파일 L709의 GII Korea 수치(CAGR 24.3%)와 상충하는데 원고가 조정하지 않은 채 병렬 서술한다, (b) 인터넷 보급률과 기업 오픈소스 거버넌스 사이에는 인과가 없는데 '긍정적인 영향을 미치고 있다'로 단정한다. L46의 '공개SW 활성화 계획' 문장은 정책명·발표 시점·링크가 모두 없으므로, 2026년 기준 유효한 정책 문서명과 발표 연월을 확인해 각주를 달거나 확인되지 않으면 삭제한다. 시장 규모 예측을 대체할 새 통계를 넣지 마라 — 이 자리는 비우는 것이 개정이다. 목표 분량: -12.",
+      "evidence": ["audit_using#issues[4]", "audit_using#issues[5]", "audit_using#issues[6]", "research_market#findings[8]", "research_market#findings[7]", "research_market#stale_items[4]", "research_market#stale_items[10]"],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "US-03",
+      "priority": 2,
+      "op": "replace",
+      "anchor_line": 55,
+      "anchor_quote": "최근 주목받고 있는 주요 오픈소스 기술들은 다음과 같다:",
+      "instruction": "L55~L67의 기술 목록 5개(Kubernetes/TensorFlow/Kafka/Istio/Prometheus)와 각주 5건을 표로 교체한다. '최근 주목받고 있는'이라는 상대 시점 수식을 제거하고 '2026년 기업 도입이 늘고 있는 영역'으로 시점을 명시한다. 목록 갱신 근거는 Octoverse 2025다 — LLM SDK를 사용하는 공개 저장소가 110만 개를 넘어 전년 대비 178% 증가했고 AI 관련 프로젝트 월간 기여가 190만 건(+76%)이라는 수치를 각주로 달고, TensorFlow 단독 표기를 AI/ML 스택으로 넓힌다. 표는 3열로 만든다: 프로젝트 / 용도 / 기업 도입 시 확인할 거버넌스 특이사항(라이선스, 재라이선스 이력, 유지관리 주체). 세 번째 열이 없으면 단순 나열로 남아 실행 정보가 되지 않으므로 반드시 채운다. 검증되지 않은 '점유율 1위' 같은 서열 표현은 쓰지 마라 — 각 항목은 공식 저장소의 LICENSE와 거버넌스 문서로만 뒷받침한다. 목표 분량: 13행 → 15행(+2).",
+      "evidence": ["audit_using#issues[7]", "research_market#findings[3]", "research_market#stale_items[8]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "US-04",
+      "priority": 2,
+      "op": "replace",
+      "anchor_line": 69,
+      "anchor_quote": "NIPA의 [2024년 오픈소스SW 가이드]",
+      "instruction": "L69~L71의 단일 연도 수치(2022년 시장규모 3,380억 원, 활용률 67.3%)를 4개년 추세표로 교체한다. 표 행: 2020년 2,843억 원 / 2021년 3,032억 원 / 2022년 3,380억 원 / 2023년 3,835억 원, 활용률 열은 2021년 약 62% / 2022년 67.3% / 2023년 69%(SW기업 100%, 비SW산업 56%, 표본 기업 1,287개·개발자 1,250명). 2023년 수치는 NIPA 실태조사 원문 PDF에 접근하지 못해 전자신문 2024-06-10 보도로 확인한 2차 출처이므로 각주에 그 사실을 적는다. 2024년 실태조사의 '82.7%'는 원문 미확인이고 69%에서의 급상승이 측정 방식 변경 때문인지 불명확하므로 본문에 넣지 말고 '추가 검증 필요' 각주로만 언급한다. 각주 [^nipa2024]의 oss.kr 상세 URL은 404이므로 목록 페이지(https://www.oss.kr/oss_guide) + 자료명 병기 방식으로 바꾼다. 목표 분량: 3행 → 12행(+9).",
+      "evidence": ["research_market#findings[5]", "audit_using#issues[8]", "research_market#stale_items[3]"],
+      "practicality": "통계표"
+    },
+    {
+      "id": "US-05",
+      "priority": 3,
+      "op": "replace",
+      "anchor_line": 106,
+      "anchor_quote": "[오픈소스 역량을 가진 오픈소스 전문가 고용을 고려한다는 인사담당자가 늘어 가는 추세](https://training.linuxfoundation.org/resources/2020-open-source-jobs-report)",
+      "instruction": "각주 [^training-resource]의 2020 Open Source Jobs Report는 2021년 9회차(edX 공동)를 끝으로 후속판을 확인하지 못했다. 다만 '폐간'이 공식 확인된 것은 아니므로 단정하지 마라. 본문의 '늘어 가는 추세이다'라는 현재형 서술을 '2021년 조사에서는 ~로 나타났다'로 시점을 과거에 고정하고, 각주 제목을 '9th Annual Open Source Jobs Report (2021, 확인된 마지막판)'로 바꾼다. 대체 근거가 필요하면 Octoverse 2025의 신규 개발자 3,600만 명(+23%) 통계를 병기한다. 이 항목은 낮은 신뢰도 발견이므로 '시리즈가 중단됐다'고 본문에 쓰지 말고 각주 언급에 그친다.",
+      "evidence": ["research_market#findings[21]", "research_market#findings[3]", "audit_using#issues[9]", "research_market#stale_items[7]"],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "US-06",
+      "priority": 2,
+      "op": "restructure",
+      "anchor_line": 112,
+      "anchor_quote": "### 오픈소스 도입 시 고려사항\nGartner의 [Technology Insight for Software Composition Analysis (2019) 보고서]",
+      "instruction": "이 절(L112~L133)의 성격을 바꾼다. 현재는 '무엇을 볼 것인가'라는 선택 기준인데, 같은 내용이 개발자 편 '오픈소스 선택 기준'(L1254~)과 중복되어 '보안'(L119/L1268)·'오픈소스 커뮤니티'(L125/L1196) 두 헤딩이 문서 안에서 두 번 나오고 슬러그가 '보안-1'로 밀린다. 판단 기준의 정본은 개발자 편으로 보내고(US-38 참조), 여기는 '조직이 정책으로 강제할 것'만 남긴다 — 승인 게이트(무엇을 통과해야 반입되는가), 예외 승인 절차와 처리 기한, 금지 라이선스 목록 운영, 재심사 주기 4개를 체크리스트로 쓴다. Gartner 2019년 노트 4항목은 삭제하고, 도입 심사 축을 6개로 재구성한다: (1) 프로젝트 생존성·유지관리자 수 (2) 보안 대응 이력과 SECURITY.md 유무 (3) 라이선스 및 재라이선스 리스크(단일 기업 지배·CLA 요구·과거 전환 이력) (4) 공급망 무결성(서명된 릴리스, Trusted Publishing, SLSA 수준) (5) SBOM/VEX 제공 여부 (6) 기술 지원·호환성. (3)의 근거는 Redis·Elastic·HashiCorp 전환 사례이고 (4)(5)는 아래 신설 소절과 상호 참조를 건다. Gartner 인용은 각주로 격하하되 2019년 SCA 노트 대신 2026년 신설된 Magic Quadrant for Software Supply Chain Security의 필수 평가축(SBOM 생애주기 관리·지속적 위협 인텔리전스·제3자 평판 분석)을 병기한다 — 원문은 유료 장벽 뒤에 있어 공개 벤더 보도자료로만 확인했음을 각주에 명시한다. 경고: L119 '#### 보안'과 L125 '#### 오픈소스 커뮤니티' 헤딩을 지우거나 바꾸면 L120·L126의 내부 앵커 링크가 함께 깨진다. 작업 후 `grep -n '](#' content/en/using/_index.md` 로 앵커 링크 전수를 뽑아 대상 헤딩이 실제로 존재하는지 확인하라. 목표 분량: 22행 → 30행(+8).",
+      "evidence": ["audit_using#issues[10]", "audit_using#issues[11]", "research_tooling#findings[6]", "research_security#findings[3]", "research_regulation#findings[22]", "research_regulation#findings[23]", "research_tooling#stale_items[6]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "US-07",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 148,
+      "anchor_quote": "실제로 오픈소스 라이선스를 위반한 기업을 상대로 많은 소송이 제기되고 있다. 2017년 미국 연방 법원에서 있었던 [GPL이 법적 계약이라고 판결한 사례]",
+      "instruction": "'많은 소송이 제기되고 있다'는 주장을 2017년 Artifex v. Hancom 단 하나로 뒷받침하는 구조를 고친다. 최근 5년 판례 3~4건을 5열 표로 추가한다: 사건명 / 관할 / 쟁점 라이선스 / 결론(또는 진행 상태) / 기업에 주는 함의. 감사가 지목한 후보는 SFC v. Vizio(캘리포니아 주법원, GPL/LGPL, 제3자 수익자 지위), Neo4j v. PureThink(제9순회 2022, AGPL 추가 제약의 효력), Entr'ouvert v. Orange(프랑스, GPL 위반 손해배상)다. 반드시 각 사건의 1차 출처(법원 판결문 또는 소송 당사자·재단의 공식 사건 페이지)를 확인해 각주로 달고, 1차 출처를 확보하지 못한 사건은 표에서 뺀다 — 이 개정에서 판례는 법적 판단의 근거가 되므로 2차 보도만으로 등재하지 않는다. 진행 중인 사건은 '결론' 열에 '진행 중(확인 시점 명시)'이라고 쓰고 확정된 법리처럼 서술하지 마라. SFC v. Vizio는 최종 사용자가 소스 코드 제공을 직접 요구할 수 있는지를 다투는 사건이라 국내 제조·가전 기업에 직결되므로 1차 출처가 확보되면 반드시 포함한다. 목표 분량: 3행 → 17행(+14).",
+      "evidence": ["audit_using#issues[12]"],
+      "practicality": "사례"
+    },
+    {
+      "id": "US-08",
+      "priority": 3,
+      "op": "expand",
+      "anchor_line": 173,
+      "anchor_quote": "> 참고로, 지난 2020년 12월, 오픈소스 컴플라이언스에 대한 국제 표준이 ISO에 등록되었다.",
+      "instruction": "'지난 2020년 12월'의 '지난'을 삭제하고 'ISO/IEC 5230:2020'으로 판번호까지 정확히 표기한다. 이어서 ISO/IEC 18974:2023(OpenChain 보안 보증 규격)을 한 문단 추가하고, 5230=라이선스 컴플라이언스 / 18974=보안 보증이라는 역할 구분을 한 줄로 명시한다. 이 섹션 분량의 3분의 1이 보안인데 대응 국제 표준이 빠져 있는 것이 현재 원고의 공백이다. 공개된 준수 선언 조직 수(5230 157곳, 18974 24곳)를 인용할 때는 OpenChain 프로젝트 공식 목록 페이지를 각주로 달고 조회 시점을 병기한다 — 수치가 상시 변하므로 시점 없이 쓰면 즉시 낡는다. 목표 분량: +6.",
+      "evidence": ["audit_using#issues[13]", "research_regulation#stale_items[6]"],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "US-09",
+      "priority": 2,
+      "op": "replace",
+      "anchor_line": 177,
+      "anchor_quote": "> 가이드는 다음 페이지에서 다운받을 수 있다. : https://www.oss.kr/oss_guide/show/7050bff0-d06b-43f0-99a6-9975afcd486f",
+      "instruction": "oss.kr의 oss_guide 상세 페이지 URL 체계가 바뀌어 같은 패턴의 링크 4건이 한꺼번에 404다 — L177(OpenChain 해설서), L71([^nipa2024]), L314·L326([^boannews2024]), L857([^korea-industry]). 이 4건을 한 번에 처리한다. 상세 페이지 URL이 불안정하다는 것이 이미 확인됐으므로 개별 URL을 다시 박지 말고 목록 페이지(https://www.oss.kr/oss_guide) + 자료명 병기 방식으로 통일한다. 추가로 OpenChain 한국 워킹그룹이 기존 해설서를 '[2026] ISO 표준 기반 기업 오픈소스 관리 가이드'로 통합·대체했으므로 문서명을 그것으로 바꾸고 URL은 https://openchain-project.github.io/OpenChain-KWG/guide/opensource_for_enterprise/ 로 교체한다. 파일 전역의 policy-template·process-template 계열 각주도 같은 규칙으로 처리한다.",
+      "evidence": ["audit_using#issues[14]", "research_regulation#stale_items[7]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "US-10",
+      "priority": 1,
+      "op": "expand",
+      "anchor_line": 199,
+      "anchor_quote": "#####  **4. 아키텍처 리뷰**\n프로젝트 전반의 아키텍처 리뷰를 진행한다. 오픈소스마다 결합 방식에 따라 준수해야 할 의무사항이 다르기 때문이다.",
+      "instruction": "명제만 있고 판단 기준이 없는 이 단계에 결합 방식 × 라이선스 의무 판단표를 넣는다. 행(결합 방식): 정적 링크 / 동적 링크 / 별도 프로세스 실행 / 컨테이너 이미지 동봉 / 사이드카 / 네트워크 API 호출 / 모델 가중치 동봉. 열(라이선스): MIT·Apache-2.0(permissive) / LGPL / MPL·EPL / GPL / AGPL. 각 칸에 의무 발생을 O·X·조건부로 표기하고, '조건부'인 칸은 표 아래 주석에서 무엇이 조건인지 한 줄로 밝힌다. 표만 넣고 끝내지 말고, '이 표는 일반적 해석이며 최종 판단은 사안별 법무 검토가 필요하다'는 한 문장을 반드시 붙인다 — 라이선스 해석은 관할과 사실관계에 따라 갈리므로 표를 단정적 결론으로 읽히게 두면 위험하다. 산문으로 풀어 쓰지 마라. 이 표가 이 섹션에서 가장 자주 복사될 지면이므로 표 형태를 유지한다. 그림 IL-using-02가 같은 판단을 결정 트리로 보여주므로 표 바로 아래에 배치한다. 목표 분량: 2행 → 24행(+22).",
+      "evidence": ["audit_using#issues[15]", "audit_using#illustration_gaps[1]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "US-11",
+      "priority": 1,
+      "op": "expand",
+      "anchor_line": 213,
+      "anchor_quote": "앱스토어 배포, 판매, 3rd party 제공, 코드 공개 등이 배포에 해당한다. 개인적으로 사용하거나 외부에 제공하지 않고 사내 도구로만 사용하는 경우는 배포에 해당하지 않는다.",
+      "instruction": "이 단정은 AGPL을 고려하지 않아 독자를 위반으로 유도할 수 있다. 문장을 케이스별 판정표로 재작성한다. 최소 5개 케이스: (a) AGPL 오픈소스를 사내 네트워크 서비스로 제공 (b) 외부 고객에게 SaaS로 제공 (c) 컨테이너 이미지를 사내 레지스트리 밖으로 내보냄 (d) 그룹사·계열사 간 제공(별개 법인 여부가 기준) (e) 위탁 개발 산출물 납품. 각 케이스에 '배포·전달로 볼 가능성'을 상/중/하로 표기하고 '무엇이 판단을 가르는가'를 한 줄로 적는다. AGPL-3.0은 네트워크를 통한 이용에 대해 소스 제공 의무를 발생시키므로 '사내 도구는 배포가 아니다'라는 문장은 단독으로 남기지 말고 '라이선스 계열에 따라 갈린다'로 바꾼다. US-10의 결합 방식 표와 상호 참조를 걸고, 개발자 편 GPL 서술(L1226, US-37)과 모순되지 않도록 표현을 맞춘다. 목표 분량: 1행 → 21행(+20).",
+      "evidence": ["audit_using#issues[16]", "audit_using#issues[75]", "audit_using#illustration_gaps[1]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "US-12",
+      "priority": 2,
+      "op": "restructure",
+      "anchor_line": 242,
+      "anchor_quote": "#### 오픈소스 목록 수동 관리\n오픈소스 목록을 관리하는 방법으로는 수동 방식과 자동 방식이 있다.",
+      "instruction": "'수동 관리의 문제점' 3개 하위절(L242~L251, 10행)을 3~4행 한 문단으로 압축해 '자동화가 전제인 이유'로 통합한다. 2026년에 수동 관리를 검토하는 기업은 없으므로 이미 결론이 난 논쟁을 길게 설득하는 구조를 유지할 이유가 없다. 확보한 분량은 L253~L261 자동화 쪽으로 돌린다. 자동화 절에는 도구 유형 나열 대신 운영 규칙을 넣는다: 빌드 파이프라인의 어느 지점에 스캔을 거는가(4지점 — PR 체크 / 이미지 빌드 후 / 릴리스 게이트 / 야간 재스캔), 정책 위반 시 빌드를 막는가 경고만 하는가, 예외 승인은 누가 며칠 안에 처리하는가. 4지점은 아래 도구 절(US-25)과 중복 서술하지 말고 여기서는 '지점과 판정'만, 도구 절에서는 '어떤 도구가 붙는가'만 쓴다. L260의 잘린 문장 '오픈소스 BOM(Bill of Materials, 사용된 소프트웨어의 ) 관리 도구'를 '오픈소스 BOM(Bill of Materials, 사용된 소프트웨어 구성요소 명세) 관리 도구'로 완성한다. 목표 분량: 20행 → 22행(-8 삭제 +10 추가).",
+      "evidence": ["audit_using#issues[17]", "audit_using#issues[18]", "research_tooling#findings[16]"],
+      "practicality": "체크리스트"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+[
+  {
+    "section": "intro",
+    "line": 16,
+    "kind": "NEEDS-EVIDENCE",
+    "text": "바로 위 문단의 'AI·클라우드 컴퓨팅·사이버보안 분야에서 오픈소스SW의 역할이 강조된다'는 단정에는 근거가 없다. IN-03에 따라 대응 정의가 없는 숫자 출처 마커만 삭제했다. 이 계획서에 intro 근거로 배정된 조사 데이터는 OSSRA 하나뿐이므로 임의 인용을 붙이지 않았고, 단정 강도 조정은 IN-04(다음 실행)에서 함께 처리한다."
+  },
+  {
+    "section": "using",
+    "line": 238,
+    "kind": "NEEDS-EVIDENCE",
+    "text": "결합 방식별 라이선스 의무 판정의 1차 근거(각 라이선스 원문 조항 번호, FSF·Eclipse Foundation·Mozilla의 공식 FAQ) 연결 필요. 특히 ④ 동적 링크와 ⑧ 모델 가중치 항목"
+  },
+  {
+    "section": "using",
+    "line": 267,
+    "kind": "NEEDS-EVIDENCE",
+    "text": "(a) AGPL 컴포넌트를 사내 네트워크 서비스로 제공할 때 소스 제공 의무의 상대방 범위에 대한 1차 근거(AGPLv3 제13조 원문, FSF 공식 FAQ) 연결 필요"
+  },
+  {
+    "section": "using",
+    "line": 436,
+    "kind": "NEEDS-EVIDENCE",
+    "text": "디지털플랫폼정부 SBOM 시범 적용 계획(발간본 각주 22 nia2024, dpg.go.kr)의 현행 링크와 2026년 이행 결과 확인 필요. 원 링크는 응답하지 않는다"
+  },
+  {
+    "section": "using",
+    "line": 437,
+    "kind": "NEEDS-EVIDENCE",
+    "text": "국가정보원 NIS-SBOM 기본 항목의 원문 규격 확인 필요. 항목 수가 자료마다 엇갈려 본문에 숫자를 쓰지 않았다"
+  },
+  {
+    "section": "using",
+    "line": 811,
+    "kind": "NEEDS-EVIDENCE",
+    "text": "CodeEye의 2026년 기준 무료 지원 대상 기준(중소기업기본법 시행령 제3조 적용 여부) 재확인 필요. 한국저작권위원회 OLIS 공지 확인 대상"
+  },
+  {
+    "section": "contributing",
+    "line": 34,
+    "kind": "NEEDS-EVIDENCE",
+    "text": "지시서가 요구한 Linux Foundation 명의의 'Open Source Contribution Policy' 템플릿은 2026-08-01 기준 linuxfoundation.org의 Open Source Guides 목록(10종)에서 확인하지 못했다. 접속을 확인한 TODO Group의 정책 템플릿 모음으로 대신 넣었으므로, LF 명의 템플릿의 URL이 확인되면 교체한다."
+  },
+  {
+    "section": "ospo",
+    "line": 17,
+    "kind": "NEEDS-EVIDENCE",
+    "text": "국내 기업 목록 중 네이버의 OSPO 또는 이에 준하는 전담 조직 운영 사실을 확인할 1차 출처가 필요하다. 배정된 근거(research_market#findings[15], #findings[16])는 삼성전자·LG전자·카카오·LINE만 뒷받침한다. SK텔레콤은 이 장 말미의 SK텔레콤 OSPO 페이지 링크가 유일한 근거이므로 생존 여부를 함께 확인한다."
+  },
+  {
+    "section": "ai",
+    "line": 70,
+    "kind": "NEEDS-EVIDENCE",
+    "text": "FSF의 free machine learning application 기준 문서 공개 여부"
+  },
+  {
+    "section": "ai",
+    "line": 180,
+    "kind": "NEEDS-EVIDENCE",
+    "text": "MNPL 원문의 정본 URL 확정 — mistral.ai/licenses/MNPL-0.1.md 와 별도 경로가 함께 존재해 어느 쪽이 정본인지 확인 필요"
+  },
+  {
+    "section": "ai",
+    "line": 198,
+    "kind": "NEEDS-EVIDENCE",
+    "text": "OpenMDW-1.1의 OSI 승인 여부 — 공식 페이지에 언급이 없어 미확인. OSI 라이선스 목록 등재 여부 재확인 필요"
+  },
+  {
+    "section": "ai",
+    "line": 339,
+    "kind": "NEEDS-EVIDENCE",
+    "text": "AI 생성물의 저작물성에 관한 국내 유권해석·판례·문화체육관광부 지침 여부"
+  },
+  {
+    "section": "ai",
+    "line": 355,
+    "kind": "NEEDS-EVIDENCE",
+    "text": "Doe v. GitHub 제9순회 사건번호 확정 — 자료별로 24-6136과 24-7700이 혼재해 본문에 기재하지 않음"
+  }
+]

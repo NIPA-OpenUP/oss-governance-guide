@@ -1,0 +1,663 @@
+{
+  "target_section": "new",
+  "findings": [
+    {
+      "topic": "[구조 제안] 보안 절에 신설이 필요한 6개 소절",
+      "claim": "기존 원고의 '오픈소스의 보안 취약점' 절은 2021~2024년 실무를 전제로 짜여 있어, 2026년 기준 필수 주제 6개를 담을 자리가 없다. 소절 신설이 필요하다.",
+      "detail": "신설 후보와 근거는 다음과 같다. ①'서명·프로비넌스 검증(Sigstore/SLSA)' — npm·PyPI·GitHub이 모두 서명·어테스테이션을 표준 기능으로 제공하게 되었으나 원고에 절 자체가 없다(using). ②'VEX로 오탐 줄이기 — SBOM만으로 안 되는 이유' — SBOM 절은 있으나 수요자가 오탐에 파묻히는 문제와 해법이 없다(using). ③'취약점 우선순위 3축 모델(KEV × EPSS × 인터넷 노출)' — CVSS 단일축 표를 대체할 절(using). ④'CI/CD 자체가 공격면이다 — 워크플로 보안 체크리스트' — 2025~2026년 주요 사고 다수가 CI 경로였으나 원고는 CI를 '보안 검사를 넣는 곳'으로만 다룬다(using). ⑤'AI 코딩 도구 사용 시 의존성 검증' — 패키지 환각·슬롭스쿼팅은 개발자가 커밋 전에 막아야 하는 유형이므로 '개발자 편'에 배치(using). ⑥'취약점을 보고할 때의 책임 — AI 생성 보고 금지' — curl 사례가 보여주듯 기업의 무분별한 자동 보고가 커뮤니티 비용이 되고 있다(contributing). 동시에 기존 소절 중 '오픈소스 보안 관련 규제 및 정책 동향'(L801-857)은 SBOM 규제 동향 절(L268-328)과 내용이 상당 부분 겹치므로 규제 축 결과와 병합해 하나로 정리하는 편이 낫다.",
+      "confidence": "high",
+      "target_section": "new",
+      "applies_to_korean_firms": "가이드 개정 작업 자체에 해당. 독자 관점에서는 보안 실무 담당자.",
+      "action_for_firms": "개정 계획 수립 시 위 6개 소절을 신설 항목으로 잡고, 각 소절에 대응하는 findings(Sigstore, VEX, BOD 26-04·KEV·EPSS, TanStack·tj-actions, 슬롭스쿼팅, curl)를 재료로 배정한다.",
+      "practicality": "개념설명 (목차 구조 제안)",
+      "replaces": "content/en/using/_index.md L685-1160 보안 절 전체 구조",
+      "effective_dates": [],
+      "sources": [],
+      "_evidence": "research_security#findings[32]"
+    },
+    {
+      "topic": "OSAID 현행 판번호와 3요소",
+      "claim": "OSI의 Open Source AI Definition(OSAID)은 2026-07-31 현재도 1.0이 유일한 안정판이며, 데이터 정보·코드·파라미터 3요소를 '수정을 위한 선호 형태(preferred form to make modifications)'로 요구한다.",
+      "detail": "OSAID 1.0은 2024-10-28 All Things Open에서 공개. 요구 3요소 원문: (1) Data Information: 'Sufficiently detailed information about the data used to train the system so that a skilled person can build a substantially equivalent system', (2) Code: 'The complete source code used to train and run the system', (3) Parameters: 'The model parameters, such as weights or other configuration settings'. OSI 검증 단계에서 Pythia(EleutherAI), OLMo(AI2), Amber·CrystalCoder(LLM360), T5(Google)가 통과했으나 OSI는 'These results should be seen as part of the definitional process... they are not certifications of any kind. OSI will continue to validate only legal documents and will not validate or review individual AI systems'라고 명시했다. 즉 OSI는 모델을 인증하지 않는다. v1.1/v2.0은 2026-07-31 현재 미발표.",
+      "confidence": "high",
+      "target_section": "new",
+      "applies_to_korean_firms": "AI 모델을 도입·재배포·공개하는 모든 기업. 특히 사내 문서에서 모델을 '오픈소스'로 부르는 관행이 있는 조직.",
+      "action_for_firms": "사내 라이선스 정책에 'OSAID 1.0의 3요소를 모두 충족하지 않는 모델은 오픈소스로 표기하지 않는다'는 규칙을 명문화한다. OSI가 모델을 인증하지 않으므로 '오픈소스 인증 모델' 같은 표현을 금지 어휘로 등록한다.",
+      "practicality": "판단기준표",
+      "effective_dates": [
+        "2024-10-28 OSAID 1.0 공개",
+        "2026-07-31 기준 1.0이 최신 안정판"
+      ],
+      "sources": [
+        {
+          "title": "The Open Source AI Definition – 1.0 (Open Source Initiative)",
+          "url": "https://opensource.org/ai/open-source-ai-definition",
+          "kind": "primary"
+        },
+        {
+          "title": "OSAID FAQs (Open Source Initiative)",
+          "url": "https://opensource.org/ai/faq",
+          "kind": "primary"
+        },
+        {
+          "title": "Report from OSS EU 2025 and AI_dev: What's next for OSAID",
+          "url": "https://opensource.org/blog/report-from-oss-eu-2025-and-ai_dev-whats-next-for-osaid",
+          "kind": "primary"
+        }
+      ],
+      "_evidence": "research_ai#findings[0]"
+    },
+    {
+      "topic": "OSAID 비판과 미해결 쟁점",
+      "claim": "OSAID 1.0은 '학습 데이터 원본이 아닌 데이터 정보(Data Information)만 요구한다'는 타협 때문에 Software Freedom Conservancy·FSF·Debian 진영으로부터 지속적 비판을 받고 있으며, 이 논쟁은 종결되지 않았다.",
+      "detail": "SFC의 Bradley Kuhn은 2024-10-31 블로그에서 'the OSAID fails to place sufficient requirements on the licensing and public disclosure of training sets'라고 비판하고, OSI가 '기존 AI 시스템 중 어느 것도 충족하지 못하는 정의를 내는 것은 의미가 없다'고 판단해 기준을 낮췄다고 주장했다. FSF는 별도로 'free machine learning application' 기준을 준비 중이며 '학습 데이터와 그 처리 스크립트까지 자유 소프트웨어여야 한다'는 더 엄격한 입장이다. Debian 진영은 OSAID-1.0-RC2 단계에서 debian-project 메일링 리스트로 '데이터 정보만 요구하면 Open Source AI가 원본 학습 데이터를 감출 수 있게 된다'는 반대 의견을 냈다. 결론이 난 사안이 아니므로 각 입장의 근거를 병기해야 한다.",
+      "confidence": "high",
+      "target_section": "new",
+      "applies_to_korean_firms": "오픈소스 AI 정책을 사내 표준으로 만들려는 OSPO·법무.",
+      "action_for_firms": "사내 정책에서 'OSAID 준수'를 단일 판정 기준으로 삼지 말고, 최소 요건(라이선스 조항 실사)과 권고 요건(데이터 출처 공개 수준)을 분리해 규정한다.",
+      "practicality": "개념설명",
+      "effective_dates": [
+        "2024-10-31 SFC 비판 게시"
+      ],
+      "sources": [
+        {
+          "title": "Open Source AI Definition Erodes the Meaning of \"Open Source\" (Software Freedom Conservancy)",
+          "url": "https://sfconservancy.org/blog/2024/oct/31/open-source-ai-definition-osaid-erodes-foss/",
+          "kind": "primary"
+        },
+        {
+          "title": "Concerns regarding the \"Open Source AI Definition\" 1.0-RC2 (debian-project ML)",
+          "url": "https://lists.debian.org/debian-project/2024/10/msg00005.html",
+          "kind": "primary"
+        },
+        {
+          "title": "OSI readies controversial Open AI definition (LWN.net)",
+          "url": "https://lwn.net/Articles/995159/",
+          "kind": "secondary"
+        }
+      ],
+      "_evidence": "research_ai#findings[1]"
+    },
+    {
+      "topic": "G7 AI 개방성 공유 언어 — 4단계 표기 체계",
+      "claim": "2026-05-29 파리 G7 디지털·기술 장관회의가 'G7 Vision on AI openness opportunities and shared language'를 승인해 AI 개방성을 4단계 typology(Open Source AI with Open Data > Open Source AI > Open Weights AI > Weights Available AI)로 정의했다. 기업 사내 표기 규칙의 국제적 준거로 즉시 사용 가능하다.",
+      "detail": "원문 정의: (1) 'Open Source AI with Open Data is AI released free of charge under an Open Source license, including its deployment code, training code, and possibly full training data.' (2) 'Open Source AI ... However, exceptions to full training data availability may apply where sharing is legally or technically impossible. In such cases, Data Information about the unavailable data is to be provided in its place.' (3) 'Open Weights AI is AI released free of charge along with its weights and deployment code, under an Open Source License.' (4) 'Weights Available AI is AI released free of charge along with its weights and deployment code under a license which includes restrictions on how they can be used, such as commercial, geographical, or use-case restrictions.' 원칙 4: 'any description of an AI as \"open\" should clearly state which components are made available, whether with or without restrictions, rather than using the term \"open\" as a blanket characterization'. 문서 목적에 open washing 방지가 명시된다. 용어집은 Open Source License를 'A license that permits use, inspection, modification, and redistribution without restrictions'로, Use Restrictions를 'Conditions in the license that restrict how the model may be used, including commercial, geographical, or use-case limitations'로 정의. 단 'This document constitutes a non-binding reference'라고 명시한다. OSI가 3개월 knowledge partner로 참여.",
+      "confidence": "high",
+      "target_section": "new",
+      "applies_to_korean_firms": "모든 기업. 특히 모델 카드·제품 문서·보도자료에 '오픈소스 AI'라는 표현을 쓰는 조직.",
+      "action_for_firms": "사내 용어 표준에 G7 4단계 라벨을 그대로 채택하고, 모델 등록 대장의 필수 컬럼으로 '개방성 등급'을 추가한다. Llama 4·Gemma 3는 Weights Available AI, Gemma 4·Qwen3·gpt-oss는 Open Weights AI로 분류된다.",
+      "practicality": "판단기준표",
+      "effective_dates": [
+        "2026-05-29 G7 디지털·기술 장관 승인(파리)"
+      ],
+      "sources": [
+        {
+          "title": "G7 Vision on AI openness opportunities and shared language (PDF)",
+          "url": "https://www.entreprises.gouv.fr/files/files/Actualites/2026/g7/vision-AI-openness-opportunities-and-shared-language.pdf",
+          "kind": "primary"
+        },
+        {
+          "title": "G7 Ministerial Declaration on Digital & Technology, 29 May 2026 (GOV.UK)",
+          "url": "https://www.gov.uk/government/publications/g7-digital-and-technology-ministerial-declaration-29-may-2026/g7-digital-and-technology-ministerial-declaration-29-may-2026",
+          "kind": "primary"
+        },
+        {
+          "title": "Open Source Initiative Helps G7 Deliver Vision On AI Openness",
+          "url": "https://opensource.org/blog/open-source-initiative-helps-g7-deliver-vision-on-ai-openness",
+          "kind": "primary"
+        }
+      ],
+      "_evidence": "research_ai#findings[2]"
+    },
+    {
+      "topic": "'오픈 웨이트' vs '오픈소스' 사내 표기",
+      "claim": "가중치만 공개된 모델을 '오픈소스'로 표기하면 컴플라이언스 판단이 어긋난다. 사내 문서·제품 고지·계약서에서 표기 규칙을 분리해야 한다.",
+      "detail": "OSI FAQ는 'open weights'를 'model parameters available under OSI-approved terms'로, 'Open Source AI'를 코드·데이터 정보·파라미터를 모두 포함한 시스템으로 구분한다. G7 typology는 여기에 'Weights Available AI'(사용 제한이 붙은 가중치 공개)를 추가해 3단 구분을 만든다. 실무 위험: (a) 조달 문서에 '오픈소스 AI 사용'으로 기재해 발주처 오픈소스 정책 심사를 통과했으나 실제로는 사용 제한이 있는 커스텀 라이선스인 경우, (b) 사내 오픈소스 승인 프로세스 우회. Hugging Face 모델의 약 70%는 라이선스 표기 자체가 없어(RedMonk 2026-05-12) '미표기 = 오픈소스'라는 오인이 쉽다.",
+      "confidence": "high",
+      "target_section": "new",
+      "applies_to_korean_firms": "AI 모델을 제품에 탑재하거나 공공·대기업 조달에 납품하는 기업.",
+      "action_for_firms": "사내 문서 템플릿에 '오픈소스 AI / 오픈 웨이트 AI / 가중치 공개(사용제한) AI / 비공개' 4분류 드롭다운을 강제하고, '오픈소스'는 OSI 승인 라이선스로 가중치·코드가 배포된 경우에만 선택 가능하도록 시스템 레벨에서 제한한다.",
+      "practicality": "체크리스트",
+      "sources": [
+        {
+          "title": "OSAID FAQs (Open Source Initiative)",
+          "url": "https://opensource.org/ai/faq",
+          "kind": "primary"
+        },
+        {
+          "title": "License Distribution on Hugging Face (RedMonk, 2026-05-12)",
+          "url": "https://redmonk.com/sogrady/2026/05/12/hugging-face-licensing/",
+          "kind": "secondary"
+        }
+      ],
+      "_evidence": "research_ai#findings[3]"
+    },
+    {
+      "topic": "Llama 4 Community License 원문 조항",
+      "claim": "Llama 4 Community License(Version Effective Date: April 5, 2025)는 700M MAU 임계, 'Built with Llama' 표시, 파생 모델 명칭 접두어, 제한적 상표 라이선스를 포함한 커스텀 라이선스이며 OSI 승인 라이선스가 아니다.",
+      "detail": "원문 인용 — 제2조 Additional Commercial Terms: 'If, on the Llama 4 version release date, the monthly active users of the products or services made available by or for Licensee, or Licensee's affiliates, is greater than 700 million monthly active users in the preceding calendar month, you must request a license from Meta'. 제1.b.i: 'If you distribute or make available the Llama Materials (or any derivative works thereof), or a product or service (including another AI model) that contains any of them, you shall (A) provide a copy of this Agreement with any such Llama Materials; and (B) prominently display \"Built with Llama\" on a related website, user interface, blogpost, about page, or product documentation. If you use the Llama Materials or any outputs or results of the Llama Materials to create, train, fine tune, or otherwise improve an AI model, which is distributed or made available, you shall also include \"Llama\" at the beginning of any such AI model name.' NOTICE 파일 문구: 'Llama 4 is licensed under the Llama 4 Community License, Copyright © Meta Platforms, Inc. All Rights Reserved.' 제5조 상표: 'No trademark licenses are granted under this Agreement... Meta hereby grants you a license to use \"Llama\" (the \"Mark\") solely as required to comply with the last sentence of Section 1.b.i. You will comply with Meta's brand guidelines.' 제1.b.iv는 Acceptable Use Policy 준수를 의무화한다.",
+      "confidence": "high",
+      "target_section": "new",
+      "applies_to_korean_firms": "Llama 계열을 서비스에 탑재하거나 파인튜닝 결과물을 배포하는 기업. 700M MAU는 국내 대부분 기업에 걸리지 않으나 글로벌 메신저·플랫폼 사업자는 계열사 합산 기준을 확인해야 한다.",
+      "action_for_firms": "제품 고지 화면·about 페이지에 'Built with Llama' 문구를 추가하고, 파인튜닝 모델의 사내·외부 명칭을 'Llama-'로 시작하도록 모델 명명 규칙에 반영한다. NOTICE 파일에 위 저작권 문구를 그대로 넣는다.",
+      "practicality": "체크리스트",
+      "effective_dates": [
+        "2025-04-05 Llama 4 Version Effective Date"
+      ],
+      "sources": [
+        {
+          "title": "LLAMA 4 COMMUNITY LICENSE AGREEMENT (meta-llama/llama-models)",
+          "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama4/LICENSE",
+          "kind": "primary"
+        },
+        {
+          "title": "Llama 4 Community License Agreement (Meta)",
+          "url": "https://developer.meta.com/ai/llama4/license/",
+          "kind": "primary"
+        }
+      ],
+      "_evidence": "research_ai#findings[4]"
+    },
+    {
+      "topic": "Llama 4 멀티모달 모델의 EU 지역 제한",
+      "claim": "Llama 4의 멀티모달 모델은 EU 소재 개인·법인에게 라이선스가 부여되지 않는다. 이 제한은 LICENSE가 아니라 USE_POLICY.md(Acceptable Use Policy)에 있다.",
+      "detail": "원문: 'With respect to any multimodal models included in Llama 4, the rights granted under Section 1(a) of the Llama 4 Community License Agreement are not being granted to you if you are an individual domiciled in, or a company with a principal place of business in, the European Union. This restriction does not apply to end users of a product or service that incorporates any such multimodal models.' 즉 EU 법인은 개발·파인튜닝 주체가 될 수 없고, EU 밖 법인이 만든 제품을 EU 최종 사용자가 쓰는 것은 허용된다. 국내 기업이 EU 자회사·EU 소재 개발 조직을 통해 Llama 4 멀티모달을 다루면 위반이 될 수 있다. 이 조항이 LICENSE 파일이 아닌 별도 문서에 있다는 점이 실무상 누락의 주원인이다.",
+      "confidence": "high",
+      "target_section": "new",
+      "applies_to_korean_firms": "EU에 개발 법인·연구소를 둔 국내 기업, EU 소재 외주 개발사를 쓰는 기업.",
+      "action_for_firms": "모델 승인 프로세스에 '라이선스 본문 외 부속 문서(AUP/Use Policy/Prohibited Use Policy) 확인' 단계를 필수화하고, 지역 제한 항목을 모델 대장 컬럼으로 만든다. 개발 수행 법인의 소재지를 함께 기록한다.",
+      "practicality": "체크리스트",
+      "effective_dates": [
+        "2025-04-05 Llama 4 공개 시점부터 적용"
+      ],
+      "sources": [
+        {
+          "title": "Llama 4 Acceptable Use Policy (USE_POLICY.md)",
+          "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama4/USE_POLICY.md",
+          "kind": "primary"
+        },
+        {
+          "title": "Using Llama Models in the EU (Sara Zan)",
+          "url": "https://www.zansara.dev/posts/2025-05-16-llama-eu-ban/",
+          "kind": "secondary"
+        }
+      ],
+      "_evidence": "research_ai#findings[5]"
+    },
+    {
+      "topic": "Llama 3.1 이후 증류 금지 조항 삭제 — 흔한 오해 정정",
+      "claim": "Llama 2·Llama 3에 있던 '출력물로 다른 LLM을 개선하지 말라'는 조항은 Llama 3.1부터 삭제되었고 Llama 4에도 없다. 남아 있는 것은 파생 모델 명칭 접두어 의무뿐이다.",
+      "detail": "Llama 3 라이선스 원문에는 'You will not use the Llama Materials or any output or results of the Llama Materials to improve any other large language model (excluding Meta Llama 3 or derivative works thereof)'가 있었다. Llama 4 LICENSE 전문 확인 결과 해당 문장은 없으며, 출력물로 다른 모델을 학습시킬 때의 의무는 '\"Llama\"를 모델명 앞에 붙일 것'뿐이다. 2차 해설 중 Llama 4에 '학습 금지(training ban)'와 '경쟁사 제한'이 있다고 서술한 것이 다수 있으나 원문과 일치하지 않는다. 원문 확인 없이 2차 해설을 인용하면 잘못된 금지 정책을 사내에 도입하게 된다.",
+      "confidence": "high",
+      "target_section": "new",
+      "applies_to_korean_firms": "Llama 출력물로 합성 데이터를 만들어 자사 모델을 학습시키려는 기업.",
+      "action_for_firms": "모델 라이선스 검토 시 버전별 원문을 직접 대조한다. 사내 위키에 요약본만 두지 말고 버전별 LICENSE 원문 스냅샷을 보관한다.",
+      "practicality": "사례",
+      "effective_dates": [
+        "2024-07-23 Llama 3.1 공개 시 조항 삭제"
+      ],
+      "sources": [
+        {
+          "title": "LLAMA 4 COMMUNITY LICENSE AGREEMENT",
+          "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama4/LICENSE",
+          "kind": "primary"
+        },
+        {
+          "title": "llama3/LICENSE at main (meta-llama/llama3)",
+          "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE",
+          "kind": "primary"
+        },
+        {
+          "title": "Llama 3.1 Community License Agreement",
+          "url": "https://www.llama.com/llama3_1/license/",
+          "kind": "primary"
+        }
+      ],
+      "_evidence": "research_ai#findings[6]"
+    },
+    {
+      "topic": "Gemma — 세대별 라이선스 분기(Gemma 3 이하 vs Gemma 4)",
+      "claim": "Gemma 4는 2026-04-02 Apache-2.0으로 공개되어 Gemmaverse 최초의 OSI 승인 라이선스 모델이 되었으나, Gemma 3 이하는 여전히 커스텀 'Gemma Terms of Use'(최종 수정 2026-04-01)와 Prohibited Use Policy가 적용된다. 같은 제품군 안에서 라이선스가 갈린다.",
+      "detail": "Google Open Source Blog(2026-04-02): 'Gemma 4 models are the first in the Gemmaverse to be released under the OSI-approved Apache 2.0 license.' 구세대 Gemma Terms of Use 원문 의무: 'You must provide all third party recipients of Gemma or Model Derivatives a copy of this Agreement'; NOTICE 요구 'All Distributions (other than through a Hosted Service) must be accompanied by a \"Notice\" text file that contains the following notice: \"Gemma is provided under and subject to the Gemma Terms of Use found at ai.google.dev/gemma/terms\"'; 원격 제한권 'Google reserves the right to restrict (remotely or otherwise) usage of any of the Gemma Services that Google reasonably believes are in violation of this Agreement'; 상표 'Nothing in this Agreement grants you any rights to use Google's trademarks, trade names, logos'; 출력물 'Google claims no rights in Outputs you generate using Gemma.' Model Derivatives 정의는 가중치·파라미터·연산의 전이로 만들어진 모델까지 포함해 증류 결과물도 포섭한다.",
+      "confidence": "high",
+      "target_section": "new",
+      "applies_to_korean_firms": "Gemma 계열을 파인튜닝해 배포하는 기업. 세대 혼용 시 리스크가 커진다.",
+      "action_for_firms": "모델 대장에 '모델군'이 아니라 '모델 버전 단위'로 라이선스를 기록한다. Gemma 3 이하 파생물은 Apache-2.0으로 재배포할 수 없으며 Gemma Terms of Use 사본과 NOTICE 파일을 동봉해야 한다.",
+      "practicality": "판단기준표",
+      "effective_dates": [
+        "2026-04-01 Gemma Terms of Use 최종 수정",
+        "2026-04-02 Gemma 4 Apache-2.0 공개"
+      ],
+      "sources": [
+        {
+          "title": "Gemma Terms of Use (Google AI for Developers)",
+          "url": "https://ai.google.dev/gemma/terms",
+          "kind": "primary"
+        },
+        {
+          "title": "Gemma 4: Expanding the Gemmaverse with Apache 2.0 (Google Open Source Blog)",
+          "url": "https://opensource.googleblog.com/2026/03/gemma-4-expanding-the-gemmaverse-with-apache-20.html",
+          "kind": "primary"
+        }
+      ],
+      "_evidence": "research_ai#findings[7]"
+    },
+    {
+      "topic": "Mistral — 동일 벤더 내 3원 라이선스 구조",
+      "claim": "Mistral은 모델별로 Apache-2.0, Mistral Research License, Mistral AI Non-Production License(MNPL)를 섞어 쓴다. MNPL은 상업적 제공을 명시적으로 금지하므로 오픈소스가 아니다.",
+      "detail": "MNPL-0.1 원문: 이용자는 'testing, research, Personal, or evaluation purposes in Non-Production Environments'로만 사용할 수 있고, 'You shall not supply the Mistral Models, Derivatives, or Outputs in the course of a commercial activity, whether in return for payment or free of charge, in any medium or form, including but not limited to through a hosted or managed service (e.g. SaaS, cloud instances, etc.), or behind a software layer.' 파생물 배포 시 'include prominent notices stating you modified the concerned Mistral Model'. 특허 소송 제기 시 라이선스 즉시 종료. 상업 사용은 license@mistral.ai로 별도 요청. MNPL 원문 URL이 두 경로로 존재하므로 각주에는 접근 가능한 최종 URL을 기록해야 한다.",
+      "confidence": "medium",
+      "target_section": "new",
+      "applies_to_korean_firms": "Mistral·Codestral·Devstral 계열을 PoC에서 프로덕션으로 넘기려는 기업.",
+      "action_for_firms": "PoC 단계에서 쓴 모델의 라이선스를 프로덕션 전환 게이트에서 재확인하는 절차를 만든다. '연구용으로 받았으니 그대로 서비스한다'가 가장 흔한 위반 경로다.",
+      "practicality": "체크리스트",
+      "sources": [
+        {
+          "title": "Mistral AI Non-Production License (MNPL-0.1)",
+          "url": "https://mistral.ai/licenses/MNPL-0.1.md",
+          "kind": "primary"
+        },
+        {
+          "title": "The Mistral AI Non-Production License (Mistral AI)",
+          "url": "https://mistral.ai/news/mistral-ai-non-production-license-mnpl/",
+          "kind": "primary"
+        }
+      ],
+      "_evidence": "research_ai#findings[8]"
+    },
+    {
+      "topic": "OpenMDW-1.1 — 모델 배포물 전체를 덮는 허용적 라이선스",
+      "claim": "Linux Foundation이 2026-05-28 OpenMDW-1.1을 공개했고 NVIDIA가 Cosmos·Isaac GR00T·Ising·Nemotron 모델군에 채택을 발표했다. SPDX License List 3.28.0에는 OpenMDW-1.0 식별자가 등재되어 있다.",
+      "detail": "OpenMDW는 Model Openness Framework(MOF)에서 파생된 라이선스로 'Model Materials'라는 단일 개념으로 모델(아키텍처·가중치·파라미터), 코드(오브젝트·소스·스크립트), 문서, 데이터를 한 번에 덮는다. 핵심 허여는 'unrestricted, royalty-free permission to deal in the Model Materials without restriction, including under all copyright...' 형태로 MIT/Apache-2.0 스타일을 결합했고, 모델 출력물(outputs) 취급을 명시한 점이 기존 소프트웨어 라이선스와 다르다. OSI 승인 여부는 공식 페이지에 언급이 없어 미확인.",
+      "confidence": "medium",
+      "target_section": "new",
+      "applies_to_korean_firms": "자사 모델을 외부에 공개하려는 기업. 모델·코드·데이터·문서를 한 배포물로 내보낼 때 라이선스 조각화를 피할 수 있다.",
+      "action_for_firms": "모델 공개 정책에 'Apache-2.0(코드 중심) / OpenMDW(모델 배포물 일괄) / 커스텀(사용 제한 필요 시)' 3택 결정 트리를 넣는다. 커스텀 선택 시 법무 승인 필수.",
+      "practicality": "판단기준표",
+      "effective_dates": [
+        "2025-05 OpenMDW-1.0 공개",
+        "2026-05-28 OpenMDW-1.1 공개"
+      ],
+      "sources": [
+        {
+          "title": "OpenMDW 공식 사이트",
+          "url": "https://openmdw.ai/",
+          "kind": "primary"
+        },
+        {
+          "title": "Linux Foundation Releases OpenMDW-1.1; NVIDIA Adopts OpenMDW (2026-05-28)",
+          "url": "https://www.linuxfoundation.org/press/linux-foundation-releases-openmdw-1.1-nvidia-adopts-openmdw-for-cosmos-isaac-gr00t-ising-and-nemotron-ai-model-families",
+          "kind": "primary"
+        },
+        {
+          "title": "SPDX License List 3.28.0 (2026-02-20)",
+          "url": "https://spdx.org/licenses/",
+          "kind": "primary"
+        }
+      ],
+      "_evidence": "research_ai#findings[9]"
+    },
+    {
+      "topic": "OpenRAIL — 행위 제한 조항의 파생물 전파",
+      "claim": "OpenRAIL 계열 라이선스는 상업적 사용을 허용하면서도 행위 제한(behavioral use restrictions)을 두고, 그 제한이 모든 파생물에 전파되도록 요구한다. 사용 제한이 있으므로 OSI 기준 오픈소스가 아니다.",
+      "detail": "BigScience OpenRAIL-M 계열은 감시·추적, 허위정보 생성, 차별 등의 용도를 금지하고 파생물에도 같거나 더 엄격한 제한을 부착할 것을 요구한다. Hugging Face 상 RAIL 계열 모델은 5만 개 규모, 데이터셋은 5천 개 규모로 보고된다(2차 출처). RedMonk 2026-05 분석은 OpenRAIL을 'OSI 비승인·모델 비특정 라이선스 중 최대 카테고리'로 분류했다. OSI는 'Should OpenRAIL licenses be considered OS AI Licenses?' 웨비나를 열어 논의했으나 승인하지 않았다.",
+      "confidence": "medium",
+      "target_section": "new",
+      "applies_to_korean_firms": "Stable Diffusion 계열 등 이미지·음성 생성 모델을 제품에 넣는 기업.",
+      "action_for_firms": "행위 제한 조항을 자사 서비스 이용약관에 그대로 전가(pass-through)해야 하는지 법무 검토 항목으로 등록한다. 제한이 파생물·최종 사용자까지 전파되므로 약관 미반영은 계약 위반 소지가 된다.",
+      "practicality": "체크리스트",
+      "sources": [
+        {
+          "title": "Responsible AI Licenses (RAIL) FAQ",
+          "url": "https://www.licenses.ai/faq-2",
+          "kind": "primary"
+        },
+        {
+          "title": "The BigScience OpenRAIL-M License",
+          "url": "https://www.licenses.ai/blog/2022/8/26/bigscience-open-rail-m-license",
+          "kind": "primary"
+        },
+        {
+          "title": "Should OpenRAIL licenses be considered OS AI Licenses? (OSI webinar)",
+          "url": "https://opensource.org/ai/webinars/should-openrail-licenses-be-considered-os-ai-licenses",
+          "kind": "primary"
+        }
+      ],
+      "_evidence": "research_ai#findings[10]"
+    },
+    {
+      "topic": "파인튜닝 결과물의 라이선스 승계",
+      "claim": "파인튜닝 결과물은 베이스 모델 라이선스의 파생물 정의에 포섭되는 것이 일반적이며, 베이스가 커스텀 라이선스면 결과물을 Apache-2.0/MIT로 재라이선스할 수 없다. 다만 '가중치에 저작권이 성립하는가'라는 전제 자체가 법적으로 미확립이다.",
+      "detail": "Llama 4는 '(or any derivative works thereof)'와 '(including another AI model) that contains any of them'으로 파생 AI 모델을 명시 포섭하고 파생 모델 명칭에 'Llama' 접두어를 요구한다. Gemma Terms of Use의 'Model Derivatives'는 '가중치·파라미터·연산의 전이로 만들어진 다른 머신러닝 모델'까지 포함해 증류 결과물도 덮는다. 실무 규칙: 베이스 라이선스 의무는 파생물에 그대로 따라가고 하위 이용자에게도 전달해야 한다. 반면 이들 라이선스의 강제력은 저작권이 아니라 계약(약관 수락)에 근거한다는 해석이 유력하며, 미국 저작권청은 순수 AI 생성물의 저작물성을 부정하는 입장(2025-01-29 Part 2)이어서 가중치의 저작물성 자체가 다투어질 수 있다. '계약 위반 리스크는 실재한다' 수준으로 서술해야 한다.",
+      "confidence": "medium",
+      "target_section": "new",
+      "applies_to_korean_firms": "사내 데이터로 파인튜닝한 모델을 계열사·고객사에 제공하거나 공개하는 기업.",
+      "action_for_firms": "파인튜닝 산출물 배포 승인 체크리스트에 (1) 베이스 모델 라이선스 사본 동봉, (2) NOTICE 파일 문구, (3) 모델 명칭 규칙, (4) AUP 전가 여부, (5) 지역 제한 여부 5개 항목을 넣는다.",
+      "practicality": "체크리스트",
+      "sources": [
+        {
+          "title": "LLAMA 4 COMMUNITY LICENSE AGREEMENT",
+          "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama4/LICENSE",
+          "kind": "primary"
+        },
+        {
+          "title": "Gemma Terms of Use",
+          "url": "https://ai.google.dev/gemma/terms",
+          "kind": "primary"
+        },
+        {
+          "title": "Copyright and Artificial Intelligence, Part 2: Copyrightability (U.S. Copyright Office, 2025-01-29)",
+          "url": "https://www.copyright.gov/ai/",
+          "kind": "primary"
+        }
+      ],
+      "_evidence": "research_ai#findings[11]"
+    },
+    {
+      "topic": "모델 병합(model merging) 시 라이선스 충돌",
+      "claim": "서로 다른 라이선스의 모델을 병합하면 결과물은 가장 제한적인 조건을 따라야 하며, 상호 배타적 조항이 있으면 병합 자체가 불가능해질 수 있다. 실증 연구는 반대 방향의 '라이선스 표류'가 광범위하게 일어나고 있음을 보여준다.",
+      "detail": "Apache-2.0 모델과 Llama·Gemma 커스텀 라이선스 모델을 병합하면 Apache-2.0이 커스텀 조건을 '씻어내지' 못하고 결과물은 명칭 접두어·NOTICE·AUP·지역 제한을 모두 승계한다. 반면 Laufer·Oderinwale·Kleinberg의 Hugging Face 186만 모델 분석은 '모델 라이선스가 상업/사용제한형에서 허용형 또는 카피레프트형으로 진화한다(licenses evolve from commercial or use-restricted varieties to permissive or copyleft varieties)'고 관측했다 — 현장에서는 승계되어야 할 제한이 파생 과정에서 사라지고 있다. 이 논문은 NeurIPS 2025 Regulatable ML 워크숍 포스터로 arXiv 프리프린트이며 본회의 피어리뷰 논문이 아니다.",
+      "confidence": "medium",
+      "target_section": "new",
+      "applies_to_korean_firms": "mergekit 등으로 모델을 병합하거나 Hugging Face에서 받은 파생 모델을 재파생하는 조직.",
+      "action_for_firms": "Hugging Face에서 받은 파생 모델은 표기된 라이선스를 믿지 말고 base_model 계보를 거슬러 올라가 원 베이스 라이선스를 확인하는 절차를 만든다. 병합 승인 시 '가장 제한적 조건 채택' 원칙을 명문화한다.",
+      "practicality": "판단기준표",
+      "sources": [
+        {
+          "title": "Anatomy of a Machine Learning Ecosystem: 2 Million Models on Hugging Face (arXiv 2508.06811, NeurIPS 2025 Regulatable ML 워크숍 포스터, 프리프린트)",
+          "url": "https://arxiv.org/abs/2508.06811",
+          "kind": "primary"
+        }
+      ],
+      "_evidence": "research_ai#findings[12]"
+    },
+    {
+      "topic": "Hugging Face 라이선스 실태 통계",
+      "claim": "Hugging Face 모델의 약 70%는 라이선스 표기가 없고, 표기된 모델 중 3분의 2 이상만이 OSI 승인 라이선스다. '라이선스 미표기'는 오픈소스가 아니라 '모든 권리 유보'로 취급해야 한다.",
+      "detail": "RedMonk(2026-05-12)는 약 290만 개 모델을 스캔해 약 100만 개만 라이선스가 표기되어 있고, 표기 모델 중 'better than two thirds carried an OSI-approved license'라고 보고했다. Apache-2.0이 2위(MIT)의 약 2.5배. 저자는 저작권 위반 모델을 걸러낼 수 없고 라이선스 분류 정확도를 보장할 수 없다는 한계를 명시했다. 별도로 Stalnaker 외의 ACM TOSEM 게재 논문(피어리뷰)은 모델 760,460개·데이터셋 175,000개를 분석해 ML 모델·데이터셋의 라이선스 관리, 문서화 지원, 자동 불일치 검증이 필요하다고 결론지었다.",
+      "confidence": "medium",
+      "target_section": "new",
+      "applies_to_korean_firms": "Hugging Face에서 모델·데이터셋을 직접 내려받아 쓰는 모든 개발 조직.",
+      "action_for_firms": "'라이선스 미표기 모델 사용 금지'를 기본 정책으로 하고, 예외 승인 시 법무 검토를 거치도록 한다. 모델 반입 게이트에 라이선스 필드 필수화를 건다.",
+      "practicality": "체크리스트",
+      "effective_dates": [
+        "2026-05-12 RedMonk 분석 시점"
+      ],
+      "sources": [
+        {
+          "title": "License Distribution on Hugging Face (RedMonk, 2026-05-12)",
+          "url": "https://redmonk.com/sogrady/2026/05/12/hugging-face-licensing/",
+          "kind": "secondary"
+        },
+        {
+          "title": "An Empirical Analysis of ML Model and Dataset Documentation, Supply Chain, and Licensing Challenges on Hugging Face (ACM TOSEM, 피어리뷰)",
+          "url": "https://dl.acm.org/doi/10.1145/3776739",
+          "kind": "primary"
+        }
+      ],
+      "_evidence": "research_ai#findings[13]"
+    },
+    {
+      "topic": "데이터셋 라이선스와 모델 라이선스의 분리",
+      "claim": "모델 가중치의 라이선스와 학습·평가 데이터셋의 라이선스는 별개이며, 데이터셋 라이선스 표기는 신뢰도가 낮다. 대규모 감사에서 라이선스 누락률 70% 이상, 오류율 50% 이상이 확인됐다.",
+      "detail": "Data Provenance Initiative는 1,800개 이상의 텍스트 AI 데이터셋을 감사해 'licence omission rates of more than 70% and error rates of more than 50% on popular dataset hosting sites'를 보고했다. Nature Machine Intelligence(2024-08) 게재 피어리뷰 논문이다. 실무 함의: (1) 모델이 Apache-2.0이어도 학습에 쓴 데이터셋이 CC-BY-NC이거나 출처 불명일 수 있다. (2) 데이터셋 카드의 라이선스 필드를 그대로 SBOM에 옮기면 오류가 전파된다. (3) 저자원 언어·창작 태스크·합성 데이터는 제한적으로 라이선스되는 경향이 강하다.",
+      "confidence": "high",
+      "target_section": "new",
+      "applies_to_korean_firms": "자체 모델을 학습시키거나 외부 모델의 데이터 출처를 실사해야 하는 기업(특히 EU 시장 출하 시 GPAI 학습 데이터 요약 의무 관련).",
+      "action_for_firms": "데이터셋을 모델과 별도 자산으로 등록하고 (출처 URL, 라이선스, 취득일, 사용 목적, 재배포 가부) 5개 필드를 필수로 기록한다. 데이터셋 카드의 라이선스 표기는 원 배포처로 교차 확인한다.",
+      "practicality": "체크리스트",
+      "effective_dates": [
+        "2024-08 Nature Machine Intelligence 게재"
+      ],
+      "sources": [
+        {
+          "title": "A large-scale audit of dataset licensing and attribution in AI (Nature Machine Intelligence, 피어리뷰)",
+          "url": "https://www.nature.com/articles/s42256-024-00878-8",
+          "kind": "primary"
+        }
+      ],
+      "_evidence": "research_ai#findings[14]"
+    },
+    {
+      "topic": "코드 학습 데이터셋의 라이선스 혼입 — The Stack v2 사례",
+      "claim": "'허용적 라이선스 코드만 수집했다'고 선언한 대표 코드 데이터셋에서도 출처 오식별로 비허용 라이선스 코드가 혼입된다. 생성형 코딩 도구 리스크의 근원이 여기에 있다.",
+      "detail": "The Stack v2는 600개 이상 언어, 67.5TB 규모로 '허용적 라이선스 또는 라이선스 없음' 코드를 수집한다. '라이선스 없음(no license)'은 저작권상 'all rights reserved'이므로 포함 자체가 쟁점이다. 'Cracks in The Stack' 연구(LLM4Code 2025 워크숍 채택, 피어리뷰)는 'Misidentified blob origins present an additional challenge, as they lead to the inclusion of non-permissively licensed code, raising serious compliance concerns'라고 보고하고, 중복 제거 후에도 알려진 CVE 6,947건에 취약한 blob이 남아 있으며 코드 버전의 17%가 구버전이라고 밝혔다. BigCode는 opt-out 저장소와 'Am I in The Stack' 도구를 운영하나 GPL 코드가 문서 설명과 달리 포함되었다는 이슈가 제기된 바 있다.",
+      "confidence": "high",
+      "target_section": "new",
+      "applies_to_korean_firms": "생성형 AI 코딩 도구를 도입한 모든 개발 조직, 자체 코드 LLM을 학습시키는 기업.",
+      "action_for_firms": "'AI 도구가 허용적 라이선스만 학습했다'는 벤더 주장을 리스크 제거 근거로 채택하지 않는다. 스니펫 매칭 검사를 릴리스 게이트에 넣는다.",
+      "practicality": "사례",
+      "effective_dates": [
+        "2025 LLM4Code 워크숍 채택"
+      ],
+      "sources": [
+        {
+          "title": "Cracks in The Stack: Hidden Vulnerabilities and Licensing Risks in LLM Pre-Training Datasets (arXiv 2501.02628, LLM4Code 2025 채택)",
+          "url": "https://arxiv.org/abs/2501.02628",
+          "kind": "primary"
+        },
+        {
+          "title": "The Stack — BigCode Datasets",
+          "url": "https://www.bigcode-project.org/docs/about/the-stack/",
+          "kind": "primary"
+        },
+        {
+          "title": "bigcode-project/opt-out-v2",
+          "url": "https://github.com/bigcode-project/opt-out-v2",
+          "kind": "primary"
+        }
+      ],
+      "_evidence": "research_ai#findings[15]"
+    },
+    {
+      "topic": "GitHub Copilot 코드 참조 필터의 실제 사양과 한계",
+      "claim": "Copilot의 공개 코드 매칭 필터는 약 150자(65 lexemes) 이상 일치를 검사하며, GitHub 공개 저장소 색인만 대상으로 하고 색인은 수개월 주기로 갱신된다. 이 필터를 켰다고 라이선스 리스크가 제거되지 않는다.",
+      "detail": "GitHub Docs 원문: 'Copilot code referencing compares potential code suggestions and the surrounding code of about 150 characters against an index of all public repositories on GitHub.com.' 한계 명시: 'Code in private GitHub repositories, or code outside of GitHub, is not included in the search process' 및 'The search index is refreshed every few months.' 일치 시 로그에 'the URLs of files containing matching code, and the name of the license that applies to that code, if any was found'가 기록된다. 조직 정책으로 개인 설정을 상속·강제할 수 있다. 2026-02-18부터 Copilot coding agent도 code referencing을 지원한다. 즉 (a) GitHub 밖 코드는 검출 불가, (b) 임계 미만 짧은 조각은 통과, (c) 색인 지연으로 최신 코드는 놓친다.",
+      "confidence": "high",
+      "target_section": "new",
+      "applies_to_korean_firms": "GitHub Copilot Business/Enterprise를 도입한 기업.",
+      "action_for_firms": "조직 정책에서 '공개 코드와 일치하는 제안 차단'을 강제 설정하고 필터를 최종 방어선으로 보지 않는다. 릴리스 전 별도 스니펫 스캔을 병행하고 code referencing 로그를 감사 증적으로 보존한다.",
+      "practicality": "체크리스트",
+      "effective_dates": [
+        "2026-02-18 Copilot coding agent code referencing 지원"
+      ],
+      "sources": [
+        {
+          "title": "GitHub Copilot code referencing (GitHub Docs)",
+          "url": "https://docs.github.com/en/copilot/concepts/completions/code-referencing",
+          "kind": "primary"
+        },
+        {
+          "title": "Copilot coding agent supports code referencing (GitHub Changelog, 2026-02-18)",
+          "url": "https://github.blog/changelog/2026-02-18-copilot-coding-agent-supports-code-referencing/",
+          "kind": "primary"
+        }
+      ],
+      "_evidence": "research_ai#findings[16]"
+    },
+    {
+      "topic": "Copilot Copyright Commitment 요구 완화 (2026-04-03)",
+      "claim": "2026-04-03부터 GitHub Offerings에 대한 Microsoft Customer Copyright Commitment(CCC) 적용에 중복 탐지(Duplicate Detection) 필터 활성화가 더 이상 요구되지 않는다. 다만 Azure OpenAI 등 다른 제품에는 여전히 필수 완화조치가 남아 있다.",
+      "detail": "Microsoft Learn 원문: 'The below are the only required mitigations that apply to GitHub Offerings, and as of April 3, 2026, there are no additional required mitigations. Use of the Duplicate Detection filter feature is no longer required for CCC coverage. This feature remains available for optional use.' 표의 Effective Date는 April 3, 2026. 반면 Azure OpenAI 코드 생성 시나리오는 'The protected material code model must be configured on in either annotate or filter mode. If choosing to use annotate mode, customer must comply with any cited license provided for Output Content'(2023-12-01 발효)가 유지되고, 비동기 필터 사용 시 사후 플래그된 출력물은 인용 라이선스를 준수하지 않으면 CCC 미적용(2024-05-21 발효). Copilot Studio는 외부 호스팅 모델 연결 시 CCC 미적용(2025-06-01 발효).",
+      "confidence": "high",
+      "target_section": "new",
+      "applies_to_korean_firms": "Microsoft/GitHub 상용 계약으로 생성형 AI를 쓰는 기업의 법무·구매 부서.",
+      "action_for_firms": "면책 조건이 제품별·시점별로 다르므로 벤더 면책 조건을 계약 갱신 주기마다 재확인하는 항목을 계약 관리 대장에 넣는다. 필터 요구가 사라졌다고 사내 필터 정책까지 해제하지 않는다(면책과 위험 감소는 별개다).",
+      "practicality": "체크리스트",
+      "effective_dates": [
+        "2026-04-03 GitHub Offerings 요구 완화 발효",
+        "2023-12-01 Azure OpenAI 완화조치 발효",
+        "2024-05-21 비동기 필터 조항 발효",
+        "2025-06-01 Copilot Studio BYO 모델 조항 발효"
+      ],
+      "sources": [
+        {
+          "title": "Customer Copyright Commitment Required Mitigations (Microsoft Learn)",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/responsible-ai/openai/customer-copyright-commitment",
+          "kind": "primary"
+        }
+      ],
+      "_evidence": "research_ai#findings[17]"
+    },
+    {
+      "topic": "Doe v. GitHub (Copilot 소송) 진행 상태",
+      "claim": "생성형 코딩 도구의 오픈소스 라이선스·DMCA 쟁점을 다투는 Doe v. GitHub은 2026-07-31 현재 미국 제9연방항소법원에 계류 중이며 확정 판결이 없다. 결론이 아니라 진행 상태로만 인용해야 한다.",
+      "detail": "지방법원(N.D. Cal., Judge Jon S. Tigar)은 2023-05-11 명령에서 오픈소스 라이선스 위반(계약 위반) 청구의 기각을 전부 기각했고 DMCA §1202(b)(1)·(b)(3) 청구도 살렸으나, 이후 §1202(b) 청구가 '동일성(identicality)' 요건을 요구하는지에 대해 중간항소가 허가되었다. 제9순회는 2024-12 항소를 수리했고 원고 측 opening brief는 2025-04-09 제출, 구두변론은 2026-02-11에 열렸다. 지방법원 절차는 항소 결과를 기다리며 정지 상태다. 사건번호는 자료별로 24-6136과 24-7700이 혼재해 확인이 필요하다. 쟁점: AI 출력물이 원본과 동일하지 않아도 저작권 관리정보(CMI) 제거 책임이 성립하는가.",
+      "confidence": "medium",
+      "target_section": "new",
+      "applies_to_korean_firms": "생성형 코딩 도구 도입 여부를 법적 리스크 관점에서 판단하는 기업.",
+      "action_for_firms": "사내 정책 문서에 '미확정 쟁점'으로 표시하고 판결 확정 시 정책 재검토를 트리거하는 모니터링 담당자를 지정한다. 판결 전까지는 벤더 면책 조건과 자체 스니펫 검증으로 리스크를 관리한다.",
+      "practicality": "개념설명",
+      "effective_dates": [
+        "2023-05-11 지방법원 일부 기각 명령",
+        "2024-12 제9순회 항소 수리",
+        "2025-04-09 원고 opening brief",
+        "2026-02-11 구두변론"
+      ],
+      "sources": [
+        {
+          "title": "GitHub Copilot litigation — Case updates",
+          "url": "https://githubcopilotlitigation.com/case-updates.html",
+          "kind": "primary"
+        },
+        {
+          "title": "GitHub Copilot Intellectual Property Litigation (Joseph Saveri Law Firm)",
+          "url": "https://www.saverilawfirm.com/our-cases/github-copilot-intellectual-property-litigation",
+          "kind": "secondary"
+        }
+      ],
+      "_evidence": "research_ai#findings[18]"
+    },
+    {
+      "topic": "AI 생성 코드의 저작물성 — 미국 저작권청 입장",
+      "claim": "미국 저작권청은 순수 AI 생성물의 저작물성을 부정하고 인간의 창작적 기여가 있는 부분만 보호된다는 입장이며(2025-01-29 Part 2), 학습 목적 이용의 공정이용 여부는 사안별 판단이라고 밝혔다(2025-05-09 Part 3 사전공개본).",
+      "detail": "Part 2(Copyrightability, 2025-01-29): 프롬프트 입력만으로 만든 'purely AI-generated material'은 저작물이 아니며 'prompts alone do not provide sufficient human control'. 인간이 선택·배열·실질적 수정을 가하면 사안별로 보호될 수 있다. Part 3(Generative AI Training, 사전공개본 2025-05-09): 공정이용은 추정될 수 없고 학습·배포 방식에 따라 개별 평가해야 하며 'Making commercial use of vast troves of copyrighted works to produce expressive content that competes with them in existing markets, especially where this is accomplished through illegal access, goes beyond established fair use boundaries'. 새로운 법정 예외 신설은 불필요하다고 결론. 한국 저작권법에는 대응 유권해석이 별도로 정리되어 있지 않아 국내 적용은 미확립이다.",
+      "confidence": "medium",
+      "target_section": "new",
+      "applies_to_korean_firms": "AI 생성 코드의 사내 저작권 귀속·오픈소스 공개 가부를 판단해야 하는 기업.",
+      "action_for_firms": "AI 생성 비중이 높은 산출물을 사외 공개(오픈소스 릴리스)할 때 '저작권이 성립하지 않을 수 있어 라이선스 부여가 무의미할 수 있다'는 점을 릴리스 검토 항목에 넣는다. 인간 기여 기록(리뷰·수정 이력)을 남긴다.",
+      "practicality": "개념설명",
+      "effective_dates": [
+        "2025-01-29 Part 2 발표",
+        "2025-05-09 Part 3 사전공개본"
+      ],
+      "sources": [
+        {
+          "title": "Copyright and Artificial Intelligence (U.S. Copyright Office)",
+          "url": "https://www.copyright.gov/ai/",
+          "kind": "primary"
+        },
+        {
+          "title": "Copyright and AI Part 3: Generative AI Training (Pre-Publication Version, PDF)",
+          "url": "https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-3-Generative-AI-Training-Report-Pre-Publication-Version.pdf",
+          "kind": "primary"
+        }
+      ],
+      "_evidence": "research_ai#findings[19]"
+    },
+    {
+      "topic": "AI 생성 코드 라이선스 리스크 탐지 도구",
+      "claim": "AI 생성 코드의 오픈소스 혼입을 잡는 실무 수단은 스니펫(코드 조각) 매칭이며, 2026년 현재 SCANOSS·FOSSA·Black Duck 조합이 대표적이다. 의존성 단위 SCA만으로는 검출되지 않는다.",
+      "detail": "FOSSA는 2026-01 SCANOSS와 기술 제휴를 맺어 SCANOSS의 스니펫 탐지와 FOSSA의 라이선스 지식베이스를 결합했다. Black Duck은 Snippet Analysis를 API로 제공해 AI 생성 코드를 대량 분석할 수 있게 했다. 핵심 구분: 기존 SCA는 package manifest 기반이라 '복사된 코드 조각'을 보지 못한다. AI 코딩 도구는 패키지를 추가하지 않고 코드를 직접 써 넣으므로 스니펫 매칭이 필요하다. GitHub Copilot의 code referencing은 GitHub 공개 저장소 색인만 보므로 커버리지가 달라 도구 조합이 필요하다.",
+      "confidence": "medium",
+      "target_section": "new",
+      "applies_to_korean_firms": "생성형 AI 코딩 도구를 전사 도입했고 외부 배포 제품을 만드는 기업.",
+      "action_for_firms": "릴리스 게이트에 (1) 의존성 SCA, (2) 스니펫 매칭, (3) AI 도구 자체 로그 확인 3중 검사를 배치한다. 스니펫 매칭은 전체 리포지토리 상시 스캔이 아니라 변경분(diff) 기준으로 돌려 비용을 통제한다.",
+      "practicality": "체크리스트",
+      "effective_dates": [
+        "2026-01 FOSSA–SCANOSS 제휴 발표"
+      ],
+      "sources": [
+        {
+          "title": "FOSSA Partners With SCANOSS To Help Organisations Manage AI Coding Risks",
+          "url": "https://scanoss.com/fossa-partners-with-scanoss-to-help-organisations-manage-ai-coding-risks/",
+          "kind": "secondary"
+        },
+        {
+          "title": "Analyze AI-Generated Code with the Black Duck Snippet API",
+          "url": "https://www.blackduck.com/blog/analyze-ai-generated-code-black-duck-snippet-api.html",
+          "kind": "secondary"
+        }
+      ],
+      "_evidence": "research_ai#findings[20]"
+    },
+    {
+      "topic": "EU AI Act 오픈소스 예외의 실무 범위 (모델 제공자 관점)",
+      "claim": "EU AI Act의 GPAI 오픈소스 예외는 좁다. 사용자 수 임계나 상업 라이선스 요구가 있는 라이선스는 예외 대상이 아니고, 수익화가 있으면 예외가 깨지며, 학습 데이터 요약과 저작권 정책 의무는 오픈소스여도 남는다.",
+      "detail": "2025-07-18 집행위 'Guidelines on the scope of obligations for general-purpose AI models' 해석: 예외 적용 라이선스는 사용·접근·수정·재배포를 허용해야 하고, 비상업/연구 전용 제한, 재배포 금지, 사용자 수 임계(user-size thresholds), 상업 라이선스 강제가 있으면 안 된다. 허용되는 제한은 귀속 표시, 동일 라이선스 재배포, 공공 안전 등 고위험 사용에 대한 합리적·비례적·비차별적 안전장치다. 수익화 지표: 이중 라이선스(학술 무료/상업 유료), 지원·유지보수·업데이트·호스팅 접근 유료화, 핵심 기능에 대한 필수 결제. 반면 '모델과 핵심 기능에 대한 무료 접근을 제한하지 않는 선택적 프리미엄 서비스·지원 제공'은 수익화가 아니다. 체계적 위험(systemic risk) GPAI는 오픈소스여도 예외 없이 전 의무를 진다. 예외가 적용되어도 학습 콘텐츠 공개 요약과 EU 저작권법 준수 정책 의무는 유지된다. 직접 결과: Llama 4(700M MAU 임계)는 AI Act 오픈소스 예외를 받지 못한다.",
+      "confidence": "medium",
+      "target_section": "new",
+      "applies_to_korean_firms": "EU 시장에 GPAI 모델을 배포하거나 EU 고객에게 모델을 제공하는 국내 기업.",
+      "action_for_firms": "자사 모델 공개 시 '오픈소스 예외를 노린다면 사용자 수 임계·상업 라이선스 요구를 라이선스에 넣지 않는다'를 설계 원칙으로 삼는다. 유료 지원 모델을 병행할 경우 핵심 기능 무료 접근이 유지되는지 확인한다. 예외 여부와 무관하게 학습 데이터 요약 문서를 준비한다.",
+      "practicality": "판단기준표",
+      "effective_dates": [
+        "2025-07-18 집행위 GPAI 가이드라인 공표",
+        "2025-08-02 GPAI 의무 적용 개시",
+        "2026-08-02 AI Office 집행 개시",
+        "2027-08-02 기존 모델 소급 준수 기한"
+      ],
+      "sources": [
+        {
+          "title": "Overview of Guidelines for GPAI Models (artificialintelligenceact.eu)",
+          "url": "https://artificialintelligenceact.eu/gpai-guidelines-overview/",
+          "kind": "secondary"
+        },
+        {
+          "title": "Article 53: Obligations for Providers of General-Purpose AI Models",
+          "url": "https://artificialintelligenceact.eu/article/53/",
+          "kind": "secondary"
+        },
+        {
+          "title": "What Open Source Developers Need to Know about the EU AI Act (Linux Foundation Europe)",
+          "url": "https://linuxfoundation.eu/newsroom/ai-act-explainer",
+          "kind": "secondary"
+        }
+      ],
+      "_evidence": "research_ai#findings[26]"
+    },
+    {
+      "topic": "한국 AI 기본법의 고지·표시 의무와 오픈소스 예외 부재",
+      "claim": "「인공지능 발전과 신뢰 기반 조성 등에 관한 기본법」이 2026-01-22 시행되어 생성형 AI 기반 제품·서비스에 사전 고지 의무와 결과물 표시 의무가 생겼다. EU AI Act와 달리 오픈소스 AI에 대한 예외 규정이 확인되지 않는다.",
+      "detail": "제31조(투명성 확보 의무): 고영향 AI 또는 생성형 AI 기반 제품·서비스 제공 시 '해당 제품·서비스가 그러한 인공지능에 기반하여 운용된다는 사실'을 이용자에게 사전 고지해야 하고, 생성형 AI 결과물에는 '결과물이 생성형 인공지능에 의하여 생성되었다는 사실'을 표시해야 한다. 딥페이크 결과물은 사람이 명확히 인식할 수 있는 가시적 표시가 필요하며, 일반 생성물은 사람 인식 방식 또는 기계 판독 방식(워터마크·메타데이터) 중 선택할 수 있되 기계 판독 방식을 택하면 안내 문구·음성을 최소 1회 제공해야 한다(시행령). 제31조 제4항·시행령 제23조에 일부 예외(사용이 명백한 경우, 내부 업무 목적 사용 등)가 있으나 오픈소스 AI 예외는 확인되지 않았다. 고지 의무 위반 시 3천만원 이하 과태료이나 정부가 1년 이상 계도기간을 운영해 실제 부과는 2027년 이후가 될 가능성이 크다.",
+      "confidence": "medium",
+      "target_section": "new",
+      "applies_to_korean_firms": "국내에서 생성형 AI를 제품·서비스에 탑재한 모든 사업자. 오픈소스 모델을 썼다는 이유로 면제되지 않는다.",
+      "action_for_firms": "제품 고지 프로세스에 (a) AI 기반 운용 사실 사전 고지, (b) 생성 결과물 표시를 추가하고 기존 오픈소스 고지 화면과 동일한 위치에 배치해 운영 부담을 줄인다. 오픈소스 모델 사용이 면제 사유가 아님을 정책 문서에 명시한다.",
+      "practicality": "체크리스트",
+      "effective_dates": [
+        "2026-01-22 법·시행령 시행",
+        "계도기간 1년 이상(과태료 부과는 2027년 이후 전망)"
+      ],
+      "sources": [
+        {
+          "title": "인공지능 발전과 신뢰 기반 조성 등에 관한 기본법 (국가법령정보센터)",
+          "url": "https://www.law.go.kr/lsInfoP.do?lsiSeq=268543",
+          "kind": "primary"
+        },
+        {
+          "title": "인공지능 기본법 시행령 (국가법령정보센터, 시행 2026-01-22)",
+          "url": "https://www.law.go.kr/LSW/lsInfoP.do?efYd=20260122&lsiSeq=282879",
+          "kind": "primary"
+        },
+        {
+          "title": "인공지능 기본법과 콘텐츠 산업 – '투명성 확보 의무'를 중심으로 (세종)",
+          "url": "https://www.shinkim.com/kor/media/newsletter/3142",
+          "kind": "secondary"
+        }
+      ],
+      "_evidence": "research_ai#findings[27]"
+    },
+    {
+      "topic": "AI 자산 거버넌스를 기존 오픈소스 거버넌스에 편입하는 구조",
+      "claim": "AI 모델·데이터셋은 별도 관리 체계를 새로 만들기보다 기존 오픈소스 컴포넌트 관리 프로세스(반입 승인 → 대장 등록 → SBOM → 고지 → 배포 승인)에 자산 유형으로 추가하는 편이 현실적이다.",
+      "detail": "기존 프로세스와의 대응: 반입 승인 → 모델 라이선스·AUP·지역 제한 확인. 대장 등록 → 모델 대장에 개방성 등급(G7 4단계), 베이스 모델 계보, 데이터셋 참조 추가. SBOM → SPDX AIPackage 또는 CycloneDX modelCard. 고지 → NOTICE 문구 + 'Built with Llama' 류 표시 + AI 기본법 고지. 배포 승인 → 파생 모델 명명 규칙, 라이선스 사본 동봉, AUP 전가. 신규로 필요한 것은 (a) 모델 버전 단위 라이선스 기록, (b) 데이터셋을 독립 자산으로 등록, (c) 스니펫 매칭 게이트 3가지다. revision-planner 판단 근거: ai 축 발견 33건 중 기존 장 편입 가능 9건(using 4, contributing 1, releasing 1, ospo 1, intro 2), 편입 자리 없음 24건.",
+      "confidence": "medium",
+      "target_section": "new",
+      "applies_to_korean_firms": "이미 오픈소스 거버넌스 체계를 운영 중인 기업.",
+      "action_for_firms": "기존 컴포넌트 관리 대장에 '자산 유형' 컬럼을 추가(라이브러리/모델/데이터셋)하고 유형별 필수 필드를 다르게 정의한다. 새 시스템을 만들지 않는다.",
+      "practicality": "판단기준표",
+      "sources": [],
+      "_evidence": "research_ai#findings[32]"
+    }
+  ]
+}

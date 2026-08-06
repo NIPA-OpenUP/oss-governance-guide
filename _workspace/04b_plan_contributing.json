@@ -1,0 +1,582 @@
+{
+  "slug": "contributing",
+  "file": "content/en/contributing/_index.md",
+  "target_line_delta": "+76",
+  "line_budget": {
+    "now": 864,
+    "target": 940,
+    "additions_planned": "+233",
+    "deletions_planned": "-154",
+    "net": "+79",
+    "rule": "각 지시의 instruction 끝에 붙은 '(분량 약 ±N행)'이 배분값이다. 어느 지시가 배분을 넘기면 개념설명 문단을 더 걷어내서 상쇄하고, 체크리스트·판단기준표·템플릿은 줄이지 않는다."
+  },
+  "front_matter": {
+    "title": "오픈소스 기여하기",
+    "linkTitle": "2. 기여하기",
+    "weight": 30
+  },
+  "global_rules": [
+    "이 장의 '기업 편 / 개발자 편' 이원 구조와 '~한다' 문어체, 각주 기반 출처 표기는 유지한다. 새로 쓰는 문단도 같은 문체를 따른다.",
+    "헤딩 텍스트를 바꾸는 지시는 CO-22 하나뿐이다. 그 외 어떤 지시에서도 기존 H2~H4의 '텍스트'를 바꾸지 않는다. 특히 '#### 4. CLA / DCO에 주의하라'는 같은 파일 L549와 releasing 장 교차 참조가 `#4-cla--dco에-주의하라` 앵커로 가리키므로 절대 수정 금지다.",
+    "작업 후 반드시 `rg -n '#4-cla--dco에-주의하라|#어떤-프로젝트에-기여해야-하나|contributing/#' /Users/robin/IdeaProjects/oss-governance-guide/content` 와 `python3 check_guide_integrity.py` 를 실행해 앵커·각주 무결성을 확인한다.",
+    "confidence가 medium인 발견(research_market#findings[19], research_market#findings[20])은 단정 서술로 쓰지 않는다. '보고되었다', '2024년 조사 기준' 처럼 시점·출처를 문장 안에 넣고, 1차 출처가 없는 수치는 쓰지 않는다.",
+    "새로 넣는 모든 수치·사건에는 각주로 출처 URL과 날짜(YYYY-MM-DD)를 붙인다. 각주 정의는 해당 문단 직후에 둔다(이 파일의 기존 관행).",
+    "AI 모델 라이선스·데이터셋·AI 생성 코드의 저작권 귀속 같은 주제 본문은 신규 5장(slug `ai`)에 있다. 이 장에서는 '기여 행위'에 필요한 만큼만 쓰고 나머지는 `../ai/`로 크로스링크한다."
+  ],
+  "directives": [
+    {
+      "id": "CO-01",
+      "priority": 1,
+      "op": "insert",
+      "anchor_line": 594,
+      "anchor_quote": "일반적으로 다음 상황에서 Issue를 생성한다.\n\n* 스스로 해결할 수 없는 오류 보고\n* 새로운 기능 또는 아이디어 제안\n* 커뮤니티 비전, 또는 정책 토론",
+      "instruction": "이 목록 바로 뒤에 `##### 보안 취약점은 공개 Issue로 보고하지 않는다` 소절을 신설한다(개발자 편 '2. Issue를 생성하라' 하위 H5). 본문은 산문이 아니라 5단계 체크리스트로 쓴다 — ① 저장소의 SECURITY.md에 명시된 경로를 먼저 확인한다, ② 경로가 없으면 GitHub Private vulnerability reporting을 사용한다, ③ 그것도 없으면 메인테이너에게 비공개로 연락해 조율된 공개(CVD) 일정에 합의한다, ④ 사내에서는 즉시 OSPO와 보안 조직에 알린다, ⑤ CVE 발급이 필요하면 CNA 또는 GitHub Security Advisory 경로를 따른다. 이어서 `##### AI가 만든 취약점 보고를 그대로 보내지 않는다` 소절을 붙이고 curl 사례를 3~4문장으로 요약한다 — 2019년 시작한 curl 버그바운티가 실제 취약점 비율 약 15%에서 2025년 5% 미만으로 떨어지자 2026-01-26 종료를 공지하고 2026-01-31 접수를 마감했으며, 2026-03-01 HackerOne으로 복귀했으나 포상금은 부활시키지 않았다. 여기에 사내 규칙 3항을 alert 박스로 넣는다 — '사람이 재현 검증한 것만 상류에 보고한다', 'AI 도구 출력을 그대로 전달하지 않는다', '보고 시 재현 절차·영향 범위·검증자 이름을 함께 적는다'. Linux Foundation이 2026-03-17 발표한 1,250만 달러 보조금이 'AI 생성 취약점 보고를 감당하는 유지관리자 지원'을 용도로 든다는 사실을 한 문장 각주로 붙인다. 자사 프로젝트의 SECURITY.md 작성은 3장(공개하기) 소관이므로 본문에 쓰지 말고 `../releasing/`로 크로스링크만 건다. (분량 약 +32행)",
+      "evidence": ["audit_contributing#issues[1]", "research_security#findings[22]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "CO-02",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 794,
+      "anchor_quote": "git push -f origin myfeature",
+      "instruction": "이 명령을 `$ git push -u origin myfeature`로 교체한다(앞뒤 명령과 동일하게 `$` 프롬프트를 붙인다). 코드블록 아래에 한 줄을 덧붙인다 — 'Step 4에서 rebase한 뒤 다시 푸시해야 하면 `$ git push --force-with-lease origin myfeature`를 쓴다. `--force-with-lease`는 원격에 내가 모르는 커밋이 있으면 푸시를 거부하므로 남의 커밋을 덮어쓰지 않는다.' 기존 `-f`를 기본값으로 제시하면 초심자가 리뷰 중인 PR의 이력을 파괴하므로 반드시 교체한다. (분량 약 +2행)",
+      "evidence": ["audit_contributing#issues[0]"],
+      "practicality": "템플릿"
+    },
+    {
+      "id": "CO-03",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 235,
+      "anchor_quote": "Copyright (C) 2004, 2006 The Linux Foundation and its contributors.\n1 Letterman Drive\nSuite D4700\nSan Francisco, CA, 94129",
+      "instruction": "DCO 인용 블록을 https://developercertificate.org/ 정본과 1행씩 대조해 교체한다. 정본에는 주소 3줄('1 Letterman Drive' / 'Suite D4700' / 'San Francisco, CA, 94129')이 없으므로 삭제한다 — 이 3줄은 리눅스 커널 문서 판본에서 온 것이고 Linux Foundation은 이미 그 주소를 떠났다. L258의 `    in the file; or₩` 에 섞여 들어간 원화 기호 `₩`를 제거해 `    in the file; or`로 고친다. 이 블록은 원문이 'changing it is not allowed'라고 명시한 축자 인용이므로 다른 문자는 하나도 바꾸지 않는다. 블록 바로 아래에 '출처: https://developercertificate.org/ (Version 1.1)' 한 줄을 캡션으로 붙인다. (분량 약 -3행)",
+      "evidence": ["audit_contributing#issues[3]", "audit_contributing#issues[4]"],
+      "practicality": "템플릿"
+    },
+    {
+      "id": "CO-04",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 271,
+      "anchor_quote": "단, Git을 제외한 다른 버전 관리 시스템을 사용하는 프로젝트에서는 사용할 수 없다.",
+      "instruction": "사실 오류이므로 삭제하고 다음 취지로 교체한다 — 'DCO의 본질은 커밋 메시지(또는 패치 헤더)에 남기는 `Signed-off-by:` 한 줄이고, `git commit --signoff`는 그것을 자동 삽입하는 편의 기능일 뿐이다. 따라서 메일링 리스트로 패치를 받는 리눅스 커널, Gerrit, GitLab, Codeberg/Forgejo 등 제출 경로가 다른 프로젝트에서도 동일하게 적용할 수 있다.' 뒤 문장('복잡한 지식재산권 이슈를 고려해야 하는 프로젝트를 주도하는 기업이라면 DCO 도입이 적절하지 않을 수 있다')은 유지한다. (분량 약 +2행)",
+      "evidence": ["audit_contributing#issues[5]"],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "CO-05",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 24,
+      "anchor_quote": "> * TODO Group의 [Participating in open source communities](https://todogroup.org/guides/participating/)[^todo-participating]",
+      "instruction": "L24 본문 링크와 L27 각주 정의의 URL을 https://todogroup.org/resources/guides/participating-in-open-source-communities/ 로 교체한다(현행 URL은 2026-07-31 기준 HTTP 404이며 TODO Group이 경로를 /resources/guides/ 하위로 재편했다). 같은 블록인용에 2026년 기준 참고 문헌 2건을 추가한다 — OpenSSF의 기여자·유지관리자 관련 가이드, Linux Foundation의 'Open Source Contribution Policy' 템플릿. 두 항목 모두 접속 확인한 URL만 각주로 달고, 확인하지 못하면 넣지 않는다. (분량 약 +3행)",
+      "evidence": ["audit_contributing#issues[2]"],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "CO-06",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 810,
+      "anchor_quote": "[^opentutorial]: Do it! 지옥에서 온 문서 관리자 깃&깃허브 입문 : https://opentutorials.org/course/2708)",
+      "instruction": "각주 URL 끝의 닫는 괄호 `)`를 제거해 `https://opentutorials.org/course/2708`로 고친다(현재는 잘못된 주소로 링크된다). 동시에 L809~L811의 각주 정의 3개가 L803~L808 블록인용 바로 뒤에 붙어 있고 L812의 `---`가 각주 정의 다음 줄에 바로 이어져 렌더링 위험이 있으므로, 각주 정의와 `---` 사이에 빈 줄을 넣는다. 기계 검사(check_guide_integrity.py)는 각주 정의/사용 대조만 하므로 이 오류를 잡지 못한다는 점을 유의한다. (분량 약 +1행)",
+      "evidence": ["audit_contributing#issues[36]"],
+      "practicality": "템플릿"
+    },
+    {
+      "id": "CO-07",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 716,
+      "anchor_quote": "{{< imgproc prflow Fit \"768x768\" >}}\n<center>[GitHub Pull Request Workflow]</center>\n{{< /imgproc >}}",
+      "instruction": "그림과 본문이 어긋나 있다 — 현행 prflow.png는 Step 3='Fetch and Rebase', Step 4='Create a branch'인데 본문은 Step 3='Create a branch'(L747), Step 4='Keep your branch in sync'(L767)로 순서가 반대이고, 브랜치명(그림 `mybranch` vs 본문 `myfeature`)과 디렉터리 변수(그림 `$local_working_dir` vs 본문 `$working_dir`)도 다르다. 그림은 IL-contributing-07로 재작성되므로, 집필자는 imgproc 블록의 이미지 이름을 `prflow-2026`으로 바꾸고 캡션 `<center>[GitHub Pull Request 절차]</center>`를 유지한다. 본문 Step 1~7의 번호·명칭·변수명은 손대지 않는다(그림이 본문에 맞춰진다). 새 그림이 준비되기 전에는 기존 파일명을 그대로 두고 이 지시를 미완으로 표시한다. (분량 ±0행)",
+      "evidence": ["audit_contributing#issues[32]"],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "CO-08",
+      "priority": 2,
+      "op": "replace",
+      "anchor_line": 229,
+      "anchor_quote": "CLA의 복잡성과 서명하는 것에 대한 부담 때문에 DCO<sub>Developer Certificate of Origin</sub>가 CLA의 대안으로 주목받고 있다.",
+      "instruction": "'주목받고 있다'는 2015년경 프레이밍이므로 2026년 현황으로 재작성한다 — DCO는 대안을 넘어 대규모 재단 프로젝트의 기본값이 되었고 CNCF는 CLA 없이 DCO만 요구하며 Kubernetes·Prometheus·containerd 등이 이를 따른다, Linux Foundation과 Eclipse는 EasyCLA·ECA 같은 경량 절차를 병행한다, 반면 CLA는 단일 기업이 저작권을 집중 보유하려는 프로젝트에 주로 남아 있다. 마지막 절은 CO-09가 신설할 '라이선스 전환 리스크' 소절로 연결하는 한 문장으로 닫는다. 뒤 문장의 'DCO는 리눅스 재단이 만들었고...' 설명은 유지한다. (분량 약 +3행)",
+      "evidence": ["audit_contributing#issues[6]"],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "CO-09",
+      "priority": 2,
+      "op": "insert",
+      "anchor_line": 225,
+      "anchor_quote": "이러한 저작권 양도 요구는 논쟁의 여지가 있다. 기업에 따라 위와 같이 저작권 이전을 요구하는 CLA에는 서명을 금지하고, 그런 프로젝트에는 기여를 제한하는 정책을 시행하고 있기도 하다.",
+      "instruction": "이 문단 뒤, `##### DCO`(L227) 앞에 `##### CLA가 만드는 라이선스 전환 리스크` 소절을 신설한다. L217의 '프로젝트가 향후 필요에 따라 라이선스를 변경할 수 있는 권한' 조항이 추상적으로만 서술되어 있으므로, 실제 발현 사례 3건을 연·전환 라이선스·포크 결과 3열 표로 제시한다 — HashiCorp Terraform(2023, BUSL-1.1, OpenTofu 포크), Redis(2024, RSALv2/SSPL, Valkey 포크), Elastic(2021, SSPL/ELv2, OpenSearch 포크). 표 아래에 OSPO 사전 점검 3항을 체크리스트로 붙인다 — ① 기여 대상 프로젝트의 저작권이 단일 벤더에 집중되는지 중립 재단이 보유하는지 확인한다, ② CLA에 라이선스 변경권·저작권 양도 조항이 있으면 법무 검토를 거친다, ③ 전환이 일어났을 때의 대응(포크 추종 / 의존 제거 / 상용 계약)을 사전에 결정해 문서로 남긴다. 각 사례에 전환 발표일과 1차 출처 URL을 각주로 붙인다. 산문으로 풀어 쓰지 말고 표와 체크리스트로 쓴다. (분량 약 +12행)",
+      "evidence": ["audit_contributing#issues[7]", "audit_contributing#missing_topics[5]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "CO-10",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 208,
+      "anchor_quote": "기업은 구성원에게 오픈소스에 기여하기 전에 CLA 서명을 요구받을 시, 반드시 서명 전에 OSPO<sub>Open Source Program Office</sub>에 의한 리뷰 과정을 거칠 수 있도록 의무화해야 한다.",
+      "instruction": "현재 CLA 설명이 개인 CLA(ICLA) 중심이라 기업 담당자에게 필요한 실무가 없다. `##### CLA`(L210) 앞에 두 덩어리를 넣는다. (1) `##### 기업 CLA(CCLA)` 소절 — 체결 주체는 법인이고 서명 권한자는 사내 규정에 따라 지정한다, CCLA는 authorized contributor 명부와 짝을 이루므로 입사·전배·퇴사 시 명부를 갱신할 책임 조직을 정한다, LF EasyCLA는 회사 CLA 매니저가 기여자를 승인해야 PR이 통과된다는 흐름을 한 문단으로 설명한다. (2) 'OSPO CLA 검토 체크리스트'를 8~10항목 체크박스 목록으로 만든다 — 저작권 양도 요구 여부, 라이선스 변경권 부여 여부, 특허 라이선스의 범위와 철회 조항, 보증·면책 범위, 준거법과 관할, 제3자 코드 포함 시 처리, 서명 철회 가능성, 서명 주체가 개인인지 법인인지, 기여 범위의 사후 확장 조항 유무. 마지막에 재단별 실무 차이를 한 문단으로 비교한다(ASF는 ICLA+CCLA, Eclipse는 ECA, LF는 EasyCLA, CNCF는 CLA 없이 DCO). 경고: 이 절의 H4 헤딩 '#### 4. CLA / DCO에 주의하라'는 같은 파일 L549와 releasing 장이 `#4-cla--dco에-주의하라` 앵커로 참조하므로 텍스트를 절대 바꾸지 않는다. 작업 후 `rg -n '#4-cla--dco에-주의하라' content/`로 확인한다. (분량 약 +18행)",
+      "evidence": ["audit_contributing#issues[15]", "audit_contributing#missing_topics[4]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "CO-11",
+      "priority": 2,
+      "op": "replace",
+      "anchor_line": 166,
+      "anchor_quote": "1. 100 라인 이하의 작은 코드 조각\n2. Stack Overflow 문의/ 답변\n3. Bug Report\n4. GitHub 활동 : Pull Request 수락, Comment 대응, 버전 릴리즈 등",
+      "instruction": "자율 기여 허용 목록을 채널 중립적으로 재작성한다 — ① 오타·링크·문서 수정, ② 공개 Q&A 채널(GitHub Discussions, Discourse 포럼, Discord/Slack/Matrix, 메일링 리스트)에서의 질문과 답변, ③ 버그 리포트(단, 보안 취약점은 제외하고 CO-01이 신설하는 별도 경로를 따른다), ④ 자사가 메인테이너인 저장소의 일상 운영. Stack Overflow는 LLM 코딩 어시스턴트 확산 이후 주 채널이 아니므로 목록에서 뺀다. 'Pull Request 수락'과 '버전 릴리즈'는 메인테이너 권한 행위이므로 자율 기여 목록에서 분리해 ④로 옮긴다. '100 라인' 임계는 근거 없이 베껴 쓰이므로 '기업이 자체 기준을 정하되(예: 100라인) 그 기준선의 근거와 예외를 함께 문서화한다'로 완화한다. (분량 약 +2행)",
+      "evidence": ["audit_contributing#issues[11]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "CO-12",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 174,
+      "anchor_quote": "2. 라이선스 정책으로 인해 기업이 사용할 수 없는 프로젝트로의 기여 (예: AGPL, CC BY-NC*, 상업적 사용을 제한하는 프로젝트 등)",
+      "instruction": "승인 필요 대상 예시를 2026년 실무에 맞게 확장한다 — 'AGPL·CC BY-NC 등 상업적 사용이나 네트워크 배포를 제한하는 라이선스, BUSL-1.1·SSPL·Elastic License 2.0·FSL 등 OSI 미승인 source-available 라이선스, LICENSE 파일이 없는 저장소'. 목록 아래에 한 문장을 덧붙인다 — 'source-available 라이선스는 오픈소스가 아니므로 기여 시 저작권 처리와 사내 사용 가능 여부를 별도로 판단한다. 이들은 GitHub에 공개되어 있어 구성원이 오픈소스로 착각하기 쉽다.' CO-09의 라이선스 전환 리스크 소절로 앵커 링크를 건다. (분량 약 +3행)",
+      "evidence": ["audit_contributing#issues[12]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "CO-13",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 130,
+      "anchor_quote": "강제적인 정책과 규정보다는 기업의 구성원이 오픈소스 프로젝트에 성공적으로 기여할 수 있도록 지원하는 것이 더 중요하다.",
+      "instruction": "'내부 검토 프로세스를 제공한다'는 당위만 있고 실제 절차가 없으므로, 이 항목 말미에 기여 승인 워크플로를 단계 목록으로 명시한다 — ① 요청 접수(대상 프로젝트 URL·라이선스·기여 범위·코드 출처·CLA/DCO 요구 여부), ② 조직장 확인(업무 관련성과 공수), ③ OSPO 검토(기여 권리, 영업비밀·특허, CLA 조항, 프로젝트 라이선스), ④ 법무 검토(CLA 서명이 필요한 경우만), ⑤ 판정(자율 / 조건부 / 승인 / 반려)과 목표 처리 기한(예: 영업일 3일), ⑥ 기여자 대장 등록, ⑦ 최초 승인 이후 동일 프로젝트 반복 기여는 재승인 없이 진행. 이어서 사내 티켓 템플릿을 코드블록으로 제시해 담당자가 그대로 복제할 수 있게 한다(필드: 요청자/조직, 대상 저장소 URL, 프로젝트 라이선스, 기여 유형, 예상 규모, 코드 출처, CLA/DCO 요구 여부, 사용할 계정·이메일, AI 도구 사용 여부). 이 워크플로는 IL-contributing-03 스윔레인 그림으로 시각화되므로 본문은 단계 이름과 산출물만 적고 설명 문장을 늘리지 않는다. 개발자 편 CO-14와 상호 참조한다. (분량 약 +14행)",
+      "evidence": ["audit_contributing#issues[10]", "audit_contributing#issues[29]"],
+      "practicality": "템플릿"
+    },
+    {
+      "id": "CO-14",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 570,
+      "anchor_quote": "#### 4. 기업 내부 승인을 받아라\n\n기업의 오픈소스 정책이 요구하는 대로 내부 승인 절차를 따른다.",
+      "instruction": "'정책대로 따르라'로 끝나 개발자가 무엇을 제출하는지 알 수 없으므로, 제출 항목을 체크박스 목록으로 명시한다 — 대상 프로젝트 URL과 라이선스, 기여 유형과 예상 규모, 코드 출처(직접 작성 / 사내 코드 파생 / 제3자 코드 포함), CLA·DCO 요구 여부, 업무 관련성, 사용할 계정과 이메일, AI 코딩 도구 사용 여부. 이어서 두 문장을 덧붙인다 — '최초 승인 이후 동일 프로젝트에 대한 반복 기여는 재승인이 필요하지 않은 것이 일반적이다', '승인 결과는 문서로 보관한다'. 기업 편의 승인 워크플로(CO-13)로 앵커 링크를 걸어 양쪽이 같은 절차를 가리키게 한다. 기존 마지막 문장('이 과정은 개발자의 입장에서 불편한 과정으로 보일 수도 있지만...')은 유지한다. (분량 약 +7행)",
+      "evidence": ["audit_contributing#issues[29]", "audit_contributing#issues[10]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "CO-15",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 133,
+      "anchor_quote": "#### 9. 충분한 교육은 제공하는가?\n기업이 구성원에게 오픈소스 라이선스, 거버넌스 및 오픈소스 커뮤니티 참여, 오픈소스 기여 모범 사례 등의 교육을 제공한다면 오픈소스 기여 문화 확산에 매우 유용하다.",
+      "instruction": "'기여 전략을 수립하라' 절이 질문 9개 나열로 끝나 담당자가 만들 산출물이 없으므로, 이 항목 뒤(절 말미)에 실행물 3종을 추가한다. (1) '기여 전략 1페이저' 템플릿 — 목적, 대상 프로젝트, 투입 인력·예산, 승인 절차, 측정 지표 5개 항목의 빈 표로 제시한다. (2) 기여 대상 우선순위 매트릭스 — 비즈니스 임계도 × 의존 강도 × 커뮤니티 건강도 × 영향력 확보 가능성 4축에 각 3단계 판정 기준을 넣은 표. (3) 측정 지표 세트 — 자사 기여 PR 수용률, 첫 리뷰까지 걸린 시간, 업스트림화로 제거한 내부 패치 수, 유지보수 비용 절감 추정, CHAOSS 지표 활용. 세 산출물 모두 표나 템플릿 형식으로 쓰고 설명 문장은 각 항목 1줄을 넘기지 않는다. 측정 지표는 CO-17(기여자 목록 자동 집계)과 연결한다. (분량 약 +12행)",
+      "evidence": ["audit_contributing#issues[9]", "audit_contributing#missing_topics[11]"],
+      "practicality": "템플릿"
+    },
+    {
+      "id": "CO-16",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 198,
+      "anchor_quote": "GitHub에서는 개인 계정이라도 기업의 이메일을 사용할 수 있는 설정하는 [방법](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address)[^github-email]을 제공한다. ",
+      "instruction": "먼저 L198과 L201 각주의 URL을 현행 경로 https://docs.github.com/en/account-and-profile/how-tos/email-preferences/setting-your-commit-email-address 로 교체하고, 비문('사용할 수 있는 설정하는')을 '개인 계정에서도 커밋 이메일을 기업 이메일로 지정하는 방법을 제공한다'로 다듬는다. 그다음 '의무화한다'는 방침을 실제로 강제할 운영 수단 목록을 체크리스트로 추가한다 — GitHub Organization의 verified/approved domain 설정, SAML SSO와 SCIM 연동, Enterprise Managed User(EMU) 도입 시 외부 오픈소스 기여가 막힌다는 제약과 개인 계정 병행 전략, 커밋 서명(GPG/SSH)과 Verified 배지 정책, 퇴사·전배 시 org 멤버십과 CLA 명부 정리 절차. `noreply` 이메일을 쓰면 소속 식별이 불가하다는 주의를 한 줄 덧붙인다. EMU 제약은 대기업 담당자가 사전에 알아야 할 항목이므로 반드시 포함한다. (분량 약 +8행)",
+      "evidence": ["audit_contributing#issues[13]", "audit_contributing#issues[14]", "audit_contributing#missing_topics[3]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "CO-17",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 297,
+      "anchor_quote": "기업에서 다수의 오픈소스 프로젝트에 기여하고 있다면, 기여자 목록은 귀중한 자산이 될 수 있다. 여기에는 (1) 기여 대상 오픈소스 프로젝트, (2) 기여 형태, (3) 기여자 이름/조직, (4) 기여 내용 등의 정보를 포함한다.",
+      "instruction": "수동 수집 전제를 자동 집계로 바꾼다. 수집 항목에 '기여 수용 여부', '리뷰어 활동', '메인테이너 승격 여부'를 추가하고, 수집 방법을 한 문단으로 명시한다 — 기업 이메일 도메인과 GitHub org 멤버십을 키로 커밋·PR·리뷰를 주기적으로 수집하고, LFX Insights·CHAOSS(GrimoireLab/Augur)·GitHub Organization Insights 또는 GitHub GraphQL API를 활용해 분기 단위로 대시보드화한다. CO-15의 측정 지표 세트로 앵커 링크를 걸어 대장이 KPI의 데이터 소스임을 드러낸다. 개인정보 수집 범위와 사내 공개 수준(사번·평가 정보 비노출)에 대한 주의를 한 줄 붙인다. (분량 약 +5행)",
+      "evidence": ["audit_contributing#issues[17]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "CO-18",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 293,
+      "anchor_quote": "기업은 구성원에게 오픈소스 프로젝트 행동 강령의 중요성을 알린다. 만약 기업의 구성원이 행동 강령을 위반하여 오픈소스 프로젝트로부터 경고나 활동 제한 등의 조치를 받았을 경우, 즉시 OSPO에 알리도록 해야 한다.",
+      "instruction": "현재 서술이 '우리 구성원이 가해자일 때'의 평판 관리 관점만 담고 있으므로, 문단 뒤에 '구성원이 피해자인 경우' 대응을 4항목 목록으로 추가한다 — ① 프로젝트의 CoC 신고 경로 확인을 회사가 지원한다, ② OSPO가 회사를 대표해 프로젝트 CoC 위원회와 함께 대응한다, ③ 보복이 우려되면 익명 신고 채널을 안내한다, ④ 상황이 개선되지 않으면 해당 프로젝트 기여 중단을 회사 결정으로 승인한다. 자사 주도 프로젝트의 CoC 운영은 3장(공개하기) 소관이므로 `../releasing/`로 크로스링크만 건다. (분량 약 +5행)",
+      "evidence": ["audit_contributing#issues[16]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "CO-19",
+      "priority": 2,
+      "op": "insert",
+      "anchor_line": 300,
+      "anchor_quote": "2. 특정 오픈소스 프로젝트에서 이슈가 발생했을 때, 사내 오픈소스 기여자 목록에서 해당하는 오픈소스 프로젝트 기여자를 찾을 수 있다면 이슈 해결을 위한 컨설팅을 요청할 수 있다.",
+      "instruction": "이 항목 뒤, L302 alert 앞에 `#### 8. AI로 생성한 코드의 기여 기준을 정하라` 를 신설한다(기업 편 정책 항목의 8번째). 본문은 체크리스트 5항으로 쓴다 — ① 기여 대상 프로젝트의 AI 기여 정책을 사전에 확인한다, ② 프로젝트가 요구하는 커밋 트레일러(`Generated-by:` 또는 `Assisted-by:`)를 붙인다, ③ AI 도구의 이용약관이 출력물 사용을 제한하는지 도구 도입 심사 단계에서 확인한다, ④ 출력물에 제3자 저작물이 포함되면 권리자 허락·귀속 표시·적용 라이선스 정보를 확인한 뒤에만 제출한다, ⑤ 학습 데이터와 유사한 코드 조각을 식별하는 스니펫 매칭 도구를 릴리스 전 검사에 포함한다. 근거로 세 재단 정책을 각 1문장씩 요약한다 — Linux Foundation Generative AI Policy(도구 약관이 프로젝트 라이선스·IP 정책·OSD와 충돌하지 않아야 하고 제3자 저작물 포함 시 허락·귀속·라이선스 정보 제공 의무), ASF Generative Tooling Guidance(출력물이 저작권 대상이 아니거나 / 제3자 자료를 포함하지 않거나 / 허락받아 준수하며 사용할 것 중 하나를 충족해야 하며 `Generated-by:` 토큰 사용 권고, 2023-06 기준), Fedora AI-Assisted Contributions 정책(2025-10 Council 승인, 기여자 전적 책임과 상당 부분 AI 생성 시 공개 의무). AI 생성 코드의 저작권 귀속 자체는 5장(AI와 오픈소스) 소관이므로 `../ai/`로 크로스링크만 걸고 본문에서 다루지 않는다. (분량 약 +14행)",
+      "evidence": ["research_ai#findings[21]", "audit_contributing#missing_topics[0]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "CO-20",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 563,
+      "anchor_quote": "소스 코드를 기여하려고 하는가? 기여를 제출하기 전에 다음 사항을 확인하여 저작권 침해와 같은 이슈를 최소화한다.",
+      "instruction": "당위 4줄만 있고 확인 수단이 없으므로 체크리스트를 '수동 판단 항목'과 '자동 점검 항목' 두 묶음으로 나눈다. 수동 항목은 기존 4줄을 유지하되 '기여 코드가 사내 저장소 이력에서 분리되었는지 `git log -p`로 사내 커밋 메시지·이슈 번호 유출을 확인한다'를 추가한다. 자동 항목은 도구 이름을 병기해 담당자가 사내 표준으로 바로 지정할 수 있게 쓴다 — 커밋 전 시크릿 스캐닝(gitleaks, trufflehog, pre-commit 훅), GitHub push protection 활성화, 커밋 메시지·브랜치명에서 사내 이슈 번호와 내부 호스트명 제거, 제3자 코드 출처 스캔(ScanCode, FOSSology), 의존성을 추가했다면 SBOM 확인. 마지막에 AI 코딩 도구로 생성한 코드가 포함되면 CO-19의 기준을 함께 적용한다는 한 줄을 붙인다. 산문으로 풀지 말고 체크박스 목록으로 쓴다. (분량 약 +9행)",
+      "evidence": ["audit_contributing#issues[28]", "research_ai#findings[21]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "CO-21",
+      "priority": 2,
+      "op": "insert",
+      "anchor_line": 551,
+      "anchor_quote": "여러분이 기업의 구성원으로서 오픈소스에 기여하려 한다면 이러한 문서에 서명하는 것을 기업에서 허용하고 있는지 반드시 확인해야 한다.",
+      "instruction": "개발자 편 '기여를 준비해보자' 절 안에, `#### 3. 기여 코드를 점검하라`(L561) 앞에 `#### 3. 프로젝트의 AI 기여 정책을 확인하라` 를 신설하고 이후 항목 번호를 하나씩 밀어 재정렬한다(기존 3→4, 4→5). 본문은 확인 항목 4개로 쓴다 — ① CONTRIBUTING.md와 프로젝트 정책 문서에서 AI 생성 기여의 허용·공시·금지 여부를 찾는다, ② 요구되는 커밋 트레일러(`Generated-by:` / `Assisted-by:`) 형식을 확인한다, ③ 프로젝트가 AI 생성 기여를 금지하거나 외부 PR을 자동 종료하는 정책을 두었는지 확인한다, ④ 정책이 명시되지 않았다면 PR 설명에 사용 도구를 자진 공개한다. 배경은 2~3문장으로만 쓰되 confidence가 medium인 발견이므로 단정하지 말고 '보고되었다' 수준으로 쓴다 — AI 코딩 도구 확산 이후 AI 생성 PR과 저품질 신고가 늘어 Electron 유지관리자가 2025년 제안 건수가 두 배로 늘었다고 보고했고, Ghostty는 저품질 AI 생성 기여 무관용 정책을, tldraw는 외부 PR 자동 종료 정책을 도입했다. 수치는 1차 출처가 있는 것만 쓴다 — OSSRA 2026 기준 AI 생성 코드를 보안 관점에서 검토하는 조직 76%, IP·라이선스 관점 54%, 둘 다 포괄적으로 검토하는 조직 24%. '800명 대상 67% 부담' 류의 미확인 통계는 쓰지 않는다. (분량 약 +8행)",
+      "evidence": ["research_market#findings[19]", "research_ai#findings[21]", "audit_contributing#missing_topics[0]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "CO-22",
+      "priority": 2,
+      "op": "replace",
+      "anchor_line": 425,
+      "anchor_quote": "#### 어떤 프로젝트에 기여해야 하나?\n\n물론 업무와 연관이 있거나 기술적인 관심이 있는 분야의 오픈소스 프로젝트에 기여해야 한다.",
+      "instruction": "L425~L488을 재작성해 약 25행을 줄인다. 두 겹의 중복이 있다 — 제목이 기업 편 L114 '#### 3. 어떤 프로젝트에 기여해야 하는가?'와 사실상 같고, L429~L488의 판정 기준이 using 장 '오픈소스 선택 가이드'(content/en/using/_index.md L1251~L1303)와 상당 부분 겹친다. 헤딩을 `#### 기여하기 좋은 프로젝트인지 판단하는 법`으로 바꾸고, 기준을 '기여 수용 가능성' 축으로 재작성한다 — CONTRIBUTING·CODE_OF_CONDUCT·SECURITY.md 존재 여부, `good first issue`/`help wanted` 라벨 운영, 첫 리뷰까지 걸린 시간의 중앙값, 외부 기여 PR의 머지 비율, 메인테이너 수(bus factor), CLA/DCO 요구 여부, 최근 릴리스 주기. 일반적인 프로젝트 건강도(인기도·보안·문서화)는 본문에서 걷어내고 '1장 오픈소스 선택 가이드 참고'로 상호참조만 남긴다. 하위 H5 5개(라이선스 파일·기여 활발도·이슈·PR·분위기)는 위 7항목 체크리스트 하나로 통합한다. 스크린샷 3장은 IL-contributing-05로 1장에 통합되므로 imgproc 블록도 1개만 남긴다. 경고: 이 지시는 유일하게 헤딩 텍스트를 바꾸는 지시다. 작업 전후로 `rg -n '어떤-프로젝트에-기여해야-하나' /Users/robin/IdeaProjects/oss-governance-guide/content`를 실행해 이 앵커를 가리키는 링크가 없는지 확인하고, 있으면 함께 수정한다(2026-07-31 기준 없음). (분량 약 -25행)",
+      "evidence": ["audit_contributing#issues[19]", "audit_contributing#issues[20]", "audit_contributing#issues[21]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "CO-23",
+      "priority": 2,
+      "op": "restructure",
+      "anchor_line": 490,
+      "anchor_quote": "---\n\n지금까지 오픈소스에 기여하기 위한 프로젝트의 일반적인 구조 및 동작 방식 등을 설명했다. 지금부터는 기업의 구성원이 오픈소스 프로젝트에 기여하기 위해 실제로 필요한 사항을 설명한다.",
+      "instruction": "L495 `#### 좋은 기여자가 되기 위한 길잡이`를 H3(`### 좋은 기여자가 되기 위한 길잡이`)로 승격하고, L499~L521의 6개 항목(H5)을 H4로 한 단계씩 올린다. 이렇게 하면 개발자 편이 (1)기여 전에 알아야 할 기본 지식 (2)좋은 기여자가 되기 위한 길잡이 (3)기여를 준비해보자 (4)기여는 어떻게 제출해야 하나 4단 구성이 되어 발간본(page:107)과 `content/en/intro/_index.md` L69~73의 장 소개 목록과 일치한다. L490~L492의 전환 문단은 승격된 H3 앞에 그대로 두되 '프로젝트의 구조를 이해했다면 이제 어떻게 좋은 기여자가 되는지 살펴본다'로 다듬어 새 절을 예고하게 한다. 헤딩 '텍스트'는 바꾸지 않으므로 앵커는 유지되지만, 레벨 변경 후 `python3 check_guide_integrity.py`로 확인한다. (분량 ±0행)",
+      "evidence": ["audit_contributing#issues[18]", "baseline_contributing#published_only_worth_keeping[0]"],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "CO-24",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 421,
+      "anchor_quote": "##### 기타 문서\n(규모가 큰 오픈소스 프로젝트의 경우) 튜터리얼, 거버넌스 정책과 같은 문서도 제공한다.",
+      "instruction": "저장소 문서 목록이 README/LICENSE/CONTRIBUTING/CODE OF CONDUCT 4종에서 멈춰 있으므로 '기타 문서' 항목을 걷어내고 그 자리에 2026년 기여자가 반드시 확인할 문서를 각 2~3문장으로 추가한다 — SECURITY.md(보안 취약점을 공개 이슈로 올리지 않고 이 문서의 경로로 제보한다는 실행 지침과 함께, CO-01이 신설한 소절로 앵커 링크), GOVERNANCE.md(의사 결정 주체와 승격 절차, '거버넌스를 이해하라' 항목과 상호참조), MAINTAINERS.md·CODEOWNERS('내 변경의 리뷰어가 누구인지 미리 알 수 있다'는 실용 관점), `.github/ISSUE_TEMPLATE`·`PULL_REQUEST_TEMPLATE`(제출 형식이 강제되는 경우), SUPPORT.md, DCO/CLA 관련 파일과 `good first issue` 라벨 관례. 각 항목은 '무엇을 확인하는가'로 시작해 한 줄 안에 실행 지침이 들어가게 쓴다. (분량 약 +10행)",
+      "evidence": ["audit_contributing#issues[22]", "audit_contributing#issues[1]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "CO-25",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 366,
+      "anchor_quote": "#### 오픈소스 프로젝트에는 누가 있나?",
+      "instruction": "역할 모델이 리더/메인테이너/커미터/기여자/사용자 5단 서열로만 서술되어 실제 프로젝트와 어긋난다. 절 도입부에 '역할의 명칭과 서열은 프로젝트마다 다르다'는 전제를 앞세우고, 5개 H5 설명은 유지하되 각 설명에서 서열을 단정하는 표현을 걷어낸다. 그다음 3계보 대비 표를 추가한다 — 리눅스 커널(기여자 / 서브시스템 메인테이너 / Linus), Apache(contributor → committer → PMC), Kubernetes·CNCF(member → reviewer → approver → SIG lead → TOC). 표 아래에 2026년 프로젝트에 흔한 역할 4종(Reviewer, Triager, Release manager, Security response team, Emeritus maintainer)을 한 줄씩 추가하고, 실제 확인 방법으로 MAINTAINERS·OWNERS·CODEOWNERS 파일을 안내한다. 'Apache의 committer는 커밋 권한 보유자이고 그 위에 PMC가 있다'처럼 이 가이드의 기존 서열 서술과 반대인 사례를 명시해 독자가 오해하지 않게 한다. membership.png는 IL-contributing-04로 교체된다. (분량 약 +8행)",
+      "evidence": ["audit_contributing#issues[23]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "CO-26",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 786,
+      "anchor_quote": "```text\n$ git commit -a -m '[commit message]'\n```",
+      "instruction": "앞에서 DCO를 두 절에 걸쳐 설명하고도 실제 커밋 명령에 signoff가 없어, CNCF 계열 프로젝트에서 이 명령대로 커밋하면 DCO 체크가 실패한다. 명령을 `$ git commit -s -m '<type>: <subject>'`로 교체하고 `-s`가 `Signed-off-by:` 줄을 삽입해 DCO 요건을 충족한다는 설명을 한 줄 붙인다. 이어서 커밋 서명을 별도 팁 박스로 넣는다 — `$ git config commit.gpgsign true` 와 SSH 서명 키 설정, 기업 편의 '기업 계정 기여'를 실제로 검증하는 수단이 서명이라는 연결(CO-16으로 앵커 링크). 마지막으로 커밋 메시지 규약을 3~4줄로 추가한다 — 제목 50자 이내, 본문에는 '무엇'이 아니라 '왜', 이슈 번호 연결, Conventional Commits를 채택한 프로젝트가 늘었으므로 CONTRIBUTING을 먼저 확인. (분량 약 +9행)",
+      "evidence": ["audit_contributing#issues[35]", "audit_contributing#missing_topics[3]"],
+      "practicality": "템플릿"
+    },
+    {
+      "id": "CO-27",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 749,
+      "anchor_quote": "먼저 main [branch](https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EB%B8%8C%EB%9E%9C%EC%B9%98%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80)[^branch]를 fetch와 [rebase](https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-Rebase-%ED%95%98%EA%B8%B0)[^rebase]하여 최신 상태로 유지한다.",
+      "instruction": "upstream의 기본 브랜치를 `main`으로 단정하고 있으나 `master`·`develop`·`trunk`를 쓰는 프로젝트가 여전히 많아 그대로 실행하면 `git checkout main`에서 실패한다. 문장 앞에 '프로젝트마다 기본 브랜치 이름이 다르므로 먼저 확인한다'는 한 줄과 확인 명령을 넣는다 — `$ git remote set-head upstream -a` 후 `$ git rev-parse --abbrev-ref upstream/HEAD`, 또는 `$ gh repo view <owner>/<repo> --json defaultBranchRef`. 이후 Step 3·Step 4의 코드블록에서 `main`을 `$DEFAULT_BRANCH` 변수 표기로 바꾸고, 변수 정의 한 줄(`$ DEFAULT_BRANCH=main`)을 예시로 보인다. 저장소가 이미 `upstream/main`으로 고친 부분(L758·L774)은 되돌리지 않는다 — 발간본의 `upstream/master`는 오류다. (분량 약 +5행)",
+      "evidence": ["audit_contributing#issues[34]", "baseline_contributing#repo_only_worth_keeping[1]"],
+      "practicality": "템플릿"
+    },
+    {
+      "id": "CO-28",
+      "priority": 2,
+      "op": "replace",
+      "anchor_line": 553,
+      "anchor_quote": "CLA를 요구하는 대부분의 프로젝트는 번거로운 서면 서명 대신 bot을 이용하여 기여자가 몇 번의 클릭만으로 서명할 수 있도록 편의를 제공한다.",
+      "instruction": "'bot'을 일반명사로만 쓰고 예시 이미지·캡션이 개인 프로젝트(colineberhardt/cla-bot) 화면이라 담당자가 실제 도구를 찾지 못한다. 2026년 실무 도구 3종을 한 문단으로 정리한다 — CLA Assistant(SAP, 저장소 단위 설치와 GitHub 계정 클릭 서명), Linux Foundation EasyCLA(회사 CLA 매니저가 authorized contributor를 승인해야 PR이 통과되는 흐름, 기업 편 CCLA 절로 앵커 링크), DCO GitHub App(서명 없이 `Signed-off-by:` 존재만 검사). 기존 문장의 경고('기여자가 쉽게 서명하고 지나갈 수 있다')는 유지한다. L556~L558의 imgproc 블록은 이미지를 CLA Assistant 또는 EasyCLA 화면으로 교체하고, 캡션의 raw URL은 각주로 내린다. (분량 약 +5행)",
+      "evidence": ["audit_contributing#issues[27]", "audit_contributing#issues[15]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "CO-29",
+      "priority": 2,
+      "op": "replace",
+      "anchor_line": 536,
+      "anchor_quote": "* Patch를 받는 방식도 요즘은 대부분 Github의 Pull Request로 받지만, 어떤 프로젝트는 여전히 메일링 리스트를 이용하기도 한다.",
+      "instruction": "'요즘'이라는 상대 시점 표현을 삭제하고 'Github' 표기를 'GitHub'로 통일한다. 제출 경로를 'GitHub Pull Request / GitLab Merge Request / Gerrit / Codeberg·Forgejo / 메일링 리스트(리눅스 커널은 `b4` 도구와 lore 아카이브로 절차화되어 있다)'로 확장한다. 아울러 L577(`### 기여는 어떻게 제출해야 하나?` 도입부)에 '이하 절차는 GitHub를 기준으로 설명하며 다른 플랫폼도 fork → branch → 제출 → 리뷰라는 흐름은 같다'는 전제를 한 줄 명시한다. 이 장의 기여 제출 절이 전부 GitHub 전제인 문제를 전제 선언으로 해소하고, 플랫폼별 상세 절차는 쓰지 않는다. (분량 약 +3행)",
+      "evidence": ["audit_contributing#issues[26]", "audit_contributing#missing_topics[9]"],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "CO-30",
+      "priority": 2,
+      "op": "replace",
+      "anchor_line": 709,
+      "anchor_quote": "제목 줄에 \"WIP\" (Work in Progress)라고 표시하여 아직 진행 중인 작업이라고 표시하고, 나중에 언제든지 더 많은 Commit을 추가할 수 있다.",
+      "instruction": "GitHub는 2019년부터 Draft Pull Request를 정식 기능으로 제공하며 Draft는 머지 차단·리뷰어 자동 요청 보류까지 연동되므로 제목 접두어 'WIP'와 기능적으로 다르다. 다음 취지로 교체한다 — 'GitHub에서는 Draft Pull Request로 생성하면 리뷰 준비가 끝날 때까지 머지가 차단되고 리뷰어 자동 요청도 보류된다. 준비가 되면 Ready for review로 전환한다. GitLab에도 Draft Merge Request가 있으며, Draft를 지원하지 않는 플랫폼에서는 제목에 WIP를 붙이는 관례를 쓴다.' 앞 문장('가능한 Pull Request를 일찍 생성하여 다른 사람들의 피드백을 받는 게 좋다')은 유지한다. (분량 약 +1행)",
+      "evidence": ["audit_contributing#issues[31]"],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "CO-31",
+      "priority": 2,
+      "op": "replace",
+      "anchor_line": 281,
+      "anchor_quote": "Copyright 2023 SK TELECOM CO., LTD.\nSPDX-License-Identifier: {$SPDX_license_name}",
+      "instruction": "연도 2023이 박혀 있고 범용 가이드에 특정 기업명이 그대로 남아 있어 다른 기업 담당자가 복사해 쓸 수 없다. 예시를 플레이스홀더로 교체한다 — `SPDX-FileCopyrightText: {연도} {회사 법인명}` / `SPDX-License-Identifier: {SPDX_license_id}`. 기업명 표기는 이 파일 L143·L151이 이미 쓰는 '[기업]' 표기와 일치시킨다. 최신 관행이 `Copyright` 대신 `SPDX-FileCopyrightText:` 태그를 쓰는 REUSE 규격이라는 점을 한 문장으로 설명하고, REUSE Specification(https://reuse.software/spec/)과 `reuse lint` 도구를 각주로 붙인다. L285의 '$SPDX_license_name' 설명 문장도 새 변수명에 맞춰 고친다. (분량 약 +1행)",
+      "evidence": ["audit_contributing#issues[8]"],
+      "practicality": "템플릿"
+    },
+    {
+      "id": "CO-32",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 124,
+      "anchor_quote": "기업이 선택한 오픈소스 프로젝트의 거버넌스 모델을 확인하여 기업 멤버십 자격 또는 후원을 위한 방법이 있는지, 또는 이를 담당하는 비영리 재단이 있는지 확인한다.",
+      "instruction": "재단 멤버십과 콘퍼런스 후원만 다루고 있어 2026년의 실제 자금 지원 경로가 빠져 있다. 문단 뒤에 후원 경로 판단표를 추가한다 — 개인 유지관리자 직접 후원(GitHub Sponsors, thanks.dev), 프로젝트 단위 후원(Open Collective), 상용 계약형(Tidelift), 공공·재단 기금(Sovereign Tech Agency, LF Directed Funds, FLOSS/fund), 재단 멤버십. 각 경로에 '적합한 상황'과 '사내 회계·조달 처리 시 유의점(기부금 처리 vs 용역 계약)'을 한 줄씩 붙인다. 이어서 '자금보다 부담 경감이 효과적인 경우'를 두 문장으로 덧붙인다 — 유지관리자의 병목이 '취약점을 못 고치는 것'이 아니라 '무엇이 진짜 취약점인지 판별하는 데 드는 시간'으로 이동했으므로, 자사가 의존하는 핵심 프로젝트에는 트리아지 인력 배정과 재현 케이스 작성 같은 직접 기여를 후원금보다 먼저 검토한다. Linux Foundation이 2026-03-17 발표한 1,250만 달러 보조금이 명시적으로 '트리아지·수정 자동화 도구'를 용도로 든다는 점을 각주로 붙인다. Tidelift 조사는 confidence가 medium이므로 '2024년 조사(응답자 400명 이상) 기준'을 문장 안에 넣고 '유지관리자의 60%가 무보수이며, 보수를 받는 유지관리자가 보안·유지보수 모범관행을 55% 더 많이 이행한다'는 수치를 후원 정당화 근거로 인용하되 후속판 미확인 사실을 각주에 적는다. (분량 약 +10행)",
+      "evidence": ["research_market#findings[20]", "research_security#findings[22]", "audit_contributing#missing_topics[7]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "CO-33",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 45,
+      "anchor_quote": "따라서 오픈소스를 사용하는 기업은 기여의 중요성을 개발자들에게 교육해야 한다. 물론, 오픈소스 프로젝트에 기여하는 것은 적지 않은 수고와 시간이 들어갈 수 있다.",
+      "instruction": "'기여하지 않으면 유지비가 늘어난다'는 논지를 펴면서 정작 관리 방법이 없으므로, 이 항목 말미에 업스트림 우선(upstream-first) 운영 규칙 4항을 목록으로 추가한다 — ① 내부 패치는 대장에 등록하고 각 패치에 '업스트림 제출 여부'와 '제거 목표 시점'을 기록한다, ② 신규 패치는 원칙적으로 업스트림 제출을 먼저 시도하고 거절 시 사유를 대장에 남긴다, ③ 포크는 수명(예: 다음 메이저 릴리스까지)을 정하고 그 시점에 유지·제거를 재판정한다, ④ '업스트림화로 제거한 내부 패치 수'를 기여 성과 지표로 집계한다(CO-15의 지표 세트와 연결). 개념설명을 늘리지 말고 목록으로만 쓴다. (분량 약 +6행)",
+      "evidence": ["audit_contributing#missing_topics[6]", "audit_contributing#issues[9]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "CO-34",
+      "priority": 2,
+      "op": "insert",
+      "anchor_line": 130,
+      "anchor_quote": "물론, 라이선스 침해, 영업비밀 누수 등의 문제없이 기여하기 위한 정책과 가이드를 제공하여 오픈소스 기여 시 발생할 리스크를 최소화한다.",
+      "instruction": "기업이 특정 오픈소스 프로젝트에 지속적으로 기여·후원하면 EU 사이버복원력법(CRA)상 '오픈소스 스튜어드(open source steward)' 지위가 발생해 취약점 대응 정책과 보고 체계 의무가 따를 수 있다는 점을 3~4행으로만 언급한다. 제약: 이 개정에서 규제 축 리서치 결과는 이 섹션에 배정되지 않았으므로 새로운 규제 사실(적용 시점, 조문 번호, 의무 내용)을 여기서 쓰지 않는다. CRA의 정의·시행 일정은 intro와 using 장의 서술을 그대로 인용하고 `../using/`로 크로스링크만 건다. 이 지시의 목적은 '기여' 장에 CRA 연결 고리가 통째로 빠져 있다는 공백을 메우는 것이지 CRA를 설명하는 것이 아니다. using 계획자의 규제 동향 절이 확정된 뒤 앵커를 맞춘다. (분량 약 +4행)",
+      "evidence": ["audit_contributing#missing_topics[2]"],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "CO-35",
+      "priority": 2,
+      "op": "delete",
+      "anchor_line": 610,
+      "anchor_quote": "#### 3. 커뮤니케이션을 시작하라\n\n오픈소스에 기여하는 모든 과정은 커뮤니티 멤버들과 커뮤니케이션의 연속이다. 먼저 효과적인 커뮤니케이션을 위해 다음 사항을 기억한다.",
+      "instruction": "L610~L696의 커뮤니케이션 가이드는 86행·소절 8개·좋은 예/나쁜 예 alert 16개로 개발자 편에서 가장 큰 덩어리인데, 내용이 GitHub Open Source Guide 번역에 가깝고 이 가이드 고유의 '기업 구성원' 관점이 없어 분량 대비 기여도가 낮다. 8개 소절(정확한 의사 전달 / 스스로 먼저 해보기 / 간결하게 / 공개 커뮤니케이션 / 기다리기 / 커뮤니티 결정 존중 / 품위 유지)을 '상황 | 권장 | 피할 것' 3열 비교표 1개(8행 내외)로 압축하고 alert 16개는 전부 삭제한다. 남는 자리에 기업 구성원 고유 항목 4개를 목록으로 신설한다 — 회사 이메일·계정으로 남긴 글은 회사의 공식 입장으로 읽힐 수 있다, 사내 로드맵·고객명·미공개 계획을 커뮤니티 스레드에 쓰지 않는다, 회사 차원의 요구는 개인 의견과 구분해 명시한다, 논쟁이 커지면 OSPO에 에스컬레이션한다(행동 강령 절로 앵커 링크). L600~L606의 '커뮤니케이션 Tip' alert도 위 표에 흡수해 삭제한다. 삭제 사유: 일반적 커뮤니케이션 예절은 원출처(GitHub Open Source Guide)를 각주로 안내하는 편이 낫고, 이 장이 감당해야 할 것은 '회사 이름으로 말할 때의 책임'이다. (분량 약 -69행)",
+      "evidence": ["audit_contributing#issues[30]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "CO-36",
+      "priority": 2,
+      "op": "replace",
+      "anchor_line": 32,
+      "anchor_quote": "## 오픈소스 기여, 왜?",
+      "instruction": "L32~L87 전체(60행)에 통계·사례·출처가 하나도 없어 '경영진 설득' 목적을 달성하지 못한다. 기업 항목 3개는 유지하되 각각에 근거를 붙인다 — ① 유지 관리 비용 절감에는 '내부 패치 1건이 유발하는 연간 재적용·회귀 테스트 공수 × 패치 수'라는 자사 사례 산정 방법을 2~3줄로 제시한다(CO-33의 내부 패치 대장과 연결), ② 프로젝트 방향 영향력과 ③ 인재 채용에는 1차 출처가 확인된 최신 통계만 각주와 함께 붙인다. 개발자 항목 8개는 중복이 심하므로(2번 '실력을 키울 수 있다'와 3번 '깊은 수준에서 이해', 6번 '새로운 사람'과 7번 '평판과 경력') 4~5개로 통합해 걷어낸다. 통계를 확인하지 못하면 없는 채로 두고 문장을 늘리지 않는다 — 근거 없는 항목 나열을 더 만드는 것이 이 절의 문제였다. (분량 약 -20행)",
+      "evidence": ["audit_contributing#issues[38]"],
+      "practicality": "사례"
+    },
+    {
+      "id": "CO-37",
+      "priority": 2,
+      "op": "replace",
+      "anchor_line": 189,
+      "anchor_quote": "#### 2. 개인이 업무 시간 이외에 개발한 코드라면?\n\n어떤 개발자는 근로 외 시간에 업무와 전혀 상관없이 개인의 관심 분야에 작성한 코드이기 때문에 기업의 승인 없이 개인 이메일로 기여해도 된다고 생각한다.",
+      "instruction": "기업 편 L189와 개발자 편 L325(L321~L325 문단)가 같은 논지를 거의 같은 예시로, 결론까지 동일하게 반복한다. 기업 편 L189~L191은 '정책으로 무엇을 정할 것인가'에 집중해 3항목으로 재작성한다 — 최초 기여 시 1회 승인 의무화, 고용계약의 직무발명·경업 조항 검토, 개인 계정 기여의 허용 범위 명문화. 개발자 편 L325 문단은 '개인이 무엇을 확인할 것인가'(고용계약 확인, 업무 관련성 판단이 어려우면 보수적으로, 승인 문서 보관)로 3문장 이내로 줄이고, 상세는 기업 편으로 앵커 링크한다(L549가 이미 쓰는 방식을 그대로 따른다). 양쪽 합계 약 6행을 줄인다. (분량 약 -6행)",
+      "evidence": ["audit_contributing#issues[39]"],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "CO-38",
+      "priority": 2,
+      "op": "replace",
+      "anchor_line": 824,
+      "anchor_quote": "#### 5. Feedback을 받아라\n\n기여를 제출하면 프로젝트로부터 Feedback을 받게 된다.",
+      "instruction": "L824~L858의 피드백 4갈래(응답 없음 / 수정 요청 / 거절 / 수락)가 35행을 쓰는데 각 갈래의 실행 지침은 한두 줄뿐이다. 4개 H5를 '피드백 유형 | 원인 | 권장 행동 | 기다릴 기간' 4열 표 1개로 압축하고 서술 문단을 걷어낸다. 표에 반드시 남길 실행 지침은 — 일주일 이상 응답이 없으면 같은 스레드에 정중히 재요청하고 적절한 사람을 @-멘션한다, 개인적으로 연락하지 않는다, 수정 요청에는 즉시 응답하고 진행할 수 없으면 그 사실을 알린 뒤 PR을 닫거나 인수를 요청한다, 거절되면 사유를 확인하되 논쟁하지 않는다, 필요하면 Fork 한다. '수락됐다!' 항목은 한 줄로 남긴다. 이 절은 IL-contributing-06 기여 여정 타임라인의 종착 4갈래와 1:1로 대응하므로 명칭을 그림과 일치시킨다. (분량 약 -16행)",
+      "evidence": ["audit_contributing#issues[30]", "audit_contributing#issues[48]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "CO-39",
+      "priority": 2,
+      "op": "replace",
+      "anchor_line": 579,
+      "anchor_quote": "#### 1. 이전 이력을 확인하라\n\n제출하려고 하는 기여가 이전에 다뤄진 이력이 있는지 확인한다. 프로젝트의 README, 이슈, 메일링 리스트를 살펴봐라.",
+      "instruction": "L579~L590이 12행에 걸쳐 '검색해라 / 이슈를 먼저 열어라 / CONTRIBUTING을 확인해라'를 반복 서술한다. 이를 5행 이내 체크리스트로 압축한다 — 이슈·PR·메일링 리스트를 키워드로 검색해 중복 여부를 확인한다, CONTRIBUTING과 이슈 템플릿에서 요구 형식(사전 테스트, 재현 정보)을 확인한다, 작업을 시작하기 전에 이슈를 열어 의도를 알린다, Issues는 논의·Pull Request는 해결책 제출이라는 역할 구분을 지킨다. 같은 방식으로 L528~L545 '1. 오픈소스 프로젝트의 문서를 숙지하라'의 중복 서술도 5행가량 줄인다(alert 박스 3항목은 CO-29가 갱신하므로 유지하고, 그 앞뒤 설명 문단을 합친다). (분량 약 -10행)",
+      "evidence": ["audit_contributing#issues[30]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "CO-40",
+      "priority": 2,
+      "op": "delete",
+      "anchor_line": 302,
+      "anchor_quote": "{{% alert title=\"\" color=\"success\" %}}\n\n기업마다 비즈니스가 다르고 오픈소스를 사용하려는 목적도 다르기 때문에 획일화된 정책을 모든 기업이 일관되게 적용하는 것은 불가능하다.",
+      "instruction": "L302~L306의 제목 없는 alert 박스를 삭제한다. 내용이 '기업마다 다르므로 각자 맞게 하라'는 일반론이고, 같은 취지가 L862~L863 장 마무리 문단에 다시 나온다. 삭제 후 기업 편이 CO-19가 신설한 '8. AI로 생성한 코드의 기여 기준을 정하라'로 끝나게 되므로, 마무리가 필요하면 한 문장으로만 남긴다. 삭제 사유: 이 개정의 우선 기준은 체크리스트·판단기준표이며 실행 지침이 없는 총론 박스는 지면을 소비한다. (분량 약 -5행)",
+      "evidence": ["audit_contributing#issues[30]"],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "CO-41",
+      "priority": 3,
+      "op": "replace",
+      "anchor_line": 53,
+      "anchor_quote": "오픈소스에 적극적으로 기여하는 기업이 오픈소스 커뮤니티에서 좋은 평판을 쌓게 된다. 오픈소스 커뮤니티의 우수한 개발자는 오픈소스에 적극적으로 기여하는 기업에서 일하고 싶어 한다.",
+      "instruction": "저장소 기준선 위에 발간본(p86)의 교정만 병합한다 — 조사 오류 '기업이'를 '기업은'으로 고치고, 뒤 문장을 '오픈소스 커뮤니티의 우수한 개발자는 어느 기업이 오픈소스에 적극적으로 기여하는지 알고 있고, 그런 기업에서 일하고 싶어 한다'로 보강한다. 나머지 문장은 저장소 원문을 유지한다. (분량 ±0행)",
+      "evidence": ["audit_contributing#issues[41]", "baseline_contributing#diverged[1]"],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "CO-42",
+      "priority": 3,
+      "op": "replace",
+      "anchor_line": 115,
+      "anchor_quote": "다만, 중요한 프로젝트에 자원을 집중하여 기여 것이 기업에 도움이 된다는 의미이다. 기업의 비즈니스와 제품 및 서비스에 큰 영향을 미치는 프로젝트를 주요 기여 대상을 우선 검토한다.",
+      "instruction": "이 파일의 비문·조사 오류를 한 번에 정리한다. L115는 '다만, 중요한 프로젝트에 자원을 집중해 기여하는 것이 기업에 도움이 된다는 의미이다. 비즈니스와 제품·서비스에 큰 영향을 미치는 프로젝트를 주요 기여 대상으로 우선 검토한다.'로, L127은 '채용할 기회가 증가한다'로, L182는 '민감한 정보, 특허 등 기업의 지식재산 노출이 우려되는 코드와 문서는 기여하지 않는다.'로, L331은 '기업에 속한 구성원이라면'으로 고친다. L179~L187 alert 박스는 '~한다 / ~하지 않는다'체로 문체를 통일한다(현재 1·3번은 '~한다', 2·4번은 '~마라'로 섞여 있다). 마지막으로 파일 전체에 `rg -n '  +' content/en/contributing/_index.md`로 잔여 이중 공백을 점검하고 L838의 '응답받지  못할' 두 곳을 포함해 모두 제거한다. (분량 ±0행)",
+      "evidence": ["audit_contributing#issues[42]", "audit_contributing#issues[43]", "audit_contributing#issues[44]", "audit_contributing#issues[45]", "audit_contributing#issues[48]"],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "CO-43",
+      "priority": 3,
+      "op": "replace",
+      "anchor_line": 91,
+      "anchor_quote": "이렇게 오픈소스 기여는 전략적으로 활용한다면 기업과 개인에게 모두 유익한 활동이다. 다음 장에서는 기업과 개인 각각의 측면에서 효과적이고 안전한 오픈소스 기여를 위해 알아야 할 사항들을 설명한다.",
+      "instruction": "'다음 장'이 실제로는 같은 장 안의 다음 절(L96 기업 편)을 가리켜 독자가 목차 위치를 잃는다. L91의 '다음 장에서는'을 '이어지는 절에서는'으로, L98의 '이 장에서는 기업이 오픈소스 기여 정책을...'을 '이 절에서는'으로 고친다. 진짜 장 전환인 L865의 '다음 장에서는'만 그대로 둔다. 이 파일 전체에 '장 = H2 최상위, 절 = H3' 호칭 규칙을 적용한다. (분량 ±0행)",
+      "evidence": ["audit_contributing#issues[46]"],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "CO-44",
+      "priority": 3,
+      "op": "replace",
+      "anchor_line": 501,
+      "anchor_quote": "커뮤니티에서 제공하는 문서를 읽고, 메일링 리스트, 포럼, IRC, Slack, Bug tracker 등 주요 커뮤니케이션 채널에 가입한다.",
+      "instruction": "채널 목록을 '메일링 리스트, GitHub Discussions, Discourse 포럼, Slack·Discord·Matrix·Zulip, 이슈 트래커 등'으로 교체하고 'IRC를 유지하는 프로젝트도 여전히 있다'는 한 문장만 남긴다. 이어 L517의 '가장 좋은 방법은 콘퍼런스 등의 이벤트에 참석하는 것이다. 직접 만나는 것만큼 관계 형성에 좋은 것은 없다'를 '대면 이벤트 참석이 가장 빠르지만, 정례 커뮤니티 미팅(SIG·WG) 참석, 컨트리뷰터 서밋 원격 트랙, LFX Mentorship·GSoC·Outreachy 같은 멘토십 프로그램도 관계 형성의 실질 경로다'로 확장한다 — 예산·비자·시차 제약이 있는 국내 기여자에게 대면만 제시하면 실행 불가능한 조언이 된다. 기업 편의 홍보(L127)·교육(L133) 항목과 상호참조해 회사가 참가 비용을 지원하는 제도를 연결한다. (분량 약 +3행)",
+      "evidence": ["audit_contributing#issues[24]", "audit_contributing#issues[25]"],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "CO-45",
+      "priority": 3,
+      "op": "replace",
+      "anchor_line": 329,
+      "anchor_quote": "최근 ICT 기업들은 정책적으로 구성원의 오픈소스 기여를 허락할 뿐만 아니라 적극적으로 장려한다.",
+      "instruction": "'최근'이라는 상대 시점 표현을 제거한다(이 문장이 처음 쓰인 시점은 2021년이다). '국내외 주요 ICT 기업 대부분은 이제 구성원의 오픈소스 기여를 정책으로 허용하고 장려한다'로 고친다. 1차 출처가 확인된 조사 수치가 있으면 '○○년 ○○ 조사 기준 △△%' 형태로 연도와 출처를 각주에 명시하고, 확인하지 못하면 수치를 넣지 않는다. (분량 ±0행)",
+      "evidence": ["audit_contributing#issues[40]"],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "CO-46",
+      "priority": 3,
+      "op": "replace",
+      "anchor_line": 409,
+      "anchor_quote": "오픈소스 라이선스의 자세한 내용은 [1. 오픈소스 사용하기의 오픈소스 라이선스](../using/#오픈소스-라이선스) 장을 참고한다.",
+      "instruction": "이 앵커는 using 장 개발자 편 말미의 짧은 요약 절을 가리켜 독자가 정작 필요한 의무사항 본문에 닿지 못한다. '라이선스의 종류와 구분은 [1. 오픈소스 사용하기](../using/#오픈소스-라이선스)를, 준수해야 할 의무사항은 [라이선스 의무사항](../using/#라이선스-의무사항)을 참고한다'처럼 두 곳을 함께 안내한다. 주의: using 장이 이번 개정에서 대폭 재구성되므로(목표 1620행) 최종 앵커명은 using 계획이 확정된 뒤 맞춘다. 문장의 '장을 참고한다'는 '절을 참고한다'로 고친다(CO-43의 호칭 규칙). (분량 ±0행)",
+      "evidence": ["audit_contributing#issues[47]", "audit_contributing#issues[46]"],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "CO-47",
+      "priority": 3,
+      "op": "replace",
+      "anchor_line": 722,
+      "anchor_quote": "Upstream Repository를 자신의 GitHub 계정으로 [Fork](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)[^fork]한다.",
+      "instruction": "help.github.com은 폐지된 레거시 도메인이므로 L722 본문 링크와 L724 각주 정의를 https://docs.github.com/en/pull-requests/how-tos/work-with-forks/fork-a-repo 로 교체한다. 같은 문단에 GitHub CLI 대안을 한 줄 추가한다 — '`$ gh repo fork <owner>/<repo> --clone` 한 명령으로 Step 1과 Step 2를 함께 끝낼 수 있다.' 아울러 L817·L820의 http://makeapullrequest.com/ 을 https://makeapullrequest.com/ 로 교체한다. (분량 약 +1행)",
+      "evidence": ["audit_contributing#issues[33]", "audit_contributing#issues[37]"],
+      "practicality": "템플릿"
+    },
+    {
+      "id": "CO-48",
+      "priority": 3,
+      "op": "replace",
+      "anchor_line": 448,
+      "anchor_quote": "{{< imgproc commits Fit \"768x768\" >}}\n{{< /imgproc >}}",
+      "instruction": "CO-22가 이 구간의 스크린샷 3장(commits·closed·pullrequests)을 IL-contributing-05 한 장으로 통합하므로, 남는 imgproc 블록에 `<center>[GitHub 저장소 건강도 확인 화면 (2026년 기준)]</center>` 캡션을 붙인다. 이 파일의 다른 imgproc 블록(L370, L556, L716)은 모두 캡션을 다는데 L448·L464·L477만 빠져 있어 인쇄본에서 그림 번호가 누락된다. 개정판의 모든 그림 캡션에 촬영·작성 시점을 표기해 다음 개정 때 노후 판정이 쉽도록 한다. (분량 약 +1행, 통합에 따른 -8행은 CO-22 배분에 포함)",
+      "evidence": ["audit_contributing#issues[21]", "audit_contributing#issues[20]"],
+      "practicality": "개념설명"
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "IL-contributing-01",
+      "near_line": 177,
+      "purpose": "자율 기여로 넘어갈 수 있는 경우와 OSPO 승인이 필요한 경우의 기준이 L166~169(자율), L171~176(승인 필요), L179~187(공통 원칙), L191(최초 기여 1회 승인), L204~208(CLA 요구 시)로 다섯 군데에 흩어져 있다. 이 그림이 없으면 담당자가 사내 정책 문서를 만들 때 다섯 조각을 머릿속에서 합쳐야 하고, 조각마다 다르게 해석해 정책이 갈린다.",
+      "kind": "process",
+      "content_spec": "기여 판정 결정 트리 한 장. 시작 노드는 '구성원이 외부 오픈소스에 기여하려 한다'. 분기 순서는 ① 보안 취약점 관련인가?(예 → 공개 이슈 금지, SECURITY.md/비공개 신고 경로로 이탈) → ② 이 프로젝트에 처음 기여하는가?(예 → 최초 1회 OSPO 검토) → ③ 사내 사용 불가 라이선스인가?(AGPL·CC BY-NC·BUSL-1.1·SSPL·ELv2·FSL, LICENSE 없음 → 승인 필요) → ④ CLA 서명을 요구하는가?(예 → 법무 검토 필수, DCO는 검토 불필요) → ⑤ 기여 규모가 사내 기준을 넘는가? → ⑥ AI 도구로 생성한 코드가 포함되는가?(예 → 프로젝트 AI 정책 확인 + 스니펫 매칭). 종착점은 3개 — 자율 기여 / 조건부 승인 / 반려. 각 종착점에 목표 처리 기한(예: 조건부 승인 영업일 3일)을 표기한다.",
+      "replaces": null,
+      "filename": "contribution-decision-tree-2026"
+    },
+    {
+      "id": "IL-contributing-02",
+      "near_line": 271,
+      "purpose": "CLA와 DCO를 각각 60행·45행에 걸쳐 서술하지만 둘의 차이가 텍스트에 흩어져 있어 '우리 회사는 어느 쪽을 조심해야 하는가'가 한눈에 잡히지 않는다. 특히 라이선스 변경권 유무가 실제 리스크의 핵심인데 지금은 문장 속에 묻혀 있다.",
+      "kind": "comparison",
+      "content_spec": "CLA와 DCO를 6개 축으로 대비하는 도식. 축은 ① 서명 주체(개인 ICLA / 법인 CCLA vs 커밋 작성자), ② 서명 시점과 방식(별도 서명 절차 vs 커밋 메시지의 Signed-off-by 한 줄), ③ 저작권 이전 범위(없음 / 라이선스 부여 / 양도), ④ 프로젝트의 라이선스 변경 권한 유무, ⑤ 대표 채택 진영(단일 벤더 주도 프로젝트 vs CNCF·LF 재단 프로젝트), ⑥ 실무 도구(CLA Assistant·LF EasyCLA vs DCO GitHub App). ④ 칸에는 라이선스 변경권이 실제로 발현된 사례(BUSL 전환 → OpenTofu 포크, SSPL 전환 → Valkey 포크)를 연결선으로 표시한다.",
+      "replaces": null,
+      "filename": "cla-dco-comparison-2026"
+    },
+    {
+      "id": "IL-contributing-03",
+      "near_line": 133,
+      "purpose": "이 장에서 기업 담당자에게 가장 필요한 산출물인 '기여 승인 워크플로'가 기업 편과 개발자 편 양쪽에서 당위 문장으로만 남아 있다. 역할이 넷(개발자·조직장·OSPO·법무)이고 단계가 순차적이며 조건부 분기가 있어, 이 그림이 없으면 CO-13의 단계 목록만으로는 누가 무엇을 언제 하는지가 재구성되지 않는다.",
+      "kind": "process",
+      "content_spec": "4레인 스윔레인 다이어그램. 레인은 개발자 / 조직장 / OSPO / 법무. 흐름은 개발자(기여 요청 제출 — 대상 저장소 URL·프로젝트 라이선스·기여 범위·코드 출처·CLA 요구 여부·AI 도구 사용 여부) → 조직장(업무 관련성과 공수 승인) → OSPO(기여 권리·영업비밀·특허·프로젝트 라이선스 검토) → 법무(CLA 서명이 필요한 경우에만 진입하는 조건부 분기) → OSPO(판정: 자율 / 조건부 / 승인 / 반려, 목표 3영업일 표기) → 개발자(기여 수행) → OSPO(기여자 대장 등록). '최초 승인 이후 동일 프로젝트 반복 기여'는 첫 레인에서 바로 종료되는 우회 화살표로 표시한다.",
+      "replaces": null,
+      "filename": "contribution-approval-workflow-2026"
+    },
+    {
+      "id": "IL-contributing-04",
+      "near_line": 370,
+      "purpose": "현행 membership.png는 사용자-기여자-커미터-메인테이너-리더 5단 동심원이라 '커미터가 메인테이너 아래'라는 단일 서열을 시각적으로 못 박는다. 실제로는 Apache의 committer가 Kubernetes의 approver에 가깝고 프로젝트마다 서열이 반대여서, 이 그림이 본문의 오해를 오히려 강화한다. 또 2026년 프로젝트에 흔한 Reviewer·Triager·Release manager·Security response team이 빠져 있다.",
+      "kind": "structure",
+      "content_spec": "2단 구성. 상단은 권한 축으로 재배치한 다이어그램 — 세로축은 권한 수준(이슈 트리아지 → 리뷰 → 승인·머지 → 릴리스 → 방향 결정)이고, 각 권한 수준에 붙는 역할명을 프로젝트 계보별로 병기한다. 하단은 3계보 대비 띠 — 리눅스 커널(기여자 / 서브시스템 메인테이너 / Linus), Apache(contributor → committer → PMC), Kubernetes·CNCF(member → reviewer → approver → SIG lead → TOC). 각 계보 아래에 실제 확인 파일명(MAINTAINERS, OWNERS, CODEOWNERS)을 표기한다. Emeritus maintainer는 권한 축에서 이탈하는 별도 표기로 둔다.",
+      "replaces": "membership.png",
+      "filename": "project-roles-2026"
+    },
+    {
+      "id": "IL-contributing-05",
+      "near_line": 445,
+      "purpose": "L437~L488의 프로젝트 판정 절차를 뒷받침하는 스크린샷 3장이 모두 2019~2020년 GitHub UI다('Clone or download' 버튼, 'Branch: master' 드롭다운). 본문의 '화면 상단의 Commits'라는 위치는 2026년 GitHub에 존재하지 않아, 독자가 화면을 찾지 못한 채 판정 절차 전체를 실행할 수 없다. 화면 안내는 그림 없이 성립하지 않는 구간이다.",
+      "kind": "structure",
+      "content_spec": "2026년 GitHub UI 기준 1장으로 통합 재촬영(기존 3장을 대체). 한 장 안에 세 지점을 번호로 지시한다 — ① 저장소 홈에서 커밋 수·마지막 커밋 시각·기여자 수를 확인하는 위치와 Insights > Contributors 경로, ② Issues 탭의 Closed 필터에서 응답 시간을 가늠하는 지점, ③ Pull requests 탭의 Closed/Merged 필터에서 외부 기여 PR을 식별하는 지점. 예시 저장소는 지속 관리되는 프로젝트로 교체하고 촬영 시점(YYYY-MM)을 캡션에 명기한다.",
+      "replaces": "commits.png, closed.png, pullrequests.png (3장 → 1장 통합)",
+      "filename": "github-project-health-2026"
+    },
+    {
+      "id": "IL-contributing-06",
+      "near_line": 590,
+      "purpose": "기여 제출 여정이 L575~L858에 걸쳐 이력 확인 → 이슈 생성 → 커뮤니케이션 → PR → 피드백으로 이어지는데, 유일한 그림인 prflow.png는 Git 명령 흐름만 담아 '언제 이슈를 먼저 여는가', '보안 취약점이면 어디로 빠지는가', '회사 승인은 어느 시점에 끼는가', '무응답이면 어떻게 되는가' 같은 판단 분기를 전혀 보여주지 않는다. 이 그림이 없으면 독자가 300행 가까운 절차를 순서 감각 없이 따라가야 한다.",
+      "kind": "timeline",
+      "content_spec": "기여 여정 타임라인 한 장. 사전 조사(이슈·PR 검색, CONTRIBUTING·SECURITY.md 확인) → 분기 [보안 취약점인가?] 예 → SECURITY.md 또는 비공개 신고 경로로 이탈(공개 금지 표시) / 아니오 → 이슈 생성과 논의 → 내부 승인(회사 레인을 점선으로 병행 표시) → Draft PR 생성 → 리뷰 반복 루프 → 종착 4갈래(무응답 / 수정 요청 / 거절 / 수락)와 각 갈래의 권장 행동. 회사 관련 단계(내부 승인, 기업 이메일 사용, DCO signoff)는 별도 구분 표기로 기업 구성원 고유 절차임을 드러낸다. 종착 4갈래의 명칭은 CO-38이 만드는 피드백 표의 행 이름과 일치시킨다.",
+      "replaces": null,
+      "filename": "contribution-journey-2026"
+    },
+    {
+      "id": "IL-contributing-07",
+      "near_line": 716,
+      "purpose": "현행 prflow.png는 본문과 어긋난다 — 그림의 Step 3='Fetch and Rebase'/Step 4='Create a branch'인데 본문(L747·L767)은 순서가 반대이고, 브랜치명(mybranch vs myfeature)과 작업 디렉터리 변수($local_working_dir vs $working_dir)도 다르다. 독자가 그림과 본문을 대조하며 따라가면 반드시 막히므로, 이 그림은 갱신이 아니라 재작성이 필요하다.",
+      "kind": "process",
+      "content_spec": "본문 7단계와 번호·명칭·변수명을 1:1로 일치시킨 Pull Request 절차도. Step 1 Fork / Step 2 Clone(`$working_dir`) / Step 3 Create a branch(`myfeature`) / Step 4 Keep your branch in sync / Step 5 Commit / Step 6 Push / Step 7 Create a pull request. Step 5 옆에 'DCO signoff(-s)'와 '커밋 서명' 표시를 붙이고, Step 6 옆에 '최초 푸시는 -u, 재푸시는 --force-with-lease' 주석을, Step 7 옆에 'Draft PR로 먼저 열기' 주석을 붙인다. upstream 기본 브랜치가 프로젝트마다 다르다는 점은 `$DEFAULT_BRANCH` 표기로 반영한다.",
+      "replaces": "prflow.png",
+      "filename": "prflow-2026"
+    }
+  ],
+  "deletions_summary": "총 약 154행을 걷어낸다. 가장 큰 삭제는 커뮤니케이션 예절 절(L610~L696, 86행 + L600~606 Tip alert)로, 내용이 GitHub Open Source Guide 번역에 가깝고 이 가이드 고유의 '회사 이름으로 말할 때의 책임' 관점이 없어 분량 대비 기여도가 가장 낮다 — 비교표 1개로 압축하고 기업 구성원 고유 항목으로 대체한다(-69). 두 번째는 개발자 편의 프로젝트 판정 절(L425~L488)로, using 장 '오픈소스 선택 가이드'와 판정표가 상당 부분 겹쳐 같은 내용을 두 번 학습시키므로 '기여 수용 가능성' 축만 남기고 일반 건강도는 상호참조로 넘긴다(-25). 세 번째는 '오픈소스 기여, 왜?' 절로, 출처 없는 항목 11개 나열이 60행을 쓰는데 개발자 항목 8개 중 2·3번과 6·7번이 사실상 중복이므로 4~5개로 통합한다(-20). 나머지는 피드백 4갈래 서술의 표 압축(-16), 이전 이력 확인·문서 숙지 절의 반복 서술 정리(-10), 기업 편 L189와 개발자 편 L325의 동일 논지 중복(-6), 실행 지침 없는 총론 alert(L302~L306, -5), DCO 인용 블록의 비정본 주소 3줄(-3)이다. 삭제 목표를 채우지 못하면 신설 체크리스트·판단기준표를 줄이지 말고 개념설명 문단을 더 걷어낸다.",
+  "unresolved": [
+    "자사 오픈소스의 SECURITY.md 작성과 AI 생성 보고 정책 문구는 research_security#findings[22]의 action ③에 해당하지만 '자사 프로젝트 운영'이므로 3장(releasing) 소관이다. CO-01은 크로스링크만 걸도록 지시했으나, releasing 계획에 이 항목이 실제로 배정됐는지 확인해야 링크 대상 앵커가 정해진다. 배정되지 않았다면 이 장에 4~6행으로 흡수할지 결정이 필요하다.",
+    "CO-34(EU CRA 오픈소스 스튜어드)는 regulation 축 리서치 결과가 이 섹션에 배정되지 않아 새 규제 사실을 쓸 수 없다. using·intro의 CRA 서술이 확정된 뒤에야 인용 문구와 앵커를 확정할 수 있으므로, 그 전까지는 자리표시만 두고 본문을 채우지 않는다.",
+    "IL-contributing-05의 GitHub UI 스크린샷 재촬영은 실제 화면 캡처가 필요해 아트 디렉터의 도식 생성 범위를 벗어난다. 촬영 주체(집필자 직접 캡처 vs 별도 담당)와 예시 저장소 선정(국내 독자에게 익숙하고 2026년에도 활발한 프로젝트)이 정해지지 않았다.",
+    "CO-11이 완화한 자율 기여 라인 수 임계(현행 '100 라인')의 근거를 확인하지 못했다. 다른 기업 정책 사례를 조사해 기준선을 제시할지, 임계 자체를 예시로만 남길지 판단이 필요하다.",
+    "'오픈소스' vs '오픈소스SW' 전역 표기는 04a 구조 결정의 open_questions로 사용자에게 올라가 있다. 이 장은 저장소 현행 '오픈소스'를 유지한 채 집필하되, 사용자가 B안을 선택하면 이 파일 전체를 일괄 치환해야 한다.",
+    "research_market#findings[19]의 Electron·Ghostty·tldraw 사례는 2차 출처(CodeRabbit 블로그)만 확보돼 있다. CO-21에서 '보고되었다' 수준으로 쓰도록 지시했으나, 각 프로젝트의 정책 문서 원문 URL을 확보하면 1차 출처로 승격해 서술을 강화할 수 있다."
+  ]
+}

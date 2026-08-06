@@ -1,0 +1,1006 @@
+{
+  "axis": "regulation",
+  "findings": [
+    {
+      "topic": "EU Cyber Resilience Act — 단계별 발효 일정",
+      "claim": "CRA는 2024-12-10 발효했고 의무는 3단계로 적용된다 — 2026-06-11 적합성평가기관 통보(Chapter IV), 2026-09-11 제조사 보고 의무(제14조), 2027-12-11 전면 적용.",
+      "detail": "Regulation (EU) 2024/2847 제71조 원문은 \"This Regulation shall apply from 11 December 2027. However, Article 14 shall apply from 11 September 2026 and Chapter IV (Articles 35 to 51) shall apply from 11 June 2026.\"다. 기업이 가장 먼저 맞는 기한은 2026-09-11이다. 이 날부터 EU 시장에 디지털 요소 제품을 출하한 제조사는 적극적으로 악용되는 취약점과 중대한 사고를 ENISA 및 관할 CSIRT에 24시간 조기경보 → 72시간 취약점 신고 → 14일/1개월 최종 보고 순으로 통지해야 한다. 본질적 사이버보안 요구사항·적합성평가·CE 마킹·기술문서 의무는 2027-12-11부터다.",
+      "effective_dates": [
+        "2024-12-10: CRA 발효",
+        "2026-06-11: Chapter IV(제35~51조) 적용",
+        "2026-09-11: 제14조 보고 의무 적용",
+        "2027-12-11: 전면 적용"
+      ],
+      "applies_to_korean_firms": "EU 시장에 디지털 요소가 있는 제품(소프트웨어·하드웨어·원격 데이터처리 솔루션)을 상업적 활동으로 출하하는 국내 제조사. EU 역내 법인이 없어도 의무가 발생하며, 국내 완성품 업체에 부품·모듈·펌웨어를 납품하는 협력사도 통합자를 통해 요구를 받는다.",
+      "action_for_firms": "① 2026-09-11 전에 취약점·사고 신고 담당자와 24/72시간 대응 절차를 사내 규정으로 문서화한다. ② EU 출하 제품 목록과 제품별 지원기간(support period)을 확정한다. ③ 2027-12-11 기준 적합성평가 경로(자체평가/제3자)를 제품별로 판정한다.",
+      "practicality": "체크리스트 + 단계별 기한표",
+      "sources": [
+        {
+          "title": "Regulation (EU) 2024/2847 (Cyber Resilience Act), OJ L, 2024/2847, 20.11.2024",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng",
+          "kind": "primary"
+        },
+        {
+          "title": "Cyber Resilience Act, European Commission",
+          "url": "https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act",
+          "kind": "primary"
+        },
+        {
+          "title": "The Cyber Resilience Act — Summary of the legislative text",
+          "url": "https://digital-strategy.ec.europa.eu/en/policies/cra-summary",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "high",
+      "target_section": "using",
+      "replaces": "content/en/using/_index.md L279-281 '2023년 7월: 사이버 복원력 법 초안 승인 / 2024년: 최종 법안 채택 / 2027년: 대부분의 조항 시행 예정'"
+    },
+    {
+      "topic": "EU CRA — SBOM 의무의 실제 범위",
+      "claim": "CRA는 SBOM 작성을 의무화하되 '최소한 최상위 의존성'을 기계 판독 가능한 범용 포맷으로 담을 것을 요구하며, 사용자 공개는 선택이고 시장감시당국 제출은 의무다.",
+      "detail": "Annex I Part II(1)은 제조사가 \"identify and document vulnerabilities and components contained in products with digital elements, including by drawing up a software bill of materials in a commonly used and machine-readable format covering at the very least the top-level dependencies of the products\"라고 규정한다. 제3조(39)는 SBOM을 '소프트웨어 구성요소의 상세와 공급망 관계를 담은 공식 기록'으로 정의한다. Annex II(9)는 '제조사가 SBOM을 사용자에게 제공하기로 결정한 경우' 접근 방법을 알리도록 하므로 사용자 공개는 선택이다. 반면 제13조(25)에 따라 시장감시당국은 SBOM 제출을 요구할 수 있고 ADCO가 EU 차원의 오픈소스 의존성 평가를 수행할 수 있다. 제13조(24)는 집행위가 이행법으로 SBOM 포맷과 요소를 구체화할 수 있게 위임한다.",
+      "effective_dates": [
+        "2027-12-11: Annex I 본질적 요구사항(SBOM 포함) 전면 적용"
+      ],
+      "applies_to_korean_firms": "EU 시장에 디지털 요소 제품을 출하하는 국내 제조사. 하위 협력사는 계약상 SBOM 제출 요구를 받게 된다.",
+      "action_for_firms": "빌드 파이프라인에서 SPDX 또는 CycloneDX SBOM을 자동 생성하고 최상위 의존성 누락 여부를 검증한다. '대외 공개용'과 '당국 제출용 보관'을 분리한 두 갈래 SBOM 정책을 문서화한다.",
+      "practicality": "판단기준표 + 체크리스트",
+      "sources": [
+        {
+          "title": "Regulation (EU) 2024/2847 (Cyber Resilience Act)",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "high",
+      "target_section": "using",
+      "replaces": ""
+    },
+    {
+      "topic": "EU CRA — 오픈소스 스튜어드(open-source software steward)",
+      "claim": "CRA는 제조사도 무의무도 아닌 제3의 지위 '오픈소스 스튜어드'를 신설했고, 스튜어드에게는 사이버보안 정책 문서화·당국 협조·일부 신고 의무만 부과되며 과징금은 적용되지 않는다.",
+      "detail": "제3조(14)는 스튜어드를 \"a legal person, other than a manufacturer, that has the purpose or objective of systematically providing support on a sustained basis for the development of specific products with digital elements, qualifying as free and open-source software and intended for commercial activities, and that ensures the viability of those products\"로 정의한다. 제24조는 (1) 안전한 개발과 취약점 처리를 촉진하는 사이버보안 정책을 '검증 가능한 방식으로' 수립·문서화, (2) 시장감시당국의 합리적 요청 시 문서 제공·협조, (3) 개발 관여 범위에서 제14조(1) 악용 취약점 신고, 제공 인프라가 영향받는 경우 제14조(3)·(8) 중대 사고 신고를 규정한다. 제64조(10)(b)는 \"any infringement of this Regulation by open-source software stewards\"에 행정 과징금을 적용하지 않는다고 명시한다. 제25조는 FOSS 자발적 보안 인증 프로그램을 위임법으로 도입할 근거를 두었으나 미채택이다.",
+      "effective_dates": [
+        "2026-09-11: 제14조 연계 신고 의무",
+        "2027-12-11: 제24조 스튜어드 의무 전면 적용"
+      ],
+      "applies_to_korean_firms": "재단이 아니어도 해당된다. 자사 제품에 넣을 목적으로 오픈소스를 개발해 공개하되 그 오픈소스를 시장에 출하하지는 않는 국내 법인, 커뮤니티 버전과 유료 버전을 함께 운영하는 국내 기업, 오픈소스 프로젝트의 저장소·CI 인프라를 지속 운영하는 국내 기업이 특정 프로젝트에 대해 스튜어드가 될 수 있다.",
+      "action_for_firms": "사내 공개 오픈소스 프로젝트를 '제조사 / 스튜어드 / 무의무' 세 갈래로 분류하고, 스튜어드로 판정된 프로젝트에 대해 SECURITY.md 수준이 아니라 검증 가능하게 문서화된 사이버보안 정책(취약점 접수·처리·공개 절차, 담당자, SLA)을 작성한다.",
+      "practicality": "판단기준표 + 정책 템플릿",
+      "sources": [
+        {
+          "title": "Regulation (EU) 2024/2847 (Cyber Resilience Act)",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng",
+          "kind": "primary"
+        },
+        {
+          "title": "The Cyber Resilience Act — Summary of the legislative text",
+          "url": "https://digital-strategy.ec.europa.eu/en/policies/cra-summary",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "high",
+      "target_section": "releasing",
+      "replaces": ""
+    },
+    {
+      "topic": "EU CRA — 집행위 적용 지침 C(2026) 5252 (2026-07-27)",
+      "claim": "집행위가 2026-07-27 CRA 적용 지침(84쪽 Annex)을 발표해 오픈소스가 언제 CRA 적용 대상이 되는지, 언제 스튜어드 지위가 되는지를 예시 시나리오와 함께 확정했다.",
+      "detail": "Communication C(2026) 5252 final과 그 ANNEX는 제3장 전체를 'Free and open-source software'에 할애한다. ① FOSS 정의(제3조(48))는 '자유·오픈소스 라이선스로 배포'와 '소스코드가 공개적으로 공유됨'을 누적적으로 요구하므로, 유료 고객에게만 소스를 주는 소프트웨어는 CRA상 FOSS가 아니다(44~46항). ② 상업적 활동 여부는 개발 경위나 자금 조달이 아니라 수익화 여부로 판정한다 — 가격 청구, 실비를 초과하는 기술지원 유료화, 플랫폼을 통한 부수 서비스 수익화, 보안·호환성 개선 외 목적의 개인정보 처리 요구, 개발·제공 비용을 초과하는 기부 수령(41~42항). ③ FOSS 구성요소를 자사 제품에 통합한 제조사는 그 구성요소 자체의 CRA 준수 책임을 지지 않으며 소스코드를 기여해도 마찬가지다. 다만 제13조(5) 실사와 제13조(6) 상류 보고·수정 공유 의무는 진다(86~88항).",
+      "effective_dates": [
+        "2026-07-27: 지침 채택·공표"
+      ],
+      "applies_to_korean_firms": "EU 대상 제품에 오픈소스를 통합하는 모든 국내 기업, 그리고 오픈소스를 공개하는 국내 법인. 특히 '커뮤니티 에디션 + 엔터프라이즈 에디션' 구조를 쓰는 국내 SW 기업은 같은 법인이 한 프로젝트에는 스튜어드, 다른 제품에는 제조사가 될 수 있음을 지침 72~74항이 명시한다.",
+      "action_for_firms": "지침 3.5절의 예시 시나리오(Example 27~)를 자사 오픈소스 배포 형태에 대입해 프로젝트별 지위를 문서로 판정하고 그 근거를 감사 대응용으로 보관한다.",
+      "practicality": "판단기준표 + 사례",
+      "sources": [
+        {
+          "title": "Commission publishes new guidance to support timely Cyber Resilience Act implementation (2026-07-27)",
+          "url": "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation",
+          "kind": "primary"
+        },
+        {
+          "title": "Commission guidance on the application of Regulation (EU) 2024/2847, C(2026) 5252 final ANNEX, 27.7.2026",
+          "url": "https://ec.europa.eu/newsroom/dae/redirection/document/131456",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "high",
+      "target_section": "releasing",
+      "replaces": ""
+    },
+    {
+      "topic": "EU CRA — 오픈소스 구성요소 통합 시 제조사의 실사 의무",
+      "claim": "CRA 제13조(5)는 상업적으로 시장에 출하되지 않은 오픈소스 구성요소까지 포함해 통합 부품 실사를 요구하고, 제13조(6)은 발견한 취약점을 상류 프로젝트에 보고하고 수정 코드를 공유하도록 요구한다.",
+      "detail": "제13조(5) 원문: \"manufacturers shall exercise due diligence when integrating components sourced from third parties so that those components do not compromise the cybersecurity of the product with digital elements, including when integrating components of free and open-source software that have not been made available on the market in the course of a commercial activity.\" 제13조(6)은 \"Manufacturers shall, upon identifying a vulnerability in a component, including in an open source-component, ... report the vulnerability to the person or entity manufacturing or maintaining the component\"와 수정 코드·문서 공유를 규정한다. CRA는 오픈소스 '사용'을 '기여'로 연결하는 법적 유인을 처음으로 만들었다 — 취약점 패치를 사내에만 두는 관행은 CRA 적용 제품에서는 의무 위반이 된다.",
+      "effective_dates": [
+        "2027-12-11: 제13조 전면 적용"
+      ],
+      "applies_to_korean_firms": "EU 시장에 디지털 요소 제품을 출하하는 국내 제조사 전부.",
+      "action_for_firms": "오픈소스 도입 승인 프로세스에 '유지관리 활성도·취약점 대응 이력' 실사 항목을 추가하고, 사내에서 만든 보안 패치를 상류에 제출하는 절차(기여 승인 경로 포함)를 오픈소스 정책에 명문화한다.",
+      "practicality": "체크리스트 + 프로세스 절차",
+      "sources": [
+        {
+          "title": "Regulation (EU) 2024/2847 (Cyber Resilience Act)",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng",
+          "kind": "primary"
+        },
+        {
+          "title": "Commission guidance C(2026) 5252 final ANNEX",
+          "url": "https://ec.europa.eu/newsroom/dae/redirection/document/131456",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "high",
+      "target_section": "using",
+      "replaces": ""
+    },
+    {
+      "topic": "EU AI Act — Digital Omnibus(Regulation (EU) 2026/1744)로 고위험 의무 일정 변경",
+      "claim": "2026-07-24 관보에 게재된 Regulation (EU) 2026/1744가 AI Act를 개정해 고위험 AI 의무를 2026-08-02에서 Annex III 독립형 2027-12-02, Annex I 내장형 2028-08-02로 미뤘다. 오픈소스 예외 조항은 바뀌지 않았다.",
+      "detail": "원 AI Act 제113조는 2026-08-02 전면 적용, 금지 규정 2025-02-02, GPAI 의무 2025-08-02, Annex I 고위험 2027-08-02였다. 개정 규정 제1조(40)은 제113조 (c)를 \"Chapter III, Sections 1, 2, and 3 ... shall apply from: (i) 2 December 2027 as regards AI systems classified as high-risk pursuant to Article 6(2) and Annex III; and (ii) 2 August 2028 as regards AI systems classified as high-risk pursuant to Article 6(1) and Annex I\"로 대체했다. 신설 금지 규정(비동의 성적 이미지·아동 성착취물 생성)은 2026-12-02부터, 기존 시장 출시 생성형 시스템의 제50조(2) 콘텐츠 표시 의무는 2026-12-02까지 이행해야 한다. 제50조 투명성 의무 자체는 2026-08-02 그대로다. 개정 규정은 2026-07-27 발효했다.",
+      "effective_dates": [
+        "2024-08-01: AI Act 발효",
+        "2025-02-02: 금지 관행·AI 리터러시",
+        "2025-08-02: 범용 AI 모델(GPAI) 의무",
+        "2026-07-27: Regulation (EU) 2026/1744 발효",
+        "2026-08-02: 제50조 투명성 의무 등 일반 적용",
+        "2026-12-02: 신설 금지 규정 및 기존 생성형 시스템 콘텐츠 표시 이행 기한",
+        "2027-12-02: Annex III 독립형 고위험",
+        "2028-08-02: Annex I 내장형 고위험"
+      ],
+      "applies_to_korean_firms": "EU 시장에 AI 시스템·범용 AI 모델을 공급하거나 EU 내에서 산출물이 사용되는 국내 제공자·배포자. 오픈소스 모델을 받아 파인튜닝해 EU에 서비스하는 국내 기업은 '제공자'로 재분류될 수 있다.",
+      "action_for_firms": "AI 컴플라이언스 로드맵의 기준일을 2026-08-02에서 2027-12-02/2028-08-02로 재조정하되, 제50조 투명성 의무는 2026-08-02 기준을 유지한다.",
+      "practicality": "단계별 기한표",
+      "sources": [
+        {
+          "title": "Regulation (EU) 2024/1689 (AI Act)",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+          "kind": "primary"
+        },
+        {
+          "title": "Regulation (EU) 2026/1744 of 8 July 2026 (Digital Omnibus on AI), OJ L, 2026/1744, 24.7.2026",
+          "url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "high",
+      "target_section": "using",
+      "replaces": ""
+    },
+    {
+      "topic": "EU AI Act — 오픈소스 예외의 실제 범위",
+      "claim": "AI Act의 오픈소스 예외는 세 곳(제2조(12), 제53조(2), 제54조(6))에 나뉘어 있고 모두 고위험·금지·제50조 대상·시스템적 위험 모델에서는 무력화된다. Digital Omnibus는 이 조항들을 건드리지 않았다.",
+      "detail": "제2조(12): \"This Regulation does not apply to AI systems released under free and open-source licences, unless they are placed on the market or put into service as high-risk AI systems or as an AI system that falls under Article 5 or 50.\" 제53조(2)는 가중치·아키텍처·사용 정보가 공개된 자유·오픈소스 라이선스 모델에 기술문서 작성 의무(제53조(1)(a)(b))를 면제하되, 저작권 정책 수립(c)과 학습 데이터 요약 공개(d)는 면제하지 않으며 시스템적 위험 모델에는 예외가 없다. 제54조(6)은 같은 조건에서 EU 역내 대리인 지정 의무를 면제한다. 전문 103항은 유료 제공, 기술지원 유료화, 플랫폼을 통한 부수 서비스 수익화, 보안·호환성·상호운용성 개선 외 목적의 개인정보 처리 요구가 있으면 예외를 받지 못한다고 밝힌다 — 저장소 공개 자체는 수익화가 아니다.",
+      "effective_dates": [
+        "2025-08-02: GPAI 관련 조항(제53·54조) 적용"
+      ],
+      "applies_to_korean_firms": "오픈 웨이트 모델을 배포하는 국내 AI 기업, 오픈소스 AI 구성요소를 제품에 통합하는 국내 기업. 저작권 정책과 학습 데이터 요약 공개 의무는 오픈소스라도 면제되지 않는다는 점이 실무상 가장 자주 오해된다.",
+      "action_for_firms": "사내에서 '오픈소스 AI'로 부르는 자산이 AI Act 예외 요건(가중치·아키텍처·사용 정보 공개 + 비수익화)을 실제로 충족하는지 모델별 판정표를 만든다.",
+      "practicality": "판단기준표",
+      "sources": [
+        {
+          "title": "Regulation (EU) 2024/1689 (AI Act)",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+          "kind": "primary"
+        },
+        {
+          "title": "Regulation (EU) 2026/1744 (Digital Omnibus on AI)",
+          "url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "high",
+      "target_section": "using",
+      "replaces": ""
+    },
+    {
+      "topic": "미국 SBOM 정책 — 연방 조달 의무의 후퇴",
+      "claim": "미국의 SBOM·보안 개발 증명 조달 의무는 2025~2026년에 되돌려졌다. EO 14306(2025-06-06)이 FAR 조항 신설 지시를 삭제했고 OMB M-26-05(2026-01-23)가 M-22-18·M-23-16을 폐지해 SBOM·증명 요구를 기관 재량으로 바꿨다.",
+      "detail": "행정명령 14028(2021-05-12)과 이행 메모(M-22-18, M-23-16)는 연방 조달 소프트웨어 공급자에게 SSDF 준수 자기증명과 필요 시 SBOM 제출을 요구했다. 그러나 EO 14144(2025-01-16)를 개정한 EO 14306(2025-06-06)은 SBOM 관련 FAR 조항 신설 지시를 제거했고, OMB는 2026-01-23 M-26-05로 두 메모를 폐지하면서 기관이 '종합적 위험평가'에 근거해 필요하다고 판단할 때만 증명·SBOM을 요구하도록 전환했다. 이는 연방 조달 요건의 후퇴이지 SBOM 자체의 후퇴는 아니다 — 같은 기간 CISA는 SBOM 최소 요소를 오히려 강화했다.",
+      "effective_dates": [
+        "2021-05-12: 행정명령 14028",
+        "2025-01-16: 행정명령 14144",
+        "2025-06-06: 행정명령 14306 — SBOM FAR 조항 지시 삭제",
+        "2026-01-23: OMB M-26-05 — M-22-18·M-23-16 폐지"
+      ],
+      "applies_to_korean_firms": "미 연방정부에 소프트웨어를 직·간접 납품하는 국내 기업. 민간 발주처·EU CRA·국내 공공 요구는 별개로 유지되므로 SBOM 체계를 해체할 근거는 되지 않는다.",
+      "action_for_firms": "미 연방 조달 계약서에 남은 SSDF 자기증명·SBOM 조항을 계약별로 재확인하되, EU CRA와 국내 공공 요구를 기준으로 SBOM 생성 체계는 유지한다.",
+      "practicality": "개념설명 + 판단기준표",
+      "sources": [
+        {
+          "title": "Executive Order 14306 — Sustaining Select Efforts to Strengthen the Nation's Cybersecurity (2025-06-06)",
+          "url": "https://www.govinfo.gov/app/details/DCPD-202500669",
+          "kind": "primary"
+        },
+        {
+          "title": "OMB Rescinds Biden-Era Software Security Memoranda (M-26-05 해설), Mayer Brown, 2026-02",
+          "url": "https://www.mayerbrown.com/en/insights/publications/2026/02/omb-rescinds-biden-era-software-security-memoranda",
+          "kind": "secondary"
+        },
+        {
+          "title": "OMB Rescinds Secure Software Development Mandate in Favor of a Risk-Based Approach, Wiley",
+          "url": "https://www.wiley.law/alert-OMB-Rescinds-Secure-Software-Development-Mandate-in-Favor-of-a-Risk-Based-Approach",
+          "kind": "secondary"
+        }
+      ],
+      "confidence": "medium",
+      "target_section": "using",
+      "replaces": "content/en/using/_index.md L272 '2021년 5월: 행정명령 14028 발표, 연방 정부 계약자에게 SBOM 제출 의무화'"
+    },
+    {
+      "topic": "CISA 2026 SBOM 최소 요소 — NTIA 2021 대체",
+      "claim": "CISA는 2026-07-29 '2026 Minimum Elements for a Software Bill of Materials (SBOM)'를 발표해 NTIA 2021 최소 요소를 대체했다. 한국 KISA가 공동 저자로 참여했고 구성요소 라이선스(Component License)가 새로 필수 항목이 되었다.",
+      "detail": "버전 이력은 1.0(2021-07-12, NTIA) → 2.0(2025-08-22 초안, 의견수렴 2025-10-03 종료) → 2.1(2026-07-29 최종)이다. CISA·NSA·FBI와 함께 호주 ACSC, 캐나다 Cyber Centre, 프랑스 ANSSI, 독일 BSI, 인도 CERT-In, 이탈리아 ACN, 일본 METI, 네덜란드 NCSC-NL, 뉴질랜드 NCSC-NZ, 폴란드 NASK, 한국 KISA가 공동 저자로 등재됐다. 신설 항목은 SBOM Author Signature, SBOM Data Format Name/Version, SBOM Generation Context, SBOM Tool Name/Version, SBOM Version, Component Hash Value/Algorithm, Component License 10개다. Supplier Name은 Component Producer로, Author of SBOM Data는 SBOM Author로 개명됐고 Access Control 항목은 삭제되어 Distribution and Delivery에 흡수됐다. 적용 범위는 오픈소스·AI 소프트웨어·SaaS를 모두 포함한다.",
+      "effective_dates": [
+        "2021-07-12: NTIA 최소 요소 v1.0",
+        "2025-08-22: CISA 개정 초안 v2.0 공개",
+        "2026-07-29: 최종본 v2.1 발표 — NTIA 2021 대체"
+      ],
+      "applies_to_korean_firms": "SBOM을 생성·요구하는 모든 국내 기업. 강제 규정은 아니지만 KISA가 공동 저자이므로 국내 공공 SBOM 요구사항이 이 문서에 정렬될 가능성이 높다. Component License가 필수가 되면서 SBOM이 보안 문서인 동시에 라이선스 컴플라이언스 문서가 된다.",
+      "action_for_firms": "현재 생성 중인 SBOM이 신설 10개 필드를 채우는지 도구별로 점검한다. 서명·해시·라이선스 식별자(SPDX License Identifier)를 자동 채움할 수 있는지 확인하고, 못 채우는 필드는 '알 수 없음'을 명시적으로 표기한다.",
+      "practicality": "체크리스트 + 판단기준표",
+      "sources": [
+        {
+          "title": "2026 Minimum Elements for a Software Bill of Materials (SBOM), CISA, 2026-07-29",
+          "url": "https://www.cisa.gov/resources-tools/resources/2026-minimum-elements-software-bill-materials-sbom",
+          "kind": "primary"
+        },
+        {
+          "title": "2026 Minimum Elements for a SBOM — PDF 원문",
+          "url": "https://www.cisa.gov/sites/default/files/2026-07/2026_cisa_sbom_minimum_elements_508c.pdf",
+          "kind": "primary"
+        },
+        {
+          "title": "Request for Comment on 2025 Minimum Elements for a SBOM, Federal Register, 2025-08-22",
+          "url": "https://www.federalregister.gov/documents/2025/08/22/2025-16147/request-for-comment-on-2025-minimum-elements-for-a-software-bill-of-materials",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "high",
+      "target_section": "using",
+      "replaces": "content/en/using/_index.md L329-341 'SBOM 최소 요구 사항 — NTIA는 ... 세 가지의 요구 사항을 제시하였다' 및 7개 데이터 필드 표"
+    },
+    {
+      "topic": "AI용 SBOM 최소 요소 (CISA·G7, 2026-05-12)",
+      "claim": "CISA와 G7 파트너가 2026-05-12 'Software Bill of Materials for AI — Minimum Elements'를 발표해 모델·데이터셋·인프라를 포함한 7개 클러스터의 AI BOM 최소 요소를 제시했다.",
+      "detail": "메타데이터, 시스템 수준 속성, 모델, 데이터셋 속성, 인프라, 보안 속성, 핵심성과지표 7개 클러스터로 구성된다. 모델·데이터셋의 제공자와 라이선스, 의존성을 기록하도록 요구하는 점이 기존 SBOM과 다르다. 자발적 지침이며 법적 의무는 아니지만 2026 SBOM 최소 요소 문서가 이를 각주로 참조하고 있어 AI 자산을 SBOM 체계에 편입하는 사실상의 기준이 될 가능성이 있다.",
+      "effective_dates": [
+        "2026-05-12: 발표"
+      ],
+      "applies_to_korean_firms": "AI 모델·데이터셋을 제품에 포함해 출하하는 국내 기업, AI 공급업체에 투명성을 요구해야 하는 발주 기업.",
+      "action_for_firms": "기존 오픈소스 고지·SBOM 프로세스에 모델·데이터셋 항목을 추가할 때 이 문서의 7개 클러스터를 필드 설계 기준으로 삼는다.",
+      "practicality": "체크리스트",
+      "sources": [
+        {
+          "title": "Software Bill of Materials for AI — Minimum Elements, CISA, 2026-05-12",
+          "url": "https://www.cisa.gov/resources-tools/resources/software-bill-materials-ai-minimum-elements",
+          "kind": "primary"
+        },
+        {
+          "title": "SOFTWARE BILL OF MATERIALS FOR AI — Minimum Elements (PDF, BSI 게시본)",
+          "url": "https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/KI/SBOM-for-AI_minimum-elements.pdf?__blob=publicationFile&v=4",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "medium",
+      "target_section": "using",
+      "replaces": ""
+    },
+    {
+      "topic": "미국 FDA — 의료기기 SBOM 법정 의무",
+      "claim": "FDA의 SBOM 요구는 가이던스가 아니라 연방식품의약품화장품법 제524B조라는 법률 근거를 갖고 있어 행정부 정책 변화와 무관하게 유지된다.",
+      "detail": "2022-12-29 서명된 Consolidated Appropriations Act, 2023이 FD&C Act에 제524B조(Ensuring Cybersecurity of Devices)를 신설했고 2023-03-29부터 효력이 발생했다. '사이버 기기' 제조사는 시판 전 제출 시 사이버보안 계획, 패치 가능한 설계, 상용·오픈소스·기성 구성요소를 모두 포함한 기계 판독 가능 SBOM을 제출해야 한다. FDA는 2023년 최종 가이던스, 2024년 Select Updates 초안, 2025-06 최종 가이던스를 거쳐 2026-02 최종 가이던스를 냈으며 2026-02판은 품질시스템 용어를 QMSR로 정비한 것이 주 변경이고 SBOM 요구는 유지된다.",
+      "effective_dates": [
+        "2022-12-29: 제524B조 신설(법률)",
+        "2023-03-29: 제524B조 효력 발생",
+        "2026-02: FDA 최종 가이던스 개정판"
+      ],
+      "applies_to_korean_firms": "미국에 의료기기(소프트웨어 포함)를 시판하려는 국내 제조사. 국내 디지털헬스케어 기업의 미국 진출 시 첫 관문이다.",
+      "action_for_firms": "미국 의료기기 시판 계획이 있으면 제품 설계 초기부터 기계 판독 가능 SBOM과 취약점 공개(CVD) 절차를 QMS에 편입한다.",
+      "practicality": "체크리스트",
+      "sources": [
+        {
+          "title": "Cybersecurity — Medical Devices, U.S. FDA",
+          "url": "https://www.fda.gov/medical-devices/digital-health-center-excellence/cybersecurity",
+          "kind": "primary"
+        },
+        {
+          "title": "Cybersecurity in Medical Devices: QMS Considerations and Content of Premarket Submissions, FDA guidance",
+          "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/cybersecurity-medical-devices-quality-management-system-considerations-and-content-premarket",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "medium",
+      "target_section": "using",
+      "replaces": "content/en/using/_index.md L273 '2023년 9월: FDA, 의료기기 제조업체에 SBOM 제출 요구 발표'"
+    },
+    {
+      "topic": "EU 신 제조물책임지침 (Directive (EU) 2024/2853)",
+      "claim": "EU는 소프트웨어를 '제조물'로 명문화한 신 제조물책임지침을 2024-12-09 발효시켰고 회원국 전환 기한과 적용 개시일이 모두 2026-12-09다. 상업적 활동 밖에서 개발·공급된 오픈소스는 적용 대상에서 제외된다.",
+      "detail": "제4조(1)은 '제조물(product)'에 소프트웨어를 포함시키며 기기 저장·클라우드 접근·서비스 공급 어느 형태든 무관하다. 제2조(2)는 \"This Directive does not apply to free and open-source software that is developed or supplied outside the course of a commercial activity\"라고 규정한다. 다만 전문은 그 오픈소스를 상업 제품에 통합한 제조사는 통합된 소프트웨어의 결함에 책임을 진다고 밝힌다 — CRA의 실사 구조와 같은 논리다. 지침은 2026-12-09 이후 시장에 출시되거나 서비스가 개시된 제조물에 적용된다. 무과실 책임이고 결함 추정 규정이 강화되어 있어 오픈소스 구성요소의 결함이 제품 결함으로 이어지면 완성품 제조사가 민사 책임을 진다.",
+      "effective_dates": [
+        "2024-12-09: 지침 발효",
+        "2026-12-09: 회원국 전환 기한 및 적용 개시"
+      ],
+      "applies_to_korean_firms": "EU 시장에 소프트웨어 또는 소프트웨어 내장 제품을 공급하는 국내 기업. CRA가 행정 규제라면 PLD는 민사 손해배상 경로이므로 리스크 성격이 다르다.",
+      "action_for_firms": "오픈소스 구성요소의 보증·면책 조항이 EU 무과실 책임 앞에서는 방패가 되지 않는다는 전제로 공급계약의 구상권·보험 조항을 재검토한다.",
+      "practicality": "개념설명 + 판단기준표",
+      "sources": [
+        {
+          "title": "Directive (EU) 2024/2853 on liability for defective products, OJ L, 2024/2853, 18.11.2024",
+          "url": "https://eur-lex.europa.eu/eli/dir/2024/2853/oj/eng",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "high",
+      "target_section": "using",
+      "replaces": ""
+    },
+    {
+      "topic": "한국 제조물 책임법 — 소프트웨어 포함 여부",
+      "claim": "한국 제조물 책임법은 여전히 '제조물'을 동산으로 한정해 순수 소프트웨어를 포괄하지 않으며, EU 신 PLD에 맞춘 개정은 논의 단계에 머물러 있다.",
+      "detail": "국내 제조물 책임법상 제조물은 '제조되거나 가공된 동산'이므로 하드웨어에 내장되지 않은 독립 소프트웨어는 원칙적으로 대상이 아니라는 것이 통설이다. EU가 2024-12-09 발효한 신 제조물책임지침이 소프트웨어를 제조물로 명문화하면서 국내에서도 개정 논의가 제기되고 있으나, 2026-07-31 현재 소프트웨어를 제조물에 포함시키는 개정안이 성립했다는 사실은 확인하지 못했다. 국내 기업의 실질적 리스크는 국내법이 아니라 EU 수출 시의 EU 국내법(2026-12-09 이후)에서 먼저 발생한다.",
+      "effective_dates": [],
+      "applies_to_korean_firms": "EU 수출 여부에 따라 노출 정도가 갈린다. 국내 시장 전용 소프트웨어는 현행 국내법상 제조물책임 대상이 아니다.",
+      "action_for_firms": "'소프트웨어는 제조물책임 대상이 아니다'라는 국내 기준 판단을 EU 수출 제품에 그대로 적용하지 않도록 사내 법무 판단 기준을 국가별로 분리한다.",
+      "practicality": "개념설명",
+      "sources": [
+        {
+          "title": "유럽연합 개정 제조물책임지침의 주요 내용과 시사점, KISO저널",
+          "url": "https://journal.kiso.or.kr/?p=13111",
+          "kind": "secondary"
+        },
+        {
+          "title": "개정 EU 제조물 책임지침과 AI 책임지침, 법률신문 뉴스레터",
+          "url": "https://www.lawtimes.co.kr/LawFirm-NewsLetter/201708",
+          "kind": "secondary"
+        }
+      ],
+      "confidence": "low",
+      "target_section": "using",
+      "replaces": ""
+    },
+    {
+      "topic": "ISO/IEC 5230 — 현행 판번호와 개정 진행",
+      "claim": "오픈소스 컴플라이언스 국제표준의 현행판은 여전히 ISO/IEC 5230:2020(OpenChain 2.1 기반)이며, 2025-10-15 시작된 정기 검토가 2026-03-05 종료되면서 개정 대상으로 분류됐으나 새 판은 아직 발행되지 않았다.",
+      "detail": "ISO/IEC 5230:2020은 기업이 고품질 오픈소스 라이선스 컴플라이언스 프로그램을 갖추기 위한 최소 요구사항을 정의한다. ISO 정기 검토(systematic review) 기록상 상태 변경일 2025-10-15, 검토 종료일 2026-03-05로 개정이 예정돼 있으나 2026-07-31 현재 새 판번호나 발행일은 확인되지 않았다. 기업이 지금 인증을 준비한다면 2020년판을 기준으로 삼는 것이 맞다.",
+      "effective_dates": [
+        "2020-12: ISO/IEC 5230:2020 발행",
+        "2026-03-05: 정기 검토 종료(개정 대상 분류)"
+      ],
+      "applies_to_korean_firms": "오픈소스 컴플라이언스 체계를 국제표준에 맞추려는 모든 국내 기업. 자기선언(self-certification) 방식이라 인증기관 심사 비용이 들지 않는다.",
+      "action_for_firms": "2020년판 25개 검증 요구사항을 기준으로 증빙을 준비하되, 개정판 발행 시 재검토가 필요하다는 점을 정책 문서에 주기 조항으로 남긴다.",
+      "practicality": "체크리스트",
+      "sources": [
+        {
+          "title": "ISO/IEC 5230:2020 — Information technology — OpenChain Specification",
+          "url": "https://www.iso.org/standard/81039.html",
+          "kind": "primary"
+        },
+        {
+          "title": "OpenChain ISO/IEC 5230 — License Compliance",
+          "url": "https://openchainproject.org/license-compliance",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "medium",
+      "target_section": "ospo",
+      "replaces": "content/en/using/_index.md L173-177 '지난 2020년 12월, 오픈소스 컴플라이언스에 대한 국제 표준이 ISO에 등록되었다' 블록 및 NIPA OpenChain 해설서 안내 링크"
+    },
+    {
+      "topic": "ISO/IEC 18974 — 오픈소스 보안 보증 표준과 국내 취득 현황",
+      "claim": "ISO/IEC 18974:2023은 5230과 같은 구조·같은 자기선언 방식의 보안 보증 표준이며, 2026-07-31 기준 전 세계 공개 준수 조직 24곳 중 5곳이 한국 기업이다.",
+      "detail": "ISO/IEC 18974:2023(OpenChain Security Assurance Specification)은 2023-12-14 발행됐고 현행 1판이다. 5230이 라이선스 컴플라이언스 프로그램을, 18974가 보안 보증 프로그램을 다루며 둘은 상호 대체가 아니라 보완 관계다. OpenChain 한국 워킹그룹의 2026년 가이드에 따르면 두 표준의 증빙 항목은 각 25개이고 그중 16개가 공통, 18974 고유 항목이 9개다. openchainproject.org 공개 준수 조직 목록(2026-07-31 확인) 기준 ISO/IEC 5230 준수 선언 조직은 157곳, 18974는 24곳이며 18974 목록의 한국 기업은 카카오뱅크·KT·LG전자·에스코어·삼성SDS 5곳이다. 5230 목록에는 삼성전자, 삼성SDS, LG전자, SK텔레콤, 네이버, 카카오, 카카오뱅크, KT, LINE, NCSoft, 한글과컴퓨터, 현대오토에버, 현대모비스, 기아, CJ 계열(CJ CGV·CJ대한통운·CJ올리브영), 텔레칩스, 에스코어 등 25개 항목이 한국 기업으로 확인된다.",
+      "effective_dates": [
+        "2023-12-14: ISO/IEC 18974:2023 발행"
+      ],
+      "applies_to_korean_firms": "이미 5230을 취득했거나 준비 중인 국내 기업. 18974 전 세계 준수 조직의 약 5분의 1이 한국 기업이라는 사실은 국내 기업에 현실적으로 도달 가능한 목표임을 보여준다.",
+      "action_for_firms": "5230 증빙을 이미 갖췄다면 공통 16개 항목을 재사용하고 고유 9개 항목(취약점 대응 절차·보안 담당자·SBOM 등)만 추가해 18974를 순차 취득한다.",
+      "practicality": "체크리스트 + 사례",
+      "sources": [
+        {
+          "title": "ISO/IEC 18974:2023 — OpenChain security assurance specification",
+          "url": "https://www.iso.org/standard/86450.html",
+          "kind": "primary"
+        },
+        {
+          "title": "OpenChain Community of Conformance (준수 조직 목록)",
+          "url": "https://openchainproject.org/community-of-conformance",
+          "kind": "primary"
+        },
+        {
+          "title": "[2026] ISO 표준 기반 기업 오픈소스 관리 가이드, OpenChain Korea Work Group",
+          "url": "https://openchain-project.github.io/OpenChain-KWG/guide/opensource_for_enterprise/",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "high",
+      "target_section": "ospo",
+      "replaces": ""
+    },
+    {
+      "topic": "OpenChain 한국 워킹그룹 2026 가이드 — 기존 NIPA 해설서 대체",
+      "claim": "OpenChain 한국 워킹그룹이 발행한 '[2026] ISO 표준 기반 기업 오픈소스 관리 가이드'가 기존 NIPA OpenChain 해설서와 ISO/IEC 5230 기반 거버넌스 구축 가이드를 통합·대체했다. 원고가 인용 중인 해설서 링크는 갱신 대상이다.",
+      "detail": "이 가이드는 ISO/IEC 5230과 18974의 증빙 항목 50개(각 25개, 공통 16개)를 조직·정책·프로세스·도구·교육·준수 선언 6개 장으로 나눠 설명하고 마지막 장에 'AI 컴플라이언스'를 신설했다. 도구 장에는 cdxgen, Syft, Dependency-Track 등 SBOM 도구 문서가 추가됐다. CC BY 4.0으로 배포되며 2026-06-02 갱신본이 최신이다. 기존 저장소 경로의 해설서 문서는 아카이브(구) 표기로 남아 있다.",
+      "effective_dates": [
+        "2026-03-26: 2026판 공개",
+        "2026-06-02: 최신 갱신"
+      ],
+      "applies_to_korean_firms": "OSPO를 구축하거나 ISO/IEC 5230·18974 자기선언을 준비하는 모든 국내 기업. 한국어 1차 자료다.",
+      "action_for_firms": "사내 오픈소스 정책·프로세스 템플릿의 출처를 이 가이드 2026판으로 교체하고, AI 컴플라이언스 장을 사내 AI 정책 초안의 기준으로 삼는다.",
+      "practicality": "템플릿 + 체크리스트",
+      "sources": [
+        {
+          "title": "[2026] ISO 표준 기반 기업 오픈소스 관리 가이드, OpenChain Korea Work Group",
+          "url": "https://openchain-project.github.io/OpenChain-KWG/guide/opensource_for_enterprise/",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "high",
+      "target_section": "ospo",
+      "replaces": "content/en/ospo/_index.md L198 '[^policy-template]: NIPA의 기업 오픈소스 거버넌스 OpenChain 해설서' 및 L233 process-template 각주 URL"
+    },
+    {
+      "topic": "SPDX — 현행 판번호와 ISO 표준화 상태",
+      "claim": "SPDX의 현행 안정판은 3.0.1(2024-12-17)이고 3.1은 2026-01-24 RC1 단계에 머물러 있다. ISO/IEC 5962:2021은 여전히 SPDX 2.2.1을 담고 있으며 SPDX 3.0을 반영한 ISO/IEC DIS 5962가 진행 중이다.",
+      "detail": "spdx/spdx-spec 릴리스 기록상 v3.0(2024-04-15) → 3.0.1(2024-12-17, 정식) → v3.1-RC1(2026-01-24, prerelease)이다. 2026-07-31 기준 3.1 정식 릴리스는 없다. 따라서 원고의 'SPDX 3.0은 도구 지원이 제한적이므로 2.3을 권장한다'는 서술은 판번호를 갱신하고 결론도 재검토해야 한다 — 3.0.1이 나온 지 1년 반이 지났다. ISO 측면에서는 ISO/IEC 5962:2021이 SPDX 2.2.1 기반으로 여전히 유효하고 SPDX 3.0을 담은 ISO/IEC DIS 5962가 DIS 단계에 있다. 발행 시점은 확인하지 못했다.",
+      "effective_dates": [
+        "2021-09: ISO/IEC 5962:2021(SPDX 2.2.1) 발행",
+        "2024-04-15: SPDX 3.0 릴리스",
+        "2024-12-17: SPDX 3.0.1 릴리스(현행 안정판)",
+        "2026-01-24: SPDX 3.1-RC1(정식 릴리스 아님)"
+      ],
+      "applies_to_korean_firms": "SBOM 포맷을 표준화하려는 모든 국내 기업. 발주처가 '국제표준 SBOM'을 요구할 때 그것이 ISO/IEC 5962:2021(=SPDX 2.2.1)인지 SPDX 3.x인지 확인해야 한다.",
+      "action_for_firms": "당분간 SPDX 2.3과 3.0.1을 모두 출력할 수 있게 도구를 구성하고, 발주처 요구 포맷을 계약 단계에서 판번호까지 명시해 받는다.",
+      "practicality": "판단기준표",
+      "sources": [
+        {
+          "title": "Releases — spdx/spdx-spec (GitHub)",
+          "url": "https://github.com/spdx/spdx-spec/releases",
+          "kind": "primary"
+        },
+        {
+          "title": "SPDX Specification 3.0.1",
+          "url": "https://spdx.github.io/spdx-spec/v3.0.1/",
+          "kind": "primary"
+        },
+        {
+          "title": "ISO/IEC 5962:2021 — SPDX Specification V2.2.1",
+          "url": "https://www.iso.org/standard/81870.html",
+          "kind": "primary"
+        },
+        {
+          "title": "ISO/IEC DIS 5962 — SPDX Specification V3.0",
+          "url": "https://www.iso.org/standard/93810.html",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "high",
+      "target_section": "using",
+      "replaces": "content/en/using/_index.md L388, L408 'SPDX 표준은 2024년 4월에 3.0 버전이 릴리즈되었다 ... 현재로서는 SPDX 2.3 사용을 권장한다'"
+    },
+    {
+      "topic": "CycloneDX — ECMA-424 2판 표준화",
+      "claim": "CycloneDX 1.7이 2025-10-21 릴리스되어 2025년 12월 ECMA-424 2판으로 채택됐다. CycloneDX는 이제 SPDX와 마찬가지로 공식 표준 지위를 갖는다.",
+      "detail": "CycloneDX 1.6이 2024년 6월 ECMA-424 1판으로 채택된 데 이어, 1.7(2025-10-21 릴리스, 패치 1.7.1은 2026-06-02)이 Ecma Technical Committee 54를 거쳐 2025년 12월 총회에서 ECMA-424 2판으로 채택됐다. 1.7은 암호자산(cryptographic assets) 레지스트리, 인용(citations), 특허, 배포 제약(TLP), 라이선스 선택 구조 재설계 등을 추가했다. 원고의 'SPDX가 국제 표준이므로 우선 지원을 권장한다'는 근거는 이제 성립하지 않으며, 두 포맷 모두 표준 지위를 갖는다는 전제로 선택 기준을 다시 세워야 한다.",
+      "effective_dates": [
+        "2024-06: ECMA-424 1판(CycloneDX 1.6) 채택",
+        "2025-10-21: CycloneDX 1.7 릴리스",
+        "2025-12: ECMA-424 2판(CycloneDX 1.7) 채택",
+        "2026-06-02: CycloneDX 1.7.1 패치"
+      ],
+      "applies_to_korean_firms": "SBOM 포맷을 선택해야 하는 모든 국내 기업. 특히 취약점(VEX)·암호자산 정보를 함께 담아야 하는 기업은 CycloneDX가 유리하다.",
+      "action_for_firms": "'국제표준이므로 SPDX' 논리 대신 용도별 선택 기준(라이선스 컴플라이언스 중심→SPDX, 취약점·VEX·암호자산 중심→CycloneDX)으로 사내 SBOM 표준을 재정의하고 양방향 변환 경로를 확보한다.",
+      "practicality": "판단기준표",
+      "sources": [
+        {
+          "title": "ECMA-424 CycloneDX Bill of materials specification, 2nd Edition, December 2025",
+          "url": "https://ecma-international.org/wp-content/uploads/ECMA-424_2nd_edition_december_2025.pdf",
+          "kind": "primary"
+        },
+        {
+          "title": "ECMA-424 standard page, Ecma International",
+          "url": "https://ecma-international.org/publications-and-standards/standards/ecma-424/",
+          "kind": "primary"
+        },
+        {
+          "title": "Releases — CycloneDX/specification (GitHub)",
+          "url": "https://github.com/CycloneDX/specification/releases",
+          "kind": "primary"
+        },
+        {
+          "title": "CycloneDX v1.7 Released",
+          "url": "https://cyclonedx.org/news/cyclonedx-v1.7-released/",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "high",
+      "target_section": "using",
+      "replaces": "content/en/using/_index.md L384 '하나의 포맷을 선택해야 한다면 국제 표준인 SPDX를 먼저 지원하는 것을 권장한다'"
+    },
+    {
+      "topic": "국내 SW 공급망 보안 강화 로드맵 (2026-06-24)",
+      "claim": "과기정통부와 국정원이 2026-06-24 'AI 일상화 시대를 준비하는 SW 공급망 보안 강화 로드맵'을 발표해 공공 조달·보안적합성 검증에 SBOM 제출을 단계적으로 요구하기 시작했다. 2024년 가이드라인 1.0 이후 최대의 정책 진전이다.",
+      "detail": "로드맵은 3대 전략 9개 과제(공급망 위협 예방 역량 강화, 신속한 탐지·대응 체계, 정책·제도 기반 조성)로 구성되며 2026년도 공급망 보안 워크숍(2026-06-24~25)에서 공식 발표됐다. 보도된 단계별 일정은 ① 2026년 보안적합성 검증에 SBOM 제출 및 안전한 개발 방법론 준수 여부 확인 반영, ② 2027년 공공 정보시스템 구축·운영 사업의 보안 요구사항에 SBOM 제출과 취약점 대응 절차 반영, 보안기능 시험 신청 SW 제품 대상 SBOM 생성·검증체계 실증, 'Software Supply-Chain Security Verified' 시범인증 개시, ③ 2028년 외교·안보·국방 등 주요 기관 납품 시 체크리스트 우선 적용 및 국가 취약점 DB 구축이다. 정부는 공공 도입 SW의 SBOM 제출을 2027년까지 제도화하겠다고 밝혔다. 로드맵 원문 PDF는 KISA 게시판에 있으나 본문을 직접 확인하지 못해 연도별 세부 일정은 2차 출처 기준이다.",
+      "effective_dates": [
+        "2024-05-13: 'SW 공급망 보안 가이드라인 1.0' 발표",
+        "2026-06-24: 'SW 공급망 보안 강화 로드맵' 발표",
+        "2026년: 보안적합성 검증에 SBOM 제출 반영(예정)",
+        "2027년: 공공 정보화사업 보안 요구사항에 SBOM 반영, 시범인증 개시(예정)",
+        "2028년: 주요 기관 납품 체크리스트 우선 적용(예정)"
+      ],
+      "applies_to_korean_firms": "공공 정보화사업 수주 기업, 공공기관에 SW·정보통신 제품을 납품하는 기업, 보안적합성 검증·보안기능 시험 대상 제품을 가진 기업, 그리고 이들의 하위 협력사.",
+      "action_for_firms": "① 공공 수주 제품 계열에 대해 2026년 안에 SBOM 자동 생성 파이프라인을 확보한다. ② 하위 협력사 계약서에 SBOM 제출 조항과 포맷·판번호를 명시한다. ③ 취약점 접수·대응 절차를 문서화해 보안 요구사항 증빙으로 쓸 수 있게 한다.",
+      "practicality": "단계별 기한표 + 계약 조항 템플릿",
+      "sources": [
+        {
+          "title": "SW 공급망 보안 강화 로드맵 발표(2026.06.), 과기정통부·KISA·국정원, 2026-06-24",
+          "url": "https://www.kisa.or.kr/2060204/form?postSeq=24&page=1",
+          "kind": "primary"
+        },
+        {
+          "title": "SW 공급망 보안 가이드라인 1.0(전체본·요약본), 2024-05-13",
+          "url": "https://www.kisa.or.kr/2060204/form?postSeq=15&page=1",
+          "kind": "primary"
+        },
+        {
+          "title": "공공 소프트웨어 납품 때 '성분표' 낸다…정부, 내년부터 단계 적용, 뉴시스, 2026-06-24",
+          "url": "https://www.newsis.com/view/NISX20260624_0003682005",
+          "kind": "secondary"
+        },
+        {
+          "title": "2026년은 SW 공급망 보안 패러다임 전환의 해, 데이터넷, 2026-01-28",
+          "url": "https://www.datanet.co.kr/news/articleView.html?idxno=208920",
+          "kind": "secondary"
+        }
+      ],
+      "confidence": "medium",
+      "target_section": "using",
+      "replaces": "content/en/using/_index.md L300-322 '국내 SBOM 규제 동향' 절 전체(2024년 하반기 계획 중심 서술)"
+    },
+    {
+      "topic": "국내 인공지능 기본법 시행 — 오픈소스 예외 없음",
+      "claim": "'인공지능 발전과 신뢰 기반 조성 등에 관한 기본법'(법률 제20676호)이 2026-01-22 시행됐다. EU AI Act와 달리 오픈소스 예외 조항이 없고 정부는 최소 1년 이상의 계도기간을 운영한다.",
+      "detail": "2025-01-21 공포, 2026-01-22 시행이며 시행령(대통령령 제36053호)도 같은 날 시행됐다. 적용 제외는 '국방 또는 국가안보 목적으로만 개발·이용되는 인공지능'뿐이어서 EU AI Act 제2조(12)와 같은 오픈소스 라이선스 기반 예외는 존재하지 않는다. 고영향 AI와 생성형 AI에 대한 사업자 의무(고지, 안전성·신뢰성 확보 조치 등)가 핵심이며, 과기정통부는 사실조사·과태료 부과에 대해 최소 1년 이상 규제 적용을 유예하는 계도기간을 운영한다고 밝혔다. 국내 기업이 오픈 웨이트 모델을 활용하더라도 '오픈소스라서 규제 대상이 아니다'라는 논리는 국내법에서는 성립하지 않는다.",
+      "effective_dates": [
+        "2025-01-21: 공포(법률 제20676호)",
+        "2026-01-22: 법·시행령 시행",
+        "2027년경까지: 계도기간(최소 1년 이상)"
+      ],
+      "applies_to_korean_firms": "국내에서 AI 시스템을 개발·제공·이용하는 기업 전반. 오픈소스 모델 활용 기업도 예외가 아니다.",
+      "action_for_firms": "사내 AI 정책에서 'EU AI Act 오픈소스 예외'와 '국내 AI 기본법'을 분리해 기술하고, 오픈 웨이트 모델 사용도 국내법상 사업자 의무 대상임을 명시한다.",
+      "practicality": "판단기준표",
+      "sources": [
+        {
+          "title": "인공지능 발전과 신뢰 기반 조성 등에 관한 기본법, 국가법령정보센터",
+          "url": "https://www.law.go.kr/lsInfoP.do?lsiSeq=268543",
+          "kind": "primary"
+        },
+        {
+          "title": "인공지능 발전과 신뢰 기반 조성 등에 관한 기본법 시행령, 국가법령정보센터",
+          "url": "https://www.law.go.kr/LSW/lsInfoP.do?efYd=20260122&lsiSeq=282879",
+          "kind": "primary"
+        },
+        {
+          "title": "AI 기본법 시행과 그 시사점, 법무법인 세종",
+          "url": "https://www.shinkim.com/kor/media/newsletter/3114",
+          "kind": "secondary"
+        }
+      ],
+      "confidence": "medium",
+      "target_section": "using",
+      "replaces": ""
+    },
+    {
+      "topic": "국가 사이버안보 기본계획 — 이미 수립 완료",
+      "claim": "원고가 '2025년 수립 예정'으로 적은 국가 사이버안보 기본계획은 2024-09-01 국가안보실이 14개 부처와 함께 100대 실천과제로 이미 발표했다.",
+      "detail": "2024-09-01 국가안보실이 발표한 '국가 사이버안보 기본계획'은 국가 사이버안보 전략(2024-02)의 이행계획으로 14개 부처가 참여해 100대 실천과제를 담았다. 소프트웨어 공급망 보안은 이 계획의 과제 중 하나로 편입되어 있으며 2026년 SW 공급망 보안 강화 로드맵이 그 후속 실행 문서에 해당한다.",
+      "effective_dates": [
+        "2024-02: 국가 사이버안보 전략 발표",
+        "2024-09-01: 국가 사이버안보 기본계획 발표(100대 실천과제)"
+      ],
+      "applies_to_korean_firms": "공공 부문 대상 사업을 하는 국내 기업. 직접 의무는 아니나 후속 조달 요구의 상위 근거 문서다.",
+      "action_for_firms": "원고의 '예정' 서술을 '발표됨'으로 바꾸고 후속 문서인 2026 로드맵으로 참조를 옮긴다.",
+      "practicality": "개념설명",
+      "sources": [
+        {
+          "title": "안보실, 사이버안보 기본계획 발표…'선제 대응력' 방점, 뉴스1, 2024-09-01",
+          "url": "https://www.news1.kr/politics/president/5527847",
+          "kind": "secondary"
+        }
+      ],
+      "confidence": "medium",
+      "target_section": "using",
+      "replaces": "content/en/using/_index.md L835 '2025년: 국가 사이버보안 기본계획 수립 예정'"
+    },
+    {
+      "topic": "EU NIS2 지침 — 이행 지연과 2026년 상황",
+      "claim": "NIS2 국내법 전환 기한(2024-10-17)은 대부분의 회원국이 지키지 못했고 2026-07-08 집행위가 아일랜드·스페인·프랑스·네덜란드를 EU 사법재판소에 회부했다. 회원국별 시행 시점이 다르다는 점이 실무의 핵심이다.",
+      "detail": "전환 기한인 2024-10-17까지 완료한 회원국은 벨기에·크로아티아·이탈리아·리투아니아 4곳뿐이었고 집행위는 2024-11-28 23개 회원국에 대해 위반 절차를 개시했다. 2026년 5월 기준 22개국이 전환 입법을 채택했고 2026-07-08 집행위는 아일랜드·스페인·프랑스·네덜란드를 CJEU에 회부했다. NIS2는 규정이 아니라 지침이므로 국내 기업이 실제로 마주하는 의무는 각 회원국 국내법이며 같은 EU 안에서도 적용 시점과 세부 요구가 다르다.",
+      "effective_dates": [
+        "2024-10-17: 회원국 국내법 전환 기한",
+        "2024-11-28: 23개국 대상 위반 절차 개시",
+        "2026-07-08: 아일랜드·스페인·프랑스·네덜란드 CJEU 회부"
+      ],
+      "applies_to_korean_firms": "EU 역내 법인을 두고 필수·중요 부문(에너지·운송·금융·디지털 인프라·ICT 서비스 관리 등)에 해당하거나 그 공급자로 지정되는 국내 기업.",
+      "action_for_firms": "EU 사업장이 있는 회원국별로 NIS2 국내법 시행일과 등록 의무 여부를 개별 확인한다. 'EU 전체 2024-10-17 시행'으로 정리하면 실제 기한을 놓친다.",
+      "practicality": "판단기준표",
+      "sources": [
+        {
+          "title": "Commission calls on 23 Member States to fully transpose NIS2 Directive, European Commission",
+          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-calls-23-member-states-fully-transpose-nis2-directive",
+          "kind": "primary"
+        },
+        {
+          "title": "NIS2 Directive Transposition Tracker, ECSO",
+          "url": "https://ecs-org.eu/policy/nis2-directive-transposition-tracker/",
+          "kind": "secondary"
+        }
+      ],
+      "confidence": "medium",
+      "target_section": "using",
+      "replaces": "content/en/using/_index.md L817 '2024년 10월: NIS2 지침 이행 기한'"
+    },
+    {
+      "topic": "비오픈소스 라이선스 전환 흐름 — 2024~2026년 되돌림",
+      "claim": "2023~2024년 BSL·SSPL 전환 물결은 2024~2025년 AGPLv3 복귀로 일부 되돌려졌다. Elastic이 2024-08, Redis가 2025-05-01 Redis 8부터 AGPLv3를 추가했지만 그 사이 생긴 포크(Valkey·OpenSearch·OpenTofu)는 그대로 남아 기업은 이중 생태계를 관리해야 한다.",
+      "detail": "Redis는 2024-03 BSD에서 RSALv2/SSPLv1 이중 라이선스로 전환했고 AWS·Google이 Valkey를 포크했다. 2025-05-01 Redis는 OSI 승인 라이선스인 AGPLv3를 Redis 8부터 추가 선택지로 도입했다(Redis Stack 기능도 AGPL로 코어에 통합). Elastic은 2024-08 SSPL·ELv2에 더해 AGPLv3를 세 번째 선택지로 추가했으나 OpenSearch 포크는 유지된다. HashiCorp는 2023-08 Terraform을 MPL 2.0에서 BSL 1.1로 전환했고 커뮤니티는 OpenTofu로 포크했으며 IBM의 HashiCorp 인수 완료 후에도 포크는 존속한다. Sentry는 FSL(Functional Source License)을 중심으로 'fair source' 범주를 제안했다. RedMonk의 2026-03 분석은 BSL·SSPL 계열이 전체 라이선스 분포에서는 통계적으로 유의미하지 않을 만큼 드물지만 그 라이선스를 쓰는 프로젝트의 전략적 중요도 때문에 영향이 크다고 정리한다.",
+      "effective_dates": [
+        "2023-08: HashiCorp Terraform BSL 1.1 전환 → OpenTofu 포크",
+        "2024-03: Redis RSALv2/SSPLv1 전환 → Valkey 포크",
+        "2024-08: Elastic AGPLv3 추가",
+        "2025-05-01: Redis 8부터 AGPLv3 추가"
+      ],
+      "applies_to_korean_firms": "인프라 오픈소스(캐시·검색·IaC·DB)를 제품이나 사내 플랫폼에 넣은 모든 국내 기업. 특히 SaaS 형태로 서비스하는 기업은 AGPLv3 복귀가 SSPL보다 낫지만 여전히 네트워크 배포 시 소스 공개 의무를 발생시킨다는 점에서 무조건 안전해진 것이 아니다.",
+      "action_for_firms": "① 사내 오픈소스 목록에 '라이선스 변경 이력' 필드를 추가하고 버전별 라이선스를 기록한다. ② 라이선스 변경 시 대응 절차(버전 고정 → 포크 전환 검토 → 상용 계약 검토 → 제거)를 문서화한다. ③ AGPLv3 복귀 프로젝트는 'OSI 승인'을 이유로 자동 승인하지 말고 SaaS 소스 공개 의무를 별도 심사한다.",
+      "practicality": "프로세스 절차 + 판단기준표",
+      "sources": [
+        {
+          "title": "Redis is now available under the AGPLv3 open source license, Redis, 2025-05-01",
+          "url": "https://redis.io/blog/agplv3/",
+          "kind": "primary"
+        },
+        {
+          "title": "The State of Open Source Licensing in 2026, RedMonk, 2026-03-25",
+          "url": "https://redmonk.com/sogrady/2026/03/25/open-source-licensing-2026/",
+          "kind": "secondary"
+        },
+        {
+          "title": "Moving Away From Open Source: Trends in Source-Available Licensing, Goodwin",
+          "url": "https://www.goodwinlaw.com/en/insights/publications/2024/09/insights-practices-moving-away-from-open-source-trends-in-licensing",
+          "kind": "secondary"
+        }
+      ],
+      "confidence": "medium",
+      "target_section": "using",
+      "replaces": ""
+    },
+    {
+      "topic": "라이선스 전환 대응 절차 — 기업 실무 산출물",
+      "claim": "라이선스 전환은 사건이 아니라 반복되는 리스크이므로 기업은 사후 대응이 아니라 상시 감시 절차로 다뤄야 한다.",
+      "detail": "라이선스 변경은 대개 특정 버전부터 적용되므로 변경 이전 버전을 계속 쓰면 기존 라이선스가 유지된다. 따라서 대응의 첫 단계는 '즉시 제거'가 아니라 '버전 고정 후 유예기간 확보'다. 그다음 (a) 커뮤니티 포크로 이전, (b) 상용 라이선스 계약, (c) 대체 기술 전환, (d) 소스 공개 수용 중 하나를 선택한다. BSL은 통상 3~4년 후 오픈소스로 자동 전환되는 조항이 있어 시점에 따라 판단이 달라지고, SSPL은 서비스 형태 제공 시 관리 소프트웨어 전체 공개를 요구하므로 SaaS 사업자에게 사실상 사용 불가에 가깝다.",
+      "effective_dates": [],
+      "applies_to_korean_firms": "오픈소스를 제품·서비스에 포함하는 모든 국내 기업.",
+      "action_for_firms": "오픈소스 승인 대장에 라이선스 변경 감시 대상(인프라 계열, 단일 벤더 주도 프로젝트)을 표시하고 분기 단위로 라이선스 파일 변경을 자동 점검한다.",
+      "practicality": "프로세스 절차 + 체크리스트",
+      "sources": [
+        {
+          "title": "Business Source License (BSL 1.1): Requirements, Provisions, and History, FOSSA",
+          "url": "https://fossa.com/blog/business-source-license-requirements-provisions-history/",
+          "kind": "secondary"
+        },
+        {
+          "title": "Open Source Initiative (SSPL 승인 거부 관련)",
+          "url": "https://opensource.org/",
+          "kind": "secondary"
+        }
+      ],
+      "confidence": "medium",
+      "target_section": "using",
+      "replaces": ""
+    },
+    {
+      "topic": "규제 지형 요약 — 2026년 기업이 실제로 맞는 기한",
+      "claim": "2026~2028년 국내 기업이 실제로 맞는 오픈소스·공급망 규제 기한은 여섯 개다: 2026-08-02(AI Act 투명성), 2026-09-11(CRA 보고), 2026-12-09(EU PLD), 2027-12-02(AI Act 고위험), 2027-12-11(CRA 전면), 2028-08-02(AI Act 내장형 고위험).",
+      "detail": "원고의 규제 절은 국가별 나열식이라 독자가 '언제까지 무엇을 해야 하는지' 판단하기 어렵다. 2026 개정판에서는 국가별 나열 대신 기한 순 표로 재구성하는 것이 실용적이다. 국내 일정(보안적합성 검증 SBOM 2026, 공공 정보화사업 보안 요구사항 2027, 주요 기관 체크리스트 2028)을 같은 표에 병기하면 EU·국내 기한이 겹치는 구간이 드러난다.",
+      "effective_dates": [
+        "2026-08-02: EU AI Act 제50조 투명성 의무",
+        "2026-09-11: EU CRA 제14조 보고 의무",
+        "2026-12-09: EU 제조물책임지침 적용 개시",
+        "2027-12-02: EU AI Act Annex III 고위험",
+        "2027-12-11: EU CRA 전면 적용",
+        "2028-08-02: EU AI Act Annex I 내장형 고위험"
+      ],
+      "applies_to_korean_firms": "EU 수출 기업과 공공 조달 참여 기업 모두.",
+      "action_for_firms": "사내 컴플라이언스 캘린더에 위 6개 EU 기한과 국내 3개 단계를 등록하고 각 기한별 책임 조직을 지정한다.",
+      "practicality": "단계별 기한표",
+      "sources": [
+        {
+          "title": "Regulation (EU) 2024/2847 (Cyber Resilience Act)",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng",
+          "kind": "primary"
+        },
+        {
+          "title": "Regulation (EU) 2024/1689 (AI Act)",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+          "kind": "primary"
+        },
+        {
+          "title": "Regulation (EU) 2026/1744 (Digital Omnibus on AI)",
+          "url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng",
+          "kind": "primary"
+        },
+        {
+          "title": "Directive (EU) 2024/2853",
+          "url": "https://eur-lex.europa.eu/eli/dir/2024/2853/oj/eng",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "high",
+      "target_section": "using",
+      "replaces": "content/en/using/_index.md L841-846 '국가/지역 | 주요 정책/규제 | 시행/예정 시기' 표"
+    }
+  ],
+  "stale_items": [
+    {
+      "quote": "2027년: 대부분의 조항 시행 예정, 디지털 요소가 있는 제품을 시장에 출시하는 모든 기업은 최소한의 사이버보안 및 보고 요구사항 준수 필요",
+      "reason": "연도만 있어 기업이 행동할 수 없다. CRA는 2026-06-11 / 2026-09-11 / 2027-12-11 3단계로 적용되며 기업이 먼저 맞는 기한은 2026-09-11이다.",
+      "suggested_fix": "'2026-06-11 적합성평가기관 통보(Chapter IV) → 2026-09-11 제조사 보고 의무(제14조) → 2027-12-11 전면 적용' 3단계 표로 교체한다."
+    },
+    {
+      "quote": "2024년: 최종 법안 채택",
+      "reason": "CRA는 Regulation (EU) 2024/2847로 확정되어 2024-12-10 발효했다. '채택'에서 멈춘 서술은 낡았다.",
+      "suggested_fix": "'2024-11-20 관보 게재, 2024-12-10 발효(Regulation (EU) 2024/2847)'로 대체하고 EUR-Lex 원문 링크를 각주로 단다."
+    },
+    {
+      "quote": "2021년 5월: 행정명령 14028 발표, 연방 정부 계약자에게 SBOM 제출 의무화",
+      "reason": "EO 14306(2025-06-06)이 SBOM FAR 조항 신설 지시를 삭제했고 OMB M-26-05(2026-01-23)가 M-22-18·M-23-16을 폐지해 SBOM·증명 요구가 기관 재량이 되었다. '의무화'는 현재 사실이 아니다.",
+      "suggested_fix": "'2021-05 EO 14028로 시작된 연방 SBOM 요구는 EO 14306(2025-06-06)과 OMB M-26-05(2026-01-23)를 거쳐 기관 재량으로 후퇴했다. 반면 CISA는 2026-07-29 SBOM 최소 요소를 개정·강화했다'로 대체한다."
+    },
+    {
+      "quote": "NTIA(National Telecommunications and Information Administration)는 라이선스 및 보안취약점 관리를 위해 SBOM이 갖춰야 할 다음 세 가지의 요구 사항을 제시하였다",
+      "reason": "CISA가 2026-07-29 '2026 Minimum Elements for a Software Bill of Materials (SBOM)'를 발표해 NTIA 2021 문서를 명시적으로 대체했다. 데이터 필드 7개도 17개로 재편됐다.",
+      "suggested_fix": "출처를 CISA 2026판으로 교체하고 데이터 필드 표를 Appendix A의 17개 필드로 갱신한다. Component License가 새로 필수라는 점을 라이선스 컴플라이언스 절과 연결한다."
+    },
+    {
+      "quote": "SPDX 표준은 2024년 4월에 3.0 버전이 릴리즈되었다. 하지만, 이 문서에서는 SPDX 3.0에 대해 간단히 소개하고, 주요 내용은 현재 널리 사용되고 있는 SPDX 2.3 기준으로 소개하고자 한다.",
+      "reason": "현행 안정판은 3.0.1(2024-12-17)이고 3.1-RC1이 2026-01-24에 나왔다. 판번호와 권고가 모두 낡았다.",
+      "suggested_fix": "'현행 안정판은 SPDX 3.0.1(2024-12), 3.1은 2026-01 RC 단계'로 갱신하고 ISO/IEC 5962:2021은 여전히 SPDX 2.2.1 기반이며 SPDX 3.0 반영판(ISO/IEC DIS 5962)이 진행 중임을 병기한다."
+    },
+    {
+      "quote": "하나의 포맷을 선택해야 한다면 국제 표준인 SPDX를 먼저 지원하는 것을 권장한다.",
+      "reason": "CycloneDX도 ECMA-424(1판 2024-06, 2판 2025-12)로 국제 표준 지위를 확보해 '국제 표준이므로 SPDX' 논리가 성립하지 않는다.",
+      "suggested_fix": "용도 기준 선택으로 바꾼다 — 라이선스 컴플라이언스 중심이면 SPDX, 취약점·VEX·암호자산 중심이면 CycloneDX, 양방향 변환 확보를 권고."
+    },
+    {
+      "quote": "지난 2020년 12월, 오픈소스 컴플라이언스에 대한 국제 표준이 ISO에 등록되었다.",
+      "reason": "표준 자체는 유효하나 '2020년 12월' 시점 서술만 남아 있고 보안 보증 표준 ISO/IEC 18974:2023의 존재, 국내 취득 현황, 정기 검토(2026-03-05 종료) 사실이 빠져 있다.",
+      "suggested_fix": "ISO/IEC 5230:2020과 ISO/IEC 18974:2023을 함께 소개하고 공개 준수 조직 수(5230 157곳, 18974 24곳)와 국내 기업 목록을 넣는다."
+    },
+    {
+      "quote": "[^policy-template]:  NIPA의 기업 오픈소스 거버넌스 OpenChain 해설서 : https://openchain-project.github.io/OpenChain-KWG/guide/nipa_openchain/appendix/1-policy-template/",
+      "reason": "OpenChain 한국 워킹그룹이 '[2026] ISO 표준 기반 기업 오픈소스 관리 가이드'로 통합·대체했고 기존 문서는 아카이브 표기로 남았다.",
+      "suggested_fix": "각주 URL을 https://openchain-project.github.io/OpenChain-KWG/guide/opensource_for_enterprise/ 로 교체하고 문서명을 '[2026] ISO 표준 기반 기업 오픈소스 관리 가이드'로 바꾼다. process-template 각주도 동일 처리."
+    },
+    {
+      "quote": "2025년: '국가 사이버보안 기본계획' 수립 예정",
+      "reason": "국가안보실이 2024-09-01 '국가 사이버안보 기본계획'(100대 실천과제)을 이미 발표했다. 명칭도 '사이버보안'이 아니라 '사이버안보'다.",
+      "suggested_fix": "'2024-09-01 국가안보실, 국가 사이버안보 기본계획 발표(14개 부처 100대 실천과제)'로 교체하고 후속 문서인 2026-06-24 SW 공급망 보안 강화 로드맵으로 연결한다."
+    },
+    {
+      "quote": "2024년 하반기: 산·학·연 전문가 참여 범정부 합동TF 구성 / 'SW 공급망 보안 로드맵' 마련 계획 발표",
+      "reason": "로드맵은 계획 단계를 지나 2026-06-24 'AI 일상화 시대를 준비하는 SW 공급망 보안 강화 로드맵'으로 실제 발표됐다.",
+      "suggested_fix": "'2026-06-24 과기정통부·국정원, SW 공급망 보안 강화 로드맵 발표 — 2026년 보안적합성 검증 SBOM 반영, 2027년 공공 정보화사업 보안 요구사항 반영, 2028년 주요 기관 체크리스트 우선 적용'으로 교체한다."
+    },
+    {
+      "quote": "현재는 의무화 단계까지는 이르지 않았지만, 점진적인 접근을 통해 제도화를 준비하고 있는 상황이다.",
+      "reason": "2026 로드맵이 공공 조달·보안적합성 검증에 SBOM 제출을 단계 적용하기 시작했고 정부가 2027년까지 제도화를 명시했다.",
+      "suggested_fix": "'2026년부터 보안적합성 검증에 SBOM 제출이 반영되기 시작했고 정부는 2027년까지 공공 도입 SW의 SBOM 제출 제도화를 목표로 한다'로 갱신한다."
+    },
+    {
+      "quote": "2024년: 'EU 사이버보안법(Cybersecurity Act)' 개정 예정 / 오픈소스 소프트웨어의 보안 인증 체계 도입",
+      "reason": "2026-07-31 현재 해당 개정으로 오픈소스 보안 인증 체계가 도입됐다는 사실을 확인하지 못했다. CRA 제25조가 FOSS 자발적 보안 인증 프로그램의 위임법 근거를 두었으나 아직 채택 전이다.",
+      "suggested_fix": "이 항목을 삭제하고 'CRA 제25조가 FOSS 자발적 보안 인증(security attestation) 프로그램의 위임법 근거를 두었으며 2026-07 현재 미채택'이라는 쟁점 서술로 대체한다."
+    },
+    {
+      "quote": "2024년 10월: NIS2 지침 이행 기한 / 주요 기반시설 운영자의 오픈소스 소프트웨어 보안 관리 강화 요구",
+      "reason": "기한은 맞으나 대부분 회원국이 지키지 못했고 2026-07-08 집행위가 4개국을 CJEU에 회부한 상태다. 회원국별 시행 시점이 다르다는 실무 정보가 빠져 있다.",
+      "suggested_fix": "'2024-10-17 전환 기한 / 2024-11-28 23개국 위반 절차 개시 / 2026-07-08 아일랜드·스페인·프랑스·네덜란드 CJEU 회부'로 보완하고 지침이므로 회원국별 국내법을 확인해야 한다는 실무 주의를 덧붙인다."
+    },
+    {
+      "quote": "2024년~2025년: 의료, 국방, 제조 등 특정 산업 분야에 대한 오픈소스 보안 정책 수립 예정",
+      "reason": "이미 지나간 예측이며 2026-07-31 현재 산업별 정책의 성립 여부를 확인하지 못했다.",
+      "suggested_fix": "확인되지 않은 예측 서술을 삭제하고 확인된 사실(2026 로드맵의 2028년 외교·안보·국방 등 주요 기관 체크리스트 우선 적용)로 대체한다."
+    },
+    {
+      "quote": "2024년: '소프트웨어 관리 가이드라인' 발표 예정 (일본)",
+      "reason": "지나간 예측이며 발표 여부를 확인하지 못했다. 다만 일본 METI는 CISA 2026 SBOM 최소 요소의 공동 저자로 참여했다.",
+      "suggested_fix": "예측 서술을 삭제하고 '일본 METI가 CISA 2026 SBOM 최소 요소 공동 저자로 참여'라는 확인된 사실로 대체한다."
+    }
+  ],
+  "checklist_unconfirmed": [
+    "ISO/IEC 5230 개정판의 판번호·발행 예정일 — 정기 검토가 2026-03-05 종료되며 '개정 대상'으로 분류된 것까지만 확인했고, iso.org가 봇 차단(Cloudflare)이라 단계 코드와 발행 일정을 1차 확인하지 못했다.",
+    "ISO/IEC DIS 5962(SPDX 3.0)의 현재 단계 코드와 발행 예정일 — DIS 단계라는 2차 정보만 확보했다.",
+    "ISO/IEC 5230 자기선언의 국내 취득 기업 전수 — openchainproject.org 공개 목록(5230 157곳 / 18974 24곳)만 확인했고, 비공개 취득 기업은 구조상 확인 불가하다.",
+    "국내 공공조달 SBOM 요구의 법적 근거 조문 — 'SW 공급망 보안 강화 로드맵' PDF 본문을 내려받지 못해(KISA 첨부 다운로드가 JS 기반) 연도별 세부 일정은 2차 출처 기준이다.",
+    "소프트웨어진흥법의 오픈소스·공급망 보안 관련 조항 유무와 최근 개정 시행일 — law.go.kr 검색 인터페이스에서 조문 본문에 도달하지 못했다.",
+    "CRA 하모나이즈드 표준(harmonised standards) 제정 현황 — CEN/CENELEC 표준화 요청의 진행 상태와 발행 예정 시점을 확인하지 못했다. 2027-12-11 적합성 추정(presumption of conformity) 확보에 직결되는 정보다.",
+    "CRA 제25조 FOSS 자발적 보안 인증(security attestation) 위임법의 채택 여부·일정 — 근거 조항만 확인했고 위임법 채택 사실은 확인하지 못했다.",
+    "일본 METI 'SBOM 도입에 관한 가이드' 최신판 판번호와 발행일 — 2023-07판 이후 개정 여부를 확인하지 못했다.",
+    "국내 산업별(의료기기·국방·제조) 오픈소스/SBOM 보안 정책의 성립 여부 — 원고의 '2024~2025년 수립 예정' 서술을 대체할 확인된 사실을 찾지 못했다.",
+    "한국 제조물 책임법의 소프트웨어 포함 개정안 발의·계류 현황 — 논의가 있다는 2차 논평만 확인했고 구체적 법안 번호·상태를 확인하지 못했다.",
+    "2025~2026년 신규 비오픈소스 라이선스 전환 사례 — Redis/Elastic 복귀와 HashiCorp·Sentry 사례는 확인했으나 2026년에 새로 전환한 주요 프로젝트가 있는지는 확정하지 못했다."
+  ],
+  "extra": {
+    "scope_note": "조사 축은 regulation이며 규제 원문·시행 일정·이행 의무와 표준/인증 판번호를 다뤘다. EU AI Act는 ai-oss-governance-researcher와 겹치므로 규제 텍스트(제2조(12)·제53조(2)·제54조(6)·제113조)와 Digital Omnibus 개정만 다루고 모델·데이터셋 라이선스 실무는 다루지 않았다. AI BOM(CISA·G7)은 규제 문서로서만 기록했다.",
+    "workspace_file": "/Users/robin/IdeaProjects/oss-governance-guide/_workspace/02_research_regulation.json",
+    "note": "extra의 전체 구조(deadline_table 11행, standards_status 7행, openchain_conformance 명단, license_matrix 5행, open_questions, new_candidates, removals)는 workspace_file에 저장돼 있다. 아래는 요약본이다.",
+    "deadline_table": [
+      {
+        "date": "2026-06-11",
+        "instrument": "EU CRA",
+        "obligation": "Chapter IV(제35~51조) 적합성평가기관 통보 규정 적용"
+      },
+      {
+        "date": "2026-08-02",
+        "instrument": "EU AI Act",
+        "obligation": "제50조 투명성 의무 등 일반 적용"
+      },
+      {
+        "date": "2026-09-11",
+        "instrument": "EU CRA",
+        "obligation": "제14조 악용 취약점·중대 사고 보고 의무"
+      },
+      {
+        "date": "2026-12-02",
+        "instrument": "EU AI Act",
+        "obligation": "신설 금지 규정, 기존 생성형 시스템 콘텐츠 표시 이행 기한"
+      },
+      {
+        "date": "2026-12-09",
+        "instrument": "EU PLD 2024/2853",
+        "obligation": "회원국 전환 기한 및 적용 개시(소프트웨어=제조물)"
+      },
+      {
+        "date": "2027-12-02",
+        "instrument": "EU AI Act",
+        "obligation": "Annex III 독립형 고위험 AI 의무"
+      },
+      {
+        "date": "2027-12-11",
+        "instrument": "EU CRA",
+        "obligation": "전면 적용(본질적 요구사항·SBOM·적합성평가·CE)"
+      },
+      {
+        "date": "2028-08-02",
+        "instrument": "EU AI Act",
+        "obligation": "Annex I 제품 내장형 고위험 AI 의무"
+      },
+      {
+        "date": "2026년",
+        "instrument": "국내 SW 공급망 보안 강화 로드맵",
+        "obligation": "보안적합성 검증에 SBOM 제출 반영(예정)"
+      },
+      {
+        "date": "2027년",
+        "instrument": "국내 SW 공급망 보안 강화 로드맵",
+        "obligation": "공공 정보화사업 보안 요구사항에 SBOM·취약점 대응 절차 반영, 시범인증 개시(예정)"
+      },
+      {
+        "date": "2028년",
+        "instrument": "국내 SW 공급망 보안 강화 로드맵",
+        "obligation": "외교·안보·국방 등 주요 기관 납품 체크리스트 우선 적용(예정)"
+      }
+    ],
+    "standards_status": [
+      {
+        "standard": "ISO/IEC 5230",
+        "current": "5230:2020 (OpenChain 2.1)",
+        "note": "정기 검토 2026-03-05 종료, 개정 대상 분류. 새 판 미발행",
+        "confidence": "medium"
+      },
+      {
+        "standard": "ISO/IEC 18974",
+        "current": "18974:2023 (1판, 2023-12-14)",
+        "note": "현행. 공개 준수 조직 24곳 중 한국 5곳",
+        "confidence": "high"
+      },
+      {
+        "standard": "ISO/IEC 5962",
+        "current": "5962:2021 (SPDX 2.2.1)",
+        "note": "SPDX 3.0 반영판 ISO/IEC DIS 5962 진행 중",
+        "confidence": "medium"
+      },
+      {
+        "standard": "SPDX",
+        "current": "3.0.1 (2024-12-17)",
+        "note": "3.1-RC1 2026-01-24, 정식 릴리스 아님",
+        "confidence": "high"
+      },
+      {
+        "standard": "CycloneDX / ECMA-424",
+        "current": "1.7 (2025-10-21), 1.7.1 (2026-06-02) / ECMA-424 2판 (2025-12)",
+        "note": "1.6=ECMA-424 1판(2024-06)",
+        "confidence": "high"
+      },
+      {
+        "standard": "SBOM 최소 요소",
+        "current": "CISA 2026 Minimum Elements v2.1 (2026-07-29)",
+        "note": "NTIA 2021 대체. KISA 공동 저자. Component License 신규 필수",
+        "confidence": "high"
+      },
+      {
+        "standard": "AI BOM 최소 요소",
+        "current": "SBOM for AI — Minimum Elements (CISA·G7, 2026-05-12)",
+        "note": "7개 클러스터, 자발적 지침",
+        "confidence": "medium"
+      }
+    ],
+    "openchain_conformance_2026_07_31": {
+      "iso_5230_total_public": 157,
+      "iso_18974_total_public": 24,
+      "korean_in_18974": [
+        "KakaoBank",
+        "Korea Telcom (KT)",
+        "LG Electronics",
+        "S-core",
+        "Samsung SDS"
+      ],
+      "korean_in_5230_count": 25,
+      "source": "https://openchainproject.org/community-of-conformance",
+      "note": "페이지 카드가 이름을 2회 노출하므로 중복 제거 후 계수. 비공개 준수 조직은 집계 불가."
+    },
+    "license_matrix": [
+      {
+        "project": "Redis",
+        "to": "RSALv2+SSPLv1 (2024-03) → AGPLv3 추가 (2025-05-01, Redis 8~)",
+        "fork": "Valkey (Linux Foundation)",
+        "enterprise_action": "AGPLv3는 OSI 승인이나 SaaS 소스 공개 의무는 여전. Valkey 병행 관리"
+      },
+      {
+        "project": "Elasticsearch / Kibana",
+        "to": "SSPL+ELv2 (2021) → AGPLv3 추가 (2024-08)",
+        "fork": "OpenSearch",
+        "enterprise_action": "배포 형태별 라이선스 선택 문서화"
+      },
+      {
+        "project": "HashiCorp Terraform 등",
+        "to": "MPL-2.0 → BSL 1.1 (2023-08)",
+        "fork": "OpenTofu (Linux Foundation)",
+        "enterprise_action": "BSL 4년 자동 전환 조항 확인, 사내 IaC 표준 전환 판단"
+      },
+      {
+        "project": "Sentry",
+        "to": "BSL 1.1 → FSL (fair source)",
+        "fork": "-",
+        "enterprise_action": "fair source는 오픈소스가 아님. 사내 문서 표기 통제"
+      },
+      {
+        "project": "MongoDB",
+        "to": "AGPLv3 → SSPL (2018)",
+        "fork": "FerretDB 등",
+        "enterprise_action": "SaaS 사업자는 사실상 사용 불가"
+      }
+    ],
+    "open_questions": [
+      "CRA 하모나이즈드 표준이 2027-12-11 전에 발행되지 않으면 적합성 추정을 어떻게 확보하는가",
+      "국내 공공조달 SBOM 요구의 근거가 지침인지 법령인지 — 법적 강제력의 차이가 협력사 계약 조항 설계를 바꾼다",
+      "CRA 스튜어드 지위가 국내 기업의 오픈소스 공개 유인을 낮출 것인가",
+      "ISO/IEC 5230 개정판이 SBOM·보안 요구를 흡수해 18974와 통합될 것인가"
+    ],
+    "new_candidates": [
+      "「EU CRA 대응 판정 흐름도」 — 제조사/스튜어드/무의무 3분기 판정과 지위별 의무 목록 (releasing 신설 소절)",
+      "「2026~2028 규제 기한 캘린더」 — EU 6개 + 국내 3단계 통합표 (using, 기존 국가별 표 대체)",
+      "「SBOM 최소 요소 대조표」 — NTIA 2021 7필드 vs CISA 2026 17필드, 도구별 충족 여부 (using)",
+      "「라이선스 변경 대응 절차」 — 버전 고정 → 포크 전환 → 상용 계약 → 제거 4단계 의사결정표 (using)",
+      "「ISO/IEC 5230·18974 증빙 50항목 매핑」 — OpenChain KWG 2026 가이드 연계 (ospo)"
+    ],
+    "removals": [
+      "content/en/using/_index.md L841-846 국가별 규제 표 — 시점 정보가 모두 낡음, 기한 순 표로 대체",
+      "content/en/using/_index.md L815-816 'EU 사이버보안법 개정 예정 / 오픈소스 보안 인증 체계 도입' — 확인되지 않은 예측",
+      "content/en/using/_index.md L823-824 일본 '소프트웨어 관리 가이드라인 발표 예정' — 지나간 예측",
+      "content/en/using/_index.md L839 '2024년~2025년 산업별 오픈소스 보안 정책 수립 예정' — 지나간 예측"
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "section": "contributing",
+  "conflicts": [
+    {
+      "a": "contributing#L179",
+      "b": "using#L1600, using#L1623",
+      "issue": "AGPL에 대한 권고 방향이 갈린다. contributing은 AGPL을 '라이선스 정책으로 인해 기업이 사용할 수 없는 프로젝트'의 예로 들어 사실상 금지 대상처럼 제시하는데, using은 AGPL을 OSI 승인 라이선스로 두고 '자동 승인하지 말고 별도 심사'라는 심사 대상으로 규정한다.",
+      "quote_a": "라이선스 정책으로 인해 기업이 사용할 수 없는 프로젝트로의 기여 (예: AGPL, CC BY-NC*, 상업적 사용을 제한하는 프로젝트 등)",
+      "quote_b": "AGPLv3로 복귀한 프로젝트를 'OSI 승인'이라는 이유로 자동 승인하지 않는다. … 별도 심사가 필요하다.",
+      "resolution": "using이 맞다. contributing#L179의 예시를 '자사 라이선스 정책상 사용이 제한된 프로젝트(예: 상업적 사용을 제한하는 라이선스, 사내 심사에서 승인되지 않은 AGPL 계열 등)'로 완화하고 using의 라이선스 구간표로 링크한다. AGPL 자체를 금지 라이선스로 못 박으면 기업 정책 문서가 그대로 복제된다."
+    }
+  ],
+  "duplications": [
+    {
+      "locations": [
+        "contributing#L209-277",
+        "releasing#L153-166"
+      ],
+      "topic": "CLA와 DCO의 개념·차이·서명 부담",
+      "keep_at": "contributing#L209-277",
+      "why": "releasing이 이미 L166에서 contributing으로 링크하고 있으므로 개념 설명의 정본은 contributing이다. releasing에는 공개하는 쪽에만 필요한 ICLA/CCLA 구분과 CLA 자동화 도구(L321-331)만 남기고 'CLA는 계약서 서명, DCO는 git 서명' 수준의 개념 반복(L164)은 한 문장으로 줄인다."
+    }
+  ],
+  "structure": [],
+  "unsupported": [],
+  "verified_facts": []
+}

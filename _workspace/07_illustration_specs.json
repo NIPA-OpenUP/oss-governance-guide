@@ -1,0 +1,367 @@
+{
+  "style_prefix": "Clean minimal technical diagram for a corporate governance handbook. Flat vector illustration style, no gradients, no 3D, no shadows. Restrained palette: deep navy (#1F3A5F) as primary, slate gray (#6B7A8F) as secondary, soft teal (#3E9C9C) as accent, warm amber (#E8A33D) for emphasis only, on pure white background. Thin uniform 2px strokes, generous white space, geometric shapes with slightly rounded corners. Business-document aesthetic — legible at small size, printable in grayscale. No people, no faces, no photorealism, no decorative flourishes, no logos or brand marks. No text labels unless explicitly specified below.",
+  "specs": [
+    {
+      "id": "IL-01",
+      "section": "intro",
+      "filename": "guide-structure-map-2026",
+      "kind": "structure",
+      "prompt": "Clean minimal technical diagram for a corporate governance handbook. Flat vector illustration style, no gradients, no 3D, no shadows. Restrained palette: deep navy (#1F3A5F) as primary, slate gray (#6B7A8F) as secondary, soft teal (#3E9C9C) as accent, warm amber (#E8A33D) for emphasis only, on pure white background. Thin uniform 2px strokes, generous white space, geometric shapes with slightly rounded corners. Business-document aesthetic — legible at small size, printable in grayscale. No people, no faces, no photorealism, no decorative flourishes, no logos or brand marks. No text labels unless explicitly specified below. Composition: top-down hierarchy of nested rectangles, 2 levels deep. Parent boxes contain child boxes with clear inset margins. Aligned grid. Level distinguished by stroke weight and fill lightness, not by hue alone. Content: a vertical stack of five wide parent rows, each carrying a single large digit in navy at its left edge, reading 1, 2, 3, 4 and 5 from top to bottom. Rows 1, 2, 3 and 5 are each split into two equal child boxes placed side by side with a thin vertical divider between them. Row 4 is one single undivided box spanning the full width. Row 5 sits at the bottom, is outlined in soft teal, and four thin soft teal connector lines rise from it along the right margin to rows 1, 2, 3 and 4 to show that it cuts across all of them. Outside the stack on the far left margin, a vertical column of six small navy circles of equal size, each with a short thin horizontal arrow pointing into one of the child boxes, no two arrows crossing. Text: only the single digits 1, 2, 3, 4 and 5 at the left edge of the five rows. No other text anywhere.",
+      "text_strategy": "numbers-only",
+      "caption_ko": "[가이드 전체 구조 맵]",
+      "target_path": "content/en/intro/guide-structure-map-2026.png",
+      "replaces": null,
+      "purpose": "이 그림이 없으면 독자는 5개 장 x 기업 편/개발자 편이라는 2축 구조를 목차 나열에서 머릿속으로 재구성해야 하고, 신설된 5장(AI와 오픈소스SW)이 기존 4개 장을 가로지르는 횡단 주제라는 관계를 알 수 없다."
+    },
+    {
+      "id": "IL-02",
+      "section": "intro",
+      "filename": "governance-maturity-2026",
+      "kind": "process",
+      "prompt": "Clean minimal technical diagram for a corporate governance handbook. Flat vector illustration style, no gradients, no 3D, no shadows. Restrained palette: deep navy (#1F3A5F) as primary, slate gray (#6B7A8F) as secondary, soft teal (#3E9C9C) as accent, warm amber (#E8A33D) for emphasis only, on pure white background. Thin uniform 2px strokes, generous white space, geometric shapes with slightly rounded corners. Business-document aesthetic — legible at small size, printable in grayscale. No people, no faces, no photorealism, no decorative flourishes, no logos or brand marks. No text labels unless explicitly specified below. Composition: horizontal left-to-right sequence of 5 rounded rectangular stages, connected by thin arrows. Each stage numbered 1 to 5 in navy. Equal stage widths. Content: the five numbered stage boxes rise like a shallow staircase from lower left to upper right, each box set slightly higher than the previous one and filled a step darker, from very light slate gray at stage 1 to solid navy at stage 5, so the progression reads in grayscale. Directly under each stage box sit two small stacked empty bars of equal width drawn with a thin slate gray stroke, the upper bar slightly longer than the lower one. Below the whole sequence runs one continuous soft teal band aligned with all five stages, joined to each stage by a short vertical tick, showing a single shared track rather than a separate sixth stage. Stage 5 is outlined in warm amber. Text: only the digits 1 to 5 inside the five stage boxes. No other text anywhere.",
+      "text_strategy": "numbers-only",
+      "caption_ko": "[오픈소스SW 거버넌스 성숙도 5단계]",
+      "target_path": "content/en/intro/governance-maturity-2026.png",
+      "replaces": null,
+      "purpose": "이 그림이 없으면 독자는 자기 회사가 성숙도 스펙트럼의 어디에 있고 다음 단계로 가려면 무엇이 더 필요한지 판정할 수 없고, AI 자산이 별도 체계가 아니라 같은 단계 위에 얹힌다는 방침도 보이지 않는다."
+    },
+    {
+      "id": "IL-03",
+      "section": "using",
+      "filename": "license-obligation-decision-tree",
+      "kind": "process",
+      "prompt": "Clean minimal technical diagram for a corporate governance handbook. Flat vector illustration style, no gradients, no 3D, no shadows. Restrained palette: deep navy (#1F3A5F) as primary, slate gray (#6B7A8F) as secondary, soft teal (#3E9C9C) as accent, warm amber (#E8A33D) for emphasis only, on pure white background. Thin uniform 2px strokes, generous white space, geometric shapes with slightly rounded corners. Business-document aesthetic — legible at small size, printable in grayscale. No people, no faces, no photorealism, no decorative flourishes, no logos or brand marks. No text labels unless explicitly specified below. Composition: horizontal left-to-right sequence of 4 numbered decision stages, connected by thin arrows. Each stage numbered 1 to 4 in navy. Equal stage widths. Branches shown as downward arrows to side boxes. Content: four navy diamond shapes stand in one row along the horizontal centre line, numbered 1, 2, 3 and 4. Diamond 1 sends one short downward arrow to a single small box drawn with a dashed slate gray stroke. Diamond 2 fans downward into five small empty rounded boxes. Diamond 3 fans downward into seven small empty rounded boxes. Diamond 4 fans downward into four small empty rounded boxes filled in four steps of increasing darkness from left to right. All branch boxes are the same size and sit on one aligned baseline grid, and no branch lines cross. At the far right edge, three terminal boxes are stacked vertically with increasing fill darkness, the darkest one outlined in warm amber, each receiving a thin arrow that curves in from the branch boxes. A thin slate gray horizontal rule runs across the bottom of the whole diagram with one long empty bar beneath it. Text: only the digits 1, 2, 3 and 4 inside the four diamonds. No other text anywhere.",
+      "text_strategy": "numbers-only",
+      "caption_ko": "[라이선스 의무 발생 판단 흐름]",
+      "target_path": "content/en/using/license-obligation-decision-tree.png",
+      "replaces": null,
+      "purpose": "이 그림이 없으면 독자는 전달 여부 판정, 외부 전달 형태, 결합 방식, 라이선스 계열이라는 4단 분기를 산문에서 재구성해야 하고, 자기 사례가 어느 말단 의무로 떨어지는지 대입하지 못한다."
+    },
+    {
+      "id": "IL-04",
+      "section": "using",
+      "filename": "regulation-timeline-2026",
+      "kind": "timeline",
+      "prompt": "Clean minimal technical diagram for a corporate governance handbook. Flat vector illustration style, no gradients, no 3D, no shadows. Restrained palette: deep navy (#1F3A5F) as primary, slate gray (#6B7A8F) as secondary, soft teal (#3E9C9C) as accent, warm amber (#E8A33D) for emphasis only, on pure white background. Thin uniform 2px strokes, generous white space, geometric shapes with slightly rounded corners. Business-document aesthetic — legible at small size, printable in grayscale. No people, no faces, no photorealism, no decorative flourishes, no logos or brand marks. No text labels unless explicitly specified below. Composition: single horizontal axis with tick marks and milestone markers above the line. Milestones as small filled circles with vertical connector lines. Year numbers on the axis in navy. Intervals proportional to actual time gaps. Content: one shared horizontal axis runs across the full width from 2021 at the left end to 2028 at the right end, with a tick mark and a four digit year number at every single year, all eight ticks spaced exactly evenly so that one year always equals the same horizontal distance. Four thin horizontal lanes are stacked above the axis, each drawn as a light slate gray rule and tagged at the far left margin with a short uppercase word, from top to bottom EU, US, KR and JP. Milestone circles sit on the lanes strictly at their true horizontal date positions measured against the axis, so uneven real gaps appear as uneven spacing. The EU lane carries one circle at the very end of 2024, then a tight cluster of four circles packed close together across the middle and second half of 2026, then two circles close together at the end of 2027. The US lane carries one circle in the middle of 2021, then a long empty stretch, then three circles in the middle of 2025, the start of 2026 and the middle of 2026. The KR lane carries two circles in 2024, then three circles in the first half of 2026, then one circle in 2027 and one circle in 2028. The JP lane carries one circle at the end of 2023 and one circle in the middle of 2026. Two EU circles, one in the third quarter of 2026 and one at the very end of 2027, are drawn noticeably larger and filled in warm amber. A vertical soft teal reference line rises through all four lanes at the middle of 2026. Every circle to the left of that line is drawn hollow with a light slate gray stroke and every circle to the right of it is drawn solid navy. The three US circles at 2025 and 2026 each carry a small downward pointing arrow instead of the upward connector line used by all other milestones. Text: only the eight four digit year numbers on the axis and the four short uppercase lane tags EU, US, KR and JP. No other text anywhere.",
+      "text_strategy": "latin-only",
+      "caption_ko": "[국내외 SBOM·공급망 규제 타임라인]",
+      "target_path": "content/en/using/regulation-timeline-2026.png",
+      "replaces": null,
+      "purpose": "이 그림이 없으면 독자는 국가별로 흩어진 규제 기한 목록에서 2026년 하반기에 기한이 몰려 있다는 사실과 CRA 보고 의무가 개정판 발간 직후에 도래한다는 임박함을 읽어내지 못한다. 간격을 실제 시간에 비례시켜야 이 압축 구간이 보인다."
+    },
+    {
+      "id": "IL-05",
+      "section": "using",
+      "filename": "sbom-lifecycle-pipeline",
+      "kind": "process",
+      "prompt": "Clean minimal technical diagram for a corporate governance handbook. Flat vector illustration style, no gradients, no 3D, no shadows. Restrained palette: deep navy (#1F3A5F) as primary, slate gray (#6B7A8F) as secondary, soft teal (#3E9C9C) as accent, warm amber (#E8A33D) for emphasis only, on pure white background. Thin uniform 2px strokes, generous white space, geometric shapes with slightly rounded corners. Business-document aesthetic — legible at small size, printable in grayscale. No people, no faces, no photorealism, no decorative flourishes, no logos or brand marks. No text labels unless explicitly specified below. Composition: horizontal left-to-right sequence of 4 rounded rectangular stages, connected by thin arrows. Each stage numbered 1 to 4 in navy. Equal stage widths. Content: stage 1 splits into two parallel small boxes stacked vertically whose outputs merge into a pair of overlapping circles, with the crescent that lies outside the overlap filled in warm amber. Stage 2 is a single box with a small circular seal shape attached to its lower right corner. Stage 3 is a single box preceded by a narrow vertical gate drawn as two short parallel navy bars standing across the incoming arrow. Stage 4 fans out to the right into four small boxes stacked vertically. One thin soft teal curved arrow returns from stage 4 back to stage 3, drawn below the main sequence. Above the sequence runs a row of four small empty slate gray tags, one centred over each stage. The uppercase word SBOM in navy sits centred above the whole pipeline, and the uppercase word VEX in navy tags the lowest of the four boxes in stage 4. Text: only the digits 1 to 4 inside the stage boxes and the two uppercase words SBOM and VEX. No other text anywhere.",
+      "text_strategy": "latin-only",
+      "caption_ko": "[SBOM 생애주기 — 생성부터 소비까지]",
+      "target_path": "content/en/using/sbom-lifecycle-pipeline.png",
+      "replaces": "spdx-excel.png, spdx-web.png",
+      "purpose": "이 그림이 없으면 독자는 SBOM이 조직 안에서 어디서 생겨 어디에 보관되고 무엇에 소비되는지, 소스 기반과 바이너리 기반 생성의 차집합이 왜 중요한지를 알 수 없다."
+    },
+    {
+      "id": "IL-06",
+      "section": "using",
+      "filename": "vulnerability-triage-pipeline",
+      "kind": "process",
+      "prompt": "Clean minimal technical diagram for a corporate governance handbook. Flat vector illustration style, no gradients, no 3D, no shadows. Restrained palette: deep navy (#1F3A5F) as primary, slate gray (#6B7A8F) as secondary, soft teal (#3E9C9C) as accent, warm amber (#E8A33D) for emphasis only, on pure white background. Thin uniform 2px strokes, generous white space, geometric shapes with slightly rounded corners. Business-document aesthetic — legible at small size, printable in grayscale. No people, no faces, no photorealism, no decorative flourishes, no logos or brand marks. No text labels unless explicitly specified below. Composition: horizontal left-to-right sequence of 5 rounded rectangular stages, connected by thin arrows. Each stage numbered 1 to 5 in navy. Equal stage widths. A branch is shown as a downward arrow to a single side box. Content: five numbered stage boxes stand in one row. From stage 1 a short downward arrow leads to one small side box drawn with a dashed stroke. From stage 2 a pair of thin guide lines opens downward and widens into an enlarged flat grid of eight equal square cells arranged as two rows of four. The eight cells are filled in four steps of increasing darkness, from very light slate gray at the far right of the lower row to solid navy at the far left of the upper row, so the ordering survives in grayscale. The single lightest cell is outlined with a dashed stroke. Three short axis arrows run along the top edge, the left edge and the lower left corner of the grid to mark three independent axes. Stage 3 has four small empty boxes stacked directly beneath it. The uppercase words KEV and EPSS in navy sit as small tags beside the two darkest grid cells. Text: only the digits 1 to 5 inside the stage boxes and the two uppercase words KEV and EPSS. No other text anywhere.",
+      "text_strategy": "latin-only",
+      "caption_ko": "[취약점 대응 파이프라인]",
+      "target_path": "content/en/using/vulnerability-triage-pipeline.png",
+      "replaces": null,
+      "purpose": "이 그림이 없으면 독자는 탐지에서 기록까지가 하나의 연속 흐름이라는 점과, 우선순위가 단일 점수가 아니라 노출·악용 확인·영향 세 축의 결합으로 정해진다는 점을 목록형 서술에서 얻지 못한다."
+    },
+    {
+      "id": "IL-07",
+      "section": "using",
+      "filename": "provenance-verification-flow",
+      "kind": "process",
+      "prompt": "Clean minimal technical diagram for a corporate governance handbook. Flat vector illustration style, no gradients, no 3D, no shadows. Restrained palette: deep navy (#1F3A5F) as primary, slate gray (#6B7A8F) as secondary, soft teal (#3E9C9C) as accent, warm amber (#E8A33D) for emphasis only, on pure white background. Thin uniform 2px strokes, generous white space, geometric shapes with slightly rounded corners. Business-document aesthetic — legible at small size, printable in grayscale. No people, no faces, no photorealism, no decorative flourishes, no logos or brand marks. No text labels unless explicitly specified below. Composition: horizontal left-to-right sequence of 6 rounded rectangular stages, connected by thin arrows. Each stage numbered 1 to 6 in navy. Equal stage widths. Content: the row of six numbered stages is cut in the middle by a thin vertical slate gray divider into a left group of three stages and a right group of three stages, joined across the divider by one long arrow. In the left group a small circular seal shape hangs below stage 3 and a long horizontal ledger bar divided into narrow slots sits beneath that seal. In the right group stage 5 is drawn noticeably larger than its neighbours and is outlined in warm amber, and two arrows leave it to the right, one continuing straight to a plain terminal box and one bending downward to a terminal box marked with a short crossing bar. A small warm amber triangle sits just above stage 5. Above the left group runs a thin ascending three step bar, each step tagged in navy uppercase with L1, L2 and L3 from left to right. The uppercase word OIDC in navy tags the long arrow that crosses the central divider. Text: only the digits 1 to 6 inside the stage boxes, the three short tags L1, L2 and L3, and the single uppercase word OIDC. No other text anywhere.",
+      "text_strategy": "latin-only",
+      "caption_ko": "[서명·프로비넌스 생성과 검증 흐름]",
+      "target_path": "content/en/using/provenance-verification-flow.png",
+      "replaces": null,
+      "purpose": "이 그림이 없으면 독자는 서명이 어디서 만들어져 어디에 기록되고 소비 측이 무엇을 대조하는지 알 수 없고, 특히 신원 대조를 건너뛴 서명 확인이 왜 무의미한지를 명령어 나열만으로는 이해하지 못한다."
+    },
+    {
+      "id": "IL-08",
+      "section": "using",
+      "filename": "si-supply-chain-sbom-flow",
+      "kind": "structure",
+      "prompt": "Clean minimal technical diagram for a corporate governance handbook. Flat vector illustration style, no gradients, no 3D, no shadows. Restrained palette: deep navy (#1F3A5F) as primary, slate gray (#6B7A8F) as secondary, soft teal (#3E9C9C) as accent, warm amber (#E8A33D) for emphasis only, on pure white background. Thin uniform 2px strokes, generous white space, geometric shapes with slightly rounded corners. Business-document aesthetic — legible at small size, printable in grayscale. No people, no faces, no photorealism, no decorative flourishes, no logos or brand marks. No text labels unless explicitly specified below. Composition: top-down hierarchy of stacked rectangles, four levels deep, aligned on a common grid. Level distinguished by stroke weight and fill lightness, not by hue alone. Content: four wide horizontal bands are stacked vertically with equal gaps. The topmost band has the heaviest stroke and the lightest fill. Each band below it has a lighter stroke and a slightly darker fill, so the depth ordering reads in grayscale. In every gap between two adjacent bands sits a small square gate symbol on the centre line, drawn as a square divided into three equal horizontal slots. On the left side of the stack, three arrows run upward, one across each gap, and the uppercase words SBOM and VEX in navy tag the two upper arrows. On the right side of the stack, three arrows run downward, one across each gap, all drawn with a dashed stroke. One continuous warm amber line starts at the bottom band, passes through the centre of every gate symbol, and reaches the top band, growing slightly thicker at each level to show accumulation. Text: only the uppercase words SBOM and VEX. No other text anywhere.",
+      "text_strategy": "latin-only",
+      "caption_ko": "[SI 다단 하도급 구조에서의 SBOM 흐름]",
+      "target_path": "content/en/using/si-supply-chain-sbom-flow.png",
+      "replaces": null,
+      "purpose": "이 그림이 없으면 독자는 발주처-원청-1차-2차의 다단 구조에서 산출물이 위로, 요구사항이 아래로 흐르고 계층마다 검수 게이트가 걸린다는 방향성과, 최하위 컴포넌트가 최종 납품물까지 하나의 선으로 추적된다는 점을 표로는 얻지 못한다."
+    },
+    {
+      "id": "IL-09",
+      "section": "using",
+      "filename": "license-spectrum-2026",
+      "kind": "comparison",
+      "prompt": "Clean minimal technical diagram for a corporate governance handbook. Flat vector illustration style, no gradients, no 3D, no shadows. Restrained palette: deep navy (#1F3A5F) as primary, slate gray (#6B7A8F) as secondary, soft teal (#3E9C9C) as accent, warm amber (#E8A33D) for emphasis only, on pure white background. Thin uniform 2px strokes, generous white space, geometric shapes with slightly rounded corners. Business-document aesthetic — legible at small size, printable in grayscale. No people, no faces, no photorealism, no decorative flourishes, no logos or brand marks. No text labels unless explicitly specified below. Composition: two zones placed side by side and separated by a thin vertical divider. Left zone drawn in graded slate gray to navy, right zone drawn with a dashed stroke. Content: the left zone holds one long horizontal bar divided into four equal segments whose fill darkens step by step from very light slate gray in the first segment to solid navy in the fourth segment, so the ordering reads in grayscale. The fourth and darkest segment is additionally outlined in warm amber. A small tag sits centred under each segment, reading in navy uppercase from left to right MIT, LGPL, GPL and AGPL. Under the tags runs a row of four pairs of small empty stacked bars, one pair per segment. A continuous thin navy boundary line wraps around the whole left zone as a closed outline, and the three letter uppercase word OSI in navy tags that boundary at its top edge. The right zone, standing outside that boundary beyond the divider, is one dashed rectangle containing three small empty stacked boxes and a small crossed out circle in its upper corner. Two thin soft teal arrows curve from the right zone back into the left zone, and two thin slate gray arrows branch downward out of the right zone to two small separate boxes that remain outside the boundary. Text: only the uppercase tags MIT, LGPL, GPL, AGPL and OSI. No other text anywhere.",
+      "text_strategy": "latin-only",
+      "caption_ko": "[오픈소스SW 라이선스 스펙트럼]",
+      "target_path": "content/en/using/license-spectrum-2026.png",
+      "replaces": "license.jpg",
+      "purpose": "이 그림이 없으면 독자는 permissive와 copyleft 2분법에 머물러 weak copyleft와 strong copyleft, AGPL의 네트워크 조항을 구분하지 못하고, OSI 승인 경계 바깥의 소스 공개형 라이선스를 오픈소스로 잘못 분류한다."
+    },
+    {
+      "id": "IL-10",
+      "section": "contributing",
+      "filename": "prflow-2026",
+      "kind": "process",
+      "prompt": "Clean minimal technical diagram for a corporate governance handbook. Flat vector illustration style, no gradients, no 3D, no shadows. Restrained palette: deep navy (#1F3A5F) as primary, slate gray (#6B7A8F) as secondary, soft teal (#3E9C9C) as accent, warm amber (#E8A33D) for emphasis only, on pure white background. Thin uniform 2px strokes, generous white space, geometric shapes with slightly rounded corners. Business-document aesthetic — legible at small size, printable in grayscale. No people, no faces, no photorealism, no decorative flourishes, no logos or brand marks. No text labels unless explicitly specified below. Composition: horizontal left-to-right sequence of 7 rounded rectangular stages, connected by thin arrows. Each stage numbered 1 to 7 in navy. Equal stage widths. Content: seven numbered stage boxes stand in one row. Above the row sit two small rounded rectangles representing remote repositories, drawn with a heavier navy outline and a light fill: one above stage 1 and one above stage 4, each joined to its stage by a thin vertical line. One thin soft teal curved arrow returns from stage 4 back to stage 3, drawn below the main sequence, to show repeated synchronisation. Small empty circular badges with a thin navy stroke hang beneath three stages: two badges under stage 5, two badges under stage 6, and one badge under stage 7. Stage 7 is outlined in warm amber. Text: only the digits 1 to 7 inside the seven stage boxes. No other text anywhere.",
+      "text_strategy": "numbers-only",
+      "caption_ko": "[GitHub Pull Request 절차]",
+      "target_path": "content/en/contributing/prflow-2026.png",
+      "replaces": "prflow.png",
+      "purpose": "기존 prflow.png는 3단계와 4단계 순서가 본문과 반대이고 브랜치명과 변수명도 달라 독자가 그림과 본문을 대조하며 따라가면 반드시 막힌다. 본문 Step 1~7과 번호가 1:1로 맞는 그림이 있어야 절차를 따라갈 수 있다."
+    },
+    {
+      "id": "IL-11",
+      "section": "releasing",
+      "filename": "release-journey-2026",
+      "kind": "process",
+      "prompt": "Clean minimal technical diagram for a corporate governance handbook. Flat vector illustration style, no gradients, no 3D, no shadows. Restrained palette: deep navy (#1F3A5F) as primary, slate gray (#6B7A8F) as secondary, soft teal (#3E9C9C) as accent, warm amber (#E8A33D) for emphasis only, on pure white background. Thin uniform 2px strokes, generous white space, geometric shapes with slightly rounded corners. Business-document aesthetic — legible at small size, printable in grayscale. No people, no faces, no photorealism, no decorative flourishes, no logos or brand marks. No text labels unless explicitly specified below. Composition: horizontal left-to-right sequence of 11 slim rounded rectangular stages, connected by thin arrows. Each stage numbered 1 to 11 in navy. Equal stage widths. Content: eleven narrow numbered stage boxes fill one long row across the full width of the image, all the same height and evenly spaced. Directly above the row runs a lane of small squares that uses three distinct fills, solid navy, light slate gray and soft teal tint, to group consecutive stages by owner, with neighbouring squares of the same fill merged into one longer square so the grouping is visible. Directly below the row runs a second lane of eleven small empty document shapes, each a rectangle with one folded top right corner. Stage 6 and stage 11 are outlined in warm amber and drawn slightly taller than the other nine. Text: only the numbers 1 to 11 inside the stage boxes. No other text anywhere.",
+      "text_strategy": "numbers-only",
+      "caption_ko": "[오픈소스SW 공개 여정 — 단계별 담당 주체와 산출물]",
+      "target_path": "content/en/releasing/release-journey-2026.png",
+      "replaces": null,
+      "purpose": "이 그림이 없으면 사무국 담당자는 공개 절차 전체에서 지금 어느 단계를 읽고 있는지, 남은 관문이 몇 개인지, 각 단계의 담당 주체와 산출물이 무엇인지를 매번 본문을 처음부터 다시 읽어야 파악한다."
+    },
+    {
+      "id": "IL-12",
+      "section": "releasing",
+      "filename": "release-review-matrix-2026",
+      "kind": "process",
+      "prompt": "Clean minimal technical diagram for a corporate governance handbook. Flat vector illustration style, no gradients, no 3D, no shadows. Restrained palette: deep navy (#1F3A5F) as primary, slate gray (#6B7A8F) as secondary, soft teal (#3E9C9C) as accent, warm amber (#E8A33D) for emphasis only, on pure white background. Thin uniform 2px strokes, generous white space, geometric shapes with slightly rounded corners. Business-document aesthetic — legible at small size, printable in grayscale. No people, no faces, no photorealism, no decorative flourishes, no logos or brand marks. No text labels unless explicitly specified below. Composition: a rectangular matrix grid of 7 rows and 5 columns drawn with thin uniform strokes, with a long thin left-to-right arrow running beneath the grid to set the reading direction. Content: seven equal height rows numbered 1 to 7 in navy inside a narrow index column at the far left, and five equal width empty columns to the right of that index column. Column separators are drawn slightly heavier than row separators. Rows 1 to 5 are bracketed together at the left outer margin by one tall vertical brace to mark work that can run in parallel. Two long thin navy arrows run outside the grid on the right side, one curving from the right edge of row 2 down to the left edge of row 6 and one curving from the right edge of row 3 down to the left edge of row 7, to mark prerequisite order. One warm amber arrow curves backward beneath the grid from the last column to the first column to mark a return path. Text: only the digits 1 to 7 in the left index column. No other text anywhere.",
+      "text_strategy": "numbers-only",
+      "caption_ko": "[유관부서 검토 매트릭스 — 병렬 검토와 선행 의존]",
+      "target_path": "content/en/releasing/release-review-matrix-2026.png",
+      "replaces": null,
+      "purpose": "이 그림이 없으면 사무국 담당자는 7개 부서 중 어떤 검토가 병렬 가능하고 어떤 검토가 선행 검토에 걸려 있는지를 28행의 산문에서 판별할 수 없어 일정 계획을 세우지 못한다."
+    },
+    {
+      "id": "IL-13",
+      "section": "releasing",
+      "filename": "contributor-ladder-2026",
+      "kind": "relationship",
+      "prompt": "Clean minimal technical diagram for a corporate governance handbook. Flat vector illustration style, no gradients, no 3D, no shadows. Restrained palette: deep navy (#1F3A5F) as primary, slate gray (#6B7A8F) as secondary, soft teal (#3E9C9C) as accent, warm amber (#E8A33D) for emphasis only, on pure white background. Thin uniform 2px strokes, generous white space, geometric shapes with slightly rounded corners. Business-document aesthetic — legible at small size, printable in grayscale. No people, no faces, no photorealism, no decorative flourishes, no logos or brand marks. No text labels unless explicitly specified below. Composition: an ascending staircase of 5 steps rising from lower left to upper right, each step a rounded rectangle of equal size, connected by short upward arrows. Each step numbered 1 to 5 in navy. Content: five staircase steps whose fill darkens progressively from very light slate gray at step 1 to solid navy at step 5, so the ranking reads in grayscale. Beside every step on its left sits one small empty rounded tag, and beside every step on its right sits one small key shape drawn as a circle with a short rectangular stem, the key shapes growing slightly larger from step 1 to step 5. One detached step sits to the right of and slightly below step 5, drawn with a dashed slate gray stroke, and two warm amber arrows point into it, one leaving step 5 and one leaving step 4. Two small document shapes, rectangles with one folded top right corner, sit together at the lower right corner of the image and are joined by thin light lines to all five steps. Text: only the digits 1 to 5 on the five steps. No other text anywhere.",
+      "text_strategy": "numbers-only",
+      "caption_ko": "[기여자 사다리 — 승격 기준과 권한 회수 경로]",
+      "target_path": "content/en/releasing/contributor-ladder-2026.png",
+      "replaces": null,
+      "purpose": "권한 5단계 표만으로는 사람이 어떻게 올라오고 어떻게 빠지는지가 보이지 않는다. 이 그림이 없으면 메인테이너 1인 퇴사 리스크에 대한 답인 승격 경로와 권한 회수·이머리터스 전환 경로를 독자가 얻지 못한다."
+    },
+    {
+      "id": "IL-14",
+      "section": "releasing",
+      "filename": "license-decision-tree-2026",
+      "kind": "process",
+      "prompt": "Clean minimal technical diagram for a corporate governance handbook. Flat vector illustration style, no gradients, no 3D, no shadows. Restrained palette: deep navy (#1F3A5F) as primary, slate gray (#6B7A8F) as secondary, soft teal (#3E9C9C) as accent, warm amber (#E8A33D) for emphasis only, on pure white background. Thin uniform 2px strokes, generous white space, geometric shapes with slightly rounded corners. Business-document aesthetic — legible at small size, printable in grayscale. No people, no faces, no photorealism, no decorative flourishes, no logos or brand marks. No text labels unless explicitly specified below. Composition: top-down decision tree with 5 diamond decision nodes arranged on one vertical spine, each connected to the next by a thin downward arrow, with side branches leaving to the left and to the right. Each diamond numbered 1 to 5 in navy. Content: five navy diamonds descend down the centre of the image, numbered 1, 2, 3, 4 and 5 from top to bottom. Seven leaf boxes stand in a single row along the bottom edge, connected upward to the diamonds by thin lines that never cross. Six of the leaf boxes carry a small navy uppercase tag, reading from left to right MIT, APACHE, MPL, LGPL, GPL and AGPL. The seventh leaf box at the far right is drawn with a dashed stroke and carries a small crossed out circle in its corner instead of a tag. Under every leaf box sits one small empty rounded tag. One extra branch leaves the right side of the spine at the second diamond and ends in a separate box outlined in warm amber that stands apart from the tree with clear white space around it. Text: only the digits 1 to 5 inside the five diamonds and the six uppercase tags MIT, APACHE, MPL, LGPL, GPL and AGPL. No other text anywhere.",
+      "text_strategy": "latin-only",
+      "caption_ko": "[공개 라이선스 결정 트리]",
+      "target_path": "content/en/releasing/license-decision-tree-2026.png",
+      "replaces": null,
+      "purpose": "이 그림이 없으면 여러 조건이 동시에 걸리는 경우, 예컨대 제품에도 포함되면서 채택 극대화도 원하는 경우에 어느 라이선스로 가야 하는지를 상황별 산문에서 판정할 수 없다."
+    },
+    {
+      "id": "IL-15",
+      "section": "releasing",
+      "filename": "repo-file-set-2026",
+      "kind": "structure",
+      "prompt": "Clean minimal technical diagram for a corporate governance handbook. Flat vector illustration style, no gradients, no 3D, no shadows. Restrained palette: deep navy (#1F3A5F) as primary, slate gray (#6B7A8F) as secondary, soft teal (#3E9C9C) as accent, warm amber (#E8A33D) for emphasis only, on pure white background. Thin uniform 2px strokes, generous white space, geometric shapes with slightly rounded corners. Business-document aesthetic — legible at small size, printable in grayscale. No people, no faces, no photorealism, no decorative flourishes, no logos or brand marks. No text labels unless explicitly specified below. Composition: top-down hierarchy of nested rectangles, 3 levels deep. Parent boxes contain child boxes with clear inset margins. Aligned grid. Level distinguished by stroke weight and fill lightness, not by hue alone. Content: one large outer rectangle with a heavy navy stroke represents the repository root. Inside it, near the top, a vertical list of eleven small file shapes, each a rectangle with one folded top right corner, all left aligned on a common indent guide line. Below that list, still inside the outer rectangle, sits a second nested rectangle with a lighter fill and a lighter stroke, holding five more file shapes and one further nested rectangle inset deeper that holds two file shapes. Every file shape carries two small badges on its right side: the first badge is either a filled navy dot or a hollow navy ring, the second badge is either a filled soft teal square or a hollow soft teal square, mixed across the list. One file shape in the upper root list is outlined in warm amber and a short warm amber connector line leaves it toward the right margin. Text: none anywhere in the image.",
+      "text_strategy": "none",
+      "caption_ko": "[공개 저장소 문서 세트와 배치]",
+      "target_path": "content/en/releasing/repo-file-set-2026.png",
+      "replaces": "community-profile.png",
+      "purpose": "이 그림이 없으면 독자는 저장소에 두어야 할 문서 목록은 알아도 어떤 파일이 루트에 가고 어떤 파일이 숨김 설정 디렉터리 아래로 가는지, 그 안에 다시 하위 디렉터리가 있는지를 알 수 없다. 배치는 목록으로 전달되지 않는다."
+    },
+    {
+      "id": "IL-16",
+      "section": "releasing",
+      "filename": "release-pipeline-2026",
+      "kind": "process",
+      "prompt": "Clean minimal technical diagram for a corporate governance handbook. Flat vector illustration style, no gradients, no 3D, no shadows. Restrained palette: deep navy (#1F3A5F) as primary, slate gray (#6B7A8F) as secondary, soft teal (#3E9C9C) as accent, warm amber (#E8A33D) for emphasis only, on pure white background. Thin uniform 2px strokes, generous white space, geometric shapes with slightly rounded corners. Business-document aesthetic — legible at small size, printable in grayscale. No people, no faces, no photorealism, no decorative flourishes, no logos or brand marks. No text labels unless explicitly specified below. Composition: horizontal left-to-right sequence of 7 rounded rectangular stages, connected by thin arrows. Each stage numbered 1 to 7 in navy. Equal stage widths. Content: at the far left, before stage 1, stands a tall narrow gate rectangle outlined in warm amber containing three short stacked bars, feeding by one arrow into stage 1. Seven numbered stage boxes follow in one row. Above stage 5 and above stage 6 sits a small key shape drawn as a circle with a short rectangular stem, each joined to its stage by a short dashed vertical line, and a small hourglass shape stands beside each key to mark short lived credentials. Below stages 4, 5 and 6 runs a separate lane of three small boxes on a thin slate gray rule, each joined upward to its stage by a thin line. The uppercase word CI in navy tags stage 2, the uppercase word SBOM in navy tags stage 4, and the uppercase word OIDC in navy tags stage 6, each placed just under its stage box. Text: only the digits 1 to 7 inside the stage boxes and the three uppercase words CI, SBOM and OIDC. No other text anywhere.",
+      "text_strategy": "latin-only",
+      "caption_ko": "[릴리스 보증 파이프라인 — SBOM·서명·프로비넌스]",
+      "target_path": "content/en/releasing/release-pipeline-2026.png",
+      "replaces": null,
+      "purpose": "이 그림이 없으면 담당자는 태그 푸시부터 게시까지의 단계 순서와, 어느 지점에서 단기 자격증명이 개입하고 어느 지점에서 채택자가 검증할 증거가 생기는지를 알 수 없어 워크플로를 설계하지 못한다."
+    },
+    {
+      "id": "IL-17",
+      "section": "ai",
+      "filename": "ai-asset-governance-integration",
+      "kind": "process",
+      "prompt": "Clean minimal technical diagram for a corporate governance handbook. Flat vector illustration style, no gradients, no 3D, no shadows. Restrained palette: deep navy (#1F3A5F) as primary, slate gray (#6B7A8F) as secondary, soft teal (#3E9C9C) as accent, warm amber (#E8A33D) for emphasis only, on pure white background. Thin uniform 2px strokes, generous white space, geometric shapes with slightly rounded corners. Business-document aesthetic — legible at small size, printable in grayscale. No people, no faces, no photorealism, no decorative flourishes, no logos or brand marks. No text labels unless explicitly specified below. Composition: horizontal left-to-right sequence of 5 rounded rectangular stages, connected by thin arrows. Each stage numbered 1 to 5 in navy. Equal stage widths. Content: five numbered stage boxes stand in one row and form a single shared spine drawn with the heaviest stroke in the image. From every stage box two short vertical connectors leave, one upward and one downward. The upward connectors reach an upper lane of five small boxes with a light slate gray fill, each holding a simple icon of three stacked bricks. The downward connectors reach a lower lane of five small boxes with a soft teal tint fill, each holding two tiny shapes side by side, a small hexagon and a small cylinder. Both lanes occupy exactly the same five column positions as the spine so that the shared five stages are obvious at a glance. Below everything runs one separate wide band outlined in warm amber and divided into three equal cells, and three thin warm amber arrows rise from that band, two of them to stage 2 and one to stage 5. The uppercase word SBOM in navy tags stage 3 just above its box. Text: only the digits 1 to 5 inside the stage boxes and the single uppercase word SBOM. No other text anywhere.",
+      "text_strategy": "latin-only",
+      "caption_ko": "[AI 자산의 기존 오픈소스SW 거버넌스 편입 구조]",
+      "target_path": "content/en/ai/ai-asset-governance-integration.png",
+      "replaces": null,
+      "purpose": "이 그림이 없으면 독자는 AI 거버넌스를 위해 새 체계를 도입해야 한다고 오해한다. 기존 5단계를 그대로 두고 자산 유형만 갈라진다는 이 장의 대전제와 신규로 필요한 것이 셋뿐이라는 결론이 표만으로는 전달되지 않는다."
+    },
+    {
+      "id": "IL-18",
+      "section": "ai",
+      "filename": "ai-openness-tiers-g7",
+      "kind": "comparison",
+      "prompt": "Clean minimal technical diagram for a corporate governance handbook. Flat vector illustration style, no gradients, no 3D, no shadows. Restrained palette: deep navy (#1F3A5F) as primary, slate gray (#6B7A8F) as secondary, soft teal (#3E9C9C) as accent, warm amber (#E8A33D) for emphasis only, on pure white background. Thin uniform 2px strokes, generous white space, geometric shapes with slightly rounded corners. Business-document aesthetic — legible at small size, printable in grayscale. No people, no faces, no photorealism, no decorative flourishes, no logos or brand marks. No text labels unless explicitly specified below. Composition: four blocks of equal width placed side by side as a staircase that steps down from left to right, separated by thin vertical dividers, with one thin horizontal boundary line running above the blocks. Content: four tier blocks stand in one row. The leftmost block is the tallest and is filled solid navy. Each block to its right is shorter than the one before it and lighter in fill. The rightmost block is the shortest and palest, so decreasing openness reads as both decreasing height and decreasing saturation and survives in grayscale. Inside every block sits a vertical column of three small squares of equal size. In block 1 all three squares are filled solid. In block 2 the top square is filled with a diagonal hatch pattern and the lower two are filled solid. In block 3 the top square is hollow and the lower two are filled solid. In block 4 the top and middle squares are hollow and only the bottom square is filled solid. One thin navy boundary line runs horizontally above blocks 1, 2 and 3 and stops cleanly before block 4. A small open padlock outline in warm amber sits on top of block 4 only. Detached at the far right, beyond a clear gap and outside the staircase, stands a fifth narrow block drawn with a dashed slate gray stroke containing three hollow squares. Text: none anywhere in the image.",
+      "text_strategy": "none",
+      "caption_ko": "[G7 AI 개방성 4단계와 공개 구성요소]",
+      "target_path": "content/en/ai/ai-openness-tiers-g7.png",
+      "replaces": null,
+      "purpose": "이 그림이 없으면 독자는 네 등급의 차이가 어느 구성요소(학습 데이터·코드·가중치)의 공개 여부에서 갈리는지, 그리고 사용 제한이 붙는 지점이 어디서부터인지를 표의 서술만으로 즉시 구별하지 못한다. 등급 명칭 자체는 본문 표가 담당하므로 그림에는 어떤 라벨도 넣지 않는다."
+    },
+    {
+      "id": "IL-19",
+      "section": "ai",
+      "filename": "model-license-inheritance",
+      "kind": "relationship",
+      "prompt": "Clean minimal technical diagram for a corporate governance handbook. Flat vector illustration style, no gradients, no 3D, no shadows. Restrained palette: deep navy (#1F3A5F) as primary, slate gray (#6B7A8F) as secondary, soft teal (#3E9C9C) as accent, warm amber (#E8A33D) for emphasis only, on pure white background. Thin uniform 2px strokes, generous white space, geometric shapes with slightly rounded corners. Business-document aesthetic — legible at small size, printable in grayscale. No people, no faces, no photorealism, no decorative flourishes, no logos or brand marks. No text labels unless explicitly specified below. Composition: top-down genealogy graph, three levels deep, rectangles for artifacts connected by thin arrows that never cross, small tag shapes for attributes. Content: at the top level two parent rectangles stand side by side. The left parent carries a row of four small filled navy tag shapes along its bottom edge. The right parent carries no tags at all. The middle level holds three result rectangles in one row. The left result receives one arrow from the left parent, the middle result receives one thinner arrow from the left parent, and the right result receives two arrows, one from each parent. All three result rectangles carry the same row of four small filled navy tags, so no path loses a tag. The bottom level holds one wide terminal rectangle that receives arrows from all three results and carries the four filled navy tags plus one extra warm amber tag at its right end. One further arrow leaves the terminal rectangle downward and ends in a small outline rectangle to show onward transfer to downstream users. To the right of the whole graph, set apart in clear white space, sits a small note shape drawn with a dashed slate gray stroke containing one warm amber tag drawn faded and broken, joined to the graph by a thin dashed line. Text: none anywhere in the image.",
+      "text_strategy": "none",
+      "caption_ko": "[파생 모델의 라이선스 의무 승계 경로]",
+      "target_path": "content/en/ai/model-license-inheritance.png",
+      "replaces": null,
+      "purpose": "이 그림이 없으면 독자는 파인튜닝·증류·병합 어느 경로에서도 베이스 모델의 의무가 씻기지 않고 합집합으로 승계되며 최종 배포물에서 가장 제한적인 조건이 적용된다는 구조를 알 수 없다. 특히 Apache-2.0과 병합하면 조건이 사라진다는 오해가 여기서 나온다."
+    },
+    {
+      "id": "IL-20",
+      "section": "ai",
+      "filename": "ai-code-release-triple-gate",
+      "kind": "process",
+      "prompt": "Clean minimal technical diagram for a corporate governance handbook. Flat vector illustration style, no gradients, no 3D, no shadows. Restrained palette: deep navy (#1F3A5F) as primary, slate gray (#6B7A8F) as secondary, soft teal (#3E9C9C) as accent, warm amber (#E8A33D) for emphasis only, on pure white background. Thin uniform 2px strokes, generous white space, geometric shapes with slightly rounded corners. Business-document aesthetic — legible at small size, printable in grayscale. No people, no faces, no photorealism, no decorative flourishes, no logos or brand marks. No text labels unless explicitly specified below. Composition: horizontal left-to-right pipeline drawn as one long straight arrow crossed by 3 vertical gate bars numbered 1 to 3 in navy, ending in a terminal rounded rectangle. Content: one long horizontal navy arrow runs from a small file shape at the left edge to a terminal rounded rectangle at the right edge. Three tall narrow gate bars stand across that arrow at even intervals, numbered 1, 2 and 3, each drawn as a rectangle divided by two short parallel lines. Under each gate bar sit two small stacked tags, the upper tag filled solid navy and the lower tag hollow with a dashed stroke. Below the pipeline sits a group of three overlapping circles of equal size arranged in a triangle, drawn with thin strokes and very light fills, their three pairwise overlap regions shaded one step darker and the small central region where all three meet left pure white. A small warm amber wedge marks one region just outside all three circles but inside the surrounding frame. One separate thin slate gray arrow leaves the pipeline just before the terminal rectangle, bends downward, and ends at a small box drawn with a dashed stroke that stands apart from the three gates. Text: only the digits 1, 2 and 3 on the three gate bars. No other text anywhere.",
+      "text_strategy": "numbers-only",
+      "caption_ko": "[릴리스 전 3중 검사의 커버리지 구조]",
+      "target_path": "content/en/ai/ai-code-release-triple-gate.png",
+      "replaces": null,
+      "purpose": "이 그림이 없으면 개발자는 세 검사가 왜 모두 필요한지, 각각이 무엇을 놓치는지 모른 채 하나만 돌리고 안전하다고 판단한다. 커버리지 공백이 겹쳐서 메워지되 완전히 메워지지는 않는다는 구조가 이 절의 핵심이다."
+    }
+  ],
+  "keep_existing": [
+    {
+      "file": "content/en/using/common-right.png",
+      "why": "라이선스 공통 의무사항 도해. 내용이 여전히 정확하고 개정 대상 서술과 충돌하지 않는다. 화풍 차이만으로 교체하지 않는다."
+    },
+    {
+      "file": "content/en/using/compliance-process.png",
+      "why": "컴플라이언스 7단계 프로세스 도해. 본문 단계 구성이 개정 후에도 동일해 교체 이득이 없다."
+    },
+    {
+      "file": "content/en/using/compliancerange.png",
+      "why": "컴플라이언스 범위 도해. 내용 변경 없음."
+    },
+    {
+      "file": "content/en/using/spdx-info.png",
+      "why": "SPDX 구성 정보 도해. SBOM 생애주기 그림과 역할이 겹치지 않는다."
+    },
+    {
+      "file": "content/en/using/cve.png",
+      "why": "CVE 조회 화면 캡처. 생성 이미지로 대체하면 실제와 다른 화면이 된다."
+    },
+    {
+      "file": "content/en/using/sonatype-oss-index.png",
+      "why": "서비스 화면 캡처. 생성 대상이 아니다."
+    },
+    {
+      "file": "content/en/using/devsecops.png",
+      "why": "DevSecOps 개념도. 내용 정확."
+    },
+    {
+      "file": "content/en/using/opensouece-ecosystem.png",
+      "why": "생태계 개념도. 내용 정확. 파일명 오타가 있으나 원고 참조와 일치하므로 건드리지 않는다."
+    },
+    {
+      "file": "content/en/using/dependency-graph.png, dependabot.jpg, code-scanning.png, secret-scanning.png",
+      "why": "GitHub 기능 화면 캡처 4종. 재캡처 대상이며 생성 이미지로 대체하지 않는다."
+    },
+    {
+      "file": "content/en/using/kakaoNotice.png, lgNotice.png",
+      "why": "실제 기업 고지문 화면. 실물 증거이므로 생성 대체 불가."
+    },
+    {
+      "file": "content/en/contributing/membership.png",
+      "why": "프로젝트 역할 도해. 재작성 후보(project-roles-2026)였으나 이번 20건 생성 범위에서 제외되었고 원고가 여전히 참조하므로 유지한다."
+    },
+    {
+      "file": "content/en/contributing/commits.png, closed.png, pullrequests.png",
+      "why": "GitHub UI 캡처 3종. 구 UI라 재캡처가 필요하나 생성 대상이 아니다(github-project-health-2026은 촬영 작업으로 분류)."
+    },
+    {
+      "file": "content/en/contributing/cla-bot.png",
+      "why": "CLA 봇 동작 화면 캡처. 생성 대체 불가."
+    },
+    {
+      "file": "content/en/releasing/community-resource.png",
+      "why": "커뮤니티 리소스 도해. 내용 정확."
+    },
+    {
+      "file": "content/en/releasing/issue-label.png, github-good-first-issue.png",
+      "why": "GitHub 화면 캡처. 재캡처 대상."
+    },
+    {
+      "file": "content/en/releasing/twitter-line.png, twitter-facebook.png, line-facebook.png",
+      "why": "채널별 홍보 사례 캡처. 생성 대체 불가."
+    },
+    {
+      "file": "content/en/ospo/*.png",
+      "why": "OSPO 장은 이번 개정에서 신규 삽화 대상이 아니다. 기존 6장 모두 유지."
+    }
+  ],
+  "retire": [
+    {
+      "file": "content/en/using/license.jpg",
+      "why": "permissive/copyleft 2분법 도해. license-spectrum-2026이 4구간과 OSI 승인 경계를 담아 대체한다. 원고 참조가 이미 신규 파일명으로 바뀌었다."
+    },
+    {
+      "file": "content/en/using/spdx-excel.png",
+      "why": "Excel로 SBOM을 작성해 변환하는 방식은 자동 생성 전제와 어긋나 본문에서 삭제되었다. sbom-lifecycle-pipeline이 대체한다."
+    },
+    {
+      "file": "content/en/using/spdx-web.png",
+      "why": "위와 동일 사유. 원고에서 참조가 제거되었다."
+    },
+    {
+      "file": "content/en/using/opensource-company.png",
+      "why": "원고 어디에서도 참조되지 않는 고아 파일. 빌드에 포함되지 않는다."
+    },
+    {
+      "file": "content/en/contributing/prflow.png",
+      "why": "본문 Step 3/4 순서, 브랜치명, 작업 디렉터리 변수명이 모두 본문과 어긋난다. prflow-2026이 대체한다."
+    },
+    {
+      "file": "content/en/releasing/community-profile.png",
+      "why": "구 GitHub Community Profile 화면. 화면 구성이 바뀌었고 SECURITY·GOVERNANCE·MAINTAINERS·CODEOWNERS가 빠져 있다. repo-file-set-2026이 대체한다."
+    },
+    {
+      "file": "content/en/using/logo-whitesource.png",
+      "why": "제품명 변경 — 2022-05-25 WhiteSource가 Mend로 리브랜딩했다. 공식 로고 확보 대상이며 이미지 생성 대상이 아니다. 파일명도 logo-mend로 바꾸려면 원고 참조를 함께 고쳐야 한다."
+    },
+    {
+      "file": "content/en/using/logo-labrador.png",
+      "why": "2022-08-30 IoTcube가 Labrador Labs로 사명 변경. 공식 로고 확보 대상."
+    },
+    {
+      "file": "content/en/using/logo-blackduck.png",
+      "why": "2024-10-01 Synopsys에서 분리되어 독립 법인으로 재출범하며 브랜드 자산이 바뀌었다. 공식 로고 확보 대상."
+    },
+    {
+      "file": "content/en/using/logo-fossid.png, logo-fossa.png, logo-snyk.png, logo-codeeye.png, logo-insignary.png, logo-olive.png, logo-fosslight.png",
+      "why": "제품 로고 일반. 해상도·최신성 점검 후 각 프로젝트·기업 브랜드 자산 페이지에서 사용 조건을 확인해 받는다. 이미지 모델로 만들면 위조 상표가 되므로 생성 대상에서 제외한다."
+    }
+  ],
+  "excluded_from_generation": [
+    {
+      "filename": "github-project-health-2026",
+      "why": "2026년 GitHub UI 재촬영 대상. 화면 캡처를 생성 이미지로 만들면 실제와 다른 화면이 되어 독자가 위치를 찾지 못한다."
+    },
+    {
+      "filename": "contribution-decision-tree-2026, cla-dco-comparison-2026, contribution-approval-workflow-2026, contribution-journey-2026, project-roles-2026",
+      "why": "계획에는 있었으나 이번 20건 생성 범위(07a_needed_images.json)에 포함되지 않았다. 원고에 imgproc 참조가 없으므로 생성하면 배치할 곳이 없다."
+    }
+  ]
+}

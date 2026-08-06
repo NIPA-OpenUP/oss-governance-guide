@@ -3,3 +3,11 @@ public/
 resources/
 node_modules/
 tech-doc-hugo
+
+# 삽화 생성 시 codex CLI 가 남기는 실행 로그
+.codex-logs/
+__pycache__/
+
+# 삽화 시안과 최종본 사본. 정본은 content/en/<장>/ 페이지 번들이고
+# 재생성에 필요한 것은 프롬프트·명세 텍스트뿐이므로 PNG 는 추적하지 않는다.
+_workspace/images*/

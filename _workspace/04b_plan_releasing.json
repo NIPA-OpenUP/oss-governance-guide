@@ -1,0 +1,495 @@
+{
+  "slug": "releasing",
+  "file": "content/en/releasing/_index.md",
+  "target_line_delta": "+93",
+  "front_matter": {
+    "title": "오픈소스 공개하기",
+    "linkTitle": "3. 공개하기",
+    "weight": 40
+  },
+  "budget_note": "현재 688행(파일 마지막 행 포함) → 목표 780행. 순증 지시 합계 약 +230행, 삭제·압축 지시 합계 약 -137행으로 설계했다. 집필 중 순증이 목표를 넘으면 신설 체크리스트를 줄이지 말고 RE-34(이점 절)와 RE-28(Make a README 인용)의 압축 폭을 더 키운다 — 이 개정의 우선 기준은 체크리스트·판단기준표이지 산문이 아니다. 각 directive의 instruction 끝에 '약 N행' 예산을 적어 두었으니 그대로 지킨다.",
+  "notes": [
+    "_workspace/03b_stale_all.json 에는 target_section 필드 자체가 없고, releasing 원고의 문장을 인용한 항목도 없다(Travis/Repolinter/Gitter/Maven Central/KIPRIS 등으로 전수 검색해 0건). 따라서 이 계획은 03b_findings_releasing.json 4건과 03_audit_releasing.json 52건, 04a_structure_decision.json 의 releasing 배분을 근거로 한다.",
+    "리서치 축 중 이 섹션에 배정된 것은 regulation(2건)·security(1건)·ai(1건)뿐이다. market·tooling 축의 발견은 이 섹션에 배정되지 않았으므로 그 축을 근거로 하는 지시는 만들지 않았다. 집필자는 근거 없는 도구·시장 서술을 자체 지식으로 채우지 마라.",
+    "이 원고는 한글 헤딩을 슬러그 앵커로 참조한다. 헤딩 텍스트를 바꾸는 지시(RE-01, RE-32)에는 링크 동시 수정과 확인 명령을 명시했다. 집필 후 반드시 `python3 .claude/skills/guide-quality-check/scripts/check_guide_integrity.py` 와 `rg -n '\\]\\(#' content/en/releasing/_index.md` 를 실행한다.",
+    "AI 모델 라이선스 선택 본문(Llama/Gemma/Mistral 조건, OSAID, OpenMDW 결정 트리)은 신규 5장(slug `ai`)에 있다. releasing 에서는 절대 본문을 중복 서술하지 말고 링크만 건다(04a structure_decision.target_lines.releasing). 예외는 RE-22의 '제품 출하 시 고지' 로, 이는 research_ai#findings[28]이 releasing 으로 배정한 항목이다."
+  ],
+  "directives": [
+    {
+      "id": "RE-01",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 182,
+      "anchor_quote": "#### 어떻게?:어떤 조건으로 공개할 것인가? 공개에 적합한 라이선스 후보군 정하기",
+      "instruction": "기업 편 5W 헤딩 5개(L114 '누가?(1):…', L160 '누가?(2):…', L172 '언제?:…', L176 '어디서?:…', L182 '어떻게?:…')의 문장부호를 '누가? — …' 형태로 통일하고, 각 헤딩 끝에 고정 앵커 `{#who-reviews}` `{#who-operates}` `{#release-timing}` `{#where-to-publish}` `{#license-candidates}` 를 붙인다. 그 다음 L120·L144의 깨진 링크를 `(#license-candidates)` 로, L216의 링크를 `(#release-timing)` 로 교체한다. 발간본 p129/p132/p137이 이 세 링크의 지시 대상을 '「5) 어떻게? : …」'·'「3) 언제? : …」' 로 확정해 두었으므로 대상 판단에 이견은 없다. **경고: 헤딩 텍스트를 바꾸므로 이 헤딩을 가리키는 링크를 함께 수정해야 한다.** 작업 후 `rg -n '\\]\\(#' content/en/releasing/_index.md` 로 잔존 한글 슬러그 링크를 전수 확인하고 `python3 .claude/skills/guide-quality-check/scripts/check_guide_integrity.py` 가 blocking 0 을 반환하는지 확인한다. 새 산문을 추가하지 말고 표기만 고친다(약 ±0행).",
+      "evidence": ["audit_releasing#issues[0]", "audit_releasing#issues[1]", "audit_releasing#issues[2]", "audit_releasing#issues[50]"],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "RE-02",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 158,
+      "anchor_quote": "CLA와 DCO에 대한 더욱 자세한 내용은 **기업을 위한 오픈소스 기여 가이드 - CLA (Contributor License Agreement)** 를 참고한다.",
+      "instruction": "실재하지 않는 절 제목을 가리키는 교차 참조 5곳을 실제 헤딩으로 정정하고 앵커 링크를 건다. L158 → '오픈소스 기여 가이드 - 기업 편: 4. CLA / DCO에 주의하라'(`/contributing/#4-cla--dco에-주의하라`), L253 → '오픈소스 공개 가이드 - 개발자 편: 오픈소스 공개를 준비하기', L306 → '오픈소스 공개 가이드 - 개발자 편: 오픈소스 운영하기 > 오픈소스 배포하기', L379 → '오픈소스 사용 가이드 - 개발자 편: 오픈소스 선택 기준', L686 → '오픈소스 공개 가이드 - 기업 편: 공개만 하면 끝인가요? 그 이후에 해야 할 일'. 발간본이 '「II.2. … : 4) CLA / DCO에 주의하라」' 처럼 장·절 번호로 대상을 특정해 두었으므로 대상 판정은 발간본을 따르되, 웹 판본이므로 인쇄용 장 번호 표기는 쓰지 말고 앵커 링크로 옮긴다. 링크를 걸기 전에 대상 파일의 실제 헤딩을 `rg -n '^#{3,5} ' content/en/contributing/_index.md` 로 확인한다(약 ±0행).",
+      "evidence": ["audit_releasing#issues[6]", "audit_releasing#issues[7]", "audit_releasing#issues[8]"],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "RE-03",
+      "priority": 1,
+      "op": "insert",
+      "anchor_line": 193,
+      "anchor_quote": "- 만약 오픈소스 버전과 상용 버전으로 나누어 사업을 하는 경우에는 오픈소스의 변경을 추적하는 것이 중요할 것이다.",
+      "instruction": "이 줄 바로 다음, '### 문서화하기'(L195) 앞에 '#### 우리는 CRA상 무엇인가 — 제조사·스튜어드·무의무 판정' 소절을 신설한다. 산문으로 풀어 쓰지 말고 판단기준표 한 장을 중심에 둔다: 행은 '제조사(manufacturer) / 오픈소스 스튜어드(open-source software steward) / 어느 쪽도 아님', 열은 '해당하는 배포 형태 / 부과되는 의무 / 과징금 적용 여부 / 적용 시점'. 근거는 규정 (EU) 2024/2847 제3조(14) 정의, 제24조 의무 3가지(검증 가능하게 문서화된 사이버보안 정책, 시장감시당국 협조, 제14조 신고), 제64조(10)(b) 스튜어드 과징금 비적용, 그리고 2026-07-27 집행위 적용 지침 C(2026) 5252 ANNEX 제3장이다. 지침이 확정한 두 판정 규칙을 표 아래 한 줄씩 적는다 — ① FOSS 정의는 '오픈소스 라이선스 배포'와 '소스코드 공개 공유'를 누적 요구하므로 유료 고객에게만 소스를 주면 CRA상 FOSS가 아니다(44~46항), ② 상업적 활동은 개발 경위나 자금 조달이 아니라 수익화 여부로 판정한다(41~42항). 시행일은 '2026-09-11 제14조 연계 신고 의무 / 2027-12-11 제24조 전면 적용'로 날짜까지 적고 EUR-Lex 원문과 집행위 지침을 각주로 단다. 같은 법인이 프로젝트마다 다른 지위를 가질 수 있다는 점(지침 72~74항, 커뮤니티 에디션 + 엔터프라이즈 에디션 구조)을 한 문장으로 못박고, 판정 결과를 감사 대응용으로 문서 보관하라는 실행 지시로 닫는다. 약 22행.",
+      "evidence": ["research_regulation#findings[2]", "research_regulation#findings[3]", "audit_releasing#issues[15]", "audit_releasing#missing_topics[0]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "RE-04",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 239,
+      "anchor_quote": "거버넌스는 오픈소스 커뮤니티를 형성하고 사람들이 문제없이 어울리기 위해 필요하다. 사용 규칙은 License에서, 커뮤니티에서 지켜야 할 행동 강령은 Code of conduct에서, 그리고 기여 규칙은 Contributing 에서 정의한다.",
+      "instruction": "L239~251(3종 문서 서술 + 'GitHub에서는 다음의 7가지' + community-profile 이미지 + Repolinter 목록·각주)을 통째로 교체한다. GitHub 화면 구성에 의존한 '7가지'라는 숫자를 본문에서 빼고, 저장소에 두어야 할 문서 세트를 가이드 자체의 표로 확정한다: 행은 README.md / LICENSE / NOTICE / CONTRIBUTING.md / CODE_OF_CONDUCT.md / SECURITY.md / GOVERNANCE.md / MAINTAINERS.md / SUPPORT.md / CHANGELOG.md / .github/CODEOWNERS, 열은 '필수·권장 / 최소 항목 / 작성 주체(사무국·개발자) / 위치(루트·.github/)'. SECURITY.md 행의 최소 항목은 반드시 지원 버전 표, 신고 채널(GitHub Private vulnerability reporting 활성화), 접수→분류→패치→공개 목표 기간, CVE 발급 경로(GitHub Security Advisory) 네 가지를 적는다 — RE-03의 CRA 스튜어드 의무를 이행하는 실물이 이 파일이기 때문이다. 점검 도구는 아카이브된 Repolinter를 빼고 OpenSSF Scorecard(GitHub Action), OpenSSF Allstar, REUSE tool, GitHub Insights > Community Standards 로 교체한다. 이미지는 IL-releasing-04로 대체하므로 community-profile 숏코드와 캡션을 삭제한다. 순증 약 +16행.",
+      "evidence": ["audit_releasing#issues[15]", "audit_releasing#issues[16]", "audit_releasing#issues[17]", "audit_releasing#missing_topics[1]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "RE-05",
+      "priority": 1,
+      "op": "expand",
+      "anchor_line": 302,
+      "anchor_quote": "코드를 옮기기 전에 commit 이력을 모두 공개할 것인지, 삭제할 것인지 정해야 한다.",
+      "instruction": "'##### 코드 이전' 절이 두 문장뿐인데 기업 오픈소스 공개 사고가 가장 많이 나는 되돌릴 수 없는 단계다. 기존 두 문장은 유지하되 '이력을 삭제하면 안전하다'는 인상을 주지 않도록 다듬고, 그 아래에 '공개 전 코드 정제 체크리스트'를 번호 목록으로 신설한다: (1) 전체 커밋 이력 대상 시크릿 스캔(gitleaks, trufflehog), (2) 발견 시 git-filter-repo 또는 BFG 로 제거하고 노출된 자격증명은 즉시 폐기·회전한다 — 제거는 유출 대응이 아니다, (3) 커밋 작성자 이메일 정리(사내 도메인·개인 메일 → noreply 정책), (4) 내부 호스트명·IP·사내 경로 문자열 grep, (5) 서드파티 코드 출처·라이선스 확인 후 NOTICE/THIRD_PARTY 작성, (6) 파일별 SPDX 헤더와 저작권 표기 삽입(REUSE 규격: 파일 헤더 + LICENSES/ 디렉터리), (7) AI 코딩 도구로 생성된 구간의 출처 검토 — 세부는 5장 'AI와 오픈소스 - 개발자 편'으로 링크만 건다. 각 항목 끝에 책임 부서(보안팀/검수팀/개발자)를 괄호로 적어 실행 가능하게 만든다. 산문으로 풀지 말고 반드시 체크박스 목록 형태로 쓴다. 순증 약 +12행.",
+      "evidence": ["audit_releasing#issues[21]", "audit_releasing#missing_topics[9]", "audit_releasing#missing_topics[10]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "RE-06",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 450,
+      "anchor_quote": "상용 도구에도 오픈소스에 사용하면 가격을 할인해주는 경우가 많다. 그러나 역시 오픈소스에서 무료로 사용할 수 있는 도구들이 더 대중적으로 쓰이고 있다.",
+      "instruction": "L450~462의 도구 목록 5개와 각주 5개를 전면 교체한다. 나열 목록 대신 '용도 / 도구 / 무료 조건' 3열 표로 만들어 정책이 바뀌어도 서술이 무너지지 않게 한다. 행 구성: CI/CD — GitHub Actions(공개 저장소 무료) 또는 GitLab CI / 의존성 갱신 — Dependabot(GitHub 내장, `.github/dependabot.yml`) 또는 Renovate / 커버리지 — Codecov(오픈소스 플랜 조건 확인) / 릴리스 자동화 — semantic-release 또는 Release Please / 보안 — OpenSSF Scorecard Action, CodeQL, gitleaks, OSV-Scanner / 라이선스 — REUSE / 기여자 관리 — All Contributors. Travis CI는 오픈소스 무제한 무료 정책이 종료됐으므로 대표 예시에서 내리고, Pull Panda는 서비스가 종료되어 항목과 각주를 삭제한 뒤 같은 목적을 GitHub scheduled reminders·CODEOWNERS·머지 큐로 대체 서술한다. Dependabot은 독립 서비스가 아니므로 dependabot.com 링크를 GitHub 공식 문서로 바꾼다. 'Contiuous' 오타 2건을 고친다. 순증 약 +4행.",
+      "evidence": ["audit_releasing#issues[34]", "audit_releasing#issues[35]", "audit_releasing#issues[36]", "audit_releasing#issues[37]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "RE-07",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 579,
+      "anchor_quote": "- [Maven Central에 배포하기](https://dzone.com/articles/publish-your-artifacts-to-maven-central)[^maven-central]",
+      "instruction": "이 링크가 안내하는 OSSRH(oss.sonatype.org) 기반 게시 경로는 종료되어 그대로 따라가면 배포가 되지 않는다. 링크와 각주를 Sonatype Central Portal 공식 문서(central.sonatype.org/publish/)로 교체하고, 본문에 4단계 요약을 붙인다: namespace 소유 검증(도메인 TXT 레코드 또는 io.github.<user>), GPG 서명 요건, Gradle/Maven 퍼블리시 플러그인 설정, Portal 업로드·릴리스. 구 문서를 보고 온 독자를 위해 'OSSRH 경로는 더 이상 사용할 수 없다'를 한 줄로 남긴다. OSSRH 종료 일자는 집필 시 Sonatype 공식 공지로 재확인하고, 확인되지 않으면 날짜를 쓰지 말고 '종료됨'만 서술한다(verify). 순증 약 +3행.",
+      "evidence": ["audit_releasing#issues[43]", "audit_releasing#missing_topics[3]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "RE-08",
+      "priority": 1,
+      "op": "insert",
+      "anchor_line": 582,
+      "anchor_quote": "- [자동화: 유용한 GitHub Actions workflow 모음](https://github.com/sdras/awesome-actions)[^actions]",
+      "instruction": "이 목록과 각주 블록 뒤에 '##### 안전하게 배포하기 — 서명·프로비넌스·SBOM' 소절을 신설한다. 2026년 기업 채택자가 확인하는 항목이자 CRA 대응의 실무 수단이므로 개념 설명이 아니라 릴리스 워크플로 체크리스트로 쓴다: (1) 장기 API 토큰 대신 CI의 OIDC 기반 Trusted Publishing 사용(PyPI, npm), (2) 아티팩트 서명(Sigstore/cosign)과 npm `--provenance` 로 프로비넌스 발행, (3) 릴리스마다 SBOM(SPDX 또는 CycloneDX)을 GitHub Release 에 첨부, (4) 게시 계정 2FA 강제와 릴리스 태그 서명, (5) 릴리스는 사람 로컬이 아니라 CI에서만 수행. 각 항목에 '채택자가 무엇으로 검증하는가'를 한 줄씩 붙여 RE-23('사용자 늘리기' 6~10번)과 짝을 이루게 한다. SBOM 자체가 무엇인지는 using 장에서 이미 다루므로 반복하지 말고 '생성·첨부하는 쪽'의 관점으로만 쓰고 using으로 링크한다. SLSA는 빌드 프로비넌스의 레벨 기준으로 한 줄 언급하되 레벨별 상세 요구사항은 쓰지 않는다. 순증 약 +16행.",
+      "evidence": ["audit_releasing#issues[44]", "audit_releasing#missing_topics[2]", "structure_decision#target_lines.releasing"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "RE-09",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 371,
+      "anchor_quote": "그동안은 해외에서 열리는 콘퍼런스에 참여하기 위해서 적지 않은 시간과 비용, 그리고 노력을 들여야 했지만, 2020년부터는 대부분의 행사가 온라인으로 전환했다. 온라인 콘퍼런스의 좋은 점은 참석자와 발표자의 다양성이 커진다는 점이다.",
+      "instruction": "이 두 문장은 2026년 기준 사실이 아니므로 삭제한다 — 팬데믹기 서술이며 이를 근거로 콘퍼런스 예산·출장 계획을 세우면 담당자를 오도한다. 대신 실행 지침으로 대체한다: 프로젝트 성격별 목표 행사 선정(클라우드 네이티브 계열 / 일반 오픈소스 / 국내 공개SW·오픈소스 컨트리뷰션 아카데미 / 자체 개발자 콘퍼런스), CFP 마감에서 역산한 준비 일정, 발표 자료의 재활용 경로(기술 블로그·영상), 부스·스폰서십 판단 기준, 하이브리드 행사에서 원격 참여로 비용을 낮추는 방법. 개별 행사명과 개최 형태는 집필 시 재확인하고 확인되지 않으면 고유명사 대신 유형만 쓴다(verify). 순증 약 +2행.",
+      "evidence": ["audit_releasing#issues[28]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "RE-10",
+      "priority": 2,
+      "op": "insert",
+      "anchor_line": 181,
+      "anchor_quote": "소스를 공개할 때는 언제나 해당 소스에 대한 소개 홈페이지, 기술 블로그 등을 같이 공개하고 그 링크를 소스 저장소에서 접근할 수 있도록 하는 것이 좋다.",
+      "instruction": "L110이 5W를 약속했으나 '무엇을?'에 대응하는 절이 기업 편에 없다. 이 줄 다음, '어떻게?' 절(L182) 앞에 '#### 무엇을? — 무엇을 공개할 것인가: 공개 대상 선정 기준 {#what-to-publish}' 절을 신설한다. 사무국이 심사에 그대로 쓰는 체크리스트로 구성한다: (a) 제외 기준 — 사업 코어·차별화 자산, 고객 데이터가 결합된 코드, 규제 대상 암호모듈, 제3자 계약으로 재배포가 제한된 코드, (b) 공개 후보 유형 — 사내 공용 라이브러리, SDK, 개발 도구, 데이터셋, AI 모델, (c) 공개 부적합 신호 3~4개, (d) 통과 기준(심사 항목별 합·부 판정). 개발자 편 L428~438('기업의 입장에서 오픈소스를 판단하는 기준을 생각해보기')과 중복되지 않도록 기업 편은 '심사 기준', 개발자 편은 '자기 점검'으로 역할을 선언하고 서로 링크한다. 개발자 편 L430~446의 산문은 이 절과 겹치는 부분을 걷어내 약 -8행 압축한다. 순증 약 +14행(압축 반영 후 순 +6행).",
+      "evidence": ["audit_releasing#issues[3]", "audit_releasing#structure_note"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "RE-11",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 178,
+      "anchor_quote": "기업에서 처음 오픈소스를 공개하는 경우라면 GitHub 혹은 GitLab 등 인기 있는 오픈소스 저장소에 기업 이름으로 된 조직(Organization)을 생성할 수 있는지 확인해야 한다.",
+      "instruction": "'어디에 공개할 것인가'가 자사 조직 계정 선점 하나로 끝난다. 기존 3문단은 유지하되 그 뒤에 '자사 org / 중립 재단 이관 / 여러 기업 공동 org' 3안 비교표를 넣는다. 열은 '통제권 / 외부 채택 신뢰도 / 상표 소유 / 비용 / 되돌리기 난이도'. 이 결정이 상표·CLA·거버넌스 선택을 모두 되돌리게 만드는 상위 결정이므로 순서상 여기에 둔다는 점을 한 문장으로 밝힌다. 표 아래에 재단 이관 시 사전 요건 3개(상표 이전, CLA→DCO 전환, 특허 정책 동의)와, 조직 계정 생성 직후 적용할 보안 기준선 4개(전 구성원 2FA 강제, SSO 연동, organization ruleset, secret scanning push protection 기본 활성)를 각각 한 줄 목록으로 붙인다. 특정 재단의 가입 요건을 상세 서술하지 말고 유형 비교에 그친다 — 재단별 요건은 변경이 잦다. 순증 약 +8행.",
+      "evidence": ["audit_releasing#issues[11]", "audit_releasing#missing_topics[7]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "RE-12",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 193,
+      "anchor_quote": "- 만약 오픈소스 버전과 상용 버전으로 나누어 사업을 하는 경우에는 오픈소스의 변경을 추적하는 것이 중요할 것이다. 어떠한 제한을 두지 않는 경우에는 수익에 지장을 줄 수 있기 때문이다.",
+      "instruction": "라이선스 선택 절의 시나리오 3개 뒤에 두 개를 추가한다. '##### 오픈소스 버전과 상용 버전의 경계를 나중에 옮길 가능성이 있는 경우' — 소스가용(source-available) 라이선스로 공개하는 선택지가 별도로 존재하며 이는 오픈소스가 아니라는 점을 먼저 못박고, 리라이선싱 사례와 그 결과인 커뮤니티 포크가 실제로 발생했다는 사실을 서술한 뒤(사례는 집필 시 1차 출처로 확인해 각주로 달고, 확인되지 않으면 회사명 없이 유형만 쓴다), '리라이선싱 여지를 남기려면 지금 CLA 또는 저작권 집중이 필요하다'는 인과를 L145 CLA 절과 링크로 연결한다. '##### AI 모델·가중치·데이터셋을 함께 공개하는 경우' — 코드·가중치·데이터를 각각 다른 라이선스로 다룬다는 원칙 한 문장과 '자사 모델을 공개할 때의 라이선스 선택 결정 트리는 5장 「AI와 오픈소스 - 기업 편」에 있다'는 크로스링크만 남긴다. **모델 라이선스 본문을 여기에 복제하지 마라** — 04a 구조 결정이 이 주제의 단일 수용처를 5장으로 지정했다. 절 전체에 걸쳐 SPDX 식별자 표기와 REUSE 규격을 공개 전 필수 작업으로 명시한다. 순증 약 +10행.",
+      "evidence": ["audit_releasing#issues[13]", "audit_releasing#missing_topics[6]", "structure_decision#target_lines.releasing"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "RE-13",
+      "priority": 3,
+      "op": "replace",
+      "anchor_line": 187,
+      "anchor_quote": "- 이 오픈소스에 만약 Copyleft licesne를 적용한다고 해도 저작권자와 사용자(라이선스 의무사항을 지켜야 할 사람)이 동일하므로 법적인 이슈가 생길 가능성은 없을 것이다.",
+      "instruction": "L187의 'licesne' 오타를 'license'로, '사용자(…)이 동일하므로'를 '사용자가 동일하므로'로 고친다(발간본 p135가 이미 교정본을 갖고 있다). 이어 L191의 'Public domain, CC0, Unlicense 등 저작권을 포기하는 쪽' 서술을 교정한다 — 한국 저작권법상 저작인격권 포기가 불가능하므로 '저작권을 포기'를 '가장 넓게 허용'으로 바꾸고, CC0는 특허 실시권을 명시적으로 부여하지 않으므로 자사 특허가 조금이라도 얽힐 가능성이 있으면 CC0/Unlicense 대신 MIT 또는 Apache-2.0(명시적 특허 실시권 포함)을 선택하라는 단서를 붙인다. 이 단서는 특허를 다룬 L118~120과의 논리적 불일치를 해소하는 것이므로 반드시 넣는다(약 +2행).",
+      "evidence": ["audit_releasing#issues[12]", "audit_releasing#issues[14]"],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "RE-14",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 170,
+      "anchor_quote": "|Admin|Maintain 역할의 권한 전부<br>멤버 관리를 포함한 저장소 설정의 전부에 접근하기|",
+      "instruction": "L162가 '메인테이너 한 명이 퇴사한다면?'으로 절을 열어 놓고 GitHub 권한 5단계 표로만 답하는 구조적 불일치를 메운다. 권한표는 그대로 두고 그 아래에 네 덩어리를 추가한다: (a) GOVERNANCE.md에 기록할 거버넌스 모델 3종(단독 메인테이너 / 메인테이너 위원회 / 재단 이관)의 의사결정 방식·적용 규모 비교 3행 표, (b) MAINTAINERS.md와 CODEOWNERS로 소유권을 사람이 아니라 파일에 고정하는 방법 1~2문장, (c) 기여자 사다리(User→Contributor→Committer→Maintainer→Emeritus)의 승격 기준과 이탈·퇴사 시 권한 회수 절차 — 그림 IL-releasing-06으로 보이고 본문은 기준만 목록으로, (d) 조직 계정 소유자 최소 2인과 복구 코드 보관 규칙. 표 아래 주석으로 2026년 GitHub 기준 보완 항목(Custom repository roles, Organization rulesets, 조직 단위 2FA 강제, fine-grained PAT)을 한 줄로 붙인다. 순증 약 +10행.",
+      "evidence": ["audit_releasing#issues[9]", "audit_releasing#missing_topics[4]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "RE-15",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 174,
+      "anchor_quote": "따라서 적당한 시점에 오픈소스로 내놓고 발전시키는 과정이 필요하다. 정량적으로 어느 정도의 완성이라고 표현하기는 어렵기 때문에 공개하는 과정마다 이 점을 인지하고 공개 시점을 정할 것을 권한다.",
+      "instruction": "'정량적으로 표현하기 어렵다'고 선언해 판단을 독자에게 떠넘기는 문장을 걷어내고, 승인·반려에 쓸 수 있는 '최소 공개 기준(Definition of Ready)' 체크리스트로 대체한다: README만 보고 5분 안에 첫 실행이 가능한가, 자동 빌드·테스트가 통과하는가, LICENSE·SECURITY.md·CODE_OF_CONDUCT.md가 있는가, 최소 1개 릴리스 태그(v0.1.0)와 CHANGELOG가 있는가, 알려진 CVE가 0건인가, 향후 2개 마일스톤이 공개되어 있는가. 여기에 SemVer 채택 여부와 0.x가 뜻하는 바(호환성 보증 없음), 릴리스 노트 작성 주체를 각 한 줄로 붙인다. '홍보 시점은 자사 개발자 콘퍼런스 등'이라는 기존 문장은 유지한다. 체크박스 목록으로 쓰고 산문으로 풀지 않는다. 순증 약 +8행.",
+      "evidence": ["audit_releasing#issues[10]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "RE-16",
+      "priority": 2,
+      "op": "replace",
+      "anchor_line": 156,
+      "anchor_quote": "최근 CLA를 대체하는 DCO(Developer Certificate of Origin, 이하 DCO)를 채택하는 오픈소스들이 늘어나고 있다. CLA는 계약서에 직접 서명하여 제출하는 등 번거로움이 있는 반면에 개발자들이 git commit을 통해 간단히 서명하는 방식이다.",
+      "instruction": "'최근 … 늘어나고 있다'는 2021년 시점의 상대 서술이고 '계약서에 직접 서명하여 제출'은 L255에서 스스로 전자서명이 대부분이라고 말한 것과 모순된다. 상대 시점 표현을 전부 걷어내고 현재형 판단 기준으로 다시 쓴다: 기여 규모, 기업 기여자 비중, 재단 이관·리라이선싱 계획 세 축으로 DCO(기본값)와 CLA(재단 이관이나 리라이선싱 여지가 필요한 경우)를 고르는 2×2 판단표를 넣고, 각 선택에 따르는 운영 비용(서명 수집·보관, 기여자 이탈률)을 한 줄씩 적는다. DCO 선택 시 설정법(`git commit -s`, DCO 앱을 필수 상태 검사로 등록)을 한 문장으로 붙인다. RE-12의 리라이선싱 서술과 이 표를 링크로 연결한다. 순증 약 +4행.",
+      "evidence": ["audit_releasing#issues[5]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "RE-17",
+      "priority": 2,
+      "op": "replace",
+      "anchor_line": 255,
+      "anchor_quote": "CLA는 기여 과정의 하나이기 때문에 Contributing 에서 다루면 좋다. CLA의 양식은 이미 정해두었지만, 사람들에게 이 양식을 서면으로 제출하게 한다면 굉장히 불편할 것이다.",
+      "instruction": "L257~265의 목록이 '도입할 도구'와 '다른 회사의 기여자 서명 페이지'를 한 줄에 섞어 놓아 분류가 어긋난다. 목록을 두 줄로 분리한다 — '도구: CLA assistant, Linux Foundation EasyCLA, DCO GitHub App' / '운영 사례: Google, Microsoft'. 2026년 기업·재단이 실제로 쓰는 EasyCLA와 DCO GitHub App이 빠져 있으므로 반드시 추가하고 각주도 함께 만든다. cla-bot은 유지보수 상태를 확인해 살아 있으면 유지, 아니면 항목과 각주를 삭제한다(verify). RE-16의 판단표에서 DCO를 택한 독자가 여기로 이어지도록 한 줄 링크를 건다. 순증 약 +2행.",
+      "evidence": ["audit_releasing#issues[18]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "RE-18",
+      "priority": 2,
+      "op": "replace",
+      "anchor_line": 274,
+      "anchor_quote": "- [Geek Feminizm Code of Conduct](https://geekfeminismdotorg.wordpress.com/about/code-of-conduct/)[^geekcoc]",
+      "instruction": "Geek Feminism은 활동이 종료된 아카이브 자료이고 'Feminizm' 오타도 있으므로 항목과 각주를 삭제하고, 예시를 Contributor Covenant 2.1(집행 가이드라인 포함), Django CoC, CNCF CoC + Code of Conduct Committee 운영 문서로 교체한다. 더 중요한 결함은 이 절이 '문서를 두어라'에서 끝난다는 점이다 — CoC는 채택하는 순간 기업이 운영 책임을 지는 문서이므로 그 아래에 'CoC 집행 체계' 소절을 신설한다: 신고 창구(전용 메일 또는 폼), 접수 후 조사 주체(사무국인가 메인테이너인가), 조치 단계(경고→일시 차단→영구 차단), 이해충돌 회피 규칙, 기록 보존 기간. 다섯 항목을 목록으로만 쓰고 산문 설명을 붙이지 않는다. 순증 약 +6행.",
+      "evidence": ["audit_releasing#issues[19]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "RE-19",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 282,
+      "anchor_quote": "검토 과정에서 정해진 이름으로 비공개 저장소를 생성한다. 개발에 필요한 멤버들의 username을 취합하고 비공개 저장소에 접근 권한을 부여한다.",
+      "instruction": "저장소 생성 단계에서 켜야 할 보안·품질 기본값이 하나도 없다. 공개 전환 이후에는 되돌리기 어려운 설정이 있으므로 이 순서가 중요하다는 점을 한 문장으로 밝히고 '저장소 초기 설정 체크리스트'를 신설한다: 기본 브랜치명, 브랜치 보호 또는 ruleset(리뷰 1인 이상·필수 CI), secret scanning + push protection 활성(공개 저장소 무료), Dependabot alerts/security updates 활성, Private vulnerability reporting 활성, 이슈·PR 템플릿 사전 배치, Description·Topics·라이선스 메타데이터 입력. L284~296의 GitHub 링크 3건은 docs.github.com/en/repositories/… 현행 경로로, GitLab 링크 3건은 docs.gitlab.com 신 경로로 일괄 교체하고 각주도 같이 고친다(각주 [^new-repository] 끝의 잘못 붙은 괄호 ')' 도 제거). 순증 약 +10행.",
+      "evidence": ["audit_releasing#issues[20]", "audit_releasing#issues[24]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "RE-20",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 306,
+      "anchor_quote": "소스 코드를 공개한 이후에 패키지 배포까지 생각하고 있는 경우에는 배포를 어떻게 할지 정해야 한다. 패키지 저장소마다 사용 방법이 다르니 개발자와 상의한다.",
+      "instruction": "'개발자와 상의한다'로 끝나 기업 편 독자(사무국)가 판단할 것이 없다. 개인 계정으로 게시된 패키지의 소유권이 실종되는 사고가 실제로 잦으므로 '배포 계정과 자격증명 거버넌스'를 목록으로 명시한다: 개인 계정 금지와 조직·스코프 소유(npm org, PyPI project owner 복수 지정, Maven groupId 도메인 소유 검증), 개인 장기 토큰 대신 OIDC 기반 Trusted Publishing 사용, 릴리스는 CI에서만 수행, 자격증명 보관 주체와 퇴사 시 회수·승계 절차. 세부 배포 방법은 개발자 편 '오픈소스 운영하기 > 오픈소스 배포하기'로 넘기되 RE-02에서 정정한 앵커 링크를 정확히 건다. 순증 약 +8행.",
+      "evidence": ["audit_releasing#issues[22]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "RE-21",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 310,
+      "anchor_quote": "더이상 설정하고 확인할 것이 없다면 이제 비공개 저장소를 공개 저장소로 전환한다.",
+      "instruction": "공개 절이 '전환 버튼을 누른다' 한 문장으로 끝난다. 그 앞에 '공개 직전 자가 점검'을, 뒤에 '공개 D-day 체크리스트'를 넣는다. 자가 점검은 OpenSSF OSPS Baseline을 기준으로 삼는다 — 성숙도 3단계·8개 범주(Access Control, Build & Release, Documentation, Governance, Legal, Quality, Security Assessment, Vulnerability Management)로 구성되며 Level 1은 모든 프로젝트, Level 2는 유지관리자 2인 이상 + 일정 이용자를 가진 코드 프로젝트, Level 3은 이용자가 많은 코드 프로젝트에 적용된다는 점을 3행 표로 적고, 사내 공개 저장소는 전수 Level 1 정렬을 먼저 하고 회사 대표 프로젝트만 Level 2/3을 목표로 하라는 운영 방침을 준다. 각 요구사항에 CRA·NIST SSDF·OpenChain(ISO/IEC 18974) 매핑이 붙어 있어 한 번의 점검으로 여러 체계에 대응할 수 있다는 점을 한 줄로 적고 RE-03(CRA 판정)과 링크로 잇는다. 판번호는 v2026.02.19로 명시하고 출처를 각주로 단다. 이어지는 D-day 체크리스트는 전환 직전 최종 시크릿 스캔, 첫 릴리스 태그·릴리스 노트 발행, good first issue 3~5개 사전 등록, 이슈·PR 템플릿 동작 확인, SECURITY.md 신고 경로 실제 테스트, 사내 공지→기술 블로그→소셜 순서와 담당자, 공개 후 2주간 이슈 응답 당번, D+30/D+90 회고 시점으로 구성한다. 순증 약 +10행.",
+      "evidence": ["research_security#findings[4]", "audit_releasing#issues[23]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "RE-22",
+      "priority": 2,
+      "op": "insert",
+      "anchor_line": 304,
+      "anchor_quote": "##### 배포 준비",
+      "instruction": "이 헤딩 앞(즉 '코드 이전' 절과 '배포 준비' 절 사이)에 '##### 고지문 작성 — 오픈소스·모델·AI 고지 3블록' 소절을 신설한다. AI 모델을 제품에 넣으면 기존 OSS Notice와 별개로 모델 라이선스가 요구하는 고지가 추가되므로 두 체계를 하나의 고지 프로세스로 통합해야 누락이 없다. 산문이 아니라 템플릿으로 쓴다 — 고지 화면 표준 레이아웃 3블록(① 오픈소스 고지, ② 모델 라이선스 고지, ③ 한국 AI 기본법 제31조에 따른 AI 기반 운용 사전 고지와 생성 결과물 표시)을 제시하고, ②의 모델별 필수 문구를 표로 준다: Llama 4 — 라이선스 사본 동봉 + 'Built with Llama' 표시 + NOTICE 파일 문구 'Llama 4 is licensed under the Llama 4 Community License, Copyright © Meta Platforms, Inc. All Rights Reserved.' + 파생 모델명 접두어 / Gemma(3 이하) — 수령자에게 약관 사본 제공 + NOTICE 문구 'Gemma is provided under and subject to the Gemma Terms of Use found at ai.google.dev/gemma/terms' / Apache-2.0 계열 모델 — Apache-2.0의 NOTICE 승계 규칙 적용. 마지막에 'OSS Notice 생성 파이프라인의 입력 자산 유형에 모델을 추가하라'는 실행 지시 한 줄을 붙인다. 모델 라이선스의 사용 조건 판정(MAU 임계, 파생 모델 규칙 등)은 5장 소관이므로 여기서는 고지 의무만 다루고 5장으로 링크한다. 순증 약 +14행.",
+      "evidence": ["research_ai#findings[28]", "structure_decision#using_relief.moves[3]"],
+      "practicality": "템플릿"
+    },
+    {
+      "id": "RE-23",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 389,
+      "anchor_quote": "5. 커뮤니티는 활성화되어 있는가? ☞ 사람들의 참여를 독려하고 커뮤니티를 형성할 수 있도록 분위기를 조성한다.",
+      "instruction": "채택 기준 5개를 역이용하는 구조는 좋으나 2020년 기준이다. 6~10번을 추가한다: 6) 릴리스마다 SBOM을 첨부하는가, 7) 아티팩트에 서명·프로비넌스가 있는가, 8) 취약점 신고 후 며칠 안에 답하는가(SECURITY.md에 공표), 9) 라이선스가 SPDX로 기계 판독 가능한가, 10) 지원 버전과 EOL이 공표되어 있는가. 각 항목 끝에 '채택자가 무엇으로 확인하는가'를 괄호로 붙여 실행 가능하게 만든다(예: 8번 → SECURITY.md의 응답 SLA와 과거 advisory 처리 이력). 이 다섯 항목이 대기업·공공 조달의 탈락 요인이 된다는 점을 한 문장으로 밝히고 RE-08(안전하게 배포하기)로 링크한다. L393~395의 '1번과 4번을 위해서는…' 대응 문단도 6~10번을 포괄하도록 한 줄 보완한다. 순증 약 +6행.",
+      "evidence": ["audit_releasing#issues[29]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "RE-24",
+      "priority": 2,
+      "op": "insert",
+      "anchor_line": 396,
+      "anchor_quote": "이 다섯 가지를 효과적으로 이행하기 위해서는 다시 소통하기로 돌아간다.",
+      "instruction": "기업 편 요약(L397) 앞에 '### 공개 프로그램 성과 측정' 절을 신설한다. L420이 '성과가 눈에 가시적으로 드러나기 어렵다'고 인정하면서 대안을 주지 않아, 사무국이 다음 해 예산과 인력을 지킬 근거가 없다. 지표를 두 층으로 나눈 표로 제시한다 — 프로젝트 단위(외부 기여자 수, 첫 응답 시간, 이슈 종결률, 다운로드·의존 저장소 수, OpenSSF Scorecard 점수)와 기업 단위(연간 공개 건수, 아카이브 건수, 공개 검토 리드타임, 채용 유입 경로 중 오픈소스 비중). 각 지표에 '수집 방법'과 '보고 주기' 열을 붙인다. CHAOSS 지표 체계를 참고 자료로 각주에 건다. ospo 섹션의 조직 성과 지표와 중복되지 않도록 여기서는 '공개'에 한정한다고 한 문장으로 범위를 선언한다. 순증 약 +8행.",
+      "evidence": ["audit_releasing#issues[31]", "audit_releasing#missing_topics[12]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "RE-25",
+      "priority": 2,
+      "op": "insert",
+      "anchor_line": 419,
+      "anchor_quote": "- 공개 저장소로 전환한다.",
+      "instruction": "기업 편이 '공개 → 홍보 → 사용자 늘리기 → 요약'으로 끝나 생애주기가 미완이다. 요약 목록 뒤, L420 맺음 문단 앞에 '### 공개한 오픈소스를 접거나 넘기기' 절을 신설한다. 사무국이 실제로 가장 자주 마주하는 상황은 새 공개가 아니라 '3년 전 공개했는데 담당자가 없는 저장소'이므로, 판정과 절차를 표·목록으로 준다: (a) 유지 여부 판정 기준(최근 커밋 일자, 이슈 첫 응답 시간, 사내 사용 여부, 외부 의존 저장소 수) 4행 표, (b) 단계적 조치 순서 — 유지보수 모드 공지 → 새 메인테이너 공모 → 재단·개인 이관 → 아카이브, (c) 실행 항목 — README 상단 EOL 배너, SECURITY.md에 지원 종료 명시, 패키지 저장소 deprecate 표시(npm deprecate, PyPI yank), 조직 계정·상표 정리. 마지막에 '아카이브는 실패가 아니라 정상 종료다'를 한 문장으로 못박아 담당자가 결정을 미루지 않게 한다. 순증 약 +12행.",
+      "evidence": ["audit_releasing#issues[32]", "audit_releasing#missing_topics[8]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "RE-26",
+      "priority": 2,
+      "op": "replace",
+      "anchor_line": 331,
+      "anchor_quote": "<center><i>LINE Developers Twitter : https://twitter.com/line_developers/status/1330773983873011712?s=20</i></center>",
+      "instruction": "'Twitter'는 서비스명 자체가 바뀌었고 예시 2건 모두 2020~2021년 트윗에 구 UI 스크린샷이다. L330~337의 imgproc 이미지 2장(twitter-line, twitter-facebook)과 캡션을 삭제하고, L353~355의 line-facebook 이미지도 삭제한다. 절을 채널 포트폴리오 관점으로 다시 쓰되 산문을 늘리지 말고 4행 목록으로 압축한다: 회사 개발자 계정, 개발자 커뮤니티 플랫폼, 국내 채널, 릴리스마다 자동으로 나가는 채널(GitHub Releases → RSS·웹훅). 특정 플랫폼 한 곳에 전략을 거는 서술은 피한다. 마지막에 '공개 발표 1회로 끝내지 말고 릴리스마다 반복한다'는 원칙 한 문장을 남긴다. 삭제 우위로 약 -12행.",
+      "evidence": ["audit_releasing#issues[25]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "RE-27",
+      "priority": 2,
+      "op": "replace",
+      "anchor_line": 363,
+      "anchor_quote": "Issue tracker를 이용해서 사용자들과 소통할 수 있겠지만 사람들은 Issue tracker를 질의응답의 수단으로 잘 생각하지 않는다. 조금 더 가볍게 소통할 수 있도록 [Slack](https://slack.com/intl/ko-kr)[^slack]이나 [Gitter](https://gitter.im)[^glitter]등 대화형 커뮤니케이션을 위한 도구를 사용할 수도 있다.",
+      "instruction": "제기한 문제('이슈 트래커는 Q&A 수단이 아니다')의 표준 해답인 GitHub Discussions가 빠져 있고, Gitter는 Matrix/Element로 이관되어 신규 프로젝트의 선택지가 아니다. 채널을 목적별 3행 표로 재정리한다 — 비동기 Q&A·설계 논의(GitHub Discussions: 검색·색인 가능, 이슈로 승격 가능) / 실시간 대화(Discord·Slack·Matrix·Zulip) / 공지(릴리스 노트 + 메일링). 열에 '검색 가능성'과 '보관'을 두어 Slack 무료 플랜의 메시지 보관 제한이 오픈소스 지식 아카이브에 부적합하다는 점이 표에서 드러나게 한다. 표 아래에 '채널을 늘리면 응답 부담도 늘어난다'는 운영 비용 경고를 한 줄로 붙인다. 각주 식별자 오타 `[^glitter]`를 `[^gitter]`로 고치거나 항목 삭제와 함께 제거한다. 순증 약 +4행.",
+      "evidence": ["audit_releasing#issues[27]", "audit_releasing#missing_topics[11]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "RE-28",
+      "priority": 2,
+      "op": "restructure",
+      "anchor_line": 471,
+      "anchor_quote": "{{% alert title=\"Make a README\" color=\"warning\" %}}",
+      "instruction": "L471~539 약 69행이 외부 문서 Make a README의 번역 요약으로 채워져 있어 파일의 10%를 쓰면서 가이드 고유의 부가가치가 낮다. 인용 블록을 '항목명 + 한 줄 설명' 형태로 절반 이하(약 18행)로 압축하고 상세는 원문 링크로 넘긴다. 본문이 빈 alert 숏코드는 제거하고 '아래는 Make a README의 항목을 요약한 것이다'를 인용 블록 앞 평문으로 둔다. 인용 블록 내부에 '>' 없이 삽입되어 블록을 조각내고 있는 각주 정의 9건([^shields], [^ttygif], [^asciinema], [^yarnpkg], [^nuget], [^brew], [^lint-code], [^run-teat], [^selenium], [^license-1])은 모두 블록 종료 이후로 모아 옮긴다 — 이 파일의 다른 구간과 같은 방식이다. 확보한 분량으로 '##### 기업 오픈소스 README에 추가로 넣을 것'을 신설한다: 회사명·저작권 표기와 상표 사용 안내, 지원 버전·EOL 표, SECURITY.md 링크, SPDX 라이선스 배지, 릴리스 서명 검증 방법, 사내 채택 사례 링크, AI 생성 코드 기여 정책 링크. 순 -40행(압축 -50 / 신설 +10).",
+      "evidence": ["audit_releasing#issues[38]", "audit_releasing#issues[39]", "audit_releasing#issues[40]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "RE-29",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 555,
+      "anchor_quote": "- CLA/DCO\n  - 기여를 제출할 때 서명해야 할 문서에 대해 안내하고 서명 방법도 함께 설명한다.",
+      "instruction": "CONTRIBUTING 필수 항목 7개가 2020년 기준이다. 목록 끝에 네 항목을 추가한다: 'AI 생성 코드 기여 정책'(허용 여부, 기여자의 고지 의무, 라이선스 호환 확인 책임, 리뷰 시 판단 기준 — 상세 판단은 5장으로 링크), '보안 취약점 신고 경로'(공개 이슈 금지, SECURITY.md로 유도), '이슈·PR 응답 목표 시간', '리뷰·머지 기준과 릴리스 주기'. 이어 L560의 Atom 예시는 서비스가 종료되고 저장소가 아카이브된 프로젝트이므로 삭제하고, 예시 목록을 '소규모 프로젝트용 짧은 예시'와 '대규모 프로젝트용 분리형 예시'로 두 줄 나눈 뒤 Kubernetes Contributor's Guide와 Armeria Developer guide는 유지하고 활발히 운영되는 예시 1~2건을 보탠다(집필 시 저장소 활성 여부를 GitHub에서 확인한다, verify). 순증 약 +6행.",
+      "evidence": ["audit_releasing#issues[41]", "audit_releasing#issues[42]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "RE-30",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 632,
+      "anchor_quote": "#### Pull request 운영 best practice",
+      "instruction": "PR 운영이 템플릿·댓글·재촉 세 가지 커뮤니케이션 팁으로만 구성되어 있다. 절을 '자동화할 일'과 '사람이 할 일'로 나눈다. 자동화 목록: CODEOWNERS 리뷰어 자동 지정, 필수 상태 검사, 자동 라벨링, 머지 큐, 장기 미응답 PR 처리 정책(stale 봇과 그 부작용). 안전 항목은 반드시 넣는다 — 포크에서 온 PR로 실행되는 워크플로가 시크릿에 접근하는 위험(`pull_request_target` 오용)과 그 대응(권한 최소화, 승인 후 실행 설정)은 기업 저장소에서 실제 사고로 이어진다. 기존 커뮤니케이션 3항목(L636~658)은 유지하되 산문이 늘어져 있으므로 약 8행 압축한다. 아울러 L644의 'Pull request 템플릿 예시 모음' 링크가 L602의 이슈 템플릿 저장소와 같은 곳을 가리키는 잘못된 참조이므로, 실제 PR 템플릿 모음이나 대형 프로젝트의 `.github/PULL_REQUEST_TEMPLATE.md` 직접 링크로 교체하고 마땅한 대상이 없으면 링크를 지우고 최소 PR 템플릿을 코드 블록으로 직접 싣는다. 순 -2행(신설 +6 / 압축 -8).",
+      "evidence": ["audit_releasing#issues[48]", "audit_releasing#issues[47]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "RE-31",
+      "priority": 2,
+      "op": "insert",
+      "anchor_line": 577,
+      "anchor_quote": "소스 코드를 배포하고 나면 사용이 용이하도록 하기 위해 패키지 배포도 함께 진행할 가능성이 높다.",
+      "instruction": "이 문단 뒤, 배포 방법 목록 앞에 '릴리스 전 3중 검사' 게이트를 4~5행 체크리스트로 넣는다: ① 의존성 SCA(반입 컴포넌트의 라이선스·취약점), ② 스니펫 매칭(직전 릴리스 대비 diff 기준 — 의존성 SCA는 복사된 코드 조각을 보지 못한다), ③ AI 코딩 도구 사용 로그 확인. 세 검사의 원리와 임계값 설명은 5장 「AI와 오픈소스 - 개발자 편」에 있으므로 여기서는 '릴리스 게이트로 무엇을 통과시켜야 하는가'만 적고 5장으로 링크한다 — 본문을 복제하면 두 장에 같은 주제가 흩어져 독자가 어느 쪽이 최신인지 판단할 수 없다. RE-05(공개 전 코드 정제)가 최초 1회 작업이라면 이 게이트는 릴리스마다 반복하는 작업이라는 차이를 한 문장으로 밝힌다. 순증 약 +8행.",
+      "evidence": ["structure_decision#target_lines.releasing", "audit_releasing#missing_topics[5]", "audit_releasing#issues[44]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "RE-32",
+      "priority": 3,
+      "op": "replace",
+      "anchor_line": 397,
+      "anchor_quote": "### 요약",
+      "instruction": "L397과 L660에 같은 '### 요약' 헤딩이 두 번 있어 Hugo 슬러그가 '요약-1'로 밀리고 목차에서 두 요약을 구분할 수 없다. L397을 '### 기업 편 요약', L660을 '### 개발자 편 요약'으로 바꾼다. **경고: 헤딩 텍스트를 바꾸므로 이 헤딩을 가리키는 링크가 있으면 함께 수정해야 한다.** `rg -n '요약' content/en/ layouts/ 2>/dev/null` 로 참조 여부를 확인하고, 작업 후 `python3 .claude/skills/guide-quality-check/scripts/check_guide_integrity.py` 의 warn이 해소됐는지 확인한다. 발간본이 '(5) 요 약'/'(3) 요 약'으로 장 번호를 붙여 구분한 것과 같은 취지이되, 웹 판본이므로 번호가 아니라 트랙명을 쓴다(약 ±0행).",
+      "evidence": ["audit_releasing#issues[30]"],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "RE-33",
+      "priority": 3,
+      "op": "replace",
+      "anchor_line": 124,
+      "anchor_quote": "한국의 경우에는 [KIPRIS의 상표 검색 서비스](http://kdtj.kipris.or.kr/kdtj/searchLogina.do?method=loginTM)[^kipris]를 이용할 수 있다.",
+      "instruction": "kdtj.kipris.or.kr는 서비스되지 않는 구 서브도메인으로 HTTP 502를 반환한다(발간본 각주 70도 같은 죽은 주소이므로 병합으로 해결되지 않는다). 본문 링크와 L126 각주를 https://www.kipris.or.kr (통합검색의 상표 탭)로 교체한다. 오픈소스 명칭은 국경을 넘으므로 해외 조사 창구를 함께 제시한다 — WIPO Global Brand Database, EUIPO TMview, USPTO Trademark Search. 그리고 상표 조사와 한 세트로 묶어 확인할 항목을 한 줄 체크리스트로 붙인다: 패키지 저장소 네임스페이스(npm scope, PyPI project name, Maven groupId)와 도메인·GitHub organization 이름의 동시 가용성. 순증 약 +4행.",
+      "evidence": ["audit_releasing#issues[4]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "RE-34",
+      "priority": 3,
+      "op": "restructure",
+      "anchor_line": 29,
+      "anchor_quote": "기업의 입장에서는 특히나 \"왜 우리가 힘들여서 소스 코드를 공개해야 하는데? 그냥 손해 아닌가?\"라는 물음에 답을 하기 어려울 것이다. 하지만 분명 기업에서도 얻는 이점이 있다. 많다!",
+      "instruction": "L27~104의 '기업에서 얻는 이점' 6개와 '개발자로서 얻는 이점' 5개가 총 78행의 정성적 산문이다. 이 절의 목적은 사무국이 경영진 설득 자료로 쓰는 것인데 산문 형태로는 그대로 인용하기 어렵다. 각 이점을 '이점 / 무엇으로 확인하는가 / 설득 대상'의 3열 표 두 개로 재구성하고, 항목당 설명은 2~3문장으로 줄인다. community-resource 이미지(L64~66)는 유지한다. L104의 '최근 경력 개발자 채용 공고에서는…'의 '최근'을 삭제해 현재형으로 바꾸고, L86 '#### 1.가독성 높은 코드의 작성 실력'의 누락된 공백을 고쳐 나머지 항목과 표기를 통일한다. 이 절 전체를 약 38행으로 압축한다(약 -40행). 압축 과정에서 검증되지 않은 통계나 조사 결과를 새로 지어내지 마라 — 근거로 붙일 자료가 없으면 정성 서술을 그대로 짧게 줄인다.",
+      "evidence": ["audit_releasing#issues[49]", "audit_releasing#issues[50]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "RE-35",
+      "priority": 3,
+      "op": "replace",
+      "anchor_line": 343,
+      "anchor_quote": "- 새로 공개한 오픈소스를 소개하는 블로그 글: [LINE 기술 블로그 - Mono-repo, Multi-project를 Gradle 플러그인으로 손쉽게 관리하기](https://engineering.linecorp.com/ko/blog/mono-repo-multi-project-gradle-plugin/)[^line-mono]",
+      "instruction": "링크 3건은 현재 응답하지만 회사 통합으로 명칭과 도메인이 장기 유지된다는 보장이 없고, 예시 3건이 모두 한 회사에서 나와 사례 다양성이 부족하다. 글 유형 3분류(신규 공개 소개 / 기능 소개 / 도입 사례)는 좋은 틀이므로 유지하고, 표기를 'LY Corporation(구 LINE) 기술 블로그'로 바꾼다. 국내 다른 기업의 공개 사례 1~2건을 보태 균형을 맞추되, 링크와 명칭은 집필 시 직접 접속해 확인한 것만 싣는다(verify). 확인할 수 없으면 항목을 늘리지 말고 기존 3건의 표기만 고친다. 순증 약 +2행.",
+      "evidence": ["audit_releasing#issues[26]"],
+      "practicality": "사례"
+    },
+    {
+      "id": "RE-36",
+      "priority": 3,
+      "op": "replace",
+      "anchor_line": 600,
+      "anchor_quote": "- [GitHub에서 Issue template를 만드는 방법](https://docs.github.com/en/github/building-a-strong-community/manually-creating-a-single-issue-template-for-your-repository#adding-an-issue-template)[^github-issue]",
+      "instruction": "링크가 안내하는 'manually-creating-a-single-issue-template'은 구 방식이다. YAML 기반 issue forms(`.github/ISSUE_TEMPLATE/*.yml`) 문서로 교체한다 — 필수 입력·드롭다운·체크박스를 강제할 수 있어 본문이 강조하는 '필요한 정보를 미리 제공하도록 유도'라는 목적을 훨씬 잘 달성한다. 이어 `.github/ISSUE_TEMPLATE/config.yml`의 `contact_links`로 질문은 Discussions(RE-27의 채널 표와 연결), 취약점은 SECURITY.md 신고 경로(RE-04와 연결)로 라우팅하는 설정을 2~3행 예시로 든다. GitLab 링크의 `/ee/` 경로도 신 경로로 교체한다. 순증 약 +3행.",
+      "evidence": ["audit_releasing#issues[45]", "audit_releasing#issues[24]"],
+      "practicality": "템플릿"
+    },
+    {
+      "id": "RE-37",
+      "priority": 3,
+      "op": "replace",
+      "anchor_line": 612,
+      "anchor_quote": "{{< imgproc issue-label Fit \"768x768\" >}}",
+      "instruction": "L612~614(issue-label)와 L627~629(github-good-first-issue) 두 스크린샷은 2021년 GitHub UI라 현재 화면과 다르고, L628 캡션 URL은 'armeira' 오타로 404다. 두 imgproc 블록과 캡션을 삭제하고, 특정 회사 저장소 화면 대신 오래 가는 라벨 분류 체계 표로 대체한다: 열은 '라벨 접두어 / 용도 / 예시'이고 행은 type(bug·feature·docs), area(모듈명), priority, status, good first issue. 표 아래에 초심자 이슈에는 해결 방향 힌트를 함께 적는다는 기존 서술 한 줄을 유지한다. 순 -6행.",
+      "evidence": ["audit_releasing#issues[46]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "RE-38",
+      "priority": 3,
+      "op": "delete",
+      "anchor_line": 442,
+      "anchor_quote": "가시적으로도 기업의 Organization에 등록된 저장소가 업데이트된 순서대로 정렬되기 때문에 변경이 없다면 저장소는 페이지 2로 넘어가게 된다.",
+      "instruction": "이 문장을 삭제한다. 사유: GitHub 조직 저장소 목록의 정렬은 사용자가 바꿀 수 있고 기본값도 변할 수 있어 근거가 약하며, '관리되지 않으면 눈에 띄지 않는다'는 논지에 비해 지엽적인 UI 관찰에 기대고 있다. 대신 '저장소 상단의 최근 커밋 일자와 이슈 응답 이력이 채택자의 첫 판단 근거가 된다'는 관찰 한 문장으로 대체한다(약 ±0행).",
+      "evidence": ["audit_releasing#issues[33]"],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "RE-39",
+      "priority": 3,
+      "op": "replace",
+      "anchor_line": 688,
+      "anchor_quote": "앞으로 성공적으로 커뮤니티를 형성한 개발자의 경험을 통해 이 가이드의 업데이트에도 도움을 받는 날이 오기를 바란다.",
+      "instruction": "초판 맺음말이 그대로 남아 개정 시점과 어긋난다 — 초판 이후 5년이 지났으므로 '언젠가 사례가 쌓이기를 바란다'는 서술은 성립하지 않는다. 이 문장을 삭제하고, 초판 이후 실제로 축적된 국내 기업 공개 사례를 근거로 한 한두 문장으로 대체한다. 사례를 1차 출처로 확인할 수 없으면 사례를 지어내지 말고 문장을 삭제하는 데서 그친다(약 ±0행).",
+      "evidence": ["audit_releasing#issues[51]"],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "RE-40",
+      "priority": 3,
+      "op": "replace",
+      "anchor_line": 313,
+      "anchor_quote": "- [GitLab - 공개 저장소로 전환하기](https://docs.gitlab.com/ee/public_access/public_access.html#how-to-change-project-visibility)[^gitlab-change-repo]",
+      "instruction": "docs.gitlab.com의 `/ee/` 경로는 개편 대상이고 이 링크는 리다이렉트 끝에 인증 페이지로 빠진다. 이 항목을 https://docs.gitlab.com/user/public_access/ 로 교체하고, 같은 이유로 파일 전역의 `/ee/` 경로 링크를 일괄 점검·교체한다(L287·L288·L289·L313·L601·L643과 대응 각주). 작업은 `rg -n 'docs.gitlab.com/ee/' content/en/releasing/_index.md` 로 대상을 뽑아 전수 처리하고, 교체 후 각 URL이 실제 문서에 도달하는지 확인한다(verify). 각주 [^gitlab-pr-template] 끝에 잘못 붙은 괄호 ')' 도 함께 제거한다(약 ±0행).",
+      "evidence": ["audit_releasing#issues[24]"],
+      "practicality": "개념설명"
+    },
+    {
+      "id": "RE-41",
+      "priority": 3,
+      "op": "restructure",
+      "anchor_line": 214,
+      "anchor_quote": "- 공개 목적: 공개 목적이라는 항목에는 대부분 교과서에서 나올 법한 내용을 적는 경우가 많다.",
+      "instruction": "분량 예산을 맞추기 위한 산문 압축 스윕이다. 네 구간을 항목당 1~2문장으로 줄인다: (a) L212~218 신청서 추가 항목 5개(공개 목적·유사 오픈소스 비교·로드맵·기술 평가 의견·리소스 운영 계획)를 '항목 / 왜 묻는가 / 무엇을 확인하는가' 3열 표로 바꾼다(-6행), (b) L320·L324 '공개만 하면 끝인가요?' 도입 산문(-3행), (c) L592~598 Issue tracker 도입 산문(-4행), (d) L571~573 '오픈소스 운영하기' 도입 산문(-3행). 압축 시 정보를 버리지 말고 표현만 줄인다. 이 지시는 다른 지시의 순증을 상쇄하기 위한 것이므로, 최종 행수가 780행을 밑돌면 압축 폭을 줄여도 된다. 약 -16행.",
+      "evidence": ["audit_releasing#structure_note", "structure_decision#target_lines.releasing"],
+      "practicality": "판단기준표"
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "IL-releasing-01",
+      "near_line": 111,
+      "purpose": "기업 편 전체가 5W 질문에 절을 하나씩 대응시키는 구조인데 텍스트로만 이어져 있어, 독자가 지금 어느 단계를 읽고 있는지와 앞으로 몇 개의 관문이 남았는지 알 수 없다. 사무국 담당자가 공개 절차 전체를 한 장으로 파악하지 못하면 매번 본문을 처음부터 다시 읽어야 한다.",
+      "kind": "process",
+      "content_spec": "왼쪽에서 오른쪽으로 이어지는 한 줄 파이프라인: 왜? → 누가?(검토) → 누가?(운영) → 언제? → 어디서? → 무엇을? → 어떻게? → 문서화 → 공개 → 공개 이후 → 종료·이관. 각 단계 아래에 두 개의 레인을 붙인다. 위 레인은 담당 주체(사무국 / 유관부서 / 개발자), 아래 레인은 그 단계의 산출물(신청서 양식, 부서별 검토 의견, 라이선스 결정서, CRA 지위 판정서, 공개 가이드 문서, 릴리스 아티팩트, 성과 지표 보고, 아카이브 공지). '무엇을?'과 '종료·이관'은 이번 개정에서 신설되는 단계임이 파이프라인 위치로 드러나야 한다.",
+      "replaces": null,
+      "filename": "release-journey-2026"
+    },
+    {
+      "id": "IL-releasing-02",
+      "near_line": 117,
+      "purpose": "유관부서 7개와 각 부서가 볼 항목이 28행의 산문으로 늘어져 있어, 사무국 담당자가 '누구에게 무엇을 언제까지 요청하는가'를 한눈에 볼 수 없다. 특히 어떤 검토가 병렬로 가능하고 어떤 검토가 선행 검토에 걸려 있는지가 산문에서는 드러나지 않아 일정 계획을 세울 수 없다.",
+      "kind": "process",
+      "content_spec": "7개 부서(특허·상표·보안·오픈소스 검수·인사·홍보/마케팅·법무)를 행으로 두고, 열에 '확인 항목 / 사무국이 제출할 입력물 / 부서가 돌려줄 산출물 / 표준 소요 기간 / 반려 시 재검토 경로'를 배치한 검토 매트릭스. 병렬 진행이 가능한 검토 묶음과 선행 의존이 있는 검토를 화살표로 구분한다. 선행 의존의 대표 경로 두 개를 명시한다: 상표 검토 확정 → 저장소·패키지 네임스페이스 생성, 보안 검토 확정 → 코드 이전. 반려 화살표는 되돌아오는 방향으로 그린다.",
+      "replaces": null,
+      "filename": "release-review-matrix-2026"
+    },
+    {
+      "id": "IL-releasing-03",
+      "near_line": 185,
+      "purpose": "라이선스 선택이 상황별 산문 3개로만 제시되어, 여러 조건이 동시에 걸릴 때(제품에도 포함되고 널리 쓰이길 원하는 경우 등) 어디로 가야 할지 알 수 없다. 개정판에서 소스가용 라이선스와 AI 자산 시나리오가 더해지면 산문으로는 감당이 되지 않는다.",
+      "kind": "process",
+      "content_spec": "위에서 아래로 내려가는 의사결정 트리. 판단 노드 순서는 ① 자사 특허가 포함되는가 → ② 제품에 동봉되어 제3자에게 배포되는가 → ③ 오픈소스 버전과 상용 버전을 분리할 계획이 있는가 → ④ 채택 극대화가 최우선인가 → ⑤ 나중에 라이선스를 바꿀 여지를 남겨야 하는가. 잎 노드에 MIT / Apache-2.0 / MPL-2.0 / LGPL / GPL / AGPL / 소스가용(오픈소스가 아님을 별도 표식으로 구분) 을 배치한다. 각 잎에 '함께 준비할 것' 태그를 단다: NOTICE 파일, CLA 또는 저작권 집중, SPDX 헤더와 LICENSES/ 디렉터리. 트리 밖 오른쪽에 'AI 모델·가중치·데이터셋은 코드와 별도 판정 — 5장 참조'로 빠지는 분기 하나를 둔다.",
+      "replaces": null,
+      "filename": "license-decision-tree-2026"
+    },
+    {
+      "id": "IL-releasing-04",
+      "near_line": 240,
+      "purpose": "공개 저장소에 무엇을 두어야 하는지가 산문 3개 문서 + 구 GitHub UI 스크린샷으로만 제시되어 있다. 개정판에서 SECURITY·GOVERNANCE·MAINTAINERS·CODEOWNERS·NOTICE가 더해지면 파일이 루트에 가는지 .github/에 가는지까지 알아야 실행할 수 있는데, 목록만으로는 배치를 알 수 없다.",
+      "kind": "structure",
+      "content_spec": "저장소 루트의 파일 트리 계층도. 루트에 README.md, LICENSE, NOTICE, CONTRIBUTING.md, CODE_OF_CONDUCT.md, SECURITY.md, GOVERNANCE.md, MAINTAINERS.md, SUPPORT.md, CHANGELOG.md, LICENSES/ 디렉터리를 두고, .github/ 하위에 ISSUE_TEMPLATE/(*.yml, config.yml), PULL_REQUEST_TEMPLATE.md, CODEOWNERS, workflows/, dependabot.yml을 둔다. 각 파일 옆에 두 개의 뱃지를 붙인다: '필수 / 권장'과 '작성 주체(사무국 / 개발자)'. SECURITY.md 옆에는 'CRA 스튜어드 의무 대응'이라는 연결 표시를 둔다.",
+      "replaces": "community-profile.png",
+      "filename": "repo-file-set-2026"
+    },
+    {
+      "id": "IL-releasing-05",
+      "near_line": 583,
+      "purpose": "릴리스 보증(SBOM·서명·프로비넌스·Trusted Publishing)은 순서와 산출물이 정해진 파이프라인이라 산문으로 쓰면 단계가 뒤섞인다. 어느 지점에서 자격증명이 개입하고 어느 지점에서 채택자가 검증할 수 있는 증거가 생기는지가 시각적으로 드러나야 담당자가 워크플로를 설계할 수 있다.",
+      "kind": "process",
+      "content_spec": "왼쪽에서 오른쪽으로 이어지는 릴리스 파이프라인: 태그 푸시 → CI 빌드 → 테스트 → SBOM 생성(SPDX 또는 CycloneDX) → 아티팩트 서명(Sigstore) → OIDC 기반 Trusted Publishing으로 패키지 저장소 게시 → GitHub Release에 SBOM·서명·릴리스 노트 첨부. 파이프라인 위쪽에 '자격증명이 개입하는 지점'을 표시하되 장기 토큰이 아니라 CI가 발급받는 단기 자격증명임을 구분해 보인다. 파이프라인 아래쪽에는 각 산출물에 대응하는 '채택자가 검증하는 방법' 레인을 둔다(SBOM 확인, 서명 검증, 프로비넌스 확인). 릴리스 게이트 3중 검사(의존성 SCA / 스니펫 매칭 / AI 도구 로그)를 파이프라인 맨 앞의 게이트로 그려 넣는다.",
+      "replaces": null,
+      "filename": "release-pipeline-2026"
+    },
+    {
+      "id": "IL-releasing-06",
+      "near_line": 171,
+      "purpose": "메인테이너 1인 퇴사 리스크로 절을 열어 놓고 GitHub 권한 5단계 표로 답하는 불일치를 메우려면, 정적인 권한이 아니라 사람이 어떻게 올라오고 어떻게 빠지는지를 보여야 한다. 권한표 자체는 텍스트로 충분하므로 그림이 필요한 쪽은 승격·회수 경로다.",
+      "kind": "relationship",
+      "content_spec": "기여자 사다리: 사용자 → 기여자 → 커미터 → 메인테이너 → 이머리터스(emeritus)로 이어지는 단계를 계단으로 배치한다. 각 단계 옆에 승격 기준(기여 건수, 리뷰 참여, 활동 기간)과 부여되는 GitHub 권한(Read / Triage / Write / Maintain / Admin)을 대응시킨다. 오른쪽에는 이탈 경로를 별도 화살표로 그린다 — 퇴사·비활동 시 권한 회수와 이머리터스 전환. 계단 옆 주석으로 각 단계에서 GOVERNANCE.md와 MAINTAINERS.md에 무엇을 기록해야 하는지를 표시한다.",
+      "replaces": null,
+      "filename": "contributor-ladder-2026"
+    }
+  ],
+  "deletions_summary": "가장 큰 삭제는 Make a README 번역 요약(L471~539, 약 69행)의 절반 이하 압축이다 — 원문 링크가 있는데도 전문을 옮겨 파일의 10%를 쓰면서 가이드 고유의 부가가치가 없고, 확보한 분량으로 '기업 오픈소스 README에 추가로 넣을 것'을 만드는 편이 실용적이다. 두 번째는 이점 절(L27~104, 78행)의 표 전환 압축으로, 정성적 산문이라 사무국이 경영진 설득 자료로 그대로 인용할 수 없기 때문이다. 사실이 아닌 것은 대체 없이 지운다 — 2020년 온라인 콘퍼런스 전환 서술(L371), 서비스가 종료된 Pull Panda 항목과 각주, 종료된 OSSRH 배포 경로 안내, 아카이브된 Repolinter·Atom·Geek Feminism 참조, GitHub 조직 저장소 정렬에 기댄 L442 문장이 그것이다. 이미지도 여섯 장을 걷어낸다 — 구 UI 스크린샷 5장(twitter-line, twitter-facebook, line-facebook, issue-label, github-good-first-issue)은 표와 원칙 서술로 대체하고 community-profile은 IL-releasing-04로 교체한다. 삭제 합계는 약 -137행이며, 이것이 신설 체크리스트·판단기준표 약 +230행을 받아 최종 780행을 맞추는 예산의 절반이다.",
+  "unresolved": [
+    "using에서 releasing으로 오는 '배포 시점 컴플라이언스 산출물' 이관은 04a에서 조건부로 남겨졌다(using_relief.moves[3], expected_delta releasing +30). RE-22가 그 수용처를 만들어 두었으나, 실제로 어떤 문단이 넘어오는지는 using 계획자의 판정에 달려 있다. 이관 분량이 +30행에 이르면 이 섹션의 780행 목표를 초과하므로, 그때는 RE-34와 RE-28의 압축 폭을 더 키우거나 RE-41의 압축 대상을 넓힌다.",
+    "04a open_questions[1]의 G7 개방성 4단계 라벨 한글 표기 결정이 RE-12의 'AI 모델·데이터셋을 함께 공개하는 경우' 문안에 영향을 준다. 사용자 결정 전에는 라벨을 본문에 쓰지 말고 5장으로 링크만 건다.",
+    "04a open_questions[0]의 '오픈소스SW' vs '오픈소스' 전역 표기 결정이 이 섹션 전체 문안에 걸린다. 결정 전에는 저장소 현행 '오픈소스'를 유지한다.",
+    "발간본이 교차 참조에 붙인 장·절 번호 표기('「II.2. … : 4) CLA / DCO에 주의하라」')를 웹 판본에서도 병기할지 여부. RE-02는 앵커 링크만 쓰는 쪽으로 정했으나, 인쇄본과 웹을 같은 원고로 낼 계획이면 재검토가 필요하다.",
+    "verify 항목 5건 — cla-bot 유지보수 상태(RE-17), LY Corporation 기술 블로그 도메인 이전 여부(RE-35), OSSRH 종료 일자(RE-07), RE-12의 리라이선싱 사례 회사명·연도, RE-29의 CONTRIBUTING 예시 저장소 활성 여부. 집필 시 1차 출처로 확인되지 않으면 고유명사와 날짜를 쓰지 말고 유형 서술로 낮춘다.",
+    "RE-25(공개 종료·이관)와 ospo 섹션의 조직 차원 프로젝트 포트폴리오 관리가 겹칠 수 있다. releasing은 '프로젝트 하나를 어떻게 접는가', ospo는 '포트폴리오 전체를 어떻게 정리하는가'로 나누기로 했으나 ospo 계획자와 최종 확인이 필요하다.",
+    "RE-24(공개 프로그램 성과 측정)와 ospo의 성과 지표가 겹칠 수 있다. 여기서는 '공개'에 한정하기로 했으나 경계선상의 지표(채용 유입 경로 중 오픈소스 비중)는 어느 쪽에 둘지 확정되지 않았다."
+  ]
+}

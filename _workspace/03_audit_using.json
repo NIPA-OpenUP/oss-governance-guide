@@ -1,0 +1,803 @@
+{
+  "section": "using",
+  "file": "content/en/using/_index.md",
+  "total_lines": 1303,
+  "baseline_source_used": "repo+published — 저장소 content/en/using/_index.md 1303행 전체 통독, 발간본 _workspace/00_published_2025.md p17-81(파일 173~1354행) 전체 통독, _workspace/01_baseline_reconciliation.json 의 using 항목(published_only 5건 / repo_only 2건 / diverged 4건) 대조. 추가로 check_guide_integrity.py 실행(문제 8건, blocking 2건), imgproc 참조 32건 대 이미지 파일 33개 대조(전건 존재, opensource-company.png 만 고아), 인라인/각주 URL 112개 curl 생존 확인.",
+  "issues": [
+    {
+      "line": 13,
+      "quote": "최근 기업들의 오픈소스에 대한 인식과 활용이 크게 변화하고 있다. Perforce Software의 [2024 State of Open Source Report]...에 따르면, 2023년 기업의 95%가 오픈소스 사용을 유지하거나 증가시켰으며, 33%는 사용이 크게 증가했다고 응답했다.",
+      "kind": "stale_stat",
+      "severity": "major",
+      "diagnosis": "섹션 첫 문장이 '최근'이라 쓰고 2023년 조사 데이터를 인용한다. 2026년 독자에게 3년 전 수치다. Perforce/OpenLogic State of Open Source Report는 매년 갱신되므로 최신판이 존재한다. 발간본 p18도 동일 문장이라 병합으로 해결되지 않는다.",
+      "action": "replace",
+      "suggestion": "최신판(2026 State of Open Source Report 또는 확인 가능한 최근판)으로 수치·연도를 교체하고, '최근'을 '2026년 조사에 따르면'처럼 시점을 명시한 표현으로 바꾼다. 이 절의 모든 상대 시점 표현에 동일 원칙을 적용한다."
+    },
+    {
+      "line": 15,
+      "quote": "이는 이전 연도와 달리, 기업들이 '효율성의 해'라 불리는 2023년에 혁신을 희생하지 않으면서도 비용을 절감할 수 있는 방안으로 오픈소스를 선택했음을 시사한다.",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "'효율성의 해(Year of Efficiency)'는 2023년 빅테크 감원기의 시사 용어다. 2026년 원고에 그대로 남으면 개정되지 않은 문서라는 신호가 된다.",
+      "action": "delete",
+      "suggestion": "문단을 삭제하고, 비용 절감 동기는 최신 조사 결과로 한 문장 재서술한다. 2026년 맥락에서는 'AI 인프라 비용 압박 하의 오픈소스 선택'이 대체 논거가 된다."
+    },
+    {
+      "line": 19,
+      "quote": "RedHat의 [2022 오픈소스 Enterprise 현황 보고서]...에 따르면, 향후 2년 동안 독점 소프트웨어 사용이 현재 45%에서 37%로 8% 줄어들 것으로 전망되며, 같은 기간 동안 엔터프라이즈 오픈소스와 커뮤니티 기반 오픈소스는 각각 5%, 3% 증가할 것으로 예상된다.",
+      "kind": "stale_fact",
+      "severity": "critical",
+      "diagnosis": "2022년 보고서의 '향후 2년(=2024년까지)' 전망을 2026년 원고가 미래형으로 서술한다. 예측 기간이 2년 지났고 실현 여부 검증도 없다. '현재 45%'의 '현재'는 2022년이다. 이미 지나간 예측을 현재형으로 제시하는 가장 전형적인 노후 서술이다.",
+      "action": "replace",
+      "suggestion": "Red Hat State of Enterprise Open Source 최신판(또는 발간 중단 시 대체 조사)으로 교체하고, 예측이 아니라 실측치로 서술한다. 최신판이 없다면 이 문단 전체를 삭제하고 L23 IT 리더 80% 문장과 통합한다."
+    },
+    {
+      "line": 23,
+      "quote": "IT 리더의 80%는 조직의 새로운 기술을 위한 엔터프라이즈 오픈소스 소프트웨어 사용이 증가할 것이라고 답했으며, 이는 오픈소스가 기업 IT 전략의 핵심 요소로 자리잡고 있음을 나타낸다.",
+      "kind": "stale_stat",
+      "severity": "major",
+      "diagnosis": "L19 Red Hat 2022 보고서에서 파생된 수치인데 각주가 붙어 있지 않아 출처 없는 통계로 읽힌다. L25의 79%/70%도 동일하게 출처 표기가 없다(Perforce 2024로 추정). 발간본 p18-19도 각주 없이 그대로 조판되어 있어 양쪽 모두 결함이다.",
+      "action": "verify",
+      "suggestion": "L23·L25 두 문단의 출처를 확정해 각주를 붙이거나, 확정할 수 없으면 삭제한다. 수치를 유지할 경우 최신판 수치로 교체한다."
+    },
+    {
+      "line": 36,
+      "quote": "Future Market Insights의 [2024년 보고서]...에 따르면, 한국의 오픈소스 서비스 시장은 2024년부터 2034년까지 연평균 성장률(CAGR) 18.3%로 성장할 것으로 예측되며, 이는 글로벌 주요 국가 중 가장 높은 수치이다.",
+      "kind": "stale_stat",
+      "severity": "major",
+      "diagnosis": "상업 시장조사 업체의 10년 CAGR 예측은 검증 불가능하고, 기업 담당자의 어떤 의사결정에도 입력되지 않는다. 게다가 기준 시점이 2024년이다.",
+      "action": "delete",
+      "suggestion": "삭제하고, 국내 도입 현황은 SPRi/NIPA 공개SW 실태조사 등 검증 가능한 1차 통계로 대체한다. 시장 규모 예측보다 '국내 기업 오픈소스 활용률'과 'OSPO 보유율' 같은 거버넌스 관련 지표가 이 가이드의 목적에 맞다."
+    },
+    {
+      "line": 42,
+      "quote": "DataReportal의 [Digital 2024: South Korea 보고서]...에 따르면, 2024년 1월 기준 한국의 인터넷 사용자 수는 5,030만 명으로, 이는 전체 인구의 97.2%에 해당한다. 이러한 높은 인터넷 보급률은 오픈소스 기술의 확산과 활용에 긍정적인 영향을 미치고 있다.",
+      "kind": "stale_stat",
+      "severity": "major",
+      "diagnosis": "인터넷 보급률과 기업 오픈소스 거버넌스 사이에는 인과 관계가 없다. 근거 없는 연결을 '긍정적인 영향을 미치고 있다'로 단정한다. 시점도 2024년 1월이다. 분량만 차지하고 독자에게 아무 판단 재료를 주지 않는 문단이다.",
+      "action": "delete",
+      "suggestion": "문단과 각주 [^datareportal2024] 전체를 삭제한다. 개정판 품질은 이런 무관 통계를 걷어내는 데서 나온다."
+    },
+    {
+      "line": 46,
+      "quote": "과학기술정보통신부는 '공개SW 활성화 계획'을 통해 오픈소스 생태계 조성과 전문인력 양성을 지원하고 있으며, 이는 국내 기업들의 오픈소스 도입을 더욱 가속화할 것으로 예상된다.",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "정책명·발표 시점·근거 링크가 모두 없다. '공개SW 활성화 계획'이 2026년 현재 유효한 정책 명칭인지 확인되지 않았다.",
+      "action": "verify",
+      "suggestion": "2026년 기준 유효한 정책 문서명(예: SW진흥 전략, 디지털 정책 기본계획 등)과 발표 연월, 원문 링크를 확인해 교체한다. 확인되지 않으면 삭제한다."
+    },
+    {
+      "line": 55,
+      "quote": "최근 주목받고 있는 주요 오픈소스 기술들은 다음과 같다:\\n\\n- [쿠버네티스(Kubernetes)]...: 컨테이너 오케스트레이션의 de facto 표준\\n- [텐서플로우(TensorFlow)]...\\n- [아파치 카프카(Apache Kafka)]...\\n- [이스티오(Istio)]...\\n- [프로메테우스(Prometheus)]...",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "2020년대 초 CNCF 스택 목록이다. 특히 TensorFlow를 '머신러닝 및 인공지능 개발을 위한 오픈소스 플랫폼'의 대표로 제시하는 것은 2026년 기준으로 현실과 어긋난다(PyTorch 우위, vLLM/Ray/Hugging Face 생태계 부상). '최근 주목받고 있는'이라는 표현이 목록을 더 낡아 보이게 한다.",
+      "action": "replace",
+      "suggestion": "AI/LLM 시대 스택으로 재구성한다: PyTorch, vLLM 또는 Ollama, Ray, LangChain/MCP, OpenTelemetry, DuckDB, Kubernetes. 각 항목에 '기업이 도입할 때 확인할 라이선스/거버넌스 특이사항'을 한 줄씩 덧붙이면 목록이 실행 정보로 바뀐다."
+    },
+    {
+      "line": 69,
+      "quote": "NIPA의 [2024년 오픈소스SW 가이드]...에 따르면, 2022년 국내 오픈소스SW 시장규모는 2021년 대비 11.4% 성장한 3,380억 원을 기록했다. 또한, 국내 기업의 오픈소스SW 활용률은 2021년 대비 5.8%p 증가한 67.3%에 달하며",
+      "kind": "stale_stat",
+      "severity": "major",
+      "diagnosis": "2026년 원고에서 2022년 시장 데이터를 인용한다. 4년 시차다. 더불어 각주 [^nipa2024]의 링크(www.oss.kr/oss_guide/show/9a73fa3c-...)는 HTTP 404를 반환한다(2026-07-31 확인).",
+      "action": "replace",
+      "suggestion": "최신 공개SW 실태조사(SPRi/NIPA) 수치로 교체하고 링크를 생존 URL로 갱신한다. oss.kr 상세 페이지 URL 체계가 바뀐 것으로 보이므로 www.oss.kr 재검색 후 확정할 것."
+    },
+    {
+      "line": 106,
+      "quote": "이제는 단순히 오픈소스를 사용하는 것뿐만 아니라 오픈소스에 직접 참여하고 [오픈소스 역량을 가진 오픈소스 전문가 고용을 고려한다는 인사담당자가 늘어 가는 추세](https://training.linuxfoundation.org/resources/2020-open-source-jobs-report)이다.",
+      "kind": "stale_stat",
+      "severity": "major",
+      "diagnosis": "2020 Open Source Jobs Report는 6년 전 자료다. 링크는 살아 있으나 인용 근거로서 시효가 다했다. 그 사이 Linux Foundation은 여러 차례 인력·기술 역량 조사를 갱신했다.",
+      "action": "replace",
+      "suggestion": "Linux Foundation의 최근 Tech Talent/Open Source Jobs 계열 조사로 교체한다. 2026년 맥락에서는 'AI 역량과 오픈소스 역량의 결합 수요'가 추가 논거가 된다."
+    },
+    {
+      "line": 113,
+      "quote": "Gartner의 [Technology Insight for Software Composition Analysis (2019) 보고서]...에서는 기업은 오픈소스를 도입할 때 고려해야 할 사항으로 크게 4가지를 꼽고 있다. (1) 오픈소스가 장기적으로 생존할 가능성이 큰가? (2) 보안 이슈는 없는가? (3) 벤더 이슈는 없는가? (4) 컴플라이언스 및 지식재산권 확인이다.",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "2019년 Gartner 노트를 도입 심사 프레임의 뼈대로 쓰고 있다. 7년이 지났고, 그 사이 SCA 카테고리 자체가 ASPM/소프트웨어 공급망 보안으로 재편됐다. 무엇보다 2026년 도입 심사의 최대 쟁점인 '라이선스 변경(rug pull) 리스크'와 '공급망 무결성(서명·출처 증명)'이 4개 항목 어디에도 없다. 링크는 403(Gartner 유료 벽)이라 독자가 원문 확인도 못 한다.",
+      "action": "replace",
+      "suggestion": "고려사항을 6개로 재구성한다: (1) 프로젝트 생존성·유지보수자 수(bus factor) (2) 보안 대응 이력과 SECURITY.md 유무 (3) 라이선스 및 재라이선스 리스크(거버넌스 소유구조·단일 기업 지배 여부) (4) 공급망 무결성(서명된 릴리스, Trusted Publishing, SLSA 수준) (5) SBOM/VEX 제공 여부 (6) 기술 지원·호환성. Gartner 인용은 참고로 격하하거나 삭제한다."
+    },
+    {
+      "line": 119,
+      "quote": "#### 보안\\n오픈소스 도입 시 오픈소스가 과연 안전한지 검토해야 한다.",
+      "kind": "duplication",
+      "severity": "major",
+      "diagnosis": "기업 편 앞의 '오픈소스 도입 시 고려사항 > 보안'(L119)과 개발자 편의 '오픈소스 선택 기준 > 보안'(L1268)이 같은 제목·같은 취지로 두 번 나온다. 슬러그도 '보안-1'로 밀린다(정합성 스크립트 경고). '오픈소스 커뮤니티'도 L125와 L1196에 중복되어 같은 문제가 있다. 독자는 같은 조언을 두 번 읽고 어느 쪽이 정본인지 알 수 없다.",
+      "action": "move",
+      "suggestion": "도입 심사 기준(선택 기준)을 한 곳으로 통합한다. 권장: 개발자 편의 '오픈소스 선택 가이드'를 정본으로 삼아 판단 기준을 모으고, 기업 편 L112-133은 '조직 차원에서 무엇을 정책으로 강제할 것인가'(승인 게이트, 예외 절차, 금지 라이선스 목록)로 성격을 바꾼다. 그러면 중복이 사라지고 기업 편/개발자 편 구분도 선명해진다."
+    },
+    {
+      "line": 148,
+      "quote": "실제로 오픈소스 라이선스를 위반한 기업을 상대로 많은 소송이 제기되고 있다. 2017년 미국 연방 법원에서 있었던 [GPL이 법적 계약이라고 판결한 사례]...가 그 한 예이다.",
+      "kind": "stale_fact",
+      "severity": "critical",
+      "diagnosis": "'많은 소송이 제기되고 있다'고 하면서 근거는 2017년 Artifex v. Hancom 단 하나다. 2026년 기업 담당자를 설득하기에 근거가 9년 전 사례 하나뿐인 것은 치명적이다. 그 사이 SFC v. Vizio(캘리포니아, 제3자 수익자 지위 인정 및 2025년 심리), Neo4j v. PureThink(제9순회 2022), Entr'ouvert v. Orange(프랑스, 손해배상 확정) 등 기업 리스크를 훨씬 직접적으로 보여주는 판결이 축적됐다.",
+      "action": "expand",
+      "suggestion": "최근 5년 판례 3~4건을 표로 추가한다: 사건명 / 관할 / 쟁점 라이선스 / 결론 / 기업에 주는 함의. 특히 SFC v. Vizio는 '소스 코드 제공 요구를 최종 사용자가 직접 할 수 있는가'라는 국내 제조·가전 기업에 직결되는 쟁점이므로 반드시 포함한다."
+    },
+    {
+      "line": 173,
+      "quote": "> 참고로, 지난 2020년 12월, 오픈소스 컴플라이언스에 대한 국제 표준이 ISO에 등록되었다.",
+      "kind": "stale_fact",
+      "severity": "minor",
+      "diagnosis": "'지난 2020년 12월'이라는 상대 시점 수식이 6년 전 사건에 붙어 있다. 또한 이 인용 블록은 ISO/IEC 5230만 다루고, 2023년 제정된 ISO/IEC 18974(오픈소스 보안 보증 규격)를 언급하지 않는다. 보안 절이 이 섹션 분량의 3분의 1을 차지하는데 정작 대응 국제 표준이 빠져 있다.",
+      "action": "expand",
+      "suggestion": "'지난'을 삭제하고 'ISO/IEC 5230:2020'으로 정확히 표기한다. 이어서 ISO/IEC 18974(OpenChain Security Assurance) 한 문단을 추가하고, 5230=라이선스 컴플라이언스 / 18974=보안 보증이라는 역할 구분을 한 줄로 명시한다."
+    },
+    {
+      "line": 177,
+      "quote": "> 가이드는 다음 페이지에서 다운받을 수 있다. : https://www.oss.kr/oss_guide/show/7050bff0-d06b-43f0-99a6-9975afcd486f",
+      "kind": "dead_link",
+      "severity": "major",
+      "diagnosis": "HTTP 404 확인(2026-07-31). oss.kr의 oss_guide 상세 페이지 URL 체계가 변경된 것으로 보인다. 같은 패턴의 L71(nipa2024), L314/L326(boannews2024), L857(korea-industry)도 모두 404다. 총 4개 각주가 동일 원인으로 죽었다.",
+      "action": "replace",
+      "suggestion": "oss.kr에서 OpenChain 해설서·오픈소스SW 가이드 현행 URL을 재확인해 4건을 일괄 교체한다. 상세 페이지 URL이 불안정하므로 목록 페이지(https://www.oss.kr/oss_guide) + 자료명 병기 방식이 더 안전하다."
+    },
+    {
+      "line": 199,
+      "quote": "#####  **4. 아키텍처 리뷰**\\n프로젝트 전반의 아키텍처 리뷰를 진행한다. 오픈소스마다 결합 방식에 따라 준수해야 할 의무사항이 다르기 때문이다.",
+      "kind": "impracticality",
+      "severity": "major",
+      "diagnosis": "컴플라이언스 프로세스 7단계 중 실무자가 가장 어려워하는 단계인데, '결합 방식에 따라 의무사항이 다르다'는 명제만 제시하고 판단 기준을 하나도 주지 않는다. 이 절을 읽은 담당자가 실제로 할 수 있는 일이 없다.",
+      "action": "expand",
+      "suggestion": "결합 방식별 판단표를 넣는다: 정적 링크 / 동적 링크 / 별도 프로세스 실행 / 컨테이너 이미지 동봉 / 사이드카 / 네트워크 API 호출(AGPL 쟁점) / 모델 가중치 동봉 각각에 대해 GPL·LGPL·MPL·AGPL의 의무 발생 여부를 O/X/조건부로 정리한다. 이것이 이 섹션에서 가장 값어치 있는 추가 자산이 된다."
+    },
+    {
+      "line": 213,
+      "quote": "앱스토어 배포, 판매, 3rd party 제공, 코드 공개 등이 배포에 해당한다. 개인적으로 사용하거나 외부에 제공하지 않고 사내 도구로만 사용하는 경우는 배포에 해당하지 않는다.",
+      "kind": "stale_fact",
+      "severity": "critical",
+      "diagnosis": "AGPL을 고려하지 않은 서술이라 독자를 컴플라이언스 위반으로 유도할 수 있다. AGPL-3.0은 네트워크를 통한 이용(사내 웹 도구 포함 여부는 사안별)에 대해 소스 제공 의무를 발생시키고, SaaS 형태 제공은 GPL 기준으로도 판단이 갈린다. 2026년 기업 환경에서 '사내 도구'는 대부분 사내 네트워크 서비스 형태이므로 이 단정은 위험하다. 컨테이너 이미지를 사내 레지스트리 밖으로 내보내는 경우, 모델 가중치 배포, 임베디드 펌웨어 납품도 다루지 않는다.",
+      "action": "expand",
+      "suggestion": "'배포에 해당하는가' 판단 기준을 케이스별로 재작성한다. 최소한 (a) AGPL 네트워크 이용 조항, (b) SaaS 제공, (c) 컨테이너 이미지 배포, (d) 그룹사·계열사 간 제공(별개 법인 여부), (e) 위탁 개발 산출물 납품 다섯 케이스를 명시하고, 각 케이스에 '배포로 볼 가능성'을 상/중/하로 표기한다."
+    },
+    {
+      "line": 242,
+      "quote": "#### 오픈소스 목록 수동 관리\\n오픈소스 목록을 관리하는 방법으로는 수동 방식과 자동 방식이 있다. 수동 방식은 개발자 또는 오픈소스 관리자가 모든 오픈소스 사용 현황을 직접 파악하는 방법이다.",
+      "kind": "structure",
+      "severity": "major",
+      "diagnosis": "'수동 관리의 문제점' 3개 하위절(L244-251)에 상당한 분량을 쓰고 있으나, 2026년에 수동 관리를 검토하는 기업은 없다. 이미 결론이 난 논쟁을 길게 설득하는 구조다. 뒤이은 '자동화'(L253-261)는 도구 유형 나열에 그쳐 오히려 더 짧다. 분량 배분이 뒤집혀 있다.",
+      "action": "delete",
+      "suggestion": "L242-251을 한 문단(3~4줄)으로 압축해 '자동화가 전제인 이유'로 통합하고, 확보한 분량을 자동화 구현부에 돌린다. 자동화 쪽에는 빌드 파이프라인 어느 지점에 스캔을 걸 것인가, 실패 시 빌드를 막을 것인가(정책 게이트), 예외 승인은 누가 며칠 안에 처리하는가 같은 운영 규칙을 넣는다."
+    },
+    {
+      "line": 260,
+      "quote": "- 오픈소스 BOM(Bill of Materials, 사용된 소프트웨어의 ) 관리 도구",
+      "kind": "structure",
+      "severity": "major",
+      "diagnosis": "괄호 안 설명이 '사용된 소프트웨어의 '에서 잘려 있다. 문장이 미완성인 채로 발간본 p33에도 그대로 넘어갔다(발간본은 아예 괄호를 지우고 '오픈소스SW BOM 관리 도구'로 조판). 편집 결함이다.",
+      "action": "replace",
+      "suggestion": "'오픈소스 BOM(Bill of Materials, 사용된 소프트웨어 구성요소 명세) 관리 도구'로 문장을 완성한다."
+    },
+    {
+      "line": 272,
+      "quote": "- 2021년 5월: [행정명령 14028 발표]...., 연방 정부 계약자에게 SBOM 제출 의무화",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "미국 SBOM 규제 상태를 2021년 EO 14028 기준으로만 서술한다. 그 이후 EO 14144(2025년 1월)와 이를 개정한 2025년 6월 행정명령으로 소프트웨어 보안 증명(attestation) 요건이 실질적으로 변경됐다. 미국 시장에 납품하는 국내 기업에게 '무엇이 여전히 요구되는가'가 이 문단으로는 판단되지 않는다.",
+      "action": "verify",
+      "suggestion": "2021→2025 미국 행정명령 계보를 한 줄 타임라인으로 정리하고, 2026년 7월 시점에 실제로 유효한 요구사항(연방 조달 시 자기증명 양식, SBOM 제출 범위)만 남긴다. 폐지·완화된 요건은 '2025년 개정으로 완화됨'을 명시한다."
+    },
+    {
+      "line": 273,
+      "quote": "- 2023년 9월: [FDA, 의료기기 제조업체에 SBOM 제출 요구 발표](https://www.fda.gov/medical-devices/digital-health-center-excellence/cybersecurity)",
+      "kind": "dead_link",
+      "severity": "major",
+      "diagnosis": "HTTP 404 확인(2026-07-31). FDA 사이버보안 페이지 경로가 변경됐다. 각주 [^fda2023]도 같은 URL이다.",
+      "action": "replace",
+      "suggestion": "FDA의 현행 Medical Device Cybersecurity 페이지 및 Section 524B 관련 최종 지침(2023년 9월 최종화, 이후 갱신본 확인) URL로 교체한다. 국내 의료기기 수출 기업에 직결되므로 링크 복구 우선순위가 높다."
+    },
+    {
+      "line": 275,
+      "quote": "- 2024년 5월: CISA, \"Secure by Design Pledge\" 발표, 주요 기술 기업들의 사이버보안 강화 약속 포함[^cisa-pledge]",
+      "kind": "dead_link",
+      "severity": "major",
+      "diagnosis": "각주 [^cisa-pledge]의 https://www.cisa.gov/secure-by-design 이 HTTP 404다(2026-07-31). 2025년 CISA 조직·프로그램 개편으로 Secure by Design 이니셔티브의 운영 상태 자체가 달라졌을 가능성이 있어, 링크 교체만으로는 부족하고 서술의 유효성 확인이 필요하다.",
+      "action": "verify",
+      "suggestion": "CISA Secure by Design Pledge의 2026년 현재 운영 상태를 확인한다. 프로그램이 축소·종료됐다면 항목을 삭제하고, 유지 중이면 현행 URL로 교체한다."
+    },
+    {
+      "line": 281,
+      "quote": "- 2027년: 대부분의 조항 시행 예정, 디지털 요소가 있는 제품을 시장에 출시하는 모든 기업은 최소한의 사이버보안 및 보고 요구사항 [준수 필요]",
+      "kind": "stale_fact",
+      "severity": "critical",
+      "diagnosis": "CRA(EU 2024/2847) 서술이 '2024년 최종 법안 채택 / 2027년 시행'으로만 되어 있는데, 실제 적용 일정은 발효 2024-12-10, **악용 중인 취약점·심각한 사고 보고 의무 2026-09-11 적용**, 주요 의무 2027-12-11 적용이다. 2026-09-11은 이 개정판 발간 직후 도래하는 시한인데 원고에 단 한 줄도 없다. EU에 디지털 제품을 출시하는 국내 기업이 지금 당장 준비해야 할 사항을 가이드가 알려주지 못한다. 규제 가이드로서 가장 심각한 누락이다.",
+      "action": "expand",
+      "suggestion": "CRA를 별도 소절로 승격하고 다음을 넣는다: (1) 적용 일정 3단계(2024-12-10 발효 / 2026-09-11 보고 의무 / 2027-12-11 전면 적용), (2) 2026-09-11 보고 의무의 구체적 내용(악용 중인 취약점 인지 후 24시간 조기 경보, 72시간 취약점 통지, 14일 내 최종 보고 — 정확한 기한은 원문 재확인), (3) CRA가 신설한 '오픈소스 소프트웨어 스튜어드(open-source software steward)' 지위와 상용 제조자와의 의무 차이, (4) 국내 기업 적용 판단 흐름(EU 시장 출시 여부 → 디지털 요소 제품 여부 → 중요/핵심 제품 분류). 이것이 이번 개정에서 using 섹션에 추가할 가장 가치 높은 내용이다."
+    },
+    {
+      "line": 286,
+      "quote": "- 2024년 5월: Quad Cybersecurity Partnership의 일환으로 미국, 인도, 호주와 함께 \"Secure Software 공동 원칙\" 발표, 소프트웨어 보안 강화 및 정부의 소프트웨어 조달 지침 수립[^quad-partnership]",
+      "kind": "dead_link",
+      "severity": "minor",
+      "diagnosis": "각주 [^quad-partnership]의 whitehouse.gov 2023년 브리핑 URL이 HTTP 404다(행정부 교체로 아카이브 이관). 게다가 본문은 '2024년 5월' 발표라면서 각주 URL은 2023년 5월 문서를 가리켜 연도가 불일치한다.",
+      "action": "replace",
+      "suggestion": "아카이브(bidenwhitehouse.archives.gov) 또는 참가국 정부 원문으로 링크를 교체하고 연도 불일치를 바로잡는다. 국내 기업 실무 영향이 낮은 항목이므로 삭제도 합리적 선택이다."
+    },
+    {
+      "line": 304,
+      "quote": "- 2024년 5월 13일: 과학기술정보통신부, 국가정보원, 디지털플랫폼정부위원회 공동으로 '[SW 공급망 보안 가이드라인 1.0]...' 발표",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "'1.0'이라고 버전을 못 박아 놓아, 이후 개정판이 나왔다면 즉시 낡은 서술이 된다. 2024년 5월 이후 2년이 지났으므로 개정판 존재 여부 확인이 필수다.",
+      "action": "verify",
+      "suggestion": "KISA/과기정통부에서 SW 공급망 보안 가이드라인의 최신 버전을 확인해 갱신하고, 국내 SBOM 정책이 '가이드라인 → 시범 적용 → 제도화' 중 2026년 현재 어느 단계인지 한 문장으로 결론을 준다."
+    },
+    {
+      "line": 309,
+      "quote": "- 2024년 하반기: 디지털플랫폼정부 주요시스템 구축 시 [SBOM 시범 적용 계획](https://dpg.go.kr/DPG/contents/DPG02020000.do?...)[^nia2024]",
+      "kind": "dead_link",
+      "severity": "major",
+      "diagnosis": "정합성 스크립트 blocking 항목. [^nia2024] 각주 정의가 없어 웹 렌더링 시 마커가 본문에 노출된다. 발간본 p35 각주 22)에 정답이 있다(published_only 항목). 추가로 인라인 dpg.go.kr URL 자체가 연결 실패(000)했다. 또한 '2024년 하반기 ... 계획'은 2년 지난 예정형 서술로 결과 확인이 필요하다.",
+      "action": "replace",
+      "suggestion": "발간본 각주 22)를 저장소로 되가져와 [^nia2024] 정의를 복구하되, dpg.go.kr 링크 생존을 재확인하고 죽었으면 대체 출처로 바꾼다. 동시에 '시범 적용 계획'이 실제로 어떻게 이행됐는지 2026년 결과로 서술을 갱신한다."
+    },
+    {
+      "line": 314,
+      "quote": "- 2024년 하반기: 산·학·연 전문가 참여 [범정부 합동TF 구성](https://www.oss.kr/oss_guide/show/49b93bf6-6c33-48a9-aae8-7494ab8b29ca)\\n   - 'SW 공급망 보안 로드맵' 마련 계획 발표",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "2년 전 '구성 계획/마련 계획' 예정형이 그대로다. 로드맵이 실제로 나왔는지, 무엇이 담겼는지가 2026년 독자가 알고 싶은 전부인데 답이 없다. 링크도 404다.",
+      "action": "replace",
+      "suggestion": "'SW 공급망 보안 로드맵'의 발표 여부와 내용을 확인해 결과형으로 재서술한다. 미발표라면 그 사실을 명시한다. 예정형 문장을 2026년 개정판에 그대로 남기지 않는다."
+    },
+    {
+      "line": 320,
+      "quote": "- 향후 의료, 국방, 제조 등 특정 산업 분야에 대한 구체적인 정책 수립 예정",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "'향후 ... 예정'이 2024년 기준으로 쓰였다. L839에도 '2024년~2025년: 의료, 국방, 제조 등 특정 산업 분야에 대한 오픈소스 보안 정책 수립 예정'으로 같은 내용이 중복 서술되어 있다(duplication 겸함).",
+      "action": "replace",
+      "suggestion": "산업별 정책 수립 결과를 확인해 L320과 L839 중 하나로 통합하고 결과형으로 바꾼다. 두 곳에 같은 예정형 문장을 남기지 않는다."
+    },
+    {
+      "line": 322,
+      "quote": "현재는 의무화 단계까지는 이르지 않았지만, 점진적인 접근을 통해 제도화를 준비하고 있는 상황이다.",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "'현재'가 2024년을 가리킨다. 국내 SBOM 의무화 여부는 기업 담당자가 이 절에서 가장 알고 싶은 단 하나의 결론인데, 2년 전 기준 판단이 남아 있다.",
+      "action": "verify",
+      "suggestion": "2026년 7월 기준 국내 SBOM 의무화 상태(공공 조달 요구 여부 포함)를 확인해 결론 문장을 갱신하고, '현재'를 '2026년 기준'으로 시점 명시한다."
+    },
+    {
+      "line": 331,
+      "quote": "NTIA(National Telecommunications and Information Administration)는 라이선스 및 보안취약점 관리를 위해 SBOM이 갖춰야 할 다음 세 가지의 요구 사항을 제시하였다[^ntia2021].",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "2021년 NTIA 최소 요소를 유일한 기준으로 제시한다. 그 후 CISA가 최소 요소 개정 작업을 진행해 데이터 필드가 확장됐다(구성요소 해시, 라이선스, 도구명, 생성 컨텍스트 등 추가 방향). L339-351의 7개 필드 표도 함께 낡는다. 라이선스 필드가 최소 요소에 없다는 점은 이 가이드의 컴플라이언스 목적과 직접 충돌하는데 그 지적도 없다.",
+      "action": "replace",
+      "suggestion": "CISA의 최신 SBOM 최소 요소 문서를 확인해 데이터 필드 표를 갱신하고, '2021년 NTIA 7개 필드 → 현행 요구 필드' 대조표로 제시한다. 라이선스 필드가 언제부터 최소 요소에 포함됐는지를 명시하면 컴플라이언스 담당자에게 직접적인 실행 정보가 된다."
+    },
+    {
+      "line": 355,
+      "quote": "#### SBOM 표준 형식\\n1. **SPDX (Software Package Data Exchange)** ... 2. **CycloneDX** ... 3. **SWID Tags (Software Identification Tags)**",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "세 포맷의 버전 정보가 없거나 낡았다(CycloneDX 현행 버전 미표기, SWID는 2015년 표준 그대로). 무엇보다 SBOM만으로는 '이 취약점이 우리 제품에서 실제로 악용 가능한가'를 소통할 수 없어 2026년 실무의 중심이 된 VEX/CSAF가 전혀 없다. SBOM 절 전체(L264-431)에 VEX가 단 한 번도 등장하지 않는다.",
+      "action": "expand",
+      "suggestion": "각 포맷의 현행 버전과 갱신 시점을 표기하고, VEX(CycloneDX VEX / OpenVEX / CSAF VEX) 소절을 신설한다. 'SBOM은 무엇을 쓰는가를, VEX는 그것이 지금 위험한가를 말한다'는 한 문장 대비로 시작하면 이해 비용이 낮다. 국내 기업이 수급사업자에게 SBOM과 함께 VEX를 요구할 때의 계약 문구 예시까지 넣으면 실행 가능해진다."
+    },
+    {
+      "line": 376,
+      "quote": "[^cisa2024]: https://www.cisa.gov/sbom",
+      "kind": "structure",
+      "severity": "minor",
+      "diagnosis": "[^cisa2024]가 L291, L376, L797 세 곳에 정의되어 있다(스크립트 경고 2건). [^gartner-3971011]도 L115/L446, [^sonatype2024]도 L713/L746에 중복 정의다. Hugo는 첫 정의만 채택하므로 나머지는 무시된다.",
+      "action": "delete",
+      "suggestion": "각주 정의를 파일당 1회로 정리한다. L376·L797의 [^cisa2024], L446의 [^gartner-3971011], L746의 [^sonatype2024] 중복 정의를 삭제한다. 단 L797은 아래 별도 이슈(SolarWinds 오참조)와 함께 처리해야 한다."
+    },
+    {
+      "line": 384,
+      "quote": "SPDX 표준은 2021년 9월 ISO 표준([ISO/IEC 5962](https://www.iso.org/standard/81870.html))으로 등록된 대표적인 SBOM 포맷이다.",
+      "kind": "stale_fact",
+      "severity": "minor",
+      "diagnosis": "ISO/IEC 5962:2021로 국제표준화된 것은 SPDX 2.2.1이다. 문장이 'SPDX 표준'이라고만 해서, 뒤에 나오는 2.3/3.0 논의와 겹치면 어느 버전이 ISO인지 독자가 오해한다. L360의 'ISO/IEC 5962:2021로 국제 표준화'도 같은 모호성을 갖는다.",
+      "action": "replace",
+      "suggestion": "'SPDX 2.2.1이 ISO/IEC 5962:2021로 국제표준화되었다'로 버전을 명시하고, 이후 버전의 ISO 표준화 진행 상황(SPDX 3.x)을 한 줄 덧붙인다."
+    },
+    {
+      "line": 398,
+      "quote": "- [JSON](https://github.com/spdx/spdx-spec/blob/development/v2.3/examples/SPDXJSONExample-v2.3.spdx.json)\\n- [YAML](.../SPDXYAMLExample-v2.3.spdx.yaml)\\n- [Tag/Value](.../SPDXTagExample-v2.3.spdx)\\n- [RDF/xml](.../SPDXRdfExample-v2.3.spdx.rdf)",
+      "kind": "dead_link",
+      "severity": "major",
+      "diagnosis": "4개 예제 링크가 모두 HTTP 404다(2026-07-31 확인). spdx-spec 저장소가 재구성되어 development 브랜치의 v2.3/examples 경로가 사라졌다. 각주 [^spdx-json][^spdx-yaml][^spdx-tagvalue][^spdx-rdfxml] 4건이 한꺼번에 무효다.",
+      "action": "replace",
+      "suggestion": "spdx/spdx-examples 저장소 또는 spdx-spec의 현행 태그(v2.3 릴리스 태그) 경로로 4건을 일괄 교체한다. 브랜치명(development) 대신 릴리스 태그를 쓰면 재발을 막을 수 있다."
+    },
+    {
+      "line": 408,
+      "quote": "하지만 SPDX 3.0은 아직 도구 지원과 업계 적용이 제한적이므로, 현재로서는 SPDX 2.3 사용을 권장한다.",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "2024년 시점 판단이다. SPDX 3.0.1 릴리스 후 2년이 지나 주요 스캐너(Syft, Trivy 등)와 상용 SCA의 3.x 지원 상황이 달라졌을 가능성이 크다. '현재로서는'이라는 상대 시점 표현까지 붙어 있어 개정 없이 두면 잘못된 권고가 된다. 이 문장이 SBOM 절 전체의 실행 권고이므로 영향이 크다.",
+      "action": "verify",
+      "suggestion": "2026년 7월 기준 SPDX 3.x 도구 지원 현황(Syft/Trivy/cdxgen/주요 상용 SCA)을 확인해 권고를 재판정한다. 권고 문장은 '2026년 기준'을 명시하고, 'SPDX 2.3으로 시작해 3.x로 전환' 같은 전환 경로 형태로 쓰면 다음 개정 때까지 버틴다."
+    },
+    {
+      "line": 412,
+      "quote": "SPDX 프로젝트는 Excel로 작성된 SBOM을 SPDX 문서로 자동 변환하는 도구를 제공하고 있다. 즉, 사용자는 먼저 SPDX 프로젝트에서 제공하는 [Excel template 파일](https://github.com/spdx/tools/blob/master/Examples/SPDXRdfExample-v2.3.xls)을 다운받아서 각 시트에 필요한 정보를 기입한다.",
+      "kind": "impracticality",
+      "severity": "major",
+      "diagnosis": "SBOM 실습 지면(L412-429, 이미지 2장 포함) 전체를 'Excel에 손으로 적고 웹에서 변환하기'에 쓰고 있다. 바로 아래 L429가 스스로 '이런 절차를 자동화하는 노력이 필요하다'고 인정할 만큼 방향이 반대다. 게다가 Excel 템플릿 링크는 404/429로 접근이 불안정하다. 2026년 기업 담당자가 이 지면에서 얻을 실행 가치가 거의 없다.",
+      "action": "replace",
+      "suggestion": "Excel 실습(L412-427, imgproc spdx-excel/spdx-web 2장 포함)을 삭제하고, 그 자리에 CI에서 SBOM을 생성·보관·검증하는 실습을 넣는다: syft 또는 Trivy로 컨테이너 이미지 SBOM 생성 → GitHub Actions 워크플로 예시 → 릴리스 아티팩트로 첨부 → Dependency-Track에 업로드해 지속 모니터링. 명령어 3줄과 워크플로 20줄이면 충분하며 이것이 이 섹션에서 가장 자주 참조될 지면이 된다."
+    },
+    {
+      "line": 438,
+      "quote": "Gartner의 [Technology Insight for Software Composition Analysis]...보고서에서 SCA 도구 선택 기준이 제시되는데 아래와 같다.\\n- [x] 충분한 취약점 데이터베이스가 마련되었는가?",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "2019년 기준 SCA 선택 체크리스트 6항목이다. SBOM 출력 포맷 지원(SPDX/CycloneDX), VEX 생성·소비, 컨테이너/IaC 스캔, 정책의 코드화(policy as code), 오탐률과 도달 가능성 분석(reachability), AI 모델·데이터셋 라이선스 식별 등 2026년 조달 평가의 실제 항목이 하나도 없다.",
+      "action": "expand",
+      "suggestion": "체크리스트를 2026년 조달 기준으로 재작성한다. 최소 추가 항목: SBOM 출력 포맷, VEX 지원, 컨테이너 이미지·IaC 스캔, 도달 가능성 기반 우선순위, 정책 as code 및 빌드 차단 게이트, 오탐률과 수동 검토 비용, 온프레미스/에어갭 지원(금융·공공), AI 모델 아티팩트 대응. Gartner 인용은 각주로 격하한다."
+    },
+    {
+      "line": 448,
+      "quote": "#### 주요 오픈소스 관리 도구 소개\\n\\n##### **FOSSology** - https://www.fossology.org",
+      "kind": "structure",
+      "severity": "major",
+      "diagnosis": "도구 14종의 나열 순서가 FOSSology→SW360→SPDX→FOSSLight→OLIVE→상용... 순인데, 발간본 p42-48은 FOSSLight→Olive→Fossa→FOSSID→Black Duck→Snyk→WhiteSource→FOSSology→CodeEye→Clarity→LABRADOR→SW360→SPDX→ClearlyDefined 순으로 재배열했다(baseline published_only 항목, 국내 도구와 상용 SCA를 앞세운 독자 동선). 저장소는 이 개선을 흡수하지 않았다. 더불어 14종 모두 '무엇인지' 설명뿐이고 '어떤 상황에서 무엇을 고르는가'라는 비교축이 없다.",
+      "action": "move",
+      "suggestion": "발간본 순서를 채택하고, 목록 앞에 선택 매트릭스 표를 하나 둔다(도구 / 유형: 소스·바이너리·의존성 / 라이선스 vs 취약점 강점 / 무료·상용 / 온프레미스 지원 / SBOM 출력 포맷). 표가 있으면 14개 나열이 비로소 쓸모를 갖는다."
+    },
+    {
+      "line": 456,
+      "quote": "https://openchain-project.github.io/OpenChain-KWG/guide/appendix/3-tools/fossology",
+      "kind": "dead_link",
+      "severity": "major",
+      "diagnosis": "HTTP 404 확인(2026-07-31). L464의 sw360 경로도 동일하게 404다. 상위 사이트(openchain-project.github.io/OpenChain-KWG/)는 200이므로 문서 구조가 개편된 것으로 보인다. FOSSology·SW360 두 도구의 유일한 설치 안내 경로가 끊겼다.",
+      "action": "replace",
+      "suggestion": "OpenChain KWG 사이트에서 도구 가이드의 현행 경로를 확인해 2건을 교체한다. 경로가 사라졌다면 각 도구 공식 문서(fossology.github.io, eclipse.dev/sw360)로 대체한다."
+    },
+    {
+      "line": 504,
+      "quote": "2015년 설립된 실리콘밸리 스타트업에서 제공하는 서비스로... Twitter, Uber, Zendesk 등과 파트너를 맺고 있으며, JS Foundation, Linux Foundation, NPM 등과 제휴하고 있다. 기본적인 사용은 무료이나 일부 추가 기능들을 유료로 제공하며, 팀 규모가 100명 이상이라면 엔터프라이즈 버전이 적용된다.",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "Fossa 설명이 2019~2020년 마케팅 자료 수준이다. 'Twitter'는 2023년 X로 사명이 바뀌었고, 'JS Foundation'은 2019년 Node.js Foundation과 합병해 OpenJS Foundation이 됐다. '팀 규모 100명 이상' 가격 정책도 6년간 여러 차례 바뀌었을 것이다. 상용 도구 소개에 가격 티어를 못 박는 서술 방식 자체가 노후에 취약하다.",
+      "action": "replace",
+      "suggestion": "폐지된 조직명(JS Foundation→OpenJS Foundation)과 사명(Twitter→X)을 바로잡고, 구체적 가격 티어 서술은 삭제한 뒤 '무료 티어 제공, 규모별 유료 플랜'처럼 노후에 강한 표현으로 바꾼다. 이 원칙을 L504·L526·L533 세 도구에 공통 적용한다."
+    },
+    {
+      "line": 511,
+      "quote": "2016년 스웨덴에서 설립된 FOSSID는... 특히, 코드 일부에서 보안 취약점을 탐지하는 유일한 오픈소스 스캐너라는 장점이 있다.",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "'유일한'이라는 단정은 2026년 기준 사실이 아니며(스니핏 수준 탐지를 제공하는 스캐너가 여럿), 검증 불가능한 벤더 마케팅 문구를 가이드가 그대로 옮겼다. 소유 구조도 확인 필요하다(2021년 Snyk 인수 후 현재는 FossID AB 명의로 독립 운영 중인 것으로 보임). 표기도 'FOSSID'와 공식 표기 'FossID'가 어긋난다.",
+      "action": "replace",
+      "suggestion": "'유일한' 문구를 삭제하고 기능 서술(스니핏 단위 매칭, 대규모 코드 감사)로 바꾼다. 회사 소유 구조와 공식 표기를 확인해 갱신한다."
+    },
+    {
+      "line": 513,
+      "quote": "##### **Black Duck** - https://www.blackducksoftware.com/",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "URL이 blackduck.com으로 리다이렉트된다(2026-07-31 확인). 더 중요한 것은 소속 변경이다. Black Duck은 Synopsys 산하 제품이었다가 2024년 Software Integrity Group 분사로 독립 회사 Black Duck Software가 되었다. 본문에는 회사 맥락이 아예 없어 독자가 현재 어느 조직의 제품인지 알 수 없다.",
+      "action": "replace",
+      "suggestion": "URL을 https://www.blackduck.com/ 으로 교체하고, '2024년 Synopsys에서 분사한 독립 기업 Black Duck Software의 제품'이라는 한 줄을 추가한다."
+    },
+    {
+      "line": 521,
+      "quote": "##### **Snyk** - https://snyk.io\\n...현재 Docker 공식 독점 보안 파트너로 IBM Cloud, RedHat, OpenShift, Kubernetes 등과 제휴를 맺고 있다.",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "'현재 Docker 공식 독점 보안 파트너'는 2020~2021년 사실이다. Docker는 이후 자체 Docker Scout를 출시했고 독점 파트너 관계는 유효하지 않다. 'OpenShift, Kubernetes'를 제휴 대상으로 나열한 것도 부정확하다(Kubernetes는 제휴 주체가 아닌 오픈소스 프로젝트).",
+      "action": "replace",
+      "suggestion": "제휴 관계 나열을 삭제하고 기능 중심(개발자 워크플로 통합, 도달 가능성 기반 우선순위, IaC/컨테이너 스캔)으로 재서술한다."
+    },
+    {
+      "line": 528,
+      "quote": "##### **WhiteSource** - https://www.whitesourcesoftware.com\\n\\n2011년 설립되어 라이선스 준수 및 취약점 관리 서비스를 제공하며, 오래된 서비스인 만큼 방대한 데이터베이스를 확보하고 있다.",
+      "kind": "stale_fact",
+      "severity": "critical",
+      "diagnosis": "WhiteSource는 2022년 Mend로 사명을 변경했고, whitesourcesoftware.com은 mend.io로 리다이렉트된다(2026-07-31 확인). 2026년 개정판에 존재하지 않는 제품명이 표제로 남아 있다. 게다가 L871의 취약점 스캐닝 도구 예시('예: Snyk, WhiteSource, Black Duck 등')에도 같은 옛 이름이 다시 등장한다. 독자가 검색해도 해당 제품을 찾지 못한다.",
+      "action": "replace",
+      "suggestion": "표제를 'Mend (구 WhiteSource)'로, URL을 https://www.mend.io/ 로 교체하고 제품명을 Mend SCA로 갱신한다. L871의 도구 예시도 함께 수정한다. '110억 개 이상의 소스 코드 파일, 200개 이상의 언어지원' 같은 수치와 'GitHub의 Ultimate'(존재하지 않는 플랜명)도 삭제한다."
+    },
+    {
+      "line": 535,
+      "quote": "##### **CodeEye** - https://www.olis.or.kr/codeEye/introduction.do\\n...한국저작권위원회에서 구축한 오픈소스 DB(지속적 Update)를 기반으로 검사하며, 중소기업기본법 시행령 제3조(중소기업의 범위) 규정에 따른 중소기업 대상으로 무료로 서비스한다.",
+      "kind": "stale_fact",
+      "severity": "minor",
+      "diagnosis": "링크는 살아 있으나(200), 2026년 현재 서비스가 계속 운영 중인지, 무료 대상 기준이 유지되는지 확인되지 않았다. 국내 중소기업에게 유용한 정보이므로 사실 확인 가치가 높다.",
+      "action": "verify",
+      "suggestion": "한국저작권위원회 OLIS에서 CodeEye 서비스 운영 상태와 무료 지원 대상 기준을 재확인해 갱신한다."
+    },
+    {
+      "line": 542,
+      "quote": "##### **Clarity** - http://insignary.com/",
+      "kind": "dead_link",
+      "severity": "major",
+      "diagnosis": "HTTPS가 아닌 http:// 스킴이며, 인시그너리(Insignary)의 2026년 현재 사업 지속 여부가 확인되지 않았다. 도구 소개 절에서 접근 불가능하거나 단종된 제품을 계속 소개하면 목록 전체의 신뢰도가 떨어진다.",
+      "action": "verify",
+      "suggestion": "Insignary Clarity의 서비스 상태를 확인한다. 단종·사업 종료라면 항목을 삭제하고, 유지 중이면 https URL로 교체한다."
+    },
+    {
+      "line": 550,
+      "quote": "##### **LABRADOR** - https://www.iotcube.com/",
+      "kind": "dead_link",
+      "severity": "critical",
+      "diagnosis": "iotcube.com은 연결 자체가 실패한다(curl exit, HTTP 000, 2026-07-31 확인). 발간본 p47은 이미 https://www.labradorlabs.ai/ 로 갱신했고 이 주소는 200이다(baseline published_only 항목). 저장소만 옛 주소를 유지해 독자가 도구에 접근할 수 없다. 기준선 병합으로 즉시 해소 가능한 항목이다.",
+      "action": "replace",
+      "suggestion": "URL을 https://www.labradorlabs.ai/ 로 교체한다. 같은 문단 L555의 '진단이 가능합니다.' 존댓말도 발간본대로 '가능하다.'로 통일한다(L1283 '갖고 있습니다.'도 동일)."
+    },
+    {
+      "line": 565,
+      "quote": "### 오픈소스 고지 의무사항\\n오픈소스 라이선스는 공통으로 저작권 고지와 라이선스 사본 첨부 의무를 갖는다.",
+      "kind": "impracticality",
+      "severity": "major",
+      "diagnosis": "고지 절(L565-683) 전체가 '무엇을 고지해야 하는가'와 타사 사례 캡처로만 구성돼 있고, '어떻게 만드는가'가 없다. 컴플라이언스 프로세스 6단계에서 고지문 작성이 실무 부담의 대부분인데, SBOM에서 NOTICE를 자동 생성하는 파이프라인 안내가 한 줄도 없다. 또한 소스 코드 공개 의무 이행 방법(written offer, 제공 기간과 보관 의무, 다운로드 사이트 운영)이 L206에 한 줄 언급되고 끝난다.",
+      "action": "expand",
+      "suggestion": "(1) SPDX/CycloneDX SBOM → NOTICE 자동 생성 도구와 CI 통합 예시, (2) 소스 코드 제공 의무 이행 3가지 방식(동봉 / written offer / 다운로드 사이트)과 각각의 보관 기간·운영 부담 비교, (3) 모바일 앱·웹 서비스·펌웨어 각각에서 고지문을 어디에 두는가(앱 내 오픈소스 라이선스 화면, 제품 웹페이지)를 추가한다."
+    },
+    {
+      "line": 611,
+      "quote": "[^royale]: Apache Royale 프로젝트https://infra.apache.org/licensing-howto.html",
+      "kind": "structure",
+      "severity": "minor",
+      "diagnosis": "각주 정의에 ' : ' 구분자가 빠져 제목과 URL이 붙어 있다. 렌더링 시 링크가 깨지거나 제목이 URL에 흡수된다. 발간본 p50 각주 30)은 아예 제목 없이 URL만 남겼다.",
+      "action": "replace",
+      "suggestion": "'[^royale]: Apache Royale 프로젝트 : https://infra.apache.org/licensing-howto.html' 로 구분자를 넣는다."
+    },
+    {
+      "line": 690,
+      "quote": "Sonatype의 [2024 소프트웨어 공급망 현황 보고서]...에 따르면, 2024년 말까지 오픈소스 패키지 다운로드 수가 6.6조 건에 이를 것으로 예상된다. 이는 전년 대비 52%나 증가한 수치이다.",
+      "kind": "duplication",
+      "severity": "major",
+      "diagnosis": "이 통계(6.6조 건/52%, 51만2,847개 악성 패키지/156%)가 L690·L705와 L725·L726에 완전히 같은 내용으로 두 번 실린다. '오픈소스 보안의 중요성'과 '오픈소스 보안 취약점 현황'이 사실상 같은 보고서를 두 번 요약한 절이다. 동시에 수치 자체가 2024년 기준으로 2년 낡았고 '2024년 말까지 ... 예상된다'는 이미 지난 예측이다.",
+      "action": "delete",
+      "suggestion": "두 절을 하나로 통합한다. '오픈소스 보안의 중요성'(L688-714)을 3~4문단으로 압축해 '오픈소스 보안 취약점 현황'(L717-747)에 흡수시키고, 통계는 Sonatype 최신판 1회 인용으로 정리한다. 예측형('~에 이를 것으로 예상된다')은 실측형으로 바꾼다."
+    },
+    {
+      "line": 701,
+      "quote": "이러한 증가 추세는 오픈소스가 소프트웨어 개발에서 차지하는 비중이 얼마나 큰지를 잘 보여준다. 실제로 현대 소프트웨어 애플리케이션의 90%가 오픈소스 컴포넌트로 구성되어 있다고 한다.",
+      "kind": "stale_stat",
+      "severity": "minor",
+      "diagnosis": "'90%'에 출처가 없다. 뒤의 L1089는 같은 취지를 '60~80%'로 서술해 같은 파일 안에서 수치가 충돌한다. 두 수치 모두 근거 없이 제시된다.",
+      "action": "replace",
+      "suggestion": "L701과 L1089의 수치를 하나의 출처(예: Synopsys/Black Duck OSSRA 최신판)로 통일하고 각주를 붙인다. 통일할 근거가 없으면 정성 서술로 바꾼다."
+    },
+    {
+      "line": 709,
+      "quote": "[세계의 오픈 소스 서비스 시장 보고서(2024년)](https://www.giikorea.co.kr/report/tbrc1429891-open-source-services-global-market-report.html)에 따르면, 오픈소스 서비스 시장은 2028년까지 연평균 24.3%의 성장률로 1,074억 6,000만 달러 규모로 성장할 것으로 예상된다.",
+      "kind": "dead_link",
+      "severity": "major",
+      "diagnosis": "링크가 HTTP 410 Gone을 반환한다(보고서 페이지 영구 삭제). 게다가 '시장이 커지니 보안이 중요하다'는 논증 자체가 약하고, L36의 FMI 시장 예측과 성격이 겹친다.",
+      "action": "delete",
+      "suggestion": "문단과 각주 [^giikorea2024]를 삭제한다. 보안의 중요성은 시장 규모가 아니라 사고 사례와 규제 시한으로 논증하는 것이 이 가이드의 목적에 맞다."
+    },
+    {
+      "line": 734,
+      "quote": "OWASP(Open Web Application Security Project)에서 발표한 [오픈소스 소프트웨어 Top 10 리스크]...를 바탕으로 주요 취약점 유형과 공격 벡터를 살펴보면 다음과 같다:",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "'Top 10'이라 해놓고 5개만 소개한다. 나머지 5개(라이선스·규제 리스크, 미성숙 소프트웨어, 과도한 권한, 무결성 검증 미흡, 의존성 혼동 등)가 빠졌는데 그중 일부는 이 가이드의 라이선스 주제와 직접 연결된다. 링크는 살아 있으나 프로젝트가 갱신됐을 수 있어 항목 대조가 필요하다.",
+      "action": "expand",
+      "suggestion": "OWASP OSS Top 10의 현행 10개 항목을 모두 표로 옮기고, 각 항목에 '이 가이드의 어느 절에서 다루는가'를 매핑한다. 매핑되지 않는 항목이 곧 이 섹션의 공백이다."
+    },
+    {
+      "line": 753,
+      "quote": "##### 1. 최근 5년간의 주요 사례\\n   \\na) XZ Utils 취약점 (2024년)",
+      "kind": "stale_fact",
+      "severity": "critical",
+      "diagnosis": "'최근 5년간'이라면서 2018년 event-stream, 2020년 SolarWinds를 포함한다. 2026년 기준 최근 5년은 2021-2026인데 목록의 절반이 그 밖이고, 2025-2026년 사례는 하나도 없다. 그 사이 polyfill.io(2024), ultralytics PyPI 침해(2024), tj-actions/changed-files GitHub Actions 공급망 침해(2025), npm 생태계 자가 전파 웜(2025) 등 XZ 이후 유형이 크게 달라졌다. 이 절이 '보안 사고는 옛날 얘기'라는 인상을 준다.",
+      "action": "expand",
+      "suggestion": "제목을 '주요 오픈소스 공급망 사고 사례'로 바꿔 상대 시점 표현을 없애고, 사례를 유형별로 재편한다: (1) 유지보수자 신뢰 악용(XZ Utils), (2) CI/CD 및 GitHub Actions 침해(tj-actions), (3) 패키지 레지스트리 계정 탈취·자가 전파(npm 웜), (4) CDN·서드파티 스크립트(polyfill.io), (5) 알려진 취약점 미패치(Log4Shell). 각 유형에 '우리 조직에서 이 유형을 막는 통제 하나'를 붙이면 사례 나열이 실행 지침으로 바뀐다."
+    },
+    {
+      "line": 765,
+      "quote": "2020년 말, SolarWinds의 Orion 플랫폼이 공급망 공격의 대상이 되었다[^cisa2024].",
+      "kind": "dead_anchor",
+      "severity": "critical",
+      "diagnosis": "SolarWinds 사례가 [^cisa2024]를 인용하는데, 이 라벨은 L291에서 https://www.cisa.gov/sbom 으로 먼저 정의되어 있다. Hugo는 첫 정의를 채택하므로 SolarWinds 각주가 CISA SBOM 소개 페이지로 연결된다. L797에 의도된 정의(cisa.gov/news-events/.../aa20-352a)가 있지만 중복이라 무시된다. 독자가 각주를 눌러 엉뚱한 페이지로 가는, 눈에 띄지 않으면서 신뢰를 깎는 결함이다.",
+      "action": "replace",
+      "suggestion": "SolarWinds 각주 라벨을 [^cisa-solarwinds] 같은 고유 라벨로 바꾸고 L797 정의를 그 라벨로 옮긴다. 동시에 L376의 중복 [^cisa2024] 정의를 삭제해 라벨당 정의 1개 원칙을 세운다."
+    },
+    {
+      "line": 808,
+      "quote": "a) 미국\\n   - 2023년 3월: '오픈소스 소프트웨어 보안법(Securing Open Source Software Act of 2023)' 제안\\n...b) 유럽연합 (EU)\\n   - 2024년: 'EU 사이버보안법(Cybersecurity Act)' 개정 예정\\n   - 2024년 10월: NIS2 지침 이행 기한",
+      "kind": "stale_fact",
+      "severity": "critical",
+      "diagnosis": "규제 동향 절 전체가 2024년 시점의 '예정' 목록이다. 'EU 사이버보안법 개정 예정(2024년)', 'NIS2 이행 기한(2024년 10월)', 일본 '소프트웨어 관리 가이드라인 발표 예정(2024년)' 모두 시한이 1~2년 지났는데 결과가 없다. '오픈소스 소프트웨어 보안법(2023년 제안)'도 이후 입법 경과가 없다. 규제 동향 절이 예정형으로 굳어 있으면 규제 가이드로서 기능하지 못한다.",
+      "action": "replace",
+      "suggestion": "모든 '예정' 항목의 결과를 확인해 결과형으로 재작성하고, 결과가 없으면 '미이행/폐기' 사실을 밝힌다. 그 위에 2025-2026년 신규 사항(CRA 2026-09-11 보고 의무, EU CRA 오픈소스 스튜어드, 미국 행정명령 개정 등)을 추가한다. 아울러 표(L841-846)의 '시행/예정 시기' 열을 '2026년 7월 기준 상태'로 바꿔 다음 개정 때 다시 낡지 않게 한다."
+    },
+    {
+      "line": 835,
+      "quote": "   - 2025년: '국가 사이버보안 기본계획' 수립 예정\\n     * 오픈소스 소프트웨어 보안 강화 방안 포함",
+      "kind": "stale_fact",
+      "severity": "critical",
+      "diagnosis": "국가 사이버안보 기본계획은 2024년에 이미 발표됐다. '2025년 수립 예정'은 2026년 시점에서 사실과 다르다. 국내 정책 동향을 다루는 절에서 국내 정책 상태를 틀리게 서술하는 것은 가이드의 신뢰를 직접 훼손한다.",
+      "action": "replace",
+      "suggestion": "국가 사이버안보 전략(2024-02) → 국가 사이버안보 기본계획(2024-09) → 이후 후속 조치로 계보를 바로잡고, 그중 오픈소스·SW 공급망 관련 과제만 발췌해 제시한다. 링크와 발표 시점을 반드시 붙인다."
+    },
+    {
+      "line": 880,
+      "quote": "c) 취약점 심각도 평가 및 우선순위 설정\\n   - [CVSS(Common Vulnerability Scoring System)](https://www.first.org/cvss/) 활용\\n   - 비즈니스 영향도를 고려한 자체 평가 기준 수립",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "CVSS 점수만으로 우선순위를 정하는 방식은 2026년 실무에서 이미 한계가 명확하다. CVSS v4.0(2023년 11월 공개) 언급이 없고, 실제 악용 여부를 반영하는 EPSS와 CISA KEV 목록, 그리고 코드 도달 가능성(reachability) 분석이 전부 빠져 있다. L883-888의 대응 시간 표(긴급 24시간, 높음 1주일 등)도 근거 없이 제시되어, CVSS 9.0이지만 도달 불가능한 취약점에 24시간을 쓰라는 잘못된 운영을 유도한다.",
+      "action": "expand",
+      "suggestion": "우선순위 산정을 3축으로 재작성한다: CVSS(심각도) x EPSS(악용 확률) x KEV 등재 여부 x 도달 가능성/노출면. 대응 시간 표는 이 3축 조합별 SLA로 바꾸고, '내부 전용 시스템 vs 인터넷 노출 서비스'로 열을 나눈다. CVSS는 v4.0 기준임을 명시한다."
+    },
+    {
+      "line": 899,
+      "quote": "b) 자동화된 업데이트 시스템 구축\\n   - 패키지 관리자(예: npm, pip) 활용한 자동 업데이트 설정\\n   - 컨테이너 이미지 자동 업데이트 시스템 구축",
+      "kind": "impracticality",
+      "severity": "major",
+      "diagnosis": "'자동 업데이트를 설정하라'는 지시만 있고 무엇으로 어떻게 하는지가 없다. 패치 관리 절(L890-919) 전체가 a)~f) 항목 나열로만 구성돼 담당자가 월요일 아침에 착수할 일이 없다.",
+      "action": "expand",
+      "suggestion": "Renovate 또는 Dependabot 설정 예시(그룹핑, 자동 머지 조건, 보안 업데이트만 즉시 적용, 메이저 버전 수동 검토)를 코드 블록으로 넣고, lockfile 정책과 내부 아티팩트 프록시(Nexus/Artifactory) 경유 강제, 컨테이너 베이스 이미지 갱신 주기까지 한 흐름으로 서술한다."
+    },
+    {
+      "line": 916,
+      "quote": "f) 비상 대응 계획 수립\\n   - 제로데이 취약점 발견 시 신속한 대응 프로세스 마련\\n   - 임시 완화 조치(workaround) 적용 방안 준비",
+      "kind": "duplication",
+      "severity": "major",
+      "diagnosis": "L916-918과 L1037-1039('3. 비상 대응 계획 수립 / 제로데이 취약점 발견 시 신속한 대응 절차 마련 / 임시 완화 조치(workaround) 적용 방안 준비')가 사실상 글자까지 같다. 나아가 '오픈소스 보안 취약점 관리 방안'(L861-925)과 '기업의 오픈소스 보안 전략'(L994-1050) 두 절이 모니터링·대응·교육을 각각 다시 서술해 절 단위로 중복된다.",
+      "action": "delete",
+      "suggestion": "두 절을 하나로 병합한다. '기업의 오픈소스 보안 전략'을 상위 뼈대(정책 / 교육 / 대응 프로세스)로 두고, '취약점 관리 방안'의 구체 내용을 그 하위로 흡수시킨다. 중복 문장은 삭제한다. 이 병합만으로 90행 이상을 걷어낼 수 있다."
+    },
+    {
+      "line": 953,
+      "quote": "5. **Mitre의 CVE**\\n   - 운영: Mitre\\n   - 특징: 상용 애플리케이션 및 비공개 소스 프로젝트를 비롯하여 다양한 유형의 취약점에 대한 정보 제공.",
+      "kind": "duplication",
+      "severity": "major",
+      "diagnosis": "2번 항목 'CVE (Common Vulnerabilities and Exposures) - 운영: MITRE Corporation'과 5번 'Mitre의 CVE'가 같은 데이터베이스를 두 번 등재한다. 게다가 5번 다음이 다시 '1. Sonatype OSS Index'로 번호가 리셋되어 목록 구조가 깨져 있다(발간본 p63도 동일한 결함을 그대로 조판).",
+      "action": "delete",
+      "suggestion": "5번 항목을 삭제하고 그 안의 유용한 설명(CVE 번호 체계, CVE-2015-5211 예시와 cve.png 이미지)을 2번으로 합친다. Sonatype OSS Index를 5번으로 번호 정정한다."
+    },
+    {
+      "line": 933,
+      "quote": "1. **NVD (National Vulnerability Database)**\\n   - 운영: 미국 국립표준기술연구소(NIST)\\n   - 특징: CVE(Common Vulnerabilities and Exposures)를 기반으로 한 포괄적인 취약점 정보 제공",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "취약점 정보 인프라를 'NVD를 믿으면 된다'는 2021년식 전제로 서술한다. 2024년 이후 NVD의 CVE 분석·enrichment 적체가 장기화됐고, 2025년에는 CVE 프로그램 운영 자금 이슈로 체계 자체가 흔들렸으며 그 결과 ENISA의 EU 취약점 데이터베이스(EUVD)가 신설됐다. 단일 소스 의존이 위험해진 상황이 반영돼 있지 않다.",
+      "action": "expand",
+      "suggestion": "'단일 DB에 의존하지 말 것'을 결론으로 하는 소절로 재작성한다. NVD 적체 현황, CVE 프로그램 운영 구조 변화, EUVD 신설, OSV/GHSA의 상대적 신속성을 정리하고, 기업이 취해야 할 조치(복수 소스 병합, OSV API 기반 자동 조회, 벤더 어드바이저리 직접 구독)를 3줄로 제시한다."
+    },
+    {
+      "line": 974,
+      "quote": "##### 오픈소스 보안 관리 도구 및 플랫폼\\n\\n1. **OWASP Dependency-Check** ... 2. **Trivy** ... 3. **Grype**",
+      "kind": "missing_topic",
+      "severity": "major",
+      "diagnosis": "보안 도구를 3개만 소개한다. 2026년 SBOM/취약점 운영의 표준 구성요소인 OSV-Scanner, Syft(SBOM 생성), Dependency-Track(SBOM 지속 모니터링), Renovate(자동 업데이트), OpenSSF Scorecard(의존성 건강도 평가)가 전부 빠졌다. 특히 Dependency-Track은 앞의 SBOM 절과 이 보안 절을 잇는 핵심 도구인데 언급이 없어 두 절이 따로 논다.",
+      "action": "expand",
+      "suggestion": "OSV-Scanner, Syft, Dependency-Track, Renovate, OpenSSF Scorecard를 추가하고, 도구를 역할별로 묶어 파이프라인으로 제시한다: 생성(Syft/cdxgen) → 저장·모니터링(Dependency-Track) → 스캔(Trivy/Grype/OSV-Scanner) → 조치(Renovate) → 평가(Scorecard). 이 한 장의 흐름이 이 절의 실행 가치를 결정한다."
+    },
+    {
+      "line": 1000,
+      "quote": "1. **OSPO(Open Source Program Office) 설립**\\n   - 오픈소스 사용과 기여에 대한 전략을 수립하고 실행하는 전담 조직\\n   - 오픈소스 커뮤니티와의 협업 촉진 및 내부 지원 제공[^itworld2024]",
+      "kind": "duplication",
+      "severity": "major",
+      "diagnosis": "이 가이드에는 OSPO 전용 섹션(content/en/ospo/_index.md, 295행)이 따로 있는데 여기서 OSPO 정의와 역할을 다시 요약한다. 두 곳의 서술이 갈라지면 어느 쪽이 정본인지 알 수 없다. 참고로 발간본 p65에서는 이 위치의 [^itworld2024] 마커가 변환되지 않고 그대로 인쇄됐다(baseline diverged 항목, 저장소가 옳음).",
+      "action": "replace",
+      "suggestion": "OSPO 설명을 한 문장으로 줄이고 ospo 섹션으로 상대 경로 링크를 건다. 이 자리에는 '보안 관점에서 OSPO가 소유해야 할 결정 3가지'(승인 정책, 취약점 대응 SLA, 예외 승인 권한)만 남긴다."
+    },
+    {
+      "line": 1053,
+      "quote": "#### 하위 공급망 보안 관리\\n한국의 소프트웨어 개발 환경, 특히 공공 부문과 대기업이 주도하는 SI(시스템 통합) 프로젝트에서 하위 공급망의 보안 관리는 종종 간과되지만 매우 중요한 부분이다.",
+      "kind": "impracticality",
+      "severity": "major",
+      "diagnosis": "국내 SI 구조를 정면으로 다룬 좋은 절이고 표도 충실하다. 다만 표 내용이 전부 '~를 운영한다/실시한다' 수준의 방침이라 계약 실무로 내려오지 않는다. 원청이 하청에게 SBOM을 어떤 포맷으로 언제 받고 어떻게 검증할지, 계약서에 무엇을 쓸지가 없다. 발간본 p67에도 동일하다.",
+      "action": "expand",
+      "suggestion": "표 아래에 (1) 하도급 계약 오픈소스·보안 조항 예문(SBOM 제출 포맷·시점·갱신 의무, 취약점 통지 기한, 라이선스 보증 및 면책), (2) 수급사업자 제출 SBOM 검증 절차(포맷 유효성 → 구성요소 해시 대조 → 정책 위반 라이선스 자동 판정), (3) 원청-하청-재하청 3단 구조에서 SBOM이 합쳐지는 방식(SBOM 조합)을 추가한다."
+    },
+    {
+      "line": 1078,
+      "quote": "### DevSecOps\\n2012년 Gartner는 \"DevOpsSec: Creating the Agile Triangle\" 이란 보고서를 통해 DevOps 이니셔티브에 보안 기반을 구축할 필요가 있다는 사실을 강조하기 위해 DevSecOps라는 개념을 소개했다.",
+      "kind": "structure",
+      "severity": "major",
+      "diagnosis": "DevSecOps가 '오픈소스의 보안 취약점'(L685)과 나란한 H3로 놓여 있으나, 내용상 보안 취약점 관리의 실행 방식이라 위계가 어긋난다. 발간본 p68은 이를 '(8) 오픈소스SW의 보안 취약점' 아래 '10) DevSecOps'로 강등했다(baseline published_only 항목). 또 개념 도입부가 2012년 Gartner 보고서로 시작하는데, 2026년 독자에게 DevSecOps는 정의가 필요한 신개념이 아니다.",
+      "action": "move",
+      "suggestion": "발간본을 따라 '오픈소스의 보안 취약점' 하위로 강등하고, 2012년 유래 서술은 한 문장으로 줄인다. 대신 확보한 지면에 '오픈소스 관점에서 파이프라인 어느 지점에 무엇을 건다'는 배치도를 넣는다(PR 단계 SCA → 빌드 단계 SBOM 생성·서명 → 레지스트리 단계 정책 게이트 → 운영 단계 지속 모니터링)."
+    },
+    {
+      "line": 1091,
+      "quote": "IBM에서 제시한 [모범 사례 (2020)](https://developer.ibm.com/recipes/tutorials/open-source-security-trends-for-2020)를 통해 DevSecOps 관점에서 본 오픈소스 취약점 관리에 대해 좀 더 알아보자.",
+      "kind": "dead_link",
+      "severity": "major",
+      "diagnosis": "링크가 HTTP 503을 반환한다(developer.ibm.com/recipes 플랫폼 폐지). 자료 자체도 6년 전이다. 이어지는 'IBM DevSecOps 모범 사례' 7개 항목(L1095-1122)은 '모든 것을 암호화 — 모든 데이터에 암호화를 적용한다', '컨테이너 보안 모범 사례 적용 — 컨테이너화는 자체적인 운영체제를 고려할 때 보안상의 이점이 있다' 수준으로, 오픈소스 거버넌스와 무관하거나 내용이 없다.",
+      "action": "delete",
+      "suggestion": "'IBM DevSecOps 모범 사례' 절(L1091-1122) 전체를 삭제한다. 그 자리를 2026년 기준 실행 프레임(OpenSSF Scorecard 기준선, SLSA 빌드 레벨, Sigstore 서명·검증, 아티팩트 출처 증명)으로 교체한다. 삭제 사유는 명확하다: 죽은 링크 + 6년 전 자료 + 오픈소스와 무관한 일반론."
+    },
+    {
+      "line": 1126,
+      "quote": "최근 [GitHub Octoverse (2021)](https://octoverse.github.com) 자료를 보면, **Fortune 100대 기업 중 84%가 GitHub Enterprise를 사용**하고 있다고 한다. 그에 맞춰 최근 GitHub에서도 단순히 소스 코드 저장소 기능을 넘어 새로운 기능들을 추가하고 있는데",
+      "kind": "stale_stat",
+      "severity": "major",
+      "diagnosis": "'최근'이 두 번 나오는데 근거는 5년 전 Octoverse 2021이다. Octoverse는 매년 발간되므로 최신판이 있다.",
+      "action": "replace",
+      "suggestion": "Octoverse 최신판 수치로 교체하고 '최근'을 연도 명시로 바꾼다. 2026년 맥락에서는 AI 코딩 도구 사용 비중, 저장소당 의존성 수 같은 지표가 이 섹션 주제에 더 잘 맞는다."
+    },
+    {
+      "line": 1130,
+      "quote": "##### **Dependency Graph** ... ##### **dependabot** ... ##### **코드 스캐닝** ... ##### **Secret 스캐닝**\\n GitHub Private Repository와 Enterprise 버전에 추가된 기능으로 코드 내 Secret 코드를 스캔하는 기능이다.",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "GitHub 보안 기능 서술이 2021년 상태다. 그 사이 GitHub Advanced Security가 Secret Protection과 Code Security로 분리 판매되기 시작했고(2025), secret scanning의 공개 저장소 지원 및 push protection 정책, code scanning의 Copilot Autofix, Dependabot의 자동 분류·그룹 업데이트 등이 추가됐다. 'Private Repository와 Enterprise 버전에 추가된 기능'이라는 서술은 현재 라이선스 체계와 맞지 않는다.",
+      "action": "replace",
+      "suggestion": "4개 기능 소개를 현행 제품 구성(Code Security / Secret Protection / Dependabot / Dependency Graph)으로 재정리하고, 각 기능에 '무료 범위 vs 유료 범위'를 한 줄로 명시한다. 이미지 4장(dependency-graph, dependabot, code-scanning, secret-scanning)도 현행 UI로 재촬영이 필요하다."
+    },
+    {
+      "line": 1159,
+      "quote": "여기까지 오픈소스 사용하는 데 있어 기업이 활용할 수 있는 가이드를 알아보았다. 이제 개발자는 어떻게 오픈소스를 사용하고 관리해야 하는지를 알아보자.",
+      "kind": "structure",
+      "severity": "major",
+      "diagnosis": "기업 편(L142-1159)이 1,017행, 개발자 편(L1162-1297)이 136행으로 8:1 불균형이다. 게다가 기업 편 말미의 'GitHub 기능을 활용한 보안 관리 사례'(L1125-1155)는 개발자가 저장소에서 켜는 기능이라 개발자 편 성격이다. 편 구분 기준이 '정책/조직 vs 개인 실무'인데 실제 배치가 그 기준을 따르지 않는다.",
+      "action": "move",
+      "suggestion": "GitHub 보안 기능 절을 개발자 편으로 이동한다. 동시에 개발자 편에 '내 프로젝트에 오픈소스를 들일 때의 체크 절차'(의존성 추가 전 확인, lockfile, 서명 검증, 취약점 알림 수신 설정)를 신설해 두 편의 분량 균형과 역할 구분을 함께 회복한다."
+    },
+    {
+      "line": 1164,
+      "quote": "오픈소스 거버넌스 플랫폼을 운영하는 Sonatype 에서 최근 발표한 [소프트웨어 공급망 현황(2021)]...에 따르면 오픈소스 공급은 상위 4개 오픈 소스 생태계... 3천7백만개 이상의 컴포넌트와 패키지가 포함되어 있다.\\n또한, 2021년에 전 세계 개발자의 오픈 소스 패키지 다운로드 수가 2조 2천억 개 이상이며",
+      "kind": "stale_stat",
+      "severity": "critical",
+      "diagnosis": "'최근 발표한 (2021)'은 2026년 기준 명백히 거짓 서술이다. 게다가 같은 파일 L690이 이미 Sonatype 2024년판(6.6조 건)을 인용하고 있어, 한 문서 안에서 같은 보고서의 다른 연도판이 각각 '최근'으로 소개되며 수치가 3배 차이 난다. 발간본 p74의 각주 49)는 URL이 2020년판(sonatype.com/2020ssc)을 가리켜 본문 연도와 또 어긋난다.",
+      "action": "replace",
+      "suggestion": "개발자 편 도입부 통계를 삭제하거나 L690과 동일한 최신판 수치로 통일하고, 인용은 문서 전체에서 1회만 한다. '최근 발표한'을 연도 명시로 바꾼다. 발간본 각주의 연도 불일치도 함께 정정한다."
+    },
+    {
+      "line": 1169,
+      "quote": "****",
+      "kind": "structure",
+      "severity": "minor",
+      "diagnosis": "각주 정의 바로 뒤에 별표 4개만 있는 줄이 있다. 마크다운 렌더링에서 의도치 않은 구분선이나 빈 강조로 처리되는 편집 잔여물이다.",
+      "action": "delete",
+      "suggestion": "줄을 삭제한다."
+    },
+    {
+      "line": 1197,
+      "quote": "이 중 프로젝트 리더는 오픈소스 프로젝트 전반적인 사항에 대해 최종 의사 결정을 내린다. 핵심 기여자는 프로젝트에서 경험이 제일 많은 실력자이며... 그 외 자세한 내용은 오픈소스 기여하기 편에서 다루기로 한다.",
+      "kind": "structure",
+      "severity": "minor",
+      "diagnosis": "'오픈소스 기여하기 편'을 참조하면서 링크가 없다. 같은 파일 L126·L130은 내부 앵커 링크를 쓰고 있어 표기 방식이 일관되지 않다. Hugo 사이트에서 독자가 해당 장으로 이동할 수 없다.",
+      "action": "replace",
+      "suggestion": "contributing 섹션으로 상대 경로 링크(/contributing/)를 건다. 파일 전역에서 '~편에서 다룬다'는 서술을 모두 링크로 통일한다."
+    },
+    {
+      "line": 1200,
+      "quote": "오픈소스 이니셔티브(OSI, Open Source Initiative)의 앨리슨 랜달 회장은 \"기업들이 신뢰할 수 있는 비영리 독립 단체를 통해 오픈소스 프로젝트를 공동 추진할 수 있다고 생각함에 따라 재단 설립이 증가하고 있다...\"라고 설명했다.",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "앨리슨 랜달을 현직 OSI 회장으로 서술하는데, 그는 과거 이사회 의장을 지냈고 2026년 현재 직위가 아니다. 인용 시점(연도)과 출처도 없어 검증할 수 없다. 직함을 현재형으로 쓴 인물 서술은 노후에 가장 취약하다.",
+      "action": "replace",
+      "suggestion": "'전 OSI 이사회 의장 앨리슨 랜달은 (연도) ~에서 다음과 같이 설명했다'로 시점과 직함을 과거형으로 고정하고 출처 각주를 붙인다. 인용의 출처를 찾을 수 없으면 인용문을 삭제하고 저자 서술로 대체한다."
+    },
+    {
+      "line": 1203,
+      "quote": "몇 가지 주요 오픈소스 재단은 아래와 같다.\\n##### **OSI (Open Source Initiative)** - http://opensource.org/\\n... ##### **Cloud Foundry Foundation** - https://www.cloudfoundry.org/foundation/",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "재단 목록 5개가 2018년경 구성이다. 2026년 기업 오픈소스 실무에 가장 자주 등장하는 CNCF, OpenSSF, Eclipse Foundation, OpenInfra Foundation, PyTorch Foundation/LF AI & Data가 하나도 없다. 반대로 Cloud Foundry Foundation은 2022년 Linux Foundation 산하로 편입돼 독립 재단 목록에 단독 등재할 근거가 약해졌고, 'EMC, HP, IBM, 인텔, SAP가 공동 참여'라는 참여사 명단도 EMC·HP 사명 변경 이후 그대로다. OSI 항목에는 2024년 OSI가 발표한 오픈소스 AI 정의(OSAID)가 빠져 있다.",
+      "action": "replace",
+      "suggestion": "목록을 재편한다: OSI(OSAID 포함), Linux Foundation, Apache Software Foundation, Eclipse Foundation, CNCF, OpenSSF, LF AI & Data 또는 PyTorch Foundation. Cloud Foundry Foundation은 삭제하거나 LF 산하 편입 사실과 함께 각주로 격하한다. 각 재단에 '기업이 이 재단과 접점을 갖는 이유'를 한 줄씩 붙인다."
+    },
+    {
+      "line": 1226,
+      "quote": "오픈소스 라이선스 중 GPL 라이선스의 경우에는 오픈소스를 사용하는 조건으로 수정하거나 추가된 모든 소스 코드를 공개해야 하는 의무 사항을 가지고 있다.",
+      "kind": "stale_fact",
+      "severity": "critical",
+      "diagnosis": "법적으로 부정확하다. GPL의 소스 공개 의무는 '사용하는 조건'이 아니라 '배포 시점'에 발생하며(이 파일 L213이 스스로 그렇게 설명한다), 범위도 '수정하거나 추가된 모든 소스 코드'가 아니라 파생저작물 범위에 따라 결정된다. 같은 문서 안에서 서로 모순되는 두 설명이 공존한다. 발간본 p77은 이를 '사용된 애플리케이션의 모든 코드'로 더 부정확하게 조판했다. 법적 판단의 근거가 되는 문장이므로 오류의 무게가 크다.",
+      "action": "replace",
+      "suggestion": "'GPL 라이선스는 해당 오픈소스를 포함한 소프트웨어를 배포할 때, 파생저작물에 해당하는 소스 코드를 동일 라이선스로 공개할 것을 요구한다'로 고치고, 배포 시점 발생 원칙(L213)과 결합 방식별 판단(L199 개선안)으로 상호 참조를 건다."
+    },
+    {
+      "line": 1230,
+      "quote": "오픈소스 라이선스는 크게 permissive 라이선스와 copyleft 라이선스로 나눌 수 있다.",
+      "kind": "missing_topic",
+      "severity": "major",
+      "diagnosis": "2분법만 제시하고 (1) weak copyleft(LGPL/MPL/EPL)의 파일·라이브러리 단위 제한, (2) AGPL의 네트워크 이용 조항, (3) OSI 승인 라이선스가 아닌 소스 공개형 라이선스(BUSL, SSPL, Elastic License, PolyForm) 구분이 없다. 2026년 기업 도입 심사에서 실제로 사고가 나는 지점이 정확히 (2)와 (3)인데 가이드가 대비를 시켜주지 않는다. L80의 '커뮤니티 버전 vs 엔터프라이즈 버전' 서술도 이 공백 위에 서 있다.",
+      "action": "expand",
+      "suggestion": "라이선스 분류를 4구간으로 재작성한다: permissive / weak copyleft / strong copyleft(AGPL 별도 강조) / OSI 비승인 소스 공개형(BUSL·SSPL 등). 마지막 구간에는 '오픈소스가 아니다'를 명시하고, 기업이 이를 도입할 때의 검토 항목(전환 조항, 경쟁 제한 조항, 유상화 시점)을 붙인다."
+    },
+    {
+      "line": 1248,
+      "quote": "오픈소스 라이선스에 대한 세부 사항은 NIPA에서 출간한 \"오픈소스 라이선스 가이드\" (링크)를 참고할 수 있다.",
+      "kind": "dead_link",
+      "severity": "major",
+      "diagnosis": "'(링크)'라는 플레이스홀더가 그대로 남아 있다. 집필 중 채우지 않은 자리다. 발간본 p78은 각주 50)에 https://www.oss.kr/oss_guide 를 채워 넣어 이 결함을 해소했다(baseline published_only 성격 항목).",
+      "action": "replace",
+      "suggestion": "발간본 각주 50)의 URL을 가져와 정식 링크로 교체한다. oss.kr 상세 페이지 URL이 불안정하므로 목록 페이지 + 자료명 병기가 안전하다."
+    },
+    {
+      "line": 1254,
+      "quote": "#### 오픈소스 선택 기준\\n##### **기능성** ... ##### **오픈소스 사용 조건 및 성능** ... ##### **라이선스** ... ##### **보안** ... ##### **인기도** ... ##### **소스 코드** ... ##### **문서화**",
+      "kind": "missing_topic",
+      "severity": "major",
+      "diagnosis": "선택 기준 7개가 2020년경 기준 그대로다. 2026년에 반드시 확인해야 하는 (1) 공급망 무결성(릴리스 서명, npm/PyPI Trusted Publishing, 2FA 강제 여부), (2) 라이선스 변경 리스크(단일 기업 지배 여부, CLA 요구 여부, 과거 재라이선스 이력), (3) 유지보수자 수와 bus factor, (4) SBOM·SECURITY.md 제공 여부, (5) OpenSSF Scorecard 점수가 전부 빠졌다. 특히 (2)는 HashiCorp·Redis·Elastic 사례로 국내 기업이 실제 비용을 치른 항목이다.",
+      "action": "expand",
+      "suggestion": "선택 기준에 위 5개 항목을 추가하고, 각 항목에 '어디서 확인하는가'를 명시한다(Scorecard는 deps.dev 또는 scorecard.dev, 유지보수자 수는 저장소 contributors, 재라이선스 이력은 LICENSE 파일 git 히스토리). 확인 방법이 붙어야 기준이 실행된다."
+    },
+    {
+      "line": 1269,
+      "quote": "[소프트웨어 공급망 현황(2021)](https://www.sonatype.com/resources/state-of-the-software-supply-chain-2021)[^sonatype2021]를 보면 인기 있는 상위 10%의 오픈소스 프로젝트에서 취약점을 포함할 가능성이 평균 29%이다.",
+      "kind": "stale_stat",
+      "severity": "major",
+      "diagnosis": "정합성 스크립트 blocking 항목이다. [^sonatype2021] 정의가 없어 웹에서 마커가 본문에 노출된다. 발간본 p80 각주 51)이 정답이나, 그 각주의 URL은 2020년판 보고서를 가리켜 본문의 2021년과 어긋난다(발간본 결함). 수치 자체도 5년 전이다.",
+      "action": "replace",
+      "suggestion": "인라인 URL을 [^sonatype2021] 정의로 승격해 blocking을 해소하되, 통계는 Sonatype 최신판 수치로 교체하고 라벨명도 연도에 맞게 바꾼다. 발간본 각주 51)의 연도 불일치는 따라가지 않는다."
+    },
+    {
+      "line": 1272,
+      "quote": "오픈소스가 GitHub 에서 관리 중이라면, Star 개수나 Watch, Fork 횟수 등으로 얼마나 많은 사용자가 오픈소스를 활용할 수 있는지 가늠해볼 수 있다.",
+      "kind": "stale_fact",
+      "severity": "major",
+      "diagnosis": "Star 수를 인기도 대리 지표로 제시하는데, 2026년에는 star 매수·봇 조작(star farming)이 널리 알려져 신뢰도가 낮다. 실제 채택도는 다운로드 수, 의존 저장소 수(deps.dev), 릴리스 케이던스, 보안 이슈 평균 대응 시간이 더 유효하다. CHAOSS를 각주로 언급만 하고 어떤 지표를 볼지는 알려주지 않는다.",
+      "action": "replace",
+      "suggestion": "지표 목록을 재정렬한다: 다운로드 수·의존 저장소 수 > 릴리스 주기와 최근 릴리스 시점 > 이슈·PR 응답 중앙값 > 유지보수자 수 > Star. Star 조작 가능성을 한 줄 경고로 붙이고, OpenSSF Scorecard와 deps.dev를 확인 창구로 명시한다."
+    },
+    {
+      "line": 1290,
+      "quote": "#### 오픈소스 선택 체크리스트\\n- [x] 많이 쓰이고 있는 오픈소스인가?\\n- [x] 팀에서 오픈소스를 배우는데 어렵지는 않은가? (레퍼런스가 충분한가?)\\n- [x] 유지보수가 잘 되고 있는가?",
+      "kind": "impracticality",
+      "severity": "major",
+      "diagnosis": "섹션 전체의 결론에 해당하는 체크리스트인데 7개 항목이 모두 정성적 질문이라 판정 기준이 없다. '유지보수가 잘 되고 있는가'에 무엇으로 답하는지 알 수 없다. 또한 라이선스 변경 이력, SBOM/SECURITY.md 제공, 서명된 릴리스 제공 등 2026년 항목이 없다.",
+      "action": "expand",
+      "suggestion": "각 항목에 판정 기준을 붙인다(예: '유지보수 — 최근 90일 내 커밋 있음 + 이슈 응답 중앙값 30일 이내'). 신규 항목 추가: 라이선스가 최근 3년 내 변경된 적 있는가 / 릴리스에 서명 또는 출처 증명이 있는가 / SBOM과 SECURITY.md를 제공하는가 / OpenSSF Scorecard 점수가 기준치 이상인가. 이 체크리스트가 개정판에서 가장 자주 복사될 지면이므로 완성도를 최우선에 둔다."
+    },
+    {
+      "line": 1301,
+      "quote": "기업은 자칫 잘못된 오픈소스 사용으로 인해 기업 이미지에도 큰 타격을 줄 수도 있음을 기억해야 하며, 오픈소스 사용 시 오픈소스 라이선스 의무사항을 준수하지 않아 발생하는 법적 리스크도 반드시 고려해야 한다.",
+      "kind": "structure",
+      "severity": "minor",
+      "diagnosis": "맺음말이 라이선스 리스크만 언급한다. 본문 분량의 절반을 차지하는 보안·공급망·규제(특히 CRA 시한) 내용이 결론에 반영되지 않아, 독자가 이 장에서 무엇을 우선 실행해야 하는지 정리되지 않은 채 끝난다.",
+      "action": "replace",
+      "suggestion": "맺음말을 '지금 착수할 3가지'로 재작성한다: (1) 사용 중인 오픈소스 목록을 SBOM으로 확보한다, (2) 취약점 대응 SLA와 예외 승인 절차를 문서화한다, (3) EU 시장 대상 제품이라면 CRA 2026-09-11 보고 의무 대응 체계를 점검한다. 개념 요약보다 실행 항목으로 닫는 편이 이 가이드의 성격에 맞다."
+    }
+  ],
+  "missing_topics": [
+    "EU 사이버복원력법(CRA) 실무 대응 — 2026-09-11 악용 취약점·중대 사고 보고 의무, 2027-12-11 전면 적용, CRA가 신설한 '오픈소스 소프트웨어 스튜어드' 지위와 상용 제조자 의무의 차이, 국내 기업의 적용 대상 판단 흐름. 현재 원고는 L281에 '2027년 시행 예정' 한 줄뿐이며 개정판 발간 직후 도래하는 2026-09-11 시한을 전혀 다루지 않는다.",
+    "AI 시대의 오픈소스 라이선스 — OSI 오픈소스 AI 정의(OSAID 1.0, 2024), 모델 가중치·데이터셋·추론 코드의 라이선스 계층 분리, Llama Community License·Gemma Terms·OpenRAIL 등 '오픈 웨이트이나 오픈소스는 아닌' 라이선스의 사용 제한 조항, AI BOM/모델 카드. using 섹션 전체에 AI 관련 서술이 L86의 'AI 관련 오픈소스들이 인기를 얻어' 한 문장뿐이다.",
+    "AI 코딩 어시스턴트가 생성한 코드의 오픈소스 리스크와 사내 정책 — 학습 데이터 유래 코드의 라이선스 오염 가능성, 코드 유사도 검사 도입, 생성 코드에 대한 기여 승인·귀속 정책, 도구별 IP 보상(indemnity) 조항 확인. 2026년 기업 담당자가 가장 먼저 질문받는 주제인데 원고에 없다.",
+    "라이선스 변경(re-licensing / rug pull) 리스크 관리 — HashiCorp Terraform BUSL 전환, Redis SSPL 전환 후 AGPL 복귀, Elastic AGPL 복귀, MongoDB SSPL 등 사례와 그 결과 생겨난 포크(OpenTofu, Valkey, OpenBao). 도입 심사 단계의 평가 항목(단일 기업 지배 여부, CLA 요구, 재단 소유 여부)과 전환 발생 시 대응 절차(포크 채택 판단, 마이그레이션 비용 산정).",
+    "VEX(Vulnerability Exploitability eXchange)와 CSAF — SBOM만으로는 '이 취약점이 우리 제품에서 실제로 악용 가능한가'를 소통할 수 없다. CycloneDX VEX / OpenVEX / CSAF VEX 비교, 수급사업자에게 SBOM과 함께 VEX를 요구하는 계약 실무. SBOM 절(L264-431) 전체에 VEX가 한 번도 등장하지 않는다.",
+    "취약점 정보 인프라의 구조 변화 — 2024년 이후 NVD의 CVE 분석 적체, 2025년 CVE 프로그램 운영 리스크, ENISA EU 취약점 데이터베이스(EUVD) 신설, OSV/GHSA의 상대적 신속성. 단일 DB 의존을 전제로 한 L927-969의 서술을 '복수 소스 병합' 전략으로 전환해야 한다.",
+    "취약점 우선순위 산정의 현대적 기준 — CVSS v4.0, EPSS(악용 확률), CISA KEV(실제 악용 중 목록), 코드 도달 가능성(reachability) 분석의 결합. 현재 L880-888은 CVSS 점수 구간만으로 대응 시간을 정해 도달 불가능한 고득점 취약점에 자원을 낭비하도록 유도한다.",
+    "OpenSSF 실무 도구군 — Scorecard(의존성 건강도 자동 평가), SLSA(빌드 출처 증명 레벨), Sigstore/cosign(서명과 검증), OpenSSF Baseline, npm·PyPI Trusted Publishing. 오픈소스 '사용' 단계에서 무결성을 확보하는 2026년 표준 수단인데 섹션 전체에 언급이 없다.",
+    "2024-2026년 공급망 공격 사례 — polyfill.io CDN 침해(2024), ultralytics PyPI 빌드 파이프라인 침해(2024), tj-actions/changed-files GitHub Actions 침해(2025), npm 생태계 자가 전파형 웜(2025). XZ Utils 이후 공격 표면이 패키지에서 CI/CD와 개발자 자격증명으로 이동한 흐름을 담아야 한다.",
+    "컨테이너·레지스트리 계층의 오픈소스 관리 — 베이스 이미지에 포함된 오픈소스의 식별과 고지, 이미지 SBOM(첨부 방식과 서명), 내부 아티팩트 프록시/미러(Nexus, Artifactory) 경유 강제와 허용·차단 목록 운영, distroless 등 표면 축소 전략. 2026년 기업 배포의 기본 단위가 컨테이너인데 원고는 소스·라이브러리 층만 다룬다.",
+    "오픈소스 라이선스 분쟁 최신 판례 — SFC v. Vizio(제3자 수익자 지위), Neo4j v. PureThink(AGPL 추가 제약의 효력), Entr'ouvert v. Orange(프랑스, GPL 위반 손해배상). 현재 L148은 2017년 Artifex v. Hancom 단일 사례로 '많은 소송이 제기되고 있다'를 뒷받침하려 한다.",
+    "ISO/IEC 18974(OpenChain 보안 보증 규격) — 보안 서술이 섹션 분량의 3분의 1을 차지하는데 대응 국제 표준이 없다. ISO/IEC 5230(라이선스 컴플라이언스)과의 역할 구분, 인증 취득 절차와 국내 기업 취득 현황.",
+    "실행 산출물 템플릿 — 오픈소스 사용 정책 문서 목차, 도입 승인 요청·심사 양식, 승인 SLA와 예외 처리 절차, 취약점 대응 R&R(OSPO·개발팀·보안팀), 하도급 계약 오픈소스·SBOM 조항 예문. 현재 원고는 '~해야 한다' 서술은 많으나 담당자가 복사해 쓸 수 있는 양식이 하나도 없다."
+  ],
+  "structure_note": "절 순서가 독자의 판단 흐름과 어긋난다. 기업 편(L142-1159, 1,017행)이 컴플라이언스 프로세스와 배포 판단, GPL 의무를 먼저 설명하는데, 그 전제가 되는 라이선스 기초(permissive/copyleft 구분, L1223-1246)와 오픈소스 선택 기준(L1251-1297)은 뒤의 개발자 편(136행)에 있다. 기업 편:개발자 편 분량이 8:1인 데다, 개발자 편 성격의 'GitHub 기능을 활용한 보안 관리 사례'(L1125-1155)가 기업 편 말미에 놓여 편 구분 기준('조직 정책' vs '개인 실무')이 실제 배치와 맞지 않는다. 중복은 세 층위에서 나타난다 — 헤딩 중복 2건('보안' L119/L1268, '오픈소스 커뮤니티' L125/L1196으로 슬러그가 밀림), 통계 중복(Sonatype 2024 수치가 L690·L705와 L725·L726에 동일 반복), 절 단위 중복('오픈소스 보안 취약점 관리 방안' L861-925와 '기업의 오픈소스 보안 전략' L994-1050이 모니터링·대응·비상계획을 각각 다시 서술하며 L916-918과 L1037-1039는 문장까지 같다). 여기에 OSPO 설명(L1000-1002)이 별도 ospo 섹션(295행)과 겹치고, 취약점 DB 목록은 CVE를 2번과 5번에 두 번 등재하며 번호가 5 다음 1로 리셋된다. 기준선 병합 측면에서는 발간본이 저장소보다 나은 항목이 4건 확정돼 있으므로(각주 [^nia2024]·[^sonatype2021] 정의 복구, LABRADOR URL을 labradorlabs.ai로 갱신, 관리 도구 14종을 국내·상용 우선 순서로 재배열, LABRADOR 종결어미 통일) 이들은 논쟁 없이 흡수하면 되고, 반대로 발간본 p65의 [^itworld2024] 마커 노출과 각주 49)·51)의 보고서 연도 불일치는 저장소가 옳으므로 따라가지 않아야 한다. 개정 우선순위는 (1) 규제 절 전면 재작성 — CRA 2026-09-11 시한 신설과 지나간 '예정' 문장 일괄 정리, (2) 보안 두 절 병합으로 90행 이상 감축, (3) 편 구분 재조정과 라이선스 기초의 전진 배치 순이 합리적이다.",
+  "illustration_gaps": [
+    {
+      "near_line": 281,
+      "why": "미국·EU·일본·한국의 SBOM/보안 규제가 2021년부터 2027년까지 국가별 중첩 목록(L268-322, L801-848)으로 두 번 흩어져 서술된다. 독자가 가장 알고 싶은 '우리가 언제까지 무엇을 해야 하는가'는 날짜를 시간축에 놓아야만 한눈에 잡힌다. 특히 2026-09-11(CRA 보고 의무)과 2027-12-11(CRA 전면 적용)이 오늘 기준 임박·예정 시점이라는 사실은 텍스트로는 전달되지 않는다.",
+      "what": "가로축을 2021→2028 연도, 세로축을 미국/EU/일본/한국 4개 레인으로 둔 규제 타임라인. 각 사건을 점으로 찍되 이미 지난 것은 회색, 앞으로 도래할 것은 강조색으로 구분하고, '오늘(2026년 개정판 발간 시점)' 세로선을 그어 지난 규제와 다가올 규제를 시각적으로 분리한다. CRA의 2026-09-11과 2027-12-11 두 점만 크게 표시한다."
+    },
+    {
+      "near_line": 200,
+      "why": "'오픈소스마다 결합 방식에 따라 준수해야 할 의무사항이 다르다'(L200)와 '사내 도구로만 사용하는 경우는 배포에 해당하지 않는다'(L213)는 이 섹션에서 실무 사고가 가장 자주 나는 두 지점인데, 현재 각각 한 문장으로만 서술된다. 조건 분기가 5~6개인 판단은 산문으로 읽으면 독자가 자기 사례에 대입하지 못한다.",
+      "what": "'우리 사례에 라이선스 의무가 발생하는가' 결정 트리. 시작점에서 '외부에 전달하는가?'→'네트워크로 제공하는가(AGPL 분기)?'→'결합 방식은?(정적 링크/동적 링크/별도 프로세스/컨테이너 동봉/API 호출)'→'해당 라이선스는?(permissive/weak copyleft/strong copyleft)' 순으로 분기해 말단에 발생 의무(고지만/소스 공개/동일 라이선스 배포)를 표시한다."
+    },
+    {
+      "near_line": 429,
+      "why": "SBOM 절이 '표준 형식이 셋 있다'(L355-373)와 'Excel로 만들어 변환한다'(L412-427)로 구성돼 있어, SBOM이 조직 안에서 어디서 생겨 어디로 흘러가 무엇에 쓰이는지가 끝내 그려지지 않는다. 생성·저장·소비 주체가 다른 다단 프로세스는 그림 없이 이해 비용이 높다.",
+      "what": "SBOM 생애주기 파이프라인 도해. 빌드(Syft/Trivy/cdxgen으로 생성) → 서명·아티팩트 첨부 → 중앙 보관소(Dependency-Track) → 소비 경로 3갈래(취약점 지속 모니터링 / 라이선스 고지문 생성 / 고객·규제기관 제출)로 그리고, 각 단계 위에 담당 주체(개발팀/CI/OSPO/법무)를 표시한다. 현행 Excel 실습 이미지 2장(spdx-excel, spdx-web)을 대체한다."
+    },
+    {
+      "near_line": 880,
+      "why": "취약점 대응이 스캐닝(L865-888), 패치(L890-919), 대응 프로세스(L1027-1039)로 세 곳에 나뉘어 a)~f) 목록으로 서술되고 그중 일부는 중복된다. 탐지에서 검증까지가 하나의 연속 흐름이라는 점과, 우선순위가 CVSS 단일 축이 아니라 여러 신호의 결합이라는 점이 목록 형식으로는 전달되지 않는다.",
+      "what": "취약점 대응 파이프라인 한 장. 탐지(SCA·SBOM 모니터링·보안 공지) → 선별(CVSS x EPSS x KEV 등재 x 도달 가능성 4축 격자로 우선순위 구간 도출) → 조치(패치/버전 고정/완화/수용) → 검증 → 기록의 흐름을 그리고, 선별 단계의 4축 격자를 확대해 각 구간에 대응 SLA를 매핑한다. 중복된 세 절을 하나로 병합할 때 이 그림이 뼈대가 된다."
+    },
+    {
+      "near_line": 1055,
+      "why": "하위 공급망 절(L1053-1074)은 협력·교육·모니터링·관리 4개 영역의 방안 표만 제시할 뿐, 원청-하청-재하청이라는 국내 SI 특유의 다단 구조에서 SBOM과 보안 책임이 어느 방향으로 흐르는지를 보여주지 않는다. 계층 간 관계와 산출물 전달 방향은 표로 표현되지 않는 정보다.",
+      "what": "국내 SI 다단 하도급 구조도. 발주처-원청-1차 하청-2차 하청 4계층을 세로로 놓고, 위로 향하는 화살표에 산출물(SBOM, VEX, 취약점 통지)을, 아래로 향하는 화살표에 요구사항(계약상 보안 요구, 금지 라이선스 목록, 대응 SLA)을 표시한다. 각 계층에서 SBOM이 합쳐지는 지점(SBOM 조합)을 강조해, 최하위 컴포넌트가 최종 납품물까지 추적되는 경로를 보여준다."
+    },
+    {
+      "near_line": 1230,
+      "why": "라이선스 구분이 permissive/copyleft 2분법 텍스트와 기존 license.jpg 한 장으로만 제시되는데, 2026년 실무의 쟁점은 그 안쪽(weak vs strong copyleft, AGPL 네트워크 조항)과 바깥쪽(BUSL·SSPL 등 OSI 비승인 소스 공개형)이다. '오픈소스인 것'과 '소스가 공개됐을 뿐인 것'의 경계는 언어로 설명하면 길고 그림으로 보면 즉시 이해된다.",
+      "what": "라이선스 스펙트럼 도해. 왼쪽부터 permissive(MIT/BSD/Apache) → weak copyleft(LGPL/MPL/EPL) → strong copyleft(GPL) → network copyleft(AGPL) 순으로 배치하고, OSI 승인 경계선을 그은 뒤 그 바깥에 BUSL·SSPL·Elastic License·PolyForm을 별도 구역으로 둔다. 각 구역 아래에 '배포 시 발생하는 의무'와 '기업 도입 시 확인할 것'을 한 줄씩 단다."
+    }
+  ]
+}

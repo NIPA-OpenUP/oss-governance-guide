@@ -1,0 +1,122 @@
+[
+ {
+  "line": 132,
+  "quote": "[KIPRIS의 상표 검색 서비스](http://kdtj.kipris.or.kr/kdtj/searchLogina.do?method=loginTM)[^kipris]",
+  "kind": "dead_link",
+  "severity": "minor",
+  "reason": "본문 링크와 각주 [^kipris](L134)가 같은 URL을 쓰는데, 2회 확인 모두 HTTP 502(Bad Gateway)를 반환했다(curl -L, 브라우저 UA, 30초 타임아웃). 리다이렉트도 없이 원 URL에서 502가 나므로 일시적 네트워크 장애가 아니라 서버 측 경로 폐기로 보인다. 다만 서버가 응답 자체는 하므로 사람 확인을 권한다. 이 문단은 상표팀 검토 절차의 유일한 실행 링크여서 죽으면 절차가 막힌다.",
+  "suggested_fix": "본문과 각주의 URL을 KIPRIS 통합 검색 서비스(https://www.kipris.or.kr/)로 교체하고 표기를 `[KIPRIS 상표 검색](https://www.kipris.or.kr/)[^kipris]` / `[^kipris]: KIPRIS 특허정보넷 — 상표 검색 : https://www.kipris.or.kr/` 로 바꾼다.",
+  "checked_url": "http://kdtj.kipris.or.kr/kdtj/searchLogina.do?method=loginTM",
+  "lens": "support"
+ },
+ {
+  "line": 132,
+  "quote": "한국의 경우에는 [KIPRIS의 상표 검색 서비스](http://kdtj.kipris.or.kr/kdtj/searchLogina.do?method=loginTM)[^kipris]를 이용할 수 있다.",
+  "kind": "dead_link",
+  "severity": "minor",
+  "reason": "kdtj.kipris.or.kr 호스트가 응답하지 않는다. 재현: `curl -sSIL -m 30 http://kdtj.kipris.or.kr/kdtj/searchLogina.do?method=loginTM` 1차 시도 502, 2차 시도 20초 타임아웃(exit 28). 같은 시각 `https://www.kipris.or.kr/khome/main.do` 는 200을 반환하므로 네트워크 장애가 아니라 구 상표검색 전용 서브도메인이 폐지된 것이다. KIPRIS 홈페이지 소스에서 현행 상표 검색 진입 경로가 `/khome/search/searchResult.do?tab=trademark` 로 확인되며 이 URL은 200을 반환한다. 각주 [^kipris](L134)의 URL도 동일하게 교체해야 한다.",
+  "suggested_fix": "본문을 \"한국의 경우에는 [KIPRIS 상표 검색](https://www.kipris.or.kr/khome/search/searchResult.do?tab=trademark)[^kipris]을 이용할 수 있다.\" 로 바꾸고, L134 각주를 \"[^kipris]: KIPRIS 상표 검색 : https://www.kipris.or.kr/khome/search/searchResult.do?tab=trademark\" 로 교체한다.",
+  "checked_url": "http://kdtj.kipris.or.kr/kdtj/searchLogina.do?method=loginTM",
+  "lens": "timing"
+ },
+ {
+  "line": 217,
+  "quote": "적용된다. 제64조(10)(b)의 적용 제외 대상은 스튜어드로 한정된다",
+  "kind": "wrong_scope",
+  "severity": "minor",
+  "reason": "제64조(10)에는 (b) 외에 (a)가 있다 — \"(a) manufacturers that qualify as microenterprises or small enterprises with regard to any failure to meet the deadline referred to in Article 14(2), point (a), or Article 14(4), point (a)\". 즉 마이크로기업·소기업에 해당하는 제조사는 제14조(2)(a)·(4)(a)의 신고 기한 미준수에 한해 과징금이 적용되지 않는다. 초안 문장은 '(10)(b)의' 라고 조항을 좁혀 적었으므로 문언 자체는 거짓이 아니지만, '제조사=과징금 전면 적용, 제외는 스튜어드뿐'이라는 인상을 준다. 이 가이드의 주 독자인 국내 중소 규모 공개 주체에게 (a)의 특례는 판정표에서 빠지면 안 되는 정보다.",
+  "suggested_fix": "해당 칸을 다음으로 교체한다: \"적용된다. 다만 제64조(10)(a)에 따라 마이크로기업·소기업에 해당하는 제조사는 제14조(2)(a)·(4)(a)의 신고 기한을 지키지 못한 경우에 한해 과징금이 적용되지 않는다. 그 밖의 위반에는 적용된다\"",
+  "checked_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R2847",
+  "lens": "numbers"
+ },
+ {
+  "line": 217,
+  "quote": "적용된다. 제64조(10)(b)의 적용 제외 대상은 스튜어드로 한정된다",
+  "kind": "misquoted_clause",
+  "severity": "major",
+  "reason": "제64조(10) 원문은 두 개의 호를 둔다: '(a) manufacturers that qualify as microenterprises or small enterprises with regard to any failure to meet the deadline referred to in Article 14(2), point (a), or Article 14(4), point (a); (b) any infringement of this Regulation by open-source software stewards.' 즉 같은 항이 제조사에 대해서도 예외를 두고 있다. 그런데 초안은 제조사 행의 '과징금 적용 여부' 칸에서 '적용된다'라고 단정한 뒤 '적용 제외 대상은 스튜어드로 한정된다'고 못박아, 마이크로·소기업 제조사가 제14조 신고 기한을 놓친 경우의 (a)호 면제를 지워버린다. 이 가이드의 독자 상당수가 중소기업이고 바로 옆 칸의 적용 시점이 '제14조 신고 의무 2026-09-11'이므로, 정확히 (a)호가 걸리는 상황에서 잘못된 판단 근거를 준다. 인용 조문 자체를 열었을 때 반대 사실이 나오는 경우다.",
+  "suggested_fix": "표의 제조사 행 '과징금 적용 여부' 칸을 다음으로 교체한다 — `적용된다. 다만 제64조(10)(a)는 마이크로·소기업 제조사가 제14조(2)(a)·제14조(4)(a)의 신고 기한을 지키지 못한 경우에 한해 과징금을 면제하고, 같은 항 (b)는 스튜어드의 규정 위반 전반을 면제한다`",
+  "checked_url": "https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng",
+  "lens": "support"
+ },
+ {
+  "line": 218,
+  "quote": "제14조 연계 신고 의무 2026-09-11 / 제24조 전면 적용 2027-12-11",
+  "kind": "stale_timing",
+  "severity": "major",
+  "reason": "규정 제71조(2) 원문은 \"This Regulation shall apply from 11 December 2027. However, Article 14 shall apply from 11 September 2026 and Chapter IV (Articles 35 to 51) shall apply from 11 June 2026.\" 로, 앞당겨 적용되는 조문을 제14조와 제4장(제35~51조) 둘로만 한정한다. 스튜어드에게 제14조(1)·(3)·(8)을 준용시키는 근거 조문은 제24조(3)이고, 제14조 자체의 수범자는 'a manufacturer'다(제14조(1) \"A manufacturer shall notify...\"). 제24조는 예외 목록에 없으므로 2027-12-11부터 적용되며, 따라서 스튜어드의 신고 의무 기산일도 2026-09-11이 아니라 2027-12-11이다. 집행위 지침 C(2026) 5252 ANNEX도 이를 뒤집지 않는다 — 지침에서 '11 September 2026'이 등장하는 곳은 210항·217항뿐이고 모두 제조사(manufacturer)의 제14조 신고 의무를 설명하는 9.1절이며, 스튜어드를 다루는 3.3절(69~84항)과 216항(\"open-source software stewards are also required to report ... in accordance with Article 24(3)\")에는 어떤 적용 일자도 없다. 근거 리서치 02_research_regulation#findings[2] 의 effective_dates가 \"2026-09-11: 제14조 연계 신고 의무\"로 적어 둔 것을 그대로 옮긴 것으로 보이나, 1차 출처가 이를 지지하지 않는다. 이 표는 기업이 컴플라이언스 착수 시점을 정하는 판정표이므로 15개월 차이나는 기산일이 그대로 남으면 안 된다.",
+  "suggested_fix": "표의 스튜어드 행 '적용 시점' 칸을 다음으로 교체한다: \"2027-12-11 (제24조 전면 적용 — 제14조(1)·(3)·(8) 연계 신고 의무 포함). 규정 제71조(2)는 제14조와 제4장(제35~51조)만 앞당겨 적용하며, 스튜어드에게 제14조를 준용하는 근거인 제24조(3)은 앞당김 대상이 아니다\"",
+  "checked_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R2847",
+  "lens": "numbers"
+ },
+ {
+  "line": 218,
+  "quote": "적용되지 않는다. 제64조(10)(b)는 스튜어드의 규정 위반에 행정 과징금을 적용하지 않는다고 명시한다",
+  "kind": "misquoted_clause",
+  "severity": "major",
+  "reason": "제64조(10) 원문은 \"By way of derogation from paragraphs 3 to 9, the administrative fines referred to in those paragraphs shall not apply to the following: ... (b) any infringement of this Regulation by open-source software stewards.\" 다. 즉 면제 범위가 '제3항부터 제9항까지에서 정한 과징금'으로 한정되며, 제2항의 과징금(부속서 I 필수요건 및 제13조·제14조 의무 위반 — 최대 1,500만 유로 또는 전세계 연매출 2.5%)은 특례 열거에서 빠져 있다. 스튜어드는 제24조(3)을 통해 제14조 의무를 지므로, '스튜어드에게는 과징금이 일절 적용되지 않는다'는 초안의 단정은 원문보다 넓다. 초안 문장에서 '제3항~제9항' 이라는 범위 한정이 통째로 탈락한 것이 원인이다.",
+  "suggested_fix": "해당 칸을 다음으로 교체한다: \"원칙적으로 적용되지 않는다. 제64조(10)은 제3항부터 제9항까지의 과징금에 대한 특례로서 (b)에서 '오픈소스 스튜어드의 이 규정 위반'을 제외 대상으로 명시한다. 다만 제2항의 과징금(부속서 I 필수요건 및 제13조·제14조 의무 위반)은 특례 열거에 포함되어 있지 않으므로, 제24조(3)을 통해 지는 제14조 신고 의무의 위반까지 완전히 면제되는지는 특례 문언상 단정할 수 없다\"",
+  "checked_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R2847",
+  "lens": "numbers"
+ },
+ {
+  "line": 218,
+  "quote": "| 제14조 연계 신고 의무 2026-09-11 / 제24조 전면 적용 2027-12-11 |",
+  "kind": "content_mismatch",
+  "severity": "major",
+  "reason": "인용된 두 출처 어디에도 '스튜어드의 신고 의무가 2026-09-11부터'라는 근거가 없다. 규정 제71조(2) 원문은 'This Regulation shall apply from 11 December 2027. However, Article 14 shall apply from 11 September 2026 and Chapter IV (Articles 35 to 51) shall apply from 11 June 2026.'뿐이다 — 앞당겨지는 조문은 제14조와 제35~51조이며 제24조는 포함되지 않는다. 그런데 제14조(1)의 수범자는 'a manufacturer'이고, 스튜어드에게 제14조가 미치는 유일한 경로는 제24조(3)('The obligations laid down in Article 14(1) shall apply to open-source software stewards to the extent that...')이다. 제24조가 2027-12-11부터 적용되므로 그 안의 (3)항도 같은 날부터 적용된다. 같은 행이 '제24조 전면 적용 2027-12-11'이라고 쓰면서 그 하위 항인 (3)만 2026-09-11로 앞당긴 것은 자기모순이다. 집행위 지침 ANNEX도 210항에서 11 September 2026을 오직 manufacturer의 제14조 의무에 한정해 서술하고, 스튜어드는 216항에서 '제24조(3)에 따라' 신고한다고만 하며 별도 시행일을 주지 않는다. 확인 위치: EUR-Lex 제71조·제24조(3), 지침 ANNEX 210항·216항.",
+  "suggested_fix": "표의 오픈소스 스튜어드 행 '적용 시점' 칸을 다음으로 교체한다 — `제24조 전면 적용 2027-12-11(제24조(3)에 따른 제14조 연계 신고 의무도 이 날부터). 제14조가 2026-09-11부터 앞당겨 적용되는 대상은 제조사다`",
+  "checked_url": "https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng",
+  "lens": "support"
+ },
+ {
+  "line": 218,
+  "quote": "제14조 연계 신고 의무 2026-09-11 / 제24조 전면 적용 2027-12-11",
+  "kind": "stale_timing",
+  "severity": "major",
+  "reason": "스튜어드의 신고 의무 개시일을 2026-09-11로 적은 것은 근거로 뒷받침되지 않고, 같은 셀의 뒷부분(제24조 전면 적용 2027-12-11)과도 충돌한다. 재현 절차: (1) 각주 [^cra-guidance] PDF 210항 — \"In accordance with Article 69(3) and 71(2), second sentence, the obligation to comply with Article 14 applies from 11 September 2026\" 이 문장의 주어는 manufacturer이며(209항이 \"Under Article 14(1) and (3) of the CRA, a manufacturer is required to notify...\"로 조문 수범자를 제조사로 특정한다), 스튜어드는 언급되지 않는다. (2) 스튜어드에게 제14조(1)·(3)·(8)을 확장하는 근거 조문은 제24조(3)이고, 지침 79항이 이를 명시한다(\"how far the obligations laid down in Article 14(1), (3) and (8) apply to those legal entities varies ... in accordance with Article 24(3)\"). (3) 제71조(2)의 적용 개시 예외는 제14조와 제4장(제35~51조)뿐이며 제24조는 예외 목록에 없다 — 지침 33항이 \"the CRA enters into application on 11 December 2027\"로 원칙 일자를 확인한다. 따라서 제24조(3)을 매개로 발생하는 스튜어드 신고 의무는 2027-12-11에 개시된다고 보는 것이 조문 구조에 부합한다. 지침 84쪽 전문에서 'steward'가 등장하는 57개 구간 중 스튜어드 의무의 2026-09-11 개시를 말하는 문장은 없다. 근거 리서치(02_research_regulation.json, effective_dates: [\"2026-09-11: 제14조 연계 신고 의무\", ...])가 같은 오류를 담고 있으므로 리서치 기록도 함께 정정해야 한다. 컴플라이언스 가이드에서 개시일을 약 15개월 앞당겨 적은 것이므로 기업의 준비 일정 판단을 왜곡한다.",
+  "suggested_fix": "표의 오픈소스 스튜어드 행 '적용 시점' 셀을 다음으로 교체한다: \"제24조 전면 적용 2027-12-11(제24조(3)을 매개로 하는 제14조(1)·(3)·(8) 신고 의무 포함). 제71조(2)의 적용 개시 예외는 제14조(2026-09-11)와 제4장 제35~51조(2026-06-11)뿐이며 제24조는 예외에 포함되지 않는다\". 아울러 표 아래 본문에 한 문장을 덧붙인다: \"2026-09-11부터 신고 의무가 발생하는 것은 제조사이며, 스튜어드의 신고 의무는 제24조(3)을 근거로 하므로 2027-12-11부터 적용된다. 다만 지침 80항이 밝히듯 스튜어드는 그 전에도 인지한 악용 취약점 정보를 사이버보안 정책에 따라 메인테이너와 공유하는 것이 바람직하다.\"",
+  "checked_url": "https://ec.europa.eu/newsroom/dae/redirection/document/131456",
+  "lens": "timing"
+ },
+ {
+  "line": 392,
+  "quote": "[GitLab - 공개 저장소로 전환하기](https://docs.gitlab.com/ee/public_access/public_access.html#how-to-change-project-visibility)[^gitlab-change-repo]",
+  "kind": "dead_link",
+  "severity": "minor",
+  "reason": "이 URL은 302로 projects.gitlab.io/auth?domain=https://docs.gitlab.com… 으로 넘어가고, 그 호스트는 연결 자체가 되지 않는다(curl: (7) Failed to connect to projects.gitlab.io port 443). 즉 문서 페이지가 아니라 인증 게이트로 튕기며 내용에 도달할 수 없다. 같은 파일의 다른 GitLab 링크 4건(L351·352·353·755·797)은 `/ee/` 경로가 현행 `/user/…` 경로로 정상 리다이렉트되므로, 이 한 건만 경로가 폐기된 것으로 보인다. 각주 [^gitlab-change-repo](L395)도 동일 URL이다.",
+  "suggested_fix": "본문과 각주의 URL을 https://docs.gitlab.com/user/public_access/ 로 교체하고 각주를 `[^gitlab-change-repo]: GitLab - 프로젝트 공개 범위 변경하기 : https://docs.gitlab.com/user/public_access/` 로 바꾼다.",
+  "checked_url": "https://docs.gitlab.com/ee/public_access/public_access.html#how-to-change-project-visibility",
+  "lens": "support"
+ },
+ {
+  "line": 392,
+  "quote": "- [GitLab - 공개 저장소로 전환하기](https://docs.gitlab.com/ee/public_access/public_access.html#how-to-change-project-visibility)[^gitlab-change-repo]",
+  "kind": "dead_link",
+  "severity": "minor",
+  "reason": "GitLab 문서 개편으로 이 구 경로만 정상 리다이렉트되지 않는다. 재현: `curl -sS -o /dev/null -w '%{url_effective} %{http_code}' -L https://docs.gitlab.com/ee/public_access/public_access.html` 결과가 `https://projects.gitlab.io/auth?domain=https://docs.gitlab.com&...` 302 로 끝나며 projects.gitlab.io 연결 자체가 실패한다(curl exit 7). 같은 배치에서 다른 /ee/ 경로(user/project/settings, description_templates, working_with_projects)는 신 경로로 200 리다이렉트되므로 이 URL만의 문제다. 신 경로 `https://docs.gitlab.com/user/public_access/#change-project-visibility` 는 200을 반환한다. 각주 [^gitlab-change-repo](L395)도 같은 URL이므로 함께 고쳐야 한다.",
+  "suggested_fix": "L392를 \"- [GitLab - 공개 저장소로 전환하기](https://docs.gitlab.com/user/public_access/#change-project-visibility)[^gitlab-change-repo]\" 로, L395 각주를 \"[^gitlab-change-repo]: GitLab - 공개 저장소로 전환하기 : https://docs.gitlab.com/user/public_access/#change-project-visibility\" 로 교체한다.",
+  "checked_url": "https://docs.gitlab.com/ee/public_access/public_access.html#how-to-change-project-visibility",
+  "lens": "timing"
+ },
+ {
+  "line": 725,
+  "quote": "2026년 기준으로 기업 채택자는 패키지가 '누가 어떤 소스로 빌드했는지 증명되는가'를 확인한 뒤에 도입을 결정한다.",
+  "kind": "no_source",
+  "severity": "minor",
+  "reason": "연도를 못박아('2026년 기준으로') 기업 채택자 일반의 실제 행동을 단정하는 경험적 서술인데 각주가 없다. 근거 리서치 어느 축에도 이를 지지하는 조사·통계가 없다 — 02_research_market·security·tooling 의 findings 를 '채택자/도입 결정/선정 기준' 으로 전수 검색했으나 프로비넌스 검증을 도입 결정 요건으로 삼는다는 수치나 조사는 없었고, tooling#findings[6]·[15]는 SCA 도구 선택 기준이라 대상이 다르다. 실제로는 상당수 채택자가 프로비넌스를 확인하지 않으므로 '확인한 뒤에 도입을 결정한다'는 사실 서술은 근거보다 강하다. 05a_scoped_releasing.json 의 RE-08 지시도 이 문장을 요구하지 않았다(지시는 체크리스트 작성만 요구).",
+  "suggested_fix": "해당 문장을 사실 단정에서 실행 지시로 바꾼다: \"패키지를 올리는 것만으로는 부족하다. 채택자가 '누가 어떤 소스로 빌드했는지'를 스스로 검증할 수 있는 증거를 릴리스마다 남겨야 한다. 다음 다섯 가지를 릴리스 워크플로에 넣는다.\"",
+  "checked_url": "https://github.com/anthropics/none — 리서치 JSON 전수 검색(로컬)",
+  "lens": "numbers"
+ },
+ {
+  "line": 725,
+  "quote": "앞의 [사용자 늘리기](#사용자-늘리기)에서 정리한 채택 기준을 릴리스 워크플로에서 실제 증거로 만드는 단계가 여기다.",
+  "kind": "content_mismatch",
+  "severity": "minor",
+  "reason": "이 문장의 사실 근거·구체 수정안이 상위 지시에서 잘려 전달되지 않았다. 원문 위치를 대조해 별도로 판정이 필요하다.",
+  "suggested_fix": "VERIFY: 상위 지시가 절단되어 구체적 수정안을 확인할 수 없다. 원문을 직접 검토해 #사용자-늘리기 앵커가 실제로 존재하는지, 문맥상 인과가 맞는지 확인한 뒤 처리한다.",
+  "checked_url": "",
+  "lens": "unknown"
+ }
+]

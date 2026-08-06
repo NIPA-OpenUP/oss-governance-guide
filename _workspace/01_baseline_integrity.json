@@ -1,0 +1,193 @@
+{
+  "reports": [
+    {
+      "file": "content/en/_index.md",
+      "front_matter": {
+        "title": "\"NIPA 기업 오픈소스  거버넌스 가이드\"",
+        "linkTitle": "\"NIPA 오픈소스 가이드\"",
+        "weight": "20",
+        "type": "list",
+        "menu": ""
+      },
+      "counts": {
+        "lines": 48,
+        "headings": 3,
+        "footnote_defs": 0,
+        "footnote_uses": 0
+      },
+      "issues": []
+    },
+    {
+      "file": "content/en/contributing/_index.md",
+      "front_matter": {
+        "title": "\"오픈소스 기여하기\"",
+        "linkTitle": "\"2. 기여하기\"",
+        "weight": "30",
+        "description": ">"
+      },
+      "counts": {
+        "lines": 865,
+        "headings": 96,
+        "footnote_defs": 16,
+        "footnote_uses": 16
+      },
+      "issues": []
+    },
+    {
+      "file": "content/en/intro/_index.md",
+      "front_matter": {
+        "title": "\"들어가며\"",
+        "linkTitle": "\"0. 들어가며\"",
+        "weight": "10",
+        "description": ">"
+      },
+      "counts": {
+        "lines": 123,
+        "headings": 8,
+        "footnote_defs": 1,
+        "footnote_uses": 1
+      },
+      "issues": []
+    },
+    {
+      "file": "content/en/ospo/_index.md",
+      "front_matter": {
+        "title": "\"OSPO\"",
+        "linkTitle": "\"4. OSPO\"",
+        "weight": "50",
+        "description": ">"
+      },
+      "counts": {
+        "lines": 295,
+        "headings": 31,
+        "footnote_defs": 23,
+        "footnote_uses": 23
+      },
+      "issues": []
+    },
+    {
+      "file": "content/en/releasing/_index.md",
+      "front_matter": {
+        "title": "\"오픈소스 공개하기\"",
+        "linkTitle": "\"3. 공개하기\"",
+        "weight": "40",
+        "description": ">"
+      },
+      "counts": {
+        "lines": 688,
+        "headings": 73,
+        "footnote_defs": 55,
+        "footnote_uses": 55
+      },
+      "issues": [
+        {
+          "kind": "duplicate_heading",
+          "file": "content/en/releasing/_index.md",
+          "line": 660,
+          "detail": "헤딩 텍스트 중복 — 슬러그가 '요약-1' 로 밀림",
+          "blocking": false
+        },
+        {
+          "kind": "dead_anchor",
+          "file": "content/en/releasing/_index.md",
+          "line": 120,
+          "detail": "대상 헤딩이 없는 앵커 링크: #어떻게?:어떤-조건으로-공개할-것인가?-공개에-적합한-라이선스-후보군-정하기",
+          "blocking": true
+        },
+        {
+          "kind": "dead_anchor",
+          "file": "content/en/releasing/_index.md",
+          "line": 144,
+          "detail": "대상 헤딩이 없는 앵커 링크: #어떻게?:어떤-조건으로-공개할-것인가?-공개에-적합한-라이선스-후보군-정하기",
+          "blocking": true
+        },
+        {
+          "kind": "dead_anchor",
+          "file": "content/en/releasing/_index.md",
+          "line": 216,
+          "detail": "대상 헤딩이 없는 앵커 링크: #언제?:언제-공개할-것인가?-공개-시점-정하기",
+          "blocking": true
+        }
+      ]
+    },
+    {
+      "file": "content/en/using/_index.md",
+      "front_matter": {
+        "title": "\"오픈소스 사용하기\"",
+        "linkTitle": "\"1. 사용하기\"",
+        "weight": "20",
+        "description": ">"
+      },
+      "counts": {
+        "lines": 1303,
+        "headings": 147,
+        "footnote_defs": 73,
+        "footnote_uses": 75
+      },
+      "issues": [
+        {
+          "kind": "footnote",
+          "file": "content/en/using/_index.md",
+          "line": 376,
+          "detail": "각주 정의 중복: [^cisa2024] (앞선 정의 291행)",
+          "blocking": false
+        },
+        {
+          "kind": "footnote",
+          "file": "content/en/using/_index.md",
+          "line": 446,
+          "detail": "각주 정의 중복: [^gartner-3971011] (앞선 정의 115행)",
+          "blocking": false
+        },
+        {
+          "kind": "footnote",
+          "file": "content/en/using/_index.md",
+          "line": 746,
+          "detail": "각주 정의 중복: [^sonatype2024] (앞선 정의 713행)",
+          "blocking": false
+        },
+        {
+          "kind": "footnote",
+          "file": "content/en/using/_index.md",
+          "line": 797,
+          "detail": "각주 정의 중복: [^cisa2024] (앞선 정의 376행)",
+          "blocking": false
+        },
+        {
+          "kind": "undefined_footnote",
+          "file": "content/en/using/_index.md",
+          "line": 309,
+          "detail": "정의 없는 각주 [^nia2024] — 본문에 원문 노출됨",
+          "blocking": true
+        },
+        {
+          "kind": "undefined_footnote",
+          "file": "content/en/using/_index.md",
+          "line": 1269,
+          "detail": "정의 없는 각주 [^sonatype2021] — 본문에 원문 노출됨",
+          "blocking": true
+        },
+        {
+          "kind": "duplicate_heading",
+          "file": "content/en/using/_index.md",
+          "line": 1196,
+          "detail": "헤딩 텍스트 중복 — 슬러그가 '오픈소스-커뮤니티-1' 로 밀림",
+          "blocking": false
+        },
+        {
+          "kind": "duplicate_heading",
+          "file": "content/en/using/_index.md",
+          "line": 1268,
+          "detail": "헤딩 텍스트 중복 — 슬러그가 '보안-1' 로 밀림",
+          "blocking": false
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "files": 6,
+    "issues": 12,
+    "blocking": 5,
+    "verdict": "fail"
+  }
+}

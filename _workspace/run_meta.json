@@ -1,0 +1,47 @@
+{
+  "started": "2026-07-31",
+  "baseline_integrity": "_workspace/01_baseline_integrity.json",
+  "published_extract": "_workspace/00_published_2025.md",
+  "published_pdf": "[2025] 기업 오픈소스SW 거너번스 가이드.pdf",
+  "sections": [
+    "intro",
+    "using",
+    "contributing",
+    "releasing",
+    "ospo"
+  ],
+  "section_lines": {
+    "intro": 122,
+    "using": 1303,
+    "contributing": 864,
+    "releasing": 687,
+    "ospo": 295
+  },
+  "existing_images": {
+    "intro": 0,
+    "using": 32,
+    "contributing": 6,
+    "releasing": 7,
+    "ospo": 6
+  },
+  "baseline_blocking": {
+    "releasing": 3,
+    "using": 2
+  },
+  "phase2_runId": "wf_1cb4ef8b-a39",
+  "phase4_runId": null,
+  "phase5_runId": null,
+  "phase6_runId": null,
+  "phase1_5": {
+    "agent": "published-edition-reconciler",
+    "output": "_workspace/01_baseline_reconciliation.json",
+    "baseline_source": {
+      "intro": "merge",
+      "using": "merge",
+      "contributing": "repo",
+      "releasing": "merge",
+      "ospo": "merge"
+    },
+    "unmapped": "none"
+  }
+}

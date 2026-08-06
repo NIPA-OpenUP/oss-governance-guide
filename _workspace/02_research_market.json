@@ -1,0 +1,675 @@
+{
+  "axis": "market",
+  "findings": [
+    {
+      "topic": "OSSRA 라이선스 충돌 비율 3개년 추세 (53%→56%→68%)",
+      "claim": "Black Duck OSSRA가 측정하는 '라이선스 충돌 포함 코드베이스 비율'이 2024년판 53%(2023년 데이터) → 2025년판 56%(2024년 데이터, 965개 코드베이스·16개 산업) → 2026년판 68%(2025년 데이터, 947개 코드베이스·17개 산업, OSSRA 역사상 최고치·전년 대비 최대 단일 연도 상승폭)로 뛰었다. 오픈소스 포함 코드베이스 비율도 97%→98%, 취약점 포함 비율 86%→87%(고위험 78%, 치명적 44%, 평균 취약점 수 코드베이스당 581개, +107%)로 함께 악화됐다.",
+      "detail": "원고 intro L16이 인용한 '53%'는 2024년판(2023년 감사 데이터) 수치다. 원문을 blackduck.com 블로그에서 직접 확인한 결과 '2023년에 감사받은 코드베이스 중 53%'라는 정확한 표현이었다. 2025년판(2025-02, news.blackduck.com 보도자료)과 2026년판(2026-02-25, 부제 'Software Governance in the AI Era')을 각각 공식 보도자료로 확인했다. 2026년판은 AI 관련 신규 지표도 포함: AI 생성 코드를 보안 관점에서 검토하는 조직 76%, IP/라이선스 관점에서 검토 54%, 두 관점 모두 포괄적으로 평가하는 조직은 24%에 불과 — 검토 관행이 코드 생성 속도를 못 따라가는 거버넌스 공백을 보여준다.",
+      "confidence": "high",
+      "target_section": "intro",
+      "applies_to_korean_firms": "오픈소스를 포함한 제품·서비스를 개발·배포하는 모든 국내 기업, 특히 M&A 실사 대상이 되는 기업",
+      "action_for_firms": "본문의 53% 인용을 68%(2026년판)로 교체하고, 3개년 추세표(53%→56%→68%)를 함께 제시해 '악화 추세'라는 맥락을 전달한다. AI 생성 코드 검토율(보안 76%/IP 54%/포괄 24%) 통계를 AI 코딩 도구 정책 절에 추가한다.",
+      "practicality": "사례+통계표",
+      "effective_dates": [
+        "2026-02-25 (2026 OSSRA 발간)",
+        "2025-02-25 (2025 OSSRA 발간)"
+      ],
+      "replaces": "content/en/intro/_index.md L16: 2024년 OSSRA 보고서, 53% 인용",
+      "sources": [
+        {
+          "title": "Black Duck Research Shows Open Source Vulnerabilities Have Doubled as AI Accelerates Code Creation (2026 OSSRA 보도자료)",
+          "url": "https://news.blackduck.com/2026-02-25-Black-Duck-Research-Shows-Open-Source-Vulnerabilities-Have-Doubled-as-AI-Accelerates-Code-Creation",
+          "kind": "primary"
+        },
+        {
+          "title": "New Black Duck Report: 86% of Commercial Codebases Contain Vulnerable Open Source (2025 OSSRA 보도자료)",
+          "url": "https://news.blackduck.com/2025-02-25-New-Black-Duck-Report-86-of-Commercial-Codebases-Contain-Vulnerable-Open-Source,-Exposing-Organizations-to-Security-Risks",
+          "kind": "primary"
+        },
+        {
+          "title": "OSSRA data answers open source questions (원고가 인용한 원문, 53%의 정확한 정의 확인)",
+          "url": "https://www.blackduck.com/blog/ossra-license-compliance-risks.html",
+          "kind": "primary"
+        },
+        {
+          "title": "2026 OSSRA Report 랜딩 페이지",
+          "url": "https://www.blackduck.com/resources/analyst-reports/open-source-security-risk-analysis.html",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "Perforce/OpenLogic State of Open Source 3개년 추세",
+      "claim": "오픈소스 사용을 유지·증가시킨 조직 비율이 2024년판(2023년 데이터) 95% → 2025년판(2025-04-08 발간) 96% → 2026년판(2026-03-24 발간) 98%(감소 조직 2% 미만)로 상승했다. 도입 동인은 '비용 절감' 중심에서 '벤더 락인 회피'(55%, 전년 33%에서 68% 급상승, 유럽 63%)로 무게중심이 옮겨갔다.",
+      "detail": "2026년판은 Perforce·Open Source Initiative·Eclipse Foundation 공동 발간이며 '디지털 자주권(digital autonomy)'을 부제로 내세웠다. 단, 보도자료·블로그 모두 표본 규모·정확한 조사 시점을 공개하지 않아(정식 보고서는 이메일 등록 후 다운로드) 표본 검증은 미완이다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "오픈소스 도입 전략을 수립하는 모든 국내 기업, 특히 벤더 종속을 우려하는 IT 조직",
+      "action_for_firms": "using 절의 '2023년 95%/33%' 문장을 3개년 추세(95%→96%→98%)로 갱신하고, 비용 절감과 함께 '벤더 락인 회피·디지털 자주권'을 오픈소스 도입 이유 목록에 추가한다.",
+      "practicality": "통계표",
+      "effective_dates": [
+        "2026-03-24",
+        "2025-04-08"
+      ],
+      "replaces": "content/en/using/_index.md L13, L15",
+      "sources": [
+        {
+          "title": "Perforce 2026 State of Open Source Report Highlights Shift Toward Digital Autonomy",
+          "url": "https://www.perforce.com/press-releases/2026-state-of-open-source-report",
+          "kind": "primary"
+        },
+        {
+          "title": "2026 State of Open Source Report: Top Takeaways",
+          "url": "https://www.openlogic.com/blog/state-of-open-source-report-key-insights",
+          "kind": "primary"
+        },
+        {
+          "title": "Perforce's State of Open Source Report Reveals Low Confidence in Big Data Management (2025년판)",
+          "url": "https://www.perforce.com/press-releases/2025-state-of-open-source",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "Red Hat State of Enterprise Open Source — 시리즈 중단",
+      "claim": "원고가 인용한 'Red Hat 2022 오픈소스 Enterprise 현황 보고서'는 2022년 2월판(4번째이자 마지막판, IT 리더 1,296명·14개국)을 끝으로 후속판이 확인되지 않는다. 후속 시리즈는 오픈소스 특화 조사가 아닌 범용 'Global Tech Trends' 보고서(2024년판이 10주년, IT리더 706명, 2023년 8~9월 조사)로 성격이 바뀌었다.",
+      "detail": "원고가 인용한 '향후 2년 동안 독점SW 사용 45%→37% 감소' 전망은 예측 시한(2022+2=2024년)이 이미 지났고, 사후 검증판이 없어 실현 여부를 확인할 수 없다. 시리즈 중단으로 분류하고, 대체 자료로 Perforce/OpenLogic 2026년판 또는 OSSRA 2026년판의 오픈소스 채택 지표를 제안한다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "해당 통계를 근거로 조달·라이선스 전략을 세우는 기업",
+      "action_for_firms": "45%→37% 전망 문장을 삭제하거나 '2022년 시점의 전망(검증되지 않음)'으로 명시하고, Perforce 2026년판 통계로 대체한다.",
+      "practicality": "판단기준표",
+      "effective_dates": [
+        "2022-02 (마지막판)",
+        "2024 (Global Tech Trends로 개편)"
+      ],
+      "replaces": "content/en/using/_index.md L19: RedHat 2022 오픈소스 Enterprise 현황 보고서 인용",
+      "sources": [
+        {
+          "title": "The State of Enterprise Open Source: A Red Hat report (2022, 마지막판)",
+          "url": "https://www.redhat.com/en/resources/state-of-enterprise-open-source-report-2022",
+          "kind": "primary"
+        },
+        {
+          "title": "Red Hat Global Tech Trends 2024 (후속 시리즈)",
+          "url": "https://www.redhat.com/en/global-tech-trends-2024",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "GitHub Octoverse 2025 — AI 시대 기여 통계",
+      "claim": "GitHub 공개 저장소 기여가 11억 2천만 건(전년 대비 +13%), 신규 개발자 3,600만 명(+23%, 평균 초당 1명 이상 가입)을 기록했다(조사 기간 2024-09-01~2025-08-31). LLM SDK를 사용하는 공개 저장소가 110만 개를 넘어(+178% YoY, 신규 69.3만 개), AI 관련 프로젝트 월간 기여가 190만 건(+76% YoY)에 달했다. 생성형 AI 프로젝트 월간 기여자는 2024년 1월 6.8만 명에서 2025년 8월 20만 명으로 늘었다.",
+      "detail": "원고가 인용한 GitHub Octoverse는 2021년판(각주만 있고 세부 수치는 없음)으로 4개 편 뒤처져 있다. 2025년판은 인도가 총 오픈소스 기여자 수에서 미국을 처음 추월했고, TypeScript가 2025년 8월 Python을 제치고 최다 사용 언어에 올랐다는 점도 AI 지원 개발 친화성과 연결지어 보고한다(GitHub Universe 2025, 2025년 10월 말 발표).",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "오픈소스 생태계 참여 전략, 개발자 채용·역량 전략을 수립하는 기업",
+      "action_for_firms": "using 절의 '2021년 GitHub Octoverse' 각주를 2025년판으로 교체하고, AI 관련 저장소·기여 급증 통계를 'AI 시대의 오픈소스' 신규 소절에 반영한다.",
+      "practicality": "통계표",
+      "effective_dates": [
+        "2025-10 (GitHub Universe 2025 발표)"
+      ],
+      "replaces": "content/en/using/_index.md L1128 각주: GitHub Octoverse (2021)",
+      "sources": [
+        {
+          "title": "Octoverse: A new developer joins GitHub every second as AI leads TypeScript to #1",
+          "url": "https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "Sonatype State of the Software Supply Chain — 2026년판·각주 중복 정리",
+      "claim": "오픈소스 패키지 연간 다운로드가 2025년 9.8조 건(Sonatype 자체 표현으로 전년 대비 +67%)에 달했고, 신규 악성 패키지 발견 건수도 전년 대비 75% 늘었다(2026-01-28 발간, Maven Central·PyPI·npm·NuGet 4개 레지스트리 기준).",
+      "detail": "원고는 같은 using 절 안에서 2024년판(L690, L713: 6.6조 건 +52%)과 2021년판(L1168 각주, 중복)을 동시에 인용하고 있어 내적으로 일관되지 않다. 2026년판 9.8조 건을 6.6조 건과 산술 비교하면 +48%가 되어 Sonatype이 발표한 '+67%'와 어긋난다 — Sonatype이 YoY 계산 방식(예: 특정 레지스트리 하위집합 vs 전체)을 공개하지 않았으므로 두 수치를 그대로 병기하고 임의로 조정하지 않았다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "공급망 보안·의존성 관리 정책을 수립하는 모든 기업",
+      "action_for_firms": "L1168의 2021년판 중복 각주를 제거하고 2026년판 하나로 통합한다. YoY 수치 불일치는 각주에 '출처 표기 그대로'라고 명시해 독자가 오해하지 않게 한다.",
+      "practicality": "통계표",
+      "effective_dates": [
+        "2026-01-28"
+      ],
+      "replaces": "content/en/using/_index.md L690/L713/L1168 각주 3건",
+      "sources": [
+        {
+          "title": "Sonatype Research Reveals OSS Malware Grows 75% as Yearly Open Source Downloads Surpass 9.8 Trillion",
+          "url": "https://www.globenewswire.com/news-release/2026/01/28/3227372/0/en/Sonatype-Research-Reveals-OSS-Malware-Grows-75-as-Yearly-Open-Source-Downloads-Surpass-9-8-Trillion.html",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "국내 오픈소스SW 시장규모 4개년 추세 (NIPA)",
+      "claim": "NIPA 오픈소스SW 실태조사 기준 국내 시장규모는 2020년 2,843억 원 → 2021년 3,032억 원 → 2022년 3,380억 원(원고 기존 인용) → 2023년 3,835억 원(전년 대비 약 15% 성장, 2024-06 발간)으로 매년 평균 약 10% 이상 성장했다. 활용률도 2021년 약 62% → 2022년 67.3%(원고 기존 인용, SW기업 94.2%) → 2023년 69%(SW기업 100%, 비SW산업 56%, 표본 기업 1,287개·개발자 1,250명)로 상승했다.",
+      "detail": "NIPA의 실태조사 원문 PDF는 oss.kr 포털이 WebFetch·curl 모두에서 403/404를 반환해 직접 확인하지 못했고, 전자신문(2024-06-10) 보도를 통해 확인했다(2차 출처, confidence medium). 검색으로 확인된 '2024 오픈소스SW 실태조사'(전체 82.7%, 비SW 67.3%+11.1%p)는 oss.kr 뉴스레터 요약으로만 확인되어 원문 미확인 — 2023년 69%에서 82.7%로의 급상승이 측정 방식 변경 때문인지 불명확하므로 낮은 확신도로만 병기해야 한다. 2024년 3월 NIPA 조직개편으로 전담 '공개소프트웨어팀'이 'SW산업팀'에 흡수된 사실도 후속 실태조사의 지속성에 대한 배경 정보로 남긴다.",
+      "confidence": "medium",
+      "target_section": "using",
+      "applies_to_korean_firms": "국내 오픈소스 시장 규모를 근거로 예산·전략을 세우는 기업 및 정책 담당자",
+      "action_for_firms": "using 절의 '2022년 3,380억 원, 67.3%' 단일 연도 서술을 2020~2023년 4개년 추세표로 교체하고, 2024년판 수치는 '미확인·추가 검증 필요'로 각주 표시한다.",
+      "practicality": "통계표",
+      "effective_dates": [
+        "2024-06-10 (2023년 실태조사 보도 시점)"
+      ],
+      "replaces": "content/en/using/_index.md L69, 각주 [^nipa2024]",
+      "sources": [
+        {
+          "title": "AI·클라우드 도입 늘자…국내 오픈소스SW 시장 15% 성장 (전자신문, 2024-06-10)",
+          "url": "https://www.etnews.com/20240610000212",
+          "kind": "secondary"
+        },
+        {
+          "title": "NIPA, 오픈소스SW 가이드 3종 2024년 개정판 발간 (원고 기존 인용 페이지)",
+          "url": "https://www.oss.kr/oss_guide/show/9a73fa3c-c233-4e8b-8527-7d57ed7218f7",
+          "kind": "secondary"
+        },
+        {
+          "title": "[제456호] 오픈소스SW, 선택적 기술에서 산업 기반 인프라로 확장 (2024년 실태조사 82.7% 언급, 원문 접근 실패)",
+          "url": "https://www.oss.kr/news_letter/show/01bc6d48-ebab-43f4-9b51-b7066a92e9ee",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "topic": "NIPA 조직개편 — 공개소프트웨어팀 폐지 (2024-03)",
+      "claim": "2024년 3월 NIPA 조직개편으로 SW산업본부 산하 '공개소프트웨어팀'이 SW미래본부의 'SW산업팀'으로 흡수됐다. NIPA는 기존 오픈소스 사업(실태조사, 개발자 역량강화, 오픈업센터 운영 등)이 유지된다고 밝혔으나, 업계는 전담 조직 축소에 우려를 표했다.",
+      "detail": "가이드 발행 주체인 NIPA/오픈업센터의 조직 안정성과 관련된 배경 정보로, 향후 개정판에서 통계·컨설팅 채널의 담당 부서 변경 여부를 재확인할 필요가 있다.",
+      "confidence": "medium",
+      "target_section": "ospo",
+      "applies_to_korean_firms": "NIPA 오픈업 컨설팅·실태조사 데이터를 활용하는 국내 기업",
+      "action_for_firms": "OSPO 절의 '오픈업(오픈소스 통합지원센터)' 소개 문구 옆에 조직 변경 사실을 각주로 남겨, 담당 창구 확인이 필요할 수 있음을 안내한다.",
+      "practicality": "개념설명",
+      "effective_dates": [
+        "2024-03"
+      ],
+      "replaces": "해당 없음 (신규 맥락 정보)",
+      "sources": [
+        {
+          "title": "AI 시대 더 중요해진 오픈소스SW, 하지만…NIPA '공개소프트웨어팀' 사라져 (디지털데일리, 2024-03-26)",
+          "url": "https://m.ddaily.co.kr/page/view/2024032606541480965",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "topic": "국내 인터넷 이용자 수·보급률 (DataReportal Digital 2026)",
+      "claim": "2025년 말 기준 한국 인터넷 이용자는 5,060만 명(인구의 97.9%)으로, 원고가 인용한 Digital 2024 South Korea(5,030만 명, 97.2%)보다 소폭 상승했다.",
+      "detail": "오픈소스 axis와는 간접적으로만 연결되는 일반 인터넷 보급 통계이므로 우선순위는 낮으나, 원고에 남은 '2024년 1월 기준' 표현이 시효를 벗어났으므로 갱신 대상으로 기록한다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "해당 없음(일반 배경 통계)",
+      "action_for_firms": "각주 URL과 수치를 Digital 2026판으로 교체한다.",
+      "practicality": "통계표",
+      "effective_dates": [
+        "2026 (Digital 2026 South Korea 발간)"
+      ],
+      "replaces": "content/en/using/_index.md L42, 각주 [^datareportal2024]",
+      "sources": [
+        {
+          "title": "Digital 2026: South Korea",
+          "url": "https://datareportal.com/reports/digital-2026-south-korea",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "국내 오픈소스 서비스 시장 성장률 — 두 벤더 리포트 간 상충",
+      "claim": "원고가 인용한 두 시장조사 벤더의 성장률 가정이 서로 다르다: Future Market Insights는 한국 오픈소스 서비스 시장 CAGR 18.3%(2024년판 예측창 2024~2034 → 2025년판 2025~2035로 창만 갱신, 수치는 동일)를, GII Korea(Global Info Research)는 글로벌 시장 CAGR 24.3%·2028년까지 1,074.6억 달러를 제시한다.",
+      "detail": "두 보고서 모두 유료 장벽 뒤에 있어 원문 방법론을 확인할 수 없었다. 수치 차이가 2배까지는 아니지만(18.3% vs 24.3%, 약 1.3배) 시장 정의 범위(국내 vs 글로벌, 서비스 시장 정의 자체)가 다를 가능성이 크므로 임의로 하나를 택하지 않고 병기해야 한다.",
+      "confidence": "low",
+      "target_section": "using",
+      "applies_to_korean_firms": "시장 규모를 근거로 오픈소스 사업 투자를 결정하는 경영진",
+      "action_for_firms": "두 수치를 각각 출처와 함께 병기하고, 단정적 서술('~억 달러로 성장할 것')을 피하고 '전망에 따르면'으로 표현을 완화한다. 가능하면 NIPA 국내 통계(3,835억 원, 2023년)를 1차 근거로 우선 사용한다.",
+      "practicality": "판단기준표",
+      "effective_dates": [],
+      "replaces": "content/en/using/_index.md L36, L709",
+      "sources": [
+        {
+          "title": "Open Source Service Market Size, Share, Trends & Forecast",
+          "url": "https://www.futuremarketinsights.com/reports/open-source-service-market",
+          "kind": "secondary"
+        },
+        {
+          "title": "Open Source Service Market to Flourish at 16.5% CAGR (글로벌 수치 참고용 프레스릴리스)",
+          "url": "https://www.globenewswire.com/news-release/2024/03/29/2854601/0/en/Open-Source-Service-Market-to-Flourish-at-16-5-CAGR-Hitting-US-141-0-Billion-by-2034-Future-Market-Insights-Inc.html",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "topic": "TODO Group OSPO Survey(2019) → LF Research State of OSPOs(2025) 전면 교체",
+      "claim": "원고 ospo 절이 인용한 'TODO Group survey(2019)'의 '50%+ 기업이 OSPO 보유·예정' 서술은 7년 전 자료다. 최신 2025년판(8년 연속, 표본 338건, 2025-05~06 조사, 2025-08 발간)에 따르면 정식(formal) OSPO 보유율은 2022년 30% → 2023년 43%(정점) → 2024년 26%(급락) → 2025년 32%(반등)로 등락했고, 비정식(informal) OSPO는 2023년 23%에서 2025년 18%로 계속 줄었다.",
+      "detail": "PDF 원문(https://www.linuxfoundation.org/hubfs/Research%20Reports/LFResearch_StateofOSPO_082825.pdf)을 직접 다운로드해 읽고 확인했다. 규모별로는 대·초대형 조직 83% 정식 OSPO 보유 vs 중소조직 72%(그중 55%는 비정식 운영, 68%는 신규 도입 계획). 지역별로는 아메리카 89%, 유럽 68%, 아시아태평양 35%(정식21%+비정식14%)로 APAC이 전 지역 중 가장 낮다 — 단, 한국 단독 수치는 보고서에 없다(체크리스트 미확인 항목).",
+      "confidence": "high",
+      "target_section": "ospo",
+      "applies_to_korean_firms": "OSPO 설립을 검토하는 모든 국내 기업, 특히 아시아태평양 평균과 비교하려는 조직",
+      "action_for_firms": "ospo 절 서두의 2019년 TODO Group survey 인용을 2025년 LF Research 데이터(전체·규모별·지역별 3개 표)로 교체한다. '한국은 아시아태평양 평균(35%)보다 낮을 가능성이 있으나 국가 단독 데이터는 없다'는 유보를 명시한다.",
+      "practicality": "통계표",
+      "effective_dates": [
+        "2025-08 (2025 State of OSPOs 발간)"
+      ],
+      "replaces": "content/en/ospo/_index.md L11, 각주 [^todo-survey]",
+      "sources": [
+        {
+          "title": "The 2025 State of OSPOs and Open Source Management (랜딩)",
+          "url": "https://www.linuxfoundation.org/research/ospo-2025",
+          "kind": "primary"
+        },
+        {
+          "title": "The 2025 State of OSPOs and Open Source Management (원문 PDF, 직접 다운로드·열람)",
+          "url": "https://www.linuxfoundation.org/hubfs/Research%20Reports/LFResearch_StateofOSPO_082825.pdf",
+          "kind": "primary"
+        },
+        {
+          "title": "The 2024 State of OSPOs and Open Source Management",
+          "url": "https://www.linuxfoundation.org/research/ospo-2024",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "OSPO의 보안·생성형 AI 리스크 관리 역할 확대",
+      "claim": "OSPO 보유 조직의 92%가 오픈소스 보안에 관여(42% 의사결정권, 50% 자문)하며, 79%가 생성형 AI 리스크 관리에 효과적이라고 평가했다(2024년 65%에서 상승). OSPO 상위 책무는 정책·프로세스 수립(47%), 라이선스 컴플라이언스 감독(44%), 오픈소스 전략 수립(34%) 순이다. 도입 장벽은 전략 공백(40%), 경영진 지원 부족(35%), ROI 정당화 어려움(35%)이며, 효과는 SW 품질·보안 개선(88%), 개발자 경험 개선(89%)으로 보고됐다.",
+      "detail": "동일 2025 LF Research 보고서(표본 116, OSPO 보유 조직)의 세부 문항이다. 2년 내 OSPO 신규 도입 계획 조직은 15%(2024)에서 45%(2025)로 3배 늘어 향후 확산 속도가 빨라질 가능성을 시사한다.",
+      "confidence": "high",
+      "target_section": "ospo",
+      "applies_to_korean_firms": "OSPO 신설·확장을 계획 중인 기업, 특히 생성형 AI 도입과 오픈소스 거버넌스를 함께 다뤄야 하는 조직",
+      "action_for_firms": "OSPO의 역할 절에 '보안·생성형 AI 리스크 관리'를 4번째 핵심 역할로 추가하고, 도입 장벽(전략 공백·경영진 지원 부족·ROI 입증)을 OSPO 설립 절의 '설득 전략' 부분에 반영한다.",
+      "practicality": "체크리스트",
+      "effective_dates": [
+        "2025-08"
+      ],
+      "replaces": "해당 없음 (신규 보강 통계)",
+      "sources": [
+        {
+          "title": "The 2025 State of OSPOs and Open Source Management (원문 PDF)",
+          "url": "https://www.linuxfoundation.org/hubfs/Research%20Reports/LFResearch_StateofOSPO_082825.pdf",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "TODO Group 가이드·사례 URL 구조 개편 (죽은 링크 4건 + bit.ly 10건)",
+      "claim": "원고가 인용한 todogroup.org/guides/create-program/, /guides/measuring, /guides/management-tools, /guides/participating/ 는 사이트 개편으로 404를 반환한다(create-program/ 직접 확인). 새 경로는 모두 /resources/guides/[전체-슬러그]/ 형태다(예: how-to-create-an-open-source-program-office/, measuring-your-open-source-programs-success/, tools-for-managing-open-source-programs/, participating-in-open-source-communities/). OSPO 기업 사례 10건(Autodesk~Yahoo)의 bit.ly 단축 URL도 /case-studies/[기업]/ 또는 /blog/open-source-case-studies-[기업]/ 형태의 직접 URL로 대체 가능하며, Bloomberg·Comcast(재작성판)·Porsche 등 신규 사례도 추가됐다.",
+      "detail": "01_baseline_reconciliation.json이 이미 발간본에서 Capital One 각주가 Comcast URL로 잘못 붙어 소실된 사실을 지적한 바 있다 — bit.ly 단축 링크의 취약성을 보여주는 실사례다. 새 URL은 목록 페이지(todogroup.org/guides/)에서 직접 확인했다.",
+      "confidence": "high",
+      "target_section": "ospo",
+      "applies_to_korean_firms": "해당 없음(각주 유지보수 항목)",
+      "action_for_firms": "네 개 가이드 각주와 열 개 사례 각주 URL을 모두 갱신한다. bit.ly 대신 todogroup.org 직접 URL을 사용해 향후 링크 소실 위험을 줄인다.",
+      "practicality": "체크리스트",
+      "effective_dates": [],
+      "replaces": "content/en/ospo/_index.md L19, L253-286 / content/en/contributing/_index.md L27",
+      "sources": [
+        {
+          "title": "TODO Group Guides 목록",
+          "url": "https://todogroup.org/guides/",
+          "kind": "primary"
+        },
+        {
+          "title": "Open Source Program Case Studies: Capital One",
+          "url": "https://todogroup.org/blog/open-source-case-studies-capitalone/",
+          "kind": "primary"
+        },
+        {
+          "title": "OSPO Book (신규 통합 자료)",
+          "url": "https://ospobook.todogroup.org/",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "OpenSSF Alpha-Omega — AI 시대 유지관리자 지원 신규 펀딩",
+      "claim": "2026년 3월 17~18일 발표, Anthropic·AWS·GitHub·Google·Google DeepMind·Microsoft·OpenAI가 총 1,250만 달러를 Alpha-Omega·OpenSSF에 출연해, AI가 촉발한 취약점 리포트·PR 급증에 유지관리자가 대응하도록 지원한다. Alpha-Omega는 2025년 한 해 580만 달러를 14개 핵심 프로젝트에 투자하고 60건 이상의 보안 감사·인게이지먼트를 완료했다.",
+      "detail": "이 펀딩은 curl·Electron 등에서 보고된 'AI 슬롭(AI slop)' — AI가 생성한 허위·저품질 취약점 신고·PR 급증 문제에 대한 업계 공동 대응이다. curl은 2026년경 6년간 운영한 버그바운티 프로그램을 AI 생성 허위 신고 부담으로 종료했다는 보도가 있다(2차 출처, 정확한 날짜 미확인).",
+      "confidence": "high",
+      "target_section": "ospo",
+      "applies_to_korean_firms": "핵심 오픈소스 프로젝트에 의존하는 모든 기업 — 후원 대상 프로젝트 목록을 자사 SBOM과 대조해 우선 지원 대상 파악 가능",
+      "action_for_firms": "OSPO 참고자료 절에 Alpha-Omega의 신규 이니셔티브를 추가하고, 자사가 사용하는 핵심 의존성이 후원 대상인지 확인하는 절차를 컴플라이언스 체크리스트에 넣는다.",
+      "practicality": "사례",
+      "effective_dates": [
+        "2026-03-17"
+      ],
+      "replaces": "해당 없음 (신규 프로그램)",
+      "sources": [
+        {
+          "title": "Tech Leaders Invest $12.5M in Open Source Security (OpenSSF 공식 블로그)",
+          "url": "https://openssf.org/blog/2026/03/17/leading-tech-coalition-invests-12-5-million-through-openssf-and-alpha-omega-to-strengthen-open-source-security/",
+          "kind": "primary"
+        },
+        {
+          "title": "AI is burning out the people who keep open source alive",
+          "url": "https://www.coderabbit.ai/blog/ai-is-burning-out-the-people-who-keep-open-source-alive",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "topic": "Open Source Summit Korea 2026 + OpenSSF Community Day Korea (국내 참여 경로)",
+      "claim": "2026년 8월 11~13일 서울 그랜드 인터컨티넨탈 파르나스에서 Open Source Summit Korea가 열리며, OpenSSF Community Day Korea가 동시 개최되어 아시아태평양 오픈소스 보안 커뮤니티가 결집한다. 키노트에 LG AI연구원 CAIO 배경훈, Linux Foundation CEO Jim Zemlin 등이 참여한다.",
+      "detail": "오늘(2026-07-31) 기준 약 2주 앞으로 다가온 행사로, 가이드 독자가 즉시 참여를 검토할 수 있는 시의성 있는 정보다.",
+      "confidence": "high",
+      "target_section": "ospo",
+      "applies_to_korean_firms": "OSPO 담당자, 오픈소스 보안·컴플라이언스 실무자",
+      "action_for_firms": "OSPO 참고자료 절에 '국내 참여 경로'로 이 행사를 등재하고, 매년 갱신 필요성을 명시한다.",
+      "practicality": "체크리스트",
+      "effective_dates": [
+        "2026-08-11 ~ 2026-08-13"
+      ],
+      "replaces": "해당 없음 (신규 이벤트 정보)",
+      "sources": [
+        {
+          "title": "Open Source Summit Korea (공식 행사 페이지)",
+          "url": "https://events.linuxfoundation.org/open-source-summit-korea/",
+          "kind": "primary"
+        },
+        {
+          "title": "OpenSSF Community Day Korea",
+          "url": "https://openssf.org/event/openssf-community-day-korea/",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "OpenChain Korea Work Group — 자체인증 절차 (2026년판 가이드)",
+      "claim": "OpenChain Korea Work Group 산하 Conformance Group이 ISO/IEC 5230(라이선스 컴플라이언스)·ISO/IEC 18974(보안 보증) 자체인증(self-certification) 준비를 지원한다. 2026년판 가이드 기준 두 표준 합산 50개 증빙 항목(각 25개)을 충족하면 자체인증을 진행할 수 있다.",
+      "detail": "원고 ospo 절이 이미 '기업 오픈소스 거버넌스 OpenChain 해설서'를 인용하고 있으나 구체적 증빙 항목 수·자체인증 절차는 없다. OpenChain KWG 사이트에서 2026년판 가이드로 직접 확인했다.",
+      "confidence": "high",
+      "target_section": "ospo",
+      "applies_to_korean_firms": "ISO/IEC 5230·18974 인증을 검토하는 국내 기업",
+      "action_for_firms": "OSPO 컴플라이언스 프로세스 절에 '50개 증빙 항목 자체인증 절차'와 'OpenChain Korea Work Group Conformance Group 참여'를 실행 경로로 명시한다.",
+      "practicality": "체크리스트",
+      "effective_dates": [
+        "2026"
+      ],
+      "replaces": "해당 없음 (절차 상세화)",
+      "sources": [
+        {
+          "title": "[2026] ISO 표준 기반 기업 오픈소스 관리 가이드",
+          "url": "https://openchain-project.github.io/OpenChain-KWG/guide/opensource_for_enterprise/",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "국내 OpenChain ISO/IEC 5230·18974 인증 기업 8곳 (2019~2025)",
+      "claim": "LG전자(2019 취득/2021-02 발표, 국내 최초, 2023-04 ISO/IEC 18974 추가), 카카오(2022-01-24), 카카오뱅크(2022-01-24, 국내 금융 최초·글로벌 2번째), LINE(2023, 다국적 거점 포괄), KT(2023-11-07 ISO/IEC 5230, 2024-10-02 ISO/IEC 18974), 금융결제원(2025-01-20), 한글과컴퓨터(2025-10-31), CJ대한통운(2025-11-05, 국내 물류업 최초)이 OpenChain 국제표준 컴포먼트 인증을 공식 발표했다.",
+      "detail": "모두 openchainproject.org의 공식 발표문(featured/news)으로 1차 확인했다. 산업 분포가 전자·플랫폼·금융·통신·물류·소프트웨어로 다변화되고 있고, 2025년 한 해에만 3건(KFTC·Hancom·CJ Logistics)이 몰려 있어 '2025~2026년 인증 확산기'로 볼 수 있다. 원고 ospo 절이 SK텔레콤 사례 1건만 다루고 있어, 국내 사례 부족 문제를 이 8건으로 해소할 수 있다(체크리스트 요구 '4~5건 이상'을 크게 상회).",
+      "confidence": "high",
+      "target_section": "ospo",
+      "applies_to_korean_firms": "OpenChain 인증을 검토하는 모든 산업의 국내 기업 — 특히 비 IT 업종(물류·금융인프라)도 인증이 가능함을 보여주는 선례",
+      "action_for_firms": "OSPO 절 말미 'SK텔레콤 OSPO' 단일 사례를 8개사 인증 연혁 표로 확장하고, 인증 취득까지 걸린 준비 기간(KT 사례: 약 1년)을 실무 참고치로 제시한다.",
+      "practicality": "사례",
+      "effective_dates": [
+        "2019",
+        "2021-02-08",
+        "2022-01-24",
+        "2023-04-17",
+        "2023-11-07",
+        "2024-10-02",
+        "2025-01-20",
+        "2025-10-31",
+        "2025-11-05"
+      ],
+      "replaces": "content/en/ospo/_index.md L262-289: TODO Group 해외 사례 10건 + SK텔레콤 1건 구조",
+      "sources": [
+        {
+          "title": "LG Announces Conformance To OpenChain 2.1 (ISO/IEC 5230)",
+          "url": "https://openchainproject.org/featured/2021/02/08/lg-openchain-iso-5230",
+          "kind": "primary"
+        },
+        {
+          "title": "LG Electronics Announces OpenChain ISO/IEC DIS 18974 Conformant Program",
+          "url": "https://openchainproject.org/news/2023/04/17/lg-security-assurance",
+          "kind": "primary"
+        },
+        {
+          "title": "Kakao Announces OpenChain Conformant Program",
+          "url": "https://openchainproject.org/featured/2022/01/24/kakao-conformant",
+          "kind": "primary"
+        },
+        {
+          "title": "Kakaobank Announces OpenChain Conformant Program",
+          "url": "https://openchainproject.org/featured/2022/01/24/kakaobank-conformance",
+          "kind": "primary"
+        },
+        {
+          "title": "라인, 오픈소스 국제 표준 인증 'ISO/IEC 5230' 획득 (데이터넷)",
+          "url": "https://www.datanet.co.kr/news/articleView.html?idxno=185008",
+          "kind": "secondary"
+        },
+        {
+          "title": "Korea Telecom (KT) Announces an OpenChain ISO/IEC 5230 Conformant Program",
+          "url": "https://openchainproject.org/featured/2023/11/07/korea-telecom-kt-announces-an-openchain-iso-iec-5230-conformant-program",
+          "kind": "primary"
+        },
+        {
+          "title": "Korea Telecom (KT) Announces an OpenChain ISO/IEC 18974 Conformant Program",
+          "url": "https://openchainproject.org/news/2024/10/02/kt-iso-iec-18974-conformant",
+          "kind": "primary"
+        },
+        {
+          "title": "KFTC Announces an OpenChain ISO/IEC 5230 Conformant Program",
+          "url": "https://openchainproject.org/news/2025/01/20/kftc-5230-conformant",
+          "kind": "primary"
+        },
+        {
+          "title": "Hancom Announces an OpenChain ISO/IEC 5230 Conformant Program",
+          "url": "https://openchainproject.org/news/2025/10/31/hancom-announces-an-openchain-iso-iec-5230-conformant-program",
+          "kind": "primary"
+        },
+        {
+          "title": "CJ Logistics Becomes First in Korean Logistics Industry to Adopt OpenChain ISO/IEC 5230",
+          "url": "https://openchainproject.org/news/2025/11/10/cj-logistics-becomes-first-in-korean-logistics-industry-to-adopt-openchain-iso-iec-5230",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "삼성전자 OSPO 조직 구조 사례",
+      "claim": "삼성전자는 오픈소스 컨트롤타워인 '오픈소스그룹'과, 각 사업부 임원·실무자로 구성된 '오픈소스 협의체'를 함께 운영해 이슈 공유와 의사결정을 수행한다. 2013년부터 Linux Foundation 유일한 한국 이사회 멤버이며 매년 SOSCON(Samsung Open Source Conference)을 개최한다.",
+      "detail": "조직 구조는 공식 자료로 확인되나(opensource.samsung.com), OpenChain 등 국제 컴플라이언스 표준 인증 취득 발표는 이번 조사에서 찾지 못했다 — 조직 존재는 high, 인증 여부는 미확인(low)으로 구분해야 한다.",
+      "confidence": "medium",
+      "target_section": "ospo",
+      "applies_to_korean_firms": "대기업형 다중 사업부 구조를 가진 기업",
+      "action_for_firms": "OSPO 조직 구성 절의 '어느 조직에 OSPO를 둘 것인가' 소절에 '컨트롤타워(그룹) + 사업부 교차 협의체' 2단 구조를 삼성전자 사례로 추가한다.",
+      "practicality": "사례",
+      "effective_dates": [],
+      "replaces": "해당 없음 (신규 사례)",
+      "sources": [
+        {
+          "title": "Samsung Open Source 공식 사이트",
+          "url": "https://opensource.samsung.com/main",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "엔씨소프트 CTO 직속 오픈소스 조직 (미확인 1차 출처)",
+      "claim": "엔씨소프트는 CTO 직속 오픈소스 전담 조직을 통해 사내 오픈소스 가이드라인을 구축하고 사내 사용 중인 모든 오픈소스를 관리한다고 알려져 있다.",
+      "detail": "이 정보는 oss.kr 월간브리핑(WebFetch 403으로 원문 미확인, 검색 스니펫으로만 확인)에서 나왔다. 엔씨소프트 공식 발표·블로그를 직접 찾지 못해 1차 출처 확인에 실패했다.",
+      "confidence": "low",
+      "target_section": "ospo",
+      "applies_to_korean_firms": "게임업계 등 비전통 IT 업종에서 OSPO 조직 배치를 고민하는 기업",
+      "action_for_firms": "citation-fact-verifier 단계에서 엔씨소프트 공식 채널(기술 블로그, GitHub 조직 등)로 재확인 후 본문에 반영할지 결정한다. 그 전까지는 '알려져 있다' 수준의 잠정 서술만 허용한다.",
+      "practicality": "사례",
+      "effective_dates": [],
+      "replaces": "해당 없음 (신규 사례, 미확인)",
+      "sources": [
+        {
+          "title": "[10월 월간브리핑] 국내 기업의 오픈소스 거버넌스 현황 (원문 접근 실패, 검색 스니펫만 확인)",
+          "url": "https://www.oss.kr/oss_guide/show/f1647ef1-2330-4e00-b195-8beae0294958",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "topic": "현대자동차그룹 — 자동차 공급망 오픈소스 거버넌스 지원",
+      "claim": "현대차·기아·현대모비스·현대오토에버가 2023년 11월 8일 NIPA와 업무협약을 체결해, 자동차 부품 중소·중견기업 대상 오픈소스 기술 솔루션맵 구축, 컴플라이언스·SW 안전진단 지원, 저작권법 위반 리스크 예방을 위한 라이선스 검증 지원을 추진한다.",
+      "detail": "ZDNet Korea·디지털데일리 두 매체가 2023-11-08 동일 협약을 보도해 교차 확인했다. 완성차 기업이 자사 컴플라이언스뿐 아니라 하위 부품 공급망의 오픈소스 거버넌스까지 지원하는 '대·중·소 상생형' 모델로, 원고의 '하위 공급망 보안 관리' 절과 직접 연결된다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "완성차·대기업의 1차/2차 협력사 구조를 가진 제조업 전반",
+      "action_for_firms": "하위 공급망 보안 관리 절에 이 MOU를 '대기업 주도 공급망 컴플라이언스 지원' 모범 사례로 추가한다.",
+      "practicality": "사례",
+      "effective_dates": [
+        "2023-11-08"
+      ],
+      "replaces": "해당 없음 (신규 사례)",
+      "sources": [
+        {
+          "title": "NIPA, 현대차그룹과 오픈소스 기반 디지털 전환 협력 (ZDNet Korea)",
+          "url": "https://zdnet.co.kr/view/?no=20231108213941",
+          "kind": "secondary"
+        },
+        {
+          "title": "NIPA-현대차그룹, 손잡고 오픈소스 SW 기반 디지털 전환 추진 (디지털데일리)",
+          "url": "https://m.ddaily.co.kr/page/view/2023110812572549285",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "topic": "AI 시대 오픈소스 기여 방식 변화 — 유지관리자 부담 증가",
+      "claim": "AI 코딩 도구 확산으로 오픈소스 프로젝트에 AI 생성 PR·취약점 신고가 급증해 유지관리자 부담이 커지고 있다. Electron 유지관리자는 2025년 제안 건수가 2배로 늘었고 상당수가 AI 생성 노이즈라고 보고했다. Ghostty는 저품질 AI 생성 기여를 금지하는 무관용 정책을, tldraw는 외부 PR 자동 종료 정책을 도입했다.",
+      "detail": "OSSRA 2026이 이 문제를 정량화했다: AI 생성 코드를 보안 관점에서 검토하는 조직 76%, IP/라이선스 관점 54%, 둘 다 포괄적으로 검토하는 조직은 24%뿐이다. curl의 6년 버그바운티 프로그램 종료 관련 보도, '800명 대상 67% 부담' 통계는 1차 출처를 확인하지 못해 findings에서 제외하고 checklist_unconfirmed로 남긴다.",
+      "confidence": "medium",
+      "target_section": "contributing",
+      "applies_to_korean_firms": "오픈소스 프로젝트에 기여하거나 사내 AI 코딩 도구를 운영하는 모든 기업",
+      "action_for_firms": "기여 정책에 'AI 생성 코드로 외부 프로젝트에 기여할 때 프로젝트별 AI 기여 정책(Ghostty·tldraw류)을 사전에 확인하라'는 항목을 추가한다.",
+      "practicality": "체크리스트",
+      "effective_dates": [],
+      "replaces": "해당 없음 (신규 맥락)",
+      "sources": [
+        {
+          "title": "AI is burning out the people who keep open source alive (CodeRabbit)",
+          "url": "https://www.coderabbit.ai/blog/ai-is-burning-out-the-people-who-keep-open-source-alive",
+          "kind": "secondary"
+        },
+        {
+          "title": "Black Duck 2026 OSSRA 보도자료 (AI 코드 검토율)",
+          "url": "https://news.blackduck.com/2026-02-25-Black-Duck-Research-Shows-Open-Source-Vulnerabilities-Have-Doubled-as-AI-Accelerates-Code-Creation",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "Tidelift 2024 유지관리자 설문 — 최신판, 후속판 미확인",
+      "claim": "Tidelift의 3번째 유지관리자 설문(2024년 중반 실시, 400명 이상 응답)에 따르면 유지관리자의 60%가 무보수로 활동하며, 보수를 받는 유지관리자는 보안·유지보수 모범관행을 55% 더 많이 이행한다. AI 도구는 젊은 유지관리자일수록 더 많이 사용하며, 유지관리자들이 꼽은 AI 활용 유망 분야는 문서화·이슈 트리아지·코드 리뷰·의존성 관리다.",
+      "detail": "2024-09 발간이 확인된 마지막 판이며, 2025~2026년 후속판은 검색으로 확인하지 못했다(시리즈 일시 중단 가능성).",
+      "confidence": "medium",
+      "target_section": "contributing",
+      "applies_to_korean_firms": "오픈소스 프로젝트를 후원하거나 사내 유지관리자를 지원하는 기업",
+      "action_for_firms": "기여 절의 '유지관리자 지속가능성' 소절에 '보수 지급이 보안 관행 이행률을 55% 높인다'는 근거로 기업의 유지관리자 후원 전략을 정당화한다.",
+      "practicality": "통계표",
+      "effective_dates": [
+        "2024-09"
+      ],
+      "replaces": "해당 없음 (신규 통계)",
+      "sources": [
+        {
+          "title": "2024 Tidelift state of the open source maintainer report (PDF)",
+          "url": "https://assets-eu-01.kc-usercontent.com/ef593040-b591-0198-9506-ed88b30bc023/d325a56f-05be-4379-bfd1-ee4776fcad41/2024-tidelift-state-of-the-open-source-maintainer-report-.pdf",
+          "kind": "primary"
+        },
+        {
+          "title": "Tidelift Study Reveals Paid Open Source Maintainers Do Significantly More Critical Security and Maintenance Work",
+          "url": "https://www.businesswire.com/news/home/20240917030299/en/Tidelift-Study-Reveals-Paid-Open-Source-Maintainers-Do-Significantly-More-Critical-Security-and-Maintenance-Work-Than-Unpaid-Maintainers",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "topic": "Linux Foundation Open Source Jobs Report — 시리즈 중단 추정",
+      "claim": "원고가 인용한 '2020 Open Source Jobs Report'는 edX와 공동 발간한 2021년 9회차(2021년판)를 끝으로 후속판을 확인하지 못했다.",
+      "detail": "확실한 후속 시리즈나 대체 자료를 특정하지 못했다 — 시리즈 중단으로 잠정 분류하되, 명확한 폐간 공지는 찾지 못했으므로 낮은 확신도로 남긴다.",
+      "confidence": "low",
+      "target_section": "using",
+      "applies_to_korean_firms": "오픈소스 인재 채용·역량 강화 전략을 세우는 기업",
+      "action_for_firms": "해당 각주를 유지할 경우 '2021년 최종판(edX 공동)' 임을 명시하고, 대체 자료(예: Stack Overflow Developer Survey, GitHub Octoverse의 개발자 통계)로 교체를 검토한다.",
+      "practicality": "판단기준표",
+      "effective_dates": [],
+      "replaces": "content/en/using/_index.md L106-108, 각주 [^training-resource]",
+      "sources": [
+        {
+          "title": "9th Annual Open Source Jobs Report (2021, 확인된 마지막판)",
+          "url": "https://www.linuxfoundation.org/research/the-2021-open-source-jobs-report",
+          "kind": "primary"
+        }
+      ]
+    }
+  ],
+  "checklist_unconfirmed": [
+    "국내 기업 단독 OSPO 보유율(%) — LF Research 2025 보고서는 아시아태평양 지역 집계(35%)만 제공하며, 한국을 별도로 분리한 수치는 확인하지 못했다.",
+    "2024년 오픈소스SW 실태조사(전체 82.7%, 비SW업종 67.3%+11.1%p)의 원문 PDF — 발행 주체(NIPA) 공식 페이지가 WebFetch·curl 모두에서 403/404를 반환해 접근하지 못했고, oss.kr 뉴스레터 요약(검색 스니펫)으로만 확인했다. 2023년판(69%)에서 82.7%로의 급상승이 표본·측정 방식 변경 때문인지 불명확하다.",
+    "2025년 또는 2026년 발간 NIPA 실태조사(2024/2025년 데이터) 존재 여부 — 검색으로 확인하지 못했다.",
+    "GII Korea(Global Info Research) '세계의 오픈 소스 서비스 시장 보고서(2024)'의 원문 방법론 — paywall로 접근하지 못해 Future Market Insights 수치(CAGR 18.3%)와의 괴리(24.3%)를 해소하지 못했다.",
+    "Perforce/OpenLogic 2026 State of Open Source Report의 정확한 표본 규모·응답자 직군/지역 분포·조사 시점 — 보도자료·블로그 모두 미기재, 전체 PDF는 이메일 등록이 필요해 접근하지 못했다.",
+    "'2025년 OSS 유지관리자 설문 800명, 67% AI PR 부담' 통계의 1차 발행 기관 — 2차 블로그(blog.vibecoder.me)에서만 인용되고 조사 기관명이 명시되지 않아 findings에서 제외했다.",
+    "삼성전자·엔씨소프트의 OpenChain ISO/IEC 5230(또는 18974) 인증 취득 여부 — openchainproject.org 공식 발표 목록에서 두 회사명을 확인하지 못했다(미인증이거나, 발표를 하지 않았거나 둘 다 가능하며 구분되지 않는다).",
+    "국내 AI 시대 오픈소스 기여 변화에 대한 국내(한국어) 통계 — Octoverse·OSSRA 등 해외 통계는 확보했으나 국내 개발자·기업 대상의 별도 조사는 찾지 못했다."
+  ],
+  "stale_items": [
+    {
+      "quote": "content/en/intro/_index.md L16: \"[2024년 \\\"Open Source Security and Risk Analysis\\\" (OSSRA) 보고서]에 따르면, 감사된 코드베이스의 53%가 라이선스 충돌을 포함한 오픈소스를 포함하고 있어 이에 대한 주의가 필요하다.\"",
+      "reason": "OSSRA는 이후 2025년판(56%)과 2026년판(68%, 역대 최고치, AI 시대를 부제로 명시)을 발간했다. 53%는 2개 판 뒤처져 현재 위험도를 15%p 과소평가한다.",
+      "suggested_fix": "68%(2026년판)로 교체하고 53%→56%→68% 3개년 추세를 함께 제시. 2026년판의 AI 생성 코드 검토율(보안 76%/IP 54%/포괄 24%) 통계를 병기해 AI 시대 맥락을 추가."
+    },
+    {
+      "quote": "content/en/using/_index.md L13: \"Perforce Software의 2024 State of Open Source Report에 따르면, 2023년 기업의 95%가 오픈소스 사용을 유지하거나 증가시켰으며, 33%는 사용이 크게 증가했다고 응답했다.\"",
+      "reason": "2025년판(96%)과 2026년판(98%, 감소 2% 미만)이 이미 발간되어 2개 판 뒤처졌다. 또한 '비용 절감' 중심 서사가 2026년판에서 '벤더 락인 회피·디지털 자주권' 중심으로 이동했다.",
+      "suggested_fix": "98%(2026년판)로 교체, 3개년 추세(95%→96%→98%) 제시. 도입 이유에 벤더 락인 회피(55%, 전년 대비 68%↑)를 비용 절감과 병기."
+    },
+    {
+      "quote": "content/en/using/_index.md L19: \"RedHat의 2022 오픈소스 Enterprise 현황 보고서에 따르면, 향후 2년 동안 독점 소프트웨어 사용이 현재 45%에서 37%로 8% 줄어들 것으로 전망되며...\"",
+      "reason": "이 시리즈는 2022년판(4번째, 마지막판)을 끝으로 중단됐다. '향후 2년'이라는 예측 시한(2024년)이 이미 지났고 사후 검증판이 없어 이 전망이 실현됐는지 확인할 방법이 없다. 후속 'Global Tech Trends' 시리즈는 오픈소스 대 독점SW 비중을 더 이상 다루지 않는다.",
+      "suggested_fix": "전망 문장을 삭제하거나 '2022년 시점 전망(검증 안 됨)'으로 명시. Perforce 2026년판의 벤더 락인 회피 통계로 대체 권장."
+    },
+    {
+      "quote": "content/en/using/_index.md L69: \"NIPA의 2024년 오픈소스SW 가이드에 따르면, 2022년 국내 오픈소스SW 시장규모는 2021년 대비 11.4% 성장한 3,380억 원을 기록했다. 또한, 국내 기업의 오픈소스SW 활용률은 2021년 대비 5.8%p 증가한 67.3%에 달하며...\"",
+      "reason": "NIPA는 이후 2023년 데이터 기준 실태조사(2024-06 발간: 시장규모 3,835억 원, 활용률 69%)를 발표했다. 단일 연도(2022년) 수치만 남아 있어 4개년(2020~2023) 추세를 놓치고 있다.",
+      "suggested_fix": "2020~2023년 4개년 시장규모·활용률 추세표로 교체(원문 PDF는 접근 불가해 전자신문 보도로 확인, confidence medium 명시). 2024년판(82.7%) 존재 가능성은 미확인으로 별도 각주 처리."
+    },
+    {
+      "quote": "content/en/using/_index.md L36: \"Future Market Insights의 2024년 보고서에 따르면, 한국의 오픈소스 서비스 시장은 2024년부터 2034년까지 연평균 성장률(CAGR) 18.3%로 성장할 것으로 예측되며...\"",
+      "reason": "같은 벤더가 예측 창을 2025~2035로 갱신했고(수치 18.3%는 동일), 같은 절 뒤쪽(L709)에서 인용하는 GII Korea 수치(글로벌 CAGR 24.3%)와 성장률 가정이 상충하는데 원고가 이를 조정하지 않고 병렬 서술한다.",
+      "suggested_fix": "예측 창을 2025~2035로 갱신하고, GII Korea 수치와의 상충을 각주로 명시(양쪽 다 paywall로 원문 미확인)하거나 NIPA 국내 통계를 1차 근거로 승격."
+    },
+    {
+      "quote": "content/en/ospo/_index.md L11: \"IT, 가전, 금융 및 통신 분야에서의 50% 이상 기업이 OSPO를 만들었거나 만들 예정이라는 조사 결과도 있다\" (각주: TODO Group survey, 2019)",
+      "reason": "7년 전 조사다. Linux Foundation Research가 2022~2025년 매년 후속판을 발간했고, 최신(2025년)판은 정식 OSPO 보유율이 30%→43%→26%→32%로 등락하며 기업 규모·지역에 따라 크게 갈린다는 훨씬 정교한 그림을 제공한다.",
+      "suggested_fix": "2025 LF Research 데이터(전체 추세 + 규모별 + 지역별 3개 표)로 전면 교체. 아시아태평양이 전 지역 중 최저(35%)라는 사실을 포함."
+    },
+    {
+      "quote": "content/en/ospo/_index.md L253-259 (TODO Group 가이드 3종 각주)와 L277-286 (OSPO 기업 사례 10건 bit.ly 각주)",
+      "reason": "todogroup.org 사이트 개편으로 /guides/ 하위 경로가 /resources/guides/[전체-슬러그]/ 로 바뀌어 원 URL이 404를 반환한다(create-program/ 직접 확인). bit.ly 단축 URL은 이미 발간본에서 Capital One 각주가 Comcast URL로 잘못 연결되는 사고가 있었던 취약한 형식이다.",
+      "suggested_fix": "가이드 3종과 사례 10건의 URL을 모두 todogroup.org 직접 경로로 교체. Bloomberg·Porsche 등 신규 사례 추가와 OSPO Book(ospobook.todogroup.org) 소개도 함께 검토."
+    },
+    {
+      "quote": "content/en/using/_index.md L106-108: \"오픈소스 역량을 가진 오픈소스 전문가 고용을 고려한다는 인사담당자가 늘어 가는 추세이다\" (각주: 2020 Open Source Jobs Report)",
+      "reason": "이 시리즈는 2021년(9회차, edX 공동) 이후 후속판을 확인하지 못했다. 6년 전 자료를 '늘어 가는 추세'라는 현재형 서술의 근거로 쓰고 있어 시효 문제가 있다.",
+      "suggested_fix": "'2021년 최종판(edX 공동)' 임을 명시하거나, GitHub Octoverse 2025의 개발자·기여자 증가 통계로 대체."
+    },
+    {
+      "quote": "content/en/using/_index.md L1128 각주: \"[^github-octoverse]: GitHub Octoverse (2021)\"",
+      "reason": "4개 판(2022~2025) 뒤처져 있으며, 2025년판은 AI가 주도한 개발자 급증·언어 순위 변화 등 완전히 다른 그림을 보여준다.",
+      "suggested_fix": "Octoverse 2025(기여 11.2억 건 +13%, 신규 개발자 3,600만 명 +23%, LLM SDK 저장소 +178%)로 교체."
+    },
+    {
+      "quote": "content/en/using/_index.md L713 [^sonatype2024]와 L1168 [^sonatype-report] — 같은 보고서 시리즈를 2024년판과 2021년판으로 각각 다르게 인용",
+      "reason": "동일 절 안에서 같은 시리즈의 서로 다른 두 판을 각주 라벨만 다르게 중복 인용해 내적 일관성이 없다. 둘 다 2026년판(9.8조 건, +67%)보다 오래됐다.",
+      "suggested_fix": "두 각주를 2026년판 하나로 통합."
+    },
+    {
+      "quote": "content/en/using/_index.md L42: \"DataReportal의 Digital 2024: South Korea 보고서에 따르면, 2024년 1월 기준 한국의 인터넷 사용자 수는 5,030만 명으로, 이는 전체 인구의 97.2%에 해당한다.\"",
+      "reason": "Digital 2026판이 발간되어(5,060만 명, 97.9%) 수치가 갱신됐다. 오픈소스와 직접 관련은 낮으나 원고에 남은 절대 연도 표기라 갱신 대상이다.",
+      "suggested_fix": "5,060만 명·97.9%(Digital 2026)로 교체."
+    }
+  ],
+  "extra": {
+    "workspace_file": "/Users/robin/IdeaProjects/oss-governance-guide/_workspace/02_research_market.json",
+    "note": "extra.stats/cases/programs/url_migrations/open_questions/removals 전체 구조는 워크스페이스 JSON 파일에 저장되어 있으며, 위 findings 배열은 그 내용을 모두 정규화해 포함한다. 표를 그대로 보려면 워크스페이스 파일을 참고할 것.",
+    "stats_count": 17,
+    "cases_count": 11,
+    "programs_count": 4
+  }
+}

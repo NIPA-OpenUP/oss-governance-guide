@@ -1,0 +1,132 @@
+[
+ {
+  "line": 68,
+  "quote": "FSF는 별도로 'free machine learning application' 기준을 준비 중이며 학습 데이터와 그 처리 스크립트까지 자유 소프트웨어여야 한다는 더 엄격한 입장이다.",
+  "kind": "no_source",
+  "severity": "major",
+  "reason": "이 문단에서 SFC 문장에는 [^ai-sfc-osaid], Debian 문장에는 [^ai-debian-osaid]가 붙어 있으나 FSF 문장에만 각주가 없다. 'FSF가 기준을 준비 중이다'는 진행 상태에 대한 사실 주장이고 시점 의존적이어서(2026-08 기준 발표 여부가 바뀌었을 수 있다) 출처 없이 단정할 수 없다. 근거 리서치(02_research_ai.json findings[1])도 FSF 관련 1차 출처를 제시하지 않으며 SFC·Debian·LWN 3건만 있다. '세 진영의 비판'이라는 이 소절의 뼈대 가운데 한 진영이 무출처다.",
+  "suggested_fix": "FSF 문장에 1차 출처(FSF 성명 또는 LWN 보도) 각주를 달거나, 확인되지 않으면 문장을 'FSF는 학습 데이터와 그 처리 스크립트까지 자유 소프트웨어여야 한다는 더 엄격한 입장으로 알려져 있으나, 2026-08 기준 확정 공개된 기준 문서는 확인되지 않았다.'로 바꾸고 <!-- NEEDS-EVIDENCE: FSF의 free machine learning application 기준 문서 공개 여부 --> 주석을 단다.",
+  "checked_url": "https://sfconservancy.org/blog/2024/oct/31/open-source-ai-definition-osaid-erodes-foss/",
+  "lens": "support"
+ },
+ {
+  "line": 68,
+  "quote": "Debian 진영은 OSAID-1.0-RC2 단계에서 데이터 정보만 요구하면 오픈소스 AI가 원본 학습 데이터를 감출 수 있게 된다는 반대 의견을 메일링 리스트로 제출했다[^ai-debian-osaid].",
+  "kind": "overstated",
+  "severity": "minor",
+  "reason": "각주 URL을 열어 확인한 결과 이 글은 2024-10-26 Mo Zhou(lumin@debian.org) 개인이 debian-project 리스트에 올린 게시물이며, 본문 자체가 '데이터셋 관련 DFSG 해석에 대해 Debian이 General Resolution 등으로 합의를 만들어야 한다'고 제안한다 — 즉 프로젝트 차원의 확정 입장이 아직 없다는 것을 그 글이 스스로 밝힌다. 'Debian 진영은 ... 제출했다'는 개인 의견을 프로젝트 입장으로 올려 읽게 만들고, 앞 문장의 '세 진영의 비판'이라는 구도를 실제보다 강하게 만든다.",
+  "suggested_fix": "Debian에서는 개발자 Mo Zhou가 OSAID-1.0-RC2 단계에서 데이터 정보만 요구하면 오픈소스 AI가 원본 학습 데이터를 감출 수 있게 된다는 반대 의견을 debian-project 메일링 리스트에 제출하고, 이 문제에 대한 프로젝트 차원의 합의 절차를 제안했다[^ai-debian-osaid].",
+  "checked_url": "https://lists.debian.org/debian-project/2024/10/msg00005.html",
+  "lens": "support"
+ },
+ {
+  "line": 81,
+  "quote": "| 데이터 공개 오픈소스 AI | 배포 코드와 학습 코드, 경우에 따라 전체 학습 데이터까지 오픈소스SW 라이선스로 무상 공개 | 없음 | (근거 문서에 분류 사례 없음) |",
+  "kind": "misquoted_clause",
+  "severity": "critical",
+  "reason": "G7 원문 PDF를 내려받아 대조했다(3쪽 TYPOLOGY). 1등급 원문은 'Open Source AI with Open Data is AI released free of charge under an Open Source license, including its models' weights, deployment code, training code, and full training data.'로, 전체 학습 데이터 공개가 '경우에 따라'가 아니라 무조건 요건이다. '경우에 따라(possibly)'와 데이터 정보 대체는 2등급(Open Source AI) 정의에만 붙는 문구다. 초안대로면 1등급과 2등급의 유일한 구분선인 '전체 학습 데이터 공개'가 사라져, 데이터 정보만 제공한 모델을 최상위 등급으로 표기하는 open washing이 사내 대장에서 그대로 승인된다. 또한 1·2등급 모두 원문에 있는 'models' weights'가 초안 공개 범위에서 빠져 있어, 가중치 미공개 모델도 이 칸에 들어갈 수 있다.",
+  "suggested_fix": "| 데이터 공개 오픈소스 AI | 가중치·배포 코드·학습 코드·전체 학습 데이터를 모두 오픈소스SW 라이선스로 무상 공개 | 없음 | (근거 문서에 분류 사례 없음) |\n| 오픈소스 AI | 가중치·배포 코드·학습 코드를 무상 공개하고 학습 데이터도 전체 공개가 원칙이나, 법적·기술적으로 공유가 불가능한 경우에 한해 그 데이터에 관한 데이터 정보로 대체 | 없음 | (근거 문서에 분류 사례 없음) |",
+  "checked_url": "https://www.entreprises.gouv.fr/files/files/Actualites/2026/g7/vision-AI-openness-opportunities-and-shared-language.pdf",
+  "lens": "support"
+ },
+ {
+  "line": 171,
+  "quote": "'You shall not supply the Mistral Models, Derivatives, or Outputs in the course of a commercial activity, whether in return for payment or free of charge, in any medium or form, including but not limited to through a hosted or managed service (e.g. SaaS, cloud instances, etc.), or behind a software layer.'",
+  "kind": "misquoted_clause",
+  "severity": "critical",
+  "reason": "MNPL-0.1 원문(https://mistral.ai/licenses/MNPL-0.1.md)을 내려받아 문자열 대조했다. 제3.2조 원문은 'Subject to the foregoing, You shall not supply the Mistral Models or Derivatives in the course of a commercial activity, ...'이며 인용문에 삽입된 ', or Outputs'가 원문에 없다. 이 삽입은 의미를 정반대로 뒤집는다 — 같은 라이선스 제4.2조는 'We claim no ownership rights in and to the Outputs.'라고 명시해 출력물을 금지 대상에서 빼 두었다. 초안대로 읽으면 비프로덕션 환경에서 만든 출력물조차 상업적으로 공급할 수 없다는 결론이 나와, 법무 검토와 PoC 판단을 과도하게 제약한다.",
+  "suggested_fix": "- 'You shall not supply the Mistral Models or Derivatives in the course of a commercial activity, whether in return for payment or free of charge, in any medium or form, including but not limited to through a hosted or managed service (e.g. SaaS, cloud instances, etc.), or behind a software layer.'(제3.2조) 다만 제4.2조는 'We claim no ownership rights in and to the Outputs.'로 출력물의 소유권을 주장하지 않는다.",
+  "checked_url": "https://mistral.ai/licenses/MNPL-0.1.md",
+  "lens": "support"
+ },
+ {
+  "line": 171,
+  "quote": "'You shall not supply the Mistral Models, Derivatives, or Outputs in the course of a commercial activity, whether in return for payment or free of charge, in any medium or form, including but not limited to through a hosted or managed service (e.g. SaaS, cloud instances, etc.), or behind a software layer.'",
+  "kind": "misquoted_clause",
+  "severity": "critical",
+  "reason": "각주 [^ai-mnpl]의 원문(https://mistral.ai/licenses/MNPL-0.1.md, 2026-08-01 직접 내려받아 대조)의 제3.2조 두 번째 불릿은 'Subject to the foregoing, You shall not supply the Mistral Models or Derivatives in the course of a commercial activity, ...'다. 초안은 (1) 선행 한정구 'Subject to the foregoing,'을 삭제했고 (2) 원문에 없는 'Outputs'를 금지 대상에 추가했다. 같은 라이선스의 정의 조항은 'For the avoidance of doubt, Outputs are not considered as Derivatives under this Agreement'라고 하고 제4.2조는 'We claim no ownership rights in and to the Outputs'라고 하므로, 'Outputs'를 넣은 인용은 원문과 반대 방향의 의미가 된다. 실무상 'MNPL 모델의 출력물을 상업적으로 제공하는 것도 금지'라는 잘못된 판단을 유발한다.",
+  "checked_url": "https://mistral.ai/licenses/MNPL-0.1.md",
+  "suggested_fix": "- 'Subject to the foregoing, You shall not supply the Mistral Models or Derivatives in the course of a commercial activity, whether in return for payment or free of charge, in any medium or form, including but not limited to through a hosted or managed service (e.g. SaaS, cloud instances, etc.), or behind a software layer.' (제3.2조) — 다만 같은 라이선스는 'Outputs are not considered as Derivatives'(정의 조항)와 'We claim no ownership rights in and to the Outputs'(제4.2조)를 함께 두므로, 출력물 자체의 취급은 이 금지 조항과 구분해 판단한다.",
+  "lens": "timing"
+ },
+ {
+  "line": 192,
+  "quote": "OpenMDW는 Linux Foundation이 2026-05-28 OpenMDW-1.1을 공개했고, NVIDIA가 Cosmos·Isaac GR00T·Ising·Nemotron 모델군에 채택했다고 발표했다[^ai-openmdw-lf].",
+  "kind": "overstated",
+  "severity": "major",
+  "reason": "각주의 Linux Foundation 보도자료(2026-05-28, 날짜는 일치 확인)는 'NVIDIA plans to adopt the license framework across future releases of its Cosmos, Isaac GR00T, Ising, and Nemotron open model families'라고 향후 릴리스에 채택할 계획으로 서술한다. 초안은 이를 완료된 사실('채택했다')로 바꿔 시점을 앞당겼다. 독자가 현재 배포 중인 Cosmos·Nemotron 가중치가 이미 OpenMDW로 배포된다고 오해하면 실제 라이선스(현재 NVIDIA Open Model License 등) 확인을 건너뛰게 되어 반입 심사에 공백이 생긴다.",
+  "checked_url": "https://www.linuxfoundation.org/press/linux-foundation-releases-openmdw-1.1-nvidia-adopts-openmdw-for-cosmos-isaac-gr00t-ising-and-nemotron-ai-model-families",
+  "suggested_fix": "\"OpenMDW는 Linux Foundation이 2026-05-28 OpenMDW-1.1을 공개했고, NVIDIA는 Cosmos·Isaac GR00T·Ising·Nemotron 모델군의 향후 릴리스에 이 라이선스를 채택할 계획이라고 밝혔다 — 개별 모델의 현재 적용 라이선스는 배포 시점마다 따로 확인한다[^ai-openmdw-lf].\"",
+  "lens": "numbers"
+ },
+ {
+  "line": 192,
+  "quote": "OpenMDW는 Linux Foundation이 2026-05-28 OpenMDW-1.1을 공개했고, NVIDIA가 Cosmos·Isaac GR00T·Ising·Nemotron 모델군에 채택했다고 발표했다[^ai-openmdw-lf].",
+  "kind": "overstated",
+  "severity": "minor",
+  "reason": "보도자료 원문(2026-05-28)은 완료가 아니라 예정으로 쓴다 — 'NVIDIA will adopt OpenMDW-1.1 across future releases of Cosmos, Isaac GR00T, Ising, and Nemotron open model families.' 초안의 '채택했다'는 현재 배포 중인 해당 모델군이 이미 OpenMDW-1.1이라는 뜻으로 읽혀, 반입 실사에서 개별 모델의 실제 라이선스 확인을 건너뛰게 만들 수 있다.",
+  "suggested_fix": "OpenMDW는 Linux Foundation이 2026-05-28 OpenMDW-1.1을 공개했고, NVIDIA가 Cosmos·Isaac GR00T·Ising·Nemotron 모델군의 '향후 릴리스'부터 채택하겠다고 발표했다(현재 배포본의 적용 여부는 모델별로 확인한다)[^ai-openmdw-lf].",
+  "checked_url": "https://www.linuxfoundation.org/press/linux-foundation-releases-openmdw-1.1-nvidia-adopts-openmdw-for-cosmos-isaac-gr00t-ising-and-nemotron-ai-model-families",
+  "lens": "support"
+ },
+ {
+  "line": 192,
+  "quote": "SPDX License List 3.28.0에는 OpenMDW-1.0 식별자가 등재되어 있다[^ai-spdx-list].",
+  "kind": "stale_timing",
+  "severity": "minor",
+  "reason": "spdx.org/licenses를 확인한 결과 2026-08-01 현재 최신판은 3.28.0(2026-02-20)이 맞고 등재 식별자는 OpenMDW-1.0뿐이며 OpenMDW-1.1은 없다. 즉 본문이 권장 선택지로 제시한 OpenMDW-1.1(2026-05-28 공개, LF 보도자료로 확인)은 SPDX 표준 식별자가 아직 없다 — 최신 리스트가 1.1 공개보다 3개월 앞선 판이기 때문이다. 초안은 '3.28.0에 OpenMDW-1.0이 등재'라고만 써서, OpenMDW-1.1을 채택한 조직이 SBOM에 표준 식별자를 넣을 수 있다고 오해할 수 있다.",
+  "checked_url": "https://spdx.org/licenses/",
+  "suggested_fix": "OpenMDW는 Linux Foundation이 2026-05-28 OpenMDW-1.1을 공개했고, NVIDIA가 Cosmos·Isaac GR00T·Ising·Nemotron 모델군에 채택했다고 발표했다[^ai-openmdw-lf]. SPDX License List 최신판 3.28.0(2026-02-20)에는 OpenMDW-1.0만 등재되어 있어 1.1에는 아직 표준 식별자가 없다 — SBOM에는 LicenseRef- 형태로 기록하고 라이선스 원문을 첨부한다[^ai-spdx-list].",
+  "lens": "timing"
+ },
+ {
+  "line": 248,
+  "quote": "#### 모델 라이선스와 데이터셋 라이선스는 별개다 — 누락률 70%, 오류율 50%",
+  "kind": "wrong_number",
+  "severity": "minor",
+  "reason": "원 논문(Data Provenance Initiative, arXiv 2310.16787 / Nature Machine Intelligence 2024-08)의 수치는 'licence omission rates of more than 70% and error rates of more than 50%'로 하한값이다. 본문 L250은 'more than'을 그대로 인용했으나 헤딩은 '이상'을 떨어뜨려 점추정치로 읽힌다. 헤딩은 목차와 앵커 텍스트로 반복 노출되므로 '70%'가 상한처럼 인용될 위험이 있다.",
+  "checked_url": "https://arxiv.org/abs/2310.16787",
+  "suggested_fix": "\"#### 모델 라이선스와 데이터셋 라이선스는 별개다 — 누락률 70% 이상, 오류율 50% 이상\" (본문 내 앵커 링크 텍스트도 함께 수정)",
+  "lens": "numbers"
+ },
+ {
+  "line": 248,
+  "quote": "#### 모델 라이선스와 데이터셋 라이선스는 별개다 — 누락률 70%, 오류율 50%",
+  "kind": "wrong_number",
+  "severity": "minor",
+  "reason": "Nature Machine Intelligence 원문 초록은 'licence omission rates of more than 70% and error rates of more than 50%'로 둘 다 '이상' 값이다(본문 250행은 '이상'을 살려 정확히 인용했다). 헤딩만 '이상'이 떨어져 정확한 관측치처럼 읽히며, 헤딩은 목차·앵커·인용에 그대로 복제되므로 수치가 확정값으로 유통된다.",
+  "suggested_fix": "#### 모델 라이선스와 데이터셋 라이선스는 별개다 — 누락률 70% 이상, 오류율 50% 이상",
+  "checked_url": "https://www.nature.com/articles/s42256-024-00878-8",
+  "lens": "support"
+ },
+ {
+  "line": 276,
+  "quote": "The Stack v2는 600개 이상의 언어, 67.5TB 규모로 '허용적 라이선스 또는 라이선스 없음' 코드를 수집한다[^ai-bigcode-stack].",
+  "kind": "content_mismatch",
+  "severity": "major",
+  "reason": "각주 [^ai-bigcode-stack](bigcode-project.org/docs/about/the-stack/)는 열리지만 그 페이지에는 The Stack v1.0/v1.1/v1.2만 기술되어 있고 v2가 없다. 페이지의 실제 수치는 'the list of programming languages was increased from 30 to 358 languages', 'The resulting near-deduplicated dataset is 6TB in size'로, 초안의 '600개 이상'·'67.5TB'와 자릿수가 다르다. 또 이 페이지는 허용적 라이선스 코드만 수집한다고 서술해 초안의 '또는 라이선스 없음'과도 어긋난다. 수치 자체는 Hugging Face bigcode/the-stack-v2 데이터셋 카드에서 확인된다(658 languages, full 67.53TB, 'all files contained in the dataset are licensed with one of the permissive licenses...or no license'). 즉 숫자는 맞고 출처가 틀렸다.",
+  "checked_url": "https://www.bigcode-project.org/docs/about/the-stack/",
+  "suggested_fix": "각주를 v2 1차 출처로 교체한다: \"[^ai-bigcode-stack]: BigCode, The Stack v2 데이터셋 카드(658개 언어, full 67.53TB, '허용적 라이선스 또는 라이선스 없음') : https://huggingface.co/datasets/bigcode/the-stack-v2\""
+ },
+ {
+  "line": 276,
+  "quote": "The Stack v2는 600개 이상의 언어, 67.5TB 규모로 '허용적 라이선스 또는 라이선스 없음' 코드를 수집한다[^ai-bigcode-stack].",
+  "kind": "content_mismatch",
+  "severity": "major",
+  "reason": "각주 URL(bigcode-project.org/docs/about/the-stack/)을 열어 확인했다. 이 페이지는 The Stack v1.0/v1.1/v1.2만 다루며 릴리스 표에 '6TB', '358 languages'가 적혀 있다. v2의 '67.5TB', '600개 이상 언어'는 이 페이지에 없고, 페이지의 수집 기준도 'we selected source code with permissive licenses'로 '허용적 라이선스 또는 라이선스 없음'과 다르다(v1은 허용적 라이선스만, '라이선스 없음' 포함은 v2 정책이다). 즉 링크는 살아 있으나 세 수치·범위 모두 이 URL에서 확인되지 않는다. 이어지는 '라이선스 없음 포함 자체가 쟁점'이라는 논지의 사실 전제가 무근거 상태가 된다.",
+  "suggested_fix": "The Stack v2는 600개 이상의 언어, 67.5TB 규모로 '허용적 라이선스 또는 라이선스 없음' 코드를 수집한다[^ai-bigcode-stackv2].\n\n(각주 교체) [^ai-bigcode-stackv2]: BigCode, StarCoder 2 and The Stack v2: The Next Generation (arXiv 2402.19173) : https://arxiv.org/abs/2402.19173 — 기존 [^ai-bigcode-stack]는 The Stack v1(6TB·358개 언어) 문서이므로 v2 수치의 근거로 쓰지 않는다.",
+  "checked_url": "https://www.bigcode-project.org/docs/about/the-stack/",
+  "lens": "support"
+ },
+ {
+  "line": 304,
+  "quote": "시행 일정은 2025-08-02 GPAI 의무 적용 개시, 2026-08-02 AI Office 집행 개시, 2027-08-02 기존 모델 소급 준수 기한이다[^ai-lfe-aiact].",
+  "kind": "content_mismatch",
+  "severity": "major",
+  "reason": "TRUNCATED_IN_HANDOFF — 원본 오케스트레이터 메시지가 이 결함의 reason·suggested_fix·checked_url 필드 전달 도중 절단되었다. '각주 URL(Linux Foundation Europe explainer)'까지만 수신되었고 구체적으로 무엇이 content_mismatch인지 확인할 수 없다. 추측으로 본문을 수정하지 않는다.",
+  "suggested_fix": null,
+  "checked_url": null,
+  "lens": "unknown",
+  "note": "이 항목은 불완전한 데이터로 저장됨. 교정 시 <!-- VERIFY --> 주석만 남기고 본문은 수정하지 않는다."
+ }
+]

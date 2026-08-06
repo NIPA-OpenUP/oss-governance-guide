@@ -1,0 +1,166 @@
+{
+  "axis": "regulation",
+  "verification_target": "EU AI Act 시행 일정 상충 (06_edited_using.md L331-341 vs 06_edited_ai.md L304)",
+  "verified_at": "2026-08-01",
+  "omnibus": {
+    "exists": true,
+    "celex": "32026R1744",
+    "eli": "http://data.europa.eu/eli/reg/2026/1744/oj",
+    "official_title": "Regulation (EU) 2026/1744 of the European Parliament and of the Council of 8 July 2026 amending Regulations (EU) 2024/1689, (EU) 2018/1139 and (EU) 2023/1230 as regards the simplification of the implementation of harmonised rules on artificial intelligence (Digital Omnibus on AI)",
+    "signed": "2026-07-08",
+    "published": "2026-07-24",
+    "oj_reference": "OJ L series, 2026/1744, 24.7.2026",
+    "in_force": "2026-07-27",
+    "in_force_basis": "제4조 '이 규정은 관보 게재일 다음 세 번째 날에 발효한다' + 전문 (46) '긴급 사안으로 게재 후 3일째 발효'. 게재 2026-07-24 → 발효 2026-07-27. 신설 제113조 셋째 문단 (d)가 '제102조~제110조는 2026-07-27부터 적용'이라고 명시해 발효일을 교차 확인함.",
+    "source_url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng",
+    "kind": "primary",
+    "primary_text_obtained": true,
+    "primary_text_evidence": "EUR-Lex 관보 렌더링 원문(문서 ID L_202601744EN.000101.fmx.xml, ISSN 1977-0677) 전문을 확보해 전문(recitals) 1~47, 제1조 개정항목 1~43, 제2~4조, 각주 1~20까지 직접 확인. 서명자 R. METSOLA(의회 의장) / T. BYRNE(이사회 의장, 2026 하반기 아일랜드 의장국).",
+    "amends": ["Regulation (EU) 2024/1689 (AI Act)", "Regulation (EU) 2018/1139 (civil aviation)", "Regulation (EU) 2023/1230 (machinery)"],
+    "cross_check": {
+      "source_url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+      "kind": "primary",
+      "note": "집행위 디지털정책 페이지가 'AI Omnibus entered into force on 27 July 2026', Annex III '2 December 2027', Annex I '2 August 2028', GPAI 'August 2025', 투명성 'August 2026'을 동일하게 안내 — 관보 원문과 완전 일치."
+    }
+  },
+  "amended_dates": [
+    {
+      "provision": "Annex III 독립형 고위험 시스템 의무 (제6조(2), Chapter III Sections 1·2·3)",
+      "before": "2026-08-02",
+      "before_basis": "원 제113조 둘째 문단 'It shall apply from 2 August 2026' — Annex III 고위험은 (a)(b)(c) 예외에 없어 일반 적용일 적용",
+      "after": "2027-12-02",
+      "after_basis": "Omnibus 제1조(40)(b): 제113조 셋째 문단 (c)를 대체 — 'Chapter III, Sections 1, 2, and 3, with the exception of Article 6(5), shall apply from: (i) 2 December 2027 as regards AI systems classified as high-risk pursuant to Article 6(2) and Annex III'",
+      "source_url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng",
+      "kind": "primary",
+      "confidence": "high"
+    },
+    {
+      "provision": "Annex I 내장형 고위험 시스템 의무 (제6조(1), Chapter III Sections 1·2·3)",
+      "before": "2027-08-02",
+      "before_basis": "원 제113조 셋째 문단 (c) 'Article 6(1) and the corresponding obligations in this Regulation shall apply from 2 August 2027'",
+      "after": "2028-08-02",
+      "after_basis": "Omnibus 제1조(40)(b) 신 (c)(ii) '2 August 2028 as regards AI systems classified as high-risk pursuant to Article 6(1) and Annex I'",
+      "source_url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng",
+      "kind": "primary",
+      "confidence": "high"
+    },
+    {
+      "provision": "제53조·제55조 GPAI 제공자 의무 (Chapter V)",
+      "before": "2025-08-02",
+      "after": "2025-08-02",
+      "changed": false,
+      "after_basis": "Omnibus 제1조(40)은 제113조 셋째 문단의 (a)와 (c)만 대체하고 (d)를 신설했다. GPAI 적용일을 정한 (b) 'Chapter III Section 4, Chapter V, Chapter VII and Chapter XII and Article 78 shall apply from 2 August 2025, with the exception of Article 101'은 손대지 않았다. 또한 Omnibus 제1조의 개정 대상 43개 항목(제1·2·3·4·4a·5·6·10·11·17·25·27·28·29·30·40·42·43·50·56·57·58·60·60a·63·64·69·70·72·75·75a~·76·77·95·96·97·99·111·113조, Annex I·VIII·XIV)에 제53조·제54조·제55조는 없다.",
+      "source_url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng",
+      "kind": "primary",
+      "confidence": "high"
+    },
+    {
+      "provision": "AI Office / 집행위의 GPAI 집행·과징금 개시 (제101조, Chapter IX Section 5 = 제88~94조)",
+      "before": "2026-08-02",
+      "after": "2026-08-02",
+      "changed": false,
+      "after_basis": "원 제113조 (b)가 제101조(GPAI 제공자에 대한 집행위 과징금)를 2025-08-02 적용 대상에서 명시적으로 제외했으므로 일반 적용일 2026-08-02부터 적용된다. GPAI 감독·조사·집행 권한을 담은 Chapter IX Section 5(제88~94조 'Supervision, investigation, enforcement and monitoring in respect of providers of general-purpose AI models')는 Chapter IX 전체가 예외 목록에 없어 역시 2026-08-02부터 적용된다. Omnibus는 제101조를 전혀 개정하지 않았고(제1조(38)은 제99조만 개정), 신설 제75a조 'Supervisory and enforcement powers of the AI Office'도 Chapter IX 안에 삽입되어 같은 2026-08-02 적용일을 따른다.",
+      "source_url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng",
+      "kind": "primary",
+      "confidence": "high"
+    },
+    {
+      "provision": "2025-08-02 이전 출시 기존 GPAI 모델의 소급 준수 기한 (제111조(3))",
+      "before": "2027-08-02",
+      "after": "2027-08-02",
+      "changed": false,
+      "after_basis": "원 제111조(3) 'Providers of general-purpose AI models that have been placed on the market before 2 August 2025 shall take the necessary steps in order to comply with the obligations laid down in this Regulation by 2 August 2027.' Omnibus 제1조(39)는 제111조 (2)항을 대체하고 (4)항을 신설했을 뿐 (3)항은 개정하지 않았다.",
+      "source_url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng",
+      "kind": "primary",
+      "confidence": "high"
+    },
+    {
+      "provision": "제50조 투명성 의무 (Chapter IV)",
+      "before": "2026-08-02",
+      "after": "2026-08-02",
+      "changed": false,
+      "after_basis": "Chapter IV는 제113조 예외 목록에 없어 일반 적용일 2026-08-02 유지. Omnibus 제1조(20)은 제50조 (7)항의 집행위 이행법령 권한만 삭제했고 적용일은 건드리지 않았다. 다만 제1조(39)(b)로 제111조(4)를 신설해 2026-08-02 전에 출시된 생성형 시스템 제공자에게 제50조(2) 콘텐츠 표시 이행 기한 2026-12-02(4개월 경과규정)을 부여했다.",
+      "source_url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng",
+      "kind": "primary",
+      "confidence": "high"
+    },
+    {
+      "provision": "신설 금지 관행 (제5조(1) 첫째 문단 (ba)·(bb), 제5조(1a)·(1b))",
+      "before": "해당 없음(신설)",
+      "after": "2026-12-02",
+      "changed": true,
+      "after_basis": "Omnibus 제1조(40)(a): 제113조 셋째 문단 (a)를 'Chapters I and II shall apply from 2 February 2025, with the exception of Article 5(1), first subparagraph, points (ba) and (bb), and Article 5(1a) and (1b) which shall apply from 2 December 2026'로 대체",
+      "source_url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng",
+      "kind": "primary",
+      "confidence": "high"
+    },
+    {
+      "provision": "AI Act 제102~110조(타 EU 법령 개정 조항) 적용",
+      "before": "2026-08-02",
+      "after": "2026-07-27",
+      "changed": true,
+      "after_basis": "Omnibus 제1조(40)(c) 신설 (d) 'Articles 102 to 110 shall apply from 27 July 2026'",
+      "source_url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng",
+      "kind": "primary",
+      "confidence": "high"
+    }
+  ],
+  "current_timeline": [
+    {"date": "2024-08-01", "what": "AI Act(Regulation (EU) 2024/1689) 발효", "source_url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng", "confidence": "high"},
+    {"date": "2025-02-02", "what": "Chapter I·II 적용 — 금지 관행(제5조 원안)·AI 리터러시", "source_url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng", "confidence": "high"},
+    {"date": "2025-08-02", "what": "Chapter V 적용 — GPAI 제공자 의무(제53·54·55조) 개시. Chapter VII 거버넌스, Chapter XII 벌칙(제101조 제외), 제78조 동시 적용. Omnibus로 변경되지 않았다", "source_url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng", "confidence": "high"},
+    {"date": "2026-07-27", "what": "Regulation (EU) 2026/1744(Digital Omnibus on AI) 발효. AI Act 제102~110조 적용 개시", "source_url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng", "confidence": "high"},
+    {"date": "2026-08-02", "what": "AI Act 일반 적용일 — 제50조 투명성 의무(Chapter IV), 제101조 GPAI 과징금, Chapter IX Section 5(제88~94조) AI Office의 GPAI 감독·집행 권한, 신설 제75a조 AI Office 집행 권한 개시", "source_url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng", "confidence": "high"},
+    {"date": "2026-12-02", "what": "신설 금지 관행(제5조(1)(ba)·(bb), (1a)·(1b)) 적용 개시. 동시에 2026-08-02 전 출시된 생성형 AI 시스템 제공자의 제50조(2) 콘텐츠 표시 이행 기한(신설 제111조(4))", "source_url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng", "confidence": "high"},
+    {"date": "2027-08-02", "what": "2025-08-02 이전 출시된 기존 GPAI 모델의 소급 준수 기한(제111조(3)). Omnibus로 변경되지 않았다", "source_url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng", "confidence": "high"},
+    {"date": "2027-12-02", "what": "Annex III 독립형 고위험 시스템 의무(Chapter III Sections 1·2·3, 제6조(5) 제외) 적용 — 원래 2026-08-02에서 연기", "source_url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng", "confidence": "high"},
+    {"date": "2028-08-02", "what": "Annex I 내장형 고위험 시스템 의무 적용 — 원래 2027-08-02에서 연기. 기계류 규정(EU) 2023/1230 Annex III 개정 위임법령도 이 날까지 적용", "source_url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng", "confidence": "high"},
+    {"date": "2030-08-02", "what": "공공기관용 고위험 AI 시스템(경과규정 대상)의 준수 기한(개정 제111조(2))", "source_url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng", "confidence": "high"}
+  ],
+  "verdict_using_L331_341": {
+    "correct": true,
+    "note": "표의 세 EU AI Act 행이 모두 1차 출처와 일치한다. 2026-08-02 제50조 투명성 의무(Chapter IV, 일반 적용일 유지), 2027-12-02 Annex III 고위험(개정 제113조 셋째 문단 (c)(i)), 2028-08-02 Annex I 고위험(동 (c)(ii)). 각주 [^ai-omnibus]의 서지사항 'Regulation (EU) 2026/1744 of 8 July 2026 (Digital Omnibus on AI), OJ L, 2026/1744, 24.7.2026'도 관보 헤더와 정확히 일치하고 ELI URL도 유효하다. 유일한 개선점은 누락이다: 2026-12-02(신설 금지 관행 + 2026-08-02 이전 출시 생성형 시스템의 제50조(2) 이행 기한)가 표에 없어, 2026-08-02에 제50조를 맞추지 못한 기존 제품에 4개월 경과규정이 있다는 사실이 독자에게 전달되지 않는다.",
+    "suggested_addition": "| 2026-12-02 | EU AI Act 신설 금지 관행 및 기존 생성형 시스템의 제50조(2) 표시 이행 기한[^ai-omnibus] | 2026-08-02 전에 EU 시장에 출시한 생성형 AI 시스템 제공자 | 기존 제품의 AI 생성 콘텐츠 표시를 이 날까지 적용한다 |"
+  },
+  "verdict_ai_L304": {
+    "correct": true,
+    "correct_qualifier": "세 일자 모두 2026-08-01 기준으로 사실이다. 그러나 근거가 2차 출처뿐이고 Omnibus 개정 사실이 누락되어 문단 자체는 수정이 필요하다.",
+    "per_date": [
+      {
+        "date": "2025-08-02",
+        "claim": "GPAI 의무 적용 개시",
+        "correct": true,
+        "note": "제113조 셋째 문단 (b)가 Chapter V(GPAI, 제51~56조)를 2025-08-02 적용으로 정하고 있고 Omnibus는 (a)·(c)만 대체하고 (d)를 신설했을 뿐 (b)를 개정하지 않았다. 유효.",
+        "primary_basis": "AI Act 제113조 셋째 문단 (b) / Omnibus 제1조(40)이 (b) 미포함"
+      },
+      {
+        "date": "2026-08-02",
+        "claim": "AI Office 집행 개시",
+        "correct": true,
+        "note": "정확하되 표현이 느슨하다. AI Office 자체는 Chapter VII(거버넌스)에 따라 2025-08-02부터 존재한다. 2026-08-02에 개시되는 것은 '집행 권한'이다 — 제101조(GPAI 제공자 과징금, 원 제113조 (b)에서 명시적으로 2025-08-02 대상에서 제외됨)와 Chapter IX Section 5(제88~94조 GPAI 감독·조사·집행), 그리고 Omnibus 신설 제75a조(AI Office의 시장감시 권한)가 모두 일반 적용일 2026-08-02부터다. '집행 개시'를 '과징금·조사 권한 개시'로 구체화할 것.",
+        "primary_basis": "AI Act 제113조 셋째 문단 (b) 단서('with the exception of Article 101') + Chapter IX Section 5가 예외 목록 부재 + Omnibus 제1조(32) 신설 제75a조"
+      },
+      {
+        "date": "2027-08-02",
+        "claim": "기존 모델 소급 준수 기한",
+        "correct": true,
+        "note": "제111조(3)이 2025-08-02 이전 출시 GPAI 모델의 준수 기한을 2027-08-02로 정한다. Omnibus 제1조(39)는 제111조 (2)항 대체와 (4)항 신설만 했고 (3)항은 그대로다. 유효. 단 '기존 모델'을 '2025-08-02 이전 EU 시장에 출시된 GPAI 모델'로 특정해야 독자가 자기 해당 여부를 판단할 수 있다.",
+        "primary_basis": "AI Act 제111조(3) / Omnibus 제1조(39)가 (3)항 미포함"
+      }
+    ],
+    "defects": [
+      "근거가 2차 출처(Linux Foundation Europe explainer) 단독이다. 세 일자 모두 1차 출처(AI Act 제113조 셋째 문단 (b), 제101조, 제111조(3))로 직접 인용 가능하므로 각주를 1차 출처로 교체하거나 병기해야 한다.",
+      "Digital Omnibus(Regulation (EU) 2026/1744, 2026-07-27 발효)를 언급하지 않는다. 그 결과 독자는 이 문단의 '2026-08-02'를 AI Act 전면 적용일로 읽고 고위험 의무도 그때 시작한다고 오해할 수 있다. 실제로는 고위험 의무가 2027-12-02/2028-08-02로 연기됐다.",
+      "미해소 `<!-- VERIFY: ... -->` 주석이 남아 있다. 본 검증으로 세 일자가 모두 확인되었으므로 주석을 삭제하고 각주만 교체하면 된다.",
+      "'AI Office 집행 개시'라는 표현이 AI Office 설립 시점(2025-08-02)과 집행 권한 발생 시점(2026-08-02)을 구분하지 못한다."
+    ],
+    "suggested_fix": "시행 일정은 GPAI 제공자 의무 적용 개시 2025-08-02(제113조 셋째 문단 (b)), 집행위·AI Office의 GPAI 과징금·조사 권한 개시 2026-08-02(제101조 및 제88~94조), 2025-08-02 이전 EU 시장에 출시된 기존 GPAI 모델의 소급 준수 기한 2027-08-02(제111조(3))이다[^ai-act][^ai-omnibus]. 이 세 일자는 Digital Omnibus(Regulation (EU) 2026/1744, 2026-07-27 발효)로 변경되지 않았다. 다만 같은 개정으로 고위험 시스템 의무는 Annex III 2027-12-02, Annex I 2028-08-02로 연기됐으므로 GPAI 일정과 고위험 일정을 같은 기준일로 관리하면 안 된다(→ '글로벌 SBOM 규제 동향' 기한표 참조)."
+  },
+  "recommended_single_source_of_truth": "split",
+  "recommendation": "`using`의 기한표를 전체 규제 일정의 단일 기준(SSoT)으로 유지하고, `ai`는 GPAI 전용 3개 일자만 남긴 뒤 나머지는 그 표를 상호참조하게 한다. 두 장이 같은 일정을 중복 서술하면 다음 개정에서 다시 갈라지므로, `ai#L304`에는 고위험 일자(2027-12-02/2028-08-02)를 나열하지 말고 '고위험 일정은 Omnibus로 연기되었으며 기한표를 참조'라는 한 문장 포인터만 둔다. 대신 `ai#L304`의 각주를 2차 출처 단독에서 1차 출처(AI Act 제113조·제111조(3) + Omnibus)로 교체하고 `<!-- VERIFY -->` 주석을 삭제한다. `using` 표에는 2026-12-02 행을 추가해 신설 금지 관행과 기존 생성형 시스템의 제50조(2) 4개월 경과규정을 반영한다. 두 장이 공유하는 각주 키([^ai-act], [^ai-omnibus])를 동일 서지사항으로 통일해 citation-fact-verifier가 한 번에 검증할 수 있게 한다.",
+  "unresolved": [
+    "EUR-Lex 통합본(consolidated version, CELEX 02024R1689) 원문에 도달하지 못했다. eur-lex.europa.eu가 CELEX·ELI 경로 모두에서 HTTP 202 + 빈 본문(봇 차단)을 반환했다. 다만 개정 규정 자체의 관보 원문(L_202601744EN.000101.fmx.xml)과 원 AI Act 관보 원문(L_202401689EN.000101.fmx.xml)을 모두 확보해 개정 전후를 직접 대조했고, 집행위 digital-strategy 페이지가 동일 일정을 안내하므로 통합본 미확인이 결론에 영향을 주지 않는다.",
+    "Omnibus 제113조 신설 (d)의 '제102~110조 2026-07-27 적용'은 타 EU 법령 개정 조항의 소급 정합성 목적으로 보이나, 전문(recitals)에서 이 (d)를 직접 설명하는 문단을 찾지 못했다. 가이드 본문에 쓸 항목은 아니므로 추적만 기록한다.",
+    "WebSearch 예산(200/200) 소진으로 추가 2차 출처 대조는 수행하지 못했다. 1차 출처 2건 + 집행위 공식 페이지 1건으로 확정했다."
+  ]
+}

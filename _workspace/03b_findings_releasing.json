@@ -1,0 +1,158 @@
+{
+  "target_section": "releasing",
+  "findings": [
+    {
+      "topic": "EU CRA — 오픈소스 스튜어드(open-source software steward)",
+      "claim": "CRA는 제조사도 무의무도 아닌 제3의 지위 '오픈소스 스튜어드'를 신설했고, 스튜어드에게는 사이버보안 정책 문서화·당국 협조·일부 신고 의무만 부과되며 과징금은 적용되지 않는다.",
+      "detail": "제3조(14)는 스튜어드를 \"a legal person, other than a manufacturer, that has the purpose or objective of systematically providing support on a sustained basis for the development of specific products with digital elements, qualifying as free and open-source software and intended for commercial activities, and that ensures the viability of those products\"로 정의한다. 제24조는 (1) 안전한 개발과 취약점 처리를 촉진하는 사이버보안 정책을 '검증 가능한 방식으로' 수립·문서화, (2) 시장감시당국의 합리적 요청 시 문서 제공·협조, (3) 개발 관여 범위에서 제14조(1) 악용 취약점 신고, 제공 인프라가 영향받는 경우 제14조(3)·(8) 중대 사고 신고를 규정한다. 제64조(10)(b)는 \"any infringement of this Regulation by open-source software stewards\"에 행정 과징금을 적용하지 않는다고 명시한다. 제25조는 FOSS 자발적 보안 인증 프로그램을 위임법으로 도입할 근거를 두었으나 미채택이다.",
+      "effective_dates": [
+        "2026-09-11: 제14조 연계 신고 의무",
+        "2027-12-11: 제24조 스튜어드 의무 전면 적용"
+      ],
+      "applies_to_korean_firms": "재단이 아니어도 해당된다. 자사 제품에 넣을 목적으로 오픈소스를 개발해 공개하되 그 오픈소스를 시장에 출하하지는 않는 국내 법인, 커뮤니티 버전과 유료 버전을 함께 운영하는 국내 기업, 오픈소스 프로젝트의 저장소·CI 인프라를 지속 운영하는 국내 기업이 특정 프로젝트에 대해 스튜어드가 될 수 있다.",
+      "action_for_firms": "사내 공개 오픈소스 프로젝트를 '제조사 / 스튜어드 / 무의무' 세 갈래로 분류하고, 스튜어드로 판정된 프로젝트에 대해 SECURITY.md 수준이 아니라 검증 가능하게 문서화된 사이버보안 정책(취약점 접수·처리·공개 절차, 담당자, SLA)을 작성한다.",
+      "practicality": "판단기준표 + 정책 템플릿",
+      "sources": [
+        {
+          "title": "Regulation (EU) 2024/2847 (Cyber Resilience Act)",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng",
+          "kind": "primary"
+        },
+        {
+          "title": "The Cyber Resilience Act — Summary of the legislative text",
+          "url": "https://digital-strategy.ec.europa.eu/en/policies/cra-summary",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "high",
+      "target_section": "releasing",
+      "replaces": "",
+      "_evidence": "research_regulation#findings[2]"
+    },
+    {
+      "topic": "EU CRA — 집행위 적용 지침 C(2026) 5252 (2026-07-27)",
+      "claim": "집행위가 2026-07-27 CRA 적용 지침(84쪽 Annex)을 발표해 오픈소스가 언제 CRA 적용 대상이 되는지, 언제 스튜어드 지위가 되는지를 예시 시나리오와 함께 확정했다.",
+      "detail": "Communication C(2026) 5252 final과 그 ANNEX는 제3장 전체를 'Free and open-source software'에 할애한다. ① FOSS 정의(제3조(48))는 '자유·오픈소스 라이선스로 배포'와 '소스코드가 공개적으로 공유됨'을 누적적으로 요구하므로, 유료 고객에게만 소스를 주는 소프트웨어는 CRA상 FOSS가 아니다(44~46항). ② 상업적 활동 여부는 개발 경위나 자금 조달이 아니라 수익화 여부로 판정한다 — 가격 청구, 실비를 초과하는 기술지원 유료화, 플랫폼을 통한 부수 서비스 수익화, 보안·호환성 개선 외 목적의 개인정보 처리 요구, 개발·제공 비용을 초과하는 기부 수령(41~42항). ③ FOSS 구성요소를 자사 제품에 통합한 제조사는 그 구성요소 자체의 CRA 준수 책임을 지지 않으며 소스코드를 기여해도 마찬가지다. 다만 제13조(5) 실사와 제13조(6) 상류 보고·수정 공유 의무는 진다(86~88항).",
+      "effective_dates": [
+        "2026-07-27: 지침 채택·공표"
+      ],
+      "applies_to_korean_firms": "EU 대상 제품에 오픈소스를 통합하는 모든 국내 기업, 그리고 오픈소스를 공개하는 국내 법인. 특히 '커뮤니티 에디션 + 엔터프라이즈 에디션' 구조를 쓰는 국내 SW 기업은 같은 법인이 한 프로젝트에는 스튜어드, 다른 제품에는 제조사가 될 수 있음을 지침 72~74항이 명시한다.",
+      "action_for_firms": "지침 3.5절의 예시 시나리오(Example 27~)를 자사 오픈소스 배포 형태에 대입해 프로젝트별 지위를 문서로 판정하고 그 근거를 감사 대응용으로 보관한다.",
+      "practicality": "판단기준표 + 사례",
+      "sources": [
+        {
+          "title": "Commission publishes new guidance to support timely Cyber Resilience Act implementation (2026-07-27)",
+          "url": "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation",
+          "kind": "primary"
+        },
+        {
+          "title": "Commission guidance on the application of Regulation (EU) 2024/2847, C(2026) 5252 final ANNEX, 27.7.2026",
+          "url": "https://ec.europa.eu/newsroom/dae/redirection/document/131456",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "high",
+      "target_section": "releasing",
+      "replaces": "",
+      "_evidence": "research_regulation#findings[3]"
+    },
+    {
+      "topic": "OpenSSF OSPS Baseline — 오픈소스 프로젝트 보안 최소 기준",
+      "claim": "OpenSSF는 성숙도 3단계·8개 범주의 오픈소스 프로젝트 보안 기준선(OSPS Baseline)을 정식 배포했고, 현행판은 v2026.02.19다. CRA·SSDF·OpenChain(ISO/IEC 18974)에 매핑되어 있다.",
+      "detail": "Level 1은 유지관리자 수·이용자 수에 무관한 모든 프로젝트, Level 2는 유지관리자 2인 이상 + 일정 이용자를 가진 코드 프로젝트, Level 3은 이용자가 많은 코드 프로젝트에 적용된다. 범주별 요구사항 수(Level1/Level2/Level3 누적)는 Access Control 5/6/8, Build & Release 6/11/14, Documentation 3/9/14, Governance 3/7/9, Legal 4/6/6, Quality 7/11/17, Security Assessment 2/4/5, Vulnerability Management 2/7/14다. 각 요구사항에 CRA·NIST SSDF(SP 800-218)·OpenChain(ISO/IEC 18974)·OpenSSF Best Practices Badge 매핑이 붙어 있어, 하나의 점검으로 여러 체계에 대응할 수 있다.",
+      "confidence": "high",
+      "target_section": "releasing",
+      "applies_to_korean_firms": "자사 오픈소스를 공개·운영하는 기업(releasing), 사외 오픈소스 도입 심사 기준을 만드는 OSPO(using).",
+      "action_for_firms": "① 사내에서 공개한 오픈소스 저장소를 OSPS Baseline Level 1으로 먼저 전수 정렬하고, 회사 대표 프로젝트만 Level 2/3을 목표로 한다. ② CRA 대응이 필요한 조직은 Baseline의 CRA 매핑 표를 근거 문서로 활용해 중복 점검을 줄인다. ③ 외부 의존성 심사에서는 Scorecard 점수 대신 Baseline Level 1 충족 여부를 정성 기준으로 쓰는 편이 해석이 명확하다.",
+      "practicality": "체크리스트 (레벨별 요구사항 목록을 사내 저장소 점검표로 변환)",
+      "replaces": "신규",
+      "effective_dates": [
+        "OSPS Baseline v2026.02.19 (2026-02-19)"
+      ],
+      "sources": [
+        {
+          "title": "Open Source Project Security Baseline",
+          "url": "https://baseline.openssf.org/",
+          "kind": "primary"
+        },
+        {
+          "title": "OSPS Baseline v2026-02-19 (요구사항 전문)",
+          "url": "https://baseline.openssf.org/versions/2026-02-19",
+          "kind": "primary"
+        }
+      ],
+      "_evidence": "research_security#findings[4]"
+    },
+    {
+      "topic": "AI 모델을 제품에 포함할 때의 고지 의무 통합",
+      "claim": "AI 모델을 제품에 넣으면 기존 오픈소스 고지문(OSS Notice)과 별개로 모델 라이선스가 요구하는 고지가 추가된다. 두 체계를 하나의 고지 프로세스로 통합해야 누락이 없다.",
+      "detail": "모델별 고지 요구 예시: Llama 4 — 라이선스 사본 동봉 + 'Built with Llama' 눈에 띄는 표시(웹사이트·UI·블로그·about 페이지·제품 문서 중) + NOTICE 파일에 'Llama 4 is licensed under the Llama 4 Community License, Copyright © Meta Platforms, Inc. All Rights Reserved.' + 파생 모델명 접두어. Gemma(3 이하) — 수령자에게 약관 사본 제공 + NOTICE 파일에 'Gemma is provided under and subject to the Gemma Terms of Use found at ai.google.dev/gemma/terms'. Apache-2.0 모델(Gemma 4, Qwen3, gpt-oss) — Apache-2.0의 NOTICE 승계 규칙 적용. 여기에 한국 AI 기본법 제31조의 AI 기반 운용 사전 고지와 생성 결과물 표시가 겹친다. 기존 원고 releasing 장의 고지 프로세스는 모델 자산을 다루지 않는다.",
+      "confidence": "high",
+      "target_section": "releasing",
+      "applies_to_korean_firms": "AI 모델을 임베드한 소프트웨어·기기를 출하하는 기업.",
+      "action_for_firms": "OSS Notice 생성 파이프라인의 입력에 '모델 자산' 유형을 추가하고 모델별 필수 고지 문구를 템플릿으로 관리한다. 고지 화면에 (1) 오픈소스 고지, (2) 모델 라이선스 고지, (3) AI 기반 운용 고지 3개 블록을 두는 표준 레이아웃을 정한다.",
+      "practicality": "템플릿",
+      "sources": [
+        {
+          "title": "LLAMA 4 COMMUNITY LICENSE AGREEMENT",
+          "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama4/LICENSE",
+          "kind": "primary"
+        },
+        {
+          "title": "Gemma Terms of Use",
+          "url": "https://ai.google.dev/gemma/terms",
+          "kind": "primary"
+        }
+      ],
+      "_evidence": "research_ai#findings[28]"
+    }
+  ],
+  "baseline": {
+    "baseline_source": "merge",
+    "rationale": "저장소 releasing은 2023-02-20 이후 손대지 않았고 발간본에도 2023년 이후 신규 사실은 없다(연도 스캔 결과 2023~2026 언급 0건). 즉 양쪽 내용은 같고 발간본만 편집 패스를 한 번 더 받았다. 그 편집이 중요한데, baseline_integrity가 blocking으로 잡은 죽은 앵커 3건(releasing#L120, L144, L216)의 정확한 지시 대상을 발간본이 '「5) 어떻게? : ...」', '「3) 언제? : ...」' 형태로 확정해 두었다. 저장소를 운반체로 두고 발간본의 상호참조 해석을 흡수하는 병합이 맞다.",
+    "published_only_worth_keeping": [
+      {
+        "topic": "죽은 앵커 3건의 정답 상호참조",
+        "published_ref": "page:129, page:132, page:137",
+        "summary": "저장소 L120·L144의 '#어떻게?:어떤-조건으로-공개할-것인가?...' 앵커는 대상 헤딩이 없어 깨져 있는데, 발간본은 '「5) 어떻게? : 어떤 조건으로 공개할 것인가? 공개에 적합한 라이선스 후보군 정하기」'(발간본 p135, L2223)를 가리킨다고 명시했다. L216의 '#언제?...'는 '「3) 언제?:언제 공개할 것인가? 공개 시점 정하기」'(발간본 p134, L2214)다. 이 대응을 앵커 수정의 근거로 쓸 것.",
+        "worth_keeping": true
+      },
+      {
+        "topic": "장 번호를 붙인 교차 참조 표기",
+        "published_ref": "page:134, page:139, page:143",
+        "summary": "발간본은 다른 장을 가리킬 때 '「II.2. 오픈소스SW 기여 가이드 - 기업 편 : 4) CLA / DCO에 주의하라」', '「III. 3. 오픈소스SW 공개 가이드 - 개발자 편」'처럼 장·절 번호를 앞에 붙였다. 저장소는 절 제목만 쓴다. 인쇄본용 표기이므로 웹에서는 앵커 링크가 낫지만, 발간본 표기가 참조 대상을 모호하지 않게 특정한다.",
+        "worth_keeping": true
+      }
+    ],
+    "repo_only_worth_keeping": [
+      {
+        "topic": "이미지 7개와 앵커 링크",
+        "repo_ref": "releasing 전역",
+        "summary": "{{< imgproc >}} 도해와 [텍스트](#앵커) 내부 링크. 발간본에는 대응물이 없거나 텍스트 표기로 바뀌었다.",
+        "worth_keeping": true
+      },
+      {
+        "topic": "중복 헤딩 '요약' 2개",
+        "repo_ref": "releasing#L397, L660",
+        "summary": "Hugo 슬러그가 '요약-1'로 밀리는 문제(baseline_integrity non-blocking). 발간본은 '(5) 요 약'/'(3) 요 약'으로 장 번호가 붙어 충돌하지 않는다. 개정판에서 '기업 편 요약'/'개발자 편 요약'으로 구분할 것.",
+        "worth_keeping": true
+      }
+    ],
+    "diverged": [
+      {
+        "topic": "'직원들 기술 역량 향상' 절 말미",
+        "published_ref": "page:124",
+        "repo_ref": "releasing#L47",
+        "difference": "저장소 '좋은 결과물을 내기 어려울 수 있다' vs 발간본 '좋은 결과물을 내기 어렵다'. 조사·어미 수준 윤문.",
+        "newer": "published"
+      },
+      {
+        "topic": "README 작성 요령 소절 표기",
+        "published_ref": "page:151-153",
+        "repo_ref": "releasing#L484-534",
+        "difference": "저장소는 '##### Installation', '##### Contributing', '##### Project status'를 H5 헤딩으로, 발간본은 'Installation ...', 'Authors and acknowledgment ...' 처럼 본문 안 굵은 항목으로 조판했다. 내용 동일, 위계만 다르다.",
+        "newer": "unclear"
+      }
+    ]
+  }
+}

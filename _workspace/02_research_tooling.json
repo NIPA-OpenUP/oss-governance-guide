@@ -1,0 +1,801 @@
+{
+  "axis": "tooling",
+  "findings": [
+    {
+      "topic": "LABRADOR URL 낡음 — 지시된 확인 대상",
+      "claim": "원고 using#L550의 LABRADOR URL(https://www.iotcube.com/)은 2022-08-30 사명 변경 이전의 옛 도메인이다. 현재 공식 URL은 https://www.labradorlabs.ai/ 이며, 2025-02 발간본은 이미 이 주소로 갱신되어 있었다.",
+      "detail": "IoTcube, Inc.는 2018년 설립되어 2022-08-30 Labrador Labs, Inc.로 사명을 변경했다(1차 출처: labradorlabs.ai 자사 뉴스). 01_baseline_reconciliation.json이 이미 이 사실을 발간본 대조로 확인해 두었다(발간본 p47 '⑪ LABRADOR - https://www.labradorlabs.ai/'). 저장소만 옛 URL을 쓰고 있어 발간본보다 뒤처진 상태다. 종결어미도 저장소는 '가능합니다'(존댓말 혼입), 발간본은 '가능하다'로 통일했다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "LABRADOR/Labrador Labs를 도구 후보로 검토하는 모든 기업 — 특히 국방·제조 등 함수 단위 취약점 분석이 필요한 조직",
+      "action_for_firms": "원고 using#L550-555을 URL(https://www.labradorlabs.ai/)과 상호명 '구 IoTcube' 병기로 교체하고, 종결어미를 '가능하다'로 통일한다. 로고 파일(logo-labrador.png)도 Labrador Labs 공식 로고로 교체 대상이다.",
+      "practicality": "체크리스트",
+      "replaces": "https://www.iotcube.com/",
+      "effective_dates": [
+        "2022-08-30 사명 변경(IoTcube → Labrador Labs)"
+      ],
+      "sources": [
+        {
+          "title": "IOTCUBE new company name: LABRADOR LABS",
+          "url": "https://labradorlabs.ai/news/4-billion-won-raise-for-the-security-company-iotcube-series-a/",
+          "kind": "primary"
+        },
+        {
+          "title": "IOTCUBE \"Labrador OSS v2.0\" is GS-certified Grade 1",
+          "url": "https://labradorlabs.ai/news/iotcube-labrador-oss-v2-0-is-gs-certified-grade-1/",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "FOSSID 소유권 변경 이력 누락",
+      "claim": "원고는 FOSSID를 '2016년 스웨덴에서 설립된' 독립 스타트업으로만 서술하지만, 실제로는 2021-05-12 Snyk에 인수되었다가 2022-09 원 창업자들이 Snyk로부터 재인수해 다시 독립 회사로 운영 중이다.",
+      "detail": "FossID 자사 뉴스 페이지(1차 출처)가 재인수 사실을 공식화했다. 현재 fossid.com은 Snyk와 무관한 독자 브랜드로 'FossID 26.2'를 홍보 중이며, SBOM 수집·통합(NTIA 준수 내보내기)과 AI 생성 코드 스니펫 리스크 가시성 기능을 강조한다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "임베디드·C/C++ 코드베이스를 스캔할 도구를 찾는 기업 — FOSSID의 소유권 안정성을 판단 근거로 삼으려는 조직",
+      "action_for_firms": "원고 using#L506-511에 인수·재인수 이력 한 문장을 추가한다: 'FOSSID는 2021년 Snyk에 인수되었다가 2022년 원 창업자들이 재인수해 현재 독립 회사로 운영되고 있다.'",
+      "practicality": "체크리스트",
+      "sources": [
+        {
+          "title": "FossID is Reacquired from Snyk by Original Founders",
+          "url": "https://fossid.com/news/fossid-reacquired-from-snyk-by-original-founders/",
+          "kind": "primary"
+        },
+        {
+          "title": "Snyk Acquires FossID to Accelerate Worldwide Developer-First Security Adoption",
+          "url": "https://www.prnewswire.com/news-releases/snyk-acquires-fossid-to-accelerate-worldwide-developer-first-security-adoption-301289304.html",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "topic": "Black Duck — Synopsys에서 독립 법인으로 재분사",
+      "claim": "Black Duck은 2017년 Synopsys에 인수되어 'Synopsys Software Integrity Group'으로 운영되다가, 2024-10-01 Clearlake Capital·Francisco Partners가 이 사업부를 인수해 독립 법인 'Black Duck Software, Inc.'로 재출범시켰다. 원고 URL(blackducksoftware.com)은 301로 blackduck.com에 리다이렉트된다.",
+      "detail": "PR Newswire·Clearlake·Francisco Partners 공식 발표(1차급 보도자료) 확인. 거래 규모는 최대 21억 달러. 2026년 Gartner의 신설 '소프트웨어 공급망 보안' Magic Quadrant에서 리더로 선정됨.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "Black Duck을 상용 SCA 도구로 도입했거나 검토 중인 기업 — 계약·지원 주체가 Synopsys에서 Black Duck Software, Inc.로 바뀌었는지 확인 필요",
+      "action_for_firms": "원고 using#L513-518에 소유권 변경 이력과 갱신된 URL(https://www.blackduck.com/)을 반영한다. 로고도 재출범 이후 브랜드로 교체 대상.",
+      "practicality": "체크리스트",
+      "effective_dates": [
+        "2024-10-01 인수 완료(Clearlake·Francisco Partners → Black Duck Software, Inc.)"
+      ],
+      "sources": [
+        {
+          "title": "Clearlake and Francisco Partners Complete Acquisition of Black Duck Software",
+          "url": "https://www.prnewswire.com/news-releases/clearlake-and-francisco-partners-complete-acquisition-of-black-duck-software-formerly-known-as-synopsys-software-integrity-group-302264926.html",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "WhiteSource → Mend 리브랜딩 미반영(가이드 갱신 시급)",
+      "claim": "WhiteSource는 2022-05-25 Mend로 공식 리브랜딩했다. 원고 using#L528-533은 여전히 'WhiteSource'명과 whitesourcesoftware.com URL을 쓰고 있어 4년 이상 뒤처진 상태다.",
+      "detail": "Mend 공식 블로그와 PR Newswire가 리브랜딩을 확인한다. Mend는 SCA에 SAST(정적 분석)를 더해 애플리케이션 보안 플랫폼으로 확장했다. 리브랜딩 당시 3년간 매출 800% 성장, 고객 1,000개사 이상(Fortune 100의 25% 포함)을 보유했다고 발표했다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "WhiteSource 브랜드로 계약했거나 검토 중인 국내 기업 — 사내 문서·조달 목록에 옛 이름이 남아있으면 벤더 확인 시 혼선이 생긴다",
+      "action_for_firms": "원고 using#L528-533 제목·본문의 'WhiteSource'를 'Mend(구 WhiteSource)'로 전면 교체하고 URL을 https://www.mend.io 로, 로고 파일(logo-whitesource.png)을 Mend 공식 로고로 교체한다.",
+      "practicality": "체크리스트",
+      "replaces": "WhiteSource / https://www.whitesourcesoftware.com",
+      "effective_dates": [
+        "2022-05-25 리브랜딩 발표"
+      ],
+      "sources": [
+        {
+          "title": "WhiteSource Rebrands as Mend",
+          "url": "https://www.prnewswire.com/il/news-releases/whitesource-rebrands-as-mend-introduces-industry-first-automated-remediation-with-the-mend-application-security-platform-301554378.html",
+          "kind": "primary"
+        },
+        {
+          "title": "Whitesource Is Now Mend: You Code, We Cure",
+          "url": "https://www.mend.io/blog/whitesource-is-now-mend/",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "SW360 URL 변경",
+      "claim": "원고 using#L458의 SW360 URL(https://www.eclipse.org/sw360)은 301로 https://eclipse.dev/sw360 에 리다이렉트된다. Eclipse 사이트 개편으로 프로젝트 URL 체계가 eclipse.dev로 이전했다.",
+      "detail": "curl로 직접 리다이렉트를 확인했다(1차). SW360은 EPL-2.0(구 EPL-1.0에서 이관)이며 최신 릴리스는 20.0.0(20.1.0 RC2 진행 중)으로 활발히 유지보수되고 있다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "SW360으로 오픈소스 컴포넌트 인벤토리를 관리하는 기업",
+      "action_for_firms": "원고 using#L458 URL을 https://eclipse.dev/sw360 로 갱신한다.",
+      "practicality": "체크리스트",
+      "replaces": "https://www.eclipse.org/sw360",
+      "sources": [
+        {
+          "title": "SW360 - The Eclipse Foundation",
+          "url": "https://eclipse.dev/sw360/",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "SPDX 섹션 문장 손상(원고 자체 결함)",
+      "claim": "원고 using#L471 'SPDX(Software Package Data  소프트웨어 정보 교환 방식을 표준화하고 이를 용이하게 하기 위한 도구를 제공한다.' 문장이 중간에 끊겨 있다 — 'Software Package Data Exchange'가 완결되지 않고 공백만 있다.",
+      "detail": "다른 도구 절과 비교하면 명백한 편집 결함으로 보인다. 2026 개정 시 SPDX 정의를 완결하고, SPDX Online Tool·spdx-tools 등 실제 도구 목록을 보강할 필요가 있다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "전체 독자",
+      "action_for_firms": "문장을 'SPDX(Software Package Data Exchange)는 소프트웨어 정보 교환 방식을 표준화하고 이를 용이하게 하기 위한 도구를 제공한다.'로 복구한다.",
+      "practicality": "체크리스트"
+    },
+    {
+      "topic": "Gartner SCA 선택 기준 보고서 — 7년 지난 인용",
+      "claim": "원고가 SCA 도구 선택 기준의 근거로 인용하는 'Gartner, Technology Insight for Software Composition Analysis (2019)'[^gartner-3971011]는 2019년 자료다. Gartner는 이후 SCA를 독립 MQ로 유지하지 않고, 2026년 신설한 'Magic Quadrant for Software Supply Chain Security'로 통합해 처음 발간했다.",
+      "detail": "2026 MQ는 SCA·SBOM 생애주기 관리·지속적 위협 인텔리전스·제3자 평판 분석을 필수 평가축으로 명시한다. JFrog가 리더로, Black Duck SCA도 리더로 선정됐다. 원문(Gartner 유료 보고서)에는 직접 접근하지 못해 공개 벤더 보도자료 수치로만 확인했다.",
+      "confidence": "medium",
+      "target_section": "using",
+      "applies_to_korean_firms": "SCA 도구 선정 기준을 사내 규정으로 문서화하려는 기업",
+      "action_for_firms": "원고 L438-446의 선택 기준 목록에 '2026 Gartner Magic Quadrant for Software Supply Chain Security의 필수 평가축(SBOM 생애주기 관리, 지속적 위협 인텔리전스, 제3자 평판 분석)'을 병기하거나 대체 인용한다.",
+      "practicality": "판단기준표",
+      "sources": [
+        {
+          "title": "2026 Gartner Magic Quadrant for Software Supply Chain Security (JFrog 게재)",
+          "url": "https://jfrog.com/gartner-magic-quadrant/",
+          "kind": "secondary"
+        },
+        {
+          "title": "Black Duck named a leader in the inaugural Gartner Magic Quadrant for Software Supply Chain Security",
+          "url": "https://www.blackduck.com/blog/gartner-magic-quadrant-software-supply-chain-security-leader.html",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "topic": "Sonatype OSS Index 데이터 소스 전환 진행 중",
+      "claim": "원고 using#L962-969가 취약점 데이터베이스로 소개하는 Sonatype OSS Index는 2026년 4월부터 'Sonatype Guide API 토큰' 체계로 이관을 시작했고, 기존 OSS Index API 키는 2026년 말 이전에 폐지될 예정이다.",
+      "detail": "OWASP Dependency-Check(원고 using#L974-977에도 등장) 프로젝트가 이 이관을 문서화하고 있다. CI에서 OSS Index API 키로 인증하는 기존 파이프라인은 폐지 전 마이그레이션이 필요하다.",
+      "confidence": "medium",
+      "target_section": "using",
+      "applies_to_korean_firms": "OWASP Dependency-Check 또는 Sonatype OSS Index API를 CI 파이프라인에 직접 연동한 기업",
+      "action_for_firms": "CI 설정에서 OSS Index 레거시 API 키를 사용 중인지 점검하고, 2026년 말 폐지 전 Sonatype Guide API 토큰으로 마이그레이션 계획을 세운다.",
+      "practicality": "체크리스트",
+      "effective_dates": [
+        "2026-04 마이그레이션 시작",
+        "2026년 말 이전 레거시 API 키 폐지 예정"
+      ],
+      "sources": [
+        {
+          "title": "OWASP Dependency-Check 2026 리뷰(AppSec Santa)",
+          "url": "https://appsecsanta.com/owasp-dependency-check",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "topic": "ClearlyDefined 운영 주체 변경 — AboutCode로 이관",
+      "claim": "OSI와 AboutCode가 MoU를 체결해 ClearlyDefined의 일상 운영을 AboutCode로 이관했다. 2026년 로드맵은 'Strengthening the Foundation'(기술부채·운영비 절감)에 초점을 맞춘다. AboutCode는 ScanCode Toolkit도 함께 운영한다.",
+      "detail": "OSI 공식 블로그(1차 출처)가 이 협약을 발표했다. 원고 using#L557-562는 ClearlyDefined를 '커뮤니티 기반' DB로만 소개하고 운영 주체 변화를 다루지 않는다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "ClearlyDefined API·데이터를 사내 SBOM 파이프라인에 연동한 기업",
+      "action_for_firms": "원고 using#L557-562에 'ClearlyDefined는 현재 AboutCode(ScanCode Toolkit 운영 재단)가 OSI와의 MoU로 일상 운영을 맡고 있다'는 문장을 추가한다.",
+      "practicality": "개념설명",
+      "sources": [
+        {
+          "title": "ClearlyDefined - A Three-Year Roadmap for Sustainability and Growth",
+          "url": "https://opensource.org/blog/clearlydefined-a-three-year-roadmap-for-sustainability-and-growth",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "신규 등재 후보 — Syft (SBOM 생성 표준 CLI)",
+      "claim": "Syft(Anchore, Apache-2.0)는 컨테이너 이미지·파일시스템에서 SPDX/CycloneDX SBOM을 생성하는 CLI로, 원고에 없지만 실무에서 Trivy·Grype와 함께 가장 널리 쓰이는 도구다.",
+      "detail": "최신 버전 1.44.0(2026-05-01). 완전 오프라인 실행 가능, 수십 개 패키지 생태계 자동 탐지가 특징이다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "컨테이너 기반 배포를 하는 모든 기업 — CI 릴리스 게이트에서 SBOM을 자동 생성해야 하는 조직",
+      "action_for_firms": "원고 '오픈소스 관리 도구 소개' 절에 Syft를 오픈소스 SBOM 생성 도구로 신규 등재하고, Grype·Trivy와 조합 사용법을 CI 통합 지점(빌드 후 이미지 스캔)에 명시한다.",
+      "practicality": "체크리스트",
+      "sources": [
+        {
+          "title": "Syft GitHub",
+          "url": "https://github.com/anchore/syft",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "신규 등재 후보 — OWASP Dependency-Track (SBOM 관리 플랫폼)",
+      "claim": "OWASP Dependency-Track(Apache-2.0)은 SBOM을 생성한 다음 지속적으로 모니터링하는 'SBOM-first' 관리 플랫폼이다. 2026-06-09 5.0 GA를 릴리스했다.",
+      "detail": "CycloneDX/SPDX SBOM을 수집해 NVD·GitHub Advisories·OSS Index와 대조하며, v5는 API 서버와 프론트엔드 컨테이너를 분리했다. 일부 대형 운영 사례는 인스턴스당 25만 개 이상의 SBOM을 보유한다고 보고된다(2차 출처, 검증 안 됨).",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "여러 팀·저장소에서 생성되는 SBOM을 중앙에서 지속 모니터링해야 하는 중견~대기업",
+      "action_for_firms": "'SBOM 생성 후 무엇으로 관리하는가'라는 체크리스트 공백을 메우기 위해 Dependency-Track을 신규 등재하고, Syft/Trivy/cdxgen이 만든 SBOM을 Dependency-Track에 제출하는 CI 파이프라인 예시를 추가한다.",
+      "practicality": "체크리스트",
+      "effective_dates": [
+        "2026-06-09 v5.0 GA"
+      ],
+      "sources": [
+        {
+          "title": "OWASP Dependency-Track 5.0 Is Now Generally Available",
+          "url": "https://owasp.org/blog/2026/06/09/dependency-track-v5",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "신규 등재 후보 — OSV-Scanner (OSV.dev 기반)",
+      "claim": "Google이 만든 OSV-Scanner(Apache-2.0)는 OSV.dev 데이터를 사용하는 취약점 스캐너로, NVD 처리 지연 문제의 대안으로 security 축 체크리스트에도 언급된 도구다. 최신 버전 2.3.5(2026-03).",
+      "detail": "컨테이너 베이스이미지 스캔, deps.dev API를 통한 Python 전이 의존성 스캔, 가이드형 리미디에이션 추천 기능을 갖췄다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "NVD 지연 문제로 취약점 탐지가 늦어지는 것을 우려하는 기업",
+      "action_for_firms": "원고에 OSV-Scanner를 신규 등재하고, security 축 조사 결과와 병합해 'NVD 대안 데이터 소스' 설명에 연결한다(중복 방지를 위해 도구 메타데이터는 tooling 축이, 보안 운영 활용법은 security 축이 담당).",
+      "practicality": "체크리스트",
+      "sources": [
+        {
+          "title": "OSV-Scanner GitHub Releases",
+          "url": "https://github.com/google/osv-scanner/releases",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "신규 등재 후보 — ORT / ScanCode Toolkit / cdxgen",
+      "claim": "체크리스트가 명시한 세 도구 모두 활발히 유지보수되고 있음을 확인했다. ORT(Apache-2.0, 2026-07-21까지 활동), ScanCode Toolkit(Apache-2.0, v32.5.0 2026-01-15, AboutCode 운영), cdxgen(Apache-2.0, v12.1.4 2026-03, CycloneDX 생성 + AI-BOM 생성 지원).",
+      "detail": "ScanCode Toolkit은 ClearlyDefined와 같은 AboutCode 재단이 운영한다는 점에서 거버넌스가 연결된다. cdxgen은 모델·프롬프트·MCP 설정까지 CycloneDX AI-BOM으로 담아내는 몇 안 되는 도구다.",
+      "confidence": "medium",
+      "target_section": "using",
+      "applies_to_korean_firms": "대규모 컴플라이언스 파이프라인이 필요한 대기업(ORT), 라이선스/저작권 정밀 스캔이 필요한 기업(ScanCode), 다국어·컨테이너·AI 자산까지 한 도구로 SBOM화하려는 기업(cdxgen)",
+      "action_for_firms": "세 도구를 오픈소스 관리 도구 목록에 추가하고, 조직 규모·언어·배포 형태별 선택 기준표에 각각의 강점을 배치한다.",
+      "practicality": "판단기준표",
+      "sources": [
+        {
+          "title": "ScanCode Toolkit Releases",
+          "url": "https://github.com/aboutcode-org/scancode-toolkit/releases",
+          "kind": "primary"
+        },
+        {
+          "title": "cdxgen GitHub",
+          "url": "https://github.com/cdxgen/cdxgen",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "AI/모델 자산 스캔 도구의 존재 여부 — 기존 SCA 도구의 공백",
+      "claim": "Snyk·Trivy·Grype·Dependabot 등 기존 SCA 도구는 requirements/lockfile을 파싱해 CVE를 매칭할 뿐, Hugging Face의 .safetensors 같은 모델 가중치나 데이터셋 라이선스는 스캔하지 않는다. Aqua Security는 Trivy에 이 기능을 추가할 계획이 없다고 공개적으로 밝혔다.",
+      "detail": "이 공백을 메우는 신흥 도구로 OWASP AIBOM Generator(오픈소스, Hugging Face 모델 대상 CycloneDX AI-BOM 생성)와 cdxgen의 AI-BOM 기능, 상용 ZeroPath AI-BOM(CycloneDX)이 확인된다. CycloneDX ML-BOM/AI-BOM 명세가 선도적이지만 툴링 생태계는 SBOM 대비 미성숙하며, 2026년은 수작업 산출물이 많고 자동화는 2027년 이후로 예상된다는 관측이 있다(2차 출처).",
+      "confidence": "medium",
+      "target_section": "using",
+      "applies_to_korean_firms": "Hugging Face 등에서 사전학습 모델을 내려받아 제품에 포함하는 기업 — 모델 라이선스 위반·데이터셋 출처 불명 리스크를 안고 있는 조직",
+      "action_for_firms": "기존 SCA 파이프라인이 모델 가중치·데이터셋 라이선스를 스캔하지 못한다는 점을 사내 정책에 명시하고, 모델 도입 시 OWASP AIBOM Generator/cdxgen 등으로 별도 AI-BOM을 생성하는 절차를 추가한다. (ai 축과 target_section을 공유 — 라이선스 조항 해석은 ai-oss-governance-researcher 담당)",
+      "practicality": "체크리스트",
+      "sources": [
+        {
+          "title": "OWASP AIBOM Generator",
+          "url": "https://genai.owasp.org/resource/owasp-aibom-generator/",
+          "kind": "secondary"
+        },
+        {
+          "title": "Trivy AI 모델 스캔 미지원 논의(GitHub Discussion)",
+          "url": "https://github.com/aquasecurity/trivy/discussions/7148",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "topic": "Insignary Clarity — 최신 동향 확인(생존, 위상 상승)",
+      "claim": "Insignary Clarity는 아카이브되지 않았고, 2025~2026년 Gartner 보고서 4건(Hype Cycle for Secure Software Engineering 2026, Hype Cycle for Application Security 2025 등)에 인용되며 오히려 위상이 올라갔다.",
+      "detail": "2026-07 'SBOM Accuracy Gap' 관련 보도자료를 다수 매체(GlobeNewswire 경유)가 게재했다. 소유권 변경 없음(한국 본사 독립 벤처).",
+      "confidence": "medium",
+      "target_section": "using",
+      "applies_to_korean_firms": "바이너리 단위 스캔이 필요한 기업(임베디드, 펌웨어 등 소스 미제공 컴포넌트 포함 제품)",
+      "action_for_firms": "원고 L542-548 서술은 유지하되 최신 Gartner 인용 사실을 각주로 보강할 수 있다.",
+      "practicality": "개념설명",
+      "sources": [
+        {
+          "title": "Insignary Closes SBOM Accuracy Gap With Binary-Level Clarity for Regulatory Risk",
+          "url": "https://www.manilatimes.net/2026/07/06/tmt-newswire/globenewswire/insignary-closes-sbom-accuracy-gap-with-binary-level-clarity-for-regulatory-risk/2379037",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "topic": "도구 선택 기준표 — 조직 규모·언어·배포 형태별(실용 산출물 초안)",
+      "claim": "이번 조사로 확보한 도구별 사실(라이선스, 배포 방식, 특화 영역)을 바탕으로 아래와 같은 1차 선택 기준을 구성할 수 있다.",
+      "detail": "① 예산 제약이 큰 스타트업/중소기업, 컨테이너 중심: Syft+Grype 또는 Trivy(무료, Apache-2.0, CLI 단독 사용 가능). ② 국내 중소기업, 한국어 지원·무료 우선: FOSSLight(LG전자, Apache-2.0) 또는 CodeEye(중소기업 한정 무료, 한국저작권위원회). ③ 대기업/다국적, 엔터프라이즈 SLA·정책 엔진 필요: Black Duck/FOSSA/Mend/Snyk(상용, 가격 비공개). ④ 바이너리·임베디드·소스 미제공 컴포넌트 포함 제품: Insignary Clarity(핑거프린트 기반, 소스 불필요), FOSSID(SBOM 통합·NTIA 준수 내보내기). ⑤ 함수 단위 정밀 분석이 필요한 R&D·공급망: LABRADOR(3-Layer 분석). ⑥ 여러 팀의 SBOM을 한 곳에서 지속 모니터링: Dependency-Track(무료, Apache-2.0). ⑦ AI 모델을 제품에 포함하는 조직: 위 도구 외 OWASP AIBOM Generator/cdxgen을 별도 추가.",
+      "confidence": "medium",
+      "target_section": "using",
+      "applies_to_korean_firms": "도구 선정 기준을 사내 정책 문서에 표로 명시하려는 모든 규모의 기업",
+      "action_for_firms": "위 초안을 조직 규모·언어·배포 형태 3열 표로 원고에 신설(현재 원고는 '오픈소스 관리 도구를 선택하는 기준'을 Gartner 정성 체크리스트로만 제공하고 정량적 조건표는 없음).",
+      "practicality": "판단기준표"
+    },
+    {
+      "topic": "CI 통합 지점 — 실용 산출물 초안",
+      "claim": "SCA/SBOM 도구를 개발 프로세스에 붙이는 지점은 크게 네 곳으로 정리된다: (1) PR 체크 — Syft/Grype/Trivy/OSV-Scanner를 GitHub Action으로 붙여 신규 의존성의 라이선스·취약점을 병합 전 차단, (2) 이미지 빌드 후 — 컨테이너 레지스트리 푸시 시 Trivy/Grype로 이미지 스캔, (3) 릴리스 게이트 — Dependency-Track에 정책 위반(금지 라이선스·치명적 취약점)이 있으면 릴리스 파이프라인을 차단, (4) 야간 재스캔 — 신규 CVE 발표에 대응해 기존 SBOM을 재평가.",
+      "detail": "각 지점은 원고 using#L972-990의 도구들과 새로 발굴한 Syft/Dependency-Track/OSV-Scanner를 조합해 구성 가능하다. 이 구조는 security 축(oss-supplychain-security-researcher)의 SLSA/실무 활용 조사와 겹치므로, tooling 축은 '어떤 지점에 어떤 도구가 붙는가'만 제공하고 세부 게이트 설계는 security 축에 위임한다.",
+      "confidence": "medium",
+      "target_section": "using",
+      "applies_to_korean_firms": "CI/CD 파이프라인에 오픈소스 검사를 자동화하려는 모든 개발 조직",
+      "action_for_firms": "원고 L990 '이러한 도구들을... CI/CD 파이프라인에 통합하는 것이 중요하다'는 문장을 4단계 통합 지점 목록으로 구체화한다.",
+      "practicality": "체크리스트"
+    },
+    {
+      "topic": "FOSSA — 최신 기능(AI 코드 스니펫 스캔) 추가 확인",
+      "claim": "FOSSA는 2025년 이후 'Snippet Scanning' 기능을 신설해 AI 코딩 도구가 생성한 코드의 IP 리스크(라이선스 혼입)를 관리하는 기능을 추가했다.",
+      "detail": "SBOM 포털, SPDX/CycloneDX 생성, Deny/Flag/Approve 정책 엔진을 제공한다. Dr. Allan Friedman(SBOM 운동의 대표 인물)이 시니어 어드바이저로 합류했다는 보도도 있다(2차 출처).",
+      "confidence": "medium",
+      "target_section": "using",
+      "applies_to_korean_firms": "생성형 AI 코딩 도구를 사내에 도입한 기업",
+      "action_for_firms": "원고 L499-504 FOSSA 설명에 AI 코드 스니펫 스캔 기능을 추가해 ai 축의 '생성형 AI 코딩 도구 라이선스 리스크 탐지 도구' 체크리스트 항목과 연결한다.",
+      "practicality": "체크리스트"
+    },
+    {
+      "topic": "원고 등재 도구 전수 생존 확인 결과 요약",
+      "claim": "원고에 등재된 14개 도구(FOSSology, SW360, SPDX, FOSSLight, OLIVE, FOSSA, FOSSID, Black Duck, Snyk, WhiteSource, CodeEye, Insignary Clarity, LABRADOR, ClearlyDefined) 중 완전히 아카이브되었거나 서비스가 종료된 도구는 없다.",
+      "detail": "다만 4개 도구(FOSSID, Black Duck, WhiteSource, LABRADOR)는 소유권 인수·재분사·리브랜딩 이력이 있어 명칭·URL·로고 갱신이 필요하다. 나머지 10개는 활성 상태를 확인했으나 OLIVE Platform은 최신 공지 날짜를 직접 확인하지 못해 medium 신뢰도로 남긴다.",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "이 가이드를 도구 도입 근거로 쓰는 모든 기업",
+      "action_for_firms": "extra.tools 배열의 status/logo_needs_update 필드를 기준으로 원고 개정 항목을 확정한다.",
+      "practicality": "체크리스트"
+    },
+    {
+      "topic": "국내 도구 현황 — FOSSLight 최신 구성 확인",
+      "claim": "FOSSLight는 LG전자가 유지보수하는 Apache-2.0 오픈소스로, fosslight-scanner 최신 버전은 2.1.26(2026-07-09)이며 2025~2026년 내내 월 단위로 릴리스가 이어지고 있어 활발히 유지보수되고 있다.",
+      "detail": "2026-06 '2026 공급망 보안 워크숍'에서 LG전자 연구원이 FOSSLight의 공급망 보안 구현을 발표했다는 보도가 있다(2차 출처).",
+      "confidence": "high",
+      "target_section": "using",
+      "applies_to_korean_firms": "국내 기업 일반, 특히 무료 국산 도구를 우선 검토하는 조직",
+      "action_for_firms": "원고 L473-482 FOSSLight 설명은 유지하되 최신 버전과 활발한 유지보수 상태를 각주로 보강한다.",
+      "practicality": "개념설명"
+    }
+  ],
+  "stale_items": [
+    {
+      "quote": "##### **LABRADOR** - https://www.iotcube.com/",
+      "reason": "IoTcube는 2022-08-30 Labrador Labs로 사명 변경했다. 2025-02 발간본은 이미 https://www.labradorlabs.ai/ 로 갱신되어 있어 저장소가 발간본보다 뒤처진 상태다.",
+      "suggested_fix": "URL을 https://www.labradorlabs.ai/ 로 교체하고 '(구 IoTcube)' 병기, 로고 파일 교체"
+    },
+    {
+      "quote": "2016년 스웨덴에서 설립된 FOSSID는 오픈소스 라이선스 및 보안 취약점 관리를 위한 솔루션이다.",
+      "reason": "FOSSID는 2021-05 Snyk에 인수되었다가 2022-09 원 창업자들이 재인수해 다시 독립 회사가 된 이력이 있다. 소유권 안정성을 판단하려는 독자에게 이 정보가 빠져 있다.",
+      "suggested_fix": "'2021년 Snyk에 인수되었다가 2022년 원 창업자들이 재인수해 현재 독립 회사로 운영되고 있다'는 문장 추가"
+    },
+    {
+      "quote": "##### **Black Duck** - https://www.blackducksoftware.com/",
+      "reason": "URL이 301로 https://www.blackduck.com/ 에 리다이렉트된다. 회사도 2024-10-01 Synopsys에서 분리되어 독립 법인 Black Duck Software, Inc.로 재출범했다.",
+      "suggested_fix": "URL을 https://www.blackduck.com/ 으로 교체하고 'Synopsys Software Integrity Group에서 2024년 독립 법인으로 분리' 문장 추가, 로고 교체 검토"
+    },
+    {
+      "quote": "##### **WhiteSource** - https://www.whitesourcesoftware.com",
+      "reason": "WhiteSource는 2022-05-25 Mend로 공식 리브랜딩했다. 원고가 4년 넘게 옛 이름과 옛 URL을 쓰고 있다.",
+      "suggested_fix": "제목·본문의 'WhiteSource'를 'Mend(구 WhiteSource)'로, URL을 https://www.mend.io 로 교체, 로고 파일 교체"
+    },
+    {
+      "quote": "##### **SW360** - https://www.eclipse.org/sw360",
+      "reason": "URL이 301로 https://eclipse.dev/sw360 에 리다이렉트된다.",
+      "suggested_fix": "URL을 https://eclipse.dev/sw360 으로 교체"
+    },
+    {
+      "quote": "SPDX(Software Package Data  소프트웨어 정보 교환 방식을 표준화하고 이를 용이하게 하기 위한 도구를 제공한다.",
+      "reason": "문장이 'Software Package Data Exchange'에서 끊겨 있는 편집 결함으로 보인다.",
+      "suggested_fix": "'SPDX(Software Package Data Exchange)는 소프트웨어 정보 교환 방식을 표준화하고 이를 용이하게 하기 위한 도구를 제공한다.'로 복구"
+    },
+    {
+      "quote": "[^gartner-3971011]: Gartner, Technology Insight for Software Composition Analysis (2019) : https://www.gartner.com/en/documents/3971011/technology-insight-for-software-composition-analysis",
+      "reason": "7년 지난 보고서다. Gartner는 SCA를 별도 MQ로 유지하지 않고 2026년 신설 'Magic Quadrant for Software Supply Chain Security'로 통합했다.",
+      "suggested_fix": "2026 Magic Quadrant for Software Supply Chain Security를 병기하거나 대체 인용(원문은 유료 장벽 뒤에 있어 공개 벤더 보도자료로만 확인했음을 명시)"
+    }
+  ],
+  "checklist_unconfirmed": [
+    "상용 도구(Black Duck, FOSSID, Insignary Clarity, LABRADOR, CodeEye, Mend)의 정확한 SBOM 포맷 지원 버전(SPDX/CycloneDX 몇 판까지 지원하는지)을 공식 문서에서 확인하지 못했다 — 로그인 장벽 또는 문서 비공개로 접근 실패.",
+    "OLIVE Platform의 최신 공지사항(가장 최근 업데이트 날짜, 서비스 지속 계획)을 확인하지 못했다 — olive.kakao.com/notice가 JS 렌더링 SPA라 WebFetch로 목록을 읽지 못했다. 서비스 종료 정황은 검색에서 발견되지 않았다.",
+    "상용 도구의 가격·라이선스 조건(FOSSID, LABRADOR, Insignary Clarity, Black Duck, Mend, Snyk, FOSSA)은 대부분 비공개였다. 추정하지 않고 '비공개'로 기록했다.",
+    "AI/모델 자산 스캔 도구(OWASP AIBOM Generator, ZeroPath AI-BOM, cdxgen AI-BOM 기능)의 실제 프로덕션 도입 사례와 성숙도를 확인하지 못했다 — 2025~2026년 신설된 생태계라 사례 자료가 아직 부족하다.",
+    "조직 규모·언어·배포 형태별 '도구 선택 기준표'는 이번 조사로 초안을 구성했으나, 각 상용 도구의 무료 티어 조건(팀 규모 임계값 등, 원고가 이미 서술한 'FOSSA 100명', 'WhiteSource/Mend 20명' 등)이 현재도 유효한지는 재확인하지 못했다.",
+    "SW360 라이선스가 EPL-1.0에서 EPL-2.0으로 완전히 이관되었는지(코드베이스 전체 기준)는 Eclipse 프로젝트 페이지 요약으로만 확인했고 LICENSE 파일 원문까지 내려가지 못했다."
+  ],
+  "extra": {
+    "tools": [
+      {
+        "name": "FOSSology",
+        "former_name": null,
+        "kind": "opensource",
+        "status": "active",
+        "latest_version": "4.6.0 (2025-11-25)",
+        "license": "GPL-2.0-only",
+        "sbom_formats": [
+          "SPDX"
+        ],
+        "capability": "소스 파일 상단 라이선스 문구 자동 스캔, SPDX 파일 원클릭 생성, REST API 제공",
+        "url": "https://www.fossology.org",
+        "logo_needs_update": false,
+        "in_existing_guide": true
+      },
+      {
+        "name": "SW360",
+        "former_name": null,
+        "kind": "opensource",
+        "status": "active",
+        "latest_version": "20.0.0 (20.1.0 RC2 진행 중)",
+        "license": "EPL-2.0(구 EPL-1.0)",
+        "sbom_formats": [
+          "SPDX"
+        ],
+        "capability": "제품·릴리스별 오픈소스 컴포넌트/라이선스 인벤토리 관리, CPE·CVE 연동",
+        "url": "https://eclipse.dev/sw360",
+        "logo_needs_update": false,
+        "in_existing_guide": true
+      },
+      {
+        "name": "SPDX",
+        "former_name": null,
+        "kind": "opensource",
+        "status": "active",
+        "latest_version": "SPDX 3.0.1(안정), SPDX 3.1 RC 검토 중",
+        "license": "CC0(스펙), 도구별 개별 라이선스",
+        "sbom_formats": [
+          "SPDX 2.3",
+          "SPDX 3.0.1"
+        ],
+        "capability": "SBOM 표준 스펙 및 변환 도구 제공",
+        "url": "https://spdx.dev",
+        "logo_needs_update": false,
+        "in_existing_guide": true
+      },
+      {
+        "name": "FOSSLight",
+        "former_name": null,
+        "kind": "opensource",
+        "status": "active",
+        "latest_version": "fosslight-scanner 2.1.26 (2026-07-09)",
+        "license": "Apache-2.0",
+        "sbom_formats": [
+          "자체 리포트(Excel/YAML/JSON/HTML); SPDX 명시 지원 여부 미확인"
+        ],
+        "capability": "FOSSLight Hub(BOM·라이선스·취약점 관리) + FOSSLight Scanner(소스·바이너리·의존성 스캔)",
+        "url": "https://fosslight.org",
+        "logo_needs_update": false,
+        "in_existing_guide": true
+      },
+      {
+        "name": "OLIVE Platform",
+        "former_name": null,
+        "kind": "opensource",
+        "status": "active",
+        "latest_version": "확인 못함",
+        "license": "OLIVE CLI는 GitHub 공개, Hub는 무료 SaaS(라이선스 비공개)",
+        "sbom_formats": [
+          "확인 못함"
+        ],
+        "capability": "프로젝트 실시간 스캔, 라이선스 의무사항·고지문 확인, OLIVE CLI로 온프레미스 스캔",
+        "url": "https://olive.kakao.com",
+        "logo_needs_update": false,
+        "in_existing_guide": true
+      },
+      {
+        "name": "FOSSA",
+        "former_name": null,
+        "kind": "commercial",
+        "status": "active",
+        "latest_version": "SaaS(버전 비공개)",
+        "license": "proprietary(freemium)",
+        "sbom_formats": [
+          "SPDX",
+          "CycloneDX"
+        ],
+        "capability": "라이선스 스캔, SBOM 포털, 정책 자동화, AI 코딩 도구용 Snippet Scanning",
+        "url": "https://fossa.com",
+        "logo_needs_update": false,
+        "in_existing_guide": true
+      },
+      {
+        "name": "FOSSID",
+        "former_name": null,
+        "kind": "commercial",
+        "status": "active",
+        "latest_version": "FossID 26.2 (2026)",
+        "license": "proprietary",
+        "sbom_formats": [
+          "SBOM 수집·통합·NTIA 준수 내보내기(정확한 SPDX/CycloneDX 버전 미확인)"
+        ],
+        "capability": "소스코드 SCA, 바이너리/코드 스니펫 탐지, AI 생성 코드 리스크 가시성",
+        "url": "https://fossid.com",
+        "logo_needs_update": false,
+        "in_existing_guide": true,
+        "replacement_for_deprecated": null
+      },
+      {
+        "name": "Black Duck",
+        "former_name": "Synopsys Software Integrity Group(2017~2024)",
+        "kind": "commercial",
+        "status": "renamed",
+        "latest_version": "SaaS/온프레미스(버전 비공개)",
+        "license": "proprietary",
+        "sbom_formats": [
+          "SPDX",
+          "CycloneDX"
+        ],
+        "capability": "라이선스·취약점·코드 품질 통합 SCA",
+        "url": "https://www.blackduck.com",
+        "logo_needs_update": true,
+        "in_existing_guide": true
+      },
+      {
+        "name": "Snyk",
+        "former_name": null,
+        "kind": "commercial",
+        "status": "active",
+        "latest_version": "SaaS(버전 비공개)",
+        "license": "proprietary(freemium)",
+        "sbom_formats": [
+          "SPDX",
+          "CycloneDX"
+        ],
+        "capability": "개발자 중심 SCA, Snyk AI Trust Platform 구성요소",
+        "url": "https://snyk.io",
+        "logo_needs_update": false,
+        "in_existing_guide": true
+      },
+      {
+        "name": "Mend",
+        "former_name": "WhiteSource",
+        "kind": "commercial",
+        "status": "renamed",
+        "latest_version": "SaaS(버전 비공개)",
+        "license": "proprietary(freemium)",
+        "sbom_formats": [
+          "확인 못함"
+        ],
+        "capability": "SCA+SAST 애플리케이션 보안 플랫폼, 자동 코드 개선",
+        "url": "https://www.mend.io",
+        "logo_needs_update": true,
+        "in_existing_guide": true
+      },
+      {
+        "name": "CodeEye",
+        "former_name": null,
+        "kind": "commercial",
+        "status": "active",
+        "latest_version": "N/A",
+        "license": "proprietary(중소기업 대상 무료)",
+        "sbom_formats": [
+          "N/A"
+        ],
+        "capability": "한국저작권위원회 오픈소스 DB 기반 소스 유사도 비교",
+        "url": "https://www.olis.or.kr/codeEye/introduction.do",
+        "logo_needs_update": false,
+        "in_existing_guide": true
+      },
+      {
+        "name": "Insignary Clarity",
+        "former_name": null,
+        "kind": "commercial",
+        "status": "active",
+        "latest_version": "N/A",
+        "license": "proprietary",
+        "sbom_formats": [
+          "확인 못함"
+        ],
+        "capability": "바이너리 핑거프린트 기반 OSS/라이선스/취약점 식별",
+        "url": "https://insignary.com",
+        "logo_needs_update": false,
+        "in_existing_guide": true
+      },
+      {
+        "name": "LABRADOR",
+        "former_name": "IoTcube(~2022-08-30)",
+        "kind": "commercial",
+        "status": "renamed",
+        "latest_version": "Labrador OSS v2.0(GS인증 1등급)",
+        "license": "proprietary",
+        "sbom_formats": [
+          "SBOM 지원 언급됨(정확한 버전 미확인)"
+        ],
+        "capability": "R&D·공급망 오픈소스 취약점/라이선스 분석, 함수 단위 3-Layer 분석",
+        "url": "https://www.labradorlabs.ai",
+        "logo_needs_update": true,
+        "in_existing_guide": true
+      },
+      {
+        "name": "ClearlyDefined",
+        "former_name": null,
+        "kind": "opensource",
+        "status": "active",
+        "latest_version": "N/A(지속 갱신)",
+        "license": "코드 Apache-2.0 계열(재확인 필요)",
+        "sbom_formats": [
+          "N/A(메타데이터 큐레이션 DB)"
+        ],
+        "capability": "오픈소스 컴포넌트 출처·라이선스 커뮤니티 큐레이션 DB",
+        "url": "https://clearlydefined.io",
+        "logo_needs_update": false,
+        "in_existing_guide": true
+      },
+      {
+        "name": "Syft",
+        "former_name": null,
+        "kind": "opensource",
+        "status": "active",
+        "latest_version": "1.44.0 (2026-05-01)",
+        "license": "Apache-2.0",
+        "sbom_formats": [
+          "SPDX",
+          "CycloneDX",
+          "Syft JSON"
+        ],
+        "capability": "컨테이너/파일시스템 SBOM 생성 CLI, 오프라인 실행",
+        "url": "https://github.com/anchore/syft",
+        "logo_needs_update": false,
+        "in_existing_guide": false
+      },
+      {
+        "name": "Grype",
+        "former_name": null,
+        "kind": "opensource",
+        "status": "active",
+        "latest_version": "0.110.0 (2026-03-19)",
+        "license": "Apache-2.0",
+        "sbom_formats": [
+          "SPDX/CycloneDX SBOM 입력 지원"
+        ],
+        "capability": "컨테이너·파일시스템 취약점 스캔, EPSS·KEV 반영",
+        "url": "https://github.com/anchore/grype",
+        "logo_needs_update": false,
+        "in_existing_guide": true
+      },
+      {
+        "name": "Trivy",
+        "former_name": null,
+        "kind": "opensource",
+        "status": "active",
+        "latest_version": "0.72.0 (2026-06-30)",
+        "license": "Apache-2.0",
+        "sbom_formats": [
+          "SPDX",
+          "CycloneDX"
+        ],
+        "capability": "컨테이너/IaC/파일시스템 취약점·라이선스·시크릿 스캔 및 SBOM 생성",
+        "url": "https://github.com/aquasecurity/trivy",
+        "logo_needs_update": false,
+        "in_existing_guide": true
+      },
+      {
+        "name": "OWASP Dependency-Track",
+        "former_name": null,
+        "kind": "opensource",
+        "status": "active",
+        "latest_version": "5.0 GA (2026-06-09)",
+        "license": "Apache-2.0",
+        "sbom_formats": [
+          "CycloneDX",
+          "SPDX"
+        ],
+        "capability": "SBOM-first 지속 모니터링 플랫폼",
+        "url": "https://dependencytrack.org",
+        "logo_needs_update": false,
+        "in_existing_guide": false
+      },
+      {
+        "name": "OSV-Scanner",
+        "former_name": null,
+        "kind": "opensource",
+        "status": "active",
+        "latest_version": "2.3.5 (2026-03)",
+        "license": "Apache-2.0",
+        "sbom_formats": [
+          "SBOM 입력 지원, OSV 포맷 출력"
+        ],
+        "capability": "OSV.dev 기반 취약점 스캔, 가이드형 리미디에이션 추천",
+        "url": "https://github.com/google/osv-scanner",
+        "logo_needs_update": false,
+        "in_existing_guide": false
+      },
+      {
+        "name": "ORT (OSS Review Toolkit)",
+        "former_name": null,
+        "kind": "opensource",
+        "status": "active",
+        "latest_version": "빈번한 릴리스(2026-07-21까지 활동 확인)",
+        "license": "Apache-2.0",
+        "sbom_formats": [
+          "SPDX",
+          "CycloneDX"
+        ],
+        "capability": "라이선스·취약점·정책 검증 파이프라인 스위트",
+        "url": "https://github.com/oss-review-toolkit/ort",
+        "logo_needs_update": false,
+        "in_existing_guide": false
+      },
+      {
+        "name": "ScanCode Toolkit",
+        "former_name": null,
+        "kind": "opensource",
+        "status": "active",
+        "latest_version": "32.5.0 (2026-01-15)",
+        "license": "Apache-2.0",
+        "sbom_formats": [
+          "SPDX"
+        ],
+        "capability": "소스 코드 라이선스·저작권·패키지 스캔, AboutCode 재단 운영",
+        "url": "https://github.com/aboutcode-org/scancode-toolkit",
+        "logo_needs_update": false,
+        "in_existing_guide": false
+      },
+      {
+        "name": "cdxgen",
+        "former_name": null,
+        "kind": "opensource",
+        "status": "active",
+        "latest_version": "12.1.4 (2026-03)",
+        "license": "Apache-2.0",
+        "sbom_formats": [
+          "CycloneDX"
+        ],
+        "capability": "다국어/컨테이너 CycloneDX SBOM 생성, AI-BOM 생성 지원",
+        "url": "https://github.com/cdxgen/cdxgen",
+        "logo_needs_update": false,
+        "in_existing_guide": false
+      },
+      {
+        "name": "OWASP AIBOM Generator",
+        "former_name": null,
+        "kind": "opensource",
+        "status": "active",
+        "latest_version": "확인 못함(초기 단계)",
+        "license": "확인 못함",
+        "sbom_formats": [
+          "CycloneDX(AI-BOM)"
+        ],
+        "capability": "Hugging Face 모델 포함 AI 자산의 CycloneDX AI-BOM 생성",
+        "url": "https://genai.owasp.org/resource/owasp-aibom-generator/",
+        "logo_needs_update": false,
+        "in_existing_guide": false
+      }
+    ],
+    "new_candidates": [
+      {
+        "name": "Syft",
+        "why_add": "SBOM 생성 표준 CLI, 원고에 없지만 Trivy·Grype와 함께 실무 최다 사용",
+        "url": "https://github.com/anchore/syft"
+      },
+      {
+        "name": "OWASP Dependency-Track",
+        "why_add": "SBOM 관리 플랫폼 카테고리가 원고에 없음",
+        "url": "https://dependencytrack.org"
+      },
+      {
+        "name": "OSV-Scanner",
+        "why_add": "NVD 지연 대안 데이터 소스 스캐너, 체크리스트 명시 항목",
+        "url": "https://github.com/google/osv-scanner"
+      },
+      {
+        "name": "ORT (OSS Review Toolkit)",
+        "why_add": "대규모 컴플라이언스 파이프라인 스위트, 체크리스트 명시 항목",
+        "url": "https://github.com/oss-review-toolkit/ort"
+      },
+      {
+        "name": "ScanCode Toolkit",
+        "why_add": "ClearlyDefined와 같은 AboutCode 운영, 체크리스트 명시 항목",
+        "url": "https://github.com/aboutcode-org/scancode-toolkit"
+      },
+      {
+        "name": "cdxgen",
+        "why_add": "CycloneDX SBOM + AI-BOM 생성 지원, 체크리스트 명시 항목",
+        "url": "https://github.com/cdxgen/cdxgen"
+      },
+      {
+        "name": "OWASP AIBOM Generator",
+        "why_add": "'AI/모델 자산을 다루는 도구' 체크리스트 항목에 대한 직접적 답",
+        "url": "https://genai.owasp.org/resource/owasp-aibom-generator/"
+      }
+    ],
+    "removals": [],
+    "removals_note": "원고 등재 14개 도구 중 완전히 아카이브되었거나 서비스가 종료된 것은 없다. FOSSID·Black Duck·WhiteSource(Mend)·LABRADOR 4개는 소유권/브랜드 변경 이력이 있어 서술 갱신이 필요할 뿐 제거 대상은 아니다.",
+    "logo_needs_update_list": [
+      "Black Duck(logo-blackduck.png — Synopsys 분리 이후 브랜드 확인 필요)",
+      "Mend(logo-whitesource.png → Mend 로고로 교체, 2022-05 리브랜딩)",
+      "LABRADOR(logo-labrador.png → Labrador Labs 로고로 교체, 2022-08 리브랜딩)"
+    ],
+    "workspace_file": "/Users/robin/IdeaProjects/oss-governance-guide/_workspace/02_research_tooling.json"
+  }
+}

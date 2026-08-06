@@ -1,0 +1,165 @@
+{
+  "_note": "임시 조각 2/3 — 최종 병합본은 04b_plan_using.json 이다.",
+  "directives": [
+    {
+      "id": "US-13",
+      "priority": 1,
+      "op": "restructure",
+      "anchor_line": 268,
+      "anchor_quote": "#### 글로벌 SBOM 규제 동향\n\n1. 미국\n\n   - 2021년 5월: [행정명령 14028 발표]",
+      "instruction": "국가별 나열(L268~L296)을 '기한 순 표'로 재구성한다. 독자가 알고 싶은 것은 '언제까지 무엇을 해야 하는가'인데 현재 구조로는 판단되지 않는다. 표 열: 기한 / 규제 / 적용 대상 / 국내 기업이 해야 할 일. 행은 확인된 6개 EU 기한을 시간 순으로: 2026-08-02(AI Act 제50조 투명성) / 2026-09-11(CRA 제14조 보고 의무) / 2026-12-09(EU 제조물책임지침 적용 개시) / 2027-12-02(AI Act Annex III 고위험) / 2027-12-11(CRA 전면 적용) / 2028-08-02(AI Act Annex I 내장형 고위험). 여기에 국내 3단계(2026년 보안적합성 검증 SBOM 반영 / 2027년 공공 정보화사업 보안 요구사항 반영·제출 제도화 / 2028년 주요 기관 납품 체크리스트 우선 적용)를 같은 표에 병기해 EU·국내 기한이 겹치는 구간이 드러나게 한다. 이 표는 US-31이 이관해 오는 뒤쪽 규제 절(L801~L857)의 내용까지 흡수하는 단일 수용처다. 표 위에는 3~4행 도입부만 두고 국가별 서술은 부활시키지 마라. 목표 분량: 29행 → 40행(+11). 그림 IL-using-01을 이 표 바로 위에 배치한다.",
+      "evidence": ["research_regulation#findings[24]", "research_regulation#findings[0]", "research_regulation#findings[5]", "research_regulation#findings[11]", "research_regulation#findings[18]", "audit_using#issues[22]", "audit_using#illustration_gaps[0]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "US-14",
+      "priority": 1,
+      "op": "expand",
+      "anchor_line": 281,
+      "anchor_quote": "- 2027년: 대부분의 조항 시행 예정, 디지털 요소가 있는 제품을 시장에 출시하는 모든 기업은 최소한의 사이버보안 및 보고 요구사항 [준수 필요]",
+      "instruction": "CRA를 한 줄짜리 항목에서 독립 소절로 승격한다. 이 개정판에서 using에 추가할 가치가 가장 높은 내용이다. 넣을 것: (1) 3단계 적용 일정 — 2024-12-10 발효(Regulation (EU) 2024/2847), 2026-06-11 Chapter IV(제35~51조) 적용, 2026-09-11 제14조 보고 의무 적용, 2027-12-11 전면 적용. 제71조 원문을 각주에 인용한다. (2) 2026-09-11 보고 의무의 구체 절차 — 적극적으로 악용되는 취약점·중대 사고 인지 시 ENISA 및 관할 CSIRT에 24시간 조기경보 → 72시간 취약점 신고 → 14일/1개월 최종 보고. (3) SBOM 의무의 실제 범위 — Annex I Part II(1)은 '최소한 최상위 의존성'을 기계 판독 가능한 범용 포맷으로 담을 것을 요구하며, Annex II(9)에 따라 사용자 공개는 선택이지만 제13조(25)에 따라 시장감시당국 제출은 의무다. '대외 공개용'과 '당국 제출용 보관'을 분리한 두 갈래 SBOM 정책이 실무 결론이다. (4) 제13조(5)(6)의 오픈소스 실사·상류 보고 의무 — 상업적으로 출하되지 않은 오픈소스 구성요소까지 실사 대상이고, 취약점을 발견하면 상류 프로젝트에 보고하고 수정 코드를 공유해야 한다. 사내 패치를 사내에만 두는 관행이 CRA 적용 제품에서는 의무 위반이 된다는 점을 명시하고 contributing 장으로 크로스링크한다. (5) 국내 기업 적용 판단 흐름 4단계 체크리스트 — EU 시장 출하 여부 → 디지털 요소 제품 여부 → 제품 지원기간(support period) 확정 → 적합성평가 경로(자체평가/제3자) 판정. CRA가 신설한 '오픈소스 소프트웨어 스튜어드' 지위와 상용 제조자 의무의 차이는 한 문단으로 다루되, 리서치에서 확인된 조문 범위를 넘어 추정하지 마라. 목표 분량: 3행 → 38행(+35).",
+      "evidence": ["research_regulation#findings[0]", "research_regulation#findings[1]", "research_regulation#findings[4]", "audit_using#issues[22]", "research_regulation#stale_items[0]", "research_regulation#stale_items[1]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "US-15",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 272,
+      "anchor_quote": "- 2021년 5월: [행정명령 14028 발표](https://www.nist.gov/itl/executive-order-14028-improving-nations-cybersecurity)[^order-14028], 연방 정부 계약자에게 SBOM 제출 의무화",
+      "instruction": "'연방 정부 계약자에게 SBOM 제출 의무화'는 2026년 기준 사실이 아니다. EO 14306(2025-06-06)이 SBOM 관련 FAR 조항 신설 지시를 삭제했고, OMB M-26-05(2026-01-23)가 M-22-18·M-23-16을 폐지해 증명·SBOM 요구를 기관 재량으로 바꿨다. 계보를 한 줄 타임라인으로 정리하고(2021-05 EO 14028 → 2025-01 EO 14144 → 2025-06 EO 14306 → 2026-01 OMB M-26-05), 결론 문장을 반드시 붙인다: '이는 미국 연방 조달 요건의 후퇴이지 SBOM 자체의 후퇴가 아니다. 같은 기간 CISA는 SBOM 최소 요소를 오히려 강화했고, EU CRA와 국내 공공 요구는 별개로 유지되므로 SBOM 생성 체계를 해체할 근거가 되지 않는다.' 이 발견은 confidence medium(1차 행정명령 + 2차 로펌 해설 조합)이므로 '기관 재량으로 전환됐다'까지만 쓰고 개별 계약의 효력을 단정하지 마라. FDA 항목(L273)은 반대로 근거가 법률(FD&C Act 제524B조, 2022-12-29 신설·2023-03-29 효력)이라 행정부 정책 변화와 무관하게 유지된다는 점을 한 줄로 대비시킨다 — 각주 URL은 404이므로 FDA 현행 사이버보안 페이지로 교체한다. L275 CISA Secure by Design Pledge 각주도 404이므로 2026년 운영 상태를 확인해 유지 또는 삭제하고, L286 Quad 항목은 본문 연도(2024년 5월)와 각주 URL(2023년 5월 문서)이 불일치하며 국내 실무 영향이 낮으므로 삭제한다. 목표 분량: -4.",
+      "evidence": ["research_regulation#findings[7]", "research_regulation#findings[10]", "audit_using#issues[19]", "audit_using#issues[20]", "audit_using#issues[21]", "audit_using#issues[23]", "research_regulation#stale_items[2]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "US-16",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 300,
+      "anchor_quote": "#### 국내 SBOM 규제 동향\n\n1. 정부 가이드라인 발표",
+      "instruction": "L300~L326 전체를 2026년 기준 결과형으로 다시 쓴다. 현재는 2024년 시점의 '예정' 목록이라 규제 가이드로 기능하지 못한다. 핵심 교체 근거는 과기정통부·국정원이 2026-06-24 발표한 'SW 공급망 보안 강화 로드맵'이다. 넣을 것: (1) 계보 — 2024-05-13 SW 공급망 보안 가이드라인 1.0 → 2024-09-01 국가 사이버안보 기본계획(국가안보실, 14개 부처 100대 실천과제) → 2026-06-24 SW 공급망 보안 강화 로드맵. (2) 로드맵의 3대 전략 9개 과제는 한 문단으로 요약하고, 연도별 일정은 표로 — 2026년 공공 분야 SBOM 관리체계 개발 및 통합관리시스템 구축 착수 / 2027년 보안기능 시험 신청 제품부터 SBOM 생성·검증 실증, SBOM 제출 제도화, 'Software Supply-Chain Security Verified' 시범인증 개시 / 2028년 외교·안보·국방 등 주요 기관 납품 시 체크리스트 우선 적용, 국가 취약점 정보 DB 구축. (3) 중대 취약점 발견 제품의 공공 조달 일시 제한 방안이 검토되고 있다는 사실과, 그것이 실행되면 '중대 취약점 발견→패치 완료' 소요 시간이 곧 매출 정지 기간이 된다는 실무 함의. (4) 2026-01-01 시행된 국정원 '보안기능 시험제도 운영지침'과 2026-07-01부터 적용되는 개발환경 보안 자체 점검 목록(총 84개 항목 중 1단계 48개)을 별도 항목으로 넣는다. 주의: 로드맵은 정책 계획이지 법령이 아니고 연도별 세부 일정은 2차 보도 기준(confidence medium)이므로, 발표 시점과 시행 시점을 분리해 기술하고 '~할 계획이다'로 쓴다. NIS-SBOM 항목 수는 자료마다 15개·20개로 엇갈려 원문 미확인이므로 숫자를 본문에 쓰지 마라. L322의 '현재는 의무화 단계까지는 이르지 않았지만'은 '2026년 기준 보안적합성 검증에 SBOM 제출이 반영되기 시작했고 정부는 2027년까지 공공 도입 SW의 제출 제도화를 목표로 한다'로 교체한다. 정의가 없어 웹에서 마커가 노출되는 각주 [^nia2024]는 발간본 각주 22)의 정의(SBOM 시범 적용 계획, https://dpg.go.kr/DPG/contents/DPG02020000.do?schM=view&id=20240513105420991857&schBcid=press)를 되가져와 복구하되, dpg.go.kr 링크 생존을 재확인하고 죽었으면 대체 출처로 바꾼다. 목표 분량: 27행 → 40행(+13).",
+      "evidence": ["research_regulation#findings[18]", "research_regulation#findings[20]", "research_security#findings[27]", "research_security#findings[28]", "audit_using#issues[24]", "audit_using#issues[25]", "audit_using#issues[26]", "audit_using#issues[27]", "audit_using#issues[28]", "research_regulation#stale_items[8]", "research_regulation#stale_items[9]", "research_regulation#stale_items[10]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "US-17",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 329,
+      "anchor_quote": "#### SBOM 최소 요구 사항\n\nNTIA(National Telecommunications and Information Administration)는 라이선스 및 보안취약점 관리를 위해 SBOM이 갖춰야 할 다음 세 가지의 요구 사항을 제시하였다",
+      "instruction": "L329~L353(요구사항 3항목 + 7개 필드 표)을 CISA 2026판 기준으로 교체한다. 2026-07-29 CISA·NSA·FBI와 17개국 기관(한국 KISA와 국가정보원 산하 NCSC 포함)이 '2026 Minimum Elements for a Software Bill of Materials'를 발표해 NTIA 2021 문서를 대체했고 데이터 필드가 7개에서 17개로 늘었다. 표는 17개 필드 전부를 담되 '신규' 열을 두어 신설 항목을 표시한다 — SBOM 메타데이터 9개(SBOM Author, SBOM Author Signature, SBOM Data Format Name, SBOM Data Format Version, SBOM Generation Context, SBOM Timestamp, SBOM Tool Name, SBOM Tool Version, SBOM Version), 컴포넌트 데이터 8개(Component Dependency Relationship, Component Hash Algorithm, Component Hash Value, Component Identifiers, Component License, Component Name, Component Producer, Component Version). 표 아래에 변경점 4가지를 짧게 적는다: Supplier Name→Component Producer 개명, Depth→Coverage 대체('최소 깊이 없음' 명시), Access Controls 삭제 후 Distribution and Delivery에 흡수, '알 수 없는 정보'와 '의도적 비공개'를 명시적으로 구분하도록 요구. 이어서 실무 체크리스트 4항목: ① 현재 도구 출력에 해시값·해시 알고리즘·컴포넌트 라이선스가 실제로 채워지는지 직접 확인(상당수 도구가 기본 설정에서 비운다) ② 소스 기반(before build)과 바이너리 기반(after build) SBOM을 구분 산출하고 차이를 누락 컴포넌트로 검토 ③ 알 수 없는 값은 빈칸이 아니라 'unknown'으로 명시하고 문의 창구를 문서화 ④ SBOM에 서명을 붙이고 버전별 URL 또는 API로 상시 제공. Component License가 필수가 되면서 SBOM이 보안 문서인 동시에 라이선스 컴플라이언스 문서가 되었다는 점, 한국 기관이 공동 작성자이므로 국내 제도가 이 필드 정의를 따를 개연성이 높다는 점을 각각 한 문장으로 명시한다. 목표 분량: 25행 → 45행(+20).",
+      "evidence": ["research_regulation#findings[8]", "research_security#findings[5]", "research_security#findings[26]", "audit_using#issues[29]", "research_regulation#stale_items[3]", "research_security#stale_items[8]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "US-18",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 355,
+      "anchor_quote": "#### SBOM 표준 형식\n\n1. **SPDX (Software Package Data Exchange)**",
+      "instruction": "세 포맷 소개(L355~L377)를 판번호와 표준 지위가 명시된 선택 판단표로 바꾼다. 갱신 사실: SPDX 현행 안정판 3.0.1(2024-12-17), 3.1은 RC1 단계(2026-01-24 공지, 정식 릴리스 아님), ISO/IEC 5962:2021은 SPDX 2.2.1 기반이며 SPDX 3.0을 담은 ISO/IEC DIS 5962가 DIS 단계 진행 중(발행 시점 미확인). CycloneDX는 1.7(2025-10-21 릴리스, 패치 1.7.1은 2026-06-02)이 2025-12 Ecma 총회에서 ECMA-424 2판으로 채택되어 SPDX와 동등하게 공식 표준 지위를 갖는다. 따라서 L384의 '국제 표준인 SPDX를 먼저 지원하는 것을 권장한다'는 근거가 성립하지 않으므로 용도별 선택 기준으로 교체한다: 라이선스 컴플라이언스 중심이면 SPDX, 취약점·VEX·암호자산(CBOM) 중심이면 CycloneDX, 양방향 변환 경로 확보를 전제로 한다. 수용 정책에는 판번호 하한을 명시한다(예: SPDX 2.3 또는 3.0.1 이상, CycloneDX 1.5 이상) — deprecated 판번호로 생성된 SBOM을 신규 소프트웨어에 대해 수용하지 말라는 것이 CISA 2026 권고다. SWID Tags는 ISO/IEC 19770-2:2015 그대로이고 SBOM 실무에서 비중이 낮으므로 표의 한 행으로 격하한다. 표 열: 포맷 / 현행 판번호와 시점 / 표준 지위 / 강점 / AI 자산 표현 가능 여부. 경고: '#### SBOM 표준 형식' 헤딩 텍스트는 그대로 두어라. 목표 분량: 23행 → 30행(+7).",
+      "evidence": ["research_regulation#findings[16]", "research_regulation#findings[17]", "research_security#findings[13]", "research_ai#findings[23]", "audit_using#issues[30]", "audit_using#issues[32]", "research_regulation#stale_items[5]", "research_ai#stale_items[3]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "US-19",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 388,
+      "anchor_quote": "SPDX 표준은 2024년 4월에 3.0 버전이 릴리즈되었다. 하지만, 이 문서에서는 SPDX 3.0에 대해 간단히 소개하고, 주요 내용은 현재 널리 사용되고 있는 SPDX 2.3 기준으로 소개하고자 한다.",
+      "instruction": "L388과 L408의 SPDX 판번호·권고를 함께 고친다. 판번호 연혁을 3.0(2024-04-15) → 3.0.1(2024-12-17, 현행 안정판) → 3.1-RC1(2026-01-24, 정식 아님)로 갱신하고, L408의 '현재로서는 SPDX 2.3 사용을 권장한다'를 조건부 권고로 교체한다: 'AI 모델·데이터셋을 SBOM에 포함해야 하면 SPDX 3.0.1 이상(AI/Dataset 프로필) 또는 CycloneDX 1.7(ML-BOM)을 쓴다. 소프트웨어 컴포넌트만 다루고 수취처가 2.3을 요구하면 2.3을 유지하되, 당분간 2.3과 3.0.1을 모두 출력할 수 있게 도구를 구성하고 발주처 요구 포맷을 계약 단계에서 판번호까지 명시해 받는다.' AI/Dataset 프로필은 3.x에만 있고 2.3에는 대응 개념이 없다는 것이 이 조건 분기의 근거다. L384의 'ISO 표준(ISO/IEC 5962)으로 등록된'은 'SPDX 2.2.1이 ISO/IEC 5962:2021로 국제표준화되었다'로 판번호를 명시해 뒤의 2.3/3.0 논의와 혼동되지 않게 한다. L398~L406의 SPDX 예제 링크 4건은 모두 404다(spdx-spec 저장소 재구성) — spdx/spdx-examples 저장소 또는 릴리스 태그 경로로 일괄 교체하고, 재발 방지를 위해 브랜치명(development) 대신 릴리스 태그를 쓴다. 목표 분량: +6.",
+      "evidence": ["research_regulation#findings[16]", "research_ai#findings[31]", "research_ai#findings[22]", "audit_using#issues[32]", "audit_using#issues[33]", "audit_using#issues[34]", "research_ai#stale_items[1]", "research_ai#stale_items[2]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "US-20",
+      "priority": 2,
+      "op": "insert",
+      "anchor_line": 410,
+      "anchor_quote": "[^spdx3]: SPDX 3.0 Specification : https://spdx.github.io/spdx-spec/v3.0.1/",
+      "instruction": "이 각주 아래에 'AI 자산을 SBOM에 담기' 소절(H4)을 신설한다. 기존 SBOM 항목만으로는 모델·데이터셋을 표현할 수 없다는 것이 이 소절의 전제다. 넣을 것: (1) SPDX 3.0.1 AI 프로필 — AIPackage 클래스로 모델 메타데이터를, Dataset 프로필로 데이터셋 메타데이터를 표현한다. 사내 최소 필수 5개 필드를 지정하라: typeOfModel, informationAboutTraining, limitation, useSensitivePersonalInformation, hasDeclaredLicense. 프로필 적합성 요건상 AIPackage마다 hasConcludedLicense·hasDeclaredLicense 관계가 각각 정확히 1개 필요하다는 점(선언 라이선스와 결론 라이선스를 분리 기록하도록 강제한다)을 명시한다. (2) CycloneDX 1.7 ML-BOM — modelCard 오브젝트로 표현하며 modelParameters / quantitativeAnalysis / considerations / datasets 하위 구조를 갖는다. ML-BOM은 1.5부터 있던 기능이고 1.7의 강조점이 아니라는 점을 정확히 쓴다. (3) CISA·G7의 'Software Bill of Materials for AI — Minimum Elements'(2026-05-12) 7개 클러스터를 필드 설계 기준으로 소개하되, 자발적 지침이며 법적 의무가 아님을 명시한다(confidence medium). (4) 실무 함정 — SPDX License List 3.28.0(2026-02-20)에 OpenMDW-1.0은 있으나 Llama·Gemma·OpenRAIL 계열 식별자는 없다. 커스텀 모델 라이선스는 LicenseRef-<vendor>-<model>-<version> 명명 규약으로 기록하고 라이선스 원문을 hasExtractedLicensingInfo(SPDX) 또는 licenses[].license.text(CycloneDX)에 첨부해야 한다. 표준 식별자가 없다는 사실 자체가 자동 정책 판정이 작동하지 않는 원인이므로 승인 라이선스 화이트리스트에 모델 라이선스용 별도 목록을 만든다. (5) 생성 도구 — OWASP AIBOM Generator, cdxgen, Cisco aibom, SK텔레콤 BomLens(Apache-2.0, 2026-07 기준 채택 초기 단계임을 병기). 기존 SCA(Snyk·Trivy·Grype·Dependabot)는 lockfile을 파싱할 뿐 모델 가중치나 데이터셋 라이선스를 스캔하지 않는다는 공백을 한 문장으로 못박고, 생성물의 라이선스 필드는 사람이 재검토하는 이중 확인 절차를 두라고 지시한다. 모델 라이선스 조항 해석(Llama 700M MAU, Gemma, OpenRAIL 등)은 이 절에 쓰지 말고 신규 5장 '/ai/'로 크로스링크만 건다 — 같은 주제를 두 장에 흩으면 어느 쪽이 최신인지 판단할 수 없다. 목표 분량: +24.",
+      "evidence": ["research_ai#findings[22]", "research_ai#findings[23]", "research_ai#findings[24]", "research_ai#findings[25]", "research_regulation#findings[9]", "research_tooling#findings[13]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "US-21",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 412,
+      "anchor_quote": "SPDX 규격은 100 페이지가 넘는 적지 않은 분량의 문서이기 때문에 처음 SPDX 표준에 맞추어 문서를 작성하는 것은 쉽지 않다. SPDX 프로젝트는 Excel로 작성된 SBOM을 SPDX 문서로 자동 변환하는 도구를 제공하고 있다.",
+      "instruction": "L412~L427의 Excel 실습(각주 [^spdx-excel], [^spdx-online]과 imgproc spdx-excel·spdx-web 이미지 2장 포함, 16행)을 전부 삭제한다. 삭제 사유: 바로 아래 L429가 스스로 '이런 절차를 자동화하는 노력이 필요하다'고 인정할 만큼 방향이 반대이고, Excel 템플릿 링크도 접근이 불안정하며, 2026년 담당자가 이 지면에서 얻을 실행 가치가 없다. 그 자리에 CI에서 SBOM을 생성·서명·보관·검증하는 실습을 넣는다: (1) Syft 또는 Trivy로 컨테이너 이미지 SBOM 생성 — 명령어 3줄, (2) GitHub Actions 워크플로 예시 — 20행 이내, 릴리스 아티팩트로 첨부하는 단계까지, (3) Dependency-Track에 업로드해 지속 모니터링, (4) 검수 자동화 3종 — 스키마 유효성(Dependency-Track 5.0이 업로드 시 CycloneDX 스키마 검증을 강제한다), 최소 요소 충족(spdx/ntia-conformance-checker 또는 interlynk-io/sbomqs), 실물 대조(납품 바이너리를 Syft/Trivy로 재스캔해 제출 SBOM과 컴포넌트 차집합 확인). (4)의 실물 대조가 핵심이라는 점을 명시하라 — 서류만 검증하면 빌드와 무관한 SBOM이 통과한다. 매니페스트 기반 스캔만으로는 컴포넌트의 약 6분의 1을 놓친다는 근거(Black Duck 2026 OSSRA, 947개 코드베이스 감사에서 자동 탐지 84%)를 각주로 달고, 표본과 감사 기간(2024-11~2025-10)을 함께 적는다. L429의 마무리 문단은 유지하되 '수동 변환' 전제를 제거한다. 목표 분량: 18행 → 30행(-16 삭제 +28 추가). 그림 IL-using-03이 이 실습의 전체 흐름을 대신하므로 도입부에 배치한다.",
+      "evidence": ["audit_using#issues[35]", "research_tooling#findings[9]", "research_tooling#findings[10]", "research_tooling#findings[16]", "research_security#findings[26]", "research_security#findings[29]", "audit_using#illustration_gaps[2]"],
+      "practicality": "템플릿"
+    },
+    {
+      "id": "US-22",
+      "priority": 1,
+      "op": "insert",
+      "anchor_line": 431,
+      "anchor_quote": "[^spdx-tools]: SPDX Community Tools : https://spdx.dev/spdx-tools/",
+      "instruction": "SBOM 절의 마지막에 'VEX로 오탐 줄이기 — SBOM만으로 안 되는 이유' 소절(H4)을 신설한다. 순증이 허용된 신설 소절이다. 도입은 한 문장 대비로 연다: 'SBOM은 무엇이 들어 있는가만 답하고, 그 취약점이 실제로 악용 가능한가는 답하지 않는다. SBOM만 유통하면 수요자가 대량의 오탐을 떠안는다.' 넣을 것: (1) OpenVEX 최소 문서 템플릿 — 필수 필드 @context, @id, author, timestamp, version, statements와 상태값 4가지(not_affected / affected / fixed / under_investigation)를 담은 JSON 예시. (2) not_affected를 쓰려면 justification 또는 impact_statement가 필요하고 justification 허용값은 component_not_present, vulnerable_code_not_present, vulnerable_code_not_in_execute_path, vulnerable_code_cannot_be_controlled_by_adversary, inline_mitigations_already_exist 5가지뿐이라는 점 — 판단 근거를 5개 값 중 하나로 강제하는 것만으로 판단 품질이 올라간다는 실무 논거를 붙인다. (3) 생성·소비 도구 대조 — 생성은 vexctl(v0.4.4, 2026-06-16), 소비는 Trivy `--vex`(실험적)와 Dependency-Track(CycloneDX VEX/VDR). OSV-Scanner는 VEX 문서 소비를 지원하지 않고 osv-scanner.toml의 [[IgnoredVulns]] 로컬 억제만 제공하므로 조직 밖으로 판단을 전달할 수 없다는 차이를 반드시 명시한다. (4) 수용 조건 계약 문구 — 소비 측이 협력사 VEX를 받을 때 '누가 서명했는가(author)'와 'justification이 5개 허용값 중 하나인가'를 계약에 명시한다. impact_statement 자유 서술만 있는 VEX는 자동 처리가 불가능하다. (5) 안정성 경고 — OpenVEX 명세는 2023-07-18 v0.2.0 이후 판번호가 오르지 않았고 OpenSSF sandbox 단계다. '표준이 확정되어 안정적'이 아니라 '아직 표준화가 끝나지 않은 채 관행으로 쓰인다'가 정확한 서술이며, 그래서 VEX 저장 형식을 도구에 종속시키지 말고 원본 JSON을 보존하라고 지시한다. CISA 2026 SBOM 최소 요소가 VEX·CSAF 연계를 공식 권고하면서 채택 압력이 커졌다는 점을 도입 근거로 각주에 단다. 국내 SI 원-하청 구조에서 원청이 소비 측, 하청이 생성 측이라는 대응을 한 줄 적고 US-31의 하위 공급망 절과 상호 참조한다. 목표 분량: +34.",
+      "evidence": ["research_security#findings[12]", "research_security#findings[11]", "research_regulation#findings[8]", "audit_using#issues[30]"],
+      "practicality": "템플릿"
+    },
+    {
+      "id": "US-23",
+      "priority": 2,
+      "op": "replace",
+      "anchor_line": 438,
+      "anchor_quote": "Gartner의 [Technology Insight for Software Composition Analysis](https://www.gartner.com/en/documents/3971011/technology-insight-for-software-composition-analysis)[^gartner-3971011]보고서에서 SCA 도구 선택 기준이 제시되는데 아래와 같다.",
+      "instruction": "2019년 기준 6항목 체크리스트를 2026년 조달 평가 기준으로 재작성한다. 추가할 항목: SBOM 출력 포맷과 판번호(SPDX 2.3/3.0.1, CycloneDX 1.5 이상), VEX 생성·소비 지원 여부, 컨테이너 이미지·IaC 스캔, 도달 가능성 기반 우선순위, 정책의 코드화와 빌드 차단 게이트, 오탐률과 수동 검토 비용, 온프레미스·에어갭 지원(금융·공공), 매니페스트 외 경로(스니펫·바이너리) 탐지 여부, AI 모델·데이터셋 아티팩트 대응. 마지막 두 항목은 특히 중요하다 — 매니페스트만 읽는 도구는 컴포넌트의 약 6분의 1을 놓치고, 기존 SCA는 모델 가중치·데이터셋 라이선스를 스캔하지 않는다. Gartner 인용은 각주로 격하하고, 2026년 신설된 Magic Quadrant for Software Supply Chain Security의 필수 평가축을 병기하되 원문 미확인(공개 벤더 보도자료 기준)임을 각주에 밝힌다. 중복 정의된 각주 [^gartner-3971011](L115와 L446 두 곳)은 L446 정의를 삭제해 파일당 1회 원칙을 지킨다. 목표 분량: 9행 → 16행(+7).",
+      "evidence": ["audit_using#issues[36]", "research_tooling#findings[6]", "research_security#findings[26]", "research_tooling#findings[13]", "research_tooling#stale_items[6]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "US-24",
+      "priority": 2,
+      "op": "restructure",
+      "anchor_line": 448,
+      "anchor_quote": "#### 주요 오픈소스 관리 도구 소개\n\n##### **FOSSology** - https://www.fossology.org",
+      "instruction": "도구 14종의 순서를 발간본 배열로 바꾸고(①FOSSLight ②OLIVE ③Fossa ④FOSSID ⑤Black Duck ⑥Snyk ⑦Mend ⑧FOSSology ⑨CodeEye ⑩Clarity ⑪LABRADOR ⑫SW360 ⑬SPDX ⑭ClearlyDefined) 목록 앞에 선택 매트릭스 표를 하나 둔다. 표 열: 도구 / 스캔 대상(소스·바이너리·의존성·컨테이너) / 강점(라이선스 vs 취약점) / 무료·상용 / 온프레미스 지원 / SBOM 출력 포맷. 표가 없으면 14개 나열은 '무엇인지'만 알려주고 '어떤 상황에서 무엇을 고르는가'를 답하지 못한다. 표 아래에 조건별 1차 추천을 7줄로 적는다: ① 예산 제약이 큰 조직·컨테이너 중심 → Syft+Grype 또는 Trivy ② 국내 중소기업·한국어 지원 우선 → FOSSLight 또는 CodeEye(중소기업기본법 시행령 제3조 기준 무료) ③ 대기업·엔터프라이즈 SLA와 정책 엔진 필요 → Black Duck/FOSSA/Mend/Snyk(가격 비공개) ④ 바이너리·임베디드·소스 미제공 컴포넌트 → Insignary Clarity, FossID ⑤ 함수 단위 정밀 분석 → LABRADOR ⑥ 여러 팀의 SBOM 중앙 모니터링 → Dependency-Track ⑦ AI 모델을 제품에 포함 → 위 도구 외 OWASP AIBOM Generator/cdxgen 추가. 경고: '#### 주요 오픈소스 관리 도구 소개' 헤딩은 L191이 `[주요 오픈소스 관리 도구 소개](#주요-오픈소스-관리-도구-소개)`로, 상위 '### 오픈소스 관리 도구 소개'(L434) 헤딩은 L120이 `(#오픈소스-관리-도구-소개)`로 각각 참조한다. 두 헤딩 텍스트를 바꾸면 두 링크가 죽으므로 그대로 두거나, 바꾼다면 참조 링크를 함께 고치고 `grep -n '](#' content/en/using/_index.md` 로 확인하라. 목표 분량: +18(표 신설).",
+      "evidence": ["audit_using#issues[37]", "research_tooling#findings[15]", "research_tooling#findings[18]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "US-25",
+      "priority": 1,
+      "op": "replace",
+      "anchor_line": 504,
+      "anchor_quote": "2015년 설립된 실리콘밸리 스타트업에서 제공하는 서비스로, 풍부한 오픈소스 메타데이터 및 정교한 정책 거버넌스를 제공한다. Twitter, Uber, Zendesk 등과 파트너를 맺고 있으며, JS Foundation, Linux Foundation, NPM 등과 제휴하고 있다.",
+      "instruction": "도구 14종의 사실 오류를 일괄 정정한다. 항목별로: (a) L504 Fossa — 'Twitter'는 2023년 X로 사명 변경, 'JS Foundation'은 2019년 OpenJS Foundation으로 합병됐다. 제휴사 나열과 '팀 규모 100명 이상' 가격 티어 서술을 삭제하고 '무료 티어 제공, 규모별 유료 플랜'처럼 노후에 강한 표현으로 바꾼다. 2025년 이후 신설된 Snippet Scanning(AI 코딩 도구 생성 코드의 IP 리스크 탐지) 기능을 한 줄 추가한다. (b) L511 FOSSID — '코드 일부에서 보안 취약점을 탐지하는 유일한 오픈소스 스캐너'라는 단정을 삭제하고 기능 서술(스니펫 단위 매칭, 대규모 코드 감사)로 바꾼다. '2021년 Snyk에 인수되었다가 2022년 원 창업자들이 재인수해 현재 독립 회사로 운영되고 있다'는 소유권 이력 한 문장을 추가하고 공식 표기(FossID)를 확인해 통일한다. (c) L513 Black Duck — URL을 https://www.blackduck.com/ 으로 교체하고 '2024-10-01 Clearlake·Francisco Partners가 Synopsys Software Integrity Group을 인수해 독립 법인 Black Duck Software, Inc.로 재출범했다'를 추가한다. (d) L521 Snyk — '현재 Docker 공식 독점 보안 파트너'는 2020~2021년 사실이고 Docker가 이후 자체 Docker Scout를 출시했으므로 제휴 나열을 삭제하고 기능 중심(개발자 워크플로 통합, 도달 가능성 기반 우선순위, IaC/컨테이너 스캔)으로 재서술한다. (e) L528 WhiteSource — 표제를 'Mend(구 WhiteSource)'로, URL을 https://www.mend.io 로 교체하고 '110억 개 소스 코드 파일', 'GitHub의 Ultimate'(존재하지 않는 플랜명), '팀 20명' 가격 티어를 삭제한다. L871의 도구 예시 '예: Snyk, WhiteSource, Black Duck 등'도 함께 고친다. 로고 파일 logo-whitesource.png는 교체 대상이다. (f) L542 Clarity — http:// 를 https:// 로 바꾸고, Insignary는 아카이브되지 않았으며 2025~2026년 Gartner Hype Cycle 보고서에 인용되고 있다는 사실을 각주로 보강한다(2차 출처, confidence medium이므로 '위상이 올라갔다' 같은 평가 표현은 쓰지 마라). (g) L550 LABRADOR — URL을 https://www.labradorlabs.ai/ 로 교체하고 '(구 IoTcube, 2022-08-30 사명 변경)'을 병기한다. 같은 문단 L555의 '진단이 가능합니다.' 존댓말을 '가능하다.'로 통일한다(L1283 '갖고 있습니다.'도 동일). 로고 logo-labrador.png 교체 대상. (h) L458 SW360 — URL을 https://eclipse.dev/sw360 으로 교체한다. (i) L471 SPDX — 끊긴 문장을 'SPDX(Software Package Data Exchange)는 소프트웨어 정보 교환 방식을 표준화하고 이를 용이하게 하기 위한 도구를 제공한다.'로 복구한다. (j) L456·L464 OpenChain KWG 도구 가이드 URL 2건이 404이므로 현행 경로를 확인해 교체하고, 경로가 사라졌으면 각 도구 공식 문서(fossology.github.io, eclipse.dev/sw360)로 대체한다. (k) L557 ClearlyDefined — 'OSI와 AboutCode가 MoU를 체결해 일상 운영이 AboutCode(ScanCode Toolkit 운영 주체)로 이관됐다'를 한 문장 추가한다. (l) L535 CodeEye — 서비스 운영 상태와 무료 지원 대상 기준이 2026년에도 유지되는지 한국저작권위원회 OLIS에서 재확인해 갱신한다. (m) L473 FOSSLight — 서술은 유지하되 최신 릴리스(fosslight-scanner 2.1.26, 2026-07-09)와 활발한 유지보수 상태를 각주로 보강한다. 목표 분량: ±0(교체 위주, 순증 억제).",
+      "evidence": ["research_tooling#findings[0]", "research_tooling#findings[1]", "research_tooling#findings[2]", "research_tooling#findings[3]", "research_tooling#findings[4]", "research_tooling#findings[5]", "research_tooling#findings[8]", "research_tooling#findings[14]", "research_tooling#findings[17]", "research_tooling#findings[19]", "audit_using#issues[38]", "audit_using#issues[39]", "audit_using#issues[40]", "audit_using#issues[41]", "audit_using#issues[42]", "audit_using#issues[43]", "audit_using#issues[44]", "audit_using#issues[45]", "audit_using#issues[46]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "US-26",
+      "priority": 2,
+      "op": "insert",
+      "anchor_line": 562,
+      "anchor_quote": "ClearlyDefined는 오픈소스 데이터베이스를 제공하여 사용자가 오픈소스의 출처, 라이선스 등의 정보를 확인할 수 있게 한다.",
+      "instruction": "ClearlyDefined 항목 뒤에 신규 도구 6종을 같은 형식으로 등재한다: (1) Syft(Anchore, Apache-2.0, v1.44.0 2026-05-01) — 컨테이너 이미지·파일시스템에서 SPDX/CycloneDX SBOM 생성, 완전 오프라인 실행 가능. (2) OWASP Dependency-Track(Apache-2.0, 5.0 GA 2026-06-09) — SBOM을 수집해 지속 모니터링하는 SBOM-first 관리 플랫폼, v5부터 업로드 BOM·VEX의 스키마 검증을 강제하므로 기존 파이프라인이 깨질 수 있어 사전 검증이 필요하다. (3) OSV-Scanner(Google, Apache-2.0, v2.4.0 2026-06-18) — OSV.dev 데이터 기반, CycloneDX 1.7 출력 지원, VEX 문서 소비는 미지원. (4) ORT(Apache-2.0) — 대규모 컴플라이언스 파이프라인용. (5) ScanCode Toolkit(Apache-2.0, v32.5.0 2026-01-15, AboutCode 운영) — 라이선스·저작권 정밀 스캔. (6) cdxgen(Apache-2.0, v12.1.4 2026-03) — 다국어·컨테이너·AI 자산까지 CycloneDX로 생성. 각 항목은 3~4행을 넘기지 마라. '생성(Syft/cdxgen) → 저장·모니터링(Dependency-Track) → 스캔(Trivy/Grype/OSV-Scanner) → 조치(Renovate) → 평가(Scorecard)'라는 역할 순서를 목록 앞에 한 줄로 제시해, 14종 나열이 파이프라인으로 읽히게 한다. 목표 분량: +24.",
+      "evidence": ["research_tooling#findings[9]", "research_tooling#findings[10]", "research_tooling#findings[11]", "research_tooling#findings[12]", "research_security#findings[11]", "audit_using#issues[62]"],
+      "practicality": "체크리스트"
+    },
+    {
+      "id": "US-27",
+      "priority": 2,
+      "op": "expand",
+      "anchor_line": 565,
+      "anchor_quote": "### 오픈소스 고지 의무사항\n오픈소스 라이선스는 공통으로 저작권 고지와 라이선스 사본 첨부 의무를 갖는다.",
+      "instruction": "고지 절(L565~L683)은 '무엇을 고지해야 하는가'와 타사 사례 캡처로만 구성돼 있고 '어떻게 만드는가'가 없다. 두 가지를 추가한다: (1) SBOM에서 NOTICE를 자동 생성하는 경로 — SPDX/CycloneDX SBOM의 라이선스·저작권 필드를 입력으로 고지문을 생성하는 파이프라인을 4~6행으로 서술하고, CISA 2026 최소 요소에서 Component License가 필수가 되면서 SBOM 하나로 보안과 고지를 함께 처리할 수 있게 됐다는 점을 US-17과 상호 참조한다. (2) 소스 코드 제공 의무 이행 3가지 방식 비교표 — 동봉 / written offer / 다운로드 사이트 운영 각각에 대해 제공 기간, 보관 의무, 운영 부담을 열로 정리한다. 현재 이 내용은 L206에 한 줄 언급되고 끝난다. 주의(이관 규칙): 제품 출하 시점의 고지문 산출 절차와 문서 템플릿은 releasing 장 소관이다. using에는 '무엇을 고지해야 하는가'와 위 두 항목의 개념·판단표만 두고, 실행 절차와 산출물 템플릿은 releasing 장으로 크로스링크한다. 인계 항목을 releasing 계획자에게 넘길 수 있도록 unresolved에 명시했다. 모바일 앱·웹 서비스·펌웨어 각각에서 고지문을 어디에 두는가는 표의 한 열로 넣되 캡처 이미지를 늘리지 마라. 목표 분량: +16.",
+      "evidence": ["audit_using#issues[47]", "research_regulation#findings[8]", "research_security#findings[5]"],
+      "practicality": "판단기준표"
+    },
+    {
+      "id": "US-28",
+      "priority": 3,
+      "op": "replace",
+      "anchor_line": 611,
+      "anchor_quote": "[^royale]: Apache Royale 프로젝트https://infra.apache.org/licensing-howto.html",
+      "instruction": "각주 정의에 ' : ' 구분자가 빠져 제목과 URL이 붙어 있다. '[^royale]: Apache Royale 프로젝트 : https://infra.apache.org/licensing-howto.html' 로 고친다. 같은 작업으로 파일 전역의 각주 정의 형식을 점검한다 — 제목 없이 URL만 있는 각주([^itworld2024], [^checkpoint2024], [^blackkilt2024], [^ntia2021], [^cisa2024], [^techtarget2023], [^boannews2024])는 문서 제목·발행 주체·시점을 채워 넣는다. 각주 변환 규약(문서 제목 원문 표기)을 어기면 인쇄본에서 출처를 식별할 수 없다.",
+      "evidence": ["audit_using#issues[48]", "research_security#stale_items[14]", "research_security#stale_items[6]"],
+      "practicality": "체크리스트"
+    }
+  ]
+}

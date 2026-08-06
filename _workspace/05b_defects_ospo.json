@@ -1,0 +1,127 @@
+[
+ {
+  "line": 13,
+  "quote": "OSPO를 보유한 조직의 92%가 오픈소스SW 보안 의사결정에 관여하며, 그중 42%는 의사결정권을 갖고 50%는 자문 역할을 맡는다.",
+  "kind": "wrong_scope",
+  "severity": "major",
+  "checked_url": "https://www.linuxfoundation.org/hubfs/Research%20Reports/LFResearch_StateofOSPO_082825.pdf",
+  "reason": "'그중'이라는 표현이 모수를 한 단계 잘못 좁힌다. Figure 8(Q13, 표본 116, OSPO 보유 조직)에서 42%와 50%는 각각 OSPO 보유 조직 전체에 대한 비율이며, 두 값의 합이 곧 본문이 말하는 92%다(42+50=92, 나머지 7%는 '보안을 다루지 않는다', 1%는 반올림 잔차). 초안대로 '92% 중 42%'로 읽으면 0.92×0.42=38.6%가 되어 원문의 42%와 어긋난다. 원문 문장은 'The share of OSPOs directly guiding security decision-making rose to 42% in 2025, up from 38% in 2024, while advisory involvement remained steady at around 50%'로, 42%·50% 모두 전체 대비 비율이다.",
+  "suggested_fix": "해당 문장을 다음으로 교체한다 — \"OSPO를 보유한 조직의 92%가 오픈소스SW 보안에 관여한다. 42%는 OSPO가 직접 보안 의사결정을 내리고, 50%는 담당 조직에 자문하는 형태이며(두 값의 합이 92%다), 보안을 전혀 다루지 않는다는 응답은 7%다.\"",
+  "lens": "numbers"
+ },
+ {
+  "line": 13,
+  "quote": "OSPO를 보유한 조직의 92%가 오픈소스SW 보안 의사결정에 관여하며, 그중 42%는 의사결정권을 갖고 50%는 자문 역할을 맡는다.",
+  "kind": "wrong_scope",
+  "severity": "major",
+  "reason": "모수가 바뀌었다. 원문(PDF p.12, Figure 8, Q13, n=116, OSPO 보유 조직)은 '42% — Yes, the OSPO makes decisions', '50% — No, but the OSPO provides advice', '7% — No, we don't focus on open source security'로 세 응답이 병렬이며, 92%는 앞의 두 응답의 합이다(42+50=92). 초안의 '그중 42%'는 42%를 92%의 부분집합으로 읽게 만들어 실제로는 전체의 38.6%를 가리키게 된다. 원문 요약 문장도 '92% of OSPOs are involved in open source security, with 42% playing a decision-making role'(p.24)로, 42%의 모수는 92%가 아니라 OSPO 보유 조직 전체다.",
+  "suggested_fix": "OSPO를 보유한 조직의 92%가 오픈소스SW 보안에 관여한다. 42%는 OSPO가 직접 보안 의사결정을 내리고, 50%는 담당 조직에 자문하며, 보안을 다루지 않는다는 응답은 7%에 그쳤다.",
+  "lens": "support"
+ },
+ {
+  "line": 15,
+  "quote": "Microsoft, Google, Meta, Netflix와 같은 소프트웨어 리더 기업뿐만 아니라 Comcast, Intel, Bosch와 같은 전통 제조·통신 기업도 OSPO를 운영하고 있다.",
+  "kind": "no_source",
+  "severity": "minor",
+  "reason": "각주가 없고 배정 근거로도 뒷받침되지 않는다. 이 장 뒤쪽 TODO Group 사례 링크로 확인 가능한 것은 Meta·Microsoft·Comcast뿐이며(사례 인덱스 슬러그 실측: autodesk, capital-one, comcast, dropbox, meta, microsoft, national-instruments, oath, porsche, red-hat, rit, salesforce, sap, uber), Google·Netflix·Intel·Bosch는 이 초안 어디에서도 출처가 제시되지 않는다. 특히 Netflix는 오픈소스 프로젝트 공개로 알려졌을 뿐 'OSPO 조직 운영'을 뒷받침하는 1차 출처가 이 문서에 없다. L17의 NEEDS-EVIDENCE 주석은 국내 기업 목록만 다루고 있어 해외 목록은 공백이 표시되지 않은 채 남았다.",
+  "suggested_fix": "Meta, Microsoft, Comcast처럼 TODO Group에 OSPO 운영 사례를 공개한 기업이 있고, Google·Intel·Bosch 등 제조·반도체 기업도 오픈소스 전담 조직을 두고 있다[^case-index]. (또는 근거를 붙일 수 없는 기업명은 목록에서 빼고 TODO Group 사례 인덱스에 실린 기업만 남긴다.)",
+  "lens": "support"
+ },
+ {
+  "line": 15,
+  "quote": "Microsoft, Google, Meta, Netflix와 같은 소프트웨어 리더 기업뿐만 아니라 Comcast, Intel, Bosch와 같은 전통 제조·통신 기업도 OSPO를 운영하고 있다.",
+  "kind": "no_source",
+  "severity": "minor",
+  "reason": "OS-01이 Twitter/X를 뺀 이유가 '2026년 독자에게 존재하지 않는 조직을 모범 사례로 제시하는 문장'을 막기 위한 것이었는데, 교체된 목록 7곳에는 각주가 하나도 없고 존속 확인 상태가 균일하지 않다. 2026-08-01 실측으로 확인된 것: Meta·Microsoft·Comcast는 TODO Group 사례 페이지가 200(https://todogroup.org/resources/case-studies/{meta,microsoft,comcast}/), Bosch는 opensource.bosch.com 200, Comcast는 comcast.github.io 200. 확인하지 못한 것: Intel — opensource.intel.com은 DNS 해석 실패(NXDOMAIN), intel.com 개발자 오픈소스 페이지는 403(봇 차단)으로 1차 확인 불가. Netflix — netflix.github.io는 200이나 이는 저장소 인덱스일 뿐 OSPO 조직의 현재 존속 근거가 아니다. TODO Group 멤버 목록 페이지는 로고가 JS 렌더링이라 목록 대조도 불가했다. 두 기업 모두 2025~2026년 대규모 조직 개편이 보도된 곳이므로, 근거 없이 현재형으로 두면 Twitter 사례를 반복할 위험이 있다.",
+  "checked_url": "https://todogroup.org/resources/case-studies/",
+  "suggested_fix": "확인 가능한 사례만 남기고 근거를 붙인다: 'Microsoft, Google, Meta와 같은 소프트웨어 리더 기업뿐만 아니라 Comcast, Bosch와 같은 전통 제조·통신 기업도 OSPO를 운영하고 있다(Meta·Microsoft·Comcast는 TODO Group 사례집[^case-index], Bosch는 자사 오픈소스 포털에서 확인된다).' Intel·Netflix를 유지하려면 각 사의 2025년 이후 OSPO 운영을 밝힌 1차 출처를 각주로 붙인다.",
+  "lens": "timing"
+ },
+ {
+  "line": 19,
+  "quote": "다음은 2025년 8월 발간된 LF Research 조사(표본 338건)가 보고한 OSPO 보유 현황이다",
+  "kind": "wrong_number",
+  "severity": "minor",
+  "checked_url": "https://www.linuxfoundation.org/hubfs/Research%20Reports/LFResearch_StateofOSPO_082825.pdf",
+  "reason": "338건은 조사 전체 응답 수이지 이 표 각 행의 분석 표본이 아니다. PDF 서론은 'a survey fielded between May and June 2025 that collected 338 responses in total'이라 하지만, 표에 담긴 행들의 실제 분석 표본은 Figure 4 285건(2025년), Figure 6 283건, Figure 7 285건이며 Figure 5/부록 A2만 337건이다. 게다가 첫 행의 과거 연도값은 표본 규모가 크게 다른 별개 조사에서 왔다 — Figure 4 캡션 기준 2024년 222건, 2023년 472건, 2022년 950건이다. '표본 338건이 보고한' 이라고 단정하면 연도 간 등락(43%→26%→32%)을 동일 표본의 변화로 오독하게 된다.",
+  "suggested_fix": "해당 문장을 다음으로 교체한다 — \"다음은 2025년 8월 발간된 LF Research 조사(2025년 5~6월 실시, 전체 응답 338건, 문항별 분석 표본 283~337건)가 보고한 OSPO 보유 현황이다. 연도별 추이는 표본 규모가 다른 별개 조사의 결과를 이어 붙인 것이다(2024년 222건, 2023년 472건, 2022년 950건).\"",
+  "lens": "numbers"
+ },
+ {
+  "line": 19,
+  "quote": "다음은 2025년 8월 발간된 LF Research 조사(표본 338건)가 보고한 OSPO 보유 현황이다[^ospo-survey-2025].",
+  "kind": "wrong_scope",
+  "severity": "major",
+  "reason": "표 네 행 중 어느 것도 표본 338건에 기반하지 않는다. PDF p.5는 '338 responses in total'을 설문 전체 응답 수로 밝히고, 각 그림의 표기는 Figure 4(연도별) n=285, Figure 6(규모별) n=283, Figure 7(지역별) n=285(Rest of the World 제외), Figure 5(지역별 별도 집계) n=337로 모두 다르다. 특히 첫 행의 연도별 추이는 서로 다른 연차 조사의 결과로, 원문 Figure 4 캡션은 '2024 OSPO Survey n=222; 2023 OSPO Survey n=472; 2022 OSPO Survey n=950'이라고 명시한다. 표본이 950→472→222→285로 변동한 수치를 '표본 338건 조사가 보고한'으로 묶으면 30%→43%→26%→32%의 등락을 동일 패널의 변화로 오독하게 된다.",
+  "suggested_fix": "다음은 2025년 8월 발간된 LF Research 조사(2025년 5~6월 실시, 총 응답 338건)가 보고한 OSPO 보유 현황이다[^ospo-survey-2025]. 연도별 추이는 각 연차 조사의 결과로 표본이 서로 다르다(2022년 950건, 2023년 472건, 2024년 222건, 2025년 285건).",
+  "lens": "support"
+ },
+ {
+  "line": 25,
+  "quote": "| 규모별 보유율 | 대·초대형 조직 83% / 중소 조직 72% |",
+  "kind": "wrong_scope",
+  "severity": "critical",
+  "checked_url": "https://www.linuxfoundation.org/hubfs/Research%20Reports/LFResearch_StateofOSPO_082825.pdf",
+  "reason": "두 값의 모수와 정의가 서로 다른데 같은 지표처럼 나란히 놓였다. (1) 83%는 Figure 6(캡션 'Q5/Q10, sample size = 283')의 값인데, 이 그림은 규모별 보유율표가 아니라 응답 항목별 규모 구성비표다. 막대값이 중소 17/55/68/50/68, 대·초대형 83/45/32/50/32로 항목마다 두 규모의 합이 정확히 100%(17+83, 55+45, 68+32, 50+50, 68+32)다. 즉 '정식 OSPO의 83%가 대·초대형 조직에 있다'는 구성비이지 '대·초대형 조직의 83%가 정식 OSPO를 보유한다'가 아니다. (2) 72%는 보고서 산문(p.9, 'in contrast, 72% of small and medium-sized organizations reported having an OSPO')에만 등장하며 PDF 전체에서 '72%'라는 문자열이 이 한 곳뿐이다 — Figure 6에도 부록 어디에도 대응 수치가 없어 재현이 불가능하다. (3) 정의도 다르다. 83%는 '정식(formally structured)' 항목이고 72%는 '정식+비정식 보유'다. (4) 결과적으로 이 행은 같은 표 첫 행의 '2025년 정식 보유율 32%'와 양립할 수 없다 — 두 규모 계층이 모두 72~83%인데 전체가 32%일 수는 없다. 보고서가 제공하는 실제 규모별 보유율은 부록 A3(p.32, 아시아태평양 한정, 표본 52)뿐이다.",
+  "suggested_fix": "표의 규모별 행을 다음으로 교체한다 — `| 규모별 보유율(아시아태평양 한정, 부록 A3·표본 52) | 대·초대형 60%(정식 50%+비정식 10%) / 중소 36%(정식 18%+비정식 18%) |`",
+  "lens": "numbers"
+ },
+ {
+  "line": 25,
+  "quote": "| 규모별 보유율 | 대·초대형 조직 83% / 중소 조직 72% |",
+  "kind": "wrong_scope",
+  "severity": "major",
+  "reason": "두 수치의 측정 대상이 다른데 같은 '보유율' 라벨로 병렬 배치했다. PDF p.10 원문은 '83% of large and very large organizations report having a formally structured OSPO'(정식 OSPO 한정)이고, 'In contrast, 72% of small and medium-sized organizations reported having an OSPO, but most (55%) operate informally'(정식+비정식 합계, 그중 55%가 비정식)다. 바로 위 두 행이 '정식'과 '비정식'을 구분해 놓았기 때문에 독자는 이 행의 두 수치도 같은 기준으로 읽게 되고, 결과적으로 중소 조직의 정식 OSPO 보유율을 72%로 과대 인식한다. 전체 정식 보유율이 32%라는 첫 행과도 겉보기 모순이 생긴다.",
+  "suggested_fix": "| 규모별 보유율 | 대·초대형 조직 83%(정식 구조) / 중소 조직 72%(정식+비정식, 이 중 55%가 비정식 운영) |",
+  "lens": "support"
+ },
+ {
+  "line": 26,
+  "quote": "| 지역별 보유율 | 아메리카 89% / 유럽 68% / 아시아태평양 35% |",
+  "kind": "wrong_scope",
+  "severity": "critical",
+  "checked_url": "https://www.linuxfoundation.org/hubfs/Research%20Reports/LFResearch_StateofOSPO_082825.pdf",
+  "reason": "89/68/35는 지역별 '보유율'이 아니다. 이 값들의 출처인 Figure 7(캡션: '2025 OSPO Survey, Q6/Q10, sample size = 285, DKNS and Rest of the World excluded')은 지역별 비율표가 아니라 응답 항목별 지역 구성비표다. Figure 7의 막대값은 아메리카 43/46/36/33/39, 유럽 32/36/48/50/39, 아시아태평양 21/14/8/17/13이며, 행(지역)별 합이 각각 197%/205%/73%로 100%가 되지 않는 반면 열(응답 항목)별 합은 정식 43+32+21=96, 비정식 46+36+14=96, 과거 보유 33+50+17=100으로 100%에 수렴한다. 즉 '정식 OSPO 보유 조직 중 43%가 아메리카 소재'라는 뜻이고, 초안의 '아메리카 89%'는 서로 다른 두 분포(정식 구성비 43% + 비정식 구성비 46%)를 더한 값이라 의미가 성립하지 않는다. 같은 보고서가 진짜 지역별 보유율을 Figure 5 및 부록 A2(p.32, 캡션 'sample size = 337')에 싣고 있으며 그 값은 아메리카 정식 29%·비정식 17%, 유럽 22%·14%, 아시아태평양 37%·13%, 그 외 지역 17%·11%다. 또한 이 행의 89~35%는 같은 표 첫 행의 '2025년 정식 보유율 32%'와 산술적으로 양립하지 않아 독자가 표 안에서 모순을 만난다.",
+  "suggested_fix": "표의 지역별 행을 다음으로 교체한다 — `| 지역별 보유율(정식+비정식) | 아시아태평양 50%(정식 37%+비정식 13%) / 아메리카 46%(29%+17%) / 유럽 36%(22%+14%) / 그 외 지역 28%(17%+11%) |`",
+  "lens": "numbers"
+ },
+ {
+  "line": 28,
+  "quote": "한국 단독 수치는 이 보고서에 없다. 아시아태평양 평균이 전 지역 중 가장 낮다는 사실만 확인된다.",
+  "kind": "wrong_scope",
+  "severity": "critical",
+  "checked_url": "https://www.linuxfoundation.org/hubfs/Research%20Reports/LFResearch_StateofOSPO_082825.pdf",
+  "reason": "추세 방향이 뒤집혀 있다. 보고서의 지역별 분포표인 Figure 5 = 부록 A2(p.32, 표본 337)에 따르면 '정식 OSPO 보유' 응답은 아시아태평양 37%로 4개 지역 중 가장 높고(아메리카 29%, 유럽 22%, 그 외 지역 17%), '한 번도 없었다' 응답도 아시아태평양 29%로 가장 낮다(아메리카 33%, 유럽 34%, 그 외 지역 56%). 보고서 본문 역시 'Asia-Pacific organizations report a higher rate of formally structured OSPOs over informal ones, suggesting more advanced institutionalization of open source strategy in the region'이라고 서술한다. 덧붙여, 초안이 근거로 삼은 Figure 7은 캡션에 'Rest of the World excluded from the analysis'라고 명시하므로 그 수치로는 '전 지역 중'이라는 비교 자체가 성립하지 않는다. 이 문장은 한국 기업 독자에게 '우리 지역이 가장 뒤처져 있다'는 반대 결론을 심는다. 첫 문장('한국 단독 수치는 이 보고서에 없다')은 부록까지 전수 확인한 결과 사실이므로 유지해야 한다.",
+  "suggested_fix": "해당 두 문장을 다음으로 교체한다 — \"한국 단독 수치는 이 보고서에 없다. 아시아태평양은 정식 OSPO 비율(37%)이 조사 대상 4개 지역 중 가장 높지만, 이 조사의 표본은 오픈소스 거버넌스에 이미 관심이 있는 응답자 중심이므로 지역 모집단의 보유율로 읽어서는 안 된다.\"",
+  "lens": "numbers"
+ },
+ {
+  "line": 285,
+  "quote": "* [Measuring Your Open Source Program](https://todogroup.org/guides/measuring)[^measuring]",
+  "kind": "dead_link",
+  "severity": "major",
+  "reason": "2026-08-01 실측 HTTP 404다(https://todogroup.org/guides/measuring → https://todogroup.org/resources/guides/measuring 로 리다이렉트되나 착지 페이지도 404). research_market#findings[11]이 이미 '/guides/measuring 은 사이트 개편으로 404'라고 지적했는데 초안에 그대로 남았다. todogroup.org/resources/guides/ 인덱스에서 확인한 현행 슬러그는 'measuring-your-open-source-programs-success'이며 해당 URL은 200이다. 각주 정의(L288)의 URL도 같은 문제다.",
+  "suggested_fix": "* [Measuring Your Open Source Program's Success](https://todogroup.org/resources/guides/measuring-your-open-source-programs-success/)[^measuring]\n(각주 정의도 함께 교체) [^measuring]: Measuring Your Open Source Program's Success, TODO Group : https://todogroup.org/resources/guides/measuring-your-open-source-programs-success/",
+  "lens": "support"
+ },
+ {
+  "line": 285,
+  "quote": "* [Measuring Your Open Source Program](https://todogroup.org/guides/measuring)[^measuring]",
+  "kind": "dead_link",
+  "severity": "major",
+  "reason": "2026-08-01 실측: https://todogroup.org/guides/measuring 는 301로 https://todogroup.org/resources/guides/measuring 로 넘어간 뒤 최종 404다(curl -L 결과 final=404). 즉 리다이렉트가 있어도 착지 페이지가 없다. 현재 살아 있는 경로는 https://todogroup.org/resources/guides/measuring-your-open-source-programs-success/ (200)이고 페이지 제목도 'Measuring your open source program's success'로 바뀌었다(<title> 확인). 이 URL 개편은 근거 리서치 research_market#findings[11]가 이미 '새 경로는 모두 /resources/guides/[전체-슬러그]/ 형태(예: measuring-your-open-source-programs-success/)'로 기록해 둔 사항인데, 초안은 OS-04가 지시한 create-program 링크만 갱신하고 같은 개편에 걸린 이 두 건은 옛 경로를 그대로 두었다. 각주 정의(L288)도 동일한 404 URL이다. dead_link는 심각도 기준상 minor이나, (1) 이 항목은 링크가 내용의 전부인 '참고 자료' 목록이고 (2) 정정 경로가 이미 리서치에 확보돼 있어 출간 전 반드시 반영돼야 하므로 major로 올린다.",
+  "checked_url": "https://todogroup.org/guides/measuring",
+  "suggested_fix": "본문 L285를 `* [Measuring your open source program's success](https://todogroup.org/resources/guides/measuring-your-open-source-programs-success/)[^measuring]` 로, 각주 L288을 `[^measuring]: Measuring your open source program's success, TODO Group : https://todogroup.org/resources/guides/measuring-your-open-source-programs-success/` 로 교체한다.",
+  "lens": "timing"
+ },
+ {
+  "line": 286,
+  "quote": "* [Tools for Managing Your Open Source Program](https://todogroup.org/guides/management-tools)[^tools]",
+  "kind": "dead_link",
+  "severity": "major",
+  "checked_url": "https://todogroup.org/guides/management-tools",
+  "reason": "2026-08-01 실측 HTTP 404다. https://todogroup.org/guides/management-tools 는 301로 https://todogroup.org/resources/guides/management-tools 로 넘어간 뒤 최종 404다(curl -L 결과 http_code=404). 같은 사이트 개편(research_market#findings[11], '/resources/guides/[전체-슬러그]/' 형태로 변경)에 걸린 세 번째 링크이며, L285(measuring)와 동일한 패턴이다. todogroup.org/resources/guides/ 인덱스 페이지(2026-08-01 실측 HTTP 200)에서 확인한 현행 슬러그는 'tools-for-managing-open-source-programs'이고, 해당 URL(https://todogroup.org/resources/guides/tools-for-managing-open-source-programs/)은 200이며 <title> 텍스트도 'Tools for managing open source programs'로 바뀌었다. 각주 정의(L289)도 동일한 404 URL을 가리키고 있어 함께 교체해야 한다.",
+  "suggested_fix": "본문 L286을 `* [Tools for managing open source programs](https://todogroup.org/resources/guides/tools-for-managing-open-source-programs/)[^tools]` 로, 각주 L289를 `[^tools]: Tools for managing open source programs, TODO Group : https://todogroup.org/resources/guides/tools-for-managing-open-source-programs/` 로 교체한다.",
+  "lens": "support"
+ }
+]

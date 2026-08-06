@@ -1,0 +1,32 @@
+{
+  "intro": [
+    "guide-structure-map-2026",
+    "governance-maturity-2026"
+  ],
+  "using": [
+    "license-obligation-decision-tree",
+    "regulation-timeline-2026",
+    "sbom-lifecycle-pipeline",
+    "vulnerability-triage-pipeline",
+    "provenance-verification-flow",
+    "si-supply-chain-sbom-flow",
+    "license-spectrum-2026"
+  ],
+  "contributing": [
+    "prflow-2026"
+  ],
+  "releasing": [
+    "release-journey-2026",
+    "release-review-matrix-2026",
+    "contributor-ladder-2026",
+    "license-decision-tree-2026",
+    "repo-file-set-2026",
+    "release-pipeline-2026"
+  ],
+  "ai": [
+    "ai-asset-governance-integration",
+    "ai-openness-tiers-g7",
+    "model-license-inheritance",
+    "ai-code-release-triple-gate"
+  ]
+}

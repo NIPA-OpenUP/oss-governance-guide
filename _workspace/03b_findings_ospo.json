@@ -1,0 +1,487 @@
+{
+  "target_section": "ospo",
+  "findings": [
+    {
+      "topic": "ISO/IEC 5230 — 현행 판번호와 개정 진행",
+      "claim": "오픈소스 컴플라이언스 국제표준의 현행판은 여전히 ISO/IEC 5230:2020(OpenChain 2.1 기반)이며, 2025-10-15 시작된 정기 검토가 2026-03-05 종료되면서 개정 대상으로 분류됐으나 새 판은 아직 발행되지 않았다.",
+      "detail": "ISO/IEC 5230:2020은 기업이 고품질 오픈소스 라이선스 컴플라이언스 프로그램을 갖추기 위한 최소 요구사항을 정의한다. ISO 정기 검토(systematic review) 기록상 상태 변경일 2025-10-15, 검토 종료일 2026-03-05로 개정이 예정돼 있으나 2026-07-31 현재 새 판번호나 발행일은 확인되지 않았다. 기업이 지금 인증을 준비한다면 2020년판을 기준으로 삼는 것이 맞다.",
+      "effective_dates": [
+        "2020-12: ISO/IEC 5230:2020 발행",
+        "2026-03-05: 정기 검토 종료(개정 대상 분류)"
+      ],
+      "applies_to_korean_firms": "오픈소스 컴플라이언스 체계를 국제표준에 맞추려는 모든 국내 기업. 자기선언(self-certification) 방식이라 인증기관 심사 비용이 들지 않는다.",
+      "action_for_firms": "2020년판 25개 검증 요구사항을 기준으로 증빙을 준비하되, 개정판 발행 시 재검토가 필요하다는 점을 정책 문서에 주기 조항으로 남긴다.",
+      "practicality": "체크리스트",
+      "sources": [
+        {
+          "title": "ISO/IEC 5230:2020 — Information technology — OpenChain Specification",
+          "url": "https://www.iso.org/standard/81039.html",
+          "kind": "primary"
+        },
+        {
+          "title": "OpenChain ISO/IEC 5230 — License Compliance",
+          "url": "https://openchainproject.org/license-compliance",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "medium",
+      "target_section": "ospo",
+      "replaces": "content/en/using/_index.md L173-177 '지난 2020년 12월, 오픈소스 컴플라이언스에 대한 국제 표준이 ISO에 등록되었다' 블록 및 NIPA OpenChain 해설서 안내 링크",
+      "_evidence": "research_regulation#findings[13]"
+    },
+    {
+      "topic": "ISO/IEC 18974 — 오픈소스 보안 보증 표준과 국내 취득 현황",
+      "claim": "ISO/IEC 18974:2023은 5230과 같은 구조·같은 자기선언 방식의 보안 보증 표준이며, 2026-07-31 기준 전 세계 공개 준수 조직 24곳 중 5곳이 한국 기업이다.",
+      "detail": "ISO/IEC 18974:2023(OpenChain Security Assurance Specification)은 2023-12-14 발행됐고 현행 1판이다. 5230이 라이선스 컴플라이언스 프로그램을, 18974가 보안 보증 프로그램을 다루며 둘은 상호 대체가 아니라 보완 관계다. OpenChain 한국 워킹그룹의 2026년 가이드에 따르면 두 표준의 증빙 항목은 각 25개이고 그중 16개가 공통, 18974 고유 항목이 9개다. openchainproject.org 공개 준수 조직 목록(2026-07-31 확인) 기준 ISO/IEC 5230 준수 선언 조직은 157곳, 18974는 24곳이며 18974 목록의 한국 기업은 카카오뱅크·KT·LG전자·에스코어·삼성SDS 5곳이다. 5230 목록에는 삼성전자, 삼성SDS, LG전자, SK텔레콤, 네이버, 카카오, 카카오뱅크, KT, LINE, NCSoft, 한글과컴퓨터, 현대오토에버, 현대모비스, 기아, CJ 계열(CJ CGV·CJ대한통운·CJ올리브영), 텔레칩스, 에스코어 등 25개 항목이 한국 기업으로 확인된다.",
+      "effective_dates": [
+        "2023-12-14: ISO/IEC 18974:2023 발행"
+      ],
+      "applies_to_korean_firms": "이미 5230을 취득했거나 준비 중인 국내 기업. 18974 전 세계 준수 조직의 약 5분의 1이 한국 기업이라는 사실은 국내 기업에 현실적으로 도달 가능한 목표임을 보여준다.",
+      "action_for_firms": "5230 증빙을 이미 갖췄다면 공통 16개 항목을 재사용하고 고유 9개 항목(취약점 대응 절차·보안 담당자·SBOM 등)만 추가해 18974를 순차 취득한다.",
+      "practicality": "체크리스트 + 사례",
+      "sources": [
+        {
+          "title": "ISO/IEC 18974:2023 — OpenChain security assurance specification",
+          "url": "https://www.iso.org/standard/86450.html",
+          "kind": "primary"
+        },
+        {
+          "title": "OpenChain Community of Conformance (준수 조직 목록)",
+          "url": "https://openchainproject.org/community-of-conformance",
+          "kind": "primary"
+        },
+        {
+          "title": "[2026] ISO 표준 기반 기업 오픈소스 관리 가이드, OpenChain Korea Work Group",
+          "url": "https://openchain-project.github.io/OpenChain-KWG/guide/opensource_for_enterprise/",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "high",
+      "target_section": "ospo",
+      "replaces": "",
+      "_evidence": "research_regulation#findings[14]"
+    },
+    {
+      "topic": "OpenChain 한국 워킹그룹 2026 가이드 — 기존 NIPA 해설서 대체",
+      "claim": "OpenChain 한국 워킹그룹이 발행한 '[2026] ISO 표준 기반 기업 오픈소스 관리 가이드'가 기존 NIPA OpenChain 해설서와 ISO/IEC 5230 기반 거버넌스 구축 가이드를 통합·대체했다. 원고가 인용 중인 해설서 링크는 갱신 대상이다.",
+      "detail": "이 가이드는 ISO/IEC 5230과 18974의 증빙 항목 50개(각 25개, 공통 16개)를 조직·정책·프로세스·도구·교육·준수 선언 6개 장으로 나눠 설명하고 마지막 장에 'AI 컴플라이언스'를 신설했다. 도구 장에는 cdxgen, Syft, Dependency-Track 등 SBOM 도구 문서가 추가됐다. CC BY 4.0으로 배포되며 2026-06-02 갱신본이 최신이다. 기존 저장소 경로의 해설서 문서는 아카이브(구) 표기로 남아 있다.",
+      "effective_dates": [
+        "2026-03-26: 2026판 공개",
+        "2026-06-02: 최신 갱신"
+      ],
+      "applies_to_korean_firms": "OSPO를 구축하거나 ISO/IEC 5230·18974 자기선언을 준비하는 모든 국내 기업. 한국어 1차 자료다.",
+      "action_for_firms": "사내 오픈소스 정책·프로세스 템플릿의 출처를 이 가이드 2026판으로 교체하고, AI 컴플라이언스 장을 사내 AI 정책 초안의 기준으로 삼는다.",
+      "practicality": "템플릿 + 체크리스트",
+      "sources": [
+        {
+          "title": "[2026] ISO 표준 기반 기업 오픈소스 관리 가이드, OpenChain Korea Work Group",
+          "url": "https://openchain-project.github.io/OpenChain-KWG/guide/opensource_for_enterprise/",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "high",
+      "target_section": "ospo",
+      "replaces": "content/en/ospo/_index.md L198 '[^policy-template]: NIPA의 기업 오픈소스 거버넌스 OpenChain 해설서' 및 L233 process-template 각주 URL",
+      "_evidence": "research_regulation#findings[15]"
+    },
+    {
+      "topic": "사내 생성형 AI 코딩 도구 정책 템플릿 항목",
+      "claim": "사내 AI 코딩 도구 정책에 최소한 8개 항목이 필요하다. 허용 도구 목록, 허용/금지 코드 유형, 필터 설정 강제, 검증 절차, 기록 의무, 기여 시 규칙, 면책 조건 관리, 예외 승인 경로.",
+      "detail": "각 항목의 근거: (1) 허용 도구 목록 — 도구 약관이 출력물 사용을 제한하는지 확인해야 한다(LF/ASF 정책 공통 요건). (2) 금지 코드 유형 — 라이선스 헤더·저작권 표시가 붙은 코드를 프롬프트에 넣는 행위, 경쟁사 코드 입력 금지. (3) 필터 설정 강제 — Copilot의 '공개 코드 일치 제안 차단'을 조직 정책으로 상속 강제(개인 설정 변경 불가). (4) 검증 절차 — 릴리스 전 스니펫 매칭 스캔. (5) 기록 의무 — code referencing 로그 보존, AI 생성 비중이 높은 커밋 표시. (6) 오픈소스 기여 시 규칙 — 대상 프로젝트의 AI 정책 확인과 Generated-by:/Assisted-by: 트레일러. (7) 면책 조건 관리 — 벤더 면책 요건은 바뀐다(CCC의 GitHub 요건이 2026-04-03 변경). (8) 예외 승인 — 미승인 도구 사용 시 법무·보안 합동 승인. 정책은 '금지'가 아니라 '조건부 허용 + 검증'으로 설계해야 실효성이 있다(전면 금지는 섀도 IT를 만든다).",
+      "confidence": "medium",
+      "target_section": "ospo",
+      "applies_to_korean_firms": "생성형 AI 코딩 도구를 도입했거나 도입을 검토하는 모든 개발 조직.",
+      "action_for_firms": "위 8개 항목을 사내 오픈소스 정책의 부속 문서로 신설하고 개발자 온보딩 체크리스트에 연결한다.",
+      "practicality": "템플릿",
+      "sources": [
+        {
+          "title": "Generative AI Policy (Linux Foundation)",
+          "url": "https://www.linuxfoundation.org/legal/generative-ai",
+          "kind": "primary"
+        },
+        {
+          "title": "ASF Generative Tooling Guidance",
+          "url": "https://www.apache.org/legal/generative-tooling.html",
+          "kind": "primary"
+        },
+        {
+          "title": "GitHub Copilot code referencing (GitHub Docs)",
+          "url": "https://docs.github.com/en/copilot/concepts/completions/code-referencing",
+          "kind": "primary"
+        },
+        {
+          "title": "Customer Copyright Commitment Required Mitigations (Microsoft Learn)",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/responsible-ai/openai/customer-copyright-commitment",
+          "kind": "primary"
+        }
+      ],
+      "_evidence": "research_ai#findings[29]"
+    },
+    {
+      "topic": "NIPA 조직개편 — 공개소프트웨어팀 폐지 (2024-03)",
+      "claim": "2024년 3월 NIPA 조직개편으로 SW산업본부 산하 '공개소프트웨어팀'이 SW미래본부의 'SW산업팀'으로 흡수됐다. NIPA는 기존 오픈소스 사업(실태조사, 개발자 역량강화, 오픈업센터 운영 등)이 유지된다고 밝혔으나, 업계는 전담 조직 축소에 우려를 표했다.",
+      "detail": "가이드 발행 주체인 NIPA/오픈업센터의 조직 안정성과 관련된 배경 정보로, 향후 개정판에서 통계·컨설팅 채널의 담당 부서 변경 여부를 재확인할 필요가 있다.",
+      "confidence": "medium",
+      "target_section": "ospo",
+      "applies_to_korean_firms": "NIPA 오픈업 컨설팅·실태조사 데이터를 활용하는 국내 기업",
+      "action_for_firms": "OSPO 절의 '오픈업(오픈소스 통합지원센터)' 소개 문구 옆에 조직 변경 사실을 각주로 남겨, 담당 창구 확인이 필요할 수 있음을 안내한다.",
+      "practicality": "개념설명",
+      "effective_dates": [
+        "2024-03"
+      ],
+      "replaces": "해당 없음 (신규 맥락 정보)",
+      "sources": [
+        {
+          "title": "AI 시대 더 중요해진 오픈소스SW, 하지만…NIPA '공개소프트웨어팀' 사라져 (디지털데일리, 2024-03-26)",
+          "url": "https://m.ddaily.co.kr/page/view/2024032606541480965",
+          "kind": "secondary"
+        }
+      ],
+      "_evidence": "research_market#findings[6]"
+    },
+    {
+      "topic": "TODO Group OSPO Survey(2019) → LF Research State of OSPOs(2025) 전면 교체",
+      "claim": "원고 ospo 절이 인용한 'TODO Group survey(2019)'의 '50%+ 기업이 OSPO 보유·예정' 서술은 7년 전 자료다. 최신 2025년판(8년 연속, 표본 338건, 2025-05~06 조사, 2025-08 발간)에 따르면 정식(formal) OSPO 보유율은 2022년 30% → 2023년 43%(정점) → 2024년 26%(급락) → 2025년 32%(반등)로 등락했고, 비정식(informal) OSPO는 2023년 23%에서 2025년 18%로 계속 줄었다.",
+      "detail": "PDF 원문(https://www.linuxfoundation.org/hubfs/Research%20Reports/LFResearch_StateofOSPO_082825.pdf)을 직접 다운로드해 읽고 확인했다. 규모별로는 대·초대형 조직 83% 정식 OSPO 보유 vs 중소조직 72%(그중 55%는 비정식 운영, 68%는 신규 도입 계획). 지역별로는 아메리카 89%, 유럽 68%, 아시아태평양 35%(정식21%+비정식14%)로 APAC이 전 지역 중 가장 낮다 — 단, 한국 단독 수치는 보고서에 없다(체크리스트 미확인 항목).",
+      "confidence": "high",
+      "target_section": "ospo",
+      "applies_to_korean_firms": "OSPO 설립을 검토하는 모든 국내 기업, 특히 아시아태평양 평균과 비교하려는 조직",
+      "action_for_firms": "ospo 절 서두의 2019년 TODO Group survey 인용을 2025년 LF Research 데이터(전체·규모별·지역별 3개 표)로 교체한다. '한국은 아시아태평양 평균(35%)보다 낮을 가능성이 있으나 국가 단독 데이터는 없다'는 유보를 명시한다.",
+      "practicality": "통계표",
+      "effective_dates": [
+        "2025-08 (2025 State of OSPOs 발간)"
+      ],
+      "replaces": "content/en/ospo/_index.md L11, 각주 [^todo-survey]",
+      "sources": [
+        {
+          "title": "The 2025 State of OSPOs and Open Source Management (랜딩)",
+          "url": "https://www.linuxfoundation.org/research/ospo-2025",
+          "kind": "primary"
+        },
+        {
+          "title": "The 2025 State of OSPOs and Open Source Management (원문 PDF, 직접 다운로드·열람)",
+          "url": "https://www.linuxfoundation.org/hubfs/Research%20Reports/LFResearch_StateofOSPO_082825.pdf",
+          "kind": "primary"
+        },
+        {
+          "title": "The 2024 State of OSPOs and Open Source Management",
+          "url": "https://www.linuxfoundation.org/research/ospo-2024",
+          "kind": "primary"
+        }
+      ],
+      "_evidence": "research_market#findings[9]"
+    },
+    {
+      "topic": "OSPO의 보안·생성형 AI 리스크 관리 역할 확대",
+      "claim": "OSPO 보유 조직의 92%가 오픈소스 보안에 관여(42% 의사결정권, 50% 자문)하며, 79%가 생성형 AI 리스크 관리에 효과적이라고 평가했다(2024년 65%에서 상승). OSPO 상위 책무는 정책·프로세스 수립(47%), 라이선스 컴플라이언스 감독(44%), 오픈소스 전략 수립(34%) 순이다. 도입 장벽은 전략 공백(40%), 경영진 지원 부족(35%), ROI 정당화 어려움(35%)이며, 효과는 SW 품질·보안 개선(88%), 개발자 경험 개선(89%)으로 보고됐다.",
+      "detail": "동일 2025 LF Research 보고서(표본 116, OSPO 보유 조직)의 세부 문항이다. 2년 내 OSPO 신규 도입 계획 조직은 15%(2024)에서 45%(2025)로 3배 늘어 향후 확산 속도가 빨라질 가능성을 시사한다.",
+      "confidence": "high",
+      "target_section": "ospo",
+      "applies_to_korean_firms": "OSPO 신설·확장을 계획 중인 기업, 특히 생성형 AI 도입과 오픈소스 거버넌스를 함께 다뤄야 하는 조직",
+      "action_for_firms": "OSPO의 역할 절에 '보안·생성형 AI 리스크 관리'를 4번째 핵심 역할로 추가하고, 도입 장벽(전략 공백·경영진 지원 부족·ROI 입증)을 OSPO 설립 절의 '설득 전략' 부분에 반영한다.",
+      "practicality": "체크리스트",
+      "effective_dates": [
+        "2025-08"
+      ],
+      "replaces": "해당 없음 (신규 보강 통계)",
+      "sources": [
+        {
+          "title": "The 2025 State of OSPOs and Open Source Management (원문 PDF)",
+          "url": "https://www.linuxfoundation.org/hubfs/Research%20Reports/LFResearch_StateofOSPO_082825.pdf",
+          "kind": "primary"
+        }
+      ],
+      "_evidence": "research_market#findings[10]"
+    },
+    {
+      "topic": "TODO Group 가이드·사례 URL 구조 개편 (죽은 링크 4건 + bit.ly 10건)",
+      "claim": "원고가 인용한 todogroup.org/guides/create-program/, /guides/measuring, /guides/management-tools, /guides/participating/ 는 사이트 개편으로 404를 반환한다(create-program/ 직접 확인). 새 경로는 모두 /resources/guides/[전체-슬러그]/ 형태다(예: how-to-create-an-open-source-program-office/, measuring-your-open-source-programs-success/, tools-for-managing-open-source-programs/, participating-in-open-source-communities/). OSPO 기업 사례 10건(Autodesk~Yahoo)의 bit.ly 단축 URL도 /case-studies/[기업]/ 또는 /blog/open-source-case-studies-[기업]/ 형태의 직접 URL로 대체 가능하며, Bloomberg·Comcast(재작성판)·Porsche 등 신규 사례도 추가됐다.",
+      "detail": "01_baseline_reconciliation.json이 이미 발간본에서 Capital One 각주가 Comcast URL로 잘못 붙어 소실된 사실을 지적한 바 있다 — bit.ly 단축 링크의 취약성을 보여주는 실사례다. 새 URL은 목록 페이지(todogroup.org/guides/)에서 직접 확인했다.",
+      "confidence": "high",
+      "target_section": "ospo",
+      "applies_to_korean_firms": "해당 없음(각주 유지보수 항목)",
+      "action_for_firms": "네 개 가이드 각주와 열 개 사례 각주 URL을 모두 갱신한다. bit.ly 대신 todogroup.org 직접 URL을 사용해 향후 링크 소실 위험을 줄인다.",
+      "practicality": "체크리스트",
+      "effective_dates": [],
+      "replaces": "content/en/ospo/_index.md L19, L253-286 / content/en/contributing/_index.md L27",
+      "sources": [
+        {
+          "title": "TODO Group Guides 목록",
+          "url": "https://todogroup.org/guides/",
+          "kind": "primary"
+        },
+        {
+          "title": "Open Source Program Case Studies: Capital One",
+          "url": "https://todogroup.org/blog/open-source-case-studies-capitalone/",
+          "kind": "primary"
+        },
+        {
+          "title": "OSPO Book (신규 통합 자료)",
+          "url": "https://ospobook.todogroup.org/",
+          "kind": "primary"
+        }
+      ],
+      "_evidence": "research_market#findings[11]"
+    },
+    {
+      "topic": "OpenSSF Alpha-Omega — AI 시대 유지관리자 지원 신규 펀딩",
+      "claim": "2026년 3월 17~18일 발표, Anthropic·AWS·GitHub·Google·Google DeepMind·Microsoft·OpenAI가 총 1,250만 달러를 Alpha-Omega·OpenSSF에 출연해, AI가 촉발한 취약점 리포트·PR 급증에 유지관리자가 대응하도록 지원한다. Alpha-Omega는 2025년 한 해 580만 달러를 14개 핵심 프로젝트에 투자하고 60건 이상의 보안 감사·인게이지먼트를 완료했다.",
+      "detail": "이 펀딩은 curl·Electron 등에서 보고된 'AI 슬롭(AI slop)' — AI가 생성한 허위·저품질 취약점 신고·PR 급증 문제에 대한 업계 공동 대응이다. curl은 2026년경 6년간 운영한 버그바운티 프로그램을 AI 생성 허위 신고 부담으로 종료했다는 보도가 있다(2차 출처, 정확한 날짜 미확인).",
+      "confidence": "high",
+      "target_section": "ospo",
+      "applies_to_korean_firms": "핵심 오픈소스 프로젝트에 의존하는 모든 기업 — 후원 대상 프로젝트 목록을 자사 SBOM과 대조해 우선 지원 대상 파악 가능",
+      "action_for_firms": "OSPO 참고자료 절에 Alpha-Omega의 신규 이니셔티브를 추가하고, 자사가 사용하는 핵심 의존성이 후원 대상인지 확인하는 절차를 컴플라이언스 체크리스트에 넣는다.",
+      "practicality": "사례",
+      "effective_dates": [
+        "2026-03-17"
+      ],
+      "replaces": "해당 없음 (신규 프로그램)",
+      "sources": [
+        {
+          "title": "Tech Leaders Invest $12.5M in Open Source Security (OpenSSF 공식 블로그)",
+          "url": "https://openssf.org/blog/2026/03/17/leading-tech-coalition-invests-12-5-million-through-openssf-and-alpha-omega-to-strengthen-open-source-security/",
+          "kind": "primary"
+        },
+        {
+          "title": "AI is burning out the people who keep open source alive",
+          "url": "https://www.coderabbit.ai/blog/ai-is-burning-out-the-people-who-keep-open-source-alive",
+          "kind": "secondary"
+        }
+      ],
+      "_evidence": "research_market#findings[12]"
+    },
+    {
+      "topic": "Open Source Summit Korea 2026 + OpenSSF Community Day Korea (국내 참여 경로)",
+      "claim": "2026년 8월 11~13일 서울 그랜드 인터컨티넨탈 파르나스에서 Open Source Summit Korea가 열리며, OpenSSF Community Day Korea가 동시 개최되어 아시아태평양 오픈소스 보안 커뮤니티가 결집한다. 키노트에 LG AI연구원 CAIO 배경훈, Linux Foundation CEO Jim Zemlin 등이 참여한다.",
+      "detail": "오늘(2026-07-31) 기준 약 2주 앞으로 다가온 행사로, 가이드 독자가 즉시 참여를 검토할 수 있는 시의성 있는 정보다.",
+      "confidence": "high",
+      "target_section": "ospo",
+      "applies_to_korean_firms": "OSPO 담당자, 오픈소스 보안·컴플라이언스 실무자",
+      "action_for_firms": "OSPO 참고자료 절에 '국내 참여 경로'로 이 행사를 등재하고, 매년 갱신 필요성을 명시한다.",
+      "practicality": "체크리스트",
+      "effective_dates": [
+        "2026-08-11 ~ 2026-08-13"
+      ],
+      "replaces": "해당 없음 (신규 이벤트 정보)",
+      "sources": [
+        {
+          "title": "Open Source Summit Korea (공식 행사 페이지)",
+          "url": "https://events.linuxfoundation.org/open-source-summit-korea/",
+          "kind": "primary"
+        },
+        {
+          "title": "OpenSSF Community Day Korea",
+          "url": "https://openssf.org/event/openssf-community-day-korea/",
+          "kind": "primary"
+        }
+      ],
+      "_evidence": "research_market#findings[13]"
+    },
+    {
+      "topic": "OpenChain Korea Work Group — 자체인증 절차 (2026년판 가이드)",
+      "claim": "OpenChain Korea Work Group 산하 Conformance Group이 ISO/IEC 5230(라이선스 컴플라이언스)·ISO/IEC 18974(보안 보증) 자체인증(self-certification) 준비를 지원한다. 2026년판 가이드 기준 두 표준 합산 50개 증빙 항목(각 25개)을 충족하면 자체인증을 진행할 수 있다.",
+      "detail": "원고 ospo 절이 이미 '기업 오픈소스 거버넌스 OpenChain 해설서'를 인용하고 있으나 구체적 증빙 항목 수·자체인증 절차는 없다. OpenChain KWG 사이트에서 2026년판 가이드로 직접 확인했다.",
+      "confidence": "high",
+      "target_section": "ospo",
+      "applies_to_korean_firms": "ISO/IEC 5230·18974 인증을 검토하는 국내 기업",
+      "action_for_firms": "OSPO 컴플라이언스 프로세스 절에 '50개 증빙 항목 자체인증 절차'와 'OpenChain Korea Work Group Conformance Group 참여'를 실행 경로로 명시한다.",
+      "practicality": "체크리스트",
+      "effective_dates": [
+        "2026"
+      ],
+      "replaces": "해당 없음 (절차 상세화)",
+      "sources": [
+        {
+          "title": "[2026] ISO 표준 기반 기업 오픈소스 관리 가이드",
+          "url": "https://openchain-project.github.io/OpenChain-KWG/guide/opensource_for_enterprise/",
+          "kind": "primary"
+        }
+      ],
+      "_evidence": "research_market#findings[14]"
+    },
+    {
+      "topic": "국내 OpenChain ISO/IEC 5230·18974 인증 기업 8곳 (2019~2025)",
+      "claim": "LG전자(2019 취득/2021-02 발표, 국내 최초, 2023-04 ISO/IEC 18974 추가), 카카오(2022-01-24), 카카오뱅크(2022-01-24, 국내 금융 최초·글로벌 2번째), LINE(2023, 다국적 거점 포괄), KT(2023-11-07 ISO/IEC 5230, 2024-10-02 ISO/IEC 18974), 금융결제원(2025-01-20), 한글과컴퓨터(2025-10-31), CJ대한통운(2025-11-05, 국내 물류업 최초)이 OpenChain 국제표준 컴포먼트 인증을 공식 발표했다.",
+      "detail": "모두 openchainproject.org의 공식 발표문(featured/news)으로 1차 확인했다. 산업 분포가 전자·플랫폼·금융·통신·물류·소프트웨어로 다변화되고 있고, 2025년 한 해에만 3건(KFTC·Hancom·CJ Logistics)이 몰려 있어 '2025~2026년 인증 확산기'로 볼 수 있다. 원고 ospo 절이 SK텔레콤 사례 1건만 다루고 있어, 국내 사례 부족 문제를 이 8건으로 해소할 수 있다(체크리스트 요구 '4~5건 이상'을 크게 상회).",
+      "confidence": "high",
+      "target_section": "ospo",
+      "applies_to_korean_firms": "OpenChain 인증을 검토하는 모든 산업의 국내 기업 — 특히 비 IT 업종(물류·금융인프라)도 인증이 가능함을 보여주는 선례",
+      "action_for_firms": "OSPO 절 말미 'SK텔레콤 OSPO' 단일 사례를 8개사 인증 연혁 표로 확장하고, 인증 취득까지 걸린 준비 기간(KT 사례: 약 1년)을 실무 참고치로 제시한다.",
+      "practicality": "사례",
+      "effective_dates": [
+        "2019",
+        "2021-02-08",
+        "2022-01-24",
+        "2023-04-17",
+        "2023-11-07",
+        "2024-10-02",
+        "2025-01-20",
+        "2025-10-31",
+        "2025-11-05"
+      ],
+      "replaces": "content/en/ospo/_index.md L262-289: TODO Group 해외 사례 10건 + SK텔레콤 1건 구조",
+      "sources": [
+        {
+          "title": "LG Announces Conformance To OpenChain 2.1 (ISO/IEC 5230)",
+          "url": "https://openchainproject.org/featured/2021/02/08/lg-openchain-iso-5230",
+          "kind": "primary"
+        },
+        {
+          "title": "LG Electronics Announces OpenChain ISO/IEC DIS 18974 Conformant Program",
+          "url": "https://openchainproject.org/news/2023/04/17/lg-security-assurance",
+          "kind": "primary"
+        },
+        {
+          "title": "Kakao Announces OpenChain Conformant Program",
+          "url": "https://openchainproject.org/featured/2022/01/24/kakao-conformant",
+          "kind": "primary"
+        },
+        {
+          "title": "Kakaobank Announces OpenChain Conformant Program",
+          "url": "https://openchainproject.org/featured/2022/01/24/kakaobank-conformance",
+          "kind": "primary"
+        },
+        {
+          "title": "라인, 오픈소스 국제 표준 인증 'ISO/IEC 5230' 획득 (데이터넷)",
+          "url": "https://www.datanet.co.kr/news/articleView.html?idxno=185008",
+          "kind": "secondary"
+        },
+        {
+          "title": "Korea Telecom (KT) Announces an OpenChain ISO/IEC 5230 Conformant Program",
+          "url": "https://openchainproject.org/featured/2023/11/07/korea-telecom-kt-announces-an-openchain-iso-iec-5230-conformant-program",
+          "kind": "primary"
+        },
+        {
+          "title": "Korea Telecom (KT) Announces an OpenChain ISO/IEC 18974 Conformant Program",
+          "url": "https://openchainproject.org/news/2024/10/02/kt-iso-iec-18974-conformant",
+          "kind": "primary"
+        },
+        {
+          "title": "KFTC Announces an OpenChain ISO/IEC 5230 Conformant Program",
+          "url": "https://openchainproject.org/news/2025/01/20/kftc-5230-conformant",
+          "kind": "primary"
+        },
+        {
+          "title": "Hancom Announces an OpenChain ISO/IEC 5230 Conformant Program",
+          "url": "https://openchainproject.org/news/2025/10/31/hancom-announces-an-openchain-iso-iec-5230-conformant-program",
+          "kind": "primary"
+        },
+        {
+          "title": "CJ Logistics Becomes First in Korean Logistics Industry to Adopt OpenChain ISO/IEC 5230",
+          "url": "https://openchainproject.org/news/2025/11/10/cj-logistics-becomes-first-in-korean-logistics-industry-to-adopt-openchain-iso-iec-5230",
+          "kind": "primary"
+        }
+      ],
+      "_evidence": "research_market#findings[15]"
+    },
+    {
+      "topic": "삼성전자 OSPO 조직 구조 사례",
+      "claim": "삼성전자는 오픈소스 컨트롤타워인 '오픈소스그룹'과, 각 사업부 임원·실무자로 구성된 '오픈소스 협의체'를 함께 운영해 이슈 공유와 의사결정을 수행한다. 2013년부터 Linux Foundation 유일한 한국 이사회 멤버이며 매년 SOSCON(Samsung Open Source Conference)을 개최한다.",
+      "detail": "조직 구조는 공식 자료로 확인되나(opensource.samsung.com), OpenChain 등 국제 컴플라이언스 표준 인증 취득 발표는 이번 조사에서 찾지 못했다 — 조직 존재는 high, 인증 여부는 미확인(low)으로 구분해야 한다.",
+      "confidence": "medium",
+      "target_section": "ospo",
+      "applies_to_korean_firms": "대기업형 다중 사업부 구조를 가진 기업",
+      "action_for_firms": "OSPO 조직 구성 절의 '어느 조직에 OSPO를 둘 것인가' 소절에 '컨트롤타워(그룹) + 사업부 교차 협의체' 2단 구조를 삼성전자 사례로 추가한다.",
+      "practicality": "사례",
+      "effective_dates": [],
+      "replaces": "해당 없음 (신규 사례)",
+      "sources": [
+        {
+          "title": "Samsung Open Source 공식 사이트",
+          "url": "https://opensource.samsung.com/main",
+          "kind": "primary"
+        }
+      ],
+      "_evidence": "research_market#findings[16]"
+    },
+    {
+      "topic": "엔씨소프트 CTO 직속 오픈소스 조직 (미확인 1차 출처)",
+      "claim": "엔씨소프트는 CTO 직속 오픈소스 전담 조직을 통해 사내 오픈소스 가이드라인을 구축하고 사내 사용 중인 모든 오픈소스를 관리한다고 알려져 있다.",
+      "detail": "이 정보는 oss.kr 월간브리핑(WebFetch 403으로 원문 미확인, 검색 스니펫으로만 확인)에서 나왔다. 엔씨소프트 공식 발표·블로그를 직접 찾지 못해 1차 출처 확인에 실패했다.",
+      "confidence": "low",
+      "target_section": "ospo",
+      "applies_to_korean_firms": "게임업계 등 비전통 IT 업종에서 OSPO 조직 배치를 고민하는 기업",
+      "action_for_firms": "citation-fact-verifier 단계에서 엔씨소프트 공식 채널(기술 블로그, GitHub 조직 등)로 재확인 후 본문에 반영할지 결정한다. 그 전까지는 '알려져 있다' 수준의 잠정 서술만 허용한다.",
+      "practicality": "사례",
+      "effective_dates": [],
+      "replaces": "해당 없음 (신규 사례, 미확인)",
+      "sources": [
+        {
+          "title": "[10월 월간브리핑] 국내 기업의 오픈소스 거버넌스 현황 (원문 접근 실패, 검색 스니펫만 확인)",
+          "url": "https://www.oss.kr/oss_guide/show/f1647ef1-2330-4e00-b195-8beae0294958",
+          "kind": "secondary"
+        }
+      ],
+      "_evidence": "research_market#findings[17]"
+    }
+  ],
+  "baseline": {
+    "baseline_source": "merge",
+    "rationale": "저장소 ospo는 2023-02-20 이후 갱신이 없고 발간본에도 2023년 이후 신규 사실이 없다. 발간본은 OpenChain 해설서 참조를 '2.0 해설서 [부록 2]'로 구체화하고 프로그램 매니저 역할 항목 하나를 바꿨지만, 동시에 'Faceboo' 오타와 Capital One 각주 URL 소실이라는 결함을 새로 만들었다. 한쪽을 통째로 택하면 어느 쪽이든 손실이 생기므로 절별로 갈라 가져와야 한다.",
+    "published_only_worth_keeping": [
+      {
+        "topic": "OpenChain 해설서 버전·부록 번호 명시",
+        "published_ref": "page:176",
+        "summary": "발간본 '위에서 한번 언급한 NIPA의 기업 공개SW 거버넌스 OpenChain 2.0 해설서의 [부록 2]샘플 오픈소스SW 컴플라이언스 프로세스133)'. 저장소 ospo#L231은 버전과 부록 번호 없이 'OpenChain 해설서에서도 샘플 오픈소스 컴플라이언스 프로세스를 제공한다'로만 쓴다. URL(.../nipa_openchain/appendix/2-process-template/)은 동일. 2026 개정 시 OpenChain ISO/IEC 5230·18974 현행 판본 기준으로 재확인 필요.",
+        "worth_keeping": true
+      }
+    ],
+    "repo_only_worth_keeping": [
+      {
+        "topic": "Capital One 사례 링크",
+        "repo_ref": "ospo#L267, L278",
+        "summary": "저장소는 Capital One 사례에 https://bit.ly/3sxbf4e 와 todogroup 저장소 원문 링크를 모두 갖고 있다. 발간본은 각주 138)이 'Comcast Comcast's OSPO : https://bit.ly/2RAIw1A'로 잘못 붙어 Capital One URL이 통째로 사라졌다. 저장소가 옳다.",
+        "worth_keeping": true
+      },
+      {
+        "topic": "TODO Group 사례 원문 링크 10개",
+        "repo_ref": "ospo#L262-296",
+        "summary": "저장소는 각 사례에 github.com/todogroup/todogroup.github.io 원문 경로를 인라인으로 달아 두었다. 발간본은 bit.ly 단축 URL만 남겼는데 단축 URL은 만료 위험이 크다. 2026 개정에서 원문 경로를 살리고 현재 todogroup.org 구조로 갱신할 것.",
+        "worth_keeping": true
+      },
+      {
+        "topic": "결론 alert 박스",
+        "repo_ref": "ospo#L290-296",
+        "summary": "{{% alert color=\"success\" %}}로 감싼 마무리 문단. 발간본 p178은 같은 문단을 본문으로 조판하면서 마지막 마침표를 빠뜨렸다('가능성이 열릴 것이다').",
+        "worth_keeping": true
+      }
+    ],
+    "diverged": [
+      {
+        "topic": "오픈소스 프로그램 매니저 역할 세 번째 항목",
+        "published_ref": "page:171",
+        "repo_ref": "ospo#L149",
+        "difference": "저장소 '효과적인 오픈소스 활동을 위한 정책을 수립하고 프로세스를 구축한다' vs 발간본 '오픈소스SW 활동을 위해 필요한 도구를 제공한다'. 정책·프로세스 수립이 도구 제공으로 바뀌어 역할 성격이 달라졌다. 두 번째 항목도 '기업의 모든 오픈소스 활동을 감독한다'→'기업의 오픈소스SW 활동을 직접적으로 감독한다'로 바뀌었다. 발간본이 나중 편집이지만 정책·프로세스 수립은 OSPO 매니저의 핵심 역할이라 삭제가 타당한지 개정 계획에서 재검토할 것.",
+        "newer": "published"
+      },
+      {
+        "topic": "IT 지원 담당 역할 서술",
+        "published_ref": "page:172",
+        "repo_ref": "ospo#L173",
+        "difference": "저장소 '가능한 자동화해야 한다 / 컴플라이언스와 보안 취약점 점검을 자동화' vs 발간본 '도구를 활용하여 가능한 자동화해야 한다 / 컴플라이언스 활동을 자동화하기 위한, 보안취약점 점검을 효율화하기 위한'. 발간본 문장은 비문에 가깝다.",
+        "newer": "unclear"
+      },
+      {
+        "topic": "TODO Group 사례 도입 문장의 기업명",
+        "published_ref": "page:177",
+        "repo_ref": "ospo#L264",
+        "difference": "발간본 'Microsoft, Faceboo, Uber 등' — 발간 과정에서 Facebook이 'Faceboo'로 깨졌다. 저장소가 옳다.",
+        "newer": "repo"
+      },
+      {
+        "topic": "OSPO 설립 조직 소절 제목",
+        "published_ref": "page:170",
+        "repo_ref": "ospo#L116",
+        "difference": "저장소 '어느 조직 내에 OSPO를 만들어야 하나?' vs 발간본 '1) 어느 조직에 OSPO를 설립해야 하는가?'. 제목 표현만 다르고 본문은 동일.",
+        "newer": "published"
+      },
+      {
+        "topic": "'오픈업' 기관명 부기",
+        "published_ref": "page:172",
+        "repo_ref": "ospo#L167",
+        "difference": "저장소 'NIPA의 오픈업(오픈소스 통합지원센터)' vs 발간본 'NIPA의 오픈업'. 발간본이 괄호 설명을 뺐으나 발간본 p5는 '오픈업센터(Open UP)'로 부른다. 개정판에서 표기를 하나로 정할 것.",
+        "newer": "unclear"
+      }
+    ]
+  }
+}

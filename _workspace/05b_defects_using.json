@@ -1,0 +1,122 @@
+[
+ {
+  "line": 13,
+  "quote": "2023년 기업의 95%가 오픈소스 사용을 유지하거나 증가시켰으며, 33%는 사용이 크게 증가했다고 응답했다.",
+  "kind": "stale_timing",
+  "severity": "minor",
+  "checked_url": "https://www.globalbankingandfinance.com/2024-state-of-open-source-report-shows-open-source-software-adoption-growing-despite-security-and-support-challenges/",
+  "reason": "인용 URL은 살아 있고 수치도 원문과 정확히 일치한다('95% of organizations increased or maintained their use of open source software in 2023, and 33% said their usage increased significantly', 설문 기간 2023-10-10~11-08, 응답 2,046건). 반박 지점은 시점과 추세 방향이다. `research_market#findings[1]`은 이 지표가 2024년판 95% → 2025년판(2025-04-08) 96% → 2026년판(2026-03-24) 98%로 올라갔고, 도입 동인의 무게중심이 '비용 절감'에서 '벤더 락인 회피'(55%, 전년 33%)로 옮겨갔다고 확인했다. 그런데 초안 L13은 '최근 기업들의 … 크게 변화하고 있다'로 문단을 열고 L15는 '비용 절감이 오픈소스 도입의 주요 이유로 부상했다'며 2023년의 동인을 현재형으로 유지한다 — 2026년 기준으로는 추세 방향이 반대로 서술된 셈이다. L25의 79%/70%도 같은 2024년판 수치다(원문 대조 결과 정확). 이 문단은 P1 지시 범위 밖이라 손대지 않은 것으로 보이나, 2026년 개정판 본문의 도입부라 독자가 현재 통계로 읽는다.",
+  "suggested_fix": "최근 기업들의 오픈소스SW에 대한 인식과 활용이 크게 변화하고 있다. Perforce·Open Source Initiative·Eclipse Foundation이 공동 발간한 [2026 State of Open Source Report](https://www.perforce.com/press-releases/2026-state-of-open-source-report)[^perforce2026]에 따르면, 조사 대상 조직의 98%가 오픈소스SW 사용을 유지하거나 늘렸고 사용을 줄인 조직은 2% 미만이다. 도입 동인도 바뀌었다 — 2023년 조사에서 1위였던 '비용 절감'을 밀어내고 '벤더 락인 회피'가 55%로 올라섰다(유럽 63%). 오픈소스SW 채택의 이유가 예산 압박에서 기술 주권과 공급자 종속 회피로 이동하고 있다는 뜻이다.",
+  "lens": "numbers"
+ },
+ {
+  "line": 13,
+  "quote": "최근 기업들의 오픈소스에 대한 인식과 활용이 크게 변화하고 있다. Perforce Software의 [2024 State of Open Source Report]",
+  "kind": "stale_timing",
+  "severity": "major",
+  "reason": "2026년 개정판의 첫 근거가 2024년판 보고서이고 그 안의 수치는 2023년 응답이다. https://www.openlogic.com/resources/state-of-open-source-report 를 열어 확인한 결과 2026 State of Open Source Report가 최신판으로 공개되어 있으며, OSI·Eclipse Foundation과 공동 제작해 EU 규제 영향과 SBOM 생성 채택률을 다룬다 — 이 가이드의 주제와 직결되는 최신 데이터가 있는데도 3년 전 판을 '최근'으로 인용하고 있다. 이어지는 L15의 \"'효율성의 해'라 불리는 2023년\"도 같은 시점 문제를 안고 있다.",
+  "checked_url": "https://www.openlogic.com/resources/state-of-open-source-report",
+  "suggested_fix": "L13~L17을 2026 State of Open Source Report(Perforce/OpenLogic, OSI·Eclipse Foundation 공동) 기준으로 교체하고, 각주를 [^perforce2026]: 2026 State of Open Source Report : https://www.openlogic.com/resources/state-of-open-source-report 로 바꾼다. 2024년판을 남기려면 \"2024년판 보고서 기준(2023년 조사)\"으로 조사 연도를 문장 안에 명시하고 '최근'이라는 표현을 뺀다. L15의 \"'효율성의 해'라 불리는 2023년\" 문장은 삭제한다.",
+  "lens": "timing"
+ },
+ {
+  "line": 19,
+  "quote": "향후 2년 동안 독점 소프트웨어 사용이 현재 45%에서 37%로 8% 줄어들 것으로 전망되며, 같은 기간 동안 엔터프라이즈 오픈소스와 커뮤니티 기반 오픈소스는 각각 5%, 3% 증가할 것으로 예상된다.",
+  "kind": "stale_timing",
+  "severity": "major",
+  "checked_url": "https://www.redhat.com/en/resources/state-of-enterprise-open-source-report-2022",
+  "reason": "출처 페이지는 살아 있고 수치도 원문과 맞다(원문: 'Proprietary software: Today - 45% / In two years - 37%. Enterprise open source software: Today - 29% / In two years - 34%. Community-based open source software: Today - 21% / In two years - 24%'). 문제는 시점이다. 이 보고서의 발간일은 2022-02-22이므로 '향후 2년'의 예측 시한은 2024년 초로 이미 2년 반 전에 지났는데, 2026년 개정판이 여전히 '전망되며 … 예상된다'는 미래형으로 서술한다. `research_market#findings[2]`는 이 보고서가 4번째이자 마지막 판이고 후속 시리즈가 오픈소스 특화 조사에서 범용 Global Tech Trends로 성격이 바뀌어 '실현 여부를 확인할 수 없다'고 판정했으며, 대체 자료로 Perforce/OpenLogic 2026년판 또는 OSSRA 2026년판을 제안한다. 지난 예측을 미래형으로 두면 독자는 이를 2026년 현재의 시장 전망으로 읽는다.",
+  "suggested_fix": "또한 엔터프라이즈 소프트웨어 시장에서 독점 소프트웨어의 비중은 줄어드는 추세로 관측되어 왔다. RedHat의 [2022 오픈소스 Enterprise 현황 보고서](https://www.redhat.com/en/resources/state-of-enterprise-open-source-report-2022)[^redhat2022]는 2022년 2월 시점에 독점 소프트웨어 비중 45%가 2년 뒤 37%로, 엔터프라이즈 오픈소스는 29%에서 34%로, 커뮤니티 기반 오픈소스는 21%에서 24%로 바뀔 것으로 전망했다. 다만 이 시리즈는 2022년판을 끝으로 중단되어 예측의 실현 여부를 확인할 후속판이 없으므로, 현재 시점의 채택률은 Perforce/OpenLogic 2026년판이나 Black Duck OSSRA 2026년판으로 확인해야 한다.",
+  "lens": "numbers"
+ },
+ {
+  "line": 19,
+  "quote": "45%에서 37%로 8% 줄어들 것으로 전망되며, 같은 기간 동안 엔터프라이즈 오픈소스와 커뮤니티 기반 오픈소스는 각각 5%, 3% 증가할 것으로",
+  "kind": "wrong_number",
+  "severity": "major",
+  "checked_url": "https://www.redhat.com/en/resources/state-of-enterprise-open-source-report-2022",
+  "reason": "단위 오류다. 45%→37%는 8퍼센트포인트(%p) 감소이지 8% 감소가 아니다(백분율 변화로 계산하면 -17.8%). 마찬가지로 29%→34%는 5%p, 21%→24%는 3%p 증가다. 원문은 비율 자체를 제시할 뿐 변화폭에 '%'를 붙이지 않는다. 같은 초안 L69는 NIPA 수치에 대해 '5.8%p 증가'로 %p를 정확히 쓰고 있어 한 문서 안에서 단위 표기가 일관되지 않는다. 컴플라이언스 판단에 쓰이는 문서에서 %와 %p 혼용은 재인용 시 오차가 증폭된다.",
+  "suggested_fix": "독점 소프트웨어 사용이 45%에서 37%로 8%p 줄고, 같은 기간 엔터프라이즈 오픈소스는 29%에서 34%로 5%p, 커뮤니티 기반 오픈소스는 21%에서 24%로 3%p 늘 것으로 전망했다.",
+  "lens": "numbers"
+ },
+ {
+  "line": 19,
+  "quote": "향후 2년 동안 독점 소프트웨어 사용이 현재 45%에서 37%로 8% 줄어들 것으로 전망되며, 같은 기간 동안 엔터프라이즈 오픈소스와 커뮤니티 기반 오픈소스는 각각 5%, 3% 증가할 것으로 예상된다.",
+  "kind": "stale_timing",
+  "severity": "major",
+  "reason": "Red Hat 2022 State of Enterprise Open Source Report의 '향후 2년' 전망은 2022년 기준이므로 예측 구간이 2024년에 이미 끝났다. 2026-08-01 시점에 '전망되며', '예상된다'로 쓰면 만료된 예측을 미래형으로 제시하는 것이다. 각주 URL(https://www.redhat.com/en/resources/state-of-enterprise-open-source-report-2022)은 HTTP 200으로 살아 있으나 2022년판 그대로여서, 링크 생존과 시점 유효성은 별개다. 또한 이 예측이 실제로 맞았는지에 대한 사후 검증도 본문에 없다.",
+  "checked_url": "https://www.redhat.com/en/resources/state-of-enterprise-open-source-report-2022",
+  "suggested_fix": "해당 문장을 다음으로 교체한다: \"RedHat의 [2022 오픈소스 Enterprise 현황 보고서](https://www.redhat.com/en/resources/state-of-enterprise-open-source-report-2022)[^redhat2022]는 2022년 시점에서 향후 2년간 독점 소프트웨어 사용 비중이 45%에서 37%로 줄고 엔터프라이즈 오픈소스와 커뮤니티 기반 오픈소스가 각각 5%포인트, 3%포인트 늘 것으로 내다봤다. 이 전망 구간은 2024년에 끝났으므로 여기서는 과거의 기대치로만 인용한다.\"",
+  "lens": "timing"
+ },
+ {
+  "line": 36,
+  "quote": "한국의 오픈소스 서비스 시장은 2024년부터 2034년까지 연평균 성장률(CAGR) 18.3%로 성장할 것으로 예측되며, 이는 글로벌 주요 국가 중 가장 높은 수치이다.",
+  "kind": "no_source",
+  "severity": "major",
+  "checked_url": "https://www.futuremarketinsights.com/reports/open-source-service-market",
+  "reason": "'글로벌 주요 국가 중 가장 높은 수치'라는 비교 최상급 주장을 지지하는 근거가 없다. 각주 [^fmi2024]가 가리키는 Future Market Insights 페이지는 유료 장벽 뒤에 있어 국가별 순위표를 공개하지 않으며, `research_market#findings[8]`도 '두 보고서 모두 유료 장벽 뒤에 있어 원문 방법론을 확인할 수 없었다'고 기록하고 한국이 1위라는 서술은 어디에도 없다. 오히려 같은 findings는 GII Korea(Global Info Research)가 글로벌 시장 CAGR을 24.3%로 제시해 한국 18.3%보다 높다는 상충 수치를 병기하도록 요구한다 — 즉 '가장 높다'는 주장은 확인 가능한 반대 수치가 존재하는 상태다. 추가로 예측창 시작점 2024년은 이미 지났고, FMI 2025년판은 같은 18.3%를 2025~2035 창으로 옮겨 실었다.",
+  "suggested_fix": "최근 국내 기업들의 오픈소스 도입은 급속도로 확산되고 있다. Future Market Insights는 한국의 오픈소스 서비스 시장이 2025년부터 2035년까지 연평균 성장률(CAGR) 18.3%로 성장할 것으로 전망한다[^fmi2024]. 다만 시장조사 벤더마다 시장 정의와 추정치가 달라, 같은 기간 글로벌 오픈소스 서비스 시장 성장률을 24.3%로 제시하는 보고서도 있다. 두 수치 모두 유료 보고서의 비공개 방법론에 근거하므로 절대값보다 성장 방향의 참고 지표로만 쓴다.",
+  "lens": "numbers"
+ },
+ {
+  "line": 36,
+  "quote": "최근 국내 기업들의 오픈소스 도입은 급속도로 확산되고 있다. Future Market Insights의 [2024년 보고서]",
+  "kind": "stale_timing",
+  "severity": "minor",
+  "reason": "2026년 개정판이 '최근'의 근거로 2년 전(2024년) 시장조사 기관 전망을 쓰고 있다. CAGR 18.3%(2024~2034)는 예측 구간이 아직 끝나지 않았으므로 수치 자체가 만료된 것은 아니지만, 예측치를 현재 진행 중인 사실('확산되고 있다')의 근거로 쓰는 구조여서 2026-08-01 시점에서는 실측이 아니라 2024년 시점의 기대치임이 드러나지 않는다. 또한 유료 시장보고서라 공개 요약 외에는 교차 확인이 불가하다.",
+  "checked_url": "https://www.futuremarketinsights.com/reports/open-source-service-market",
+  "suggested_fix": "해당 문장을 \"Future Market Insights가 2024년 발표한 시장 전망[^fmi2024]은 한국의 오픈소스 서비스 시장이 2024년부터 2034년까지 연평균 18.3% 성장할 것으로 봤다. 이는 실측이 아니라 2024년 시점의 예측치이므로 방향성 참고로만 쓴다.\"로 교체한다.",
+  "lens": "timing"
+ },
+ {
+  "line": 429,
+  "quote": "별도로 국가정보원이 제정한 '보안기능 시험제도 운영지침'이 2026-01-01 시행되었고, 개발환경 보안 자체 점검 목록은 2026-07-01부터 적용된다. ... 총 84개 점검 항목 중 1단계 48개 항목이 먼저 적용된다. 취약점 개선 내역서 제출도 요구된다[^nis-testing].",
+  "kind": "content_mismatch",
+  "severity": "major",
+  "checked_url": "https://koreascience.kr/article/JAKO202509954007244.view",
+  "reason": "각주가 가리키는 문헌은 김지민·조은정·이만희, 'NIS SBOM 속성의 CycloneDX 및 SPDX 구현', 정보보호학회지 35(1), 2025-02-28로, 페이지 전문을 검색했을 때 '보안기능', '운영지침', '개발환경', '84', '48', '2026' 문자열이 하나도 없다. 내용은 NIS-SBOM 기본항목을 CycloneDX/SPDX 필드로 표현·비교한 것이다. 2025년 2월 논문이 2026-01-01 시행·2026-07-01 적용 지침의 점검 항목 수를 담을 수 없다. 즉 국내 기업의 납품 준비 일정을 좌우하는 문단 전체가 무관한 출처로 지지되고 있다. 근거 리서치(research_security#findings[28])는 이 주장에 국정원 보안적합성 페이지와 스패로우 2026-05 해설을 함께 두었으나 초안이 논문 링크만 남겼다.",
+  "suggested_fix": "각주를 교체한다: `[^nis-testing]: 국가정보원, 보안적합성 검증 보안요구사항(보안기능 시험제도 운영지침 게시) : https://www.nis.go.kr/AF/1_7_2_4/list.do` 로 바꾸고, 84개·48개 항목 수치에는 2차 해설(스패로우 '2026 보안기능 시험제도 운영지침 총정리') 각주를 추가한다. 1차 원문에서 항목 수를 확인하지 못하면 문장을 '개발환경 보안 자체 점검 목록이 단계적으로 적용된다'로 바꾸고 숫자를 뺀다.",
+  "lens": "support"
+ },
+ {
+  "line": 429,
+  "quote": "별도로 국가정보원이 제정한 '보안기능 시험제도 운영지침'이 2026-01-01 시행되었고, 개발환경 보안 자체 점검 목록은 2026-07-01부터 적용된다.",
+  "kind": "content_mismatch",
+  "severity": "major",
+  "reason": "이 문단이 제시한 시행일 두 건(2026-01-01, 2026-07-01)과 항목 수(84개 중 1단계 48개)를 뒷받침하는 각주가 [^nis-testing] 하나인데, 그 출처는 김지민·조은정·이만희, 정보보호학회지 35(1), 2025-02-28 발행 논문이다. 2025년 2월에 나온 논문이 2026년 시행일과 단계별 적용 항목 수를 담을 수 없다. 근거 리서치(research_security#findings[28])도 이 시행일의 출처로 nis.go.kr와 sparrow.im(2026-05-04)을 별도로 들고 있으며 논문은 NIS-SBOM 속성 구현 비교 근거로만 인용한다. 또한 2026-08-01 현재 2026-07-01 적용은 이미 개시되었으므로 '적용된다'는 미래형 표현도 시점과 맞지 않는다.",
+  "checked_url": "https://koreascience.kr/article/JAKO202509954007244.view",
+  "suggested_fix": "해당 문장을 \"별도로 국가정보원이 제정한 '보안기능 시험제도 운영지침'이 2026-01-01 시행되었고, 개발환경 보안 자체 점검 목록은 2026-07-01부터 적용되고 있다.\"로 바꾸고, 시행일·항목 수 문장 끝의 각주를 국가정보원 보안기능 시험제도 공지(https://www.nis.go.kr/AF/1_7_2_4/list.do)를 가리키는 새 각주로 교체한다. [^nis-testing] 논문 각주는 NIS-SBOM 속성의 CycloneDX·SPDX 구현을 언급하는 자리에만 남긴다.",
+  "lens": "timing"
+ },
+ {
+  "line": 444,
+  "quote": "2026-07-29 CISA는 NSA·FBI 및 17개국 기관과 공동으로 '2026 Minimum Elements for a Software Bill of Materials (SBOM)'를 발표해",
+  "kind": "wrong_number",
+  "severity": "critical",
+  "checked_url": "https://www.cisa.gov/sites/default/files/2026-07/2026_cisa_sbom_minimum_elements_508c.pdf",
+  "reason": "원문 PDF 표지 로고와 전 페이지 머리글이 공동저자 기관을 명시적으로 열거한다: 'CISA | NSA | FBI | ASD's ACSC | Cyber Centre | NÚKIB | ANSSI | BSI | CERT-In | ACN | METI | NCO | NIS/NCSC | KISA | NCSC-NL | NCSC-NZ | NASK | NBU'. 총 18개 기관이며 CISA·NSA·FBI를 뺀 파트너는 15개 기관, 국가로는 호주·캐나다·체코·프랑스·독일·인도·이탈리아·일본(METI·NCO 2개 기관)·한국(NIS/NCSC·KISA 2개 기관)·네덜란드·뉴질랜드·폴란드·슬로바키아 13개국이다. '17개국'은 어느 셈법으로도 나오지 않는다(기관 수 15 또는 18, 국가 수 13 또는 14). 근거 리서치 `research_security#findings[5]`/`research_regulation#findings[8]`도 11개 파트너만 열거해 17을 지지하지 않는다 — 계획 파일 US-25(US-17) 지시문의 '17개국'이 검증 없이 그대로 옮겨진 것으로 보인다. 덧붙여 초안은 한국 참여 기관을 KISA만 적었으나 원문에는 국가정보원 NIS/NCSC도 별도 등재되어 있다.",
+  "suggested_fix": "2026-07-29 CISA는 NSA·FBI 및 13개국 15개 기관과 공동으로 '2026 Minimum Elements for a Software Bill of Materials (SBOM)'를 발표해 2021년 NTIA 최소 요소를 대체했다[^cisa-sbom2026]. 버전 이력은 1.0(2021-07-12, NTIA) → 2.0(2025-08-22 초안) → 2.1(2026-07-29 최종)이다. 공동 작성 기관에 한국 KISA와 국가정보원 국가사이버안보센터(NIS/NCSC)가 모두 포함되어 있어, 국내 공공 SBOM 요구사항이 이 문서에 정렬될 가능성이 높다.",
+  "lens": "numbers"
+ },
+ {
+  "line": 444,
+  "quote": "2026-07-29 CISA는 NSA·FBI 및 17개국 기관과 공동으로 '2026 Minimum Elements for a Software Bill of Materials (SBOM)'를 발표해",
+  "kind": "wrong_number",
+  "severity": "minor",
+  "checked_url": "https://www.cisa.gov/sites/default/files/2026-07/2026_cisa_sbom_minimum_elements_508c.pdf",
+  "reason": "PDF 원문의 공동 저자 목록은 CISA 외 17개 '기관'(NSA, FBI, ASD's ACSC, Cyber Centre, NÚKIB, ANSSI, BSI, CERT-In, ACN, METI, NCO, NIS/NCSC, KISA, NCSC-NL, NCSC-NZ, NASK, NBU)이다. NSA·FBI는 미국 기관이므로 '17개국 기관'은 성립하지 않는다. 미국 외 기관은 15개, 국가 기준으로는 미국 포함 14개국(호주·캐나다·체코·프랑스·독일·인도·이탈리아·일본 2개 기관·한국 2개 기관·네덜란드·뉴질랜드·폴란드·슬로바키아)이다.",
+  "suggested_fix": "'2026-07-29 CISA는 NSA·FBI를 포함한 18개 기관(미국 외 13개국 15개 기관) 공동으로'로 바꾼다.",
+  "lens": "support"
+ },
+ {
+  "line": 444,
+  "quote": "2026-07-29 CISA는 NSA·FBI 및 17개국 기관과 공동으로 '2026 Minimum Elements for a Software Bill of Materials (SBOM)'를 발표해",
+  "kind": "wrong_number",
+  "severity": "major",
+  "checked_url": "https://www.ic3.gov/CSA/2026/260729.pdf",
+  "reason": "원문 PDF(https://www.ic3.gov/CSA/2026/260729.pdf)를 내려받아 3쪽 'authoring organizations' 목록을 세어 확인했다. CISA 외 공동 작성 기관은 NSA, FBI, ASD's ACSC, Cyber Centre, NÚKIB, ANSSI, BSI, CERT-In, ACN, METI, NCO, NIS/NCSC, KISA, NCSC-NL, NCSC-NZ, NASK, NBU로 총 17개 '기관'이며, NSA·FBI가 그 17개 안에 포함된다. 국가 수는 미국·호주·캐나다·체코·프랑스·독일·인도·이탈리아·일본·한국·네덜란드·뉴질랜드·폴란드·슬로바키아로 14개국이다. 따라서 'NSA·FBI 및 17개국 기관'은 기관 수를 국가 수로 바꿔 쓴 데다 NSA·FBI를 이중 계산한 서술이다. 참고로 일본은 METI와 NCO 두 곳, 한국은 NIS/NCSC와 KISA 두 곳이 각각 등재되어 있어 기관 수와 국가 수가 일치하지 않는다.",
+  "suggested_fix": "'NSA·FBI 및 17개국 기관과 공동으로'를 '13개국 15개 기관(NSA·FBI 제외)과 공동으로'로 바꾼다. 국가 수를 쓰려면 '미국을 포함한 14개국'으로 쓴다. (entry #10의 suggested_fix와 동일한 최종 반영본을 따른다: NSA·FBI 및 13개국 15개 기관.)",
+  "lens": "numbers"
+ }
+]

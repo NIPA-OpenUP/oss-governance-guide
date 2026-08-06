@@ -1,0 +1,142 @@
+[
+ {
+  "line": 14,
+  "quote": "2024년 현재, 오픈소스는 단순한 개발 도구를 넘어 기업과 정부의 디지털 전략에서 중요한 위치를 차지하고 있다.",
+  "kind": "stale_timing",
+  "severity": "minor",
+  "reason": "2026년 8월 기준으로 2년 지난 시점 표기이며, 같은 문서 L123이 '이번 2026년 개정판은'이라고 적어 서문 안에서 기준 시점이 충돌한다. 05a_scoped_intro.json의 deletions_summary가 이 표현을 IN-04 대상으로 지목했으나 IN-04는 이번 priority-1 범위 밖이라 초안에 그대로 남아 있다. 초안 자체의 사실 서술로 보면 연도 오류이므로 숫자 렌즈에서 기록한다.",
+  "checked_url": "",
+  "suggested_fix": "오픈소스는 이제 단순한 개발 도구를 넘어 기업과 정부의 디지털 전략에서 중요한 위치를 차지하고 있다.",
+  "lens": "numbers"
+ },
+ {
+  "line": 14,
+  "quote": "2024년 현재, 오픈소스는 단순한 개발 도구를 넘어 기업과 정부의 디지털 전략에서 중요한 위치를 차지하고 있다.",
+  "kind": "stale_timing",
+  "severity": "minor",
+  "reason": "'2024년 현재'가 L14와 L115 두 곳에 남아 있는데, 같은 문서 L123은 이번 판을 '이번 2026년 개정판'으로 선언한다. 한 문서 안에서 기준 시점이 2024년과 2026년으로 충돌하며, 서문 첫 문단과 결론 첫 문장이라 독자가 문서 연식을 판정하는 위치다. 근거로 새로 들어온 유일한 통계도 2026년 2월 발간분(2024-11~2025-10 감사)이어서 '2024년 현재'라는 시점 표기와 맞지 않는다. 계획서 IN-04·IN-05가 같은 삭제를 지시했으나 priority 2로 제외되었다.",
+  "suggested_fix": "L14: '오픈소스SW는 단순한 개발 도구를 넘어 기업과 정부의 디지털 전략에서 중요한 위치를 차지하고 있다.' / L115: '오픈소스SW는 기업이 추구하는 혁신을 빠르게 이룰 수 있게 하는 중요한 동력일 뿐만 아니라, 디지털 전환과 AI 확산의 핵심 요소로 자리잡았다.' (두 곳 모두 '2024년 현재,'를 삭제한다)",
+  "checked_url": "",
+  "lens": "support"
+ },
+ {
+  "line": 14,
+  "quote": "2024년 현재, 오픈소스는 단순한 개발 도구를 넘어 기업과 정부의 디지털 전략에서 중요한 위치를 차지하고 있다.",
+  "kind": "stale_timing",
+  "severity": "critical",
+  "reason": "2026년 개정판 원고인데 배경 서술의 첫 문장이 현재 시점을 '2024년'으로 못박는다. 같은 문서 L123은 '이번 2026년 개정판은'이라고 판본을 2026년으로 선언하므로 문서가 자기 시점을 두 개로 주장한다. 독자가 서문 첫 문단에서 문서 연식을 판정하는 지점이며, 2년 지난 시점 표기가 그대로 출간되면 본문의 최신 규제 서술까지 신뢰를 잃는다. 계획서(04b_plan_intro.json IN-04, priority 2)도 같은 문장을 노후로 분류했으나 이번 실행 범위(P1)에서 빠졌다 — 계획상 제외일 뿐 사실 오류가 아니게 되는 것은 아니므로 반박한다.",
+  "suggested_fix": "오픈소스SW는 단순한 개발 도구를 넘어 기업과 정부의 디지털 전략에서 중요한 위치를 차지하고 있다.",
+  "checked_url": "",
+  "lens": "timing"
+ },
+ {
+  "line": 18,
+  "quote": "같은 보고서에서 AI 생성 코드를 IP·라이선스 관점에서 검토하는 조직은 54%에 그치며, 이 문제는 5장에서 다룬다.",
+  "kind": "wrong_scope",
+  "severity": "major",
+  "reason": "54%라는 값 자체는 맞지만 모수와 출처가 바뀌었다. 인용된 2026 보도자료 원문은 \"Black Duck research previously found that 76% of surveyed organizations check AI-generated code for security risks, but only 54% evaluate it for IP and license risks\"이고, 2026 OSSRA 보고서 본문(랜딩페이지)도 \"According to Black Duck's supply chain survey, 76% of respondents said their organizations check AI-generated code for security risks, but only 54% evaluate it for IP and license risks\"라고 적는다. 즉 54%는 947개 코드베이스 감사 데이터가 아니라 별도 공급망 설문 응답자 기반 수치이며, OSSRA는 이를 인용만 한 것이다. 초안은 바로 앞 문장에서 '이 보고서에 따르면 감사된 코드베이스의 68%'라고 감사 데이터를 말한 뒤 '같은 보고서에서 … 조직은 54%'로 이어져, 독자가 54%를 동일한 947개 코드베이스 감사 모수의 결과로 읽게 된다. 감사 데이터와 설문 데이터의 모수 혼동이다.",
+  "checked_url": "https://www.blackduck.com/resources/analyst-reports/open-source-security-risk-analysis.html",
+  "suggested_fix": "같은 보고서가 인용한 Black Duck 공급망 설문에서는 응답 조직 중 AI 생성 코드를 IP·라이선스 관점에서 검토한다는 답이 54%에 그쳤으며, 이 문제는 5장에서 다룬다.",
+  "lens": "numbers"
+ },
+ {
+  "line": 18,
+  "quote": "는 2025년 감사 데이터를 대상으로 947개 코드베이스·17개 산업을 분석했다",
+  "kind": "content_mismatch",
+  "severity": "minor",
+  "reason": "각주 [^compliance-risks]가 가리키는 2026 보도자료에는 감사 연도 표기가 아예 없다(\"Based on analysis of 947 codebases across 17 industries\"까지만 있다). 보고서 본문 방법론 절은 \"The findings in this report are based on audits conducted between November 2024 and October 2025\"이고, 표 제목도 \"Table 1. Scope of analyses 2024–25\"다. 즉 감사 창(window)이 2개 연도에 걸쳐 있어 '2025년 감사 데이터'는 인용 출처에 없는 초안의 축약이다. 같은 이유로 추세 문장의 '(2025년 감사분)' 표기도 출처 표현과 어긋난다(반면 '53%(2023년 감사분)'는 원문이 \"the 2023 audited codebases\"라 표기가 일치해, 세 항목의 라벨 기준이 서로 다르다).",
+  "checked_url": "https://www.blackduck.com/resources/analyst-reports/open-source-security-risk-analysis.html",
+  "suggested_fix": "는 2024년 11월~2025년 10월에 수행된 감사 데이터를 대상으로 947개 코드베이스·17개 산업을 분석했다. 이 보고서에 따르면 감사된 코드베이스의 68%가 라이선스 충돌을 포함한 오픈소스SW를 포함한다. 라이선스 충돌을 포함한 코드베이스의 비율은 53%(2024년판) → 56%(2025년판) → 68%(2026년판, OSSRA 역사상 최고치이자 최대 단일 연도 상승폭인 12%p)로 올랐다",
+  "lens": "numbers"
+ },
+ {
+  "line": 18,
+  "quote": "이 보고서에 따르면 감사된 코드베이스의 68%가 라이선스 충돌을 포함한 오픈소스SW를 포함한다.",
+  "kind": "overstated",
+  "severity": "minor",
+  "reason": "68%는 보고서의 헤드라인 수치가 맞지만, 2026년판은 같은 표(Table 10)에서 신규 지표를 함께 제시한다 — \"Codebases with license conflicts (excluding component-to-component) 59% — New metric\". 보고서 본문은 이 59%가 \"isolates issues that directly affect an organization's ability to distribute its software as intended\"라고 설명한다. 초안은 68%만 인용한 채 앞 문장에서 '저작권을 침해하거나'라는 자사 배포 리스크 맥락으로 연결하므로, 배포에 직접 영향을 주는 충돌의 비율(59%)보다 9%p 높은 값을 그 맥락의 근거로 쓰는 셈이다.",
+  "checked_url": "https://www.blackduck.com/resources/analyst-reports/open-source-security-risk-analysis.html",
+  "suggested_fix": "이 보고서에 따르면 감사된 코드베이스의 68%가 라이선스 충돌을 포함한 오픈소스SW를 포함하며, 컴포넌트 간 충돌을 제외하고 자사 배포에 직접 영향을 주는 충돌만 세어도 59%다.",
+  "lens": "numbers"
+ },
+ {
+  "line": 18,
+  "quote": "같은 보고서에서 AI 생성 코드를 IP·라이선스 관점에서 검토하는 조직은 54%에 그치며, 이 문제는 5장에서 다룬다.",
+  "kind": "wrong_scope",
+  "severity": "minor",
+  "reason": "54%라는 수치 자체는 맞다. 문제는 모수다. 앞 문장의 68%는 947개 코드베이스 감사 데이터에서 나온 값이지만, 54%는 감사 데이터가 아니라 별개 설문에서 나온 값이다. 2026년판 OSSRA 본문(랜딩 페이지 전문)은 'According to Black Duck's supply chain survey, 76% of respondents said their organizations check AI-generated code for security risks, but only 54% evaluate it for IP and license risks'라고 적어 출처를 별도 설문으로 명시한다. 각주 [^compliance-risks]가 가리키는 2026-02-25 보도자료는 더 분명하게 'Black Duck research previously found that 76% ... only 54% ...'라고 써서 이 지표가 OSSRA 감사분이 아님을 밝힌다. 원 설문은 Black Duck 'Navigating Software Supply Chain Risk in a Rapid Release World'(UserEvidence 수행, 소프트웨어 보안 리더·실무자 540명, 2025-12-16 발간)다. 초안의 '같은 보고서에서'는 감사 947건과 설문 540명이라는 서로 다른 방법론을 한 문장 안에서 같은 근거처럼 붙여 놓는다.",
+  "suggested_fix": "같은 보고서가 인용한 Black Duck 공급망 보안 설문(소프트웨어 보안 실무자 540명 대상, 2025년 12월)에서는 AI 생성 코드를 IP·라이선스 관점에서 검토하는 조직이 54%에 그쳤으며, 이 문제는 5장에서 다룬다.",
+  "checked_url": "https://www.blackduck.com/resources/analyst-reports/open-source-security-risk-analysis.html",
+  "lens": "support"
+ },
+ {
+  "line": 18,
+  "quote": "2025년 감사 데이터를 대상으로 947개 코드베이스·17개 산업을 분석했다",
+  "kind": "content_mismatch",
+  "severity": "minor",
+  "reason": "'947개 코드베이스·17개 산업'은 원문과 일치한다(보도자료: 'Based on analysis of 947 codebases across 17 industries'). 그러나 '2025년 감사 데이터'라는 기간 표기는 원문에 없다. 2026년판 OSSRA 본문은 'the 947 codebases submitted to Black Duck between November 2024 and October 2025', 'Data Collection Period ... audits conducted between November 2024 and October 2025'라고 적고, 표 머리글도 '2024–25 Scans' / '2023–24 Scans'로 붙인다. 같은 이유로 뒤 문장의 '56%(2024년 감사분)'도 2026년판 표 기준으로는 '2023–24 감사분'이며, '68%(2025년 감사분)'는 '2024–25 감사분'이다. 반면 '53%(2023년 감사분)'만은 원문 표현('53% of the 2023 audited codebases')과 일치해, 한 문장 안에서 두 가지 연도 표기 관행이 섞였다. IN-02가 연도 표기를 요구한 목적이 '다음 개정에서 노후 판정을 쉽게 하는 것'이므로 표기 기준이 어긋나면 목적을 달성하지 못한다.",
+  "suggested_fix": "…는 2024년 11월부터 2025년 10월까지 수행된 감사를 대상으로 947개 코드베이스·17개 산업을 분석했다. 이 보고서에 따르면 감사된 코드베이스의 68%가 라이선스 충돌을 포함한 오픈소스SW를 포함한다. 라이선스 충돌을 포함한 코드베이스의 비율은 53%(2024년판, 2023년 감사분) → 56%(2025년판) → 68%(2026년판, OSSRA 역사상 최고치이자 최대 단일 연도 상승폭)로 올랐다[^ossra-trend].",
+  "checked_url": "https://www.blackduck.com/resources/analyst-reports/open-source-security-risk-analysis.html",
+  "lens": "support"
+ },
+ {
+  "line": 18,
+  "quote": "이 문제는 5장에서 다룬다",
+  "kind": "content_mismatch",
+  "severity": "major",
+  "reason": "이 초안은 5장을 두 곳(L18 '이 문제는 5장에서 다룬다', L123 '…모델·데이터셋 라이선스(5장), AI 코딩 도구 사용 정책(5장)')에서 참조하지만, 같은 문서의 '## 구성'(L36-39)은 1~4장 네 개만 나열하고 '## 각 장 소개'(L47-110)에도 5장 블록이 없다. 즉 서문이 스스로 제시한 목차 안에 참조 대상이 없다. AI 장 자체는 이번 실행에서 집필된다(_workspace/05a_scoped_ai.json, file: content/en/ai/_index.md, AI-01~AI-35)므로 장은 존재하게 되지만, 5장을 목차에 넣는 지시(04b_plan_intro.json IN-09·IN-10)가 priority 2로 이번 범위에서 제외되어 참조만 남았다. 서문은 독자의 진입점이므로 목차에 없는 장 번호를 가리키면 독자가 해당 내용을 찾지 못한다.",
+  "suggested_fix": "'## 구성' 목록 L39 다음 줄에 '5. AI와 오픈소스 - 기업 편/개발자 편'을 추가하고, '### 4. OSPO' 블록이 끝나는 L110 뒤에 최소한 다음 한 블록을 넣는다: '### 5. AI와 오픈소스 / 이 장에서는 AI 모델·데이터셋·AI 생성 코드를 기존 오픈소스SW 거버넌스에 편입하는 방법을 설명한다. 오픈소스 AI의 기준, 모델 라이선스 실사, 데이터셋 거버넌스, AI 코딩 도구 사용 정책을 다룬다.'",
+  "checked_url": "",
+  "lens": "support"
+ },
+ {
+  "line": 18,
+  "quote": "같은 보고서에서 AI 생성 코드를 IP·라이선스 관점에서 검토하는 조직은 54%에 그치며, 이 문제는 5장에서 다룬다.",
+  "kind": "content_mismatch",
+  "severity": "major",
+  "reason": "본문이 '5장'을 참조하지만 이 문서의 '구성'(L36-39)과 '각 장 소개'(L47-110)에는 1~4장만 있다. L123의 '오픈소스 AI 정의와 모델·데이터셋 라이선스(5장), AI 코딩 도구 사용 정책(5장)'도 같은 존재하지 않는 장을 가리킨다. 즉 P1 지시(IN-01·IN-02)가 5장 신설을 전제로 적용된 반면 구성 목록을 갱신하는 IN-09·IN-15는 priority 2로 이번 실행에서 빠져, 초안이 4장 구조의 옛 판본 상태와 5장 구조의 새 판본 참조를 동시에 담고 있다. 이 상태로 출간되면 독자가 서문에서 지시받은 5장을 목차에서 찾지 못한다. 시점 렌즈 밖이지만 판본 상태 불일치이므로 함께 보고한다.",
+  "suggested_fix": "L39 뒤에 '5. AI와 오픈소스 - 기업 편/개발자 편' 한 줄을 추가하고, '각 장 소개'에 '### 5. AI와 오픈소스' 절을 신설한다. 5장 절을 이번 실행에서 넣을 수 없다면 L18을 '같은 보고서에서 AI 생성 코드를 IP·라이선스 관점에서 검토하는 조직은 54%에 그친다.'로 줄여 존재하지 않는 장 참조를 제거하고, L123의 '(5장)' 표기도 장 번호 없이 'AI와 오픈소스 장'으로 바꾼다.",
+  "checked_url": "",
+  "lens": "timing"
+ },
+ {
+  "line": 26,
+  "quote": "특히 최근의 규제 환경 변화, 예를 들어 유럽의 사이버 복원력 법(Cyber Resilience Act)과 같은 새로운 법규를 고려하여",
+  "kind": "stale_timing",
+  "severity": "minor",
+  "reason": "각주가 없는 시점 서술이며, 2026년 8월 기준으로 CRA는 '새로운 법규'가 아니라 이미 발효되어 단계별 적용이 진행 중인 규제다. 초안이 인용한 2026년판 OSSRA 보도자료조차 CRA를 'upcoming regulations'로 다루며 준수 준비를 요구하는 단계로 서술한다. 저장소 본문도 같은 인식으로 이미 앞서 있다 — content/en/using/_index.md의 SBOM 규제 동향 절에 '2027년: 대부분의 조항 시행 예정'이 들어 있어(05a_scoped_using.json US-14 anchor_quote) 서문이 본문보다 낮은 시점 인식을 보인다. 계획서의 IN-06이 같은 문제를 지적했으나 priority 2로 제외되었다. 단, IN-06이 'intro에 규제 날짜를 쓰지 말라'고 했으므로 수정문에 날짜는 넣지 않는 편이 안전하다.",
+  "suggested_fix": "특히 유럽 사이버 복원력 법(Cyber Resilience Act)처럼 이미 발효되어 준수 기한이 다가오는 규제를 고려하여 오픈소스SW 사용에 있어 준수해야 할 사항들을 안내하고자 한다. 규제별 적용 시점은 1장 'SBOM 관리'에서 다룬다.",
+  "checked_url": "https://news.blackduck.com/2026-02-25-Black-Duck-Research-Shows-Open-Source-Vulnerabilities-Have-Doubled-as-AI-Accelerates-Code-Creation",
+  "lens": "support"
+ },
+ {
+  "line": 26,
+  "quote": "특히 최근의 규제 환경 변화, 예를 들어 유럽의 사이버 복원력 법(Cyber Resilience Act)과 같은 새로운 법규를 고려하여 오픈소스 사용에 있어 준수해야 할 사항들을 안내하고자 한다.",
+  "kind": "stale_timing",
+  "severity": "major",
+  "checked_url": "https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act",
+  "reason": "CRA를 아직 다가오는 '새로운 법규'로 제시한다. 유럽위원회 공식 페이지 확인 결과 CRA는 2024-12-10 이미 발효했고, 제조사의 악용 취약점 보고 의무는 2026-09-11(오늘로부터 41일 후), 주요 의무는 2027-12-11 적용된다. 2026-06-11 적합성평가기관 통보(Chapter IV) 단계는 이미 지났다. 즉 독자가 서문을 읽는 시점에 CRA는 '고려할 새 법규'가 아니라 6주 안에 첫 기업 의무가 발생하는 시행 중 규제다. 날짜가 하나도 없어 독자가 대응 시급성을 판정할 수 없고, 'CRA와 같은'이라는 예시가 CRA 하나뿐이라 2026-08-02 적용 개시인 EU AI Act 제50조 투명성 의무와 2026-01-22 이미 시행된 한국 AI 기본법(법률 제20676호)이 서문의 규제 지형에서 빠져 있다(02_research_regulation.json 규제 기한 6개 항목).",
+  "suggested_fix": "특히 이미 시행 단계에 들어선 규제 환경을 반영한다. 유럽 사이버 복원력 법(Cyber Resilience Act)은 2024년 12월 10일 발효해 2026년 9월 11일부터 제조사의 악용 취약점 보고 의무가, 2027년 12월 11일부터 전면 의무가 적용된다. 여기에 EU 인공지능법의 투명성 의무(2026년 8월 2일 적용)와 국내 인공지능 기본법(2026년 1월 22일 시행)이 더해져, 오픈소스SW 사용 기업이 실제로 맞는 기한이 이미 시작됐다. 이 가이드는 그에 맞춰 준수해야 할 사항들을 안내한다(자세한 내용은 1장 규제 대응).",
+  "lens": "timing"
+ },
+ {
+  "line": 30,
+  "quote": "또한, 오픈소스 프로그램 오피스(OSPO)의 중요성이 커지고 있는 추세를 반영하여",
+  "kind": "no_source",
+  "severity": "minor",
+  "reason": "'중요성이 커지고 있는 추세'는 검증 가능한 추세 주장인데 각주도 수치도 없다. 이 문서에서 근거가 붙은 유일한 출처(OSSRA 2026)는 OSPO 설립 추세를 측정하지 않는다 — 확인한 보고서 전문에 OSPO 관련 지표가 없다. L117의 '많은 기업들이 OSPO를 설립하여'도 같은 성격의 무출처 단정이다. IN-03이 임의 인용(CNCF·Linux Foundation 등)을 금지했으므로 새 출처를 붙이는 대신 추세 단정을 제거해야 한다. 계획서 IN-20이 같은 문제를 지적했으나 priority 2로 제외되었다.",
+  "suggested_fix": "또한, 이 가이드에는 오픈소스 프로그램 오피스(OSPO) 설립과 운영에 대한 지침도 포함하고 있다. 이는 기업들이 더 효율적이고 위험이 적은 오픈소스SW 전략과 프로토콜을 수립하는 데 도움이 될 것이다.",
+  "checked_url": "https://www.blackduck.com/resources/analyst-reports/open-source-security-risk-analysis.html",
+  "lens": "support"
+ },
+ {
+  "line": 30,
+  "quote": "또한, 오픈소스 프로그램 오피스(OSPO)의 중요성이 커지고 있는 추세를 반영하여, 이 가이드에서는 OSPO 설립과 운영에 대한 지침도 포함하고 있다.",
+  "kind": "stale_timing",
+  "severity": "minor",
+  "reason": "'중요성이 커지고 있는 추세'라는 시점 의존 단정에 근거도 기준 시점도 없다. OSPO 장은 2021년 초판부터 이 가이드에 있었으므로 2026년 개정판에서 여전히 '커지고 있는 추세를 반영하여 포함한다'고 쓰는 것은 신규 편성처럼 읽혀 판본 상태와 어긋난다. 추세의 방향을 뒷받침할 출처가 서문에 배정되지 않았으므로(intro 배정 조사 데이터는 OSSRA 하나) 추세 단정을 유지할 근거도 없다. 계획서 IN-20(priority 3)이 같은 문장을 노후 표현으로 지목했다.",
+  "suggested_fix": "또한 이 가이드에서는 오픈소스 프로그램 오피스(OSPO) 설립과 운영에 대한 지침도 다룬다.",
+  "checked_url": "",
+  "lens": "timing"
+ }
+]
